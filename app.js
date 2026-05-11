@@ -244,8 +244,8 @@ const FACE_WIDTH = 800;
 const FACE_HEIGHT = 1120;
 const CARD_WIDTH = 2.5;
 const CARD_HEIGHT = 3.5;
-const CARD_DEPTH = 0.055;
-const CARD_RADIUS = 0.095;
+const CARD_DEPTH = 0.044;
+const CARD_RADIUS = 0.112;
 const BACK_TRIM = { x: 0.026, y: 0.018 };
 const FULL_ART_LAYOUTS = new Map([
   [
@@ -762,7 +762,7 @@ function createGlossPlane(normalDirection) {
         vec3 pearl = vec3(1.0, 1.0, 0.94);
         vec3 color = mix(cool, warm, smoothstep(-0.45, 0.55, centered.x + viewDir.x * 0.55));
         color = mix(color, pearl, sweep * 0.54);
-        gl_FragColor = vec4(color, sheen * 0.14);
+        gl_FragColor = vec4(color, sheen * 0.09);
       }
     `
   });
