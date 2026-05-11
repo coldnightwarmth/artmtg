@@ -128,6 +128,117 @@ const FULL_FILES = [
   "Wilhelm Kotarbinski, The Angel of Sadness 1900..jpg"
 ];
 
+const NEW_CROP_FILES = [
+  "Alphonse Mucha, After the Battle of Vitkov Hill.png",
+  "Alphonse Mucha, Apotheosis of the Slavs Slavs for Humanity 1926.png",
+  "Casper Johann Nepomuk Scheuren, Charlemagne, King of Franks and Lombards and Emper.png",
+  "Chikanobu Yoshu, Chiyoda Castle Album of Men 1897.png",
+  "Claude Louis Chatelet, Illumination of the Belvedere pavilion.png",
+  "Emanuel Gottlieb Leutze, Washington Crossing the Delaware 1851.png",
+  "Francois Flameng, Air Fight, The enemy plane falling in flames.png",
+  "Franois Auguste Biard, View of the Icy Ocean Walrus Fishing by the Greenlanders.png",
+  "Franois Vervloet, The Guns in the Detail Fortress.png",
+  "Franz von Stuck, Franz von Stuck Der Engel des Gerichts Gemaelde 1922.png",
+  "French School, The Seven-headed Beast of the Apocalypse.png",
+  "Giovanni Canavesio, Last Judgment 1492.png",
+  "Giuseppe Maria Terreni, Porto Ferraio.png",
+  "Giuseppe Pellizza da Volpedo, The Rising Sun Painting 1904.png",
+  "Goya, Exorcism or witches.png",
+  "Guido Reni, Archangel, Saint Michael.png",
+  "Gustave Dore, Destruction of Leviathan.png",
+  "Gustave Dore, The Divine Comedy Paradiso Canto 31.png",
+  "Hubert Robert, Fantaisie Egyptienne 1760.png",
+  "Ira Block, Samurai screen depicting the fall of Osaka castle 1615.png",
+  "Ivan Konstantinovich Aivazovsky, Constantinople, the Mosque of Tophane.png",
+  "Jan Brueghel, The Tower of Babel 1650.png",
+  "Jean Bruno Gassies, Landscape of Scotland Painting 1826.png",
+  "Jean Francois Depelchin, Interior view of the cathedrale Notre Dame de Paris.png",
+  "Lorenzo Lotto, Saint Michael Hunting Lucifer 1555.png",
+  "Louis Janmot, The poem of the Soul Le passage des ames.png",
+  "Paul Klee, Italian City Painting.png",
+  "Protohistoric, Magic scenes.png",
+  "Samuel Palmer, Christian Descending into the Valley of Humiliation.png",
+  "Samuel Read, North of Ireland Dunseverick Castle.png",
+  "School Mughal, Elephant Combat.png",
+  "School Persian, Mythical heros and son of Zal kills the white ele.png",
+  "School Persian, Torture of an enemy burying alive at the foot of a tree Per.png",
+  "Sebastiano Ricci, Study for An Apotheosis of a Saint 1695.png",
+  "Theophile Louis Deyrolle, Shepherdess with her Flock 1907.png",
+  "Unbekannt Unbekannt, The Adoration of the Beast.png",
+  "Unbekannt, Fool's Cap World Map 1590.png",
+  "Unbekannt, Samurai Warrior riding a horse.png",
+  "Unbekannt, The Woman upon the Scarlet Beast.png",
+  "Unbekannter Kuenstler, Shivas beast Sivatherium giganteum1908.png",
+  "William Blake, Dante, running from the three beasts.png",
+  "William Blake, The Great Red Dragon and the Beast from the Sea.png",
+  "William Blake, The Sun at His Eastern Gate.png",
+  "William Blake, The Vision of Christ.png",
+  "William Henry Smyth, Perilous position of HMS Terrorpng.png"
+];
+
+const NEW_FULL_FILES = [
+  "Alphonse Mucha, After the Battle of Vitkov Hill.jpg",
+  "Alphonse Mucha, Apotheosis of the Slavs Slavs for Humanity 1926.jpg",
+  "Casper Johann Nepomuk Scheuren, Charlemagne, King of Franks and Lombards and Emper.jpg",
+  "Chikanobu Yoshu, Chiyoda Castle Album of Men 1897.jpg",
+  "Claude Louis Chatelet, Illumination of the Belvedere pavilion.jpg",
+  "Emanuel Gottlieb Leutze, Washington Crossing the Delaware 1851.jpg",
+  "Francois Flameng, Air Fight, The enemy plane falling in flames.jpg",
+  "Franois Auguste Biard, View of the Icy Ocean Walrus Fishing by the Greenlanders.jpg",
+  "Franois Vervloet, The Guns in the Detail Fortress.jpg",
+  "Franz von Stuck, Franz von Stuck Der Engel des Gerichts Gemaelde 1922.jpg",
+  "French School, The Seven-headed Beast of the Apocalypse.jpg",
+  "Giovanni Canavesio, Last Judgment 1492.jpg",
+  "Giuseppe Maria Terreni, Porto Ferraio.jpg",
+  "Giuseppe Pellizza da Volpedo, The Rising Sun Painting 1904.jpg",
+  "Goya, Exorcism or witches.jpg",
+  "Guido Reni, Archangel, Saint Michael.jpg",
+  "Gustave Dore, Destruction of Leviathan.jpg",
+  "Gustave Dore, The Divine Comedy Paradiso Canto 31.jpg",
+  "Hubert Robert, Fantaisie Egyptienne 1760.jpg",
+  "Ira Block, Samurai screen depicting the fall of Osaka castle 1615.jpg",
+  "Ivan Konstantinovich Aivazovsky, Constantinople, the Mosque of Tophane.jpg",
+  "Jan Brueghel, The Tower of Babel 1650.jpg",
+  "Jean Bruno Gassies, Landscape of Scotland Painting 1826.jpg",
+  "Jean Francois Depelchin, Interior view of the cathedrale Notre Dame de Paris.jpg",
+  "Lorenzo Lotto, Saint Michael Hunting Lucifer 1555.jpg",
+  "Louis Janmot, The poem of the Soul Le passage des ames.jpg",
+  "Paul Klee, Italian City Painting.jpg",
+  "Protohistoric, Magic scenes.jpg",
+  "Samuel Palmer, Christian Descending into the Valley of Humiliation.jpg",
+  "Samuel Read, North of Ireland Dunseverick Castle.jpg",
+  "School Mughal, Elephant Combat.jpg",
+  "School Persian, Mythical heros and son of Zal kills the white ele.jpg",
+  "School Persian, Torture of an enemy burying alive at the foot of a tree Per.jpg",
+  "Sebastiano Ricci, Study for An Apotheosis of a Saint 1695.jpg",
+  "Theophile Louis Deyrolle, Shepherdess with her Flock 1907.jpg",
+  "Unbekannt Unbekannt, The Adoration of the Beast.jpg",
+  "Unbekannt, Fool's Cap World Map 1590.jpg",
+  "Unbekannt, Samurai Warrior riding a horse.jpg",
+  "Unbekannt, The Woman upon the Scarlet Beast.jpg",
+  "Unbekannter Kuenstler, Shivas beast Sivatherium giganteum1908.jpg",
+  "William Blake, Dante, running from the three beasts.jpg",
+  "William Blake, The Great Red Dragon and the Beast from the Sea.jpg",
+  "William Blake, The Sun at His Eastern Gate.jpg",
+  "William Blake, The Vision of Christ.jpg",
+  "William Henry Smyth, Perilous position of HMS Terrorpng.jpg"
+];
+
+const ART_GROUPS = [
+  {
+    cropDirectory: "assets/art/crop",
+    fullDirectory: "assets/art/full",
+    cropFiles: CROP_FILES,
+    fullFiles: FULL_FILES
+  },
+  {
+    cropDirectory: "assets/art/New/crop",
+    fullDirectory: "assets/art/New/full",
+    cropFiles: NEW_CROP_FILES,
+    fullFiles: NEW_FULL_FILES
+  }
+];
+
 const ART_WINDOW = { x: 36, y: 68, width: 328, height: 242 };
 const FACE_WIDTH = 800;
 const FACE_HEIGHT = 1120;
@@ -1061,20 +1172,22 @@ function createRoundedCoreGeometry(width, height, depth, radius) {
 }
 
 function buildArtItems() {
-  return CROP_FILES.map((cropFile) => {
-    const fullFile = findFullFile(cropFile);
-    const cropMeta = parseName(cropFile);
-    const fullMeta = parseName(fullFile);
-    const meta = chooseMetadata(cropMeta, fullMeta);
-    return {
-      cropFile,
-      fullFile,
-      cropUrl: urlFor("assets/art/crop", cropFile),
-      fullUrl: urlFor("assets/art/full", fullFile),
-      title: meta.title,
-      meta
-    };
-  });
+  return ART_GROUPS.flatMap((group) => (
+    group.cropFiles.map((cropFile) => {
+      const fullFile = findFullFile(cropFile, group.fullFiles);
+      const cropMeta = parseName(cropFile);
+      const fullMeta = parseName(fullFile);
+      const meta = chooseMetadata(cropMeta, fullMeta);
+      return {
+        cropFile,
+        fullFile,
+        cropUrl: urlFor(group.cropDirectory, cropFile),
+        fullUrl: urlFor(group.fullDirectory, fullFile),
+        title: meta.title,
+        meta
+      };
+    })
+  ));
 }
 
 function buildAuthorOrder(items) {
@@ -1089,21 +1202,21 @@ function buildAuthorOrder(items) {
     });
 }
 
-function findFullFile(cropFile) {
+function findFullFile(cropFile, fullFiles = FULL_FILES) {
   const cropKey = identityKey(cropFile);
-  const exact = FULL_FILES.find((file) => identityKey(file) === cropKey);
+  const exact = fullFiles.find((file) => identityKey(file) === cropKey);
   if (exact) return exact;
 
-  const contained = FULL_FILES.find((file) => {
+  const contained = fullFiles.find((file) => {
     const fullKey = identityKey(file);
     return fullKey.startsWith(cropKey) || cropKey.startsWith(fullKey);
   });
   if (contained) return contained;
 
-  let best = FULL_FILES[0];
+  let best = fullFiles[0];
   let bestScore = -1;
   const cropTokens = tokenSet(cropFile);
-  for (const file of FULL_FILES) {
+  for (const file of fullFiles) {
     const fullTokens = tokenSet(file);
     const score = [...cropTokens].filter((token) => fullTokens.has(token)).length;
     if (score > bestScore) {
