@@ -18,7 +18,7 @@
       <section class="card-rig" aria-label="3D trading card viewer">
         <div class="scene-track">
           <div class="scene-panel" id="scenePanel">
-            <canvas id="cardCanvas" aria-label="Rotatable trading card"></canvas>
+            <canvas id="cardCanvas" aria-label="Rotatable trading card. Double-click to cycle the card color."></canvas>
           </div>
           <a class="full-art" id="fullArtLink" target="_blank" rel="noopener" aria-label="Open full artwork in a new tab">
             <img id="fullArtImage" alt="">
@@ -36,7 +36,7 @@
               <path d="m9 18 6-6-6-6"></path>
             </svg>
           </button>
-          <button class="icon-button" id="shuffleButton" type="button" title="Shuffle card. Right-click to shuffle template color." aria-label="Shuffle card">
+          <button class="icon-button" id="shuffleButton" type="button" title="Shuffle card. Right-click to return to the previous shuffled card." aria-label="Shuffle card">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M16 3h5v5"></path>
               <path d="M4 20 21 3"></path>
@@ -52,17 +52,26 @@
               <circle cx="19" cy="12" r="1.7"></circle>
             </svg>
           </button>
-          <button class="icon-button" id="uploadButton" type="button" title="Upload custom art" aria-label="Upload custom art">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <path d="M17 8 12 3 7 8"></path>
-              <path d="M12 3v12"></path>
-            </svg>
-          </button>
         </div>
-        <div class="card-counter" id="cardCounter" aria-live="polite">--/100</div>
+        <div class="card-filename" id="cardFileName" aria-live="polite"></div>
+        <div class="card-counter" id="cardCounter" aria-live="polite">--/101</div>
       </section>
     </main>
+
+    <label class="theme-switch" title="Toggle light mode" aria-label="Toggle light mode">
+      <input id="themeToggle" type="checkbox">
+      <span class="theme-switch__track" aria-hidden="true">
+        <span class="theme-switch__thumb"></span>
+      </span>
+    </label>
+
+    <button class="icon-button corner-upload" id="uploadButton" type="button" title="Upload custom art" aria-label="Upload custom art">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <path d="M17 8 12 3 7 8"></path>
+        <path d="M12 3v12"></path>
+      </svg>
+    </button>
 
     <div class="modal-backdrop" id="uploadModal" role="dialog" aria-modal="true" aria-labelledby="uploadTitle" aria-hidden="true">
       <div class="upload-dialog">
@@ -94,14 +103,6 @@
             <label>
               <span>Zoom</span>
               <input id="cropZoom" type="range" min="1" max="4" step="0.01" value="1">
-            </label>
-            <label>
-              <span>Horizontal</span>
-              <input id="cropX" type="range" min="0" max="100" step="0.1" value="50">
-            </label>
-            <label>
-              <span>Vertical</span>
-              <input id="cropY" type="range" min="0" max="100" step="0.1" value="50">
             </label>
           </div>
         </section>

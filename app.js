@@ -132,6 +132,7 @@ const NEW_CROP_FILES = [
   "Alphonse Mucha, After the Battle of Vitkov Hill.png",
   "Alphonse Mucha, Apotheosis of the Slavs Slavs for Humanity 1926.png",
   "Casper Johann Nepomuk Scheuren, Charlemagne, King of Franks and Lombards and Emper.png",
+  "Charles Theodore Frere, Caravan crossing the desert.png",
   "Chikanobu Yoshu, Chiyoda Castle Album of Men 1897.png",
   "Claude Louis Chatelet, Illumination of the Belvedere pavilion.png",
   "Emanuel Gottlieb Leutze, Washington Crossing the Delaware 1851.png",
@@ -142,7 +143,7 @@ const NEW_CROP_FILES = [
   "French School, The Seven-headed Beast of the Apocalypse.png",
   "Giovanni Canavesio, Last Judgment 1492.png",
   "Giuseppe Maria Terreni, Porto Ferraio.png",
-  "Giuseppe Pellizza da Volpedo, The Rising Sun Painting 1904.png",
+  "Giuseppe Pellizza da Volpedo, The Rising Sun 1904.png",
   "Goya, Exorcism or witches.png",
   "Guido Reni, Archangel, Saint Michael.png",
   "Gustave Dore, Destruction of Leviathan.png",
@@ -151,11 +152,11 @@ const NEW_CROP_FILES = [
   "Ira Block, Samurai screen depicting the fall of Osaka castle 1615.png",
   "Ivan Konstantinovich Aivazovsky, Constantinople, the Mosque of Tophane.png",
   "Jan Brueghel, The Tower of Babel 1650.png",
-  "Jean Bruno Gassies, Landscape of Scotland Painting 1826.png",
+  "Jean Bruno Gassies, Landscape of Scotland 1826.png",
   "Jean Francois Depelchin, Interior view of the cathedrale Notre Dame de Paris.png",
   "Lorenzo Lotto, Saint Michael Hunting Lucifer 1555.png",
   "Louis Janmot, The poem of the Soul Le passage des ames.png",
-  "Paul Klee, Italian City Painting.png",
+  "Paul Klee, Italian City.png",
   "Protohistoric, Magic scenes.png",
   "Samuel Palmer, Christian Descending into the Valley of Humiliation.png",
   "Samuel Read, North of Ireland Dunseverick Castle.png",
@@ -180,6 +181,7 @@ const NEW_FULL_FILES = [
   "Alphonse Mucha, After the Battle of Vitkov Hill.jpg",
   "Alphonse Mucha, Apotheosis of the Slavs Slavs for Humanity 1926.jpg",
   "Casper Johann Nepomuk Scheuren, Charlemagne, King of Franks and Lombards and Emper.jpg",
+  "Charles Theodore Frere, Caravan crossing the desert.png",
   "Chikanobu Yoshu, Chiyoda Castle Album of Men 1897.jpg",
   "Claude Louis Chatelet, Illumination of the Belvedere pavilion.jpg",
   "Emanuel Gottlieb Leutze, Washington Crossing the Delaware 1851.jpg",
@@ -190,7 +192,7 @@ const NEW_FULL_FILES = [
   "French School, The Seven-headed Beast of the Apocalypse.jpg",
   "Giovanni Canavesio, Last Judgment 1492.jpg",
   "Giuseppe Maria Terreni, Porto Ferraio.jpg",
-  "Giuseppe Pellizza da Volpedo, The Rising Sun Painting 1904.jpg",
+  "Giuseppe Pellizza da Volpedo, The Rising Sun 1904.jpg",
   "Goya, Exorcism or witches.jpg",
   "Guido Reni, Archangel, Saint Michael.jpg",
   "Gustave Dore, Destruction of Leviathan.jpg",
@@ -199,11 +201,11 @@ const NEW_FULL_FILES = [
   "Ira Block, Samurai screen depicting the fall of Osaka castle 1615.jpg",
   "Ivan Konstantinovich Aivazovsky, Constantinople, the Mosque of Tophane.jpg",
   "Jan Brueghel, The Tower of Babel 1650.jpg",
-  "Jean Bruno Gassies, Landscape of Scotland Painting 1826.jpg",
+  "Jean Bruno Gassies, Landscape of Scotland 1826.jpg",
   "Jean Francois Depelchin, Interior view of the cathedrale Notre Dame de Paris.jpg",
   "Lorenzo Lotto, Saint Michael Hunting Lucifer 1555.jpg",
   "Louis Janmot, The poem of the Soul Le passage des ames.jpg",
-  "Paul Klee, Italian City Painting.jpg",
+  "Paul Klee, Italian City.jpg",
   "Protohistoric, Magic scenes.jpg",
   "Samuel Palmer, Christian Descending into the Valley of Humiliation.jpg",
   "Samuel Read, North of Ireland Dunseverick Castle.jpg",
@@ -247,6 +249,7 @@ const CARD_HEIGHT = 3.5;
 const CARD_DEPTH = 0.044;
 const CARD_RADIUS = 0.112;
 const BACK_TRIM = { x: 0.026, y: 0.018 };
+const SHUFFLE_HISTORY_LIMIT = 10;
 const FULL_ART_LAYOUTS = new Map([
   [
     "hieronymousboschascentoftheblessed1504",
@@ -275,10 +278,13 @@ const nextButton = document.querySelector("#nextButton");
 const shuffleButton = document.querySelector("#shuffleButton");
 const detailsButton = document.querySelector("#detailsButton");
 const uploadButton = document.querySelector("#uploadButton");
+const themeToggle = document.querySelector("#themeToggle");
+const cardFileName = document.querySelector("#cardFileName");
 const cardCounter = document.querySelector("#cardCounter");
 const fullArtLink = document.querySelector("#fullArtLink");
 const fullArtImage = document.querySelector("#fullArtImage");
 const artMagnifier = document.querySelector("#artMagnifier");
+const hoverMagnifierQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
 const uploadModal = document.querySelector("#uploadModal");
 const closeUploadButton = document.querySelector("#closeUploadButton");
 const dropZone = document.querySelector("#dropZone");
@@ -286,8 +292,6 @@ const dropZoneText = document.querySelector("#dropZoneText");
 const uploadInput = document.querySelector("#uploadInput");
 const cropCanvas = document.querySelector("#cropCanvas");
 const cropZoomInput = document.querySelector("#cropZoom");
-const cropXInput = document.querySelector("#cropX");
-const cropYInput = document.querySelector("#cropY");
 const customTitleInput = document.querySelector("#customTitle");
 const customAuthorInput = document.querySelector("#customAuthor");
 const customDateInput = document.querySelector("#customDate");
@@ -296,6 +300,8 @@ const createCardButton = document.querySelector("#createCardButton");
 let artItems = buildArtItems();
 let authorOrder = buildAuthorOrder(artItems);
 const imageCache = new Map();
+const pointer = new THREE.Vector2();
+const raycaster = new THREE.Raycaster();
 
 let renderer;
 let scene;
@@ -315,6 +321,10 @@ let uploadState = createUploadState();
 let cropDrag = null;
 let smoothZoomVelocity = 0;
 let defaultCameraRadius = DEFAULT_CAMERA_POSITION.distanceTo(DEFAULT_TARGET);
+let resizeFrame = 0;
+let lastRendererWidth = 0;
+let lastRendererHeight = 0;
+const shuffleHistory = [];
 
 init();
 
@@ -410,7 +420,8 @@ function initScene() {
   backGloss.position.z = -CARD_DEPTH / 2 - 0.004;
   cardGroup.add(backGloss);
 
-  new ResizeObserver(resizeRenderer).observe(scenePanel);
+  new ResizeObserver(queueResizeRenderer).observe(scenePanel);
+  window.addEventListener("resize", queueResizeRenderer);
   resizeRenderer();
 }
 
@@ -437,6 +448,7 @@ function initControls() {
     capture: true,
     passive: false
   });
+  renderer.domElement.addEventListener("dblclick", cycleTemplateColor);
   window.addEventListener("pointerup", startCameraSnap);
   updateResponsiveCameraFrame(true);
 
@@ -449,24 +461,40 @@ function initControls() {
   });
 
   shuffleButton.addEventListener("click", () => {
-    applyRandomCard();
+    applyRandomCard({ rememberCurrent: true });
   });
   shuffleButton.addEventListener("contextmenu", (event) => {
     event.preventDefault();
-    applyTemplateShuffle();
+    applyPreviousShuffleCard();
   });
 
   detailsButton.addEventListener("click", () => {
     const isOpen = table.classList.toggle("details-open");
     detailsButton.setAttribute("aria-expanded", String(isOpen));
     if (!isOpen) hideArtMagnifier();
+    requestAnimationFrame(() => {
+      updateResponsiveCameraFrame();
+      renderSceneOnce();
+    });
   });
 
   fullArtImage.addEventListener("mouseenter", showArtMagnifier);
   fullArtImage.addEventListener("mousemove", updateArtMagnifier);
   fullArtImage.addEventListener("mouseleave", hideArtMagnifier);
+  if (hoverMagnifierQuery.addEventListener) {
+    hoverMagnifierQuery.addEventListener("change", hideArtMagnifier);
+  } else {
+    hoverMagnifierQuery.addListener(hideArtMagnifier);
+  }
 
+  initThemeToggle();
   initUploadControls();
+}
+
+function initThemeToggle() {
+  themeToggle.addEventListener("change", () => {
+    document.body.classList.toggle("light-theme", themeToggle.checked);
+  });
 }
 
 function handleSmoothWheelZoom(event) {
@@ -524,12 +552,10 @@ function initUploadControls() {
     if (file) loadUploadFile(file);
   });
 
-  for (const input of [cropZoomInput, cropXInput, cropYInput]) {
-    input.addEventListener("input", () => {
-      syncCropInputs();
-      renderCropPreview();
-    });
-  }
+  cropZoomInput.addEventListener("input", () => {
+    syncCropInputs();
+    renderCropPreview();
+  });
 
   cropCanvas.addEventListener("pointerdown", startCropDrag);
   cropCanvas.addEventListener("pointermove", updateCropDrag);
@@ -577,8 +603,6 @@ async function loadUploadFile(file) {
   };
 
   cropZoomInput.value = "1";
-  cropXInput.value = "50";
-  cropYInput.value = "50";
   if (!customTitleInput.value.trim()) {
     customTitleInput.value = cleanBase(file.name);
   }
@@ -589,8 +613,6 @@ async function loadUploadFile(file) {
 
 function syncCropInputs() {
   uploadState.zoom = Number(cropZoomInput.value);
-  uploadState.cropX = Number(cropXInput.value);
-  uploadState.cropY = Number(cropYInput.value);
 }
 
 function startCropDrag(event) {
@@ -626,8 +648,6 @@ function updateCropDrag(event) {
     0,
     100
   );
-  cropXInput.value = uploadState.cropX.toFixed(1);
-  cropYInput.value = uploadState.cropY.toFixed(1);
   renderCropPreview();
 }
 
@@ -740,8 +760,6 @@ function resetUploadForm() {
   customAuthorInput.value = "";
   customDateInput.value = "";
   cropZoomInput.value = "1";
-  cropXInput.value = "50";
-  cropYInput.value = "50";
   createCardButton.disabled = true;
   renderCropPreview();
 }
@@ -792,7 +810,7 @@ function createGlossPlane(normalDirection) {
         vec3 pearl = vec3(0.68, 0.65, 0.54);
         vec3 color = mix(cool, warm, smoothstep(-0.45, 0.55, centered.x + viewDir.x * 0.55));
         color = mix(color, pearl, sweep * 0.24);
-        gl_FragColor = vec4(color, sheen * 0.055);
+        gl_FragColor = vec4(color, sheen * 0.085);
       }
     `
   });
@@ -803,21 +821,51 @@ function createGlossPlane(normalDirection) {
   );
 }
 
-async function applyRandomCard() {
+async function applyRandomCard(options = {}) {
+  if (options.rememberCurrent) rememberCurrentShuffleCard();
+
   const artIndex = randomIndex(artItems.length, currentArtIndex);
   await applyCardByIndex(artIndex);
 }
 
-async function applyTemplateShuffle() {
-  if (currentArtIndex === -1) {
-    await applyRandomCard();
-    return;
-  }
+function rememberCurrentShuffleCard() {
+  if (currentArtIndex === -1) return;
 
-  await applyCardByIndex(
-    currentArtIndex,
-    randomEntryExcept(TEMPLATE_FILES, currentTemplateFile)
-  );
+  shuffleHistory.push({
+    artIndex: currentArtIndex,
+    templateFile: currentTemplateFile || TEMPLATE_FILES[0]
+  });
+
+  if (shuffleHistory.length > SHUFFLE_HISTORY_LIMIT) {
+    shuffleHistory.splice(0, shuffleHistory.length - SHUFFLE_HISTORY_LIMIT);
+  }
+}
+
+async function applyPreviousShuffleCard() {
+  const previousCard = shuffleHistory.pop();
+  if (!previousCard) return;
+
+  await applyCardByIndex(previousCard.artIndex, previousCard.templateFile);
+}
+
+async function cycleTemplateColor(event) {
+  event.preventDefault();
+  if (currentArtIndex === -1) return;
+  if (!isPointerOnCard(event)) return;
+
+  const currentTemplateIndex = TEMPLATE_FILES.indexOf(currentTemplateFile);
+  const nextTemplateFile = TEMPLATE_FILES[
+    modulo(currentTemplateIndex + 1, TEMPLATE_FILES.length)
+  ];
+  await applyCardByIndex(currentArtIndex, nextTemplateFile);
+}
+
+function isPointerOnCard(event) {
+  const rect = renderer.domElement.getBoundingClientRect();
+  pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+  pointer.y = -(((event.clientY - rect.top) / rect.height) * 2 - 1);
+  raycaster.setFromCamera(pointer, camera);
+  return raycaster.intersectObject(cardGroup, true).length > 0;
 }
 
 async function applyRelativeCard(direction) {
@@ -853,13 +901,15 @@ async function applyCardByIndex(artIndex, templateFile = randomEntry(TEMPLATE_FI
   fullArtImage.src = item.fullUrl;
   fullArtImage.alt = item.title;
   applyFullArtLayout(item.fullFile);
-  updateCardCounter();
+  updateCardInfo();
   hideArtMagnifier();
 }
 
-function updateCardCounter() {
+function updateCardInfo() {
+  const item = artItems[currentArtIndex];
   const orderPosition = authorOrder.indexOf(currentArtIndex);
   const displayPosition = orderPosition === -1 ? currentArtIndex + 1 : orderPosition + 1;
+  cardFileName.textContent = formatDisplayFileName(item.fullFile);
   cardCounter.textContent = `${displayPosition}/${authorOrder.length}`;
 }
 
@@ -873,6 +923,7 @@ function applyFullArtLayout(fullFile) {
 }
 
 function showArtMagnifier(event) {
+  if (!canShowArtMagnifier()) return;
   updateArtMagnifier(event);
   artMagnifier.classList.add("is-visible");
 }
@@ -882,6 +933,10 @@ function hideArtMagnifier() {
 }
 
 function updateArtMagnifier(event) {
+  if (!canShowArtMagnifier()) {
+    hideArtMagnifier();
+    return;
+  }
   if (!fullArtImage.naturalWidth || !fullArtImage.naturalHeight) return;
 
   const rect = fullArtImage.getBoundingClientRect();
@@ -899,6 +954,10 @@ function updateArtMagnifier(event) {
   artMagnifier.style.backgroundImage = `url("${fullArtImage.currentSrc || fullArtImage.src}")`;
   artMagnifier.style.backgroundSize = `${backgroundWidth}px ${backgroundHeight}px`;
   artMagnifier.style.backgroundPosition = `${backgroundX}px ${backgroundY}px`;
+}
+
+function canShowArtMagnifier() {
+  return hoverMagnifierQuery.matches;
 }
 
 async function createFrontTexture(item, templateFile) {
@@ -1325,6 +1384,16 @@ function cleanBase(fileName) {
     .trim();
 }
 
+function stripExtension(fileName) {
+  return fileName.replace(/\.[^.]+$/, "");
+}
+
+function formatDisplayFileName(fileName) {
+  return stripExtension(fileName)
+    .replace(/_s\b/g, "'s")
+    .replace(/_/g, " ");
+}
+
 function identityKey(fileName) {
   return cleanBase(fileName)
     .normalize("NFD")
@@ -1370,17 +1439,6 @@ function swapTexture(material, texture) {
 
 function randomEntry(items) {
   return items[Math.floor(Math.random() * items.length)];
-}
-
-function randomEntryExcept(items, avoid) {
-  if (items.length <= 1) return items[0];
-  let next = avoid;
-
-  while (next === avoid) {
-    next = randomEntry(items);
-  }
-
-  return next;
 }
 
 function randomIndex(max, avoid) {
@@ -1443,13 +1501,38 @@ function updateResponsiveCameraFrame(forcePosition = false) {
 }
 
 function resizeRenderer() {
-  const { width, height } = scenePanel.getBoundingClientRect();
+  const rect = scenePanel.getBoundingClientRect();
+  const width = Math.round(rect.width);
+  const height = Math.round(rect.height);
   if (!width || !height) return;
-  renderer.setSize(width, height, false);
-  camera.aspect = width / height;
-  camera.updateProjectionMatrix();
+
+  if (width !== lastRendererWidth || height !== lastRendererHeight) {
+    renderer.setSize(width, height, false);
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+    lastRendererWidth = width;
+    lastRendererHeight = height;
+  }
+
   updateResponsiveCameraFrame();
   if (controls) controls.handleResize();
+  renderSceneOnce();
+}
+
+function queueResizeRenderer() {
+  if (resizeFrame) return;
+
+  resizeFrame = requestAnimationFrame(() => {
+    resizeFrame = 0;
+    resizeRenderer();
+  });
+}
+
+function renderSceneOnce() {
+  if (!renderer || !scene || !camera || !frontGloss || !backGloss) return;
+  frontGloss.material.uniforms.uCameraPosition.value.copy(camera.position);
+  backGloss.material.uniforms.uCameraPosition.value.copy(camera.position);
+  renderer.render(scene, camera);
 }
 
 function startCameraSnap() {

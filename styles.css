@@ -1,15 +1,34 @@
 :root {
   color-scheme: dark;
-  --card-width: clamp(270px, 36vw, 455px);
+  --vertical-reserve: 240px;
+  --card-width: clamp(150px, min(36vw, calc((100svh - var(--vertical-reserve)) / 1.4)), 455px);
   --card-height: calc(var(--card-width) * 1.4);
   --viewport-width: 100vw;
   --viewport-height: 100vh;
   --detail-gap: clamp(34px, 5.5vw, 86px);
   --shift: calc((var(--card-width) + var(--detail-gap)) / 2);
+  --table-padding: clamp(18px, 4vw, 44px);
+  --rig-gap: 10px;
+  --control-size: 46px;
+  --control-gap: 22px;
+  --controls-offset: 49px;
+  --filename-offset: 5px;
+  --counter-offset: 1px;
+  --corner-size: 46px;
+  --corner-inset: 18px;
+  --switch-width: 46px;
+  --switch-height: 28px;
+  --switch-thumb-size: 20px;
+  --switch-thumb-inset: 3px;
   --ink: #f2f1ea;
   --edge: rgba(242, 241, 234, 0.24);
   --button: rgba(26, 25, 22, 0.78);
   --button-hover: rgba(48, 46, 39, 0.88);
+  --button-shadow: rgba(0, 0, 0, 0.28);
+  --caption: rgba(242, 241, 234, 0.5);
+  --caption-muted: rgba(242, 241, 234, 0.3);
+  --switch-track: rgba(242, 241, 234, 0.18);
+  --switch-thumb: #f2f1ea;
 }
 
 * {
@@ -33,22 +52,41 @@ body {
     #15130f;
 }
 
+body.light-theme {
+  color-scheme: light;
+  --ink: #25231f;
+  --edge: rgba(37, 35, 31, 0.2);
+  --button: rgba(255, 255, 255, 0.74);
+  --button-hover: rgba(255, 255, 255, 0.92);
+  --button-shadow: rgba(104, 94, 72, 0.14);
+  --caption: rgba(37, 35, 31, 0.46);
+  --caption-muted: rgba(37, 35, 31, 0.3);
+  --switch-track: rgba(37, 35, 31, 0.16);
+  --switch-thumb: #ffffff;
+  background:
+    linear-gradient(135deg, rgba(101, 132, 134, 0.16), transparent 34%),
+    linear-gradient(315deg, rgba(196, 168, 104, 0.18), transparent 38%),
+    #eee9dd;
+}
+
 button {
   font: inherit;
 }
 
 .table {
+  --card-height: calc(var(--card-width) * 1.4);
+  --shift: calc((var(--card-width) + var(--detail-gap)) / 2);
   display: grid;
   min-height: 100vh;
   min-height: 100svh;
   place-items: center;
-  padding: clamp(18px, 4vw, 44px);
+  padding: var(--table-padding);
 }
 
 .card-rig {
   display: grid;
   justify-items: center;
-  gap: 10px;
+  gap: var(--rig-gap);
   width: min(100%, calc(var(--card-width) * 2 + var(--detail-gap)));
 }
 
@@ -155,35 +193,54 @@ button {
   position: relative;
   z-index: 4;
   display: grid;
-  grid-template-columns: repeat(5, 46px);
-  gap: 22px;
+  grid-template-columns: repeat(4, var(--control-size));
+  gap: var(--control-gap);
   justify-content: center;
-  transform: translateY(70px);
+  margin-top: var(--controls-offset);
 }
 
+.card-filename,
 .card-counter {
   position: relative;
   z-index: 4;
-  color: rgba(242, 241, 234, 0.68);
-  font-size: 0.78rem;
-  font-weight: 600;
-  line-height: 1;
+  max-width: min(92vw, calc(var(--card-width) * 2 + var(--detail-gap)));
+  text-align: center;
+  color: var(--caption);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  line-height: 1.05;
   letter-spacing: 0;
-  transform: translateY(86px);
   user-select: none;
+}
+
+.card-filename {
+  display: -webkit-box;
+  height: 1.43rem;
+  overflow: hidden;
+  margin-top: var(--filename-offset);
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.card-counter {
+  height: 0.72rem;
+  margin-top: var(--counter-offset);
+  color: var(--caption-muted);
 }
 
 .icon-button {
   display: grid;
-  width: 46px;
-  height: 46px;
+  width: var(--control-size);
+  height: var(--control-size);
   place-items: center;
   padding: 0;
   color: var(--ink);
   border: 1px solid var(--edge);
   border-radius: 8px;
   background: var(--button);
-  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 12px 34px var(--button-shadow);
   cursor: pointer;
   transition:
     background-color 160ms ease,
@@ -203,8 +260,8 @@ button {
 }
 
 .icon-button svg {
-  width: 22px;
-  height: 22px;
+  width: min(22px, calc(var(--control-size) * 0.54));
+  height: min(22px, calc(var(--control-size) * 0.54));
   fill: none;
   stroke: currentColor;
   stroke-linecap: round;
@@ -215,6 +272,80 @@ button {
 .icon-button circle {
   fill: currentColor;
   stroke: none;
+}
+
+.corner-upload {
+  position: fixed;
+  right: max(var(--corner-inset), env(safe-area-inset-right));
+  bottom: max(var(--corner-inset), env(safe-area-inset-bottom));
+  z-index: 10;
+  --control-size: var(--corner-size);
+}
+
+.theme-switch {
+  position: fixed;
+  left: max(var(--corner-inset), env(safe-area-inset-left));
+  bottom: max(var(--corner-inset), env(safe-area-inset-bottom));
+  z-index: 10;
+  display: block;
+  width: var(--switch-width);
+  height: var(--switch-height);
+  cursor: pointer;
+}
+
+.theme-switch input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.theme-switch__track {
+  position: absolute;
+  inset: 0;
+  display: block;
+  border: 1px solid var(--edge);
+  border-radius: 999px;
+  background: var(--switch-track);
+  box-shadow:
+    inset 0 1px 3px rgba(0, 0, 0, 0.18),
+    0 10px 28px rgba(0, 0, 0, 0.16);
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.theme-switch__thumb {
+  position: absolute;
+  top: 50%;
+  left: var(--switch-thumb-inset);
+  width: var(--switch-thumb-size);
+  height: var(--switch-thumb-size);
+  border-radius: 999px;
+  background: var(--switch-thumb);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
+  transform: translateY(-50%);
+  transition:
+    transform 200ms cubic-bezier(0.2, 0.82, 0.2, 1),
+    background-color 180ms ease;
+}
+
+.theme-switch input:checked + .theme-switch__track {
+  border-color: rgba(77, 130, 91, 0.42);
+  background: rgba(88, 171, 106, 0.72);
+}
+
+.theme-switch input:checked + .theme-switch__track .theme-switch__thumb {
+  transform: translate(
+    calc(var(--switch-width) - var(--switch-thumb-size) - var(--switch-thumb-inset) * 2),
+    -50%
+  );
+}
+
+.theme-switch input:focus-visible + .theme-switch__track {
+  outline: 2px solid #d6b765;
+  outline-offset: 4px;
 }
 
 .visually-hidden {
@@ -466,31 +597,28 @@ button {
 
 @media (max-width: 680px) {
   :root {
-    --card-width: min(42vw, 260px);
+    --vertical-reserve: 188px;
+    --card-width: clamp(110px, min(42vw, calc((100svh - var(--vertical-reserve)) / 1.4)), 260px);
     --detail-gap: 18px;
+    --control-size: 42px;
+    --control-gap: 14px;
+    --controls-offset: 37px;
+    --filename-offset: 7px;
+    --counter-offset: 4px;
+    --corner-size: 42px;
+    --corner-inset: 14px;
   }
 
   .table {
     padding-inline: 10px;
   }
 
+  .table:not(.details-open) {
+    --card-width: clamp(132px, min(64vw, calc((100svh - var(--vertical-reserve)) / 1.4)), 320px);
+  }
+
   .card-rig {
     gap: 14px;
-  }
-
-  .button-row {
-    grid-template-columns: repeat(5, 42px);
-    gap: 14px;
-    transform: translateY(50px);
-  }
-
-  .card-counter {
-    transform: translateY(62px);
-  }
-
-  .icon-button {
-    width: 42px;
-    height: 42px;
   }
 
   .art-magnifier {
@@ -512,7 +640,140 @@ button {
 
 @media (max-width: 430px) {
   :root {
-    --card-width: min(40vw, 180px);
+    --vertical-reserve: 176px;
+    --card-width: clamp(98px, min(40vw, calc((100svh - var(--vertical-reserve)) / 1.4)), 180px);
     --detail-gap: 12px;
+    --control-size: 38px;
+    --control-gap: 12px;
+    --corner-size: 38px;
+    --switch-width: 40px;
+    --switch-height: 24px;
+    --switch-thumb-size: 18px;
+  }
+
+  .table:not(.details-open) {
+    --card-width: clamp(118px, min(72vw, calc((100svh - var(--vertical-reserve)) / 1.4)), 260px);
+  }
+}
+
+@media (max-width: 360px) {
+  :root {
+    --control-size: 34px;
+    --control-gap: 9px;
+    --controls-offset: 30px;
+    --corner-size: 34px;
+    --corner-inset: 10px;
+    --switch-width: 36px;
+    --switch-height: 22px;
+    --switch-thumb-size: 16px;
+  }
+}
+
+@media (max-width: 320px) {
+  :root {
+    --control-size: 30px;
+    --control-gap: 8px;
+    --controls-offset: 24px;
+    --corner-size: 30px;
+    --corner-inset: 8px;
+    --switch-width: 32px;
+    --switch-height: 20px;
+    --switch-thumb-size: 14px;
+  }
+}
+
+@media (max-height: 760px) {
+  :root {
+    --vertical-reserve: 162px;
+    --table-padding: clamp(10px, 2.6vh, 18px);
+    --control-size: clamp(30px, 9vw, 40px);
+    --control-gap: clamp(8px, 2.8vw, 14px);
+    --controls-offset: clamp(8px, 3.5vh, 24px);
+    --filename-offset: 3px;
+    --counter-offset: 0px;
+    --corner-size: var(--control-size);
+    --corner-inset: clamp(8px, 2.2vw, 14px);
+    --switch-width: clamp(34px, 10vw, 42px);
+    --switch-height: clamp(20px, 6vw, 26px);
+    --switch-thumb-size: calc(var(--switch-height) - 6px);
+    --card-width: clamp(110px, min(36vw, calc((100svh - var(--vertical-reserve)) / 1.4)), 455px);
+  }
+
+  .table:not(.details-open) {
+    --card-width: clamp(118px, min(52vw, calc((100svh - var(--vertical-reserve)) / 1.4)), 455px);
+  }
+
+  .card-filename,
+  .card-counter {
+    font-size: 0.64rem;
+  }
+
+  .card-filename {
+    height: 1.34rem;
+  }
+
+  .card-counter {
+    height: 0.68rem;
+  }
+}
+
+@media (max-height: 560px) {
+  :root {
+    --vertical-reserve: 112px;
+    --table-padding: 8px;
+    --rig-gap: 6px;
+    --control-size: clamp(24px, 8vw, 34px);
+    --control-gap: clamp(6px, 2vw, 10px);
+    --controls-offset: clamp(3px, 1.8vh, 10px);
+    --filename-offset: 2px;
+    --corner-size: var(--control-size);
+    --corner-inset: clamp(6px, 1.5vw, 8px);
+    --switch-width: clamp(30px, 9vw, 36px);
+    --switch-height: clamp(18px, 5vw, 22px);
+    --switch-thumb-size: calc(var(--switch-height) - 6px);
+    --card-width: clamp(78px, min(32vw, calc((100svh - var(--vertical-reserve)) / 1.4)), 455px);
+  }
+
+  .table:not(.details-open) {
+    --card-width: clamp(84px, min(44vw, calc((100svh - var(--vertical-reserve)) / 1.4)), 455px);
+  }
+
+  .card-filename,
+  .card-counter {
+    font-size: 0.58rem;
+  }
+
+  .card-filename {
+    height: 1.22rem;
+  }
+
+  .card-counter {
+    height: 0.62rem;
+  }
+}
+
+@media (max-height: 430px) {
+  :root {
+    --vertical-reserve: 78px;
+    --table-padding: 6px;
+    --control-size: clamp(20px, 7vw, 28px);
+    --control-gap: clamp(5px, 1.6vw, 8px);
+    --controls-offset: clamp(0px, 1vh, 4px);
+    --filename-offset: 1px;
+    --corner-size: var(--control-size);
+    --corner-inset: clamp(4px, 1.1vw, 6px);
+    --switch-width: clamp(26px, 8vw, 32px);
+    --switch-height: clamp(16px, 4.8vw, 20px);
+    --switch-thumb-size: calc(var(--switch-height) - 6px);
+    --card-width: clamp(56px, min(30vw, calc((100svh - var(--vertical-reserve)) / 1.4)), 455px);
+  }
+
+  .table:not(.details-open) {
+    --card-width: clamp(62px, min(38vw, calc((100svh - var(--vertical-reserve)) / 1.4)), 455px);
+  }
+
+  .card-filename {
+    height: 0.7rem;
+    -webkit-line-clamp: 1;
   }
 }
