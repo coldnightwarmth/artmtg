@@ -260,7 +260,7 @@ const FULL_ART_LAYOUTS = new Map([
   ]
 ]);
 const DEFAULT_TARGET = new THREE.Vector3(0, 0, 0);
-const DEFAULT_CAMERA_POSITION = new THREE.Vector3(0.48, 0.24, 6.75);
+const DEFAULT_CAMERA_POSITION = new THREE.Vector3(0.6, 0.3, 8.58);
 const DEFAULT_CAMERA_DIRECTION = DEFAULT_CAMERA_POSITION.clone()
   .sub(DEFAULT_TARGET)
   .normalize();
@@ -275,6 +275,7 @@ const nextButton = document.querySelector("#nextButton");
 const shuffleButton = document.querySelector("#shuffleButton");
 const detailsButton = document.querySelector("#detailsButton");
 const uploadButton = document.querySelector("#uploadButton");
+const cardCounter = document.querySelector("#cardCounter");
 const fullArtLink = document.querySelector("#fullArtLink");
 const fullArtImage = document.querySelector("#fullArtImage");
 const artMagnifier = document.querySelector("#artMagnifier");
@@ -312,6 +313,8 @@ let cameraSnap = null;
 let paperNoiseCanvas = null;
 let uploadState = createUploadState();
 let cropDrag = null;
+let smoothZoomVelocity = 0;
+let defaultCameraRadius = DEFAULT_CAMERA_POSITION.distanceTo(DEFAULT_TARGET);
 
 init();
 
@@ -333,23 +336,23 @@ function initScene() {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.08;
+  renderer.toneMappingExposure = 0.94;
 
   scene = new THREE.Scene();
 
   camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
-  camera.position.copy(DEFAULT_CAMERA_POSITION);
+  camera.position.copy(getDefaultCameraPosition());
   camera.up.copy(DEFAULT_CAMERA_UP);
   camera.lookAt(DEFAULT_TARGET);
 
-  const ambient = new THREE.HemisphereLight(0xffffff, 0x2b2114, 1.6);
+  const ambient = new THREE.HemisphereLight(0xffffff, 0x2b2114, 1.42);
   scene.add(ambient);
 
-  const key = new THREE.DirectionalLight(0xfff2cf, 3.4);
+  const key = new THREE.DirectionalLight(0xfff2cf, 2.25);
   key.position.set(2.8, 3.5, 4.2);
   scene.add(key);
 
-  const coolRim = new THREE.DirectionalLight(0x9dc2ca, 1.7);
+  const coolRim = new THREE.DirectionalLight(0x9dc2ca, 1.05);
   coolRim.position.set(-3.2, 1.6, -2.6);
   scene.add(coolRim);
 
@@ -358,10 +361,11 @@ function initScene() {
 
   const sideMaterial = new THREE.MeshPhysicalMaterial({
     color: 0x0b0906,
-    roughness: 0.34,
+    roughness: 0.48,
     metalness: 0.08,
-    clearcoat: 0.5,
-    clearcoatRoughness: 0.24
+    clearcoat: 0.28,
+    clearcoatRoughness: 0.42,
+    reflectivity: 0.24
   });
   const core = new THREE.Mesh(
     createRoundedCoreGeometry(CARD_WIDTH, CARD_HEIGHT, CARD_DEPTH, CARD_RADIUS),
@@ -374,12 +378,14 @@ function initScene() {
     color: 0xffffff,
     transparent: true,
     alphaTest: 0.02,
-    roughness: 0.36,
+    roughness: 0.58,
     roughnessMap: paperRoughnessMap,
     metalness: 0.02,
-    clearcoat: 0.76,
-    clearcoatRoughness: 0.18,
-    reflectivity: 0.68,
+    clearcoat: 0.34,
+    clearcoatRoughness: 0.42,
+    reflectivity: 0.28,
+    specularIntensity: 0.22,
+    specularColor: new THREE.Color(0xb8ad92),
     side: THREE.FrontSide
   });
 
@@ -411,22 +417,28 @@ function initScene() {
 function initControls() {
   controls = new TrackballControls(camera, renderer.domElement);
   controls.noPan = true;
+  controls.noZoom = true;
   controls.rotateSpeed = 3.2;
-  controls.zoomSpeed = 0.65;
-  controls.staticMoving = true;
-  controls.dynamicDampingFactor = 0.1;
-  controls.minDistance = 4.8;
-  controls.maxDistance = 8.6;
+  controls.zoomSpeed = 0.24;
+  controls.staticMoving = false;
+  controls.dynamicDampingFactor = 0.08;
+  controls.minDistance = 6.3;
+  controls.maxDistance = 11.0;
   controls.target.copy(DEFAULT_TARGET);
   controls.target0.copy(DEFAULT_TARGET);
-  controls.position0.copy(DEFAULT_CAMERA_POSITION);
+  controls.position0.copy(getDefaultCameraPosition());
   controls.up0.copy(DEFAULT_CAMERA_UP);
   controls.addEventListener("start", cancelCameraSnap);
   controls.addEventListener("end", startCameraSnap);
   renderer.domElement.addEventListener("pointerdown", cancelCameraSnap);
   renderer.domElement.addEventListener("pointerup", startCameraSnap);
   renderer.domElement.addEventListener("pointercancel", startCameraSnap);
+  renderer.domElement.addEventListener("wheel", handleSmoothWheelZoom, {
+    capture: true,
+    passive: false
+  });
   window.addEventListener("pointerup", startCameraSnap);
+  updateResponsiveCameraFrame(true);
 
   previousButton.addEventListener("click", () => {
     applyRelativeCard(-1);
@@ -455,6 +467,24 @@ function initControls() {
   fullArtImage.addEventListener("mouseleave", hideArtMagnifier);
 
   initUploadControls();
+}
+
+function handleSmoothWheelZoom(event) {
+  event.preventDefault();
+  event.stopImmediatePropagation();
+  cancelCameraSnap();
+
+  const deltaScale = event.deltaMode === 1
+    ? 16
+    : event.deltaMode === 2
+      ? window.innerHeight
+      : 1;
+  const normalizedDelta = clamp(event.deltaY * deltaScale, -900, 900);
+  smoothZoomVelocity = clamp(
+    smoothZoomVelocity + normalizedDelta * 0.000045,
+    -0.18,
+    0.18
+  );
 }
 
 function initUploadControls() {
@@ -756,13 +786,13 @@ function createGlossPlane(normalDirection) {
         float tiltBand = centered.x * viewDir.x * 1.7 + centered.y * viewDir.y * 1.4 + viewDir.z * 0.2;
         float sweep = smoothstep(0.16, 0.0, abs(tiltBand + sin(uTime * 0.45) * 0.025));
         float verticalEdge = smoothstep(0.38, 0.52, abs(centered.x));
-        float sheen = clamp(fresnel * 0.64 + sweep * 0.46 + verticalEdge * 0.08, 0.0, 1.0);
-        vec3 cool = vec3(0.74, 0.91, 1.0);
-        vec3 warm = vec3(1.0, 0.78, 0.33);
-        vec3 pearl = vec3(1.0, 1.0, 0.94);
+        float sheen = clamp(fresnel * 0.24 + sweep * 0.18 + verticalEdge * 0.035, 0.0, 0.52);
+        vec3 cool = vec3(0.42, 0.56, 0.66);
+        vec3 warm = vec3(0.68, 0.48, 0.22);
+        vec3 pearl = vec3(0.68, 0.65, 0.54);
         vec3 color = mix(cool, warm, smoothstep(-0.45, 0.55, centered.x + viewDir.x * 0.55));
-        color = mix(color, pearl, sweep * 0.54);
-        gl_FragColor = vec4(color, sheen * 0.09);
+        color = mix(color, pearl, sweep * 0.24);
+        gl_FragColor = vec4(color, sheen * 0.055);
       }
     `
   });
@@ -823,7 +853,14 @@ async function applyCardByIndex(artIndex, templateFile = randomEntry(TEMPLATE_FI
   fullArtImage.src = item.fullUrl;
   fullArtImage.alt = item.title;
   applyFullArtLayout(item.fullFile);
+  updateCardCounter();
   hideArtMagnifier();
+}
+
+function updateCardCounter() {
+  const orderPosition = authorOrder.indexOf(currentArtIndex);
+  const displayPosition = orderPosition === -1 ? currentArtIndex + 1 : orderPosition + 1;
+  cardCounter.textContent = `${displayPosition}/${authorOrder.length}`;
 }
 
 function applyFullArtLayout(fullFile) {
@@ -1196,10 +1233,16 @@ function buildAuthorOrder(items) {
     .sort((left, right) => {
       const leftMeta = items[left].meta;
       const rightMeta = items[right].meta;
-      return compareText(leftMeta.artist, rightMeta.artist)
+      return compareText(getBodyAuthor(leftMeta), getBodyAuthor(rightMeta))
         || compareText(leftMeta.title, rightMeta.title)
         || compareText(items[left].cropFile, items[right].cropFile);
     });
+}
+
+function getBodyAuthor(meta) {
+  return (meta.body || meta.artist || "")
+    .split("\n")[0]
+    .trim();
 }
 
 function findFullFile(cropFile, fullFiles = FULL_FILES) {
@@ -1360,12 +1403,52 @@ function compareText(left, right) {
   });
 }
 
+function getDefaultCameraPosition() {
+  return DEFAULT_TARGET.clone().addScaledVector(
+    DEFAULT_CAMERA_DIRECTION,
+    defaultCameraRadius
+  );
+}
+
+function updateResponsiveCameraFrame(forcePosition = false) {
+  if (!camera || !scenePanel || !fullArtLink) return;
+
+  const previousRadius = defaultCameraRadius;
+  const panelRect = scenePanel.getBoundingClientRect();
+  const artRect = fullArtLink.getBoundingClientRect();
+  const targetPixelHeight = artRect.height || panelRect.height * 0.62;
+  const fov = THREE.MathUtils.degToRad(camera.fov);
+  defaultCameraRadius = clamp(
+    (CARD_HEIGHT * panelRect.height) / (targetPixelHeight * 2 * Math.tan(fov / 2)),
+    5.8,
+    22.0
+  );
+
+  if (controls) {
+    controls.minDistance = defaultCameraRadius * 0.74;
+    controls.maxDistance = defaultCameraRadius * 1.36;
+    controls.position0.copy(getDefaultCameraPosition());
+  }
+
+  const currentRadius = camera.position.distanceTo(DEFAULT_TARGET);
+  const shouldReframe = forcePosition
+    || currentArtIndex === -1
+    || Math.abs(currentRadius - previousRadius) < 0.08;
+
+  if (shouldReframe) {
+    camera.position.copy(getDefaultCameraPosition());
+    camera.up.copy(DEFAULT_CAMERA_UP);
+    camera.lookAt(DEFAULT_TARGET);
+  }
+}
+
 function resizeRenderer() {
   const { width, height } = scenePanel.getBoundingClientRect();
   if (!width || !height) return;
   renderer.setSize(width, height, false);
   camera.aspect = width / height;
   camera.updateProjectionMatrix();
+  updateResponsiveCameraFrame();
   if (controls) controls.handleResize();
 }
 
@@ -1419,6 +1502,28 @@ function updateCameraSnap(time) {
   }
 }
 
+function updateSmoothZoom() {
+  if (!controls || Math.abs(smoothZoomVelocity) < 0.00001) {
+    smoothZoomVelocity = 0;
+    return;
+  }
+
+  const eye = camera.position.clone().sub(controls.target);
+  const distance = eye.length();
+  if (distance <= 0.0001) return;
+
+  const nextDistance = clamp(
+    distance * Math.exp(smoothZoomVelocity),
+    controls.minDistance,
+    controls.maxDistance
+  );
+  camera.position.copy(controls.target).add(
+    eye.normalize().multiplyScalar(nextDistance)
+  );
+  camera.lookAt(controls.target);
+  smoothZoomVelocity *= 0.82;
+}
+
 function slerpDirection(startVector, endDirection, progress) {
   const startLength = startVector.length();
   const start = startLength > 0.0001
@@ -1446,6 +1551,7 @@ function animate(time = 0) {
   requestAnimationFrame(animate);
   updateCameraSnap(time);
   controls.update();
+  updateSmoothZoom();
 
   const seconds = time * 0.001;
   frontGloss.material.uniforms.uTime.value = seconds;
