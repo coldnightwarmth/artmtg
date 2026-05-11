@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Art Card</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "./vendor/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main class="table" id="table">
+      <section class="card-rig" aria-label="3D trading card viewer">
+        <div class="scene-track">
+          <div class="scene-panel" id="scenePanel">
+            <canvas id="cardCanvas" aria-label="Rotatable trading card"></canvas>
+          </div>
+          <a class="full-art" id="fullArtLink" target="_blank" rel="noopener" aria-label="Open full artwork in a new tab">
+            <img id="fullArtImage" alt="">
+          </a>
+          <div class="art-magnifier" id="artMagnifier" aria-hidden="true"></div>
+        </div>
+        <div class="button-row" aria-label="Card controls">
+          <button class="icon-button" id="previousButton" type="button" title="Previous card by author" aria-label="Previous card by author">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15 18 9 12l6-6"></path>
+            </svg>
+          </button>
+          <button class="icon-button" id="nextButton" type="button" title="Next card by author" aria-label="Next card by author">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </button>
+          <button class="icon-button" id="shuffleButton" type="button" title="Shuffle card. Right-click to shuffle template color." aria-label="Shuffle card">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M16 3h5v5"></path>
+              <path d="M4 20 21 3"></path>
+              <path d="M21 16v5h-5"></path>
+              <path d="M15 15l6 6"></path>
+              <path d="M4 4l5 5"></path>
+            </svg>
+          </button>
+          <button class="icon-button" id="detailsButton" type="button" title="Toggle full art" aria-label="Toggle full art" aria-expanded="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="5" cy="12" r="1.7"></circle>
+              <circle cx="12" cy="12" r="1.7"></circle>
+              <circle cx="19" cy="12" r="1.7"></circle>
+            </svg>
+          </button>
+          <button class="icon-button" id="uploadButton" type="button" title="Upload custom art" aria-label="Upload custom art">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <path d="M17 8 12 3 7 8"></path>
+              <path d="M12 3v12"></path>
+            </svg>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal-backdrop" id="uploadModal" role="dialog" aria-modal="true" aria-labelledby="uploadTitle" aria-hidden="true">
+      <div class="upload-dialog">
+        <div class="upload-header">
+          <h1 id="uploadTitle">Custom Card</h1>
+          <button class="modal-close" id="closeUploadButton" type="button" aria-label="Close upload dialog">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18 6 6 18"></path>
+              <path d="m6 6 12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+        <button class="drop-zone" id="dropZone" type="button">
+          <span class="drop-zone__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <path d="M17 8 12 3 7 8"></path>
+              <path d="M12 3v12"></path>
+            </svg>
+          </span>
+          <span class="drop-zone__text" id="dropZoneText">Drop or choose an image</span>
+        </button>
+        <input class="visually-hidden" id="uploadInput" type="file" accept="image/*">
+
+        <section class="crop-editor" aria-label="Card art crop">
+          <canvas id="cropCanvas" width="640" height="472" aria-label="Crop preview"></canvas>
+          <div class="crop-controls">
+            <label>
+              <span>Zoom</span>
+              <input id="cropZoom" type="range" min="1" max="4" step="0.01" value="1">
+            </label>
+            <label>
+              <span>Horizontal</span>
+              <input id="cropX" type="range" min="0" max="100" step="0.1" value="50">
+            </label>
+            <label>
+              <span>Vertical</span>
+              <input id="cropY" type="range" min="0" max="100" step="0.1" value="50">
+            </label>
+          </div>
+        </section>
+
+        <div class="field-grid">
+          <label>
+            <span>Title</span>
+            <input id="customTitle" type="text" autocomplete="off" placeholder="Card title">
+          </label>
+          <label>
+            <span>Author</span>
+            <input id="customAuthor" type="text" autocomplete="off" placeholder="Artist name">
+          </label>
+          <label>
+            <span>Date</span>
+            <input id="customDate" type="text" autocomplete="off" placeholder="Year or date">
+          </label>
+        </div>
+
+        <button class="create-button" id="createCardButton" type="button" disabled>
+          <span>Create</span>
+          <span class="create-spinner" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
