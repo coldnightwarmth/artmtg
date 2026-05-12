@@ -53,7 +53,7 @@ const CROP_FILES = [
   "Leonardo da Vinci, Salvator Mundi 1510.png",
   "Leyster, A card player.png",
   "Luigi Russolo, The Sanctity of Light 1910.png",
-  "Mikalojus Konstantinas Čiurlionis, Sagittarius  1907.png",
+  "Mikalojus Konstantinas Ciurlionis, Sagittarius  1907.png",
   "N.C. Wyeth, The Duel 1922.png",
   "Pernhart, View of the Grossglockner.png",
   "Pinelli, Bullfight.png",
@@ -111,7 +111,7 @@ const FULL_FILES = [
   "Leonardo da Vinci, Salvator Mundi 1510.jpg",
   "Leyster, A Card Player.jpg",
   "Luigi Russolo, The Sanctity of Light 1910.jpg",
-  "Mikalojus Konstantinas Čiurlionis, Sagittarius  1907.jpg",
+  "Mikalojus Konstantinas Ciurlionis, Sagittarius  1907.jpg",
   "N.C. Wyeth, The Duel 1922.jpg",
   "Pernhart, View of the Grossglockner.jpg",
   "Pinelli, Bullfight.jpg",
@@ -263,7 +263,7 @@ const FULL_ART_LAYOUTS = new Map([
   ]
 ]);
 const DEFAULT_TARGET = new THREE.Vector3(0, 0, 0);
-const DEFAULT_CAMERA_POSITION = new THREE.Vector3(0.6, 0.3, 8.58);
+const DEFAULT_CAMERA_POSITION = new THREE.Vector3(0, 0, 8.58);
 const DEFAULT_CAMERA_DIRECTION = DEFAULT_CAMERA_POSITION.clone()
   .sub(DEFAULT_TARGET)
   .normalize();
