@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Art Card</title>
-    <link rel="stylesheet" href="./styles.css?v=binder-40">
+    <link rel="stylesheet" href="./styles.css?v=binder-41">
     <script type="importmap">
       {
         "imports": {
@@ -107,6 +107,15 @@
       </svg>
     </button>
 
+    <div class="binder-color-filters" id="binderColorFilters" aria-label="Filter binder by card color" hidden>
+      <button class="binder-color-filter" type="button" data-card-color="white" title="White cards" aria-label="White cards" aria-pressed="false"></button>
+      <button class="binder-color-filter" type="button" data-card-color="black" title="Black cards" aria-label="Black cards" aria-pressed="false"></button>
+      <button class="binder-color-filter" type="button" data-card-color="blue" title="Blue cards" aria-label="Blue cards" aria-pressed="false"></button>
+      <button class="binder-color-filter" type="button" data-card-color="gold" title="Gold cards" aria-label="Gold cards" aria-pressed="false"></button>
+      <button class="binder-color-filter" type="button" data-card-color="green" title="Green cards" aria-label="Green cards" aria-pressed="false"></button>
+      <button class="binder-color-filter" type="button" data-card-color="red" title="Red cards" aria-label="Red cards" aria-pressed="false"></button>
+    </div>
+
     <label class="binder-switch" title="Toggle 3D binder" aria-label="Toggle 3D binder">
       <input id="binderToggle" type="checkbox" checked>
       <span class="theme-switch__track" aria-hidden="true">
@@ -190,6 +199,6 @@
         </button>
       </div>
     </div>
-    <script type="module" src="./app.js?v=binder-40"></script>
+    <script type="module" src="./app.js?v=binder-41"></script>
   </body>
 </html>

@@ -12,6 +12,121 @@ const TEMPLATE_FILES = [
   "whitecard.png"
 ];
 
+const CARD_COLOR_FILTERS = [
+  { name: "white", templateFile: "whitecard.png" },
+  { name: "black", templateFile: "blackcard.png" },
+  { name: "blue", templateFile: "bluecard.png" },
+  { name: "gold", templateFile: "goldcard.png" },
+  { name: "green", templateFile: "greencard.png" },
+  { name: "red", templateFile: "redcard.png" }
+];
+
+const TEMPLATE_COLOR_NAMES = new Map(
+  CARD_COLOR_FILTERS.map((color) => [color.templateFile, color.name])
+);
+
+const DEFAULT_TEMPLATE_OVERRIDES = new Map(Object.entries({
+  "assets/art/crop/Alberto Zardo, The Divine Comedy, Lucifer.png": "blackcard.png",
+  "assets/art/crop/American School, A Toy Peddler of Japan.png": "greencard.png",
+  "assets/art/crop/Anker, Children_s Team 1868.png": "goldcard.png",
+  "assets/art/crop/Athanasius Kircher, Deck of Earth, Solar Clock 1636.png": "blackcard.png",
+  "assets/art/crop/Bagetti, The Walnut Tree in Benevento 1826.png": "greencard.png",
+  "assets/art/crop/Barna Basilides, The Shepherds 1935.png": "whitecard.png",
+  "assets/art/crop/Beechey, The Oddie Children 1789.png": "whitecard.png",
+  "assets/art/crop/Bellows, Club Night 1907.png": "redcard.png",
+  "assets/art/crop/Blythe, Boy Playing Marbles.png": "whitecard.png",
+  "assets/art/crop/Breviarium Grimani, The Wine Harvest 1515.png": "greencard.png",
+  "assets/art/crop/Bruegel, The Triumph of Death 1562.png": "blackcard.png",
+  "assets/art/crop/Carbo, The Bullfight.png": "goldcard.png",
+  "assets/art/crop/Clarke, Between Rounds.png": "bluecard.png",
+  "assets/art/crop/Crawhall, The Bullfight at Algeciras.png": "goldcard.png",
+  "assets/art/crop/Dali, The Knight of Death 1934.png": "blackcard.png",
+  "assets/art/crop/David Humbert de Superville, The Ruinous Tower of Babel ~1800.png": "whitecard.png",
+  "assets/art/crop/David Lynch, Rock with Seven Eyes 1996.png": "redcard.png",
+  "assets/art/crop/Discart, A Game of Draughts.png": "goldcard.png",
+  "assets/art/crop/Eitaku, Spinning top and blowing bubbles 1888.png": "whitecard.png",
+  "assets/art/crop/El Greco, View and Plan of Toledo 1608.png": "blackcard.png",
+  "assets/art/crop/Ernst Klimt, Still life with armor 1885.png": "redcard.png",
+  "assets/art/crop/French School, Child jockeys racing fish 1913.png": "greencard.png",
+  "assets/art/crop/French School, Futuredays A Nineteenth Century Vision of the Year 2000.png": "whitecard.png",
+  "assets/art/crop/German School, The origins of billiard 1745.png": "whitecard.png",
+  "assets/art/crop/Gerome, The Retreating Lions 1902.png": "redcard.png",
+  "assets/art/crop/Goya, Boys Playing at Soldiers.png": "greencard.png",
+  "assets/art/crop/Gustave Dore, Satan Views the Whole of Eden.png": "blackcard.png",
+  "assets/art/crop/Harold Forster, Fate  1930.png": "blackcard.png",
+  "assets/art/crop/Helen Lundeberg, Dreaming 1942.png": "whitecard.png",
+  "assets/art/crop/Henri Emilien Rousseau, The Falcon Chase 1923.png": "goldcard.png",
+  "assets/art/crop/Hieronymous Bosch, Ascent of the Blessed 1504.png": "blackcard.png",
+  "assets/art/crop/James Gurney.png": "whitecard.png",
+  "assets/art/crop/Kiefer, Everyone Stands Under His Own Dome of Heaven 1970.png": "bluecard.png",
+  "assets/art/crop/Konstantin Gorbatov, The Invisible City of Kitezh 1913.png": "bluecard.png",
+  "assets/art/crop/Landscape, 1928 Picasso.png": "goldcard.png",
+  "assets/art/crop/Leonardo da Vinci, Salvator Mundi 1510.png": "bluecard.png",
+  "assets/art/crop/Leyster, A card player.png": "redcard.png",
+  "assets/art/crop/Luigi Russolo, The Sanctity of Light 1910.png": "bluecard.png",
+  "assets/art/crop/Mikalojus Konstantinas Ciurlionis, Sagittarius  1907.png": "greencard.png",
+  "assets/art/crop/N.C. Wyeth, The Duel 1922.png": "redcard.png",
+  "assets/art/crop/Pernhart, View of the Grossglockner.png": "bluecard.png",
+  "assets/art/crop/Pinelli, Bullfight.png": "goldcard.png",
+  "assets/art/crop/Rembrandt, Palla Athena 1657.png": "blackcard.png",
+  "assets/art/crop/Roerich, Mother of the World.png": "bluecard.png",
+  "assets/art/crop/Tatiana Bystrova, Nocturnal Bloom 1970.png": "whitecard.png",
+  "assets/art/crop/Thomas Baines, The Eastern Cataracts of the Victoria Falls_.png": "greencard.png",
+  "assets/art/crop/Tyrus Wong, Concept for Disney_s Bambi 1942.png": "goldcard.png",
+  "assets/art/crop/Unknown, Angel.png": "whitecard.png",
+  "assets/art/crop/Unknown, Green Knight 14th century.png": "greencard.png",
+  "assets/art/crop/Unknown, Jester.png": "redcard.png",
+  "assets/art/crop/Unknown, Mythic Sky.png": "redcard.png",
+  "assets/art/crop/Unknown, The Devil_s Cave.png": "blackcard.png",
+  "assets/art/crop/Wilhelm Kotarbinski, The Angel of Sadness 1900_.png": "bluecard.png",
+  "assets/art/New/crop/Alphonse Mucha, After the Battle of Vitkov Hill.png": "redcard.png",
+  "assets/art/New/crop/Alphonse Mucha, Apotheosis of the Slavs Slavs for Humanity 1926.png": "bluecard.png",
+  "assets/art/New/crop/Casper Johann Nepomuk Scheuren, Charlemagne, King of Franks and Lombards and Emper.png": "whitecard.png",
+  "assets/art/New/crop/Charles Theodore Frere, Caravan crossing the desert.png": "goldcard.png",
+  "assets/art/New/crop/Chikanobu Yoshu, Chiyoda Castle Album of Men 1897.png": "whitecard.png",
+  "assets/art/New/crop/Claude Louis Chatelet, Illumination of the Belvedere pavilion.png": "greencard.png",
+  "assets/art/New/crop/Emanuel Gottlieb Leutze, Washington Crossing the Delaware 1851.png": "bluecard.png",
+  "assets/art/New/crop/Francois Flameng, Air Fight, The enemy plane falling in flames.png": "whitecard.png",
+  "assets/art/New/crop/Franois Auguste Biard, View of the Icy Ocean Walrus Fishing by the Greenlanders.png": "bluecard.png",
+  "assets/art/New/crop/Franois Vervloet, The Guns in the Detail Fortress.png": "goldcard.png",
+  "assets/art/New/crop/Franz von Stuck, Franz von Stuck Der Engel des Gerichts Gemaelde 1922.png": "bluecard.png",
+  "assets/art/New/crop/French School, The Seven-headed Beast of the Apocalypse.png": "greencard.png",
+  "assets/art/New/crop/Giovanni Canavesio, Last Judgment 1492.png": "redcard.png",
+  "assets/art/New/crop/Giuseppe Maria Terreni, Porto Ferraio.png": "bluecard.png",
+  "assets/art/New/crop/Giuseppe Pellizza da Volpedo, The Rising Sun 1904.png": "blackcard.png",
+  "assets/art/New/crop/Goya, Exorcism or witches.png": "blackcard.png",
+  "assets/art/New/crop/Guido Reni, Archangel, Saint Michael.png": "goldcard.png",
+  "assets/art/New/crop/Gustave Dore, Destruction of Leviathan.png": "bluecard.png",
+  "assets/art/New/crop/Gustave Dore, The Divine Comedy Paradiso Canto 31.png": "whitecard.png",
+  "assets/art/New/crop/Hubert Robert, Fantaisie Egyptienne 1760.png": "whitecard.png",
+  "assets/art/New/crop/Ira Block, Samurai screen depicting the fall of Osaka castle 1615.png": "goldcard.png",
+  "assets/art/New/crop/Ivan Konstantinovich Aivazovsky, Constantinople, the Mosque of Tophane.png": "bluecard.png",
+  "assets/art/New/crop/Jan Brueghel, The Tower of Babel 1650.png": "goldcard.png",
+  "assets/art/New/crop/Jean Bruno Gassies, Landscape of Scotland 1826.png": "greencard.png",
+  "assets/art/New/crop/Jean Francois Depelchin, Interior view of the cathedrale Notre Dame de Paris.png": "whitecard.png",
+  "assets/art/New/crop/Lorenzo Lotto, Saint Michael Hunting Lucifer 1555.png": "goldcard.png",
+  "assets/art/New/crop/Louis Janmot, The poem of the Soul Le passage des ames.png": "bluecard.png",
+  "assets/art/New/crop/Paul Klee, Italian City.png": "whitecard.png",
+  "assets/art/New/crop/Protohistoric, Magic scenes.png": "whitecard.png",
+  "assets/art/New/crop/Samuel Palmer, Christian Descending into the Valley of Humiliation.png": "goldcard.png",
+  "assets/art/New/crop/Samuel Read, North of Ireland Dunseverick Castle.png": "greencard.png",
+  "assets/art/New/crop/School Mughal, Elephant Combat.png": "whitecard.png",
+  "assets/art/New/crop/School Persian, Mythical heros and son of Zal kills the white ele.png": "whitecard.png",
+  "assets/art/New/crop/School Persian, Torture of an enemy burying alive at the foot of a tree Per.png": "goldcard.png",
+  "assets/art/New/crop/Sebastiano Ricci, Study for An Apotheosis of a Saint 1695.png": "redcard.png",
+  "assets/art/New/crop/Theophile Louis Deyrolle, Shepherdess with her Flock 1907.png": "goldcard.png",
+  "assets/art/New/crop/Unbekannt Unbekannt, The Adoration of the Beast.png": "greencard.png",
+  "assets/art/New/crop/Unbekannt, Fool's Cap World Map 1590.png": "blackcard.png",
+  "assets/art/New/crop/Unbekannt, Samurai Warrior riding a horse.png": "redcard.png",
+  "assets/art/New/crop/Unbekannt, The Woman upon the Scarlet Beast.png": "bluecard.png",
+  "assets/art/New/crop/Unbekannter Kuenstler, Shivas beast Sivatherium giganteum1908.png": "goldcard.png",
+  "assets/art/New/crop/William Blake, Dante, running from the three beasts.png": "blackcard.png",
+  "assets/art/New/crop/William Blake, The Great Red Dragon and the Beast from the Sea.png": "bluecard.png",
+  "assets/art/New/crop/William Blake, The Sun at His Eastern Gate.png": "goldcard.png",
+  "assets/art/New/crop/William Blake, The Vision of Christ.png": "blackcard.png",
+  "assets/art/New/crop/William Henry Smyth, Perilous position of HMS Terrorpng.png": "bluecard.png"
+}));
+
 const CROP_FILES = [
   "Alberto Zardo, The Divine Comedy, Lucifer.png",
   "American School, A Toy Peddler of Japan.png",
@@ -351,6 +466,8 @@ const binderZoomOutButton = document.querySelector("#binderZoomOutButton");
 const binderPreviousPageButton = document.querySelector("#binderPreviousPageButton");
 const binderNextPageButton = document.querySelector("#binderNextPageButton");
 const binderOpenCardButton = document.querySelector("#binderOpenCardButton");
+const binderColorFilters = document.querySelector("#binderColorFilters");
+const binderColorFilterButtons = [...document.querySelectorAll(".binder-color-filter")];
 const uploadModal = document.querySelector("#uploadModal");
 const closeUploadButton = document.querySelector("#closeUploadButton");
 const dropZone = document.querySelector("#dropZone");
@@ -402,6 +519,7 @@ const FAVORITES_STORAGE_KEY = "artmtg:favorites:v1";
 const TEMPLATE_OVERRIDES_STORAGE_KEY = "artmtg:template-overrides:v1";
 const favoriteKeys = loadFavoriteKeys();
 const templateOverrides = loadTemplateOverrides();
+const binderSelectedColorFilters = new Set();
 let isGalleryOpen = false;
 let galleryFavoritesOnly = false;
 let isBinderMode = true;
@@ -606,6 +724,7 @@ function initControls() {
   binderOpenCardButton.addEventListener("click", openFocusedBinderCard);
   galleryGrid.addEventListener("click", selectGalleryCard);
   initBinderControls();
+  initBinderColorFilters();
 
   fullArtImage.addEventListener("mouseenter", showArtMagnifier);
   fullArtImage.addEventListener("mousemove", updateArtMagnifier);
@@ -739,6 +858,40 @@ function toggleBinderMode() {
 function updateBinderModeControls() {
   binderToggle.checked = isBinderMode;
   document.body.classList.toggle("binder-mode", isGalleryOpen && isBinderMode);
+  if (binderColorFilters) {
+    binderColorFilters.hidden = !(isGalleryOpen && isBinderMode);
+  }
+}
+
+function initBinderColorFilters() {
+  updateBinderColorFilterButtons();
+  for (const button of binderColorFilterButtons) {
+    button.addEventListener("click", () => toggleBinderColorFilter(button.dataset.cardColor));
+  }
+}
+
+function toggleBinderColorFilter(colorName) {
+  if (!CARD_COLOR_FILTERS.some((color) => color.name === colorName)) return;
+
+  if (binderSelectedColorFilters.has(colorName)) {
+    binderSelectedColorFilters.delete(colorName);
+  } else {
+    binderSelectedColorFilters.add(colorName);
+  }
+
+  clearBinderFocus({ silent: true });
+  binderTargetTurn = 0;
+  binderTurn = 0;
+  updateBinderColorFilterButtons();
+  renderGallery();
+}
+
+function updateBinderColorFilterButtons() {
+  for (const button of binderColorFilterButtons) {
+    const isSelected = binderSelectedColorFilters.has(button.dataset.cardColor);
+    button.classList.toggle("is-active", isSelected);
+    button.setAttribute("aria-pressed", String(isSelected));
+  }
 }
 
 function updateFavoriteControls() {
@@ -766,6 +919,7 @@ function renderGallery() {
   if (!galleryPanel || galleryPanel.hidden) return;
 
   const indexes = getGalleryIndexes();
+  updateGalleryEmptyMessage();
 
   if (isBinderMode) {
     galleryGrid.replaceChildren();
@@ -793,9 +947,31 @@ function renderGallery() {
 }
 
 function getGalleryIndexes() {
-  return authorOrder.filter((index) => (
+  const indexes = authorOrder.filter((index) => (
     !galleryFavoritesOnly || favoriteKeys.has(favoriteKeyForIndex(index))
   ));
+  if (!isBinderMode || binderSelectedColorFilters.size === 0) return indexes;
+
+  return getBinderColorFilteredIndexes(indexes);
+}
+
+function getBinderColorFilteredIndexes(indexes) {
+  return CARD_COLOR_FILTERS
+    .filter((color) => binderSelectedColorFilters.has(color.name))
+    .flatMap((color) => indexes.filter((index) => (
+      getCardColorNameForArt(index) === color.name
+    )));
+}
+
+function updateGalleryEmptyMessage() {
+  if (!galleryEmpty) return;
+  if (galleryFavoritesOnly) {
+    galleryEmpty.textContent = "No favorites yet";
+  } else if (isBinderMode && binderSelectedColorFilters.size > 0) {
+    galleryEmpty.textContent = "No cards in selected colors";
+  } else {
+    galleryEmpty.textContent = "No cards yet";
+  }
 }
 
 function createGalleryItem(artIndex) {
@@ -886,6 +1062,11 @@ function getTemplateOverrideForIndex(index) {
   return TEMPLATE_FILES.includes(templateFile) ? templateFile : null;
 }
 
+function getDefaultTemplateForIndex(index) {
+  const templateFile = DEFAULT_TEMPLATE_OVERRIDES.get(favoriteKeyForIndex(index));
+  return TEMPLATE_FILES.includes(templateFile) ? templateFile : null;
+}
+
 function setTemplateOverrideForIndex(index, templateFile) {
   if (!Number.isInteger(index) || !TEMPLATE_FILES.includes(templateFile)) return;
   templateOverrides.set(favoriteKeyForIndex(index), templateFile);
@@ -894,7 +1075,8 @@ function setTemplateOverrideForIndex(index, templateFile) {
 
 function getTemplateForArt(index, fallbackTemplate = null) {
   return getTemplateOverrideForIndex(index)
-    || (TEMPLATE_FILES.includes(fallbackTemplate) ? fallbackTemplate : randomEntry(TEMPLATE_FILES));
+    || getDefaultTemplateForIndex(index)
+    || (TEMPLATE_FILES.includes(fallbackTemplate) ? fallbackTemplate : getHashedTemplateForIndex(index));
 }
 
 function getNextTemplateForArt(index, currentTemplate = null) {
@@ -904,10 +1086,8 @@ function getNextTemplateForArt(index, currentTemplate = null) {
 }
 
 function refreshBinderTemplates() {
-  if (!isGalleryOpen || !isBinderMode || !binderVisibleIndexes.length) return;
-  binderIndexesKey = "";
-  updateBinderItems(binderVisibleIndexes);
-  startBinderRenderLoop();
+  if (!isGalleryOpen || !isBinderMode) return;
+  renderGallery();
 }
 
 function initBinderControls() {
@@ -1617,15 +1797,22 @@ function getBinderBackTexture() {
 }
 
 function templateForBinderCard(artIndex) {
-  const override = getTemplateOverrideForIndex(artIndex);
-  if (override) return override;
+  return getTemplateOverrideForIndex(artIndex)
+    || getDefaultTemplateForIndex(artIndex)
+    || getHashedTemplateForIndex(artIndex);
+}
 
+function getHashedTemplateForIndex(artIndex) {
   const key = favoriteKeyForIndex(artIndex);
   let hash = 0;
   for (let index = 0; index < key.length; index += 1) {
     hash = Math.imul(hash ^ key.charCodeAt(index), 16777619);
   }
   return TEMPLATE_FILES[Math.abs(hash) % TEMPLATE_FILES.length];
+}
+
+function getCardColorNameForArt(artIndex) {
+  return TEMPLATE_COLOR_NAMES.get(templateForBinderCard(artIndex)) || "";
 }
 
 function startBinderDrag(event) {
