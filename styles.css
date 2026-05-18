@@ -329,6 +329,7 @@ body.binder-card-transitioning.binder-card-transition-show-card .card-counter {
 body.binder-card-transitioning .gallery-panel,
 body.binder-card-transitioning .binder-page-controls,
 body.binder-card-transitioning .binder-page-status,
+body.binder-card-transitioning .binder-color-filters,
 body.binder-card-transitioning .binder-switch,
 body.binder-card-transitioning .corner-favorites {
   transition:
@@ -339,6 +340,7 @@ body.binder-card-transitioning .corner-favorites {
 body.binder-card-transitioning.binder-card-transition-away .gallery-panel,
 body.binder-card-transitioning.binder-card-transition-away .binder-page-controls,
 body.binder-card-transitioning.binder-card-transition-away .binder-page-status,
+body.binder-card-transitioning.binder-card-transition-away .binder-color-filters,
 body.binder-card-transitioning.binder-card-transition-away .binder-switch,
 body.binder-card-transitioning.binder-card-transition-away .corner-favorites {
   opacity: 0;

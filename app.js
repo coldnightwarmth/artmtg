@@ -817,6 +817,7 @@ function closeGalleryMode() {
   galleryToggleButton.setAttribute("aria-pressed", "false");
   galleryPanel.hidden = true;
   galleryFavoritesOnly = false;
+  updateBinderModeControls();
   updateFavoriteFilterButton();
   requestAnimationFrame(() => {
     updateResponsiveCameraFrame();
