@@ -273,19 +273,31 @@ const BINDER_PAGE_HEIGHT = BINDER_PAGE_VERTICAL_MARGIN * 2
   + (BINDER_ROWS - 1) * BINDER_GRID_GAP;
 const BINDER_CARD_LIFT = 0.035;
 const BINDER_PAGE_STACK_GAP = 0.026;
-const BINDER_VISIBLE_STACK_GAP = 0.09;
+const BINDER_VISIBLE_STACK_GAP = 0.104;
 const BINDER_LEFT_STACK_Z = 0.026;
 const BINDER_RIGHT_STACK_Z = -0.026;
+const BINDER_GAP_REVEAL_STACK_GAP = 0.028;
 const BINDER_PAGE_COLUMN_BEND = 0.042;
 const BINDER_ACTIVE_PAGE_LIFT = 0.22;
-const BINDER_COVER_OVERHANG = 0.38;
-const BINDER_PLASTIC_REST_OPACITY = 0.052;
-const BINDER_PLASTIC_ACTIVE_OPACITY = 0.115;
+const BINDER_COVER_OVERHANG = 0.14;
+const BINDER_COVER_VERTICAL_OVERHANG = 0.22;
+const BINDER_COVER_RADIUS = 0.11;
+const BINDER_PLASTIC_REST_OPACITY = 0.066;
+const BINDER_PLASTIC_ACTIVE_OPACITY = 0.13;
+const BINDER_FROST_REST_OPACITY = 0.018;
+const BINDER_FROST_ACTIVE_OPACITY = 0.038;
 const BINDER_GLOSS_REST_OPACITY = 0.014;
-const BINDER_GLOSS_ACTIVE_OPACITY = 0.035;
-const BINDER_SEAM_REST_OPACITY = 0.3;
-const BINDER_SEAM_ACTIVE_OPACITY = 0.46;
+const BINDER_GLOSS_ACTIVE_OPACITY = 0.034;
+const BINDER_SEAM_REST_OPACITY = 0.28;
+const BINDER_SEAM_ACTIVE_OPACITY = 0.44;
 const BINDER_CARD_VIEW_TRANSITION_MS = 820;
+const BINDER_TEXTURE_CONCURRENCY = 10;
+const INDIVIDUAL_TO_BINDER_WHEEL_THRESHOLD = 1560;
+const BINDER_TO_INDIVIDUAL_WHEEL_THRESHOLD = 680;
+const VIEW_SWITCH_WHEEL_IDLE_MS = 900;
+const BINDER_FOCUS_ZOOM_OUT_LOCK_MS = 1000;
+const BINDER_FOCUS_TRANSITION_LOCK_MS = BINDER_CARD_VIEW_TRANSITION_MS + BINDER_FOCUS_ZOOM_OUT_LOCK_MS;
+const INDIVIDUAL_MAX_ZOOM_EPSILON = 0.035;
 const BACK_TRIM = { x: 0.026, y: 0.018 };
 const SHUFFLE_HISTORY_LIMIT = 10;
 const FULL_ART_LAYOUTS = new Map([
@@ -334,6 +346,7 @@ const binderPanel = document.querySelector("#binderPanel");
 const binderCanvas = document.querySelector("#binderCanvas");
 const binderLoading = document.querySelector("#binderLoading");
 const binderPageControls = document.querySelector("#binderPageControls");
+const binderPageStatus = document.querySelector("#binderPageStatus");
 const binderZoomOutButton = document.querySelector("#binderZoomOutButton");
 const binderPreviousPageButton = document.querySelector("#binderPreviousPageButton");
 const binderNextPageButton = document.querySelector("#binderNextPageButton");
@@ -372,9 +385,14 @@ let cameraSnap = null;
 let paperNoiseCanvas = null;
 let paperRoughnessTexture = null;
 let binderCoverTexture = null;
+let binderSleeveFrostTexture = null;
 let uploadState = createUploadState();
 let cropDrag = null;
 let smoothZoomVelocity = 0;
+let individualWheelOutDistance = 0;
+let individualWheelOutLastAt = 0;
+let binderFocusWheelInDistance = 0;
+let binderFocusWheelInLastAt = 0;
 let defaultCameraRadius = DEFAULT_CAMERA_POSITION.distanceTo(DEFAULT_TARGET);
 let resizeFrame = 0;
 let lastRendererWidth = 0;
@@ -391,6 +409,11 @@ let binderRenderer;
 let binderScene;
 let binderCamera;
 let binderRoot;
+let binderCardGeometry = null;
+let binderColumnSheetGeometry = null;
+let binderColumnGlossGeometry = null;
+let binderVerticalSeamGeometry = null;
+let binderHorizontalSeamGeometry = null;
 let binderPages = [];
 let binderCardMeshes = [];
 let binderVisibleIndexes = [];
@@ -405,7 +428,8 @@ let binderTurn = 0;
 let binderTargetTurn = 0;
 let binderBendDirection = 1;
 let binderDrag = null;
-let binderWheelSnapTimer = 0;
+let binderWheelFocusLockUntil = 0;
+let binderFocusZoomOutLockUntil = 0;
 let binderFocusPosition = -1;
 let binderCameraReady = false;
 let binderCardViewTransitionActive = false;
@@ -638,6 +662,7 @@ function initThemeToggle() {
 }
 
 function toggleGalleryMode() {
+  resetViewSwitchWheelDistances();
   if (isGalleryOpen) {
     closeGalleryMode();
   } else {
@@ -646,6 +671,7 @@ function toggleGalleryMode() {
 }
 
 function openGalleryMode() {
+  resetViewSwitchWheelDistances();
   isGalleryOpen = true;
   clearBinderFocus({ silent: true });
   snapBinderToWholePage();
@@ -661,6 +687,7 @@ function openGalleryMode() {
 }
 
 function closeGalleryMode() {
+  resetViewSwitchWheelDistances();
   isGalleryOpen = false;
   clearBinderFocus({ silent: true });
   snapBinderToWholePage();
@@ -908,8 +935,8 @@ function startBinderRenderLoop() {
       binderAnimationFrame = 0;
       return;
     }
-    updateBinderAnimation();
-    binderAnimationFrame = requestAnimationFrame(renderFrame);
+    const keepAnimating = updateBinderAnimation();
+    binderAnimationFrame = keepAnimating ? requestAnimationFrame(renderFrame) : 0;
   };
 
   binderAnimationFrame = requestAnimationFrame(renderFrame);
@@ -952,7 +979,7 @@ function ensureBinderScene() {
 
   binderRoot = new THREE.Group();
   binderRoot.rotation.x = 0;
-  binderRoot.position.y = 0.7;
+  binderRoot.position.y = 0.94;
   binderScene.add(binderRoot);
 
   resizeBinderRenderer();
@@ -987,13 +1014,15 @@ async function updateBinderItems(indexes) {
   const token = ++binderBuildToken;
   binderIndexesKey = nextKey;
   binderLoading.hidden = false;
-  clearBinderRoot();
-  binderRoot.add(createBinderShell());
-  renderBinderSceneOnce();
+  if (!binderPages.length) {
+    clearBinderRoot();
+    binderRoot.add(createBinderShell());
+    renderBinderSceneOnce();
+  }
 
   try {
     const [textures, backTexture] = await Promise.all([
-      Promise.all(indexes.map(getBinderCardTexture)),
+      mapWithConcurrency(indexes, BINDER_TEXTURE_CONCURRENCY, getBinderCardTexture),
       getBinderBackTexture()
     ]);
     if (token !== binderBuildToken) return;
@@ -1019,6 +1048,22 @@ async function updateBinderItems(indexes) {
   }
 }
 
+async function mapWithConcurrency(items, limit, mapper) {
+  const results = new Array(items.length);
+  let nextIndex = 0;
+  const workerCount = Math.min(Math.max(1, limit), items.length);
+
+  await Promise.all(Array.from({ length: workerCount }, async () => {
+    while (nextIndex < items.length) {
+      const index = nextIndex;
+      nextIndex += 1;
+      results[index] = await mapper(items[index], index);
+    }
+  }));
+
+  return results;
+}
+
 function clearBinderRoot() {
   if (!binderRoot) return;
 
@@ -1033,7 +1078,9 @@ function clearBinderRoot() {
 function disposeBinderObject(object) {
   object.traverse((child) => {
     if (!child.isMesh) return;
-    if (child.geometry) child.geometry.dispose();
+    if (child.geometry && !child.geometry.userData?.sharedBinderGeometry) {
+      child.geometry.dispose();
+    }
     const materials = Array.isArray(child.material) ? child.material : [child.material];
     for (const material of materials) {
       if (material) material.dispose();
@@ -1068,25 +1115,38 @@ function createBinderShell() {
     clearcoatRoughness: 0.22
   });
   const coverWidth = BINDER_PAGE_WIDTH + BINDER_COVER_OVERHANG * 2;
-  const coverHeight = BINDER_PAGE_HEIGHT + 0.68;
+  const coverHeight = BINDER_PAGE_HEIGHT + BINDER_COVER_VERTICAL_OVERHANG;
+  const spineHeight = coverHeight - 0.26;
   const coverZ = -0.34;
+  const backCoverGeometry = createRoundedCoreGeometry(
+    coverWidth,
+    coverHeight,
+    0.14,
+    BINDER_COVER_RADIUS
+  );
+  const frontCoverGeometry = createRoundedCoreGeometry(
+    coverWidth,
+    coverHeight,
+    0.12,
+    BINDER_COVER_RADIUS
+  );
 
   const leftCover = new THREE.Mesh(
-    new THREE.BoxGeometry(coverWidth, coverHeight, 0.14, 1, 1, 2),
+    backCoverGeometry,
     coverMaterial
   );
   leftCover.position.set(-BINDER_PAGE_WIDTH / 2 - BINDER_COVER_OVERHANG * 0.42, 0, coverZ);
   shell.add(leftCover);
 
   const rightCover = new THREE.Mesh(
-    new THREE.BoxGeometry(coverWidth, coverHeight, 0.14, 1, 1, 2),
+    backCoverGeometry.clone(),
     coverMaterial.clone()
   );
   rightCover.position.set(BINDER_PAGE_WIDTH / 2 + BINDER_COVER_OVERHANG * 0.42, 0, coverZ);
   shell.add(rightCover);
 
   const spine = new THREE.Mesh(
-    new THREE.BoxGeometry(0.42, coverHeight + 0.04, 0.36, 1, 1, 2),
+    new THREE.BoxGeometry(0.42, spineHeight, 0.36, 1, 1, 2),
     coverMaterial.clone()
   );
   spine.position.set(0, 0, coverZ + 0.04);
@@ -1096,7 +1156,7 @@ function createBinderShell() {
   frontPivot.position.set(0, 0, -0.12);
   frontPivot.rotation.y = -2.78;
   const frontCover = new THREE.Mesh(
-    new THREE.BoxGeometry(coverWidth, coverHeight, 0.12, 1, 1, 2),
+    frontCoverGeometry,
     coverMaterial.clone()
   );
   frontCover.position.x = -coverWidth / 2;
@@ -1105,12 +1165,11 @@ function createBinderShell() {
 
   const seamMaterial = new THREE.MeshBasicMaterial({
     color: 0x050505,
-    transparent: true,
-    opacity: 0.34,
-    depthWrite: false
+    depthWrite: true,
+    depthTest: true
   });
   const seam = new THREE.Mesh(
-    new THREE.BoxGeometry(0.035, coverHeight * 0.94, 0.012),
+    new THREE.BoxGeometry(0.035, spineHeight * 0.94, 0.012),
     seamMaterial
   );
   seam.position.set(0, 0, 0.075);
@@ -1128,26 +1187,29 @@ function createBinderShell() {
 }
 
 function createBinderPageMaterials() {
+  const plastic = new THREE.MeshBasicMaterial({
+    color: 0xdceefa,
+    transparent: true,
+    opacity: BINDER_PLASTIC_REST_OPACITY,
+    side: THREE.DoubleSide,
+    depthWrite: false,
+    depthTest: true
+  });
+  plastic.forceSinglePass = true;
+
+  const seam = new THREE.MeshBasicMaterial({
+    color: 0x111615,
+    transparent: true,
+    opacity: BINDER_SEAM_REST_OPACITY,
+    side: THREE.DoubleSide,
+    depthWrite: false,
+    depthTest: true
+  });
+  seam.forceSinglePass = true;
+
   return {
-    plastic: new THREE.MeshPhysicalMaterial({
-      color: 0xdceefa,
-      transparent: true,
-      opacity: BINDER_PLASTIC_REST_OPACITY,
-      roughness: 0.18,
-      metalness: 0.02,
-      clearcoat: 0.82,
-      clearcoatRoughness: 0.16,
-      reflectivity: 0.38,
-      side: THREE.DoubleSide,
-      depthWrite: false
-    }),
-    seam: new THREE.MeshBasicMaterial({
-      color: 0x111615,
-      transparent: true,
-      opacity: BINDER_SEAM_REST_OPACITY,
-      side: THREE.DoubleSide,
-      depthWrite: false
-    })
+    plastic,
+    seam
   };
 }
 
@@ -1162,19 +1224,21 @@ function createBinderPage(pageIndex, indexes, textures, backTexture, materials) 
     for (let column = 0; column < BINDER_COLUMNS; column += 1) {
       const frontSlot = row * BINDER_COLUMNS + column;
       const backSlot = getBackSideSlot(row, column);
-      const cell = createBinderCell(row, column, materials);
+      const cell = createBinderCell(row, column);
       const frontOffset = pageIndex * BINDER_PAGE_SLOTS + frontSlot;
       const backOffset = pageIndex * BINDER_PAGE_SLOTS + BINDER_SIDE_SLOTS + backSlot;
       const frontArtIndex = indexes[frontOffset];
       const backArtIndex = indexes[backOffset];
+      const hasFrontCard = Number.isInteger(frontArtIndex);
+      const hasBackCard = Number.isInteger(backArtIndex);
 
-      if (Number.isInteger(frontArtIndex)) {
+      if (hasFrontCard) {
         cell.group.add(createBinderCard(textures[frontOffset], frontArtIndex, 1, frontOffset));
       }
 
-      if (Number.isInteger(backArtIndex)) {
+      if (hasBackCard) {
         cell.group.add(createBinderCard(textures[backOffset], backArtIndex, -1, backOffset));
-      } else if (Number.isInteger(frontArtIndex)) {
+      } else if (hasFrontCard) {
         cell.group.add(createBinderCard(backTexture, null, -1));
       }
 
@@ -1183,6 +1247,7 @@ function createBinderPage(pageIndex, indexes, textures, backTexture, materials) 
     }
   }
 
+  addBinderPageSheets(group, columnPivots, materials);
   addBinderPageSeams(group, columnPivots, materials.seam);
   return {
     group,
@@ -1227,7 +1292,7 @@ function getBackSideSlot(row, column) {
   return row * BINDER_COLUMNS + (BINDER_COLUMNS - 1 - column);
 }
 
-function createBinderCell(row, column, materials) {
+function createBinderCell(row, column) {
   const group = new THREE.Group();
   const x = BINDER_PAGE_INNER_MARGIN
     + column * (BINDER_CELL_WIDTH + BINDER_GRID_GAP)
@@ -1239,46 +1304,132 @@ function createBinderCell(row, column, materials) {
 
   group.position.set(x, y, 0);
 
-  const sleeveMaterial = materials.plastic.clone();
-  sleeveMaterial.opacity = BINDER_PLASTIC_REST_OPACITY;
-  const sleeve = new THREE.Mesh(
-    new THREE.PlaneGeometry(BINDER_CELL_WIDTH, BINDER_CELL_HEIGHT, 1, 1),
-    sleeveMaterial
-  );
-  sleeve.renderOrder = 5;
-  markBinderSheetLayer(sleeve, BINDER_PLASTIC_REST_OPACITY, BINDER_PLASTIC_ACTIVE_OPACITY);
-  group.add(sleeve);
+  return { group, row, column };
+}
+
+function addBinderPageSheets(group, columnPivots, materials) {
+  const frostMaterial = new THREE.MeshBasicMaterial({
+    color: 0xf4f8f4,
+    map: createBinderSleeveFrostTexture(),
+    transparent: true,
+    opacity: BINDER_FROST_REST_OPACITY,
+    side: THREE.DoubleSide,
+    depthWrite: false,
+    depthTest: true
+  });
+  frostMaterial.forceSinglePass = true;
 
   const glossMaterial = new THREE.MeshBasicMaterial({
     color: 0xffffff,
     transparent: true,
     opacity: BINDER_GLOSS_REST_OPACITY,
     side: THREE.DoubleSide,
-    depthWrite: false
+    depthWrite: false,
+    depthTest: true
   });
-  const gloss = new THREE.Mesh(
-    new THREE.PlaneGeometry(BINDER_CELL_WIDTH * 0.92, BINDER_CELL_HEIGHT * 0.92, 1, 1),
-    glossMaterial
-  );
-  gloss.position.z = 0.045;
-  gloss.renderOrder = 18;
-  markBinderSheetLayer(gloss, BINDER_GLOSS_REST_OPACITY, BINDER_GLOSS_ACTIVE_OPACITY);
-  group.add(gloss);
+  glossMaterial.forceSinglePass = true;
 
-  return { group, row, column };
+  for (let column = 0; column < BINDER_COLUMNS; column += 1) {
+    const columnPivot = columnPivots[column] || columnPivots[0];
+    const x = getBinderColumnSheetCenterX(column) - columnPivot.anchorX;
+
+    const plasticMaterial = materials.plastic.clone();
+    plasticMaterial.opacity = BINDER_PLASTIC_REST_OPACITY;
+    const sheet = new THREE.Mesh(getBinderColumnSheetGeometry(), plasticMaterial);
+    sheet.position.set(x, 0, 0.018);
+    sheet.renderOrder = 5;
+    markBinderSheetLayer(sheet, BINDER_PLASTIC_REST_OPACITY, BINDER_PLASTIC_ACTIVE_OPACITY);
+    columnPivot.group.add(sheet);
+
+    const frost = new THREE.Mesh(getBinderColumnSheetGeometry(), frostMaterial.clone());
+    frost.position.set(x, 0, 0.049);
+    frost.renderOrder = 17;
+    markBinderSheetLayer(frost, BINDER_FROST_REST_OPACITY, BINDER_FROST_ACTIVE_OPACITY);
+    columnPivot.group.add(frost);
+
+    const gloss = new THREE.Mesh(getBinderColumnGlossGeometry(), glossMaterial.clone());
+    gloss.position.set(x, 0, 0.052);
+    gloss.renderOrder = 18;
+    markBinderSheetLayer(gloss, BINDER_GLOSS_REST_OPACITY, BINDER_GLOSS_ACTIVE_OPACITY);
+    columnPivot.group.add(gloss);
+  }
+}
+
+function getBinderColumnSheetCenterX(column) {
+  return BINDER_PAGE_INNER_MARGIN
+    + column * (BINDER_CELL_WIDTH + BINDER_GRID_GAP)
+    + BINDER_CELL_WIDTH / 2;
+}
+
+function getBinderCardGeometry() {
+  if (!binderCardGeometry) {
+    binderCardGeometry = createRoundedPlaneGeometry(
+      BINDER_CARD_WIDTH,
+      BINDER_CARD_HEIGHT,
+      BINDER_CARD_RADIUS
+    );
+    binderCardGeometry.userData.sharedBinderGeometry = true;
+  }
+  return binderCardGeometry;
+}
+
+function getBinderColumnSheetGeometry() {
+  if (!binderColumnSheetGeometry) {
+    binderColumnSheetGeometry = new THREE.PlaneGeometry(
+      BINDER_CELL_WIDTH,
+      getBinderColumnSheetHeight(),
+      1,
+      1
+    );
+    binderColumnSheetGeometry.userData.sharedBinderGeometry = true;
+  }
+  return binderColumnSheetGeometry;
+}
+
+function getBinderColumnGlossGeometry() {
+  if (!binderColumnGlossGeometry) {
+    binderColumnGlossGeometry = new THREE.PlaneGeometry(
+      BINDER_CELL_WIDTH * 0.92,
+      getBinderColumnSheetHeight() * 0.95,
+      1,
+      1
+    );
+    binderColumnGlossGeometry.userData.sharedBinderGeometry = true;
+  }
+  return binderColumnGlossGeometry;
+}
+
+function getBinderVerticalSeamGeometry() {
+  if (!binderVerticalSeamGeometry) {
+    binderVerticalSeamGeometry = new THREE.PlaneGeometry(
+      0.014,
+      BINDER_PAGE_HEIGHT - BINDER_PAGE_VERTICAL_MARGIN * 1.4,
+      1,
+      1
+    );
+    binderVerticalSeamGeometry.userData.sharedBinderGeometry = true;
+  }
+  return binderVerticalSeamGeometry;
+}
+
+function getBinderHorizontalSeamGeometry() {
+  if (!binderHorizontalSeamGeometry) {
+    binderHorizontalSeamGeometry = new THREE.PlaneGeometry(BINDER_CELL_WIDTH, 0.014, 1, 1);
+    binderHorizontalSeamGeometry.userData.sharedBinderGeometry = true;
+  }
+  return binderHorizontalSeamGeometry;
+}
+
+function getBinderColumnSheetHeight() {
+  return BINDER_ROWS * BINDER_CELL_HEIGHT + (BINDER_ROWS - 1) * BINDER_GRID_GAP;
 }
 
 function addBinderPageSeams(group, columnPivots, seamMaterial) {
-  const thickness = 0.018;
-
   for (let column = 1; column < BINDER_COLUMNS; column += 1) {
     const columnPivot = columnPivots[column];
     const material = seamMaterial.clone();
     material.opacity = BINDER_SEAM_REST_OPACITY;
-    const seam = new THREE.Mesh(
-      new THREE.PlaneGeometry(thickness, BINDER_PAGE_HEIGHT - BINDER_PAGE_VERTICAL_MARGIN * 1.4),
-      material
-    );
+    const seam = new THREE.Mesh(getBinderVerticalSeamGeometry(), material);
     seam.position.set(0, 0, 0.006);
     seam.renderOrder = 20;
     markBinderSheetLayer(seam, BINDER_SEAM_REST_OPACITY, BINDER_SEAM_ACTIVE_OPACITY);
@@ -1295,10 +1446,7 @@ function addBinderPageSeams(group, columnPivots, seamMaterial) {
       const columnPivot = columnPivots[column] || columnPivots[0];
       const material = seamMaterial.clone();
       material.opacity = BINDER_SEAM_REST_OPACITY;
-      const seam = new THREE.Mesh(
-        new THREE.PlaneGeometry(BINDER_CELL_WIDTH, thickness),
-        material
-      );
+      const seam = new THREE.Mesh(getBinderHorizontalSeamGeometry(), material);
       seam.position.set(
         BINDER_PAGE_INNER_MARGIN
           + column * (BINDER_CELL_WIDTH + BINDER_GRID_GAP)
@@ -1341,7 +1489,7 @@ function createBinderCard(texture, artIndex, side, binderPosition = -1) {
     side: THREE.FrontSide
   });
   const card = new THREE.Mesh(
-    createRoundedPlaneGeometry(BINDER_CARD_WIDTH, BINDER_CARD_HEIGHT, BINDER_CARD_RADIUS),
+    getBinderCardGeometry(),
     material
   );
 
@@ -1359,14 +1507,13 @@ function createBinderCard(texture, artIndex, side, binderPosition = -1) {
 
 function createBinderCoverMaterial() {
   const map = createBinderCoverTexture();
-  return new THREE.MeshPhysicalMaterial({
+  return new THREE.MeshStandardMaterial({
     color: 0x11100d,
     map,
-    roughness: 0.64,
-    metalness: 0.16,
-    clearcoat: 0.52,
-    clearcoatRoughness: 0.46,
-    reflectivity: 0.3
+    roughness: 0.9,
+    metalness: 0.015,
+    emissive: 0x040302,
+    emissiveIntensity: 0.28
   });
 }
 
@@ -1406,6 +1553,40 @@ function createBinderCoverTexture() {
   return binderCoverTexture;
 }
 
+function createBinderSleeveFrostTexture() {
+  if (binderSleeveFrostTexture) return binderSleeveFrostTexture;
+
+  const size = 192;
+  const surface = document.createElement("canvas");
+  surface.width = size;
+  surface.height = size;
+  const ctx = surface.getContext("2d");
+  const imageData = ctx.createImageData(size, size);
+  let seed = 0xa5847c31;
+
+  for (let y = 0; y < size; y += 1) {
+    for (let x = 0; x < size; x += 1) {
+      seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0;
+      const index = (y * size + x) * 4;
+      const cloudy = 218 + ((seed >>> 24) % 34);
+      imageData.data[index] = cloudy;
+      imageData.data[index + 1] = cloudy;
+      imageData.data[index + 2] = cloudy;
+      imageData.data[index + 3] = 255;
+    }
+  }
+
+  ctx.putImageData(imageData, 0, 0);
+  const texture = new THREE.CanvasTexture(surface);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  texture.wrapS = THREE.RepeatWrapping;
+  texture.wrapT = THREE.RepeatWrapping;
+  texture.repeat.set(2.8, 3.6);
+  texture.needsUpdate = true;
+  binderSleeveFrostTexture = texture;
+  return binderSleeveFrostTexture;
+}
+
 async function getBinderCardTexture(artIndex) {
   const templateFile = templateForBinderCard(artIndex);
   const key = `${favoriteKeyForIndex(artIndex)}|${templateFile}|binder`;
@@ -1414,7 +1595,8 @@ async function getBinderCardTexture(artIndex) {
   const promise = createFrontTexture(artItems[artIndex], templateFile, {
     width: BINDER_FACE_WIDTH,
     height: BINDER_FACE_HEIGHT,
-    renderer: binderRenderer
+    renderer: binderRenderer,
+    maxAnisotropy: 4
   }).catch((error) => {
     binderCardTextureCache.delete(key);
     throw error;
@@ -1460,7 +1642,7 @@ function startBinderDrag(event) {
     startTurn: binderTargetTurn,
     moved: false
   };
-  clearTimeout(binderWheelSnapTimer);
+  binderWheelFocusLockUntil = 0;
   event.preventDefault();
 }
 
@@ -1513,23 +1695,38 @@ function handleBinderWheel(event) {
   if (!isGalleryOpen || !isBinderMode || binderPageCount < 1) return;
 
   event.preventDefault();
-  if (isBinderFocused()) return;
+  const wheelDelta = getDominantNormalizedWheelDelta(event);
+  if (Math.abs(wheelDelta) < 0.5) return;
 
-  const delta = event.deltaY || event.deltaX;
-  if (Math.abs(delta) > 0.1) binderBendDirection = Math.sign(delta);
-  binderTargetTurn = clamp(
-    binderTargetTurn + clamp(delta * 0.0032, -0.22, 0.22),
-    0,
-    binderPageCount
-  );
-  startBinderRenderLoop();
-  updateBinderPageControls();
+  const now = performance.now();
+  if (now < binderWheelFocusLockUntil) return;
 
-  clearTimeout(binderWheelSnapTimer);
-  binderWheelSnapTimer = setTimeout(() => {
-    binderTargetTurn = Math.round(binderTargetTurn);
-    updateBinderPageControls();
-  }, 140);
+  if (isBinderFocused()) {
+    if (wheelDelta < 0) {
+      if (addBinderFocusWheelInDistance(-wheelDelta, now)) {
+        binderWheelFocusLockUntil = now + BINDER_CARD_VIEW_TRANSITION_MS + 240;
+        resetViewSwitchWheelDistances();
+        openFocusedBinderCard().catch(console.error);
+      }
+      return;
+    }
+
+    resetBinderFocusWheelInDistance();
+    if (binderCardViewTransitionActive || now < binderFocusZoomOutLockUntil) {
+      return;
+    }
+    binderWheelFocusLockUntil = now + 700;
+    clearBinderFocus();
+    return;
+  }
+
+  resetBinderFocusWheelInDistance();
+  if (wheelDelta >= 0) return;
+  const hit = getBinderCardHit(event);
+  if (!hit) return;
+
+  binderWheelFocusLockUntil = now + 700;
+  focusBinderCard(hit.object.userData.binderPosition);
 }
 
 function selectBinderCard(event) {
@@ -1635,6 +1832,7 @@ function focusBinderCard(position, { immediate = false } = {}) {
 }
 
 function clearBinderFocus(options = {}) {
+  binderFocusZoomOutLockUntil = 0;
   binderFocusPosition = -1;
   document.body.classList.remove("binder-focused");
   if (binderPanel) binderPanel.classList.remove("is-focused");
@@ -1644,6 +1842,13 @@ function clearBinderFocus(options = {}) {
   updateBinderPageControls();
   startBinderRenderLoop();
   updateBinderAnimation();
+}
+
+function lockBinderFocusZoomOut(duration = BINDER_FOCUS_ZOOM_OUT_LOCK_MS) {
+  binderFocusZoomOutLockUntil = Math.max(
+    binderFocusZoomOutLockUntil,
+    performance.now() + duration
+  );
 }
 
 function moveBinderFocus(direction) {
@@ -1659,6 +1864,7 @@ function moveBinderFocus(direction) {
 
 async function openFocusedBinderCard() {
   if (binderCardViewTransitionActive) return;
+  resetViewSwitchWheelDistances();
 
   const artIndex = getFocusedBinderArtIndex();
   if (!Number.isInteger(artIndex)) return;
@@ -1671,6 +1877,95 @@ async function openFocusedBinderCard() {
   }
 
   await transitionFocusedBinderCardToIndividual(artIndex, templateForBinderCard(artIndex), focusedMesh);
+}
+
+async function transitionIndividualCardToFocusedBinder() {
+  if (binderCardViewTransitionActive || currentArtIndex === -1) return;
+
+  const artIndex = currentArtIndex;
+  lockBinderFocusZoomOut(BINDER_FOCUS_TRANSITION_LOCK_MS);
+  const transitionCard = document.createElement("img");
+  transitionCard.className = "binder-card-transition-card";
+  transitionCard.alt = "";
+  transitionCard.decoding = "async";
+  transitionCard.src = getIndividualTransitionImageSource();
+
+  const sourceRect = getIndividualCardScreenRect() || getIndividualCardTransitionRect();
+  binderCardViewTransitionActive = true;
+  document.body.classList.add(
+    "binder-card-transitioning",
+    "binder-card-transition-away",
+    "binder-card-transition-show-card"
+  );
+  applyTransitionRect(transitionCard, sourceRect);
+  document.body.append(transitionCard);
+  transitionCard.getBoundingClientRect();
+
+  try {
+    const prepared = await openFocusedBinderGalleryForArt(artIndex);
+    const focusedMesh = prepared ? getBinderFocusedMesh() : null;
+    renderBinderSceneOnce();
+    const targetRect = getBinderMeshScreenRect(focusedMesh) || getCenteredFallbackRect();
+
+    requestAnimationFrame(() => {
+      document.body.classList.remove(
+        "binder-card-transition-away",
+        "binder-card-transition-show-card"
+      );
+      applyTransitionRect(transitionCard, targetRect);
+    });
+
+    await delay(BINDER_CARD_VIEW_TRANSITION_MS);
+    transitionCard.classList.add("is-dissolving");
+    lockBinderFocusZoomOut();
+    await delay(220);
+  } finally {
+    transitionCard.remove();
+    document.body.classList.remove(
+      "binder-card-transitioning",
+      "binder-card-transition-away",
+      "binder-card-transition-show-card"
+    );
+    binderCardViewTransitionActive = false;
+  }
+}
+
+async function openFocusedBinderGalleryForArt(artIndex) {
+  if (!Number.isInteger(artIndex)) return false;
+
+  galleryFavoritesOnly = false;
+  isBinderMode = true;
+  isGalleryOpen = true;
+  document.body.classList.add("gallery-open");
+  table.classList.remove("details-open");
+  detailsButton.setAttribute("aria-expanded", "false");
+  galleryToggleButton.classList.add("is-active");
+  galleryToggleButton.setAttribute("aria-pressed", "true");
+  galleryPanel.hidden = false;
+  hideArtMagnifier();
+  updateFavoriteFilterButton();
+  updateBinderModeControls();
+
+  const indexes = getGalleryIndexes();
+  galleryGrid.replaceChildren();
+  galleryGrid.hidden = true;
+  binderPanel.hidden = indexes.length === 0;
+  galleryEmpty.hidden = indexes.length > 0;
+  if (!indexes.length) {
+    binderPageControls.hidden = true;
+    binderPageStatus.hidden = true;
+    stopBinderRenderLoop();
+    return false;
+  }
+
+  binderPageControls.hidden = false;
+  await updateBinderItems(indexes);
+  const focusPosition = binderVisibleIndexes.indexOf(artIndex);
+  if (focusPosition === -1) return false;
+
+  focusBinderCard(focusPosition, { immediate: true });
+  renderBinderSceneOnce();
+  return true;
 }
 
 async function transitionFocusedBinderCardToIndividual(artIndex, templateFile, focusedMesh) {
@@ -1737,6 +2032,18 @@ function getBinderTransitionImageSource(mesh, artIndex) {
   return image?.currentSrc || image?.src || artItems[artIndex]?.cropUrl || "";
 }
 
+function getIndividualTransitionImageSource() {
+  const image = frontMaterial?.map?.image;
+  if (image?.toDataURL) {
+    try {
+      return image.toDataURL("image/png");
+    } catch {
+      // Fall through to the static crop if the canvas is not exportable.
+    }
+  }
+  return image?.currentSrc || image?.src || artItems[currentArtIndex]?.cropUrl || "";
+}
+
 function getBinderMeshScreenRect(mesh) {
   if (!mesh || !binderCamera || !binderCanvas) return null;
 
@@ -1749,6 +2056,39 @@ function getBinderMeshScreenRect(mesh) {
     new THREE.Vector3(-BINDER_CARD_WIDTH / 2, BINDER_CARD_HEIGHT / 2, 0)
   ].map((corner) => {
     const projected = corner.applyMatrix4(mesh.matrixWorld).project(binderCamera);
+    return {
+      x: canvasRect.left + (projected.x + 1) * canvasRect.width / 2,
+      y: canvasRect.top + (1 - projected.y) * canvasRect.height / 2
+    };
+  });
+
+  const left = Math.min(...corners.map((corner) => corner.x));
+  const right = Math.max(...corners.map((corner) => corner.x));
+  const top = Math.min(...corners.map((corner) => corner.y));
+  const bottom = Math.max(...corners.map((corner) => corner.y));
+  if (right - left < 12 || bottom - top < 12) return null;
+
+  return {
+    left,
+    top,
+    width: right - left,
+    height: bottom - top
+  };
+}
+
+function getIndividualCardScreenRect() {
+  if (!cardGroup || !camera || !canvas) return null;
+
+  cardGroup.updateMatrixWorld(true);
+  const canvasRect = canvas.getBoundingClientRect();
+  const z = CARD_DEPTH / 2 + 0.006;
+  const corners = [
+    new THREE.Vector3(-CARD_WIDTH / 2, -CARD_HEIGHT / 2, z),
+    new THREE.Vector3(CARD_WIDTH / 2, -CARD_HEIGHT / 2, z),
+    new THREE.Vector3(CARD_WIDTH / 2, CARD_HEIGHT / 2, z),
+    new THREE.Vector3(-CARD_WIDTH / 2, CARD_HEIGHT / 2, z)
+  ].map((corner) => {
+    const projected = corner.applyMatrix4(cardGroup.matrixWorld).project(camera);
     return {
       x: canvasRect.left + (projected.x + 1) * canvasRect.width / 2,
       y: canvasRect.top + (1 - projected.y) * canvasRect.height / 2
@@ -1850,12 +2190,14 @@ function updateBinderPageControls() {
   const controlsHidden = !isGalleryOpen || !isBinderMode || binderPanel.hidden || binderPageCount < 1;
   syncBinderStateAttributes();
   binderPageControls.hidden = controlsHidden;
+  binderPageStatus.hidden = controlsHidden;
   if (controlsHidden) return;
 
   const focused = isBinderFocused();
   binderPageControls.classList.toggle("is-focused", focused);
   binderZoomOutButton.hidden = !focused;
   binderOpenCardButton.hidden = !focused;
+  updateBinderPageStatus(focused);
 
   if (focused) {
     binderPreviousPageButton.disabled = binderFocusPosition <= 0;
@@ -1876,6 +2218,26 @@ function updateBinderPageControls() {
   binderNextPageButton.setAttribute("aria-label", "Next binder page");
 }
 
+function updateBinderPageStatus(focused = isBinderFocused()) {
+  if (!binderPageStatus) return;
+
+  if (focused) {
+    binderPageStatus.textContent = `${binderFocusPosition + 1} / ${binderVisibleIndexes.length}`;
+    return;
+  }
+
+  const currentTurn = clamp(Math.round(binderTargetTurn), 0, binderPageCount);
+  const totalPageSides = Math.max(1, binderPageCount * 2);
+  if (currentTurn <= 0 || totalPageSides <= 1) {
+    binderPageStatus.textContent = `1 / ${totalPageSides}`;
+  } else if (currentTurn >= binderPageCount) {
+    binderPageStatus.textContent = `${totalPageSides} / ${totalPageSides}`;
+  } else {
+    const leftPageSide = currentTurn * 2;
+    binderPageStatus.textContent = `${leftPageSide}-${leftPageSide + 1} / ${totalPageSides}`;
+  }
+}
+
 function syncBinderStateAttributes() {
   binderPanel.dataset.turn = binderTurn.toFixed(3);
   binderPanel.dataset.targetTurn = binderTargetTurn.toFixed(3);
@@ -1887,20 +2249,27 @@ function syncBinderStateAttributes() {
 
 function updateBinderAnimation() {
   if (!binderRenderer || !binderScene || !binderCamera || !isGalleryOpen || !isBinderMode) {
-    return;
+    return false;
   }
 
+  let turnActive = Boolean(binderDrag);
   if (!binderDrag) {
     const delta = binderTargetTurn - binderTurn;
     if (Math.abs(delta) > 0.0015) binderBendDirection = Math.sign(delta);
     binderTurn += delta * 0.16;
-    if (Math.abs(delta) < 0.0015) binderTurn = binderTargetTurn;
+    turnActive = Math.abs(delta) >= 0.0015;
+    if (!turnActive) binderTurn = binderTargetTurn;
   }
 
   updateBinderPageTransforms();
   updateBinderCameraFrame(false);
   syncBinderStateAttributes();
   binderRenderer.render(binderScene, binderCamera);
+  const cameraActive = binderCameraReady && (
+    binderCamera.position.distanceToSquared(binderDesiredCameraPosition) > 0.00008
+    || binderCurrentCameraLookAt.distanceToSquared(binderDesiredCameraLookAt) > 0.00008
+  );
+  return turnActive || cameraActive || binderCardViewTransitionActive;
 }
 
 function updateBinderPageTransforms() {
@@ -1911,6 +2280,10 @@ function updateBinderPageTransforms() {
   const activeIndex = isTurning ? lowerTurn : -1;
   const leftIndex = lowerTurn - 1;
   const rightIndex = isTurning ? lowerTurn + 1 : lowerTurn;
+  const restingTurn = clamp(Math.round(turn), 0, binderPageCount);
+  const leftGapRevealPageIndex = !isTurning ? restingTurn - 2 : -1;
+  const rightGapRevealPageIndex = !isTurning ? restingTurn + 1 : -1;
+  const forwardTurn = binderBendDirection >= 0;
 
   for (const page of binderPages) {
     const rawTurn = clamp(turn - page.pageIndex, 0, 1);
@@ -1919,6 +2292,16 @@ function updateBinderPageTransforms() {
     const isLeftStack = !isActivePage && rawTurn >= 1;
     const leftStackDepth = Math.max(0, leftIndex - page.pageIndex);
     const rightStackDepth = Math.max(0, page.pageIndex - rightIndex);
+    const isLeftGapRevealPage = isLeftStack && page.pageIndex === leftGapRevealPageIndex;
+    const isRightGapRevealPage = !isLeftStack && !isActivePage
+      && page.pageIndex === rightGapRevealPageIndex;
+    const stackCoverProgress = getBinderStackCoverProgress({
+      pageIndex: page.pageIndex,
+      activeIndex,
+      easedTurn,
+      isTurning,
+      forwardTurn
+    });
 
     page.group.visible = true;
     page.group.rotation.y = -Math.PI * easedTurn;
@@ -1929,14 +2312,41 @@ function updateBinderPageTransforms() {
       BINDER_LEFT_STACK_Z,
       easedTurn
     );
+    let pageZ;
+    if (isActivePage) {
+      pageZ = activeRestZ + activeLift;
+    } else if (isLeftGapRevealPage) {
+      pageZ = BINDER_LEFT_STACK_Z - BINDER_GAP_REVEAL_STACK_GAP;
+    } else if (isRightGapRevealPage) {
+      pageZ = BINDER_RIGHT_STACK_Z - BINDER_GAP_REVEAL_STACK_GAP;
+    } else if (isLeftStack) {
+      pageZ = BINDER_LEFT_STACK_Z - leftStackDepth * BINDER_VISIBLE_STACK_GAP;
+    } else {
+      pageZ = BINDER_RIGHT_STACK_Z - rightStackDepth * BINDER_VISIBLE_STACK_GAP;
+    }
     page.group.position.x = 0;
-    page.group.position.z = isActivePage
-      ? activeRestZ + activeLift
-      : isLeftStack
-        ? BINDER_LEFT_STACK_Z - leftStackDepth * BINDER_VISIBLE_STACK_GAP
-        : BINDER_RIGHT_STACK_Z - rightStackDepth * BINDER_VISIBLE_STACK_GAP;
-    setBinderPageRenderOrder(page, getBinderPageRenderOrder(isActivePage, isLeftStack, leftStackDepth, rightStackDepth));
-    setBinderSheetOpacity(page, Math.sin(rawTurn * Math.PI));
+    page.group.position.z = pageZ;
+    setBinderPageRenderOrder(
+      page,
+      getBinderPageRenderOrder(
+        isActivePage,
+        isLeftStack,
+        leftStackDepth,
+        rightStackDepth,
+        isLeftGapRevealPage || isRightGapRevealPage
+      )
+    );
+    const turnActivity = Math.sin(rawTurn * Math.PI);
+    const sheetVisibility = getBinderSheetVisibilityFactor({
+      isActivePage,
+      isLeftStack,
+      leftStackDepth,
+      rightStackDepth,
+      isGapRevealPage: isLeftGapRevealPage || isRightGapRevealPage,
+      turnActivity,
+      stackCoverProgress
+    });
+    setBinderSheetOpacity(page, turnActivity, sheetVisibility);
 
     applyBinderColumnBend(page, rawTurn);
   }
@@ -1956,12 +2366,75 @@ function applyBinderColumnBend(page, rawTurn) {
   if (outerPivot) outerPivot.rotation.y = bend * 0.72;
 }
 
-function setBinderSheetOpacity(page, turnActivity) {
+function getBinderStackCoverProgress({
+  pageIndex,
+  activeIndex,
+  easedTurn,
+  isTurning,
+  forwardTurn
+}) {
+  if (!isTurning || activeIndex < 0) return 0;
+
+  if (forwardTurn && pageIndex === activeIndex - 1) {
+    return easeInOut(clamp(easedTurn, 0, 1));
+  }
+
+  if (!forwardTurn && pageIndex === activeIndex + 1) {
+    return easeInOut(clamp(1 - easedTurn, 0, 1));
+  }
+
+  return 0;
+}
+
+function getBinderSheetVisibilityFactor({
+  isActivePage,
+  isLeftStack,
+  leftStackDepth,
+  rightStackDepth,
+  isGapRevealPage,
+  turnActivity = 0,
+  stackCoverProgress = 0
+}) {
+  const focused = isBinderFocused();
+  const currentPageFactor = focused ? 0.68 : 1;
+  if (stackCoverProgress > 0) {
+    return THREE.MathUtils.lerp(
+      currentPageFactor,
+      getBinderUnderlyingSheetVisibility(1, focused),
+      stackCoverProgress
+    );
+  }
+
+  if (isActivePage) {
+    return THREE.MathUtils.lerp(
+      currentPageFactor,
+      focused ? 0.86 : 1,
+      easeInOut(clamp(turnActivity, 0, 1))
+    );
+  }
+  if (isGapRevealPage) return focused ? 0.24 : 0.42;
+  if (isLeftStack) {
+    if (leftStackDepth === 0) return currentPageFactor;
+    return getBinderUnderlyingSheetVisibility(leftStackDepth, focused);
+  }
+  if (rightStackDepth === 0) return currentPageFactor;
+  return getBinderUnderlyingSheetVisibility(rightStackDepth, focused);
+}
+
+function getBinderUnderlyingSheetVisibility(depth, focused) {
+  const start = focused ? 0.24 : 0.42;
+  const falloff = focused ? 0.045 : 0.07;
+  const floor = focused ? 0.075 : 0.13;
+  return Math.max(floor, start - Math.max(0, depth - 1) * falloff);
+}
+
+function setBinderSheetOpacity(page, turnActivity, visibilityFactor = 1) {
   const activity = easeInOut(clamp(turnActivity, 0, 1));
+  const visibleOpacity = clamp(visibilityFactor, 0, 1);
   for (const mesh of page.sheetMeshes || []) {
     const material = mesh.material;
     if (!material) continue;
-    material.opacity = THREE.MathUtils.lerp(
+    material.opacity = visibleOpacity * THREE.MathUtils.lerp(
       mesh.userData.restOpacity,
       mesh.userData.activeOpacity,
       activity
@@ -1969,8 +2442,15 @@ function setBinderSheetOpacity(page, turnActivity) {
   }
 }
 
-function getBinderPageRenderOrder(isActivePage, isLeftStack, leftStackDepth, rightStackDepth) {
+function getBinderPageRenderOrder(
+  isActivePage,
+  isLeftStack,
+  leftStackDepth,
+  rightStackDepth,
+  isGapRevealPage = false
+) {
   if (isActivePage) return 620;
+  if (isGapRevealPage) return 600;
   if (isLeftStack) return (leftStackDepth === 0 ? 620 : 420 - leftStackDepth * 28);
   return rightStackDepth === 0 ? 620 : 300 - rightStackDepth * 28;
 }
@@ -2082,17 +2562,91 @@ function handleSmoothWheelZoom(event) {
   event.stopImmediatePropagation();
   cancelCameraSnap();
 
-  const deltaScale = event.deltaMode === 1
-    ? 16
-    : event.deltaMode === 2
-      ? window.innerHeight
-      : 1;
-  const normalizedDelta = clamp(event.deltaY * deltaScale, -900, 900);
+  const normalizedDelta = normalizeWheelDelta(event.deltaY || 0, event);
+
+  if (
+    normalizedDelta > 0
+    && !isGalleryOpen
+    && currentArtIndex !== -1
+    && !binderCardViewTransitionActive
+  ) {
+    if (isIndividualAtMaxZoomOut()) {
+      if (addIndividualWheelOutDistance(normalizedDelta, performance.now())) {
+        smoothZoomVelocity = 0;
+        resetViewSwitchWheelDistances();
+        transitionIndividualCardToFocusedBinder().catch(console.error);
+        return;
+      }
+    } else {
+      resetIndividualWheelOutDistance();
+    }
+  } else if (normalizedDelta < 0) {
+    resetIndividualWheelOutDistance();
+  }
+
   smoothZoomVelocity = clamp(
     smoothZoomVelocity + normalizedDelta * 0.000045,
     -0.18,
     0.18
   );
+}
+
+function getWheelDeltaScale(event) {
+  return event.deltaMode === 1
+    ? 16
+    : event.deltaMode === 2
+      ? window.innerHeight
+      : 1;
+}
+
+function normalizeWheelDelta(delta, event) {
+  return clamp(delta * getWheelDeltaScale(event), -900, 900);
+}
+
+function getDominantNormalizedWheelDelta(event) {
+  const delta = Math.abs(event.deltaY || 0) >= Math.abs(event.deltaX || 0)
+    ? event.deltaY || 0
+    : event.deltaX || 0;
+  return normalizeWheelDelta(delta, event);
+}
+
+function isIndividualAtMaxZoomOut() {
+  if (!camera || !controls) return false;
+  const distance = camera.position.distanceTo(controls.target);
+  return distance >= controls.maxDistance - INDIVIDUAL_MAX_ZOOM_EPSILON;
+}
+
+function addIndividualWheelOutDistance(amount, now) {
+  if (now - individualWheelOutLastAt > VIEW_SWITCH_WHEEL_IDLE_MS) {
+    individualWheelOutDistance = 0;
+  }
+  individualWheelOutLastAt = now;
+  individualWheelOutDistance += amount;
+  return individualWheelOutDistance >= INDIVIDUAL_TO_BINDER_WHEEL_THRESHOLD;
+}
+
+function addBinderFocusWheelInDistance(amount, now) {
+  if (now - binderFocusWheelInLastAt > VIEW_SWITCH_WHEEL_IDLE_MS) {
+    binderFocusWheelInDistance = 0;
+  }
+  binderFocusWheelInLastAt = now;
+  binderFocusWheelInDistance += amount;
+  return binderFocusWheelInDistance >= BINDER_TO_INDIVIDUAL_WHEEL_THRESHOLD;
+}
+
+function resetIndividualWheelOutDistance() {
+  individualWheelOutDistance = 0;
+  individualWheelOutLastAt = 0;
+}
+
+function resetBinderFocusWheelInDistance() {
+  binderFocusWheelInDistance = 0;
+  binderFocusWheelInLastAt = 0;
+}
+
+function resetViewSwitchWheelDistances() {
+  resetIndividualWheelOutDistance();
+  resetBinderFocusWheelInDistance();
 }
 
 function initUploadControls() {
@@ -2474,6 +3028,7 @@ async function applyCardByIndex(artIndex, templateFile = null) {
 
   currentArtIndex = artIndex;
   currentTemplateFile = selectedTemplateFile;
+  resetViewSwitchWheelDistances();
   swapTexture(frontMaterial, frontTexture);
   swapTexture(backMaterial, backTexture);
   frontMaterial.needsUpdate = true;
@@ -2588,7 +3143,8 @@ async function createFrontTexture(item, templateFile, options = {}) {
   const texture = new THREE.CanvasTexture(surface);
   texture.colorSpace = THREE.SRGBColorSpace;
   const anisotropyRenderer = options.renderer || renderer;
-  texture.anisotropy = anisotropyRenderer?.capabilities?.getMaxAnisotropy?.() || 1;
+  const rendererAnisotropy = anisotropyRenderer?.capabilities?.getMaxAnisotropy?.() || 1;
+  texture.anisotropy = Math.min(options.maxAnisotropy || rendererAnisotropy, rendererAnisotropy);
   texture.minFilter = THREE.LinearMipmapLinearFilter;
   texture.magFilter = THREE.LinearFilter;
   texture.generateMipmaps = true;
@@ -3019,6 +3575,9 @@ function loadImage(src) {
     image.onload = () => resolve(image);
     image.onerror = () => reject(new Error(`Unable to load ${src}`));
     image.src = src;
+  }).catch((error) => {
+    imageCache.delete(src);
+    throw error;
   });
   imageCache.set(src, promise);
   return promise;
