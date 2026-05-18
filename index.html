@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Art Card</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css?v=binder-22">
     <script type="importmap">
       {
         "imports": {
@@ -52,11 +52,66 @@
               <circle cx="19" cy="12" r="1.7"></circle>
             </svg>
           </button>
+          <button class="icon-button" id="favoriteButton" type="button" title="Toggle favorite" aria-label="Toggle favorite" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m12 3.6 2.55 5.16 5.7.83-4.12 4.02.97 5.68L12 16.6l-5.1 2.69.97-5.68-4.12-4.02 5.7-.83L12 3.6Z"></path>
+            </svg>
+          </button>
         </div>
         <div class="card-filename" id="cardFileName" aria-live="polite"></div>
         <div class="card-counter" id="cardCounter" aria-live="polite">--/101</div>
       </section>
+      <section class="gallery-panel" id="galleryPanel" aria-label="Card gallery" hidden>
+        <div class="gallery-grid" id="galleryGrid"></div>
+        <div class="binder-panel" id="binderPanel" hidden>
+          <canvas id="binderCanvas" aria-label="3D card binder"></canvas>
+          <div class="binder-loading" id="binderLoading" hidden></div>
+        </div>
+        <div class="binder-page-controls" id="binderPageControls" aria-label="Binder page controls" hidden>
+          <button class="icon-button" id="binderZoomOutButton" type="button" title="Return to binder spread" aria-label="Return to binder spread" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 19V5"></path>
+              <path d="m5 12 7-7 7 7"></path>
+            </svg>
+          </button>
+          <button class="icon-button" id="binderPreviousPageButton" type="button" title="Previous binder page" aria-label="Previous binder page">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15 18 9 12l6-6"></path>
+            </svg>
+          </button>
+          <button class="icon-button" id="binderNextPageButton" type="button" title="Next binder page" aria-label="Next binder page">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </button>
+          <button class="icon-button" id="binderOpenCardButton" type="button" title="Open card view" aria-label="Open card view" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 11V6a2 2 0 0 1 4 0v4"></path>
+              <path d="M12 10V5a2 2 0 0 1 4 0v6"></path>
+              <path d="M16 11V7a2 2 0 0 1 4 0v7"></path>
+              <path d="M8 11a2 2 0 0 0-4 0v3c0 4.4 3.6 8 8 8h1.5a6.5 6.5 0 0 0 6.5-6.5V14"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="gallery-empty" id="galleryEmpty" hidden>No favorites yet</div>
+      </section>
     </main>
+
+    <button class="icon-button corner-gallery" id="galleryToggleButton" type="button" title="Toggle gallery" aria-label="Toggle gallery" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 4h6v6H4z"></path>
+        <path d="M14 4h6v6h-6z"></path>
+        <path d="M4 14h6v6H4z"></path>
+        <path d="M14 14h6v6h-6z"></path>
+      </svg>
+    </button>
+
+    <label class="binder-switch" title="Toggle 3D binder" aria-label="Toggle 3D binder">
+      <input id="binderToggle" type="checkbox" checked>
+      <span class="theme-switch__track" aria-hidden="true">
+        <span class="theme-switch__thumb"></span>
+      </span>
+    </label>
 
     <label class="theme-switch" title="Toggle light mode" aria-label="Toggle light mode">
       <input id="themeToggle" type="checkbox">
@@ -70,6 +125,12 @@
         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
         <path d="M17 8 12 3 7 8"></path>
         <path d="M12 3v12"></path>
+      </svg>
+    </button>
+
+    <button class="icon-button corner-favorites" id="favoriteFilterButton" type="button" title="Show favorites" aria-label="Show favorites" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="m12 3.6 2.55 5.16 5.7.83-4.12 4.02.97 5.68L12 16.6l-5.1 2.69.97-5.68-4.12-4.02 5.7-.83L12 3.6Z"></path>
       </svg>
     </button>
 
@@ -128,6 +189,6 @@
         </button>
       </div>
     </div>
-    <script type="module" src="./app.js"></script>
+    <script type="module" src="./app.js?v=binder-22"></script>
   </body>
 </html>
