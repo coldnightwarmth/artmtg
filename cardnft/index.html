@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>card nft viewer</title>
-    <link rel="stylesheet" href="./styles.css?v=cardnft-24">
+    <link rel="stylesheet" href="./styles.css?v=cardnft-41">
     <script type="importmap">
       {
         "imports": {
@@ -36,7 +36,17 @@
           <button class="icon-button" id="favoriteButton" type="button" title="Toggle favorite" aria-label="Toggle favorite" aria-pressed="false">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.55 5.16 5.7.83-4.12 4.02.97 5.68L12 16.6l-5.1 2.69.97-5.68-4.12-4.02 5.7-.83L12 3.6Z"></path></svg>
           </button>
+          <button class="icon-button" id="traitInfoButton" type="button" title="Toggle traits" aria-label="Toggle traits" aria-expanded="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 12h.01"></path>
+              <path d="M12 12h.01"></path>
+              <path d="M18 12h.01"></path>
+            </svg>
+          </button>
         </div>
+        <section class="trait-panel" id="traitPanel" aria-label="Card traits" aria-hidden="true">
+          <div class="trait-grid" id="traitGrid"></div>
+        </section>
         <div class="card-filename" id="cardFileName" aria-live="polite"></div>
         <div class="card-counter" id="cardCounter" aria-live="polite">0/0</div>
       </section>
@@ -48,11 +58,15 @@
             <option value="all">all</option>
           </select>
         </label>
+        <button class="gallery-trait-search-button" id="traitSearchButton" type="button" aria-pressed="false">traits</button>
         <div class="gallery-grid" id="galleryGrid" hidden></div>
         <div class="binder-panel" id="binderPanel">
           <canvas id="binderCanvas" aria-label="3D Card NFT binder"></canvas>
           <div class="binder-loading" id="binderLoading" hidden><span></span></div>
         </div>
+        <section class="trait-search-panel" id="traitSearchPanel" aria-label="Trait search" hidden>
+          <div class="trait-search-groups" id="traitSearchGroups"></div>
+        </section>
         <div class="binder-page-controls" id="binderPageControls" aria-label="Binder page controls">
           <button class="icon-button" id="binderZoomOutButton" type="button" title="Return to binder spread" aria-label="Return to binder spread" hidden>
             <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -115,6 +129,6 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.55 5.16 5.7.83-4.12 4.02.97 5.68L12 16.6l-5.1 2.69.97-5.68-4.12-4.02 5.7-.83L12 3.6Z"></path></svg>
     </button>
 
-    <script type="module" src="./app.js?v=cardnft-24"></script>
+    <script type="module" src="./app.js?v=cardnft-41"></script>
   </body>
 </html>

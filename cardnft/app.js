@@ -10,7 +10,7 @@ const HIDDEN_TRAIT_CATEGORIES = new Set(["98noise"]);
 const EXCLUDED_SORT_TRAIT_VALUES = new Set(["no", "none", "null", "undefined"]);
 const CARD_WIDTH = 2.5;
 const CARD_HEIGHT = 3.54;
-const CARD_DEPTH = 0.036;
+const CARD_DEPTH = 0.028;
 const CARD_RADIUS = 0.12;
 const INDIVIDUAL_CARD_WORLD_Y = 0.42;
 const BINDER_FACE_WIDTH = 420;
@@ -72,8 +72,10 @@ const BINDER_FOCUS_ZOOM_OUT_LOCK_MS = 1000;
 const BINDER_FOCUS_TRANSITION_LOCK_MS = BINDER_CARD_VIEW_TRANSITION_MS + BINDER_FOCUS_ZOOM_OUT_LOCK_MS;
 const INDIVIDUAL_MAX_ZOOM_EPSILON = 0.035;
 const CARD_CAMERA_DEFAULT_Z = 9.55;
-const CARD_CAMERA_MIN_Z = 6.8;
+const CARD_CAMERA_MIN_Z = 4.85;
 const CARD_CAMERA_MAX_Z = 13.4;
+const CARD_PAN_MODE_Z = 7.25;
+const CARD_PAN_VISIBLE_MARGIN = 0.48;
 const BINDER_DOUBLE_TAP_MS = 420;
 const BINDER_DOUBLE_TAP_DISTANCE = 28;
 const SHUFFLE_HISTORY_LIMIT = 10;
@@ -88,6 +90,9 @@ const els = {
   nextButton: document.querySelector("#nextButton"),
   shuffleButton: document.querySelector("#shuffleButton"),
   favoriteButton: document.querySelector("#favoriteButton"),
+  traitInfoButton: document.querySelector("#traitInfoButton"),
+  traitPanel: document.querySelector("#traitPanel"),
+  traitGrid: document.querySelector("#traitGrid"),
   cardFileName: document.querySelector("#cardFileName"),
   cardCounter: document.querySelector("#cardCounter"),
   galleryToggleButton: document.querySelector("#galleryToggleButton"),
@@ -105,6 +110,9 @@ const els = {
   binderShuffleButton: document.querySelector("#binderShuffleButton"),
   binderPageStatus: document.querySelector("#binderPageStatus"),
   traitSortSelect: document.querySelector("#traitSortSelect"),
+  traitSearchButton: document.querySelector("#traitSearchButton"),
+  traitSearchPanel: document.querySelector("#traitSearchPanel"),
+  traitSearchGroups: document.querySelector("#traitSearchGroups"),
   favoriteFilterButton: document.querySelector("#favoriteFilterButton"),
   binderToggle: document.querySelector("#binderToggle"),
   themeToggle: document.querySelector("#themeToggle"),
@@ -122,6 +130,8 @@ let currentIndex = 0;
 let galleryOpen = false;
 let favoritesOnly = false;
 let traitSortCategory = "all";
+let activeTraitFilter = null;
+let traitSearchOpen = false;
 let isBinderMode = localStorage.getItem("cardnft:binderMode:v1") !== "grid";
 let cardRenderer;
 let cardScene;
@@ -130,15 +140,29 @@ let cardGroup;
 let cardFrontMesh;
 let cardBackMesh;
 let cardGlareMesh;
+let cardBackGlareMesh;
+let cardGradientMesh;
+let cardBackGradientMesh;
+let cardFrontNoiseMesh;
+let cardBackNoiseMesh;
 let cardPlaceholderTexture;
+let cardSurfaceNoiseTexture;
 let backTexturePromise;
 let cardApplyToken = 0;
 let dragState = null;
 let targetRotationX = 0;
 let targetRotationY = 0;
+let targetCardOffsetX = 0;
+let currentCardOffsetX = 0;
+let targetPanX = 0;
+let targetPanY = 0;
+let currentPanX = 0;
+let currentPanY = 0;
 let targetCameraZ = CARD_CAMERA_DEFAULT_Z;
 let currentCameraZ = targetCameraZ;
 let smoothZoomVelocity = 0;
+let cardGlossActivity = 0;
+let traitsOpen = false;
 let individualWheelOutDistance = 0;
 let individualWheelOutLastAt = 0;
 let binderFocusWheelInDistance = 0;
@@ -170,6 +194,7 @@ let binderPageCount = 1;
 let binderTurn = 0;
 let binderTargetTurn = 0;
 let binderBendDirection = 1;
+let binderSinglePageSide = null;
 let binderResizeFrame = 0;
 let binderLastWidth = 0;
 let binderLastHeight = 0;
@@ -230,6 +255,17 @@ function initCardScene() {
   cardCamera = new THREE.PerspectiveCamera(34, 1, 0.1, 100);
   cardCamera.position.set(0, 0, targetCameraZ);
 
+  const ambient = new THREE.HemisphereLight(0xffffff, 0x2a2118, 1.18);
+  cardScene.add(ambient);
+
+  const key = new THREE.DirectionalLight(0xfff2d4, 1.72);
+  key.position.set(-3.8, 4.2, 4.8);
+  cardScene.add(key);
+
+  const rim = new THREE.DirectionalLight(0xaec8d8, 0.72);
+  rim.position.set(3.2, 1.8, -2.8);
+  cardScene.add(rim);
+
   cardGroup = new THREE.Group();
   cardGroup.position.y = INDIVIDUAL_CARD_WORLD_Y;
   cardScene.add(cardGroup);
@@ -262,27 +298,32 @@ function initCardScene() {
   cardBackMesh.rotation.y = Math.PI;
   cardGroup.add(cardBackMesh);
 
-  const glareInset = 0.075;
-  const glareGeometry = createRoundedPlaneGeometry(
-    CARD_WIDTH - glareInset,
-    CARD_HEIGHT - glareInset,
-    Math.max(0.02, CARD_RADIUS - glareInset * 0.45),
-  );
-  cardGlareMesh = new THREE.Mesh(
-    glareGeometry,
-    new THREE.MeshBasicMaterial({
-      map: createGlareTexture(),
-      transparent: true,
-      opacity: 0.18,
-      blending: THREE.AdditiveBlending,
-      alphaTest: 0.004,
-      depthWrite: false,
-      depthTest: true,
-      toneMapped: false,
-    }),
-  );
-  cardGlareMesh.position.z = CARD_DEPTH / 2 + 0.004;
+  cardFrontNoiseMesh = createCardSurfaceNoisePlane();
+  cardFrontNoiseMesh.position.z = CARD_DEPTH / 2 + 0.005;
+  cardGroup.add(cardFrontNoiseMesh);
+
+  cardBackNoiseMesh = createCardSurfaceNoisePlane();
+  cardBackNoiseMesh.rotation.y = Math.PI;
+  cardBackNoiseMesh.position.z = -CARD_DEPTH / 2 - 0.005;
+  cardGroup.add(cardBackNoiseMesh);
+
+  cardGradientMesh = createCardGradientPlane(1);
+  cardGradientMesh.position.z = CARD_DEPTH / 2 + 0.007;
+  cardGroup.add(cardGradientMesh);
+
+  cardBackGradientMesh = createCardGradientPlane(-1);
+  cardBackGradientMesh.rotation.y = Math.PI;
+  cardBackGradientMesh.position.z = -CARD_DEPTH / 2 - 0.007;
+  cardGroup.add(cardBackGradientMesh);
+
+  cardGlareMesh = createCardGlossPlane(1);
+  cardGlareMesh.position.z = CARD_DEPTH / 2 + 0.009;
   cardGroup.add(cardGlareMesh);
+
+  cardBackGlareMesh = createCardGlossPlane(-1);
+  cardBackGlareMesh.rotation.y = Math.PI;
+  cardBackGlareMesh.position.z = -CARD_DEPTH / 2 - 0.009;
+  cardGroup.add(cardBackGlareMesh);
 
   resizeCardRenderer();
 }
@@ -296,16 +337,23 @@ function initEvents() {
     goBackInShuffleHistory();
   });
   els.favoriteButton.addEventListener("click", toggleCurrentFavorite);
-  els.galleryToggleButton.addEventListener("click", () => setGalleryOpen(!galleryOpen));
+  els.traitInfoButton.addEventListener("click", toggleTraitInfo);
+  els.galleryToggleButton.addEventListener("click", () => setGalleryOpen(!galleryOpen, { resetFilters: !galleryOpen }));
   els.favoriteFilterButton.addEventListener("click", toggleFavoriteFilter);
+  els.traitSearchButton.addEventListener("click", toggleTraitSearch);
   els.traitSortSelect.addEventListener("change", () => {
+    activeTraitFilter = null;
+    traitSearchOpen = false;
     traitSortCategory = els.traitSortSelect.value || "all";
+    updateTraitSearchState();
     resetBinderGalleryPosition();
     renderGallery();
   });
   els.binderToggle.addEventListener("change", () => {
     isBinderMode = els.binderToggle.checked;
     localStorage.setItem("cardnft:binderMode:v1", isBinderMode ? "binder" : "grid");
+    traitSearchOpen = false;
+    updateTraitSearchState();
     deactivateAllAnimatedRecords();
     renderGallery();
   });
@@ -382,7 +430,10 @@ function setCard(index) {
 
   targetRotationX = 0;
   targetRotationY = 0;
+  resetCardPan(true);
+  cardGlossActivity = 0;
   updateCardText();
+  renderTraitPanel();
   updateFavoriteButtons();
 }
 
@@ -412,6 +463,88 @@ function toggleCurrentFavorite() {
   saveSet("cardnft:favorites:v1", favorites);
   updateFavoriteButtons();
   if (galleryOpen) renderGallery();
+}
+
+function toggleTraitInfo() {
+  setTraitInfoOpen(!traitsOpen);
+}
+
+function setTraitInfoOpen(open) {
+  traitsOpen = Boolean(open) && !galleryOpen;
+  els.body.classList.toggle("traits-open", traitsOpen);
+  els.traitInfoButton.setAttribute("aria-expanded", String(traitsOpen));
+  els.traitPanel.setAttribute("aria-hidden", String(!traitsOpen));
+  if (traitsOpen) renderTraitPanel();
+}
+
+function renderTraitPanel() {
+  if (!els.traitGrid) return;
+
+  const traits = getCardTraitEntries(currentIndex);
+  const fragment = document.createDocumentFragment();
+  for (const trait of traits) {
+    const tile = document.createElement("button");
+    tile.className = "trait-tile";
+    tile.type = "button";
+    tile.title = `Show cards with ${trait.value}`;
+    tile.addEventListener("click", () => openTraitFilteredGallery(trait));
+
+    const category = document.createElement("div");
+    category.className = "trait-category";
+    category.textContent = trait.category;
+
+    const value = document.createElement("div");
+    value.className = "trait-value";
+    value.textContent = trait.value;
+
+    tile.append(category, value);
+    fragment.append(tile);
+  }
+
+  if (!traits.length) {
+    const tile = document.createElement("article");
+    tile.className = "trait-tile trait-tile-empty";
+    const value = document.createElement("div");
+    value.className = "trait-value";
+    value.textContent = "No visible traits";
+    tile.append(value);
+    fragment.append(tile);
+  }
+
+  els.traitGrid.replaceChildren(fragment);
+}
+
+function openTraitFilteredGallery(trait) {
+  applyTraitFilter(trait.category, trait.value);
+}
+
+function applyTraitFilter(category, value) {
+  activeTraitFilter = {
+    category,
+    value,
+    normalizedValue: normalizeTraitValue(value),
+  };
+  traitSortCategory = category;
+  els.traitSortSelect.value = category;
+  favoritesOnly = false;
+  traitSearchOpen = false;
+  isBinderMode = true;
+  els.binderToggle.checked = true;
+  localStorage.setItem("cardnft:binderMode:v1", "binder");
+  updateFavoriteButtons();
+  updateTraitSearchState();
+  resetBinderGalleryPosition();
+  setGalleryOpen(true);
+}
+
+function getCardTraitEntries(index) {
+  const values = CARD_NFT_TRAITS[index]?.values || [];
+  return CARD_NFT_TRAIT_CATEGORIES
+    .map((category, categoryIndex) => ({
+      category,
+      value: String(values[categoryIndex] || "").trim(),
+    }))
+    .filter(({ category, value }) => !HIDDEN_TRAIT_CATEGORIES.has(category) && isVisibleTraitValue(value));
 }
 
 function toggleFocusedBinderFavorite() {
@@ -456,15 +589,18 @@ function updateBinderFavoriteButton() {
   );
 }
 
-function setGalleryOpen(open) {
+function setGalleryOpen(open, options = {}) {
   resetViewSwitchWheelDistances();
   binderSpreadPreparationToken += 1;
   binderPreparingSpread = false;
+  if (!open || options.resetFilters) resetGalleryFilters();
   galleryOpen = open;
+  if (open) setTraitInfoOpen(false);
   deactivateAllAnimatedRecords();
   els.body.classList.toggle("is-gallery", open);
   els.galleryToggleButton.setAttribute("aria-pressed", String(open));
   els.galleryPanel.hidden = !open;
+  updateTraitSearchState();
   if (open) {
     clearBinderFocus({ silent: true });
     snapBinderToWholePage();
@@ -477,11 +613,40 @@ function setGalleryOpen(open) {
   }
 }
 
+function resetGalleryFilters() {
+  activeTraitFilter = null;
+  favoritesOnly = false;
+  traitSearchOpen = false;
+  traitSortCategory = "all";
+  if (els.traitSortSelect) els.traitSortSelect.value = "all";
+  updateFavoriteButtons();
+  updateTraitSearchState();
+}
+
 function toggleFavoriteFilter() {
   favoritesOnly = !favoritesOnly;
+  traitSearchOpen = false;
+  updateTraitSearchState();
   updateFavoriteButtons();
   resetBinderGalleryPosition();
   renderGallery();
+}
+
+function toggleTraitSearch() {
+  traitSearchOpen = !traitSearchOpen;
+  if (traitSearchOpen) {
+    clearBinderFocus({ silent: true });
+    deactivateAllAnimatedRecords();
+  }
+  updateTraitSearchState();
+  renderGallery();
+}
+
+function updateTraitSearchState() {
+  const open = galleryOpen && traitSearchOpen;
+  els.body.classList.toggle("trait-search-open", open);
+  els.traitSearchPanel.hidden = !open;
+  els.traitSearchButton.setAttribute("aria-pressed", String(open));
 }
 
 function resetBinderGalleryPosition() {
@@ -489,6 +654,7 @@ function resetBinderGalleryPosition() {
   binderPreparingSpread = false;
   binderTargetTurn = 0;
   binderTurn = 0;
+  binderSinglePageSide = null;
   binderFocusPosition = -1;
   binderTextureQueueKey = "";
 }
@@ -497,6 +663,12 @@ function getVisibleIndexes() {
   let indexes = CARDS.map((_, index) => index);
   if (favoritesOnly) {
     indexes = indexes.filter((index) => favorites.has(favoriteKey(index)));
+  }
+  if (activeTraitFilter) {
+    indexes = indexes.filter((index) => (
+      normalizeTraitValue(getCardTraitValue(index, activeTraitFilter.category))
+        === activeTraitFilter.normalizedValue
+    ));
   }
   if (traitSortCategory === "all") return indexes;
   return getTraitGroupedIndexes(indexes, traitSortCategory);
@@ -523,8 +695,82 @@ function getCardTraitValue(index, category) {
 }
 
 function isVisibleTraitValue(value) {
-  const normalized = String(value || "").trim().toLowerCase();
+  const normalized = normalizeTraitValue(value);
   return Boolean(normalized) && !EXCLUDED_SORT_TRAIT_VALUES.has(normalized);
+}
+
+function normalizeTraitValue(value) {
+  return String(value || "").trim().toLowerCase();
+}
+
+function getTraitSearchGroups() {
+  return CARD_NFT_TRAIT_CATEGORIES
+    .map((category, categoryIndex) => {
+      if (HIDDEN_TRAIT_CATEGORIES.has(category)) return null;
+
+      const traits = new Map();
+      for (const traitRecord of CARD_NFT_TRAITS) {
+        const value = String(traitRecord?.values?.[categoryIndex] || "").trim();
+        if (!isVisibleTraitValue(value)) continue;
+
+        const normalized = normalizeTraitValue(value);
+        const existing = traits.get(normalized);
+        if (existing) {
+          existing.count += 1;
+        } else {
+          traits.set(normalized, { value, count: 1 });
+        }
+      }
+
+      if (!traits.size) return null;
+      return {
+        category,
+        traits: [...traits.values()].sort((a, b) => (
+          a.value.localeCompare(b.value, undefined, { numeric: true, sensitivity: "base" })
+        )),
+      };
+    })
+    .filter(Boolean);
+}
+
+function renderTraitSearch() {
+  const fragment = document.createDocumentFragment();
+
+  for (const group of getTraitSearchGroups()) {
+    const section = document.createElement("section");
+    section.className = "trait-search-group";
+
+    const heading = document.createElement("h2");
+    heading.className = "trait-search-heading";
+    heading.textContent = group.category;
+
+    const grid = document.createElement("div");
+    grid.className = "trait-search-tile-grid";
+
+    for (const trait of group.traits) {
+      const tile = document.createElement("button");
+      tile.className = "trait-search-tile";
+      tile.type = "button";
+      tile.title = `Show cards with ${trait.value}`;
+      tile.addEventListener("click", () => applyTraitFilter(group.category, trait.value));
+
+      const value = document.createElement("div");
+      value.className = "trait-search-value";
+      value.textContent = trait.value;
+
+      const count = document.createElement("div");
+      count.className = "trait-search-count";
+      count.textContent = `${trait.count} ${trait.count === 1 ? "card" : "cards"}`;
+
+      tile.append(value, count);
+      grid.append(tile);
+    }
+
+    section.append(heading, grid);
+    fragment.append(section);
+  }
+
+  els.traitSearchGroups.replaceChildren(fragment);
 }
 
 function compareCardIndexes(a, b) {
@@ -541,6 +787,20 @@ function titleNumber(title) {
 }
 
 function renderGallery() {
+  updateTraitSearchState();
+  if (traitSearchOpen) {
+    renderTraitSearch();
+    els.galleryEmpty.hidden = true;
+    els.galleryGrid.hidden = true;
+    els.binderPanel.hidden = true;
+    els.binderPageControls.hidden = true;
+    els.binderPageStatus.hidden = true;
+    els.binderPageStatus.textContent = "";
+    stopBinderRenderLoop();
+    deactivateAllAnimatedRecords();
+    return;
+  }
+
   const indexes = getVisibleIndexes();
   const empty = indexes.length === 0;
   if (binderFocusPosition >= indexes.length) binderFocusPosition = -1;
@@ -1461,11 +1721,33 @@ function previousBinderPage() {
   turnBinderPage(-1);
 }
 
+function turnBinderSinglePage(direction) {
+  const totalSides = getBinderTotalPageSides();
+  const currentSide = getBinderSinglePageSide();
+  const nextSide = clamp(currentSide + direction, 0, totalSides - 1);
+  if (nextSide === currentSide) return;
+
+  binderSpreadPreparationToken += 1;
+  binderPreparingSpread = false;
+  binderSinglePageSide = nextSide;
+  const nextTurn = getBinderTurnForSinglePageSide(nextSide);
+  if (nextTurn !== binderTargetTurn) binderBendDirection = Math.sign(nextTurn - binderTargetTurn) || binderBendDirection;
+  binderTargetTurn = nextTurn;
+  updateBinderPageControls();
+  startBinderRenderLoop();
+  updateBinderAnimation();
+}
+
 function turnBinderPage(direction) {
   if (!galleryOpen || !isBinderMode || binderPageCount < 1) return;
 
   if (isBinderFocused()) {
     moveBinderFocus(direction);
+    return;
+  }
+
+  if (isBinderSinglePageView()) {
+    turnBinderSinglePage(direction);
     return;
   }
 
@@ -1611,13 +1893,14 @@ function moveBinderToSpread(turn, { startTurn = null } = {}) {
     binderBendDirection = Math.sign(nextTurn - binderTurn) || binderBendDirection;
   }
   binderTargetTurn = nextTurn;
+  if (isBinderSinglePageView()) binderSinglePageSide = deriveBinderSinglePageSideFromTurn(nextTurn);
   updateBinderPageControls();
   startBinderRenderLoop();
   updateBinderAnimation();
 }
 
 function updateBinderPageControls() {
-  const controlsHidden = !galleryOpen || !isBinderMode || els.binderPanel.hidden || binderPageCount < 1;
+  const controlsHidden = traitSearchOpen || !galleryOpen || !isBinderMode || els.binderPanel.hidden || binderPageCount < 1;
   els.binderPageControls.hidden = controlsHidden;
   els.binderPageStatus.hidden = controlsHidden;
   if (controlsHidden) return;
@@ -1641,6 +1924,17 @@ function updateBinderPageControls() {
     return;
   }
 
+  if (isBinderSinglePageView()) {
+    const currentSide = getBinderSinglePageSide();
+    els.binderPreviousPageButton.disabled = currentSide <= 0;
+    els.binderNextPageButton.disabled = currentSide >= getBinderTotalPageSides() - 1;
+    els.binderPreviousPageButton.setAttribute("title", "Previous binder page side");
+    els.binderPreviousPageButton.setAttribute("aria-label", "Previous binder page side");
+    els.binderNextPageButton.setAttribute("title", "Next binder page side");
+    els.binderNextPageButton.setAttribute("aria-label", "Next binder page side");
+    return;
+  }
+
   const currentPage = Math.round(binderTargetTurn);
   els.binderPreviousPageButton.disabled = currentPage <= 0;
   els.binderNextPageButton.disabled = currentPage >= binderPageCount;
@@ -1658,6 +1952,11 @@ function updateBinderPageStatus(focused = isBinderFocused()) {
 
   const currentTurn = clamp(Math.round(binderTargetTurn), 0, binderPageCount);
   const totalPageSides = Math.max(1, binderPageCount * 2);
+  if (isBinderSinglePageView()) {
+    els.binderPageStatus.textContent = `${getBinderSinglePageSide() + 1} / ${totalPageSides}`;
+    return;
+  }
+
   if (currentTurn <= 0 || totalPageSides <= 1) {
     els.binderPageStatus.textContent = `1 / ${totalPageSides}`;
   } else if (currentTurn >= binderPageCount) {
@@ -1684,6 +1983,61 @@ function getBinderTurnForPosition(position) {
   const pageIndex = Math.floor(position / BINDER_PAGE_SLOTS);
   const sideSlot = position % BINDER_PAGE_SLOTS;
   return clamp(pageIndex + (sideSlot >= BINDER_SIDE_SLOTS ? 1 : 0), 0, binderPageCount);
+}
+
+function isBinderSinglePageView(width = binderLastWidth, height = binderLastHeight) {
+  return galleryOpen
+    && isBinderMode
+    && !isBinderFocused()
+    && isBinderSinglePageViewport(width, height);
+}
+
+function isBinderSinglePageViewport(width = binderLastWidth, height = binderLastHeight) {
+  const viewportWidth = width || window.innerWidth || document.documentElement.clientWidth || 0;
+  const viewportHeight = height || window.innerHeight || document.documentElement.clientHeight || 0;
+  return viewportWidth <= 760 || viewportWidth / Math.max(1, viewportHeight) <= 0.86;
+}
+
+function getBinderTotalPageSides() {
+  return Math.max(1, binderPageCount * 2);
+}
+
+function getBinderSinglePageSide() {
+  const totalSides = getBinderTotalPageSides();
+  if (Number.isInteger(binderSinglePageSide)) {
+    binderSinglePageSide = clamp(binderSinglePageSide, 0, totalSides - 1);
+    if (getBinderTurnForSinglePageSide(binderSinglePageSide) === clamp(Math.round(binderTargetTurn), 0, binderPageCount)) {
+      return binderSinglePageSide;
+    }
+  }
+
+  binderSinglePageSide = deriveBinderSinglePageSideFromTurn(binderTargetTurn);
+  return binderSinglePageSide;
+}
+
+function deriveBinderSinglePageSideFromTurn(turn = binderTargetTurn) {
+  const totalSides = getBinderTotalPageSides();
+  const currentTurn = clamp(Math.round(turn), 0, binderPageCount);
+  if (currentTurn <= 0) return 0;
+  if (currentTurn >= binderPageCount) return totalSides - 1;
+
+  const leftSide = currentTurn * 2 - 1;
+  const rightSide = currentTurn * 2;
+  if (binderSinglePageSide === leftSide || binderSinglePageSide === rightSide) {
+    return binderSinglePageSide;
+  }
+  return clamp(binderBendDirection < 0 ? rightSide : leftSide, 0, totalSides - 1);
+}
+
+function getBinderTurnForSinglePageSide(side) {
+  const clampedSide = clamp(Math.round(side), 0, getBinderTotalPageSides() - 1);
+  return clampedSide % 2 === 0
+    ? clamp(clampedSide / 2, 0, binderPageCount)
+    : clamp((clampedSide + 1) / 2, 0, binderPageCount);
+}
+
+function getBinderSinglePageCenterX(side = getBinderSinglePageSide()) {
+  return side % 2 === 0 ? BINDER_PAGE_WIDTH / 2 : -BINDER_PAGE_WIDTH / 2;
 }
 
 function focusBinderPosition(position, { immediate = false } = {}) {
@@ -1816,6 +2170,7 @@ async function openFocusedBinderGalleryForCard(cardIndex) {
   if (!Number.isInteger(cardIndex)) return false;
 
   favoritesOnly = false;
+  traitSearchOpen = false;
   isBinderMode = true;
   galleryOpen = true;
   els.binderToggle.checked = true;
@@ -1824,6 +2179,7 @@ async function openFocusedBinderGalleryForCard(cardIndex) {
   els.galleryToggleButton.setAttribute("aria-pressed", "true");
   els.galleryPanel.hidden = false;
   updateFavoriteButtons();
+  updateTraitSearchState();
 
   const indexes = getVisibleIndexes();
   els.galleryGrid.replaceChildren();
@@ -2029,12 +2385,16 @@ function delay(ms) {
 
 function onCardPointerDown(event) {
   els.cardCanvas.setPointerCapture(event.pointerId);
+  const panMode = isCardPanMode();
   dragState = {
     pointerId: event.pointerId,
+    mode: panMode ? "pan" : "rotate",
     x: event.clientX,
     y: event.clientY,
     rotationX: targetRotationX,
     rotationY: targetRotationY,
+    panX: targetPanX,
+    panY: targetPanY,
   };
 }
 
@@ -2042,6 +2402,20 @@ function onCardPointerMove(event) {
   if (!dragState || event.pointerId !== dragState.pointerId) return;
   const dx = event.clientX - dragState.x;
   const dy = event.clientY - dragState.y;
+  if (dragState.mode === "pan" || isCardPanMode()) {
+    dragState.mode = "pan";
+    targetRotationX = 0;
+    targetRotationY = 0;
+    const worldPerPixel = getCardWorldUnitsPerPixel();
+    const limitedPan = clampCardPan(
+      dragState.panX + dx * worldPerPixel.x,
+      dragState.panY - dy * worldPerPixel.y,
+    );
+    targetPanX = limitedPan.x;
+    targetPanY = limitedPan.y;
+    return;
+  }
+
   targetRotationY = dragState.rotationY + dx * 0.008;
   targetRotationX = clamp(dragState.rotationX + dy * 0.008, -1.2, 1.2);
 }
@@ -2049,8 +2423,10 @@ function onCardPointerMove(event) {
 function onCardPointerUp(event) {
   if (!dragState || event.pointerId !== dragState.pointerId) return;
   dragState = null;
-  targetRotationX = 0;
-  targetRotationY = 0;
+  if (!isCardPanMode()) {
+    targetRotationX = 0;
+    targetRotationY = 0;
+  }
 }
 
 function onCardWheel(event) {
@@ -2142,6 +2518,7 @@ function onBinderPointerUp(event) {
     selectBinderCard(event);
   } else if (!isBinderFocused()) {
     binderTargetTurn = Math.round(binderTargetTurn);
+    if (isBinderSinglePageView()) binderSinglePageSide = deriveBinderSinglePageSideFromTurn(binderTargetTurn);
     updateBinderPageControls();
     startBinderRenderLoop();
   }
@@ -2152,6 +2529,7 @@ function onBinderPointerCancel(event) {
   markBinderInteractionActive();
   binderDrag = null;
   if (!isBinderFocused()) binderTargetTurn = Math.round(binderTargetTurn);
+  if (!isBinderFocused() && isBinderSinglePageView()) binderSinglePageSide = deriveBinderSinglePageSideFromTurn(binderTargetTurn);
   updateBinderPageControls();
   startBinderRenderLoop();
 }
@@ -2303,15 +2681,120 @@ function animateCard() {
   updateSmoothZoom();
   cardGroup.rotation.x += (targetRotationX - cardGroup.rotation.x) * 0.14;
   cardGroup.rotation.y += (targetRotationY - cardGroup.rotation.y) * 0.14;
+  targetCardOffsetX = getTraitCardOffsetX();
+  currentCardOffsetX += (targetCardOffsetX - currentCardOffsetX) * 0.16;
+  if (Math.abs(currentCardOffsetX) < 0.001 && targetCardOffsetX === 0) currentCardOffsetX = 0;
   currentCameraZ += (targetCameraZ - currentCameraZ) * 0.12;
   cardCamera.position.z = currentCameraZ;
-  const glare = 0.11 + Math.abs(Math.sin(cardGroup.rotation.y + cardGroup.rotation.x * 0.6)) * 0.18;
-  cardGlareMesh.material.opacity = clamp(glare, 0.09, 0.28);
-  cardGlareMesh.rotation.z = cardGroup.rotation.y * 0.22;
+  updateCardPan();
+  cardGroup.position.x = currentCardOffsetX + currentPanX;
+  cardGroup.position.y = INDIVIDUAL_CARD_WORLD_Y + currentPanY;
+  updateCardGlossActivity();
+  updateCardGlossUniforms(cardGradientMesh);
+  updateCardGlossUniforms(cardBackGradientMesh);
+  updateCardGlossUniforms(cardGlareMesh);
+  updateCardGlossUniforms(cardBackGlareMesh);
   if (!galleryOpen) {
     updateAnimatedTextureRecords(getIndividualAnimatedTextureRecords());
   }
   cardRenderer.render(cardScene, cardCamera);
+}
+
+function getTraitCardOffsetX() {
+  if (!traitsOpen || galleryOpen || isTraitPanelCompact()) return 0;
+
+  const viewportWidth = window.innerWidth || document.documentElement.clientWidth || 0;
+  const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+  if (viewportWidth < 820 || viewportWidth / Math.max(1, viewportHeight) < 1.12) return 0;
+
+  const visibleHeight = 2 * Math.tan(THREE.MathUtils.degToRad(cardCamera.fov) / 2) * currentCameraZ;
+  const visibleWidth = visibleHeight * cardCamera.aspect;
+  const pixelShift = clamp(viewportWidth * 0.2, 190, 330);
+  return -(visibleWidth * pixelShift) / Math.max(1, viewportWidth);
+}
+
+function updateCardPan() {
+  if (isCardPanMode()) {
+    targetRotationX += (0 - targetRotationX) * 0.16;
+    targetRotationY += (0 - targetRotationY) * 0.16;
+    const limitedPan = clampCardPan(targetPanX, targetPanY);
+    targetPanX = limitedPan.x;
+    targetPanY = limitedPan.y;
+  } else {
+    resetCardPan(false);
+  }
+
+  currentPanX += (targetPanX - currentPanX) * 0.18;
+  currentPanY += (targetPanY - currentPanY) * 0.18;
+  if (Math.abs(currentPanX) < 0.001 && targetPanX === 0) currentPanX = 0;
+  if (Math.abs(currentPanY) < 0.001 && targetPanY === 0) currentPanY = 0;
+}
+
+function isCardPanMode() {
+  return currentCameraZ <= CARD_PAN_MODE_Z || targetCameraZ <= CARD_PAN_MODE_Z;
+}
+
+function resetCardPan(immediate = false) {
+  targetPanX = 0;
+  targetPanY = 0;
+  if (immediate) {
+    currentPanX = 0;
+    currentPanY = 0;
+  }
+}
+
+function clampCardPan(x, y) {
+  const view = getCardVisibleWorldSize();
+  const maxX = Math.max(0, CARD_WIDTH / 2 + CARD_PAN_VISIBLE_MARGIN - view.width / 2);
+  const maxY = Math.max(0, CARD_HEIGHT / 2 + CARD_PAN_VISIBLE_MARGIN - view.height / 2);
+  return {
+    x: clamp(x, -maxX, maxX),
+    y: clamp(y, -maxY, maxY),
+  };
+}
+
+function getCardWorldUnitsPerPixel() {
+  const view = getCardVisibleWorldSize();
+  const rect = els.cardCanvas.getBoundingClientRect();
+  return {
+    x: view.width / Math.max(1, rect.width),
+    y: view.height / Math.max(1, rect.height),
+  };
+}
+
+function getCardVisibleWorldSize() {
+  const visibleHeight = 2 * Math.tan(THREE.MathUtils.degToRad(cardCamera.fov) / 2) * currentCameraZ;
+  return {
+    width: visibleHeight * cardCamera.aspect,
+    height: visibleHeight,
+  };
+}
+
+function isTraitPanelCompact() {
+  const viewportWidth = window.innerWidth || document.documentElement.clientWidth || 0;
+  const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+  return viewportWidth < 820 || viewportWidth / Math.max(1, viewportHeight) < 1.12;
+}
+
+function updateCardGlossActivity() {
+  const rotationAmount = Math.max(
+    Math.abs(cardGroup.rotation.x),
+    Math.abs(cardGroup.rotation.y),
+    Math.abs(targetRotationX),
+    Math.abs(targetRotationY),
+  );
+  const rotationActivity = clamp((rotationAmount - 0.018) / 0.34, 0, 1);
+  const targetActivity = dragState ? 1 : rotationActivity;
+  cardGlossActivity += (targetActivity - cardGlossActivity) * (targetActivity > cardGlossActivity ? 0.22 : 0.12);
+  if (cardGlossActivity < 0.002 && targetActivity === 0) cardGlossActivity = 0;
+}
+
+function updateCardGlossUniforms(mesh) {
+  const uniforms = mesh?.material?.uniforms;
+  if (!uniforms) return;
+  uniforms.uCameraPosition.value.copy(cardCamera.position);
+  uniforms.uTime.value = performance.now() * 0.001;
+  uniforms.uActivity.value = cardGlossActivity;
 }
 
 function renderBinderScene() {
@@ -2696,6 +3179,7 @@ function setBinderPageRenderOrder(page, baseOrder) {
 function updateBinderCameraFrame(immediate = false) {
   if (!binderCamera) return;
 
+  updateBinderDefaultCameraFrame();
   binderDesiredCameraPosition.copy(binderDefaultCameraPosition);
   binderDesiredCameraLookAt.copy(binderDefaultCameraLookAt);
 
@@ -2724,6 +3208,33 @@ function updateBinderCameraFrame(immediate = false) {
   binderCamera.position.lerp(binderDesiredCameraPosition, alpha);
   binderCurrentCameraLookAt.lerp(binderDesiredCameraLookAt, alpha);
   binderCamera.lookAt(binderCurrentCameraLookAt);
+}
+
+function updateBinderDefaultCameraFrame() {
+  if (!binderCamera) return;
+
+  const width = binderLastWidth || els.binderPanel?.getBoundingClientRect().width || window.innerWidth || 1;
+  const height = binderLastHeight || els.binderPanel?.getBoundingClientRect().height || window.innerHeight || 1;
+  const aspect = Math.max(width / Math.max(1, height), 0.1);
+  const fov = THREE.MathUtils.degToRad(binderCamera.fov);
+  const singlePage = isBinderSinglePageViewport(width, height) && !isBinderFocused();
+  const singlePageSide = singlePage ? getBinderSinglePageSide() : null;
+  const centerX = singlePage ? getBinderSinglePageCenterX(singlePageSide) : 0;
+  const fitHeight = BINDER_PAGE_HEIGHT + (
+    singlePage
+      ? (height < 640 ? 0.92 : 0.72)
+      : (height < 640 ? 1.62 : 1.35)
+  );
+  const fitWidth = BINDER_PAGE_WIDTH * (
+    singlePage
+      ? (width < 520 ? 1.24 : 1.18)
+      : (width < 620 ? 2.34 : 2.22)
+  );
+  const distanceForHeight = fitHeight / (2 * Math.tan(fov / 2));
+  const distanceForWidth = fitWidth / (2 * Math.tan(fov / 2) * aspect);
+  const distance = Math.max(distanceForHeight, distanceForWidth) + (singlePage ? 0.42 : 0.88);
+  binderDefaultCameraPosition.set(centerX, 0.24, distance);
+  binderDefaultCameraLookAt.set(centerX, 0.24, 0);
 }
 
 function getBinderFocusedMesh() {
@@ -2809,16 +3320,9 @@ function resizeBinderRenderer() {
     binderLastHeight = height;
   }
 
-  const aspect = width / height;
-  const fov = THREE.MathUtils.degToRad(binderCamera.fov);
-  const fitHeight = BINDER_PAGE_HEIGHT + (height < 640 ? 1.62 : 1.35);
-  const fitWidth = BINDER_PAGE_WIDTH * (width < 620 ? 2.34 : 2.22);
-  const distanceForHeight = fitHeight / (2 * Math.tan(fov / 2));
-  const distanceForWidth = fitWidth / (2 * Math.tan(fov / 2) * Math.max(aspect, 0.1));
-  const distance = Math.max(distanceForHeight, distanceForWidth) + 0.88;
-  binderDefaultCameraPosition.set(0, 0.24, distance);
-  binderDefaultCameraLookAt.set(0, 0.24, 0);
+  updateBinderDefaultCameraFrame();
   updateBinderCameraFrame(!isBinderFocused() || !binderCameraReady);
+  updateBinderPageControls();
 }
 
 function createBinderCoverMaterial() {
@@ -3172,21 +3676,214 @@ function getBackPlaceholderTexture() {
   return getCardPlaceholderTexture();
 }
 
-function createGlareTexture() {
+function createCardSurfaceNoisePlane() {
+  const material = new THREE.MeshBasicMaterial({
+    map: createCardSurfaceNoiseTexture(),
+    transparent: true,
+    opacity: 0.42,
+    depthWrite: false,
+    depthTest: false,
+    side: THREE.FrontSide,
+    toneMapped: false,
+  });
+  material.forceSinglePass = true;
+
+  const mesh = new THREE.Mesh(
+    createRoundedPlaneGeometry(CARD_WIDTH, CARD_HEIGHT, CARD_RADIUS),
+    material,
+  );
+  mesh.renderOrder = 26;
+  return mesh;
+}
+
+function createCardSurfaceNoiseTexture() {
+  if (cardSurfaceNoiseTexture) return cardSurfaceNoiseTexture;
+
+  const width = 512;
+  const height = 724;
   const canvas = document.createElement("canvas");
-  canvas.width = 512;
-  canvas.height = 724;
+  canvas.width = width;
+  canvas.height = height;
   const ctx = canvas.getContext("2d");
-  const gradient = ctx.createLinearGradient(40, 0, canvas.width - 80, canvas.height);
-  gradient.addColorStop(0, "rgba(255,255,255,0)");
-  gradient.addColorStop(0.45, "rgba(255,255,255,0.19)");
-  gradient.addColorStop(0.56, "rgba(255,255,255,0.055)");
-  gradient.addColorStop(1, "rgba(255,255,255,0)");
-  ctx.fillStyle = gradient;
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  const texture = new THREE.CanvasTexture(canvas);
-  texture.colorSpace = THREE.SRGBColorSpace;
-  return texture;
+  const imageData = ctx.createImageData(width, height);
+  let seed = 0x7a56d3c1;
+
+  for (let i = 0; i < imageData.data.length; i += 4) {
+    seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0;
+    const value = seed >>> 24;
+    const isLight = value > 126;
+    const grain = isLight ? 238 + (value % 18) : 16 + (value % 32);
+    imageData.data[i] = grain;
+    imageData.data[i + 1] = grain;
+    imageData.data[i + 2] = grain;
+    imageData.data[i + 3] = 7 + (value % 16);
+  }
+
+  ctx.putImageData(imageData, 0, 0);
+  ctx.globalCompositeOperation = "source-over";
+  for (let y = 0; y < height; y += 5) {
+    seed = (Math.imul(seed, 1103515245) + 12345) >>> 0;
+    const alpha = 0.018 + ((seed >>> 24) / 255) * 0.024;
+    ctx.fillStyle = `rgba(255,255,255,${alpha})`;
+    ctx.fillRect(0, y, width, 1);
+  }
+  for (let y = 2; y < height; y += 7) {
+    seed = (Math.imul(seed, 1103515245) + 12345) >>> 0;
+    const alpha = 0.012 + ((seed >>> 24) / 255) * 0.018;
+    ctx.fillStyle = `rgba(0,0,0,${alpha})`;
+    ctx.fillRect(0, y, width, 1);
+  }
+
+  cardSurfaceNoiseTexture = new THREE.CanvasTexture(canvas);
+  cardSurfaceNoiseTexture.colorSpace = THREE.SRGBColorSpace;
+  cardSurfaceNoiseTexture.minFilter = THREE.LinearMipmapLinearFilter;
+  cardSurfaceNoiseTexture.magFilter = THREE.LinearFilter;
+  cardSurfaceNoiseTexture.wrapS = THREE.ClampToEdgeWrapping;
+  cardSurfaceNoiseTexture.wrapT = THREE.ClampToEdgeWrapping;
+  cardSurfaceNoiseTexture.generateMipmaps = true;
+  cardSurfaceNoiseTexture.needsUpdate = true;
+  return cardSurfaceNoiseTexture;
+}
+
+function createCardGradientPlane(normalDirection) {
+  const material = new THREE.ShaderMaterial({
+    transparent: true,
+    blending: THREE.NormalBlending,
+    depthWrite: false,
+    depthTest: false,
+    side: THREE.FrontSide,
+    uniforms: {
+      uCameraPosition: { value: new THREE.Vector3() },
+      uTime: { value: 0 },
+      uNormalDirection: { value: normalDirection },
+      uActivity: { value: 0 },
+    },
+    vertexShader: `
+      varying vec2 vUv;
+      varying vec3 vWorldNormal;
+      varying vec3 vWorldPosition;
+
+      void main() {
+        vUv = uv;
+        vWorldNormal = normalize(mat3(modelMatrix) * normal);
+        vec4 worldPosition = modelMatrix * vec4(position, 1.0);
+        vWorldPosition = worldPosition.xyz;
+        gl_Position = projectionMatrix * viewMatrix * worldPosition;
+      }
+    `,
+    fragmentShader: `
+      uniform vec3 uCameraPosition;
+      uniform float uTime;
+      uniform float uNormalDirection;
+      uniform float uActivity;
+      varying vec2 vUv;
+      varying vec3 vWorldNormal;
+      varying vec3 vWorldPosition;
+
+      void main() {
+        vec3 normal = normalize(vWorldNormal) * uNormalDirection;
+        vec3 viewDir = normalize(uCameraPosition - vWorldPosition);
+        float facing = abs(dot(normal, viewDir));
+        float fresnel = pow(1.0 - clamp(facing, 0.0, 1.0), 1.18);
+        vec3 reflected = reflect(-viewDir, normal);
+        vec2 centered = vUv - 0.5;
+        float lightShift = reflected.x * 0.32 - reflected.y * 0.22 - 0.34;
+        float wash = smoothstep(-0.76, 0.82, centered.x * -0.84 + centered.y * 0.58 + lightShift);
+        float counterWash = smoothstep(-0.68, 0.78, centered.x * 0.7 + centered.y * 0.36 - reflected.x * 0.18 + 0.12);
+        float diagonalBloom = smoothstep(0.58, 0.04, abs(centered.x * 0.74 - centered.y * 0.52 + reflected.x * 0.28 - reflected.y * 0.18 - 0.4));
+        float softVignette = smoothstep(0.82, 0.28, length(centered * vec2(0.8, 0.58)));
+        vec3 cool = vec3(0.44, 0.68, 0.98);
+        vec3 warm = vec3(1.0, 0.78, 0.34);
+        vec3 rose = vec3(0.96, 0.48, 0.86);
+        vec3 color = mix(cool, warm, wash);
+        color = mix(color, rose, counterWash * 0.26);
+        color = mix(color, vec3(0.98, 0.92, 0.7), diagonalBloom * 0.16);
+        float alpha = 0.08 + wash * 0.065 + counterWash * 0.04 + diagonalBloom * 0.055 + fresnel * 0.055;
+        alpha *= softVignette;
+        gl_FragColor = vec4(color, clamp(alpha, 0.0, 0.24) * uActivity);
+      }
+    `,
+  });
+  material.forceSinglePass = true;
+
+  const mesh = new THREE.Mesh(
+    createRoundedPlaneGeometry(CARD_WIDTH, CARD_HEIGHT, CARD_RADIUS),
+    material,
+  );
+  mesh.renderOrder = 27;
+  return mesh;
+}
+
+function createCardGlossPlane(normalDirection) {
+  const material = new THREE.ShaderMaterial({
+    transparent: true,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+    depthTest: false,
+    side: THREE.FrontSide,
+    uniforms: {
+      uCameraPosition: { value: new THREE.Vector3() },
+      uTime: { value: 0 },
+      uNormalDirection: { value: normalDirection },
+      uActivity: { value: 0 },
+    },
+    vertexShader: `
+      varying vec2 vUv;
+      varying vec3 vWorldNormal;
+      varying vec3 vWorldPosition;
+
+      void main() {
+        vUv = uv;
+        vWorldNormal = normalize(mat3(modelMatrix) * normal);
+        vec4 worldPosition = modelMatrix * vec4(position, 1.0);
+        vWorldPosition = worldPosition.xyz;
+        gl_Position = projectionMatrix * viewMatrix * worldPosition;
+      }
+    `,
+    fragmentShader: `
+      uniform vec3 uCameraPosition;
+      uniform float uTime;
+      uniform float uNormalDirection;
+      uniform float uActivity;
+      varying vec2 vUv;
+      varying vec3 vWorldNormal;
+      varying vec3 vWorldPosition;
+
+      void main() {
+        vec3 normal = normalize(vWorldNormal) * uNormalDirection;
+        vec3 viewDir = normalize(uCameraPosition - vWorldPosition);
+        float facing = abs(dot(normal, viewDir));
+        float fresnel = pow(1.0 - clamp(facing, 0.0, 1.0), 1.18);
+        vec3 reflected = reflect(-viewDir, normal);
+        vec2 centered = vUv - 0.5;
+        float sweepAxis = centered.x * 0.92 - centered.y * 0.52 + reflected.x * 0.72 + reflected.y * 0.42 - 0.36 + sin(uTime * 0.38) * 0.025;
+        float sharpSweep = smoothstep(0.11, 0.0, abs(sweepAxis));
+        float broadSweep = smoothstep(0.5, 0.0, abs(sweepAxis + centered.y * 0.18));
+        float verticalEdge = smoothstep(0.36, 0.52, abs(centered.x));
+        float wash = smoothstep(-0.82, 0.82, centered.x * -0.72 + centered.y * 0.54 + reflected.x * 0.36 - reflected.y * 0.24);
+        float counterWash = smoothstep(-0.7, 0.72, centered.x * 0.64 + centered.y * 0.42 - reflected.x * 0.24);
+        float fineGrain = fract(sin(dot(vUv * vec2(811.3, 1247.1), vec2(12.9898, 78.233))) * 43758.5453);
+        float sheen = clamp(fresnel * 0.52 + sharpSweep * 0.42 + broadSweep * 0.22 + verticalEdge * 0.06, 0.0, 0.74);
+        sheen *= mix(0.88, 1.09, fineGrain);
+        vec3 cool = vec3(0.54, 0.7, 0.86);
+        vec3 warm = vec3(0.96, 0.78, 0.38);
+        vec3 pearl = vec3(1.0, 0.96, 0.78);
+        vec3 color = mix(cool, warm, wash);
+        color = mix(color, vec3(0.72, 0.84, 0.7), counterWash * 0.22);
+        color = mix(color, pearl, sharpSweep * 0.32 + broadSweep * 0.14);
+        float alpha = clamp(sheen * 0.34, 0.0, 0.34) * uActivity;
+        gl_FragColor = vec4(color, alpha);
+      }
+    `,
+  });
+  material.forceSinglePass = true;
+
+  const mesh = new THREE.Mesh(
+    createRoundedPlaneGeometry(CARD_WIDTH, CARD_HEIGHT, CARD_RADIUS),
+    material,
+  );
+  mesh.renderOrder = 28;
+  return mesh;
 }
 
 function createRoundedPlaneGeometry(width, height, radius) {

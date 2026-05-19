@@ -8,7 +8,9 @@
   --button-border: rgba(255, 255, 255, 0.2);
   --button-shadow: 0 10px 30px rgba(0, 0, 0, 0.34);
   --accent: #d7b454;
-  --gallery-sort-width: min(230px, calc(100vw - 112px));
+  --gallery-sort-width: min(188px, calc(100vw - 112px));
+  --gallery-trait-search-width: 82px;
+  --gallery-control-gap: 12px;
   --gallery-favorite-space: 56px;
   --gallery-corner-inset: max(20px, env(safe-area-inset-right));
   --gallery-corner-bottom: max(20px, env(safe-area-inset-bottom));
@@ -81,6 +83,8 @@ body.is-gallery .card-rig {
   display: block;
   touch-action: none;
   filter: drop-shadow(0 0 18px rgba(230, 210, 148, 0.1));
+  opacity: 1;
+  transition: opacity 260ms ease;
 }
 
 body.is-light #cardCanvas {
@@ -160,10 +164,110 @@ body.is-light #cardCanvas {
   border-color: rgba(215, 180, 84, 0.62);
 }
 
+.icon-button[aria-expanded="true"] {
+  color: var(--accent);
+  border-color: rgba(215, 180, 84, 0.62);
+}
+
 #favoriteButton[aria-pressed="true"] svg path,
 #favoriteFilterButton[aria-pressed="true"] svg path,
 #binderFavoriteButton[aria-pressed="true"] svg path {
   fill: currentColor;
+}
+
+.trait-panel {
+  position: fixed;
+  z-index: 3;
+  top: 43.5%;
+  right: clamp(132px, 16vw, 260px);
+  width: min(430px, calc(50vw - 96px));
+  max-height: min(62vh, 580px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(22px, -50%);
+  transition:
+    opacity 320ms ease,
+    transform 460ms cubic-bezier(0.2, 0.82, 0.2, 1);
+}
+
+body.traits-open .trait-panel {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(0, -50%);
+}
+
+.trait-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  max-height: inherit;
+  overflow: auto;
+  padding: 5px;
+  scrollbar-width: thin;
+}
+
+.trait-tile {
+  color: inherit;
+  font: inherit;
+  min-width: 0;
+  min-height: 82px;
+  display: grid;
+  align-content: center;
+  gap: 8px;
+  padding: 12px 10px;
+  border: 1px solid color-mix(in srgb, var(--button-border), var(--accent) 10%);
+  border-radius: 8px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.072), rgba(255, 255, 255, 0.018)),
+    rgba(15, 14, 12, 0.46);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(14px);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.trait-tile:hover {
+  border-color: rgba(215, 180, 84, 0.52);
+  transform: translateY(-1px);
+}
+
+.trait-tile:active {
+  transform: translateY(0) scale(0.99);
+}
+
+body.is-light .trait-tile {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.42)),
+    rgba(255, 255, 255, 0.54);
+  box-shadow: 0 12px 24px rgba(44, 35, 16, 0.1);
+}
+
+.trait-category,
+.trait-value {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  letter-spacing: 0;
+}
+
+.trait-category {
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.1;
+  font-weight: 750;
+  text-transform: uppercase;
+}
+
+.trait-value {
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.15;
+  font-weight: 720;
+}
+
+.trait-tile-empty {
+  grid-column: 1 / -1;
+  min-height: 96px;
 }
 
 .card-filename,
@@ -278,15 +382,13 @@ body.binder-card-transitioning.binder-card-transition-away .corner-favorites {
   scrollbar-width: thin;
 }
 
-.gallery-sort-control {
+.gallery-sort-control,
+.gallery-trait-search-button {
   position: fixed;
   z-index: 8;
-  right: calc(var(--gallery-corner-inset) + var(--gallery-favorite-space));
   bottom: var(--gallery-corner-bottom);
   display: flex;
   align-items: center;
-  gap: 9px;
-  width: var(--gallery-sort-width);
   min-height: 36px;
   padding: 7px 10px;
   border: 1px solid var(--button-border);
@@ -299,6 +401,18 @@ body.binder-card-transitioning.binder-card-transition-away .corner-favorites {
   letter-spacing: 0;
   line-height: 1;
   backdrop-filter: blur(16px);
+}
+
+.gallery-sort-control {
+  right: calc(
+    var(--gallery-corner-inset)
+    + var(--gallery-favorite-space)
+    + var(--gallery-favorite-space)
+    + var(--gallery-trait-search-width)
+    + var(--gallery-control-gap)
+  );
+  gap: 9px;
+  width: var(--gallery-sort-width);
 }
 
 .gallery-sort-control select {
@@ -317,6 +431,30 @@ body.binder-card-transitioning.binder-card-transition-away .corner-favorites {
 
 .gallery-sort-control option {
   color: #191713;
+}
+
+.gallery-trait-search-button {
+  right: calc(
+    var(--gallery-corner-inset)
+    + var(--gallery-favorite-space)
+    + var(--gallery-favorite-space)
+  );
+  justify-content: center;
+  width: var(--gallery-trait-search-width);
+  border-radius: 10px;
+  color: var(--text);
+  text-transform: lowercase;
+  cursor: pointer;
+  display: none;
+}
+
+body.is-gallery .gallery-trait-search-button {
+  display: flex;
+}
+
+.gallery-trait-search-button[aria-pressed="true"] {
+  border-color: rgba(215, 180, 84, 0.62);
+  background: rgba(215, 180, 84, 0.18);
 }
 
 .gallery-card {
@@ -386,16 +524,98 @@ body.is-light #binderCanvas {
 .binder-page-controls {
   position: absolute;
   left: 50%;
-  bottom: 58px;
+  bottom: 98px;
   transform: translateX(-50%);
 }
 
 .binder-page-status {
   position: absolute;
   left: 50%;
-  bottom: 36px;
+  bottom: 76px;
   transform: translateX(-50%);
   width: max-content;
+}
+
+.trait-search-panel {
+  position: absolute;
+  inset: clamp(44px, 7vh, 78px) clamp(20px, 5vw, 76px) clamp(102px, 15vh, 146px);
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  pointer-events: auto;
+}
+
+.trait-search-groups {
+  width: min(1120px, 100%);
+  max-height: 100%;
+  overflow: auto;
+  padding: 12px 6px 26px;
+  display: grid;
+  gap: 22px;
+  scrollbar-width: thin;
+}
+
+.trait-search-group {
+  display: grid;
+  gap: 10px;
+}
+
+.trait-search-heading {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1;
+  text-transform: lowercase;
+}
+
+.trait-search-tile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(138px, 1fr));
+  gap: 10px;
+}
+
+.trait-search-tile {
+  min-height: 70px;
+  padding: 12px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  background: rgba(18, 18, 16, 0.46);
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  backdrop-filter: blur(14px);
+  display: grid;
+  align-content: center;
+  gap: 7px;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.trait-search-tile:hover {
+  transform: translateY(-1px);
+  border-color: rgba(215, 180, 84, 0.48);
+  background: rgba(215, 180, 84, 0.14);
+}
+
+body.is-light .trait-search-tile {
+  border-color: rgba(31, 28, 20, 0.14);
+  background: rgba(255, 255, 255, 0.54);
+}
+
+.trait-search-value {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.trait-search-count {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 650;
+  line-height: 1;
 }
 
 .gallery-empty {
@@ -416,12 +636,12 @@ body.is-light #binderCanvas {
 }
 
 .corner-gallery {
-  top: max(20px, env(safe-area-inset-top));
-  right: max(20px, env(safe-area-inset-right));
+  right: var(--gallery-corner-inset);
+  bottom: var(--gallery-corner-bottom);
 }
 
 .corner-favorites {
-  right: var(--gallery-corner-inset);
+  right: calc(var(--gallery-corner-inset) + var(--gallery-favorite-space));
   bottom: var(--gallery-corner-bottom);
   display: none;
 }
@@ -490,7 +710,9 @@ body.is-gallery .binder-switch {
 
 @media (max-width: 720px) {
   :root {
-    --gallery-sort-width: min(184px, calc(100vw - 78px));
+    --gallery-sort-width: min(138px, calc(100vw - 210px));
+    --gallery-trait-search-width: 66px;
+    --gallery-control-gap: 10px;
     --gallery-favorite-space: 50px;
     --gallery-corner-inset: max(12px, env(safe-area-inset-right));
     --gallery-corner-bottom: max(12px, env(safe-area-inset-bottom));
@@ -508,11 +730,15 @@ body.is-gallery .binder-switch {
     gap: 14px;
   }
 
-  .gallery-sort-control {
+  .gallery-sort-control,
+  .gallery-trait-search-button {
     min-height: 32px;
     padding: 6px 8px;
-    gap: 7px;
     font-size: 10px;
+  }
+
+  .gallery-sort-control {
+    gap: 7px;
   }
 
   .gallery-sort-control select {
@@ -536,6 +762,36 @@ body.is-gallery .binder-switch {
     gap: 12px;
   }
 
+  .binder-page-controls {
+    bottom: 91px;
+  }
+
+  .binder-page-status {
+    bottom: 70px;
+  }
+
+  .trait-search-panel {
+    inset: 32px 14px 92px;
+  }
+
+  .trait-search-groups {
+    gap: 18px;
+  }
+
+  .trait-search-tile-grid {
+    grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
+    gap: 8px;
+  }
+
+  .trait-search-tile {
+    min-height: 62px;
+    padding: 10px 8px;
+  }
+
+  .trait-search-value {
+    font-size: 12px;
+  }
+
   .button-row {
     bottom: clamp(92px, 12.6vh, 124px);
   }
@@ -546,6 +802,41 @@ body.is-gallery .binder-switch {
 
   .card-counter {
     bottom: clamp(49px, 7.1vh, 72px);
+  }
+
+  .trait-panel {
+    left: 50%;
+    right: auto;
+    top: calc(50% - 18px);
+    width: min(92vw, 440px);
+    max-height: min(56vh, 520px);
+    transform: translate(-50%, calc(-50% + 18px));
+  }
+
+  body.traits-open .trait-panel {
+    transform: translate(-50%, -50%);
+  }
+
+  body.traits-open:not(.is-gallery) #cardCanvas {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .trait-grid {
+    gap: 8px;
+  }
+
+  .trait-tile {
+    min-height: 72px;
+    padding: 10px 8px;
+  }
+
+  .trait-category {
+    font-size: 8px;
+  }
+
+  .trait-value {
+    font-size: 11px;
   }
 
   .switch-track {
@@ -564,16 +855,47 @@ body.is-gallery .binder-switch {
   }
 }
 
+@media (max-width: 820px), (max-aspect-ratio: 28 / 25) {
+  .trait-panel {
+    left: 50%;
+    right: auto;
+    top: calc(50% - 18px);
+    width: min(92vw, 440px);
+    max-height: min(56vh, 520px);
+    transform: translate(-50%, calc(-50% + 18px));
+  }
+
+  body.traits-open .trait-panel {
+    transform: translate(-50%, -50%);
+  }
+
+  body.traits-open:not(.is-gallery) #cardCanvas {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
 @media (max-width: 420px) {
   :root {
-    --gallery-sort-width: min(164px, calc(100vw - 70px));
-    --gallery-favorite-space: 48px;
+    --gallery-sort-width: min(108px, calc(100vw - 180px));
+    --gallery-trait-search-width: 54px;
+    --gallery-control-gap: 6px;
+    --gallery-favorite-space: 44px;
     --gallery-corner-inset: max(8px, env(safe-area-inset-right));
     --gallery-corner-bottom: max(10px, env(safe-area-inset-bottom));
   }
 
   .card-rig {
     padding-inline: 6px;
+  }
+
+  .button-row {
+    gap: 8px;
+  }
+
+  .button-row .icon-button {
+    width: 36px;
+    height: 36px;
   }
 
   #cardCanvas {
@@ -586,13 +908,46 @@ body.is-gallery .binder-switch {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .trait-panel {
+    width: calc(100vw - 28px);
+    max-height: min(52vh, 460px);
+  }
+
+  .trait-grid {
+    gap: 7px;
+    padding: 4px;
+  }
+
+  .trait-tile {
+    min-height: 68px;
+    padding: 9px 7px;
+  }
+
   .corner-gallery {
     right: 8px;
-    top: 12px;
+    bottom: var(--gallery-corner-bottom);
   }
 
   .corner-favorites {
     bottom: var(--gallery-corner-bottom);
+  }
+
+  .gallery-sort-control {
+    gap: 5px;
+    padding-inline: 6px;
+  }
+
+  .gallery-trait-search-button {
+    padding-inline: 6px;
+    font-size: 9px;
+  }
+
+  .binder-page-controls {
+    bottom: 88px;
+  }
+
+  .binder-page-status {
+    bottom: 68px;
   }
 
   .theme-switch {
