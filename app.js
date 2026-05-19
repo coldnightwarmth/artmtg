@@ -361,8 +361,9 @@ const FACE_WIDTH = 800;
 const FACE_HEIGHT = 1120;
 const CARD_WIDTH = 2.5;
 const CARD_HEIGHT = 3.5;
-const CARD_DEPTH = 0.044;
+const CARD_DEPTH = 0.036;
 const CARD_RADIUS = 0.112;
+const INDIVIDUAL_CARD_WORLD_Y = 0.42;
 const BINDER_FACE_WIDTH = 420;
 const BINDER_FACE_HEIGHT = 588;
 const BINDER_COLUMNS = 3;
@@ -374,8 +375,8 @@ const BINDER_CARD_HEIGHT = BINDER_CARD_WIDTH * 1.4;
 const BINDER_CARD_RADIUS = BINDER_CARD_WIDTH * (CARD_RADIUS / CARD_WIDTH);
 const BINDER_POCKET_PAD = 0.12;
 const BINDER_GRID_GAP = 0.055;
-const BINDER_PAGE_INNER_MARGIN = 0.055;
-const BINDER_PAGE_OUTER_MARGIN = 0.22;
+const BINDER_PAGE_INNER_MARGIN = 0.11;
+const BINDER_PAGE_OUTER_MARGIN = 0.165;
 const BINDER_PAGE_VERTICAL_MARGIN = 0.22;
 const BINDER_CELL_WIDTH = BINDER_CARD_WIDTH + BINDER_POCKET_PAD * 2;
 const BINDER_CELL_HEIGHT = BINDER_CARD_HEIGHT + BINDER_POCKET_PAD * 2;
@@ -394,6 +395,10 @@ const BINDER_RIGHT_STACK_Z = -0.026;
 const BINDER_GAP_REVEAL_STACK_GAP = 0.028;
 const BINDER_PAGE_COLUMN_BEND = 0.042;
 const BINDER_ACTIVE_PAGE_LIFT = 0.22;
+const BINDER_STACK_TRANSITION_START = 0.75;
+const BINDER_VISIBLE_STACK_DEPTH = 1;
+const BINDER_HIDDEN_STACK_DEPTH = 5;
+const BINDER_DEEP_PAGE_FADE_POWER = 1.35;
 const BINDER_COVER_OVERHANG = 0.14;
 const BINDER_COVER_VERTICAL_OVERHANG = 0.22;
 const BINDER_COVER_RADIUS = 0.11;
@@ -413,6 +418,8 @@ const VIEW_SWITCH_WHEEL_IDLE_MS = 900;
 const BINDER_FOCUS_ZOOM_OUT_LOCK_MS = 1000;
 const BINDER_FOCUS_TRANSITION_LOCK_MS = BINDER_CARD_VIEW_TRANSITION_MS + BINDER_FOCUS_ZOOM_OUT_LOCK_MS;
 const INDIVIDUAL_MAX_ZOOM_EPSILON = 0.035;
+const BINDER_DOUBLE_TAP_MS = 420;
+const BINDER_DOUBLE_TAP_DISTANCE = 28;
 const BACK_TRIM = { x: 0.026, y: 0.018 };
 const SHUFFLE_HISTORY_LIMIT = 10;
 const FULL_ART_LAYOUTS = new Map([
@@ -466,6 +473,8 @@ const binderZoomOutButton = document.querySelector("#binderZoomOutButton");
 const binderPreviousPageButton = document.querySelector("#binderPreviousPageButton");
 const binderNextPageButton = document.querySelector("#binderNextPageButton");
 const binderOpenCardButton = document.querySelector("#binderOpenCardButton");
+const binderFavoriteButton = document.querySelector("#binderFavoriteButton");
+const binderShuffleButton = document.querySelector("#binderShuffleButton");
 const binderColorFilters = document.querySelector("#binderColorFilters");
 const binderColorFilterButtons = [...document.querySelectorAll(".binder-color-filter")];
 const uploadModal = document.querySelector("#uploadModal");
@@ -515,6 +524,7 @@ let resizeFrame = 0;
 let lastRendererWidth = 0;
 let lastRendererHeight = 0;
 const shuffleHistory = [];
+const binderShuffleHistory = [];
 const FAVORITES_STORAGE_KEY = "artmtg:favorites:v1";
 const TEMPLATE_OVERRIDES_STORAGE_KEY = "artmtg:template-overrides:v1";
 const favoriteKeys = loadFavoriteKeys();
@@ -536,16 +546,19 @@ let binderPages = [];
 let binderCardMeshes = [];
 let binderVisibleIndexes = [];
 let binderAnimationFrame = 0;
+let binderRenderFrame = 0;
 let binderResizeFrame = 0;
 let binderLastWidth = 0;
 let binderLastHeight = 0;
 let binderBuildToken = 0;
 let binderIndexesKey = "";
+let binderStateSignature = "";
 let binderPageCount = 1;
 let binderTurn = 0;
 let binderTargetTurn = 0;
 let binderBendDirection = 1;
 let binderDrag = null;
+let binderLastOpenTap = null;
 let binderWheelFocusLockUntil = 0;
 let binderFocusZoomOutLockUntil = 0;
 let binderFocusPosition = -1;
@@ -559,6 +572,7 @@ const binderDesiredCameraLookAt = new THREE.Vector3();
 const binderFocusWorldPosition = new THREE.Vector3();
 const binderCardTextureCache = new Map();
 let binderBackTexturePromise = null;
+let binderPlaceholderTexture = null;
 
 init();
 
@@ -601,6 +615,7 @@ function initScene() {
   scene.add(coolRim);
 
   cardGroup = new THREE.Group();
+  cardGroup.position.y = INDIVIDUAL_CARD_WORLD_Y;
   scene.add(cardGroup);
 
   const sideMaterial = new THREE.MeshPhysicalMaterial({
@@ -684,7 +699,7 @@ function initControls() {
     capture: true,
     passive: false
   });
-  renderer.domElement.addEventListener("dblclick", cycleTemplateColor);
+  renderer.domElement.addEventListener("contextmenu", cycleTemplateColor);
   window.addEventListener("pointerup", startCameraSnap);
   updateResponsiveCameraFrame(true);
 
@@ -722,6 +737,12 @@ function initControls() {
   binderPreviousPageButton.addEventListener("click", () => turnBinderPage(-1));
   binderNextPageButton.addEventListener("click", () => turnBinderPage(1));
   binderOpenCardButton.addEventListener("click", openFocusedBinderCard);
+  binderFavoriteButton.addEventListener("click", toggleFocusedBinderFavorite);
+  binderShuffleButton.addEventListener("click", shuffleBinderSpread);
+  binderShuffleButton.addEventListener("contextmenu", (event) => {
+    event.preventDefault();
+    applyPreviousBinderSpread();
+  });
   galleryGrid.addEventListener("click", selectGalleryCard);
   initBinderControls();
   initBinderColorFilters();
@@ -840,6 +861,23 @@ function toggleCurrentFavorite() {
   renderGallery();
 }
 
+function toggleFocusedBinderFavorite() {
+  const artIndex = getFocusedBinderArtIndex();
+  if (!Number.isInteger(artIndex)) return;
+
+  const key = favoriteKeyForIndex(artIndex);
+  if (favoriteKeys.has(key)) {
+    favoriteKeys.delete(key);
+  } else {
+    favoriteKeys.add(key);
+  }
+
+  saveFavoriteKeys();
+  updateFavoriteControls();
+  updateBinderFavoriteButton();
+  renderGallery();
+}
+
 function toggleFavoriteGalleryFilter() {
   galleryFavoritesOnly = !galleryFavoritesOnly;
   updateFavoriteFilterButton();
@@ -901,6 +939,25 @@ function updateFavoriteControls() {
 
   favoriteButton.classList.toggle("is-active", isFavorite);
   favoriteButton.setAttribute("aria-pressed", String(isFavorite));
+}
+
+function updateBinderFavoriteButton() {
+  if (!binderFavoriteButton) return;
+
+  const artIndex = getFocusedBinderArtIndex();
+  const isFavorite = Number.isInteger(artIndex)
+    && favoriteKeys.has(favoriteKeyForIndex(artIndex));
+
+  binderFavoriteButton.classList.toggle("is-active", isFavorite);
+  binderFavoriteButton.setAttribute("aria-pressed", String(isFavorite));
+  binderFavoriteButton.setAttribute(
+    "title",
+    isFavorite ? "Remove focused card from favorites" : "Add focused card to favorites"
+  );
+  binderFavoriteButton.setAttribute(
+    "aria-label",
+    isFavorite ? "Remove focused card from favorites" : "Add focused card to favorites"
+  );
 }
 
 function updateFavoriteFilterButton() {
@@ -1098,12 +1155,18 @@ function initBinderControls() {
   binderCanvas.addEventListener("pointerup", endBinderDrag);
   binderCanvas.addEventListener("pointercancel", cancelBinderDrag);
   binderCanvas.addEventListener("wheel", handleBinderWheel, { passive: false });
-  binderCanvas.addEventListener("dblclick", cycleBinderTemplateColor);
+  binderCanvas.addEventListener("dblclick", openFocusedBinderCardFromPointer);
+  binderCanvas.addEventListener("contextmenu", cycleBinderTemplateColor);
 }
 
 function startBinderRenderLoop() {
   if (!isGalleryOpen || !isBinderMode || binderPanel.hidden) {
     return;
+  }
+
+  if (binderRenderFrame) {
+    cancelAnimationFrame(binderRenderFrame);
+    binderRenderFrame = 0;
   }
 
   if (binderAnimationFrame) {
@@ -1160,7 +1223,7 @@ function ensureBinderScene() {
 
   binderRoot = new THREE.Group();
   binderRoot.rotation.x = 0;
-  binderRoot.position.y = 0.94;
+  binderRoot.position.y = 0.84;
   binderScene.add(binderRoot);
 
   resizeBinderRenderer();
@@ -1202,14 +1265,11 @@ async function updateBinderItems(indexes) {
   }
 
   try {
-    const [textures, backTexture] = await Promise.all([
-      mapWithConcurrency(indexes, BINDER_TEXTURE_CONCURRENCY, getBinderCardTexture),
-      getBinderBackTexture()
-    ]);
+    const backTexture = await getBinderBackTexture();
     if (token !== binderBuildToken) return;
 
     clearBinderRoot();
-    binderRoot.add(createBinderModel(indexes, textures, backTexture));
+    binderRoot.add(createBinderModel(indexes, getBinderPlaceholderTexture(), backTexture));
     binderPageCount = Math.max(1, Math.ceil(indexes.length / BINDER_PAGE_SLOTS));
     if (isBinderFocused()) {
       binderTargetTurn = getBinderTurnForPosition(binderFocusPosition);
@@ -1220,6 +1280,7 @@ async function updateBinderItems(indexes) {
     updateBinderPageControls();
     resizeBinderRenderer();
     renderBinderSceneOnce();
+    loadBinderCardTexturesProgressively(indexes, token);
   } catch (error) {
     console.error(error);
     if (token === binderBuildToken) {
@@ -1243,6 +1304,76 @@ async function mapWithConcurrency(items, limit, mapper) {
   }));
 
   return results;
+}
+
+async function loadBinderCardTexturesProgressively(indexes, token) {
+  const loadOrder = getBinderTextureLoadOrder(indexes);
+  try {
+    await mapWithConcurrency(loadOrder, BINDER_TEXTURE_CONCURRENCY, async (artIndex) => {
+      const texture = await getBinderCardTexture(artIndex);
+      if (token !== binderBuildToken) return;
+      if (applyBinderTextureToCards(artIndex, texture)) {
+        requestBinderRenderOnce();
+      }
+    });
+  } catch (error) {
+    if (token === binderBuildToken) {
+      console.error(error);
+    }
+  }
+}
+
+function getBinderTextureLoadOrder(indexes) {
+  const pageCount = Math.max(1, Math.ceil(indexes.length / BINDER_PAGE_SLOTS));
+  const currentTurn = clamp(Math.round(binderTargetTurn), 0, pageCount);
+  const centerPage = clamp(currentTurn >= pageCount ? pageCount - 1 : currentTurn, 0, pageCount - 1);
+  const seenPages = new Set();
+  const positions = [];
+
+  const addPage = (pageIndex) => {
+    if (pageIndex < 0 || pageIndex >= pageCount || seenPages.has(pageIndex)) return;
+    seenPages.add(pageIndex);
+    const start = pageIndex * BINDER_PAGE_SLOTS;
+    const end = Math.min(start + BINDER_PAGE_SLOTS, indexes.length);
+    for (let position = start; position < end; position += 1) {
+      positions.push(position);
+    }
+  };
+
+  if (currentTurn <= 0) {
+    addPage(0);
+  } else if (currentTurn >= pageCount) {
+    addPage(pageCount - 1);
+  } else {
+    addPage(currentTurn - 1);
+    addPage(currentTurn);
+  }
+
+  for (let distance = 0; seenPages.size < pageCount && distance <= pageCount; distance += 1) {
+    addPage(centerPage + distance);
+    addPage(centerPage - distance);
+  }
+
+  const seenArt = new Set();
+  const ordered = [];
+  for (const position of positions) {
+    const artIndex = indexes[position];
+    if (!Number.isInteger(artIndex) || seenArt.has(artIndex)) continue;
+    seenArt.add(artIndex);
+    ordered.push(artIndex);
+  }
+  return ordered;
+}
+
+function applyBinderTextureToCards(artIndex, texture) {
+  let applied = false;
+  for (const card of binderCardMeshes) {
+    if (card.userData.artIndex !== artIndex) continue;
+    card.material.map = texture;
+    card.material.needsUpdate = true;
+    applied = true;
+  }
+  return applied;
 }
 
 function clearBinderRoot() {
@@ -1269,14 +1400,14 @@ function disposeBinderObject(object) {
   });
 }
 
-function createBinderModel(indexes, textures, backTexture) {
+function createBinderModel(indexes, placeholderTexture, backTexture) {
   const model = new THREE.Group();
   model.add(createBinderShell());
 
   const materials = createBinderPageMaterials();
   const pageCount = Math.max(1, Math.ceil(indexes.length / BINDER_PAGE_SLOTS));
   for (let pageIndex = 0; pageIndex < pageCount; pageIndex += 1) {
-    const page = createBinderPage(pageIndex, indexes, textures, backTexture, materials);
+    const page = createBinderPage(pageIndex, indexes, placeholderTexture, backTexture, materials);
     model.add(page.group);
     binderPages.push(page);
   }
@@ -1394,12 +1525,13 @@ function createBinderPageMaterials() {
   };
 }
 
-function createBinderPage(pageIndex, indexes, textures, backTexture, materials) {
+function createBinderPage(pageIndex, indexes, placeholderTexture, backTexture, materials) {
   const group = new THREE.Group();
   group.position.set(0, 0, -pageIndex * BINDER_PAGE_STACK_GAP);
   group.userData.pageIndex = pageIndex;
 
   const cells = [];
+  const cardMeshes = [];
   const columnPivots = createBinderColumnPivots(group);
   for (let row = 0; row < BINDER_ROWS; row += 1) {
     for (let column = 0; column < BINDER_COLUMNS; column += 1) {
@@ -1414,13 +1546,19 @@ function createBinderPage(pageIndex, indexes, textures, backTexture, materials) 
       const hasBackCard = Number.isInteger(backArtIndex);
 
       if (hasFrontCard) {
-        cell.group.add(createBinderCard(textures[frontOffset], frontArtIndex, 1, frontOffset));
+        const card = createBinderCard(placeholderTexture, frontArtIndex, 1, frontOffset);
+        cell.group.add(card);
+        cardMeshes.push(card);
       }
 
       if (hasBackCard) {
-        cell.group.add(createBinderCard(textures[backOffset], backArtIndex, -1, backOffset));
+        const card = createBinderCard(placeholderTexture, backArtIndex, -1, backOffset);
+        cell.group.add(card);
+        cardMeshes.push(card);
       } else if (hasFrontCard) {
-        cell.group.add(createBinderCard(backTexture, null, -1));
+        const card = createBinderCard(backTexture, null, -1);
+        cell.group.add(card);
+        cardMeshes.push(card);
       }
 
       addBinderCellToColumn(columnPivots, cell);
@@ -1433,6 +1571,7 @@ function createBinderPage(pageIndex, indexes, textures, backTexture, materials) 
   return {
     group,
     cells,
+    cardMeshes,
     columnPivots,
     pageIndex,
     sheetMeshes: collectBinderSheetMeshes(group)
@@ -1667,6 +1806,10 @@ function createBinderCard(texture, artIndex, side, binderPosition = -1) {
     metalness: 0.01,
     clearcoat: 0.2,
     clearcoatRoughness: 0.52,
+    transparent: true,
+    opacity: 1,
+    depthTest: false,
+    depthWrite: false,
     side: THREE.FrontSide
   });
   const card = new THREE.Mesh(
@@ -1797,6 +1940,31 @@ function getBinderBackTexture() {
   return binderBackTexturePromise;
 }
 
+function getBinderPlaceholderTexture() {
+  if (binderPlaceholderTexture) return binderPlaceholderTexture;
+
+  const surface = document.createElement("canvas");
+  surface.width = BINDER_FACE_WIDTH;
+  surface.height = BINDER_FACE_HEIGHT;
+  const ctx = surface.getContext("2d");
+  const gradient = ctx.createLinearGradient(0, 0, surface.width, surface.height);
+  gradient.addColorStop(0, "#1d1b16");
+  gradient.addColorStop(0.52, "#25221b");
+  gradient.addColorStop(1, "#14130f");
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, surface.width, surface.height);
+  ctx.fillStyle = "rgba(255, 255, 255, 0.035)";
+  for (let y = 0; y < surface.height; y += 3) {
+    ctx.fillRect(0, y, surface.width, 1);
+  }
+  addPaperSurface(ctx, surface.width, surface.height);
+
+  binderPlaceholderTexture = new THREE.CanvasTexture(surface);
+  binderPlaceholderTexture.colorSpace = THREE.SRGBColorSpace;
+  binderPlaceholderTexture.needsUpdate = true;
+  return binderPlaceholderTexture;
+}
+
 function templateForBinderCard(artIndex) {
   return getTemplateOverrideForIndex(artIndex)
     || getDefaultTemplateForIndex(artIndex)
@@ -1865,6 +2033,7 @@ async function endBinderDrag(event) {
   }
 
   if (wasClick) {
+    if (handleFocusedBinderCardTap(event)) return;
     selectBinderCard(event);
   } else if (!isBinderFocused()) {
     binderTargetTurn = Math.round(binderTargetTurn);
@@ -1922,8 +2091,58 @@ function selectBinderCard(event) {
 
   if (!hit) return false;
 
-  focusBinderCard(hit.object.userData.binderPosition);
+  const position = hit.object.userData.binderPosition;
+  focusBinderCard(position);
+  rememberBinderOpenTap(event, position);
   return true;
+}
+
+function handleFocusedBinderCardTap(event) {
+  if (!isBinderFocused()) return false;
+
+  const hit = getBinderCardHit(event);
+  const position = hit?.object?.userData?.binderPosition;
+  if (position !== binderFocusPosition) {
+    binderLastOpenTap = null;
+    return false;
+  }
+
+  const now = performance.now();
+  const lastTap = binderLastOpenTap;
+  rememberBinderOpenTap(event, position, now);
+
+  if (
+    lastTap
+    && lastTap.position === position
+    && now - lastTap.time <= BINDER_DOUBLE_TAP_MS
+    && Math.hypot(event.clientX - lastTap.x, event.clientY - lastTap.y) <= BINDER_DOUBLE_TAP_DISTANCE
+  ) {
+    binderLastOpenTap = null;
+    openFocusedBinderCard().catch(console.error);
+    return true;
+  }
+
+  return false;
+}
+
+function rememberBinderOpenTap(event, position, time = performance.now()) {
+  binderLastOpenTap = {
+    position,
+    time,
+    x: event.clientX,
+    y: event.clientY
+  };
+}
+
+function openFocusedBinderCardFromPointer(event) {
+  if (!isBinderFocused() || binderCardViewTransitionActive) return;
+
+  const hit = getBinderCardHit(event);
+  if (hit?.object?.userData?.binderPosition !== binderFocusPosition) return;
+
+  event.preventDefault();
+  binderLastOpenTap = null;
+  openFocusedBinderCard().catch(console.error);
 }
 
 function getBinderCardHit(event) {
@@ -2022,6 +2241,7 @@ function focusBinderCard(position, { immediate = false } = {}) {
 function clearBinderFocus(options = {}) {
   binderFocusZoomOutLockUntil = 0;
   binderFocusPosition = -1;
+  binderLastOpenTap = null;
   document.body.classList.remove("binder-focused");
   if (binderPanel) binderPanel.classList.remove("is-focused");
   binderTargetTurn = clamp(Math.round(binderTargetTurn), 0, binderPageCount);
@@ -2366,6 +2586,44 @@ function turnBinderPage(direction) {
   updateBinderAnimation();
 }
 
+function shuffleBinderSpread() {
+  if (!isGalleryOpen || !isBinderMode || isBinderFocused() || binderPageCount < 1) return;
+
+  const currentPage = clamp(Math.round(binderTargetTurn), 0, binderPageCount);
+  let nextTurn = currentPage;
+  if (binderPageCount > 0) {
+    while (nextTurn === currentPage) {
+      nextTurn = Math.floor(Math.random() * (binderPageCount + 1));
+    }
+  }
+
+  binderShuffleHistory.push(currentPage);
+  if (binderShuffleHistory.length > SHUFFLE_HISTORY_LIMIT) {
+    binderShuffleHistory.shift();
+  }
+  moveBinderToSpread(nextTurn);
+}
+
+function applyPreviousBinderSpread() {
+  if (!isGalleryOpen || !isBinderMode || isBinderFocused()) return;
+
+  const previousTurn = binderShuffleHistory.pop();
+  if (Number.isInteger(previousTurn)) {
+    moveBinderToSpread(previousTurn);
+  }
+}
+
+function moveBinderToSpread(turn) {
+  const nextTurn = clamp(Math.round(turn), 0, binderPageCount);
+  if (nextTurn !== binderTargetTurn) {
+    binderBendDirection = Math.sign(nextTurn - binderTargetTurn) || binderBendDirection;
+  }
+  binderTargetTurn = nextTurn;
+  updateBinderPageControls();
+  startBinderRenderLoop();
+  updateBinderAnimation();
+}
+
 function snapBinderToWholePage() {
   binderTargetTurn = clamp(Math.round(binderTargetTurn), 0, Math.max(binderPageCount, 0));
   binderTurn = binderTargetTurn;
@@ -2385,6 +2643,9 @@ function updateBinderPageControls() {
   binderPageControls.classList.toggle("is-focused", focused);
   binderZoomOutButton.hidden = !focused;
   binderOpenCardButton.hidden = !focused;
+  binderFavoriteButton.hidden = !focused;
+  binderShuffleButton.hidden = focused;
+  updateBinderFavoriteButton();
   updateBinderPageStatus(focused);
 
   if (focused) {
@@ -2427,12 +2688,23 @@ function updateBinderPageStatus(focused = isBinderFocused()) {
 }
 
 function syncBinderStateAttributes() {
-  binderPanel.dataset.turn = binderTurn.toFixed(3);
-  binderPanel.dataset.targetTurn = binderTargetTurn.toFixed(3);
-  binderPanel.dataset.pageCount = String(binderPageCount);
-  binderPanel.dataset.maxTurn = String(binderPageCount);
-  binderPanel.dataset.pageMeshes = String(binderPages.length);
-  binderPanel.dataset.focusPosition = isBinderFocused() ? String(binderFocusPosition) : "";
+  const signature = [
+    binderTurn.toFixed(3),
+    binderTargetTurn.toFixed(3),
+    binderPageCount,
+    binderPages.length,
+    isBinderFocused() ? binderFocusPosition : ""
+  ].join("|");
+
+  if (signature === binderStateSignature) return;
+  binderStateSignature = signature;
+  const [turn, targetTurn, pageCount, pageMeshes, focusPosition] = signature.split("|");
+  binderPanel.dataset.turn = turn;
+  binderPanel.dataset.targetTurn = targetTurn;
+  binderPanel.dataset.pageCount = pageCount;
+  binderPanel.dataset.maxTurn = pageCount;
+  binderPanel.dataset.pageMeshes = pageMeshes;
+  binderPanel.dataset.focusPosition = focusPosition;
 }
 
 function updateBinderAnimation() {
@@ -2451,7 +2723,6 @@ function updateBinderAnimation() {
 
   updateBinderPageTransforms();
   updateBinderCameraFrame(false);
-  syncBinderStateAttributes();
   binderRenderer.render(binderScene, binderCamera);
   const cameraActive = binderCameraReady && (
     binderCamera.position.distanceToSquared(binderDesiredCameraPosition) > 0.00008
@@ -2466,32 +2737,17 @@ function updateBinderPageTransforms() {
   const turnFraction = turn - lowerTurn;
   const isTurning = turnFraction > 0.001 && lowerTurn < binderPageCount;
   const activeIndex = isTurning ? lowerTurn : -1;
-  const leftIndex = lowerTurn - 1;
-  const rightIndex = isTurning ? lowerTurn + 1 : lowerTurn;
   const restingTurn = clamp(Math.round(turn), 0, binderPageCount);
-  const leftGapRevealPageIndex = !isTurning ? restingTurn - 2 : -1;
-  const rightGapRevealPageIndex = !isTurning ? restingTurn + 1 : -1;
-  const forwardTurn = binderBendDirection >= 0;
+  const stackProgress = getBinderStackRestProgress(turnFraction, isTurning);
 
   for (const page of binderPages) {
     const rawTurn = clamp(turn - page.pageIndex, 0, 1);
     const easedTurn = easeInOut(rawTurn);
     const isActivePage = page.pageIndex === activeIndex;
-    const isLeftStack = !isActivePage && rawTurn >= 1;
-    const leftStackDepth = Math.max(0, leftIndex - page.pageIndex);
-    const rightStackDepth = Math.max(0, page.pageIndex - rightIndex);
-    const isLeftGapRevealPage = isLeftStack && page.pageIndex === leftGapRevealPageIndex;
-    const isRightGapRevealPage = !isLeftStack && !isActivePage
-      && page.pageIndex === rightGapRevealPageIndex;
-    const stackCoverProgress = getBinderStackCoverProgress({
-      pageIndex: page.pageIndex,
-      activeIndex,
-      easedTurn,
-      isTurning,
-      forwardTurn
-    });
+    const restLayout = isTurning && !isActivePage
+      ? getBlendedBinderRestLayout(page.pageIndex, lowerTurn, lowerTurn + 1, stackProgress)
+      : getBinderRestPageLayout(page.pageIndex, restingTurn);
 
-    page.group.visible = true;
     page.group.rotation.y = -Math.PI * easedTurn;
 
     const activeLift = Math.sin(rawTurn * Math.PI) * BINDER_ACTIVE_PAGE_LIFT;
@@ -2503,14 +2759,8 @@ function updateBinderPageTransforms() {
     let pageZ;
     if (isActivePage) {
       pageZ = activeRestZ + activeLift;
-    } else if (isLeftGapRevealPage) {
-      pageZ = BINDER_LEFT_STACK_Z - BINDER_GAP_REVEAL_STACK_GAP;
-    } else if (isRightGapRevealPage) {
-      pageZ = BINDER_RIGHT_STACK_Z - BINDER_GAP_REVEAL_STACK_GAP;
-    } else if (isLeftStack) {
-      pageZ = BINDER_LEFT_STACK_Z - leftStackDepth * BINDER_VISIBLE_STACK_GAP;
     } else {
-      pageZ = BINDER_RIGHT_STACK_Z - rightStackDepth * BINDER_VISIBLE_STACK_GAP;
+      pageZ = restLayout.z;
     }
     page.group.position.x = 0;
     page.group.position.z = pageZ;
@@ -2518,26 +2768,126 @@ function updateBinderPageTransforms() {
       page,
       getBinderPageRenderOrder(
         isActivePage,
-        isLeftStack,
-        leftStackDepth,
-        rightStackDepth,
-        isLeftGapRevealPage || isRightGapRevealPage
+        restLayout.isLeftStack,
+        restLayout.leftStackDepth,
+        restLayout.rightStackDepth,
+        restLayout.isGapRevealPage
       )
     );
     const turnActivity = Math.sin(rawTurn * Math.PI);
-    const sheetVisibility = getBinderSheetVisibilityFactor({
-      isActivePage,
-      isLeftStack,
-      leftStackDepth,
-      rightStackDepth,
-      isGapRevealPage: isLeftGapRevealPage || isRightGapRevealPage,
-      turnActivity,
-      stackCoverProgress
-    });
-    setBinderSheetOpacity(page, turnActivity, sheetVisibility);
+    const sheetVisibility = isActivePage
+      ? getBinderSheetVisibilityFactor({
+        isActivePage,
+        isLeftStack: restLayout.isLeftStack,
+        leftStackDepth: restLayout.leftStackDepth,
+        rightStackDepth: restLayout.rightStackDepth,
+        isGapRevealPage: restLayout.isGapRevealPage,
+        turnActivity
+      })
+      : restLayout.sheetVisibility;
+    const pageVisibility = isActivePage ? 1 : restLayout.pageVisibility;
+    page.group.visible = isActivePage || pageVisibility > 0.001;
+    setBinderSheetOpacity(page, turnActivity, sheetVisibility * pageVisibility);
+    setBinderPageOpacity(page, pageVisibility);
 
     applyBinderColumnBend(page, rawTurn);
   }
+}
+
+function getBinderRestPageLayout(pageIndex, restTurn) {
+  const currentTurn = clamp(Math.round(restTurn), 0, binderPageCount);
+  const leftIndex = currentTurn - 1;
+  const rightIndex = currentTurn;
+  const isLeftStack = pageIndex <= leftIndex;
+  const leftStackDepth = Math.max(0, leftIndex - pageIndex);
+  const rightStackDepth = Math.max(0, pageIndex - rightIndex);
+  const isLeftGapRevealPage = isLeftStack && pageIndex === currentTurn - 2;
+  const isRightGapRevealPage = !isLeftStack && pageIndex === currentTurn + 1;
+  const isGapRevealPage = isLeftGapRevealPage || isRightGapRevealPage;
+  let z;
+
+  if (isLeftGapRevealPage) {
+    z = BINDER_LEFT_STACK_Z - BINDER_GAP_REVEAL_STACK_GAP;
+  } else if (isRightGapRevealPage) {
+    z = BINDER_RIGHT_STACK_Z - BINDER_GAP_REVEAL_STACK_GAP;
+  } else if (isLeftStack) {
+    z = BINDER_LEFT_STACK_Z - leftStackDepth * BINDER_VISIBLE_STACK_GAP;
+  } else {
+    z = BINDER_RIGHT_STACK_Z - rightStackDepth * BINDER_VISIBLE_STACK_GAP;
+  }
+
+  return {
+    isLeftStack,
+    leftStackDepth,
+    rightStackDepth,
+    isGapRevealPage,
+    z,
+    pageVisibility: getBinderRestPageVisibility(
+      getBinderStackDepth({ isLeftStack, leftStackDepth, rightStackDepth })
+    ),
+    sheetVisibility: getBinderSheetVisibilityFactor({
+      isActivePage: false,
+      isLeftStack,
+      leftStackDepth,
+      rightStackDepth,
+      isGapRevealPage
+    })
+  };
+}
+
+function getBlendedBinderRestLayout(pageIndex, fromTurn, toTurn, progress) {
+  const startLayout = getBinderRestPageLayout(pageIndex, fromTurn);
+  const endLayout = getBinderRestPageLayout(pageIndex, toTurn);
+  const displayLayout = progress < 0.5 ? startLayout : endLayout;
+
+  return {
+    ...displayLayout,
+    z: THREE.MathUtils.lerp(startLayout.z, endLayout.z, progress),
+    pageVisibility: THREE.MathUtils.lerp(
+      startLayout.pageVisibility,
+      endLayout.pageVisibility,
+      progress
+    ),
+    sheetVisibility: THREE.MathUtils.lerp(
+      startLayout.sheetVisibility,
+      endLayout.sheetVisibility,
+      progress
+    )
+  };
+}
+
+function getBinderStackDepth({ isLeftStack, leftStackDepth, rightStackDepth }) {
+  return isLeftStack ? leftStackDepth : rightStackDepth;
+}
+
+function getBinderRestPageVisibility(depth) {
+  if (depth <= BINDER_VISIBLE_STACK_DEPTH) return 1;
+  if (depth >= BINDER_HIDDEN_STACK_DEPTH) return 0;
+
+  const progress = clamp(
+    (depth - BINDER_VISIBLE_STACK_DEPTH) / (BINDER_HIDDEN_STACK_DEPTH - BINDER_VISIBLE_STACK_DEPTH),
+    0,
+    1
+  );
+  return Math.pow(1 - progress, BINDER_DEEP_PAGE_FADE_POWER);
+}
+
+function getBinderStackRestProgress(turnFraction, isTurning) {
+  if (!isTurning) return 0;
+
+  if (binderBendDirection >= 0) {
+    return easeInOut(clamp(
+      (turnFraction - BINDER_STACK_TRANSITION_START) / (1 - BINDER_STACK_TRANSITION_START),
+      0,
+      1
+    ));
+  }
+
+  return 1 - easeInOut(clamp(
+    ((1 - BINDER_STACK_TRANSITION_START) - turnFraction) / (1 - BINDER_STACK_TRANSITION_START),
+    0,
+    1
+  ));
 }
 
 function getBinderColumnBend(rawTurn) {
@@ -2622,11 +2972,25 @@ function setBinderSheetOpacity(page, turnActivity, visibilityFactor = 1) {
   for (const mesh of page.sheetMeshes || []) {
     const material = mesh.material;
     if (!material) continue;
-    material.opacity = visibleOpacity * THREE.MathUtils.lerp(
+    const opacity = visibleOpacity * THREE.MathUtils.lerp(
       mesh.userData.restOpacity,
       mesh.userData.activeOpacity,
       activity
     );
+    if (Math.abs(material.opacity - opacity) > 0.0005) {
+      material.opacity = opacity;
+    }
+  }
+}
+
+function setBinderPageOpacity(page, visibilityFactor = 1) {
+  const opacity = clamp(visibilityFactor, 0, 1);
+  if (Math.abs((page.cardOpacity ?? 1) - opacity) <= 0.0005) return;
+  page.cardOpacity = opacity;
+  for (const mesh of page.cardMeshes || []) {
+    const material = mesh.material;
+    if (!material) continue;
+    material.opacity = opacity;
   }
 }
 
@@ -2685,6 +3049,8 @@ function getBinderFocusDistance() {
 }
 
 function setBinderPageRenderOrder(page, baseOrder) {
+  if (page.renderOrderBase === baseOrder) return;
+  page.renderOrderBase = baseOrder;
   page.group.traverse((child) => {
     if (!child.isMesh) return;
     if (child.userData.binderRenderOffset === undefined) {
@@ -2734,6 +3100,23 @@ function queueResizeBinderRenderer() {
   binderResizeFrame = requestAnimationFrame(() => {
     binderResizeFrame = 0;
     resizeBinderRenderer();
+    renderBinderSceneOnce();
+  });
+}
+
+function requestBinderRenderOnce() {
+  if (
+    binderAnimationFrame
+    || binderRenderFrame
+    || !isGalleryOpen
+    || !isBinderMode
+    || binderPanel.hidden
+  ) {
+    return;
+  }
+
+  binderRenderFrame = requestAnimationFrame(() => {
+    binderRenderFrame = 0;
     renderBinderSceneOnce();
   });
 }

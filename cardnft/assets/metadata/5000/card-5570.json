@@ -1,0 +1,117 @@
+{
+  "name": "card 5570",
+  "description": "This is a collection about cards",
+  "image": "https://na-assets.pinit.io/2hL345EvjWgeWuaoT3z5M6qzmkTRwCcEM9LGnYUKLPm1/edafc637-c6c5-4af8-a253-0d2a0c4e825e/5570",
+  "edition": 3106,
+  "date": 1709454111000,
+  "attributes": [
+    {
+      "trait_type": "1card",
+      "value": "charizard ex full art 2024"
+    },
+    {
+      "trait_type": "2bottom overlay",
+      "value": "framed bacon painting"
+    },
+    {
+      "trait_type": "2bottom overlay 2",
+      "value": "none"
+    },
+    {
+      "trait_type": "3paint 1",
+      "value": "none"
+    },
+    {
+      "trait_type": "3sketch 1",
+      "value": "none"
+    },
+    {
+      "trait_type": "3sketch 2",
+      "value": "2770"
+    },
+    {
+      "trait_type": "3sketch 3",
+      "value": "4313"
+    },
+    {
+      "trait_type": "4shape 1",
+      "value": "none"
+    },
+    {
+      "trait_type": "4shape 2",
+      "value": "none"
+    },
+    {
+      "trait_type": "5minis",
+      "value": "none"
+    },
+    {
+      "trait_type": "5minis 2",
+      "value": "none"
+    },
+    {
+      "trait_type": "6bottom middle",
+      "value": "pink moth"
+    },
+    {
+      "trait_type": "7bottom right",
+      "value": "none"
+    },
+    {
+      "trait_type": "8bottom left",
+      "value": "none"
+    },
+    {
+      "trait_type": "9center",
+      "value": "none"
+    },
+    {
+      "trait_type": "91middle left",
+      "value": "none"
+    },
+    {
+      "trait_type": "91middle right",
+      "value": "frazetta watercolor"
+    },
+    {
+      "trait_type": "92top left",
+      "value": "none"
+    },
+    {
+      "trait_type": "93top right",
+      "value": "gas mask dude"
+    },
+    {
+      "trait_type": "94top middle",
+      "value": "boop bee"
+    },
+    {
+      "trait_type": "95baby drifella",
+      "value": "none"
+    },
+    {
+      "trait_type": "96baby drifella quote",
+      "value": "none"
+    },
+    {
+      "trait_type": "97front overlay",
+      "value": "none"
+    },
+    {
+      "trait_type": "98noise",
+      "value": "noise"
+    },
+    {
+      "trait_type": "animated",
+      "value": "no"
+    }
+  ],
+  "compiler": "BeelipZ Special Edition",
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/2hL345EvjWgeWuaoT3z5M6qzmkTRwCcEM9LGnYUKLPm1/edafc637-c6c5-4af8-a253-0d2a0c4e825e/5570"
+      }
+    ]
+  }
+}
