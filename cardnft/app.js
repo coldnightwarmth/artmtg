@@ -79,12 +79,14 @@ const CARD_PAN_VISIBLE_MARGIN = 0.48;
 const CARD_MOBILE_SCALE_MIN = 0.88;
 const CARD_MOBILE_SCALE_FULL_WIDTH = 700;
 const CARD_MOBILE_SCALE_MIN_WIDTH = 340;
-const CARD_SWAP_DISTANCE = 0.24;
-const CARD_SWAP_MIN_OPACITY = 0.42;
-const CARD_SWAP_OUT_MS = 74;
-const CARD_SWAP_IN_MS = 94;
+const CARD_SWAP_DISTANCE = CARD_WIDTH * 1.08;
+const CARD_SWAP_MIN_OPACITY = 0.1;
+const CARD_SWAP_MS = 230;
 const CARD_SHUFFLE_SPIN_MS = 520;
 const CARD_SHUFFLE_SPIN_DIRECTION = -1;
+const SHUFFLE_TOUCH_UNDO_HOLD_MS = 560;
+const SHUFFLE_TOUCH_UNDO_SUPPRESS_MS = 1000;
+const SHUFFLE_TOUCH_UNDO_MOVE_LIMIT = 14;
 const BINDER_DOUBLE_TAP_MS = 420;
 const BINDER_DOUBLE_TAP_DISTANCE = 28;
 const SHUFFLE_HISTORY_LIMIT = 10;
@@ -182,11 +184,21 @@ let currentPanX = 0;
 let currentPanY = 0;
 let cardSwapOffsetX = 0;
 let cardSwapOpacity = 1;
+let cardSwapIncomingGroup = null;
+let cardSwapIncomingFrontMesh = null;
+let cardSwapIncomingOffsetX = 0;
+let cardSwapIncomingOpacity = 0;
 let cardSwapAnimating = false;
 let cardSwapToken = 0;
 let cardShuffleSpinY = 0;
 let cardShuffleSpinAnimating = false;
 let cardShuffleSpinToken = 0;
+let shuffleTouchUndoTimer = 0;
+let shuffleTouchUndoPointerId = null;
+let shuffleTouchUndoStartX = 0;
+let shuffleTouchUndoStartY = 0;
+let shuffleTouchUndoTriggeredAt = 0;
+let suppressNextShuffleClick = false;
 let targetCameraZ = CARD_CAMERA_DEFAULT_Z;
 let currentCameraZ = targetCameraZ;
 let smoothZoomVelocity = 0;
@@ -362,9 +374,21 @@ function initCardScene() {
 function initEvents() {
   els.previousButton.addEventListener("click", () => transitionAdjacentCard(-1).catch(console.error));
   els.nextButton.addEventListener("click", () => transitionAdjacentCard(1).catch(console.error));
-  els.shuffleButton.addEventListener("click", () => shuffleCard().catch(console.error));
+  els.shuffleButton.addEventListener("click", (event) => {
+    if (consumeSuppressedShuffleClick()) {
+      event.preventDefault();
+      return;
+    }
+    shuffleCard().catch(console.error);
+  });
+  els.shuffleButton.addEventListener("pointerdown", startShuffleTouchUndo);
+  els.shuffleButton.addEventListener("pointermove", moveShuffleTouchUndo);
+  els.shuffleButton.addEventListener("pointerup", cancelShuffleTouchUndo);
+  els.shuffleButton.addEventListener("pointercancel", cancelShuffleTouchUndo);
+  els.shuffleButton.addEventListener("pointerleave", cancelShuffleTouchUndo);
   els.shuffleButton.addEventListener("contextmenu", (event) => {
     event.preventDefault();
+    if (isRecentShuffleTouchUndo()) return;
     goBackInShuffleHistory();
   });
   els.favoriteButton.addEventListener("click", toggleCurrentFavorite);
@@ -587,13 +611,18 @@ async function transitionAdjacentCard(direction) {
   setIndividualCardControlsDisabled(true);
   try {
     if (token !== cardSwapToken) return;
-    let nextTexture = null;
-    try {
-      nextTexture = await getPreparedCardTexture(CARDS[nextIndex]);
-    } catch (error) {
-      console.error(error);
-    }
+    const [nextTexture, backTexture] = await Promise.all([
+      getPreparedCardTexture(CARDS[nextIndex]).catch((error) => {
+        console.error(error);
+        return null;
+      }),
+      getBackTexture().catch((error) => {
+        console.error(error);
+        return getBackPlaceholderTexture();
+      }),
+    ]);
     if (token !== cardSwapToken) return;
+    prepareCardSwapIncomingGroup(direction, nextTexture, backTexture);
     await tweenCardSwap(direction, nextIndex, nextTexture, token);
   } finally {
     if (token === cardSwapToken) {
@@ -606,8 +635,6 @@ async function transitionAdjacentCard(direction) {
 
 function tweenCardSwap(direction, nextIndex, nextTexture, token) {
   const startedAt = performance.now();
-  const duration = CARD_SWAP_OUT_MS + CARD_SWAP_IN_MS;
-  let swapped = false;
 
   return new Promise((resolve) => {
     const step = (now) => {
@@ -616,18 +643,16 @@ function tweenCardSwap(direction, nextIndex, nextTexture, token) {
         return;
       }
 
-      const progress = clamp((now - startedAt) / duration, 0, 1);
-      const wave = Math.sin(easeInOut(progress) * Math.PI);
-      cardSwapOffsetX = -direction * CARD_SWAP_DISTANCE * wave;
-      cardSwapOpacity = 1 - ((1 - CARD_SWAP_MIN_OPACITY) * wave);
+      const progress = clamp((now - startedAt) / CARD_SWAP_MS, 0, 1);
+      const eased = easeInOutCubic(progress);
+      cardSwapOffsetX = -direction * CARD_SWAP_DISTANCE * eased;
+      cardSwapIncomingOffsetX = direction * CARD_SWAP_DISTANCE * (1 - eased);
+      cardSwapOpacity = THREE.MathUtils.lerp(1, CARD_SWAP_MIN_OPACITY, eased);
+      cardSwapIncomingOpacity = THREE.MathUtils.lerp(CARD_SWAP_MIN_OPACITY, 1, eased);
       applyCardSwapOpacity();
 
-      if (!swapped && progress >= 0.5) {
-        swapped = true;
-        setCard(nextIndex, { frontTexture: nextTexture, preserveSwapVisuals: true });
-      }
-
       if (progress >= 1) {
+        setCard(nextIndex, { frontTexture: nextTexture, preserveSwapVisuals: true });
         resolve();
         return;
       }
@@ -635,6 +660,69 @@ function tweenCardSwap(direction, nextIndex, nextTexture, token) {
     };
     requestAnimationFrame(step);
   });
+}
+
+function prepareCardSwapIncomingGroup(direction, frontTexture, backTexture) {
+  removeCardSwapIncomingGroup();
+  cardSwapIncomingGroup = createCardSwapGroup(frontTexture, backTexture);
+  cardSwapIncomingFrontMesh = cardSwapIncomingGroup.userData.frontMesh || null;
+  cardSwapIncomingOffsetX = direction * CARD_SWAP_DISTANCE;
+  cardSwapIncomingOpacity = CARD_SWAP_MIN_OPACITY;
+  cardScene.add(cardSwapIncomingGroup);
+  updateCardSwapIncomingTransform();
+  applyCardSwapOpacity();
+}
+
+function createCardSwapGroup(frontTexture, backTexture) {
+  const group = new THREE.Group();
+
+  const core = new THREE.Mesh(
+    createRoundedCoreGeometry(CARD_WIDTH, CARD_HEIGHT, CARD_DEPTH, CARD_RADIUS),
+    new THREE.MeshPhysicalMaterial({
+      color: 0x14110e,
+      roughness: 0.64,
+      metalness: 0.02,
+      clearcoat: 0.2,
+      clearcoatRoughness: 0.5,
+    }),
+  );
+  group.add(core);
+
+  const faceGeometry = createRoundedPlaneGeometry(CARD_WIDTH, CARD_HEIGHT, CARD_RADIUS);
+  const frontMesh = new THREE.Mesh(
+    faceGeometry,
+    new THREE.MeshBasicMaterial({
+      map: frontTexture || getCardPlaceholderTexture(),
+      transparent: true,
+      toneMapped: false,
+    }),
+  );
+  frontMesh.position.z = CARD_DEPTH / 2 + 0.003;
+  group.add(frontMesh);
+
+  const backMesh = new THREE.Mesh(
+    faceGeometry.clone(),
+    new THREE.MeshBasicMaterial({
+      map: backTexture || getBackPlaceholderTexture(),
+      transparent: true,
+      toneMapped: false,
+    }),
+  );
+  backMesh.position.z = -CARD_DEPTH / 2 - 0.003;
+  backMesh.rotation.y = Math.PI;
+  group.add(backMesh);
+
+  const frontNoise = createCardSurfaceNoisePlane();
+  frontNoise.position.z = CARD_DEPTH / 2 + 0.005;
+  group.add(frontNoise);
+
+  const backNoise = createCardSurfaceNoisePlane();
+  backNoise.rotation.y = Math.PI;
+  backNoise.position.z = -CARD_DEPTH / 2 - 0.005;
+  group.add(backNoise);
+
+  group.userData.frontMesh = frontMesh;
+  return group;
 }
 
 function getPreparedCardTexture(card) {
@@ -658,7 +746,10 @@ function preloadAdjacentIndividualTextures(index) {
 function resetCardSwapVisualState() {
   cardSwapOffsetX = 0;
   cardSwapOpacity = 1;
+  cardSwapIncomingOffsetX = 0;
+  cardSwapIncomingOpacity = 0;
   applyCardSwapOpacity();
+  removeCardSwapIncomingGroup();
 }
 
 function setIndividualCardControlsDisabled(disabled) {
@@ -668,10 +759,15 @@ function setIndividualCardControlsDisabled(disabled) {
 }
 
 function applyCardSwapOpacity() {
-  if (!cardGroup) return;
+  applyCardGroupOpacity(cardGroup, cardSwapOpacity);
+  applyCardGroupOpacity(cardSwapIncomingGroup, cardSwapIncomingOpacity);
+}
 
-  const opacity = clamp(cardSwapOpacity, 0, 1);
-  cardGroup.traverse((object) => {
+function applyCardGroupOpacity(group, opacityValue) {
+  if (!group) return;
+
+  const opacity = clamp(opacityValue, 0, 1);
+  group.traverse((object) => {
     if (!object.material) return;
     const materials = Array.isArray(object.material) ? object.material : [object.material];
     for (const material of materials) {
@@ -692,6 +788,33 @@ function applyCardSwapOpacity() {
         material.needsUpdate = true;
       }
     }
+  });
+}
+
+function updateCardSwapIncomingTransform() {
+  if (!cardSwapIncomingGroup) return;
+  cardSwapIncomingGroup.rotation.x = cardGroup.rotation.x;
+  cardSwapIncomingGroup.rotation.y = cardGroup.rotation.y;
+  cardSwapIncomingGroup.scale.copy(cardGroup.scale);
+  cardSwapIncomingGroup.position.x = currentCardOffsetX + currentPanX + cardSwapIncomingOffsetX;
+  cardSwapIncomingGroup.position.y = INDIVIDUAL_CARD_WORLD_Y + currentPanY;
+  cardSwapIncomingGroup.position.z = cardGroup.position.z;
+}
+
+function removeCardSwapIncomingGroup() {
+  if (!cardSwapIncomingGroup) return;
+  cardScene.remove(cardSwapIncomingGroup);
+  disposeCardSwapGroup(cardSwapIncomingGroup);
+  cardSwapIncomingGroup = null;
+  cardSwapIncomingFrontMesh = null;
+}
+
+function disposeCardSwapGroup(group) {
+  group.traverse((object) => {
+    object.geometry?.dispose();
+    if (!object.material) return;
+    const materials = Array.isArray(object.material) ? object.material : [object.material];
+    for (const material of materials) material.dispose();
   });
 }
 
@@ -726,6 +849,70 @@ async function shuffleCard() {
 function goBackInShuffleHistory() {
   const previous = shuffleHistory.pop();
   if (Number.isInteger(previous)) setCard(previous);
+}
+
+function startShuffleTouchUndo(event) {
+  if (event.pointerType === "mouse" || event.button > 0 || els.shuffleButton.disabled) return;
+
+  clearShuffleTouchUndoTimer();
+  shuffleTouchUndoPointerId = event.pointerId;
+  shuffleTouchUndoStartX = event.clientX;
+  shuffleTouchUndoStartY = event.clientY;
+  try {
+    els.shuffleButton.setPointerCapture(event.pointerId);
+  } catch {
+    // Pointer capture is best-effort; the timeout path still works without it.
+  }
+
+  shuffleTouchUndoTimer = window.setTimeout(() => {
+    if (shuffleTouchUndoPointerId !== event.pointerId) return;
+    shuffleTouchUndoTimer = 0;
+    shuffleTouchUndoTriggeredAt = performance.now();
+    suppressNextShuffleClick = true;
+    goBackInShuffleHistory();
+    window.setTimeout(() => {
+      if (isRecentShuffleTouchUndo()) return;
+      suppressNextShuffleClick = false;
+    }, SHUFFLE_TOUCH_UNDO_SUPPRESS_MS);
+  }, SHUFFLE_TOUCH_UNDO_HOLD_MS);
+}
+
+function moveShuffleTouchUndo(event) {
+  if (shuffleTouchUndoPointerId !== event.pointerId) return;
+
+  const distance = Math.hypot(
+    event.clientX - shuffleTouchUndoStartX,
+    event.clientY - shuffleTouchUndoStartY,
+  );
+  if (distance > SHUFFLE_TOUCH_UNDO_MOVE_LIMIT) cancelShuffleTouchUndo(event);
+}
+
+function cancelShuffleTouchUndo(event) {
+  if (shuffleTouchUndoPointerId !== null && event.pointerId !== shuffleTouchUndoPointerId) return;
+
+  clearShuffleTouchUndoTimer();
+  try {
+    if (shuffleTouchUndoPointerId !== null) els.shuffleButton.releasePointerCapture(shuffleTouchUndoPointerId);
+  } catch {
+    // Pointer capture may already be released by the browser.
+  }
+  shuffleTouchUndoPointerId = null;
+}
+
+function clearShuffleTouchUndoTimer() {
+  if (!shuffleTouchUndoTimer) return;
+  window.clearTimeout(shuffleTouchUndoTimer);
+  shuffleTouchUndoTimer = 0;
+}
+
+function consumeSuppressedShuffleClick() {
+  if (!suppressNextShuffleClick) return false;
+  suppressNextShuffleClick = false;
+  return isRecentShuffleTouchUndo();
+}
+
+function isRecentShuffleTouchUndo() {
+  return performance.now() - shuffleTouchUndoTriggeredAt < SHUFFLE_TOUCH_UNDO_SUPPRESS_MS;
 }
 
 function tweenCardShuffleSpin(nextIndex, token) {
@@ -3107,6 +3294,7 @@ function animateCard() {
   updateCardPan();
   cardGroup.position.x = currentCardOffsetX + currentPanX + cardSwapOffsetX;
   cardGroup.position.y = INDIVIDUAL_CARD_WORLD_Y + currentPanY;
+  updateCardSwapIncomingTransform();
   applyCardSwapOpacity();
   updateCardGlossActivity();
   updateCardGlossUniforms(cardGradientMesh);
@@ -4403,6 +4591,7 @@ function getAnimatedSpriteInfo(card) {
 function getIndividualAnimatedTextureRecords() {
   const records = new Set();
   addAnimatedTextureRecord(records, cardFrontMesh?.material?.map);
+  addAnimatedTextureRecord(records, cardSwapIncomingFrontMesh?.material?.map);
   return records;
 }
 
