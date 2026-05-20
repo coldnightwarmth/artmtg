@@ -178,6 +178,35 @@ body.is-light #cardCanvas {
   stroke-linejoin: round;
 }
 
+#binderShuffleButton::before {
+  content: "";
+  display: none;
+  position: absolute;
+  inset: 0;
+  width: 18px;
+  height: 18px;
+  margin: auto;
+  box-sizing: border-box;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  pointer-events: none;
+  transform-origin: 50% 50%;
+  animation: binder-shuffle-spin 680ms linear infinite;
+}
+
+#binderShuffleButton.is-loading::before {
+  display: block;
+}
+
+#binderShuffleButton.is-loading svg {
+  opacity: 0;
+}
+
+@keyframes binder-shuffle-spin {
+  to { transform: rotate(360deg); }
+}
+
 .icon-button[aria-pressed="true"] {
   color: var(--accent);
   border-color: rgba(215, 180, 84, 0.62);

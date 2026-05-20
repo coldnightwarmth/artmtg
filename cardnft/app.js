@@ -258,6 +258,7 @@ let binderTextureTaskSequence = 0;
 let binderTextureActiveLoads = 0;
 let binderTextureActiveAnimatedLoads = 0;
 let binderInteractionActiveUntil = 0;
+let binderShuffleLoadingToken = 0;
 const binderTextureQueue = [];
 const binderTextureQueuedPositions = new Set();
 const binderRaycaster = new THREE.Raycaster();
@@ -2366,7 +2367,13 @@ async function shuffleBinderSpread() {
 
   binderShuffleHistory.push(currentPage);
   if (binderShuffleHistory.length > SHUFFLE_HISTORY_LIMIT) binderShuffleHistory.shift();
-  await prepareAndMoveBinderToSpread(nextTurn, currentPage);
+  const loadingToken = beginBinderShuffleLoading();
+  try {
+    const moved = await prepareAndMoveBinderToSpread(nextTurn, currentPage);
+    if (moved) await waitForBinderShuffleFlipDone(loadingToken, nextTurn);
+  } finally {
+    endBinderShuffleLoading(loadingToken);
+  }
 }
 
 async function applyPreviousBinderSpread() {
@@ -2374,13 +2381,63 @@ async function applyPreviousBinderSpread() {
 
   const previousTurn = binderShuffleHistory.pop();
   if (Number.isInteger(previousTurn)) {
-    await prepareAndMoveBinderToSpread(previousTurn, clamp(Math.round(binderTargetTurn), 0, binderPageCount));
+    const loadingToken = beginBinderShuffleLoading();
+    try {
+      const moved = await prepareAndMoveBinderToSpread(previousTurn, clamp(Math.round(binderTargetTurn), 0, binderPageCount));
+      if (moved) await waitForBinderShuffleFlipDone(loadingToken, previousTurn);
+    } finally {
+      endBinderShuffleLoading(loadingToken);
+    }
   }
+}
+
+function beginBinderShuffleLoading() {
+  const token = ++binderShuffleLoadingToken;
+  setBinderShuffleLoading(true);
+  return token;
+}
+
+function endBinderShuffleLoading(token) {
+  if (token !== binderShuffleLoadingToken) return;
+  setBinderShuffleLoading(false);
+}
+
+function setBinderShuffleLoading(loading) {
+  els.binderShuffleButton.classList.toggle("is-loading", loading);
+  els.binderShuffleButton.setAttribute("aria-busy", String(loading));
+}
+
+function waitForBinderShuffleFlipDone(token, turn) {
+  const targetTurn = clamp(Math.round(turn), 0, binderPageCount);
+  startBinderRenderLoop();
+
+  return new Promise((resolve) => {
+    const check = () => {
+      if (token !== binderShuffleLoadingToken) {
+        resolve();
+        return;
+      }
+
+      const activeTarget = clamp(Math.round(binderTargetTurn), 0, binderPageCount);
+      const turnSettled = activeTarget === targetTurn
+        && Math.abs(binderTargetTurn - binderTurn) <= 0.035
+        && !binderDrag
+        && !binderPreparingSpread;
+      if (turnSettled) {
+        resolve();
+        return;
+      }
+
+      requestAnimationFrame(check);
+    };
+
+    requestAnimationFrame(check);
+  });
 }
 
 async function prepareAndMoveBinderToSpread(turn, currentPage) {
   const nextTurn = clamp(Math.round(turn), 0, binderPageCount);
-  if (nextTurn === clamp(Math.round(binderTargetTurn), 0, binderPageCount)) return;
+  if (nextTurn === clamp(Math.round(binderTargetTurn), 0, binderPageCount)) return false;
 
   const token = ++binderSpreadPreparationToken;
   const direction = Math.sign(nextTurn - currentPage) || 1;
@@ -2388,7 +2445,7 @@ async function prepareAndMoveBinderToSpread(turn, currentPage) {
   const positions = getBinderPreparationPositionsForTurn(startTurn, nextTurn);
 
   await preloadBinderPositions(positions, token);
-  if (token !== binderSpreadPreparationToken) return;
+  if (token !== binderSpreadPreparationToken) return false;
 
   binderPreparingSpread = true;
   try {
@@ -2399,9 +2456,10 @@ async function prepareAndMoveBinderToSpread(turn, currentPage) {
       updateTransforms: false,
     });
     await applyPreparedBinderTextures(positions, token);
-    if (token !== binderSpreadPreparationToken) return;
+    if (token !== binderSpreadPreparationToken) return false;
 
     moveBinderToSpread(nextTurn, { startTurn });
+    return true;
   } finally {
     if (token === binderSpreadPreparationToken) {
       binderPreparingSpread = false;
