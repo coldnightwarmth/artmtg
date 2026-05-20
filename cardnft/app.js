@@ -76,6 +76,15 @@ const CARD_CAMERA_MIN_Z = 4.85;
 const CARD_CAMERA_MAX_Z = 13.4;
 const CARD_PAN_MODE_Z = 7.25;
 const CARD_PAN_VISIBLE_MARGIN = 0.48;
+const CARD_MOBILE_SCALE_MIN = 0.88;
+const CARD_MOBILE_SCALE_FULL_WIDTH = 700;
+const CARD_MOBILE_SCALE_MIN_WIDTH = 340;
+const CARD_SWAP_DISTANCE = 0.34;
+const CARD_SWAP_MIN_OPACITY = 0.42;
+const CARD_SWAP_OUT_MS = 74;
+const CARD_SWAP_IN_MS = 94;
+const CARD_SHUFFLE_SPIN_MS = 520;
+const CARD_SHUFFLE_SPIN_DIRECTION = -1;
 const BINDER_DOUBLE_TAP_MS = 420;
 const BINDER_DOUBLE_TAP_DISTANCE = 28;
 const SHUFFLE_HISTORY_LIMIT = 10;
@@ -93,6 +102,7 @@ const els = {
   traitInfoButton: document.querySelector("#traitInfoButton"),
   traitPanel: document.querySelector("#traitPanel"),
   traitGrid: document.querySelector("#traitGrid"),
+  traitDownloadButton: document.querySelector("#traitDownloadButton"),
   cardFileName: document.querySelector("#cardFileName"),
   cardCounter: document.querySelector("#cardCounter"),
   galleryToggleButton: document.querySelector("#galleryToggleButton"),
@@ -109,10 +119,12 @@ const els = {
   binderFavoriteButton: document.querySelector("#binderFavoriteButton"),
   binderShuffleButton: document.querySelector("#binderShuffleButton"),
   binderPageStatus: document.querySelector("#binderPageStatus"),
+  gallerySortControl: document.querySelector("#gallerySortControl"),
   traitSortSelect: document.querySelector("#traitSortSelect"),
   traitSearchButton: document.querySelector("#traitSearchButton"),
   traitSearchPanel: document.querySelector("#traitSearchPanel"),
   traitSearchGroups: document.querySelector("#traitSearchGroups"),
+  traitSearchSidebar: document.querySelector("#traitSearchSidebar"),
   favoriteFilterButton: document.querySelector("#favoriteFilterButton"),
   binderToggle: document.querySelector("#binderToggle"),
   themeToggle: document.querySelector("#themeToggle"),
@@ -132,6 +144,9 @@ let favoritesOnly = false;
 let traitSortCategory = "all";
 let activeTraitFilter = null;
 let traitSearchOpen = false;
+let traitSortPickerOpen = false;
+let traitSortPickerOpenedAt = 0;
+let traitSortPickerSyncFrame = 0;
 let isBinderMode = localStorage.getItem("cardnft:binderMode:v1") !== "grid";
 let cardRenderer;
 let cardScene;
@@ -150,6 +165,8 @@ let cardSurfaceNoiseTexture;
 let backTexturePromise;
 let cardApplyToken = 0;
 let dragState = null;
+let currentRotationX = 0;
+let currentRotationY = 0;
 let targetRotationX = 0;
 let targetRotationY = 0;
 let targetCardOffsetX = 0;
@@ -158,6 +175,13 @@ let targetPanX = 0;
 let targetPanY = 0;
 let currentPanX = 0;
 let currentPanY = 0;
+let cardSwapOffsetX = 0;
+let cardSwapOpacity = 1;
+let cardSwapAnimating = false;
+let cardSwapToken = 0;
+let cardShuffleSpinY = 0;
+let cardShuffleSpinAnimating = false;
+let cardShuffleSpinToken = 0;
 let targetCameraZ = CARD_CAMERA_DEFAULT_Z;
 let currentCameraZ = targetCameraZ;
 let smoothZoomVelocity = 0;
@@ -329,19 +353,44 @@ function initCardScene() {
 }
 
 function initEvents() {
-  els.previousButton.addEventListener("click", () => setCard(currentIndex - 1));
-  els.nextButton.addEventListener("click", () => setCard(currentIndex + 1));
-  els.shuffleButton.addEventListener("click", shuffleCard);
+  els.previousButton.addEventListener("click", () => transitionAdjacentCard(-1).catch(console.error));
+  els.nextButton.addEventListener("click", () => transitionAdjacentCard(1).catch(console.error));
+  els.shuffleButton.addEventListener("click", () => shuffleCard().catch(console.error));
   els.shuffleButton.addEventListener("contextmenu", (event) => {
     event.preventDefault();
     goBackInShuffleHistory();
   });
   els.favoriteButton.addEventListener("click", toggleCurrentFavorite);
   els.traitInfoButton.addEventListener("click", toggleTraitInfo);
+  els.traitDownloadButton.addEventListener("click", () => {
+    downloadCurrentCardArt().catch(console.error);
+  });
   els.galleryToggleButton.addEventListener("click", () => setGalleryOpen(!galleryOpen, { resetFilters: !galleryOpen }));
   els.favoriteFilterButton.addEventListener("click", toggleFavoriteFilter);
   els.traitSearchButton.addEventListener("click", toggleTraitSearch);
+  els.gallerySortControl.addEventListener("click", (event) => {
+    if (event.target === els.traitSortSelect) return;
+    event.preventDefault();
+    openTraitSortPicker();
+  });
+  els.traitSortSelect.addEventListener("pointerdown", () => {
+    setTraitSortPickerOpen(true);
+  });
+  els.traitSortSelect.addEventListener("cancel", () => {
+    setTraitSortPickerOpen(false);
+  });
+  els.traitSortSelect.addEventListener("blur", () => {
+    setTraitSortPickerOpen(false);
+  });
+  els.traitSortSelect.addEventListener("keydown", (event) => {
+    if ([" ", "ArrowDown", "ArrowUp"].includes(event.key)) {
+      setTraitSortPickerOpen(true);
+    } else if (["Escape", "Enter", "Tab"].includes(event.key)) {
+      requestAnimationFrame(() => setTraitSortPickerOpen(false));
+    }
+  });
   els.traitSortSelect.addEventListener("change", () => {
+    setTraitSortPickerOpen(false);
     activeTraitFilter = null;
     traitSearchOpen = false;
     traitSortCategory = els.traitSortSelect.value || "all";
@@ -357,6 +406,15 @@ function initEvents() {
     deactivateAllAnimatedRecords();
     renderGallery();
   });
+  document.addEventListener("pointerdown", (event) => {
+    if (!traitSortPickerOpen || els.gallerySortControl.contains(event.target)) return;
+    requestAnimationFrame(() => setTraitSortPickerOpen(false));
+  }, true);
+  document.addEventListener("click", (event) => {
+    if (!traitSortPickerOpen || els.gallerySortControl.contains(event.target)) return;
+    requestAnimationFrame(() => setTraitSortPickerOpen(false));
+  }, true);
+  window.addEventListener("blur", () => setTraitSortPickerOpen(false));
   els.themeToggle.addEventListener("change", () => applyTheme(els.themeToggle.checked));
   els.binderPreviousPageButton.addEventListener("click", previousBinderPage);
   els.binderNextPageButton.addEventListener("click", nextBinderPage);
@@ -404,7 +462,68 @@ function populateTraitSortOptions() {
   els.traitSortSelect.value = traitSortCategory;
 }
 
-function setCard(index) {
+function openTraitSortPicker() {
+  setTraitSortPickerOpen(true);
+  els.traitSortSelect.focus();
+  if (typeof els.traitSortSelect.showPicker === "function") {
+    try {
+      els.traitSortSelect.showPicker();
+    } catch {
+      requestAnimationFrame(() => setTraitSortPickerOpen(false));
+    }
+  }
+}
+
+function setTraitSortPickerOpen(open) {
+  const nextOpen = Boolean(open);
+  if (traitSortPickerOpen === nextOpen) return;
+  traitSortPickerOpen = nextOpen;
+  traitSortPickerOpenedAt = nextOpen ? performance.now() : 0;
+  els.gallerySortControl.classList.toggle("is-open", traitSortPickerOpen);
+  els.gallerySortControl.setAttribute("aria-expanded", String(traitSortPickerOpen));
+  if (traitSortPickerOpen) {
+    startTraitSortPickerSync();
+  } else {
+    stopTraitSortPickerSync();
+  }
+}
+
+function startTraitSortPickerSync() {
+  if (traitSortPickerSyncFrame) return;
+
+  const sync = () => {
+    traitSortPickerSyncFrame = 0;
+    if (!traitSortPickerOpen) return;
+
+    const nativeOpen = getTraitSortNativeOpenState();
+    const stillOpening = performance.now() - traitSortPickerOpenedAt < 250;
+    if (nativeOpen === false && !stillOpening) {
+      setTraitSortPickerOpen(false);
+      return;
+    }
+
+    traitSortPickerSyncFrame = requestAnimationFrame(sync);
+  };
+
+  traitSortPickerSyncFrame = requestAnimationFrame(sync);
+}
+
+function stopTraitSortPickerSync() {
+  if (!traitSortPickerSyncFrame) return;
+  cancelAnimationFrame(traitSortPickerSyncFrame);
+  traitSortPickerSyncFrame = 0;
+}
+
+function getTraitSortNativeOpenState() {
+  try {
+    if (!CSS.supports("selector(select:open)")) return null;
+    return els.traitSortSelect.matches(":open");
+  } catch {
+    return null;
+  }
+}
+
+function setCard(index, options = {}) {
   if (!CARDS.length) {
     els.cardFileName.textContent = "Card NFT set not synced yet";
     els.cardCounter.textContent = "0/0";
@@ -432,25 +551,173 @@ function setCard(index) {
   targetRotationY = 0;
   resetCardPan(true);
   cardGlossActivity = 0;
+  if (!options.preserveSwapVisuals) resetCardSwapVisualState();
+  if (!options.preserveSpinVisuals) resetCardShuffleSpinVisualState();
   updateCardText();
   renderTraitPanel();
   updateFavoriteButtons();
 }
 
-function shuffleCard() {
-  if (CARDS.length < 2) return;
+async function transitionAdjacentCard(direction) {
+  if (cardSwapAnimating || cardShuffleSpinAnimating || galleryOpen || !CARDS.length) return;
+
+  cardSwapAnimating = true;
+  const token = ++cardSwapToken;
+  setIndividualCardControlsDisabled(true);
+  try {
+    await tweenCardSwap(0, -direction * CARD_SWAP_DISTANCE, 1, CARD_SWAP_MIN_OPACITY, CARD_SWAP_OUT_MS, token);
+    if (token !== cardSwapToken) return;
+    setCard(currentIndex + direction, { preserveSwapVisuals: true });
+    cardSwapOffsetX = direction * CARD_SWAP_DISTANCE;
+    cardSwapOpacity = CARD_SWAP_MIN_OPACITY;
+    applyCardSwapOpacity();
+    await tweenCardSwap(direction * CARD_SWAP_DISTANCE, 0, CARD_SWAP_MIN_OPACITY, 1, CARD_SWAP_IN_MS, token);
+  } finally {
+    if (token === cardSwapToken) {
+      resetCardSwapVisualState();
+      cardSwapAnimating = false;
+      setIndividualCardControlsDisabled(false);
+    }
+  }
+}
+
+function tweenCardSwap(fromOffset, toOffset, fromOpacity, toOpacity, duration, token) {
+  const startedAt = performance.now();
+  return new Promise((resolve) => {
+    const step = (now) => {
+      if (token !== cardSwapToken) {
+        resolve();
+        return;
+      }
+
+      const progress = clamp((now - startedAt) / duration, 0, 1);
+      const eased = 1 - ((1 - progress) ** 3);
+      cardSwapOffsetX = THREE.MathUtils.lerp(fromOffset, toOffset, eased);
+      cardSwapOpacity = THREE.MathUtils.lerp(fromOpacity, toOpacity, eased);
+      applyCardSwapOpacity();
+
+      if (progress >= 1) {
+        resolve();
+        return;
+      }
+      requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  });
+}
+
+function resetCardSwapVisualState() {
+  cardSwapOffsetX = 0;
+  cardSwapOpacity = 1;
+  applyCardSwapOpacity();
+}
+
+function setIndividualCardControlsDisabled(disabled) {
+  els.previousButton.disabled = disabled;
+  els.nextButton.disabled = disabled;
+  els.shuffleButton.disabled = disabled;
+}
+
+function applyCardSwapOpacity() {
+  if (!cardGroup) return;
+
+  const opacity = clamp(cardSwapOpacity, 0, 1);
+  cardGroup.traverse((object) => {
+    if (!object.material) return;
+    const materials = Array.isArray(object.material) ? object.material : [object.material];
+    for (const material of materials) {
+      if (material.userData.baseOpacity === undefined) {
+        material.userData.baseOpacity = material.opacity ?? 1;
+        material.userData.baseTransparent = Boolean(material.transparent);
+      }
+      if (material.uniforms?.uTransitionOpacity) {
+        material.uniforms.uTransitionOpacity.value = opacity;
+      }
+      if (material.opacity !== undefined) {
+        const nextOpacity = material.userData.baseOpacity * opacity;
+        if (Math.abs(material.opacity - nextOpacity) > 0.001) material.opacity = nextOpacity;
+      }
+      const nextTransparent = material.userData.baseTransparent || opacity < 0.999;
+      if (material.transparent !== nextTransparent) {
+        material.transparent = nextTransparent;
+        material.needsUpdate = true;
+      }
+    }
+  });
+}
+
+async function shuffleCard() {
+  if (CARDS.length < 2 || cardSwapAnimating || cardShuffleSpinAnimating || galleryOpen) return;
   shuffleHistory.push(currentIndex);
   if (shuffleHistory.length > SHUFFLE_HISTORY_LIMIT) shuffleHistory.shift();
   let next = currentIndex;
   while (next === currentIndex) {
     next = Math.floor(Math.random() * CARDS.length);
   }
-  setCard(next);
+
+  getCardTexture(CARDS[next]).catch(() => {});
+  cardShuffleSpinAnimating = true;
+  const token = ++cardShuffleSpinToken;
+  setIndividualCardControlsDisabled(true);
+  dragState = null;
+  targetRotationX = 0;
+  targetRotationY = 0;
+
+  try {
+    await tweenCardShuffleSpin(next, token);
+  } finally {
+    if (token === cardShuffleSpinToken) {
+      resetCardShuffleSpinVisualState();
+      cardShuffleSpinAnimating = false;
+      setIndividualCardControlsDisabled(false);
+    }
+  }
 }
 
 function goBackInShuffleHistory() {
   const previous = shuffleHistory.pop();
   if (Number.isInteger(previous)) setCard(previous);
+}
+
+function tweenCardShuffleSpin(nextIndex, token) {
+  const startedAt = performance.now();
+  let swapped = false;
+
+  return new Promise((resolve) => {
+    const step = (now) => {
+      if (token !== cardShuffleSpinToken) {
+        resolve();
+        return;
+      }
+
+      const progress = clamp((now - startedAt) / CARD_SHUFFLE_SPIN_MS, 0, 1);
+      const eased = easeInOutCubic(progress);
+      cardShuffleSpinY = CARD_SHUFFLE_SPIN_DIRECTION * eased * Math.PI * 2;
+
+      if (!swapped && eased >= 0.5) {
+        swapped = true;
+        cardShuffleSpinY = CARD_SHUFFLE_SPIN_DIRECTION * Math.PI;
+        setCard(nextIndex, { preserveSpinVisuals: true });
+      }
+
+      if (progress >= 1) {
+        resolve();
+        return;
+      }
+      requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  });
+}
+
+function resetCardShuffleSpinVisualState() {
+  cardShuffleSpinY = 0;
+}
+
+function easeInOutCubic(progress) {
+  return progress < 0.5
+    ? 4 * progress * progress * progress
+    : 1 - ((-2 * progress + 2) ** 3) / 2;
 }
 
 function toggleCurrentFavorite() {
@@ -497,7 +764,12 @@ function renderTraitPanel() {
     value.className = "trait-value";
     value.textContent = trait.value;
 
-    tile.append(category, value);
+    const count = document.createElement("div");
+    count.className = "trait-total";
+    const total = getTraitOccurrenceCount(trait.category, trait.value);
+    count.textContent = `${total} total`;
+
+    tile.append(category, value, count);
     fragment.append(tile);
   }
 
@@ -512,6 +784,50 @@ function renderTraitPanel() {
   }
 
   els.traitGrid.replaceChildren(fragment);
+}
+
+async function downloadCurrentCardArt() {
+  const card = CARDS[currentIndex];
+  if (!card) return;
+
+  const assetPath = cardAssetPath(card);
+  const url = cardAssetUrl(card);
+  const extension = getAssetExtension(assetPath);
+  const fileName = `${sanitizeDownloadFileName(card.title || `card ${currentIndex + 1}`)}.${extension}`;
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`Download failed: ${response.status}`);
+    const blob = await response.blob();
+    const objectUrl = URL.createObjectURL(blob);
+    triggerDownload(objectUrl, fileName);
+    window.setTimeout(() => URL.revokeObjectURL(objectUrl), 1200);
+  } catch {
+    triggerDownload(url, fileName);
+  }
+}
+
+function triggerDownload(href, fileName) {
+  const link = document.createElement("a");
+  link.href = href;
+  link.download = fileName;
+  link.rel = "noopener";
+  document.body.append(link);
+  link.click();
+  link.remove();
+}
+
+function sanitizeDownloadFileName(value) {
+  return String(value || "")
+    .trim()
+    .replace(/[\\/:*?"<>|]+/g, "")
+    .replace(/\s+/g, " ")
+    .slice(0, 120) || "card-nft";
+}
+
+function getAssetExtension(path) {
+  const extension = String(path || "").split("?")[0].split("#")[0].split(".").pop();
+  return extension && extension.length <= 5 ? extension.toLowerCase() : "webp";
 }
 
 function openTraitFilteredGallery(trait) {
@@ -545,6 +861,18 @@ function getCardTraitEntries(index) {
       value: String(values[categoryIndex] || "").trim(),
     }))
     .filter(({ category, value }) => !HIDDEN_TRAIT_CATEGORIES.has(category) && isVisibleTraitValue(value));
+}
+
+function getTraitOccurrenceCount(category, value) {
+  const categoryIndex = TRAIT_CATEGORY_INDEX.get(category);
+  const normalizedValue = normalizeTraitValue(value);
+  if (!Number.isInteger(categoryIndex) || !normalizedValue) return 0;
+
+  return CARD_NFT_TRAITS.reduce((total, traitRecord) => (
+    normalizeTraitValue(traitRecord?.values?.[categoryIndex]) === normalizedValue
+      ? total + 1
+      : total
+  ), 0);
 }
 
 function toggleFocusedBinderFavorite() {
@@ -593,7 +921,7 @@ function setGalleryOpen(open, options = {}) {
   resetViewSwitchWheelDistances();
   binderSpreadPreparationToken += 1;
   binderPreparingSpread = false;
-  if (!open || options.resetFilters) resetGalleryFilters();
+  if (options.resetFilters) resetGalleryFilters();
   galleryOpen = open;
   if (open) setTraitInfoOpen(false);
   deactivateAllAnimatedRecords();
@@ -725,6 +1053,7 @@ function getTraitSearchGroups() {
       if (!traits.size) return null;
       return {
         category,
+        total: traits.size,
         traits: [...traits.values()].sort((a, b) => (
           a.value.localeCompare(b.value, undefined, { numeric: true, sensitivity: "base" })
         )),
@@ -734,15 +1063,28 @@ function getTraitSearchGroups() {
 }
 
 function renderTraitSearch() {
-  const fragment = document.createDocumentFragment();
+  const groupFragment = document.createDocumentFragment();
+  const sidebarFragment = document.createDocumentFragment();
+  const groups = getTraitSearchGroups();
 
-  for (const group of getTraitSearchGroups()) {
+  for (const group of groups) {
     const section = document.createElement("section");
     section.className = "trait-search-group";
+    const sectionId = `trait-search-${slugifyTraitSearchId(group.category)}`;
+    section.id = sectionId;
 
     const heading = document.createElement("h2");
     heading.className = "trait-search-heading";
-    heading.textContent = group.category;
+    heading.textContent = `${group.category} (${group.total} total)`;
+
+    const jump = document.createElement("button");
+    jump.className = "trait-search-sidebar-button";
+    jump.type = "button";
+    jump.textContent = group.category;
+    jump.addEventListener("click", () => {
+      section.scrollIntoView({ block: "start", behavior: "smooth" });
+    });
+    sidebarFragment.append(jump);
 
     const grid = document.createElement("div");
     grid.className = "trait-search-tile-grid";
@@ -767,10 +1109,19 @@ function renderTraitSearch() {
     }
 
     section.append(heading, grid);
-    fragment.append(section);
+    groupFragment.append(section);
   }
 
-  els.traitSearchGroups.replaceChildren(fragment);
+  els.traitSearchGroups.replaceChildren(groupFragment);
+  els.traitSearchSidebar.replaceChildren(sidebarFragment);
+}
+
+function slugifyTraitSearchId(value) {
+  return String(value || "")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "") || "category";
 }
 
 function compareCardIndexes(a, b) {
@@ -2169,7 +2520,6 @@ async function transitionIndividualCardToFocusedBinder() {
 async function openFocusedBinderGalleryForCard(cardIndex) {
   if (!Number.isInteger(cardIndex)) return false;
 
-  favoritesOnly = false;
   traitSearchOpen = false;
   isBinderMode = true;
   galleryOpen = true;
@@ -2231,6 +2581,11 @@ async function transitionFocusedBinderCardToIndividual(cardIndex, focusedMesh) {
 
   try {
     setCard(cardIndex);
+    currentRotationX = 0;
+    currentRotationY = 0;
+    targetRotationX = 0;
+    targetRotationY = 0;
+    cardShuffleSpinY = 0;
     cardGroup.rotation.x = 0;
     cardGroup.rotation.y = 0;
     await getCardTexture(CARDS[cardIndex]).then((texture) => {
@@ -2384,6 +2739,7 @@ function delay(ms) {
 }
 
 function onCardPointerDown(event) {
+  if (cardSwapAnimating || cardShuffleSpinAnimating) return;
   els.cardCanvas.setPointerCapture(event.pointerId);
   const panMode = isCardPanMode();
   dragState = {
@@ -2679,16 +3035,20 @@ function animateCard() {
   requestAnimationFrame(animateCard);
   resizeCardRenderer();
   updateSmoothZoom();
-  cardGroup.rotation.x += (targetRotationX - cardGroup.rotation.x) * 0.14;
-  cardGroup.rotation.y += (targetRotationY - cardGroup.rotation.y) * 0.14;
+  currentRotationX += (targetRotationX - currentRotationX) * 0.14;
+  currentRotationY += (targetRotationY - currentRotationY) * 0.14;
+  cardGroup.rotation.x = currentRotationX;
+  cardGroup.rotation.y = currentRotationY + cardShuffleSpinY;
+  cardGroup.scale.setScalar(getResponsiveIndividualCardScale());
   targetCardOffsetX = getTraitCardOffsetX();
   currentCardOffsetX += (targetCardOffsetX - currentCardOffsetX) * 0.16;
   if (Math.abs(currentCardOffsetX) < 0.001 && targetCardOffsetX === 0) currentCardOffsetX = 0;
   currentCameraZ += (targetCameraZ - currentCameraZ) * 0.12;
   cardCamera.position.z = currentCameraZ;
   updateCardPan();
-  cardGroup.position.x = currentCardOffsetX + currentPanX;
+  cardGroup.position.x = currentCardOffsetX + currentPanX + cardSwapOffsetX;
   cardGroup.position.y = INDIVIDUAL_CARD_WORLD_Y + currentPanY;
+  applyCardSwapOpacity();
   updateCardGlossActivity();
   updateCardGlossUniforms(cardGradientMesh);
   updateCardGlossUniforms(cardBackGradientMesh);
@@ -2745,12 +3105,23 @@ function resetCardPan(immediate = false) {
 
 function clampCardPan(x, y) {
   const view = getCardVisibleWorldSize();
-  const maxX = Math.max(0, CARD_WIDTH / 2 + CARD_PAN_VISIBLE_MARGIN - view.width / 2);
-  const maxY = Math.max(0, CARD_HEIGHT / 2 + CARD_PAN_VISIBLE_MARGIN - view.height / 2);
+  const cardScale = getResponsiveIndividualCardScale();
+  const maxX = Math.max(0, (CARD_WIDTH * cardScale) / 2 + CARD_PAN_VISIBLE_MARGIN - view.width / 2);
+  const maxY = Math.max(0, (CARD_HEIGHT * cardScale) / 2 + CARD_PAN_VISIBLE_MARGIN - view.height / 2);
   return {
     x: clamp(x, -maxX, maxX),
     y: clamp(y, -maxY, maxY),
   };
+}
+
+function getResponsiveIndividualCardScale() {
+  const viewportWidth = window.innerWidth || document.documentElement.clientWidth || CARD_MOBILE_SCALE_FULL_WIDTH;
+  const progress = clamp(
+    (viewportWidth - CARD_MOBILE_SCALE_MIN_WIDTH) / (CARD_MOBILE_SCALE_FULL_WIDTH - CARD_MOBILE_SCALE_MIN_WIDTH),
+    0,
+    1,
+  );
+  return CARD_MOBILE_SCALE_MIN + (1 - CARD_MOBILE_SCALE_MIN) * progress;
 }
 
 function getCardWorldUnitsPerPixel() {
@@ -2778,13 +3149,13 @@ function isTraitPanelCompact() {
 
 function updateCardGlossActivity() {
   const rotationAmount = Math.max(
-    Math.abs(cardGroup.rotation.x),
-    Math.abs(cardGroup.rotation.y),
+    Math.abs(currentRotationX),
+    Math.abs(currentRotationY),
     Math.abs(targetRotationX),
     Math.abs(targetRotationY),
   );
   const rotationActivity = clamp((rotationAmount - 0.018) / 0.34, 0, 1);
-  const targetActivity = dragState ? 1 : rotationActivity;
+  const targetActivity = dragState || cardShuffleSpinAnimating ? 1 : rotationActivity;
   cardGlossActivity += (targetActivity - cardGlossActivity) * (targetActivity > cardGlossActivity ? 0.22 : 0.12);
   if (cardGlossActivity < 0.002 && targetActivity === 0) cardGlossActivity = 0;
 }
@@ -3757,6 +4128,7 @@ function createCardGradientPlane(normalDirection) {
       uTime: { value: 0 },
       uNormalDirection: { value: normalDirection },
       uActivity: { value: 0 },
+      uTransitionOpacity: { value: 1 },
     },
     vertexShader: `
       varying vec2 vUv;
@@ -3776,6 +4148,7 @@ function createCardGradientPlane(normalDirection) {
       uniform float uTime;
       uniform float uNormalDirection;
       uniform float uActivity;
+      uniform float uTransitionOpacity;
       varying vec2 vUv;
       varying vec3 vWorldNormal;
       varying vec3 vWorldPosition;
@@ -3800,7 +4173,7 @@ function createCardGradientPlane(normalDirection) {
         color = mix(color, vec3(0.98, 0.92, 0.7), diagonalBloom * 0.16);
         float alpha = 0.08 + wash * 0.065 + counterWash * 0.04 + diagonalBloom * 0.055 + fresnel * 0.055;
         alpha *= softVignette;
-        gl_FragColor = vec4(color, clamp(alpha, 0.0, 0.24) * uActivity);
+        gl_FragColor = vec4(color, clamp(alpha, 0.0, 0.24) * uActivity * uTransitionOpacity);
       }
     `,
   });
@@ -3826,6 +4199,7 @@ function createCardGlossPlane(normalDirection) {
       uTime: { value: 0 },
       uNormalDirection: { value: normalDirection },
       uActivity: { value: 0 },
+      uTransitionOpacity: { value: 1 },
     },
     vertexShader: `
       varying vec2 vUv;
@@ -3845,6 +4219,7 @@ function createCardGlossPlane(normalDirection) {
       uniform float uTime;
       uniform float uNormalDirection;
       uniform float uActivity;
+      uniform float uTransitionOpacity;
       varying vec2 vUv;
       varying vec3 vWorldNormal;
       varying vec3 vWorldPosition;
@@ -3871,7 +4246,7 @@ function createCardGlossPlane(normalDirection) {
         vec3 color = mix(cool, warm, wash);
         color = mix(color, vec3(0.72, 0.84, 0.7), counterWash * 0.22);
         color = mix(color, pearl, sharpSweep * 0.32 + broadSweep * 0.14);
-        float alpha = clamp(sheen * 0.34, 0.0, 0.34) * uActivity;
+        float alpha = clamp(sheen * 0.34, 0.0, 0.34) * uActivity * uTransitionOpacity;
         gl_FragColor = vec4(color, alpha);
       }
     `,

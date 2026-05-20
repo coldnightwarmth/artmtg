@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>card nft viewer</title>
-    <link rel="stylesheet" href="./styles.css?v=cardnft-41">
+    <link rel="icon" type="image/png" href="./cardnft.png">
+    <link rel="apple-touch-icon" href="./cardnft.png">
+    <link rel="stylesheet" href="./styles.css?v=cardnft-52">
     <script type="importmap">
       {
         "imports": {
@@ -45,14 +47,23 @@
           </button>
         </div>
         <section class="trait-panel" id="traitPanel" aria-label="Card traits" aria-hidden="true">
-          <div class="trait-grid" id="traitGrid"></div>
+          <div class="trait-panel-content">
+            <div class="trait-grid" id="traitGrid"></div>
+            <button class="icon-button trait-download-button" id="traitDownloadButton" type="button" title="Download card art" aria-label="Download card art">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v12"></path>
+                <path d="m7 10 5 5 5-5"></path>
+                <path d="M5 21h14"></path>
+              </svg>
+            </button>
+          </div>
         </section>
         <div class="card-filename" id="cardFileName" aria-live="polite"></div>
         <div class="card-counter" id="cardCounter" aria-live="polite">0/0</div>
       </section>
 
       <section class="gallery-panel" id="galleryPanel" aria-label="Card NFT gallery" hidden>
-        <label class="gallery-sort-control" id="gallerySortControl">
+        <label class="gallery-sort-control" id="gallerySortControl" aria-expanded="false">
           <span>sort by</span>
           <select id="traitSortSelect" aria-label="Sort by trait category">
             <option value="all">all</option>
@@ -65,7 +76,10 @@
           <div class="binder-loading" id="binderLoading" hidden><span></span></div>
         </div>
         <section class="trait-search-panel" id="traitSearchPanel" aria-label="Trait search" hidden>
-          <div class="trait-search-groups" id="traitSearchGroups"></div>
+          <div class="trait-search-layout">
+            <div class="trait-search-groups" id="traitSearchGroups"></div>
+            <nav class="trait-search-sidebar" id="traitSearchSidebar" aria-label="Trait categories"></nav>
+          </div>
         </section>
         <div class="binder-page-controls" id="binderPageControls" aria-label="Binder page controls">
           <button class="icon-button" id="binderZoomOutButton" type="button" title="Return to binder spread" aria-label="Return to binder spread" hidden>
@@ -129,6 +143,6 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.55 5.16 5.7.83-4.12 4.02.97 5.68L12 16.6l-5.1 2.69.97-5.68-4.12-4.02 5.7-.83L12 3.6Z"></path></svg>
     </button>
 
-    <script type="module" src="./app.js?v=cardnft-41"></script>
+    <script type="module" src="./app.js?v=cardnft-56"></script>
   </body>
 </html>
