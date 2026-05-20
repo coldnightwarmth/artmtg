@@ -79,7 +79,7 @@ const CARD_PAN_VISIBLE_MARGIN = 0.48;
 const CARD_MOBILE_SCALE_MIN = 0.88;
 const CARD_MOBILE_SCALE_FULL_WIDTH = 700;
 const CARD_MOBILE_SCALE_MIN_WIDTH = 340;
-const CARD_SWAP_DISTANCE = 0.34;
+const CARD_SWAP_DISTANCE = 0.24;
 const CARD_SWAP_MIN_OPACITY = 0.42;
 const CARD_SWAP_OUT_MS = 74;
 const CARD_SWAP_IN_MS = 94;
@@ -91,6 +91,8 @@ const SHUFFLE_HISTORY_LIMIT = 10;
 const MAX_TEXTURE_CACHE_SIZE = 260;
 const BINDER_ANIMATED_IDLE_MS = 84;
 const BINDER_INTERACTION_ACTIVE_MS = 900;
+const SESSION_VIEW_STATE_KEY = "cardnft:sessionView:v1";
+const restoredSessionViewState = loadSessionViewState();
 
 const els = {
   body: document.body,
@@ -147,7 +149,10 @@ let traitSearchOpen = false;
 let traitSortPickerOpen = false;
 let traitSortPickerOpenedAt = 0;
 let traitSortPickerSyncFrame = 0;
-let isBinderMode = localStorage.getItem("cardnft:binderMode:v1") !== "grid";
+let sessionViewSaveFrame = 0;
+let isBinderMode = typeof restoredSessionViewState?.isBinderMode === "boolean"
+  ? restoredSessionViewState.isBinderMode
+  : true;
 let cardRenderer;
 let cardScene;
 let cardCamera;
@@ -256,11 +261,13 @@ init();
 
 function init() {
   applyTheme(localStorage.getItem("cardnft:theme:v1") === "light");
+  applyRestoredSessionViewState(restoredSessionViewState);
   els.binderToggle.checked = isBinderMode;
   populateTraitSortOptions();
   initCardScene();
   initEvents();
-  setCard(0);
+  setCard(getRestoredSessionCardIndex(restoredSessionViewState));
+  restoreSessionGalleryView(restoredSessionViewState);
   animateCard();
 }
 
@@ -445,6 +452,7 @@ function initEvents() {
   els.binderCanvas.addEventListener("wheel", handleBinderWheel, { passive: false });
 
   window.addEventListener("resize", requestResize);
+  window.addEventListener("pagehide", saveSessionViewState);
 }
 
 function populateTraitSortOptions() {
@@ -534,15 +542,26 @@ function setCard(index, options = {}) {
   const card = CARDS[currentIndex];
   const token = ++cardApplyToken;
   resetViewSwitchWheelDistances();
-  cardFrontMesh.material.map = getCardPlaceholderTexture();
-  cardFrontMesh.material.needsUpdate = true;
-  getCardTexture(card).then((texture) => {
+
+  if (options.frontTexture) {
+    prepareTextureForImmediateDisplay(options.frontTexture);
+    cardFrontMesh.material.map = options.frontTexture;
+    cardFrontMesh.material.needsUpdate = true;
+  } else {
+    cardFrontMesh.material.map = getCardPlaceholderTexture();
+    cardFrontMesh.material.needsUpdate = true;
+    getCardTexture(card).then((texture) => {
+      if (token !== cardApplyToken) return;
+      prepareTextureForImmediateDisplay(texture);
+      cardFrontMesh.material.map = texture;
+      cardFrontMesh.material.needsUpdate = true;
+    }).catch(console.error);
+  }
+
+  preloadAdjacentIndividualTextures(currentIndex);
+  getBackTexture().then((texture) => {
     if (token !== cardApplyToken) return;
     prepareTextureForImmediateDisplay(texture);
-    cardFrontMesh.material.map = texture;
-    cardFrontMesh.material.needsUpdate = true;
-  }).catch(console.error);
-  getBackTexture().then((texture) => {
     cardBackMesh.material.map = texture;
     cardBackMesh.material.needsUpdate = true;
   }).catch(console.error);
@@ -556,6 +575,7 @@ function setCard(index, options = {}) {
   updateCardText();
   renderTraitPanel();
   updateFavoriteButtons();
+  queueSessionViewStateSave();
 }
 
 async function transitionAdjacentCard(direction) {
@@ -563,15 +583,18 @@ async function transitionAdjacentCard(direction) {
 
   cardSwapAnimating = true;
   const token = ++cardSwapToken;
+  const nextIndex = modulo(currentIndex + direction, CARDS.length);
   setIndividualCardControlsDisabled(true);
   try {
-    await tweenCardSwap(0, -direction * CARD_SWAP_DISTANCE, 1, CARD_SWAP_MIN_OPACITY, CARD_SWAP_OUT_MS, token);
     if (token !== cardSwapToken) return;
-    setCard(currentIndex + direction, { preserveSwapVisuals: true });
-    cardSwapOffsetX = direction * CARD_SWAP_DISTANCE;
-    cardSwapOpacity = CARD_SWAP_MIN_OPACITY;
-    applyCardSwapOpacity();
-    await tweenCardSwap(direction * CARD_SWAP_DISTANCE, 0, CARD_SWAP_MIN_OPACITY, 1, CARD_SWAP_IN_MS, token);
+    let nextTexture = null;
+    try {
+      nextTexture = await getPreparedCardTexture(CARDS[nextIndex]);
+    } catch (error) {
+      console.error(error);
+    }
+    if (token !== cardSwapToken) return;
+    await tweenCardSwap(direction, nextIndex, nextTexture, token);
   } finally {
     if (token === cardSwapToken) {
       resetCardSwapVisualState();
@@ -581,8 +604,11 @@ async function transitionAdjacentCard(direction) {
   }
 }
 
-function tweenCardSwap(fromOffset, toOffset, fromOpacity, toOpacity, duration, token) {
+function tweenCardSwap(direction, nextIndex, nextTexture, token) {
   const startedAt = performance.now();
+  const duration = CARD_SWAP_OUT_MS + CARD_SWAP_IN_MS;
+  let swapped = false;
+
   return new Promise((resolve) => {
     const step = (now) => {
       if (token !== cardSwapToken) {
@@ -591,10 +617,15 @@ function tweenCardSwap(fromOffset, toOffset, fromOpacity, toOpacity, duration, t
       }
 
       const progress = clamp((now - startedAt) / duration, 0, 1);
-      const eased = 1 - ((1 - progress) ** 3);
-      cardSwapOffsetX = THREE.MathUtils.lerp(fromOffset, toOffset, eased);
-      cardSwapOpacity = THREE.MathUtils.lerp(fromOpacity, toOpacity, eased);
+      const wave = Math.sin(easeInOut(progress) * Math.PI);
+      cardSwapOffsetX = -direction * CARD_SWAP_DISTANCE * wave;
+      cardSwapOpacity = 1 - ((1 - CARD_SWAP_MIN_OPACITY) * wave);
       applyCardSwapOpacity();
+
+      if (!swapped && progress >= 0.5) {
+        swapped = true;
+        setCard(nextIndex, { frontTexture: nextTexture, preserveSwapVisuals: true });
+      }
 
       if (progress >= 1) {
         resolve();
@@ -604,6 +635,24 @@ function tweenCardSwap(fromOffset, toOffset, fromOpacity, toOpacity, duration, t
     };
     requestAnimationFrame(step);
   });
+}
+
+function getPreparedCardTexture(card) {
+  return getCardTexture(card).then((texture) => {
+    prepareTextureForImmediateDisplay(texture);
+    return texture;
+  });
+}
+
+function preloadAdjacentIndividualTextures(index) {
+  if (CARDS.length < 2) return;
+  const indexes = new Set([
+    modulo(index - 1, CARDS.length),
+    modulo(index + 1, CARDS.length),
+  ]);
+  for (const adjacentIndex of indexes) {
+    getCardTexture(CARDS[adjacentIndex]).catch(() => {});
+  }
 }
 
 function resetCardSwapVisualState() {
@@ -939,6 +988,7 @@ function setGalleryOpen(open, options = {}) {
     snapBinderToWholePage();
     stopBinderRenderLoop();
   }
+  queueSessionViewStateSave();
 }
 
 function resetGalleryFilters() {
@@ -1149,6 +1199,7 @@ function renderGallery() {
     els.binderPageStatus.textContent = "";
     stopBinderRenderLoop();
     deactivateAllAnimatedRecords();
+    queueSessionViewStateSave();
     return;
   }
 
@@ -1165,6 +1216,7 @@ function renderGallery() {
     els.binderPageControls.hidden = true;
     els.binderPageStatus.hidden = true;
     els.binderPageStatus.textContent = "";
+    queueSessionViewStateSave();
     return;
   }
 
@@ -1179,6 +1231,7 @@ function renderGallery() {
     renderGrid(indexes);
     updateBinderPageControls();
   }
+  queueSessionViewStateSave();
 }
 
 function renderGrid(indexes) {
@@ -2254,7 +2307,10 @@ function updateBinderPageControls() {
   const controlsHidden = traitSearchOpen || !galleryOpen || !isBinderMode || els.binderPanel.hidden || binderPageCount < 1;
   els.binderPageControls.hidden = controlsHidden;
   els.binderPageStatus.hidden = controlsHidden;
-  if (controlsHidden) return;
+  if (controlsHidden) {
+    queueSessionViewStateSave();
+    return;
+  }
 
   const focused = isBinderFocused();
   els.binderPageControls.classList.toggle("is-focused", focused);
@@ -2272,6 +2328,7 @@ function updateBinderPageControls() {
     els.binderPreviousPageButton.setAttribute("aria-label", "Previous card in binder");
     els.binderNextPageButton.setAttribute("title", "Next card in binder");
     els.binderNextPageButton.setAttribute("aria-label", "Next card in binder");
+    queueSessionViewStateSave();
     return;
   }
 
@@ -2283,6 +2340,7 @@ function updateBinderPageControls() {
     els.binderPreviousPageButton.setAttribute("aria-label", "Previous binder page side");
     els.binderNextPageButton.setAttribute("title", "Next binder page side");
     els.binderNextPageButton.setAttribute("aria-label", "Next binder page side");
+    queueSessionViewStateSave();
     return;
   }
 
@@ -2293,6 +2351,7 @@ function updateBinderPageControls() {
   els.binderPreviousPageButton.setAttribute("aria-label", "Previous binder page");
   els.binderNextPageButton.setAttribute("title", "Next binder page");
   els.binderNextPageButton.setAttribute("aria-label", "Next binder page");
+  queueSessionViewStateSave();
 }
 
 function updateBinderPageStatus(focused = isBinderFocused()) {
@@ -4411,6 +4470,123 @@ function disposeNftTexture(texture) {
 function favoriteKey(index) {
   const card = CARDS[index];
   return card?.mint || card?.title || String(index);
+}
+
+function applyRestoredSessionViewState(state) {
+  if (!state || typeof state !== "object") return;
+
+  if (typeof state.isBinderMode === "boolean") isBinderMode = state.isBinderMode;
+  favoritesOnly = Boolean(state.favoritesOnly);
+  traitSearchOpen = Boolean(state.traitSearchOpen);
+  traitSortCategory = getValidTraitSortCategory(state.traitSortCategory);
+  activeTraitFilter = getValidSessionTraitFilter(state.activeTraitFilter);
+  if (activeTraitFilter) traitSortCategory = activeTraitFilter.category;
+}
+
+function restoreSessionGalleryView(state) {
+  if (!state?.galleryOpen) return;
+
+  setGalleryOpen(true);
+  if (!isBinderMode || traitSearchOpen) {
+    queueSessionViewStateSave();
+    return;
+  }
+
+  const focusedCardIndex = Number.isInteger(state.binderFocusedCardIndex)
+    ? state.binderFocusedCardIndex
+    : -1;
+  if (focusedCardIndex >= 0) {
+    const focusPosition = binderVisibleIndexes.indexOf(focusedCardIndex);
+    if (focusPosition !== -1) {
+      focusBinderPosition(focusPosition, { immediate: true });
+      queueSessionViewStateSave();
+      return;
+    }
+  }
+
+  const turn = Number.isFinite(Number(state.binderTargetTurn))
+    ? Math.round(Number(state.binderTargetTurn))
+    : 0;
+  binderTargetTurn = clamp(turn, 0, binderPageCount);
+  binderTurn = binderTargetTurn;
+  if (Number.isInteger(state.binderSinglePageSide)) {
+    binderSinglePageSide = clamp(state.binderSinglePageSide, 0, getBinderTotalPageSides() - 1);
+  }
+  ensureBinderPageWindow({ force: true });
+  updateBinderPageControls();
+  startBinderRenderLoop();
+  updateBinderAnimation();
+  renderBinderSceneOnce();
+  queueSessionViewStateSave();
+}
+
+function getRestoredSessionCardIndex(state) {
+  if (!Number.isInteger(state?.currentIndex) || !CARDS.length) return 0;
+  return clamp(state.currentIndex, 0, CARDS.length - 1);
+}
+
+function getValidTraitSortCategory(category) {
+  if (category === "all") return "all";
+  if (CARD_NFT_TRAIT_CATEGORIES.includes(category) && !HIDDEN_TRAIT_CATEGORIES.has(category)) {
+    return category;
+  }
+  return "all";
+}
+
+function getValidSessionTraitFilter(filter) {
+  if (!filter || typeof filter !== "object") return null;
+  const category = getValidTraitSortCategory(filter.category);
+  if (category === "all") return null;
+  const value = String(filter.value ?? "").trim();
+  if (!value) return null;
+  return {
+    category,
+    value,
+    normalizedValue: normalizeTraitValue(value),
+  };
+}
+
+function getSessionViewState() {
+  const focusedCardIndex = getFocusedBinderCardIndex();
+  return {
+    currentIndex,
+    galleryOpen,
+    isBinderMode,
+    favoritesOnly,
+    traitSearchOpen,
+    traitSortCategory,
+    activeTraitFilter: activeTraitFilter
+      ? { category: activeTraitFilter.category, value: activeTraitFilter.value }
+      : null,
+    binderTargetTurn: Math.round(binderTargetTurn),
+    binderSinglePageSide: Number.isInteger(binderSinglePageSide) ? binderSinglePageSide : null,
+    binderFocusedCardIndex: Number.isInteger(focusedCardIndex) ? focusedCardIndex : null,
+  };
+}
+
+function queueSessionViewStateSave() {
+  if (sessionViewSaveFrame) return;
+  sessionViewSaveFrame = requestAnimationFrame(() => {
+    sessionViewSaveFrame = 0;
+    saveSessionViewState();
+  });
+}
+
+function loadSessionViewState() {
+  try {
+    const value = JSON.parse(sessionStorage.getItem(SESSION_VIEW_STATE_KEY) || "null");
+    return value && typeof value === "object" ? value : null;
+  } catch {
+    return null;
+  }
+}
+
+function saveSessionViewState() {
+  try {
+    sessionStorage.setItem(SESSION_VIEW_STATE_KEY, JSON.stringify(getSessionViewState()));
+  } catch {
+    // Session restore is a convenience only; private browsing/storage failures can be ignored.
+  }
 }
 
 function applyTheme(isLight) {
