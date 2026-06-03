@@ -2,14 +2,14 @@ import { createRequire } from "node:module";
 import { mkdir, readFile, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { CARD_NFTS } from "../cardnft/cardnft-data.js";
-import { CARD_NFT_TRAIT_CATEGORIES, CARD_NFT_TRAITS } from "../cardnft/cardnft-traits.js";
+import { CARD_NFTS } from "../cardnft-data.js";
+import { CARD_NFT_TRAIT_CATEGORIES, CARD_NFT_TRAITS } from "../cardnft-traits.js";
 
 const require = createRequire(import.meta.url);
 const sharp = require("/Users/kyl/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp");
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const CARD_NFT_DIR = path.join(ROOT, "cardnft");
+const CARD_NFT_DIR = ROOT;
 const ANIMATED_DIR = path.join(CARD_NFT_DIR, "assets", "animated");
 const MANIFEST_PATH = path.join(CARD_NFT_DIR, "cardnft-animated.js");
 
@@ -228,4 +228,3 @@ async function retry(task, tries, label) {
 function wait(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
-

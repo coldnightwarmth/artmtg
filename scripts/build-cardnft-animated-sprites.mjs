@@ -2,13 +2,13 @@ import { createRequire } from "node:module";
 import { mkdir, readdir, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { CARD_NFT_ANIMATED } from "../cardnft/cardnft-animated.js";
+import { CARD_NFT_ANIMATED } from "../cardnft-animated.js";
 
 const require = createRequire(import.meta.url);
 const sharp = require("/Users/kyl/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp");
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const CARD_NFT_DIR = path.join(ROOT, "cardnft");
+const CARD_NFT_DIR = ROOT;
 const OUT_DIR = path.join(CARD_NFT_DIR, "assets", "animated-sprites");
 const MANIFEST_PATH = path.join(CARD_NFT_DIR, "cardnft-animated-sprites.js");
 
@@ -185,4 +185,3 @@ async function exists(filePath) {
     return false;
   }
 }
-

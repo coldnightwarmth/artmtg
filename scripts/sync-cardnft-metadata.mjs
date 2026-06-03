@@ -3,7 +3,7 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 
 const ROOT = process.cwd();
-const OUT_DIR = path.join(ROOT, "cardnft");
+const OUT_DIR = ROOT;
 const SOURCE_PATH = path.join(OUT_DIR, "cardnft-source.json");
 const DATA_PATH = path.join(OUT_DIR, "cardnft-data.js");
 const TRAITS_PATH = path.join(OUT_DIR, "cardnft-traits.js");
