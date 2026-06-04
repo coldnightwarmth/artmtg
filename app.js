@@ -1,16 +1,44 @@
 import * as THREE from "three";
 import { CARD_NFTS } from "./cardnft-data.js";
+import { CARD_NFT_OWNER_SNAPSHOT } from "./cardnft-owners.js?v=cardnft-2";
 import { CARD_NFT_TRAIT_CATEGORIES, CARD_NFT_TRAITS } from "./cardnft-traits.js";
 import { CARD_NFT_ANIMATED } from "./cardnft-animated.js";
 import { CARD_NFT_ANIMATED_SPRITES } from "./cardnft-animated-sprites.js";
 
 const CARDS = CARD_NFTS.map((card, index) => ({ ...card, setIndex: index }));
+const CARD_NFT_MINT_TO_INDEX = new Map(CARDS
+  .map((card, index) => [String(card?.mint || "").trim(), index])
+  .filter(([mint]) => mint));
+const CARD_NFT_TITLE_NUMBER_TO_INDEX = new Map(CARDS
+  .map((card, index) => {
+    const match = String(card?.title || "").match(/^card\s+#?\s*(\d+)$/i);
+    return match ? [Number.parseInt(match[1], 10), index] : null;
+  })
+  .filter(Boolean));
 const TRAIT_CATEGORY_INDEX = new Map(CARD_NFT_TRAIT_CATEGORIES.map((category, index) => [category, index]));
 const HIDDEN_TRAIT_CATEGORIES = new Set(["98noise"]);
 const EXCLUDED_SORT_TRAIT_VALUES = new Set(["no", "none", "null", "undefined"]);
+const SITE_FONT_STACK = "Optima, Candara, \"Lucida Sans\", \"Lucida Grande\", \"Trebuchet MS\", Arial, sans-serif";
+const SOLANA_RPC_URL = "https://api.mainnet-beta.solana.com";
+const SOLANA_TOKEN_PROGRAM_IDS = [
+  "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+  "TokenzQdBNbLqP5VEhdkAS6EP6KkQ6p3Msk3VQ5DA",
+];
+const CARD_NFT_COLLECTION_SYMBOL = "cardnft";
+const MAGIC_EDEN_API_URL = "https://api-mainnet.magiceden.dev/v2";
+const MAGIC_EDEN_WALLET_PAGE_LIMIT = 500;
+const MAGIC_EDEN_WALLET_MAX_TOKENS = 10000;
+const MAGIC_EDEN_WALLET_PAGE_DELAY_MS = 520;
+const CARD_NFT_OWNER_TO_INDEXES = buildCardNftOwnerIndex(CARD_NFT_OWNER_SNAPSHOT);
+const WALLET_SEARCH_REQUEST_TIMEOUT_MS = 9000;
+const SOLANA_ADDRESS_PATTERN = /^[1-9A-HJ-NP-Za-km-z]{32,44}$/;
+const WALLET_SEARCH_PROMPT = "Enter a SOL address to view collected cards:";
+const WALLET_SEARCH_EMPTY_MESSAGE = "No cards found, try again.";
+const WALLET_SEARCH_BUSY_MESSAGE = "Checking wallet holdings...";
+const WALLET_SEARCH_ERROR_MESSAGE = "Search failed, try again.";
 const CARD_WIDTH = 2.5;
 const CARD_HEIGHT = 3.54;
-const CARD_DEPTH = 0.028;
+const CARD_DEPTH = 0.022;
 const CARD_RADIUS = 0.12;
 const INDIVIDUAL_CARD_WORLD_Y = 0.42;
 const BINDER_FACE_WIDTH = 420;
@@ -19,6 +47,7 @@ const BINDER_COLUMNS = 3;
 const BINDER_ROWS = 3;
 const BINDER_SIDE_SLOTS = BINDER_COLUMNS * BINDER_ROWS;
 const BINDER_PAGE_SLOTS = BINDER_SIDE_SLOTS * 2;
+const BINDER_SINGLE_PAGE_COVER_SIDE = -1;
 const BINDER_CARD_WIDTH = 1.38;
 const BINDER_CARD_HEIGHT = BINDER_CARD_WIDTH * (CARD_HEIGHT / CARD_WIDTH);
 const BINDER_CARD_RADIUS = BINDER_CARD_WIDTH * (CARD_RADIUS / CARD_WIDTH);
@@ -50,7 +79,7 @@ const BINDER_HIDDEN_STACK_DEPTH = 5;
 const BINDER_DEEP_PAGE_FADE_POWER = 1.35;
 const BINDER_COVER_OVERHANG = 0.14;
 const BINDER_COVER_VERTICAL_OVERHANG = 0.22;
-const BINDER_COVER_RADIUS = 0.11;
+const BINDER_COVER_RADIUS = 0.15;
 const BINDER_PLASTIC_REST_OPACITY = 0.066;
 const BINDER_PLASTIC_ACTIVE_OPACITY = 0.13;
 const BINDER_FROST_REST_OPACITY = 0.018;
@@ -59,26 +88,40 @@ const BINDER_GLOSS_REST_OPACITY = 0.014;
 const BINDER_GLOSS_ACTIVE_OPACITY = 0.034;
 const BINDER_SEAM_REST_OPACITY = 0.28;
 const BINDER_SEAM_ACTIVE_OPACITY = 0.44;
+const BINDER_TOP_PAGE_RENDER_ORDER = 620;
+const BINDER_FLIPPING_PAGE_RENDER_ORDER = 760;
+const BINDER_FLIPPING_PAGE_CARD_RENDER_ORDER = 900;
+const BINDER_GAP_REVEAL_PAGE_RENDER_ORDER = 600;
+const BINDER_LEFT_STACK_RENDER_ORDER = 420;
+const BINDER_RIGHT_STACK_RENDER_ORDER = 300;
+const BINDER_STACK_RENDER_ORDER_STEP = 28;
 const BINDER_TEXTURE_CONCURRENCY = 10;
 const BINDER_ANIMATED_PRELOAD_PAGE_RADIUS = 1;
 const BINDER_PAGE_WINDOW_RADIUS = 8;
 const BINDER_PAGE_WINDOW_RECENTER_THRESHOLD = 4;
 const BINDER_PRELOAD_PAGE_RADIUS = 4;
+const BINDER_INITIAL_PRELOAD_IDLE_DELAY_MS = 180;
+const BINDER_CARD_LOAD_FADE_MS = 280;
+const BINDER_INTRO_LINK_URL = "https://x.com/bis__cut";
+const BINDER_CARD_NFT_2_LINK_URL = "https://mons.shop";
+const BINDER_INTRO_NOTE_FILTER_FADE_MS = 260;
 const BINDER_CARD_VIEW_TRANSITION_MS = 820;
 const INDIVIDUAL_TO_BINDER_WHEEL_THRESHOLD = 1560;
 const BINDER_TO_INDIVIDUAL_WHEEL_THRESHOLD = 680;
 const VIEW_SWITCH_WHEEL_IDLE_MS = 900;
-const BINDER_FOCUS_ZOOM_OUT_LOCK_MS = 1000;
+const BINDER_FOCUS_ZOOM_OUT_LOCK_MS = 620;
+const BINDER_TO_CARD_SCROLL_LOCK_BUFFER_MS = 120;
 const BINDER_FOCUS_TRANSITION_LOCK_MS = BINDER_CARD_VIEW_TRANSITION_MS + BINDER_FOCUS_ZOOM_OUT_LOCK_MS;
 const INDIVIDUAL_MAX_ZOOM_EPSILON = 0.035;
 const CARD_CAMERA_DEFAULT_Z = 9.55;
-const CARD_CAMERA_MIN_Z = 4.85;
-const CARD_CAMERA_MAX_Z = 13.4;
+const CARD_CAMERA_MIN_Z = 4.55;
+const CARD_CAMERA_MAX_Z = 14.05;
 const CARD_PAN_MODE_Z = 7.25;
 const CARD_PAN_VISIBLE_MARGIN = 0.48;
 const CARD_MOBILE_SCALE_MIN = 0.88;
 const CARD_MOBILE_SCALE_FULL_WIDTH = 700;
 const CARD_MOBILE_SCALE_MIN_WIDTH = 340;
+const CARD_DEFAULT_HORIZONTAL_MARGIN_PX = 14;
 const CARD_SWAP_DISTANCE = CARD_WIDTH * 1.08;
 const CARD_SWAP_MIN_OPACITY = 0.1;
 const CARD_SWAP_MS = 230;
@@ -94,6 +137,8 @@ const MAX_TEXTURE_CACHE_SIZE = 260;
 const BINDER_ANIMATED_IDLE_MS = 84;
 const BINDER_INTERACTION_ACTIVE_MS = 900;
 const SESSION_VIEW_STATE_KEY = "cardnft:sessionView:v1";
+const TENSOR_ITEM_URL_BASE = "https://www.tensor.trade/item/";
+const SOLSCAN_TOKEN_URL_BASE = "https://solscan.io/token/";
 const restoredSessionViewState = loadSessionViewState();
 
 const els = {
@@ -106,9 +151,10 @@ const els = {
   traitInfoButton: document.querySelector("#traitInfoButton"),
   traitPanel: document.querySelector("#traitPanel"),
   traitGrid: document.querySelector("#traitGrid"),
+  traitTensorButton: document.querySelector("#traitTensorButton"),
+  traitSolscanButton: document.querySelector("#traitSolscanButton"),
   traitDownloadButton: document.querySelector("#traitDownloadButton"),
   cardFileName: document.querySelector("#cardFileName"),
-  cardCounter: document.querySelector("#cardCounter"),
   galleryToggleButton: document.querySelector("#galleryToggleButton"),
   galleryPanel: document.querySelector("#galleryPanel"),
   galleryGrid: document.querySelector("#galleryGrid"),
@@ -126,11 +172,20 @@ const els = {
   gallerySortControl: document.querySelector("#gallerySortControl"),
   traitSortSelect: document.querySelector("#traitSortSelect"),
   traitSearchButton: document.querySelector("#traitSearchButton"),
+  traitSearchButtonLabel: document.querySelector("#traitSearchButtonLabel"),
   traitSearchPanel: document.querySelector("#traitSearchPanel"),
+  traitSearchInput: document.querySelector("#traitSearchInput"),
   traitSearchGroups: document.querySelector("#traitSearchGroups"),
   traitSearchSidebar: document.querySelector("#traitSearchSidebar"),
+  galleryClearFiltersButton: document.querySelector("#galleryClearFiltersButton"),
   favoriteFilterButton: document.querySelector("#favoriteFilterButton"),
-  binderToggle: document.querySelector("#binderToggle"),
+  galleryViewToggleButton: document.querySelector("#galleryViewToggleButton"),
+  walletSearchButton: document.querySelector("#walletSearchButton"),
+  walletSearchPanel: document.querySelector("#walletSearchPanel"),
+  walletSearchForm: document.querySelector("#walletSearchForm"),
+  walletSearchMessage: document.querySelector("#walletSearchMessage"),
+  walletAddressInput: document.querySelector("#walletAddressInput"),
+  walletSearchSubmitButton: document.querySelector("#walletSearchSubmitButton"),
   themeToggle: document.querySelector("#themeToggle"),
   galleryEmpty: document.querySelector("#galleryEmpty"),
 };
@@ -148,10 +203,17 @@ let favoritesOnly = false;
 let traitSortCategory = "all";
 let activeTraitFilter = null;
 let traitSearchOpen = false;
+let traitSearchQuery = "";
 let traitSortPickerOpen = false;
 let traitSortPickerOpenedAt = 0;
 let traitSortPickerSyncFrame = 0;
 let sessionViewSaveFrame = 0;
+let walletSearchOpen = false;
+let walletSearchLoading = false;
+let walletSearchToken = 0;
+let walletFilterCardIndexes = null;
+let walletFilterCardIndexSet = null;
+let walletFilterAddress = "";
 let isBinderMode = typeof restoredSessionViewState?.isBinderMode === "boolean"
   ? restoredSessionViewState.isBinderMode
   : true;
@@ -193,6 +255,7 @@ let cardSwapToken = 0;
 let cardShuffleSpinY = 0;
 let cardShuffleSpinAnimating = false;
 let cardShuffleSpinToken = 0;
+let cardNameInput = null;
 let shuffleTouchUndoTimer = 0;
 let shuffleTouchUndoPointerId = null;
 let shuffleTouchUndoStartX = 0;
@@ -220,11 +283,18 @@ let binderColumnGlossGeometry = null;
 let binderVerticalSeamGeometry = null;
 let binderHorizontalSeamGeometry = null;
 let binderCoverTexture = null;
+let binderIntroNoteTexture = null;
 let binderSleeveFrostTexture = null;
 let paperRoughnessTexture = null;
 let binderPlaceholderTexture = null;
 let binderCardMeshes = [];
 let binderCardMeshByPosition = new Map();
+let binderIntroNoteGroup = null;
+let binderIntroNoteMesh = null;
+let binderIntroNoteModeOpacity = 1;
+let binderIntroNoteModeTargetOpacity = 1;
+let binderIntroNoteFadeLastAt = 0;
+let binderIntroLinkMeshes = [];
 let binderPages = [];
 let binderVisibleIndexes = [];
 let binderBuildToken = 0;
@@ -236,6 +306,7 @@ let binderTurn = 0;
 let binderTargetTurn = 0;
 let binderBendDirection = 1;
 let binderSinglePageSide = null;
+let binderSinglePageSideTouched = false;
 let binderResizeFrame = 0;
 let binderLastWidth = 0;
 let binderLastHeight = 0;
@@ -259,6 +330,8 @@ let binderTextureActiveLoads = 0;
 let binderTextureActiveAnimatedLoads = 0;
 let binderInteractionActiveUntil = 0;
 let binderShuffleLoadingToken = 0;
+let binderPageStatusInput = null;
+let binderPageStatusEditMode = null;
 const binderTextureQueue = [];
 const binderTextureQueuedPositions = new Set();
 const binderRaycaster = new THREE.Raycaster();
@@ -275,7 +348,7 @@ init();
 function init() {
   applyTheme(localStorage.getItem("cardnft:theme:v1") === "light");
   applyRestoredSessionViewState(restoredSessionViewState);
-  els.binderToggle.checked = isBinderMode;
+  updateGalleryViewModeButton();
   populateTraitSortOptions();
   initCardScene();
   initEvents();
@@ -397,9 +470,26 @@ function initEvents() {
   els.traitDownloadButton.addEventListener("click", () => {
     downloadCurrentCardArt().catch(console.error);
   });
+  els.cardFileName.addEventListener("dblclick", startCardNameEdit);
   els.galleryToggleButton.addEventListener("click", () => setGalleryOpen(!galleryOpen, { resetFilters: !galleryOpen }));
+  els.galleryViewToggleButton.addEventListener("click", toggleGalleryViewMode);
+  els.galleryClearFiltersButton.addEventListener("click", clearGallerySortAndFilters);
+  els.walletSearchButton.addEventListener("click", toggleWalletSearchPanel);
+  els.walletSearchPanel.addEventListener("pointerdown", (event) => {
+    if (event.target === els.walletSearchPanel) {
+      setWalletSearchPanelOpen(false, { preserveMessage: true });
+    }
+  });
+  els.walletSearchForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    submitWalletSearch().catch(console.error);
+  });
+  els.walletAddressInput.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setWalletSearchPanelOpen(false, { preserveMessage: true });
+  });
   els.favoriteFilterButton.addEventListener("click", toggleFavoriteFilter);
   els.traitSearchButton.addEventListener("click", toggleTraitSearch);
+  els.traitSearchInput.addEventListener("input", updateTraitSearchQuery);
   els.gallerySortControl.addEventListener("click", (event) => {
     if (event.target === els.traitSortSelect) return;
     event.preventDefault();
@@ -425,17 +515,10 @@ function initEvents() {
     setTraitSortPickerOpen(false);
     activeTraitFilter = null;
     traitSearchOpen = false;
+    resetTraitSearchQuery();
     traitSortCategory = els.traitSortSelect.value || "all";
     updateTraitSearchState();
     resetBinderGalleryPosition();
-    renderGallery();
-  });
-  els.binderToggle.addEventListener("change", () => {
-    isBinderMode = els.binderToggle.checked;
-    localStorage.setItem("cardnft:binderMode:v1", isBinderMode ? "binder" : "grid");
-    traitSearchOpen = false;
-    updateTraitSearchState();
-    deactivateAllAnimatedRecords();
     renderGallery();
   });
   document.addEventListener("pointerdown", (event) => {
@@ -446,10 +529,24 @@ function initEvents() {
     if (!traitSortPickerOpen || els.gallerySortControl.contains(event.target)) return;
     requestAnimationFrame(() => setTraitSortPickerOpen(false));
   }, true);
+  document.addEventListener("pointerdown", (event) => {
+    if (!walletSearchOpen) return;
+    if (els.walletSearchButton.contains(event.target) || els.walletSearchForm.contains(event.target)) return;
+    setWalletSearchPanelOpen(false, { preserveMessage: true });
+  }, true);
+  document.addEventListener("pointerdown", (event) => {
+    if (!cardNameInput || cardNameInput.contains(event.target)) return;
+    closeCardNameEdit();
+  }, true);
+  document.addEventListener("pointerdown", (event) => {
+    if (!binderPageStatusInput || binderPageStatusInput.contains(event.target)) return;
+    closeBinderPageStatusEdit();
+  }, true);
   window.addEventListener("blur", () => setTraitSortPickerOpen(false));
   els.themeToggle.addEventListener("change", () => applyTheme(els.themeToggle.checked));
   els.binderPreviousPageButton.addEventListener("click", previousBinderPage);
   els.binderNextPageButton.addEventListener("click", nextBinderPage);
+  els.binderPageStatus.addEventListener("dblclick", startBinderPageStatusEdit);
   els.binderZoomOutButton.addEventListener("click", clearBinderFocus);
   els.binderOpenCardButton.addEventListener("click", () => {
     openFocusedBinderCard().catch(console.error);
@@ -473,6 +570,7 @@ function initEvents() {
   els.binderCanvas.addEventListener("pointermove", onBinderPointerMove);
   els.binderCanvas.addEventListener("pointerup", onBinderPointerUp);
   els.binderCanvas.addEventListener("pointercancel", onBinderPointerCancel);
+  els.binderCanvas.addEventListener("pointerleave", clearBinderIntroLinkCursor);
   els.binderCanvas.addEventListener("dblclick", openFocusedBinderCardFromPointer);
   els.binderCanvas.addEventListener("wheel", handleBinderWheel, { passive: false });
 
@@ -493,6 +591,15 @@ function populateTraitSortOptions() {
   }
   els.traitSortSelect.append(fragment);
   els.traitSortSelect.value = traitSortCategory;
+  updateTraitSearchPlaceholder();
+}
+
+function updateTraitSearchPlaceholder() {
+  if (!els.traitSearchInput) return;
+
+  const traitTotal = getTraitSearchGroups()
+    .reduce((total, group) => total + group.total, 0);
+  els.traitSearchInput.placeholder = `search all ${traitTotal} traits`;
 }
 
 function openTraitSortPicker() {
@@ -559,7 +666,6 @@ function getTraitSortNativeOpenState() {
 function setCard(index, options = {}) {
   if (!CARDS.length) {
     els.cardFileName.textContent = "Card NFT set not synced yet";
-    els.cardCounter.textContent = "0/0";
     return;
   }
 
@@ -610,6 +716,7 @@ async function transitionAdjacentCard(direction) {
   const token = ++cardSwapToken;
   const nextIndex = modulo(currentIndex + direction, CARDS.length);
   setIndividualCardControlsDisabled(true);
+  updateCardNameJumpState();
   try {
     if (token !== cardSwapToken) return;
     const [nextTexture, backTexture] = await Promise.all([
@@ -630,6 +737,7 @@ async function transitionAdjacentCard(direction) {
       resetCardSwapVisualState();
       cardSwapAnimating = false;
       setIndividualCardControlsDisabled(false);
+      updateCardNameJumpState();
     }
   }
 }
@@ -820,29 +928,45 @@ function disposeCardSwapGroup(group) {
 }
 
 async function shuffleCard() {
-  if (CARDS.length < 2 || cardSwapAnimating || cardShuffleSpinAnimating || galleryOpen) return;
-  shuffleHistory.push(currentIndex);
-  if (shuffleHistory.length > SHUFFLE_HISTORY_LIMIT) shuffleHistory.shift();
+  if (CARDS.length < 2) return;
+
   let next = currentIndex;
   while (next === currentIndex) {
     next = Math.floor(Math.random() * CARDS.length);
   }
 
-  getCardTexture(CARDS[next]).catch(() => {});
+  await spinToCard(next, { recordHistory: true });
+}
+
+async function spinToCard(nextIndex, { recordHistory = false } = {}) {
+  if (CARDS.length < 2 || cardSwapAnimating || cardShuffleSpinAnimating || galleryOpen) return false;
+
+  const targetIndex = modulo(nextIndex, CARDS.length);
+  if (targetIndex === currentIndex) return false;
+
+  if (recordHistory) {
+    shuffleHistory.push(currentIndex);
+    if (shuffleHistory.length > SHUFFLE_HISTORY_LIMIT) shuffleHistory.shift();
+  }
+
+  getCardTexture(CARDS[targetIndex]).catch(() => {});
   cardShuffleSpinAnimating = true;
   const token = ++cardShuffleSpinToken;
   setIndividualCardControlsDisabled(true);
+  updateCardNameJumpState();
   dragState = null;
   targetRotationX = 0;
   targetRotationY = 0;
 
   try {
-    await tweenCardShuffleSpin(next, token);
+    await tweenCardShuffleSpin(targetIndex, token);
+    return true;
   } finally {
     if (token === cardShuffleSpinToken) {
       resetCardShuffleSpinVisualState();
       cardShuffleSpinAnimating = false;
       setIndividualCardControlsDisabled(false);
+      updateCardNameJumpState();
     }
   }
 }
@@ -1081,9 +1205,8 @@ function applyTraitFilter(category, value) {
   els.traitSortSelect.value = category;
   favoritesOnly = false;
   traitSearchOpen = false;
-  isBinderMode = true;
-  els.binderToggle.checked = true;
-  localStorage.setItem("cardnft:binderMode:v1", "binder");
+  resetTraitSearchQuery();
+  setGalleryViewMode(true, { render: false });
   updateFavoriteButtons();
   updateTraitSearchState();
   resetBinderGalleryPosition();
@@ -1128,10 +1251,143 @@ function toggleFocusedBinderFavorite() {
   if (galleryOpen) renderGallery();
 }
 
+function canEditCardName() {
+  return Boolean(
+    CARDS.length
+    && !galleryOpen
+    && !cardSwapAnimating
+    && !cardShuffleSpinAnimating
+    && !binderCardViewTransitionActive
+  );
+}
+
+function startCardNameEdit(event) {
+  event?.preventDefault();
+  event?.stopPropagation();
+  if (!canEditCardName()) return;
+
+  if (cardNameInput) {
+    cardNameInput.focus();
+    cardNameInput.select();
+    return;
+  }
+
+  const input = document.createElement("input");
+  input.className = "card-name-jump-input";
+  input.type = "text";
+  input.inputMode = "numeric";
+  input.autocomplete = "off";
+  input.spellcheck = false;
+  input.value = String(currentIndex + 1);
+  input.setAttribute("aria-label", "Go to card number");
+  input.addEventListener("keydown", onCardNameInputKeydown);
+  input.addEventListener("blur", () => closeCardNameEdit());
+  input.addEventListener("pointerdown", (inputEvent) => inputEvent.stopPropagation());
+  input.addEventListener("dblclick", (inputEvent) => inputEvent.stopPropagation());
+
+  cardNameInput = input;
+  els.cardFileName.classList.remove("is-card-jump-enabled");
+  els.cardFileName.classList.add("is-editing");
+  els.cardFileName.replaceChildren(input);
+  requestAnimationFrame(() => {
+    if (cardNameInput !== input) return;
+    input.focus();
+    input.select();
+  });
+}
+
+function onCardNameInputKeydown(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    submitCardNameEdit();
+  } else if (event.key === "Escape") {
+    event.preventDefault();
+    closeCardNameEdit();
+  }
+}
+
+function submitCardNameEdit() {
+  const input = cardNameInput;
+  if (!input) return;
+
+  const targetIndex = parseCardNameJumpValue(input.value);
+  if (!Number.isInteger(targetIndex)) {
+    input.focus();
+    input.select();
+    return;
+  }
+
+  closeCardNameEdit();
+  if (targetIndex === currentIndex) {
+    updateCardNameJumpState();
+    return;
+  }
+  spinToCard(targetIndex).catch(console.error);
+}
+
+function parseCardNameJumpValue(value) {
+  const parsed = parseCardJumpNumber(value);
+  if (!Number.isInteger(parsed)) return null;
+  return CARD_NFT_TITLE_NUMBER_TO_INDEX.get(parsed) ?? null;
+}
+
+function parseCardNumberJumpValue(value, total) {
+  const parsed = parseCardJumpNumber(value);
+  if (!Number.isFinite(parsed) || total < 1) return null;
+  return clamp(parsed, 1, total) - 1;
+}
+
+function parseCardJumpNumber(value) {
+  const match = String(value || "").match(/^\s*(?:card\s*)?#?\s*(\d+)\s*$/i);
+  if (!match) return null;
+  return Number.parseInt(match[1], 10);
+}
+
+function closeCardNameEdit({ update = true } = {}) {
+  if (!cardNameInput) return;
+  cardNameInput = null;
+  els.cardFileName.classList.remove("is-editing");
+  els.cardFileName.replaceChildren();
+  if (update) {
+    updateCardText();
+  } else {
+    updateCardNameJumpState();
+  }
+}
+
+function updateCardNameJumpState() {
+  if (!els.cardFileName) return;
+  els.cardFileName.classList.toggle("is-card-jump-enabled", !cardNameInput && canEditCardName());
+}
+
 function updateCardText() {
   const card = CARDS[currentIndex];
-  els.cardFileName.textContent = card?.title || "";
-  els.cardCounter.textContent = `${currentIndex + 1}/${CARDS.length}`;
+  if (!cardNameInput) els.cardFileName.textContent = card?.title || "";
+  updateCardNameJumpState();
+  updateTraitExternalLinks();
+}
+
+function updateTraitExternalLinks() {
+  const card = CARDS[currentIndex];
+  const mint = String(card?.mint || "").trim();
+  const title = card?.title || "card";
+  updateExternalCardLink(els.traitTensorButton, mint, `${TENSOR_ITEM_URL_BASE}${encodeURIComponent(mint)}`, `Open ${title} on Tensor`);
+  updateExternalCardLink(els.traitSolscanButton, mint, `${SOLSCAN_TOKEN_URL_BASE}${encodeURIComponent(mint)}`, `Open ${title} on Solscan`);
+}
+
+function updateExternalCardLink(link, mint, href, label) {
+  if (!link) return;
+  if (!mint) {
+    link.removeAttribute("href");
+    link.setAttribute("aria-disabled", "true");
+    link.tabIndex = -1;
+    return;
+  }
+  link.href = href;
+  link.title = label;
+  link.setAttribute("aria-label", label);
+  link.setAttribute("aria-disabled", "false");
+  link.tabIndex = 0;
 }
 
 function updateFavoriteButtons() {
@@ -1158,6 +1414,8 @@ function setGalleryOpen(open, options = {}) {
   resetViewSwitchWheelDistances();
   binderSpreadPreparationToken += 1;
   binderPreparingSpread = false;
+  if (open) closeCardNameEdit({ update: false });
+  if (!open) closeBinderPageStatusEdit({ update: false });
   if (options.resetFilters) resetGalleryFilters();
   galleryOpen = open;
   if (open) setTraitInfoOpen(false);
@@ -1174,19 +1432,30 @@ function setGalleryOpen(open, options = {}) {
   } else {
     clearBinderFocus({ silent: true });
     snapBinderToWholePage();
+    clearBinderIntroLinkCursor();
     stopBinderRenderLoop();
   }
+  updateCardNameJumpState();
   queueSessionViewStateSave();
 }
 
-function resetGalleryFilters() {
+function resetGalleryFilters({ preserveFavorites = false } = {}) {
   activeTraitFilter = null;
-  favoritesOnly = false;
+  if (!preserveFavorites) favoritesOnly = false;
   traitSearchOpen = false;
+  resetTraitSearchQuery();
   traitSortCategory = "all";
+  resetWalletCardFilter();
   if (els.traitSortSelect) els.traitSortSelect.value = "all";
   updateFavoriteButtons();
   updateTraitSearchState();
+}
+
+function clearGallerySortAndFilters() {
+  setTraitSortPickerOpen(false);
+  resetGalleryFilters({ preserveFavorites: true });
+  resetBinderGalleryPosition();
+  renderGallery();
 }
 
 function toggleFavoriteFilter() {
@@ -1203,9 +1472,22 @@ function toggleTraitSearch() {
   if (traitSearchOpen) {
     clearBinderFocus({ silent: true });
     deactivateAllAnimatedRecords();
+  } else {
+    resetTraitSearchQuery();
   }
   updateTraitSearchState();
   renderGallery();
+}
+
+function updateTraitSearchQuery() {
+  traitSearchQuery = els.traitSearchInput.value;
+  renderTraitSearch();
+  els.traitSearchGroups.scrollTop = 0;
+}
+
+function resetTraitSearchQuery() {
+  traitSearchQuery = "";
+  if (els.traitSearchInput) els.traitSearchInput.value = "";
 }
 
 function updateTraitSearchState() {
@@ -1213,6 +1495,331 @@ function updateTraitSearchState() {
   els.body.classList.toggle("trait-search-open", open);
   els.traitSearchPanel.hidden = !open;
   els.traitSearchButton.setAttribute("aria-pressed", String(open));
+  updateTraitSearchButtonLabel();
+  if (open) {
+    els.traitSearchInput.value = traitSearchQuery;
+  }
+  updateGalleryViewModeButton();
+  updateWalletSearchState();
+  updateGalleryFilterClearButton();
+}
+
+function updateGalleryFilterClearButton() {
+  if (!els.galleryClearFiltersButton) return;
+
+  const active = hasActiveGallerySortOrFilter();
+  els.galleryClearFiltersButton.hidden = !galleryOpen || !active;
+}
+
+function hasActiveGallerySortOrFilter() {
+  return Boolean(
+    activeTraitFilter
+    || walletFilterCardIndexSet
+    || traitSortCategory !== "all"
+  );
+}
+
+function hasActiveBinderIntroSuppressor() {
+  return favoritesOnly || hasActiveGallerySortOrFilter();
+}
+
+function updateTraitSearchButtonLabel() {
+  if (!els.traitSearchButton) return;
+
+  const label = activeTraitFilter?.value || "traits";
+  const labelElement = els.traitSearchButtonLabel || els.traitSearchButton;
+  labelElement.textContent = label;
+  els.traitSearchButton.classList.toggle("has-active-trait", Boolean(activeTraitFilter));
+  els.traitSearchButton.title = activeTraitFilter
+    ? `Selected trait: ${activeTraitFilter.value}`
+    : "Search traits";
+  els.traitSearchButton.setAttribute(
+    "aria-label",
+    activeTraitFilter ? `Selected trait: ${activeTraitFilter.value}` : "Search traits",
+  );
+}
+
+function toggleWalletSearchPanel() {
+  if (!walletSearchOpen && traitSearchOpen) {
+    traitSearchOpen = false;
+    resetTraitSearchQuery();
+    updateTraitSearchState();
+    renderGallery();
+  }
+  setWalletSearchPanelOpen(!walletSearchOpen);
+}
+
+function setWalletSearchPanelOpen(open, options = {}) {
+  const nextOpen = Boolean(open) && galleryOpen;
+  walletSearchOpen = nextOpen;
+  if (els.walletSearchPanel) {
+    els.walletSearchPanel.hidden = !nextOpen;
+    els.walletSearchPanel.setAttribute("aria-hidden", String(!nextOpen));
+    els.walletSearchPanel.setAttribute("aria-busy", String(walletSearchLoading && nextOpen));
+  }
+  if (els.walletSearchButton) {
+    els.walletSearchButton.setAttribute("aria-expanded", String(nextOpen));
+  }
+
+  if (!nextOpen) {
+    walletSearchToken += 1;
+    setWalletSearchLoading(false);
+    return;
+  }
+
+  if (!options.preserveMessage) {
+    els.walletSearchMessage.textContent = WALLET_SEARCH_PROMPT;
+  }
+  setWalletSearchLoading(false);
+  requestAnimationFrame(() => els.walletAddressInput.focus());
+}
+
+function updateWalletSearchState() {
+  if (!els.walletSearchButton) return;
+
+  const visible = galleryOpen;
+  els.walletSearchButton.hidden = !visible;
+  els.walletSearchButton.setAttribute("aria-pressed", String(Boolean(walletFilterCardIndexSet)));
+  els.walletSearchButton.title = walletFilterCardIndexSet && walletFilterAddress
+    ? `Wallet filter: ${shortenSolAddress(walletFilterAddress)}`
+    : "Search wallet holdings";
+  els.walletSearchButton.setAttribute("aria-label", "Search wallet holdings");
+
+  if (!visible && walletSearchOpen) {
+    setWalletSearchPanelOpen(false, { preserveMessage: true });
+  }
+}
+
+function setWalletSearchLoading(loading) {
+  walletSearchLoading = Boolean(loading);
+  els.walletAddressInput.disabled = walletSearchLoading;
+  els.walletSearchSubmitButton.disabled = walletSearchLoading;
+  els.walletSearchPanel.setAttribute("aria-busy", String(walletSearchLoading && walletSearchOpen));
+}
+
+async function submitWalletSearch() {
+  const address = els.walletAddressInput.value.trim();
+  if (!isPossibleSolanaAddress(address)) {
+    els.walletSearchMessage.textContent = WALLET_SEARCH_EMPTY_MESSAGE;
+    els.walletAddressInput.focus();
+    return;
+  }
+
+  const token = ++walletSearchToken;
+  setWalletSearchLoading(true);
+  els.walletSearchMessage.textContent = WALLET_SEARCH_BUSY_MESSAGE;
+
+  try {
+    const cardIndexes = await findWalletCardIndexes(address);
+    if (token !== walletSearchToken) return;
+
+    if (!cardIndexes.length) {
+      els.walletSearchMessage.textContent = WALLET_SEARCH_EMPTY_MESSAGE;
+      els.walletAddressInput.focus();
+      return;
+    }
+
+    applyWalletCardFilter(address, cardIndexes);
+    setWalletSearchPanelOpen(false, { preserveMessage: true });
+  } catch {
+    if (token !== walletSearchToken) return;
+    els.walletSearchMessage.textContent = WALLET_SEARCH_ERROR_MESSAGE;
+    els.walletAddressInput.focus();
+  } finally {
+    if (token === walletSearchToken) setWalletSearchLoading(false);
+  }
+}
+
+function applyWalletCardFilter(address, cardIndexes) {
+  walletFilterAddress = address;
+  walletFilterCardIndexes = [...new Set(cardIndexes)].sort(compareCardIndexes);
+  walletFilterCardIndexSet = new Set(walletFilterCardIndexes);
+  favoritesOnly = false;
+  activeTraitFilter = null;
+  traitSearchOpen = false;
+  resetTraitSearchQuery();
+  traitSortCategory = "all";
+  if (els.traitSortSelect) els.traitSortSelect.value = "all";
+  setGalleryViewMode(true, { render: false });
+  updateFavoriteButtons();
+  updateTraitSearchState();
+  resetBinderGalleryPosition();
+  renderGallery();
+}
+
+function resetWalletCardFilter() {
+  walletFilterCardIndexes = null;
+  walletFilterCardIndexSet = null;
+  walletFilterAddress = "";
+  updateWalletSearchState();
+}
+
+async function findWalletCardIndexes(address) {
+  const snapshotIndexes = getSnapshotWalletCardIndexes(address);
+  if (snapshotIndexes.length) return snapshotIndexes;
+
+  const magicEdenIndexes = await fetchMagicEdenWalletCardIndexes(address).catch(() => null);
+  if (magicEdenIndexes?.length) return magicEdenIndexes;
+
+  const tokenAccountIndexes = await fetchWalletTokenAccountCardIndexes(address).catch(() => null);
+  if (tokenAccountIndexes?.length) return tokenAccountIndexes;
+  return [];
+}
+
+function getSnapshotWalletCardIndexes(address) {
+  return CARD_NFT_OWNER_TO_INDEXES.get(String(address || "").trim()) || [];
+}
+
+function buildCardNftOwnerIndex(snapshot) {
+  const ownerIndex = new Map();
+  const owners = snapshot?.owners;
+  if (!owners || typeof owners !== "object") return ownerIndex;
+
+  for (const [owner, cards] of Object.entries(owners)) {
+    if (!owner || !Array.isArray(cards)) continue;
+    const indexes = [];
+
+    for (const card of cards) {
+      const index = Number.isInteger(card)
+        ? card
+        : CARD_NFT_MINT_TO_INDEX.get(String(card || "").trim());
+      if (Number.isInteger(index) && index >= 0 && index < CARDS.length) {
+        indexes.push(index);
+      }
+    }
+
+    if (indexes.length) {
+      ownerIndex.set(owner, [...new Set(indexes)].sort(compareCardIndexes));
+    }
+  }
+
+  return ownerIndex;
+}
+
+async function fetchMagicEdenWalletCardIndexes(address) {
+  const indexes = [];
+  let offset = 0;
+
+  while (offset < MAGIC_EDEN_WALLET_MAX_TOKENS) {
+    const tokens = await magicEdenApi(
+      `/wallets/${encodeURIComponent(address)}/tokens?collection_symbol=${encodeURIComponent(CARD_NFT_COLLECTION_SYMBOL)}&offset=${offset}&limit=${MAGIC_EDEN_WALLET_PAGE_LIMIT}&listStatus=both`,
+    );
+    const page = Array.isArray(tokens) ? tokens : tokens?.results || [];
+
+    for (const token of page) {
+      const index = CARD_NFT_MINT_TO_INDEX.get(String(token?.mintAddress || "").trim());
+      if (Number.isInteger(index)) indexes.push(index);
+    }
+
+    if (page.length < MAGIC_EDEN_WALLET_PAGE_LIMIT) break;
+    offset += MAGIC_EDEN_WALLET_PAGE_LIMIT;
+    await delay(MAGIC_EDEN_WALLET_PAGE_DELAY_MS);
+  }
+
+  return indexes;
+}
+
+async function fetchWalletTokenAccountCardIndexes(address) {
+  const ownedMints = await fetchWalletTokenMints(address);
+  return getCardIndexesForMints(ownedMints);
+}
+
+function getCardIndexesForMints(mints) {
+  const indexes = [];
+  for (const mint of mints) {
+    const index = CARD_NFT_MINT_TO_INDEX.get(mint);
+    if (Number.isInteger(index)) indexes.push(index);
+  }
+  return indexes;
+}
+
+async function magicEdenApi(path) {
+  const response = await fetchWithTimeout(`${MAGIC_EDEN_API_URL}${path}`);
+  if (!response.ok) throw new Error(`Magic Eden API failed: ${response.status}`);
+  return response.json();
+}
+
+async function fetchWalletTokenMints(address) {
+  const results = await Promise.all(SOLANA_TOKEN_PROGRAM_IDS.map((programId) => (
+    solanaRpc("getParsedTokenAccountsByOwner", [
+      address,
+      { programId },
+      { encoding: "jsonParsed", commitment: "confirmed" },
+    ])
+      .then((result) => ({ ok: true, result }))
+      .catch(() => ({ ok: false, result: null }))
+  )));
+  if (!results.some((entry) => entry.ok)) {
+    throw new Error("Solana RPC search failed");
+  }
+
+  const ownedMints = new Set();
+
+  for (const { result } of results) {
+    for (const entry of result?.value || []) {
+      const mint = getOwnedTokenMint(entry);
+      if (mint) ownedMints.add(mint);
+    }
+  }
+
+  return ownedMints;
+}
+
+async function solanaRpc(method, params) {
+  const response = await fetchWithTimeout(SOLANA_RPC_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      jsonrpc: "2.0",
+      id: `${method}-${Date.now()}`,
+      method,
+      params,
+    }),
+  });
+  if (!response.ok) throw new Error(`Solana RPC failed: ${response.status}`);
+
+  const payload = await response.json();
+  if (payload?.error) throw new Error(payload.error.message || "Solana RPC error");
+  return payload.result;
+}
+
+async function fetchWithTimeout(url, options = {}) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), WALLET_SEARCH_REQUEST_TIMEOUT_MS);
+  try {
+    return await fetch(url, { ...options, signal: controller.signal });
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+function getOwnedTokenMint(entry) {
+  const info = entry?.account?.data?.parsed?.info;
+  if (!info?.mint || !hasPositiveTokenBalance(info?.tokenAmount)) return "";
+  return String(info.mint);
+}
+
+function hasPositiveTokenBalance(tokenAmount) {
+  try {
+    return BigInt(String(tokenAmount?.amount || "0")) > 0n;
+  } catch {
+    return false;
+  }
+}
+
+function isPossibleSolanaAddress(value) {
+  return SOLANA_ADDRESS_PATTERN.test(String(value || "").trim());
+}
+
+function shortenSolAddress(value) {
+  const address = String(value || "");
+  if (address.length <= 12) return address;
+  return `${address.slice(0, 4)}...${address.slice(-4)}`;
+}
+
+function withWalletStatusLabel(value) {
+  if (!walletFilterCardIndexSet || !walletFilterAddress) return value;
+  return `${shortenSolAddress(walletFilterAddress)}\u00a0\u00a0\u00a0${value}`;
 }
 
 function resetBinderGalleryPosition() {
@@ -1221,6 +1828,7 @@ function resetBinderGalleryPosition() {
   binderTargetTurn = 0;
   binderTurn = 0;
   binderSinglePageSide = null;
+  binderSinglePageSideTouched = false;
   binderFocusPosition = -1;
   binderTextureQueueKey = "";
 }
@@ -1229,6 +1837,9 @@ function getVisibleIndexes() {
   let indexes = CARDS.map((_, index) => index);
   if (favoritesOnly) {
     indexes = indexes.filter((index) => favorites.has(favoriteKey(index)));
+  }
+  if (walletFilterCardIndexSet) {
+    indexes = indexes.filter((index) => walletFilterCardIndexSet.has(index));
   }
   if (activeTraitFilter) {
     indexes = indexes.filter((index) => (
@@ -1303,7 +1914,17 @@ function getTraitSearchGroups() {
 function renderTraitSearch() {
   const groupFragment = document.createDocumentFragment();
   const sidebarFragment = document.createDocumentFragment();
-  const groups = getTraitSearchGroups();
+  const query = normalizeTraitSearchQuery(traitSearchQuery);
+  const groups = getFilteredTraitSearchGroups(getTraitSearchGroups(), query);
+
+  if (!groups.length) {
+    const empty = document.createElement("div");
+    empty.className = "trait-search-empty";
+    empty.textContent = "No traits found";
+    els.traitSearchGroups.replaceChildren(empty);
+    els.traitSearchSidebar.replaceChildren();
+    return;
+  }
 
   for (const group of groups) {
     const section = document.createElement("section");
@@ -1313,7 +1934,10 @@ function renderTraitSearch() {
 
     const heading = document.createElement("h2");
     heading.className = "trait-search-heading";
-    heading.textContent = `${group.category} (${group.total} total)`;
+    const headingCount = query
+      ? `${group.traits.length} ${group.traits.length === 1 ? "match" : "matches"}`
+      : `${group.total} total`;
+    heading.textContent = `${group.category} (${headingCount})`;
 
     const jump = document.createElement("button");
     jump.className = "trait-search-sidebar-button";
@@ -1354,6 +1978,26 @@ function renderTraitSearch() {
   els.traitSearchSidebar.replaceChildren(sidebarFragment);
 }
 
+function getFilteredTraitSearchGroups(groups, query) {
+  if (!query) return groups;
+
+  return groups
+    .map((group) => {
+      const categoryMatches = normalizeTraitSearchQuery(group.category).includes(query);
+      const traits = categoryMatches
+        ? group.traits
+        : group.traits.filter((trait) => (
+          normalizeTraitSearchQuery(`${group.category} ${trait.value}`).includes(query)
+        ));
+      return traits.length ? { ...group, traits } : null;
+    })
+    .filter(Boolean);
+}
+
+function normalizeTraitSearchQuery(value) {
+  return normalizeTraitValue(value).replace(/\s+/g, " ");
+}
+
 function slugifyTraitSearchId(value) {
   return String(value || "")
     .trim()
@@ -1377,6 +2021,8 @@ function titleNumber(title) {
 
 function renderGallery() {
   updateTraitSearchState();
+  updateGalleryViewModeButton();
+  syncBinderIntroNoteModeTarget();
   if (traitSearchOpen) {
     renderTraitSearch();
     els.galleryEmpty.hidden = true;
@@ -1397,6 +2043,7 @@ function renderGallery() {
   els.galleryEmpty.hidden = !empty;
   els.galleryEmpty.textContent = favoritesOnly ? "No favorites yet" : "No cards for this trait";
   els.favoriteFilterButton.setAttribute("aria-pressed", String(favoritesOnly));
+  updateGalleryViewModeButton();
 
   if (empty) {
     els.galleryGrid.hidden = true;
@@ -1422,7 +2069,39 @@ function renderGallery() {
   queueSessionViewStateSave();
 }
 
+function toggleGalleryViewMode() {
+  setGalleryViewMode(!isBinderMode);
+}
+
+function setGalleryViewMode(useBinder, options = {}) {
+  isBinderMode = Boolean(useBinder);
+  if (!isBinderMode) closeBinderPageStatusEdit({ update: false });
+  localStorage.setItem("cardnft:binderMode:v1", isBinderMode ? "binder" : "grid");
+  updateGalleryViewModeButton();
+  if (options.render === false || !galleryOpen) return;
+
+  traitSearchOpen = false;
+  resetTraitSearchQuery();
+  updateTraitSearchState();
+  deactivateAllAnimatedRecords();
+  renderGallery();
+}
+
+function updateGalleryViewModeButton() {
+  if (!els.galleryViewToggleButton) return;
+  const showingSimpleGallery = !isBinderMode;
+  els.body.classList.toggle("is-binder-view", isBinderMode);
+  els.galleryViewToggleButton.hidden = !galleryOpen;
+  els.galleryViewToggleButton.setAttribute("aria-pressed", String(showingSimpleGallery));
+  els.galleryViewToggleButton.title = showingSimpleGallery ? "Show 3D binder" : "Show simple gallery";
+  els.galleryViewToggleButton.setAttribute(
+    "aria-label",
+    showingSimpleGallery ? "Show 3D binder" : "Show simple gallery",
+  );
+}
+
 function renderGrid(indexes) {
+  closeBinderPageStatusEdit({ update: false });
   els.galleryGrid.replaceChildren();
   const fragment = document.createDocumentFragment();
   for (const index of indexes) {
@@ -1445,7 +2124,7 @@ function renderGrid(indexes) {
     fragment.append(button);
   }
   els.galleryGrid.append(fragment);
-  els.binderPageStatus.textContent = `${indexes.length} cards`;
+  els.binderPageStatus.textContent = withWalletStatusLabel(`${indexes.length} cards`);
 }
 
 function initBinderScene() {
@@ -1483,6 +2162,7 @@ function initBinderScene() {
   binderRoot.position.y = 0.84;
   binderScene.add(binderRoot);
 
+  warmBinderInteractionGeometry();
   resizeBinderRenderer();
 }
 
@@ -1529,8 +2209,9 @@ function updateBinderItems(indexes) {
   loadBinderBackTexture(token);
   updateBinderPageControls();
   resizeBinderRenderer();
-  renderBinderSceneOnce();
-  queueBinderTextureLoads(token, { force: true });
+  renderBinderSceneOnce({ includePreload: false });
+  queueBinderTextureLoads(token, { force: true, includePreload: false });
+  requestBinderMaintenance(BINDER_INITIAL_PRELOAD_IDLE_DELAY_MS);
 }
 
 function createBinderModel(indexes, placeholderTexture) {
@@ -1554,6 +2235,9 @@ function createBinderModel(indexes, placeholderTexture) {
 
 function createBinderShell() {
   const shell = new THREE.Group();
+  binderIntroNoteGroup = null;
+  binderIntroNoteMesh = null;
+  binderIntroLinkMeshes = [];
   const coverMaterial = createBinderCoverMaterial();
   const ringMaterial = new THREE.MeshPhysicalMaterial({
     color: 0x171615,
@@ -1572,6 +2256,9 @@ function createBinderShell() {
   const leftCover = new THREE.Mesh(backCoverGeometry, coverMaterial);
   leftCover.position.set(-BINDER_PAGE_WIDTH / 2 - BINDER_COVER_OVERHANG * 0.42, 0, coverZ);
   shell.add(leftCover);
+  const introNote = createBinderIntroNote(coverWidth, coverHeight);
+  introNote.position.set(leftCover.position.x, 0, coverZ + 0.14 / 2 + 0.008);
+  shell.add(introNote);
 
   const rightCover = new THREE.Mesh(backCoverGeometry.clone(), coverMaterial.clone());
   rightCover.position.set(BINDER_PAGE_WIDTH / 2 + BINDER_COVER_OVERHANG * 0.42, 0, coverZ);
@@ -1605,6 +2292,59 @@ function createBinderShell() {
   }
 
   return shell;
+}
+
+function createBinderIntroNote(coverWidth, coverHeight) {
+  const noteWidth = coverWidth * 0.7;
+  const noteHeight = coverHeight * 0.31;
+  const { texture, linkBounds } = createBinderIntroNoteTexture();
+  const note = new THREE.Group();
+
+  const noteMesh = new THREE.Mesh(
+    new THREE.PlaneGeometry(noteWidth, noteHeight),
+    new THREE.MeshBasicMaterial({
+      map: texture,
+      transparent: true,
+      toneMapped: false,
+      side: THREE.DoubleSide,
+      depthWrite: false,
+      depthTest: true,
+    }),
+  );
+  noteMesh.renderOrder = 66;
+  noteMesh.userData.binderIntroNoteText = true;
+  note.add(noteMesh);
+  binderIntroNoteGroup = note;
+  binderIntroNoteMesh = noteMesh;
+
+  const introLinkBounds = Array.isArray(linkBounds) ? linkBounds : [linkBounds];
+  for (const bounds of introLinkBounds) {
+    const linkWidth = noteWidth * bounds.width;
+    const linkHeight = noteHeight * bounds.height;
+    const linkHitbox = new THREE.Mesh(
+      new THREE.PlaneGeometry(linkWidth, linkHeight),
+      new THREE.MeshBasicMaterial({
+        color: 0xffffff,
+        transparent: true,
+        opacity: 0,
+        toneMapped: false,
+        side: THREE.DoubleSide,
+        depthWrite: false,
+        depthTest: false,
+      }),
+    );
+    linkHitbox.position.set(
+      noteWidth * (bounds.x + bounds.width / 2 - 0.5),
+      noteHeight * (0.5 - bounds.y - bounds.height / 2),
+      0.004,
+    );
+    linkHitbox.userData.binderIntroLinkUrl = bounds.url || BINDER_INTRO_LINK_URL;
+    linkHitbox.renderOrder = 67;
+    note.add(linkHitbox);
+    binderIntroLinkMeshes.push(linkHitbox);
+  }
+
+  return note;
 }
 
 function createBinderPageMaterials() {
@@ -1836,6 +2576,21 @@ function getBinderHorizontalSeamGeometry() {
   return binderHorizontalSeamGeometry;
 }
 
+function warmBinderInteractionGeometry() {
+  const geometries = [
+    getBinderCardGeometry(),
+    getBinderColumnSheetGeometry(),
+    getBinderColumnGlossGeometry(),
+    getBinderVerticalSeamGeometry(),
+    getBinderHorizontalSeamGeometry(),
+  ];
+
+  for (const geometry of geometries) {
+    if (!geometry.boundingSphere) geometry.computeBoundingSphere();
+    if (!geometry.boundingBox) geometry.computeBoundingBox();
+  }
+}
+
 function getBinderColumnSheetHeight() {
   return BINDER_ROWS * BINDER_CELL_HEIGHT + (BINDER_ROWS - 1) * BINDER_GRID_GAP;
 }
@@ -1903,7 +2658,7 @@ function createBinderCard(texture, cardIndex, side, binderPosition = -1) {
     clearcoat: 0.2,
     clearcoatRoughness: 0.52,
     transparent: true,
-    opacity: 1,
+    opacity: Number.isInteger(cardIndex) ? 0 : 1,
     depthTest: false,
     depthWrite: false,
     side: THREE.FrontSide,
@@ -2011,9 +2766,12 @@ function promoteBinderTextureTask(position, priority) {
 }
 
 function pumpBinderTextureQueue() {
-  const concurrencyLimit = isBinderTurnMoving()
-    ? Math.min(2, BINDER_TEXTURE_CONCURRENCY)
-    : BINDER_TEXTURE_CONCURRENCY;
+  if (isBinderTurnMoving()) {
+    requestBinderMaintenance(120);
+    return;
+  }
+
+  const concurrencyLimit = BINDER_TEXTURE_CONCURRENCY;
   while (binderTextureActiveLoads < concurrencyLimit && binderTextureQueue.length) {
     const taskIndex = binderTextureQueue.findIndex((entry) => (
       !entry.animated || binderTextureActiveAnimatedLoads < 1
@@ -2038,7 +2796,7 @@ async function loadQueuedBinderTexture(task) {
     if (task.token !== binderBuildToken) return;
     const currentMesh = binderCardMeshByPosition.get(task.position);
     if (currentMesh) {
-      if (isBinderTurnMoving() && !isBinderPositionVisible(task.position)) {
+      if (isBinderTurnMoving()) {
         currentMesh.userData.textureLoading = false;
         requestBinderMaintenance(120);
         return;
@@ -2046,13 +2804,16 @@ async function loadQueuedBinderTexture(task) {
 
       prepareTextureForImmediateDisplay(texture);
       currentMesh.material.map = texture;
+      currentMesh.material.opacity = 0;
       currentMesh.material.needsUpdate = true;
       currentMesh.userData.textureLoaded = true;
       currentMesh.userData.textureLoading = false;
+      currentMesh.userData.textureFadeStartedAt = performance.now();
+      currentMesh.userData.textureFadeComplete = false;
       const shouldRender = currentMesh.userData.renderOnApply || isBinderPositionVisible(task.position);
       currentMesh.userData.renderOnApply = false;
       if (shouldRender) {
-        requestBinderRenderOnce();
+        startBinderRenderLoop();
       }
     }
   } catch (error) {
@@ -2071,6 +2832,10 @@ async function loadQueuedBinderTexture(task) {
 function loadBinderBackTexture(token) {
   getBackTexture().then((texture) => {
     if (token !== binderBuildToken) return;
+    if (isBinderTurnMoving()) {
+      requestBinderMaintenance(120);
+      return;
+    }
     binderRoot.traverse((child) => {
       if (!child.isMesh || !child.userData.binderBackCard) return;
       child.material.map = texture;
@@ -2270,6 +3035,10 @@ function clearBinderRoot() {
   binderPages = [];
   binderCardMeshes = [];
   binderCardMeshByPosition = new Map();
+  binderIntroNoteGroup = null;
+  binderIntroNoteMesh = null;
+  binderIntroLinkMeshes = [];
+  clearBinderIntroLinkCursor();
   binderPageWindowKey = "";
   binderTextureQueueKey = "";
   binderTextureQueue.length = 0;
@@ -2316,12 +3085,13 @@ function previousBinderPage() {
 function turnBinderSinglePage(direction) {
   const totalSides = getBinderTotalPageSides();
   const currentSide = getBinderSinglePageSide();
-  const nextSide = clamp(currentSide + direction, 0, totalSides - 1);
+  const nextSide = clamp(currentSide + direction, BINDER_SINGLE_PAGE_COVER_SIDE, totalSides - 1);
   if (nextSide === currentSide) return;
 
   binderSpreadPreparationToken += 1;
   binderPreparingSpread = false;
   binderSinglePageSide = nextSide;
+  binderSinglePageSideTouched = true;
   const nextTurn = getBinderTurnForSinglePageSide(nextSide);
   if (nextTurn !== binderTargetTurn) binderBendDirection = Math.sign(nextTurn - binderTargetTurn) || binderBendDirection;
   binderTargetTurn = nextTurn;
@@ -2347,7 +3117,10 @@ function turnBinderPage(direction) {
   binderPreparingSpread = false;
   const currentPage = Math.round(binderTargetTurn);
   const nextTurn = clamp(currentPage + direction, 0, binderPageCount);
-  if (nextTurn !== binderTargetTurn) binderBendDirection = Math.sign(nextTurn - binderTargetTurn);
+  if (nextTurn !== binderTargetTurn) {
+    binderSinglePageSideTouched = true;
+    binderBendDirection = Math.sign(nextTurn - binderTargetTurn);
+  }
   binderTargetTurn = nextTurn;
   updateBinderPageControls();
   startBinderRenderLoop();
@@ -2369,7 +3142,7 @@ async function shuffleBinderSpread() {
   if (binderShuffleHistory.length > SHUFFLE_HISTORY_LIMIT) binderShuffleHistory.shift();
   const loadingToken = beginBinderShuffleLoading();
   try {
-    const moved = await prepareAndMoveBinderToSpread(nextTurn, currentPage);
+    const moved = await prepareAndMoveBinderToSpreadAfterCardsLoad(nextTurn, currentPage, loadingToken);
     if (moved) await waitForBinderShuffleFlipDone(loadingToken, nextTurn);
   } finally {
     endBinderShuffleLoading(loadingToken);
@@ -2383,7 +3156,11 @@ async function applyPreviousBinderSpread() {
   if (Number.isInteger(previousTurn)) {
     const loadingToken = beginBinderShuffleLoading();
     try {
-      const moved = await prepareAndMoveBinderToSpread(previousTurn, clamp(Math.round(binderTargetTurn), 0, binderPageCount));
+      const moved = await prepareAndMoveBinderToSpreadAfterCardsLoad(
+        previousTurn,
+        clamp(Math.round(binderTargetTurn), 0, binderPageCount),
+        loadingToken,
+      );
       if (moved) await waitForBinderShuffleFlipDone(loadingToken, previousTurn);
     } finally {
       endBinderShuffleLoading(loadingToken);
@@ -2435,96 +3212,142 @@ function waitForBinderShuffleFlipDone(token, turn) {
   });
 }
 
-async function prepareAndMoveBinderToSpread(turn, currentPage) {
+function prepareAndMoveBinderToSpread(turn, currentPage) {
+  const prepared = prepareBinderSpreadWindow(turn, currentPage);
+  if (!prepared) return false;
+
+  clearBinderSpreadPreparation(prepared.token);
+  moveBinderToSpread(prepared.nextTurn, { startTurn: prepared.startTurn });
+  queueBinderTextureLoads(binderBuildToken, { force: true, includePreload: false });
+  requestBinderMaintenance(120);
+  return true;
+}
+
+async function prepareAndMoveBinderToSpreadAfterCardsLoad(turn, currentPage, loadingToken) {
+  const prepared = prepareBinderSpreadWindow(turn, currentPage);
+  if (!prepared) return false;
+
+  try {
+    const positions = getBinderFlipReadyPositions(prepared.startTurn, prepared.nextTurn);
+    queueBinderTextureLoadsForPositions(positions, binderBuildToken, { priority: -4 });
+    const ready = await waitForBinderPositionsLoaded(positions, {
+      loadingToken,
+      preparationToken: prepared.token,
+    });
+    if (!ready || prepared.token !== binderSpreadPreparationToken) return false;
+
+    clearBinderSpreadPreparation(prepared.token);
+    moveBinderToSpread(prepared.nextTurn, { startTurn: prepared.startTurn });
+    queueBinderTextureLoads(binderBuildToken, { force: true, includePreload: false });
+    requestBinderMaintenance(120);
+    return true;
+  } finally {
+    clearBinderSpreadPreparation(prepared.token);
+  }
+}
+
+function prepareBinderSpreadWindow(turn, currentPage) {
   const nextTurn = clamp(Math.round(turn), 0, binderPageCount);
-  if (nextTurn === clamp(Math.round(binderTargetTurn), 0, binderPageCount)) return false;
+  if (nextTurn === clamp(Math.round(binderTargetTurn), 0, binderPageCount)) return null;
 
   const token = ++binderSpreadPreparationToken;
   const direction = Math.sign(nextTurn - currentPage) || 1;
   const startTurn = clamp(nextTurn - direction, 0, binderPageCount);
-  const positions = getBinderPreparationPositionsForTurn(startTurn, nextTurn);
-
-  await preloadBinderPositions(positions, token);
-  if (token !== binderSpreadPreparationToken) return false;
 
   binderPreparingSpread = true;
-  try {
-    ensureBinderPageWindow({
-      force: true,
-      center: getBinderPageWindowCenterForTurn(nextTurn),
-      queueTextures: false,
-      updateTransforms: false,
-    });
-    await applyPreparedBinderTextures(positions, token);
-    if (token !== binderSpreadPreparationToken) return false;
-
-    moveBinderToSpread(nextTurn, { startTurn });
-    return true;
-  } finally {
-    if (token === binderSpreadPreparationToken) {
-      binderPreparingSpread = false;
-    }
+  ensureBinderPageWindow({
+    force: true,
+    center: getBinderPageWindowCenterForTurn(nextTurn),
+    queueTextures: false,
+    updateTransforms: false,
+  });
+  if (token !== binderSpreadPreparationToken) {
+    clearBinderSpreadPreparation(token);
+    return null;
   }
+
+  return { nextTurn, startTurn, token };
 }
 
-async function preloadBinderPositions(positions, token) {
-  await Promise.all([...positions].map(async (position) => {
-    if (token !== binderSpreadPreparationToken) return;
-    const cardIndex = binderVisibleIndexes[position];
-    if (!Number.isInteger(cardIndex) || !CARDS[cardIndex]) return;
-    await getBinderTexture(CARDS[cardIndex]).catch(() => null);
-  }));
+function clearBinderSpreadPreparation(token) {
+  if (token === binderSpreadPreparationToken) binderPreparingSpread = false;
 }
 
-async function applyPreparedBinderTextures(positions, token) {
-  await Promise.all([...positions].map(async (position) => {
-    if (token !== binderSpreadPreparationToken) return;
-    const mesh = binderCardMeshByPosition.get(position);
-    const cardIndex = binderVisibleIndexes[position];
-    if (!mesh || !Number.isInteger(cardIndex) || !CARDS[cardIndex]) return;
-    const texture = await getBinderTexture(CARDS[cardIndex]).catch(() => null);
-    if (!texture || token !== binderSpreadPreparationToken) return;
-    mesh.material.map = texture;
-    mesh.material.needsUpdate = true;
-    mesh.userData.textureLoaded = true;
-    mesh.userData.textureLoading = false;
-    mesh.userData.renderOnApply = false;
-  }));
-}
-
-function getBinderPreparationPositionsForTurn(startTurn, targetTurn) {
-  const positions = new Set([
-    ...getBinderSpreadPositionsForTurn(startTurn),
-    ...getBinderSpreadPositionsForTurn(targetTurn),
-  ]);
-
-  const activePage = Math.min(startTurn, targetTurn);
-  addBinderPagePositions(positions, activePage, true);
-  addBinderPagePositions(positions, activePage, false);
+function getBinderFlipReadyPositions(startTurn, targetTurn) {
+  const positions = new Set();
+  for (const position of getBinderSpreadPositionsForTurn(startTurn)) positions.add(position);
+  for (const position of getBinderSpreadPositionsForTurn(targetTurn)) positions.add(position);
   return positions;
 }
 
 function getBinderSpreadPositionsForTurn(turn) {
   const positions = new Set();
+  const addSide = (pageIndex, backSide) => {
+    if (pageIndex < 0 || pageIndex >= binderPageCount) return;
+    const start = pageIndex * BINDER_PAGE_SLOTS + (backSide ? BINDER_SIDE_SLOTS : 0);
+    for (let slot = 0; slot < BINDER_SIDE_SLOTS; slot += 1) {
+      const position = start + slot;
+      if (position < binderVisibleIndexes.length) positions.add(position);
+    }
+  };
+
   const currentTurn = clamp(Math.round(turn), 0, binderPageCount);
   if (currentTurn <= 0) {
-    addBinderPagePositions(positions, 0, false);
+    addSide(0, false);
   } else if (currentTurn >= binderPageCount) {
-    addBinderPagePositions(positions, binderPageCount - 1, true);
+    addSide(binderPageCount - 1, true);
   } else {
-    addBinderPagePositions(positions, currentTurn - 1, true);
-    addBinderPagePositions(positions, currentTurn, false);
+    addSide(currentTurn - 1, true);
+    addSide(currentTurn, false);
   }
+
   return positions;
 }
 
-function addBinderPagePositions(positions, pageIndex, backSide) {
-  if (pageIndex < 0 || pageIndex >= binderPageCount) return;
-  const start = pageIndex * BINDER_PAGE_SLOTS + (backSide ? BINDER_SIDE_SLOTS : 0);
-  for (let slot = 0; slot < BINDER_SIDE_SLOTS; slot += 1) {
-    const position = start + slot;
-    if (position < binderVisibleIndexes.length) positions.add(position);
+function queueBinderTextureLoadsForPositions(positions, token, { priority = 0 } = {}) {
+  for (const position of positions) {
+    loadBinderTextureForPosition(position, token, { renderOnApply: false, priority });
   }
+}
+
+function waitForBinderPositionsLoaded(positions, { loadingToken = null, preparationToken = null } = {}) {
+  if (!positions.size || areBinderPositionsLoaded(positions)) return Promise.resolve(true);
+
+  return new Promise((resolve) => {
+    const check = () => {
+      if (
+        (Number.isInteger(loadingToken) && loadingToken !== binderShuffleLoadingToken)
+        || (Number.isInteger(preparationToken) && preparationToken !== binderSpreadPreparationToken)
+        || !galleryOpen
+        || !isBinderMode
+        || !binderVisibleIndexes.length
+      ) {
+        resolve(false);
+        return;
+      }
+
+      queueBinderTextureLoadsForPositions(positions, binderBuildToken, { priority: -4 });
+      if (areBinderPositionsLoaded(positions)) {
+        resolve(true);
+        return;
+      }
+
+      requestAnimationFrame(check);
+    };
+
+    requestAnimationFrame(check);
+  });
+}
+
+function areBinderPositionsLoaded(positions) {
+  for (const position of positions) {
+    const cardIndex = binderVisibleIndexes[position];
+    if (!Number.isInteger(cardIndex)) continue;
+
+    const mesh = binderCardMeshByPosition.get(position);
+    if (!mesh?.userData.textureLoaded) return false;
+  }
+  return true;
 }
 
 function getBinderPageWindowCenterForTurn(turn) {
@@ -2548,16 +3371,150 @@ function moveBinderToSpread(turn, { startTurn = null } = {}) {
   updateBinderAnimation();
 }
 
+function canEditBinderPageStatus() {
+  return Boolean(getBinderPageStatusEditMode());
+}
+
+function getBinderPageStatusEditMode() {
+  const canEditBase = galleryOpen
+    && isBinderMode
+    && !traitSearchOpen
+    && !els.binderPageStatus.hidden
+    && binderPageCount >= 1;
+  if (!canEditBase) return null;
+
+  if (isBinderFocused()) return binderVisibleIndexes.length > 0 ? "focus-card" : null;
+  if (!isBinderSinglePageView()) return "page";
+  return null;
+}
+
+function startBinderPageStatusEdit(event) {
+  event?.preventDefault();
+  event?.stopPropagation();
+  const editMode = getBinderPageStatusEditMode();
+  if (!editMode) return;
+
+  if (binderPageStatusInput) {
+    binderPageStatusInput.focus();
+    binderPageStatusInput.select();
+    return;
+  }
+
+  const input = document.createElement("input");
+  input.className = editMode === "focus-card"
+    ? "binder-page-jump-input is-card-jump"
+    : "binder-page-jump-input";
+  input.type = "text";
+  input.inputMode = editMode === "focus-card" ? "text" : "numeric";
+  input.autocomplete = "off";
+  input.spellcheck = false;
+  input.value = editMode === "focus-card"
+    ? String(binderFocusPosition + 1)
+    : String(getCurrentBinderPageStatusNumber());
+  input.setAttribute("aria-label", editMode === "focus-card" ? "Go to binder card" : "Go to binder page");
+  input.addEventListener("keydown", onBinderPageStatusInputKeydown);
+  input.addEventListener("blur", () => closeBinderPageStatusEdit());
+  input.addEventListener("pointerdown", (inputEvent) => inputEvent.stopPropagation());
+  input.addEventListener("dblclick", (inputEvent) => inputEvent.stopPropagation());
+
+  binderPageStatusInput = input;
+  binderPageStatusEditMode = editMode;
+  els.binderPageStatus.classList.remove("is-page-jump-enabled");
+  els.binderPageStatus.classList.add("is-editing");
+  els.binderPageStatus.classList.toggle("is-card-editing", editMode === "focus-card");
+  els.binderPageStatus.replaceChildren(input);
+  requestAnimationFrame(() => {
+    if (binderPageStatusInput !== input) return;
+    input.focus();
+    input.select();
+  });
+}
+
+function onBinderPageStatusInputKeydown(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    submitBinderPageStatusEdit();
+  } else if (event.key === "Escape") {
+    event.preventDefault();
+    closeBinderPageStatusEdit();
+  }
+}
+
+function submitBinderPageStatusEdit() {
+  const input = binderPageStatusInput;
+  if (!input) return;
+
+  const editMode = binderPageStatusEditMode;
+  if (editMode === "focus-card") {
+    const targetPosition = parseCardNumberJumpValue(input.value, binderVisibleIndexes.length);
+    if (!Number.isInteger(targetPosition)) {
+      input.focus();
+      input.select();
+      return;
+    }
+
+    closeBinderPageStatusEdit({ update: false });
+    jumpFocusedBinderCard(targetPosition).catch(console.error);
+    return;
+  }
+
+  const rawValue = input.value.trim();
+  if (!/^\d+$/.test(rawValue)) {
+    input.focus();
+    input.select();
+    return;
+  }
+
+  const totalSides = getBinderTotalPageSides();
+  const pageNumber = clamp(Number.parseInt(rawValue, 10), 1, totalSides);
+  const targetSide = pageNumber - 1;
+  const nextTurn = getBinderTurnForSinglePageSide(targetSide);
+  const currentTurn = clamp(Math.round(binderTargetTurn), 0, binderPageCount);
+  closeBinderPageStatusEdit({ update: false });
+  binderSinglePageSide = targetSide;
+  binderSinglePageSideTouched = true;
+
+  if (nextTurn === currentTurn) {
+    updateBinderPageControls();
+    return;
+  }
+
+  const moved = prepareAndMoveBinderToSpread(nextTurn, currentTurn);
+  if (!moved) updateBinderPageControls();
+}
+
+function closeBinderPageStatusEdit({ update = true } = {}) {
+  if (!binderPageStatusInput) return;
+  binderPageStatusInput = null;
+  binderPageStatusEditMode = null;
+  els.binderPageStatus.classList.remove("is-editing");
+  els.binderPageStatus.classList.remove("is-card-editing");
+  els.binderPageStatus.replaceChildren();
+  if (update) updateBinderPageControls();
+}
+
+function getCurrentBinderPageStatusNumber() {
+  const currentTurn = clamp(Math.round(binderTargetTurn), 0, binderPageCount);
+  const totalSides = getBinderTotalPageSides();
+  if (currentTurn <= 0 || totalSides <= 1) return 1;
+  if (currentTurn >= binderPageCount) return totalSides;
+  return currentTurn * 2;
+}
+
 function updateBinderPageControls() {
   const controlsHidden = traitSearchOpen || !galleryOpen || !isBinderMode || els.binderPanel.hidden || binderPageCount < 1;
   els.binderPageControls.hidden = controlsHidden;
   els.binderPageStatus.hidden = controlsHidden;
   if (controlsHidden) {
+    els.binderPageStatus.classList.remove("is-page-jump-enabled");
+    closeBinderPageStatusEdit({ update: false });
     queueSessionViewStateSave();
     return;
   }
 
   const focused = isBinderFocused();
+  if (binderPageStatusInput && !canEditBinderPageStatus()) closeBinderPageStatusEdit({ update: false });
+  els.binderPageStatus.classList.toggle("is-page-jump-enabled", !binderPageStatusInput && canEditBinderPageStatus());
   els.binderPageControls.classList.toggle("is-focused", focused);
   els.binderZoomOutButton.hidden = !focused;
   els.binderOpenCardButton.hidden = !focused;
@@ -2579,7 +3536,7 @@ function updateBinderPageControls() {
 
   if (isBinderSinglePageView()) {
     const currentSide = getBinderSinglePageSide();
-    els.binderPreviousPageButton.disabled = currentSide <= 0;
+    els.binderPreviousPageButton.disabled = currentSide <= BINDER_SINGLE_PAGE_COVER_SIDE;
     els.binderNextPageButton.disabled = currentSide >= getBinderTotalPageSides() - 1;
     els.binderPreviousPageButton.setAttribute("title", "Previous binder page side");
     els.binderPreviousPageButton.setAttribute("aria-label", "Previous binder page side");
@@ -2600,25 +3557,31 @@ function updateBinderPageControls() {
 }
 
 function updateBinderPageStatus(focused = isBinderFocused()) {
+  if (binderPageStatusInput) return;
+
   if (focused) {
-    els.binderPageStatus.textContent = `${binderFocusPosition + 1} / ${binderVisibleIndexes.length}`;
+    els.binderPageStatus.textContent = withWalletStatusLabel(`${binderFocusPosition + 1} / ${binderVisibleIndexes.length}`);
     return;
   }
 
   const currentTurn = clamp(Math.round(binderTargetTurn), 0, binderPageCount);
   const totalPageSides = Math.max(1, binderPageCount * 2);
   if (isBinderSinglePageView()) {
-    els.binderPageStatus.textContent = `${getBinderSinglePageSide() + 1} / ${totalPageSides}`;
+    const singlePageSide = getBinderSinglePageSide();
+    const singlePageNumber = singlePageSide === BINDER_SINGLE_PAGE_COVER_SIDE
+      ? 0
+      : singlePageSide + 1;
+    els.binderPageStatus.textContent = withWalletStatusLabel(`${singlePageNumber} / ${totalPageSides}`);
     return;
   }
 
   if (currentTurn <= 0 || totalPageSides <= 1) {
-    els.binderPageStatus.textContent = `1 / ${totalPageSides}`;
+    els.binderPageStatus.textContent = withWalletStatusLabel(`1 / ${totalPageSides}`);
   } else if (currentTurn >= binderPageCount) {
-    els.binderPageStatus.textContent = `${totalPageSides} / ${totalPageSides}`;
+    els.binderPageStatus.textContent = withWalletStatusLabel(`${totalPageSides} / ${totalPageSides}`);
   } else {
     const leftPageSide = currentTurn * 2;
-    els.binderPageStatus.textContent = `${leftPageSide}-${leftPageSide + 1} / ${totalPageSides}`;
+    els.binderPageStatus.textContent = withWalletStatusLabel(`${leftPageSide}-${leftPageSide + 1} / ${totalPageSides}`);
   }
 }
 
@@ -2638,6 +3601,40 @@ function getBinderTurnForPosition(position) {
   const pageIndex = Math.floor(position / BINDER_PAGE_SLOTS);
   const sideSlot = position % BINDER_PAGE_SLOTS;
   return clamp(pageIndex + (sideSlot >= BINDER_SIDE_SLOTS ? 1 : 0), 0, binderPageCount);
+}
+
+function getBinderSinglePageSideForPosition(position) {
+  if (!Number.isInteger(position) || position < 0) return null;
+
+  const pageIndex = Math.floor(position / BINDER_PAGE_SLOTS);
+  const sideSlot = position % BINDER_PAGE_SLOTS;
+  return clamp(
+    pageIndex * 2 + (sideSlot >= BINDER_SIDE_SLOTS ? 1 : 0),
+    0,
+    getBinderTotalPageSides() - 1,
+  );
+}
+
+function showBinderSinglePageSide(side, { immediate = false } = {}) {
+  if (!Number.isInteger(side)) return false;
+
+  const nextSide = clamp(side, BINDER_SINGLE_PAGE_COVER_SIDE, getBinderTotalPageSides() - 1);
+  const nextTurn = getBinderTurnForSinglePageSide(nextSide);
+  const changed = nextSide !== binderSinglePageSide || nextTurn !== clamp(Math.round(binderTargetTurn), 0, binderPageCount);
+  binderSinglePageSide = nextSide;
+  binderSinglePageSideTouched = true;
+  if (nextTurn !== binderTargetTurn) binderBendDirection = Math.sign(nextTurn - binderTargetTurn) || binderBendDirection;
+  binderTargetTurn = nextTurn;
+  if (immediate) binderTurn = nextTurn;
+
+  if (changed || immediate) {
+    markBinderInteractionActive();
+    updateBinderPageControls();
+    startBinderRenderLoop();
+    updateBinderAnimation();
+  }
+
+  return true;
 }
 
 function isBinderSinglePageView(width = binderLastWidth, height = binderLastHeight) {
@@ -2660,8 +3657,15 @@ function getBinderTotalPageSides() {
 function getBinderSinglePageSide() {
   const totalSides = getBinderTotalPageSides();
   if (Number.isInteger(binderSinglePageSide)) {
-    binderSinglePageSide = clamp(binderSinglePageSide, 0, totalSides - 1);
-    if (getBinderTurnForSinglePageSide(binderSinglePageSide) === clamp(Math.round(binderTargetTurn), 0, binderPageCount)) {
+    binderSinglePageSide = clamp(binderSinglePageSide, BINDER_SINGLE_PAGE_COVER_SIDE, totalSides - 1);
+    const currentTurn = clamp(Math.round(binderTargetTurn), 0, binderPageCount);
+    const isUntouchedFirstInsidePage = currentTurn <= 0
+      && binderSinglePageSide === 0
+      && !binderSinglePageSideTouched;
+    if (
+      !isUntouchedFirstInsidePage
+      && getBinderTurnForSinglePageSide(binderSinglePageSide) === currentTurn
+    ) {
       return binderSinglePageSide;
     }
   }
@@ -2673,7 +3677,10 @@ function getBinderSinglePageSide() {
 function deriveBinderSinglePageSideFromTurn(turn = binderTargetTurn) {
   const totalSides = getBinderTotalPageSides();
   const currentTurn = clamp(Math.round(turn), 0, binderPageCount);
-  if (currentTurn <= 0) return 0;
+  if (currentTurn <= 0) {
+    if (binderSinglePageSide === BINDER_SINGLE_PAGE_COVER_SIDE) return BINDER_SINGLE_PAGE_COVER_SIDE;
+    return binderSinglePageSideTouched ? 0 : BINDER_SINGLE_PAGE_COVER_SIDE;
+  }
   if (currentTurn >= binderPageCount) return totalSides - 1;
 
   const leftSide = currentTurn * 2 - 1;
@@ -2685,13 +3692,15 @@ function deriveBinderSinglePageSideFromTurn(turn = binderTargetTurn) {
 }
 
 function getBinderTurnForSinglePageSide(side) {
-  const clampedSide = clamp(Math.round(side), 0, getBinderTotalPageSides() - 1);
+  const clampedSide = clamp(Math.round(side), BINDER_SINGLE_PAGE_COVER_SIDE, getBinderTotalPageSides() - 1);
+  if (clampedSide === BINDER_SINGLE_PAGE_COVER_SIDE) return 0;
   return clampedSide % 2 === 0
     ? clamp(clampedSide / 2, 0, binderPageCount)
     : clamp((clampedSide + 1) / 2, 0, binderPageCount);
 }
 
 function getBinderSinglePageCenterX(side = getBinderSinglePageSide()) {
+  if (side === BINDER_SINGLE_PAGE_COVER_SIDE) return -BINDER_PAGE_WIDTH / 2;
   return side % 2 === 0 ? BINDER_PAGE_WIDTH / 2 : -BINDER_PAGE_WIDTH / 2;
 }
 
@@ -2702,6 +3711,8 @@ function focusBinderPosition(position, { immediate = false } = {}) {
   const nextTurn = getBinderTurnForPosition(position);
   if (nextTurn !== binderTargetTurn) binderBendDirection = Math.sign(nextTurn - binderTargetTurn);
   binderFocusPosition = position;
+  binderSinglePageSide = getBinderSinglePageSideForPosition(position);
+  binderSinglePageSideTouched = true;
   binderTargetTurn = nextTurn;
   binderTextureQueueKey = "";
   if (immediate) binderTurn = binderTargetTurn;
@@ -2714,11 +3725,18 @@ function focusBinderPosition(position, { immediate = false } = {}) {
 
 function clearBinderFocus(options = {}) {
   markBinderInteractionActive();
+  const focusedSide = getBinderSinglePageSideForPosition(binderFocusPosition);
   binderFocusPosition = -1;
   binderLastOpenTap = null;
   els.body.classList.remove("binder-focused");
   els.binderPanel.classList.remove("is-focused");
-  binderTargetTurn = clamp(Math.round(binderTargetTurn), 0, binderPageCount);
+  if (Number.isInteger(focusedSide)) {
+    binderSinglePageSide = focusedSide;
+    binderSinglePageSideTouched = true;
+    binderTargetTurn = getBinderTurnForSinglePageSide(focusedSide);
+  } else {
+    binderTargetTurn = clamp(Math.round(binderTargetTurn), 0, binderPageCount);
+  }
   if (options.silent) return;
   updateBinderPageControls();
   startBinderRenderLoop();
@@ -2755,6 +3773,46 @@ function moveBinderFocus(direction) {
   focusBinderPosition(nextPosition);
 }
 
+async function jumpFocusedBinderCard(position) {
+  if (!galleryOpen || !isBinderMode || !isBinderFocused() || !Number.isInteger(position)) return false;
+
+  const nextPosition = clamp(position, 0, Math.max(0, binderVisibleIndexes.length - 1));
+  if (nextPosition === binderFocusPosition) {
+    updateBinderPageControls();
+    return false;
+  }
+
+  const currentTurn = clamp(Math.round(binderTargetTurn), 0, binderPageCount);
+  const nextTurn = getBinderTurnForPosition(nextPosition);
+  if (nextTurn === currentTurn) {
+    focusBinderPosition(nextPosition);
+    return true;
+  }
+
+  const loadingToken = beginBinderShuffleLoading();
+  try {
+    leaveBinderFocusForCardJump();
+    const moved = prepareAndMoveBinderToSpread(nextTurn, currentTurn);
+    if (moved) await waitForBinderShuffleFlipDone(loadingToken, nextTurn);
+    focusBinderPosition(nextPosition);
+    return true;
+  } finally {
+    endBinderShuffleLoading(loadingToken);
+  }
+}
+
+function leaveBinderFocusForCardJump() {
+  markBinderInteractionActive();
+  binderFocusPosition = -1;
+  binderLastOpenTap = null;
+  binderSinglePageSide = null;
+  els.body.classList.remove("binder-focused");
+  els.binderPanel.classList.remove("is-focused");
+  updateBinderPageControls();
+  startBinderRenderLoop();
+  updateBinderAnimation();
+}
+
 async function openFocusedBinderCard() {
   if (binderCardViewTransitionActive || !isBinderFocused()) return;
   resetViewSwitchWheelDistances();
@@ -2764,6 +3822,7 @@ async function openFocusedBinderCard() {
 
   const focusedMesh = getBinderFocusedMesh();
   if (!focusedMesh) {
+    resetIndividualCardZoom();
     setCard(cardIndex);
     binderFocusPosition = -1;
     setGalleryOpen(false);
@@ -2825,10 +3884,8 @@ async function openFocusedBinderGalleryForCard(cardIndex) {
   if (!Number.isInteger(cardIndex)) return false;
 
   traitSearchOpen = false;
-  isBinderMode = true;
+  setGalleryViewMode(true, { render: false });
   galleryOpen = true;
-  els.binderToggle.checked = true;
-  localStorage.setItem("cardnft:binderMode:v1", "binder");
   els.body.classList.add("is-gallery");
   els.galleryToggleButton.setAttribute("aria-pressed", "true");
   els.galleryPanel.hidden = false;
@@ -2863,6 +3920,7 @@ async function transitionFocusedBinderCardToIndividual(cardIndex, focusedMesh) {
     await getBinderTexture(CARDS[cardIndex]).then((texture) => {
       prepareTextureForImmediateDisplay(texture);
       focusedMesh.material.map = texture;
+      focusedMesh.material.opacity = getBinderPageOpacityForPosition(focusedMesh.userData.binderPosition);
       focusedMesh.material.needsUpdate = true;
       focusedMesh.userData.textureLoaded = true;
       focusedMesh.userData.textureLoading = false;
@@ -2884,6 +3942,7 @@ async function transitionFocusedBinderCardToIndividual(cardIndex, focusedMesh) {
   transitionCard.getBoundingClientRect();
 
   try {
+    resetIndividualCardZoom();
     setCard(cardIndex);
     currentRotationX = 0;
     currentRotationY = 0;
@@ -3125,6 +4184,9 @@ function onCardWheel(event) {
 function onBinderPointerDown(event) {
   if (!galleryOpen || !isBinderMode || binderPageCount < 1) return;
 
+  clearBinderIntroLinkCursor();
+  binderSpreadPreparationToken += 1;
+  binderPreparingSpread = false;
   markBinderInteractionActive();
   initBinderScene();
   startBinderRenderLoop();
@@ -3142,8 +4204,13 @@ function onBinderPointerDown(event) {
 }
 
 function onBinderPointerMove(event) {
-  if (!binderDrag || binderDrag.pointerId !== event.pointerId) return;
+  if (!binderDrag) {
+    updateBinderIntroLinkCursor(event);
+    return;
+  }
+  if (binderDrag.pointerId !== event.pointerId) return;
 
+  clearBinderIntroLinkCursor();
   markBinderInteractionActive(420);
   const rect = els.binderCanvas.getBoundingClientRect();
   const deltaX = event.clientX - binderDrag.startX;
@@ -3154,7 +4221,10 @@ function onBinderPointerMove(event) {
   if (!isBinderFocused()) {
     const pageDelta = -(deltaX / Math.max(rect.width, 1)) / 0.26;
     binderTargetTurn = clamp(binderDrag.startTurn + pageDelta, 0, binderPageCount);
-    if (Math.abs(pageDelta) > 0.002) binderBendDirection = Math.sign(pageDelta);
+    if (Math.abs(pageDelta) > 0.002) {
+      binderSinglePageSideTouched = true;
+      binderBendDirection = Math.sign(pageDelta);
+    }
     binderTurn = binderTargetTurn;
     updateBinderPageTransforms();
     updateBinderPageControls();
@@ -3174,8 +4244,10 @@ function onBinderPointerUp(event) {
   }
 
   if (wasClick) {
+    if (handleBinderIntroLinkTap(event)) return;
     if (handleFocusedBinderCardTap(event)) return;
-    selectBinderCard(event);
+    if (selectBinderCard(event)) return;
+    handleFocusedBinderBackgroundTap(event);
   } else if (!isBinderFocused()) {
     binderTargetTurn = Math.round(binderTargetTurn);
     if (isBinderSinglePageView()) binderSinglePageSide = deriveBinderSinglePageSideFromTurn(binderTargetTurn);
@@ -3208,7 +4280,7 @@ function handleBinderWheel(event) {
   if (isBinderFocused()) {
     if (wheelDelta < 0) {
       if (addBinderFocusWheelInDistance(-wheelDelta, now)) {
-        binderWheelFocusLockUntil = now + BINDER_CARD_VIEW_TRANSITION_MS + 240;
+        binderWheelFocusLockUntil = now + BINDER_CARD_VIEW_TRANSITION_MS + BINDER_TO_CARD_SCROLL_LOCK_BUFFER_MS;
         resetViewSwitchWheelDistances();
         openFocusedBinderCard().catch(console.error);
       }
@@ -3237,9 +4309,54 @@ function selectBinderCard(event) {
   const hit = getBinderCardHit(event);
   if (!hit) return false;
   const position = hit.object.userData.binderPosition;
+  if (showOtherVisibleBinderSinglePageSide(position)) return true;
   focusBinderPosition(position);
   rememberBinderOpenTap(event, position);
   return true;
+}
+
+function handleBinderIntroLinkTap(event) {
+  const hit = getBinderIntroLinkHit(event);
+  if (!hit) return false;
+
+  window.open(hit.object.userData.binderIntroLinkUrl || BINDER_INTRO_LINK_URL, "_blank", "noopener,noreferrer");
+  return true;
+}
+
+function updateBinderIntroLinkCursor(event) {
+  if (event.pointerType && event.pointerType !== "mouse") {
+    clearBinderIntroLinkCursor();
+    return;
+  }
+  els.binderCanvas.style.cursor = getBinderIntroLinkHit(event) ? "pointer" : "";
+}
+
+function clearBinderIntroLinkCursor() {
+  if (els.binderCanvas) els.binderCanvas.style.cursor = "";
+}
+
+function getBinderIntroLinkHit(event) {
+  if (!binderCamera || !binderIntroLinkMeshes.length) return null;
+  if (Math.abs(binderTurn) > 0.08 || Math.abs(binderTargetTurn) > 0.08) return null;
+
+  const meshes = binderIntroLinkMeshes.filter((mesh) => (
+    mesh.userData.binderIntroLinkUrl
+    && isVisibleThroughParents(mesh)
+  ));
+  if (!meshes.length) return null;
+
+  setBinderRaycasterFromEvent(event);
+  return binderRaycaster.intersectObjects(meshes, false)[0] || null;
+}
+
+function showOtherVisibleBinderSinglePageSide(position) {
+  if (!isBinderSinglePageView()) return false;
+
+  const side = getBinderSinglePageSideForPosition(position);
+  if (!Number.isInteger(side) || side === getBinderSinglePageSide()) return false;
+
+  binderLastOpenTap = null;
+  return showBinderSinglePageSide(side);
 }
 
 function handleFocusedBinderCardTap(event) {
@@ -3270,6 +4387,15 @@ function handleFocusedBinderCardTap(event) {
   return false;
 }
 
+function handleFocusedBinderBackgroundTap(event) {
+  if (!isBinderFocused() || binderCardViewTransitionActive) return false;
+  if (getBinderObjectHit(event)) return false;
+
+  binderLastOpenTap = null;
+  clearBinderFocus();
+  return true;
+}
+
 function rememberBinderOpenTap(event, position, time = performance.now()) {
   binderLastOpenTap = {
     position,
@@ -3293,17 +4419,38 @@ function openFocusedBinderCardFromPointer(event) {
 function getBinderCardHit(event) {
   if (!binderCamera || !binderCardMeshes.length) return null;
 
+  const cardMeshes = getBinderCardRaycastMeshes();
+  if (!cardMeshes.length) return null;
+  setBinderRaycasterFromEvent(event);
+  return binderRaycaster.intersectObjects(cardMeshes, false)[0] || null;
+}
+
+function getBinderCardRaycastMeshes() {
+  return binderCardMeshes.filter((mesh) => (
+    Number.isInteger(mesh.userData.cardIndex)
+    && isVisibleThroughParents(mesh)
+    && isBinderCardOnCurrentPages(mesh)
+  ));
+}
+
+function getBinderObjectHit(event) {
+  if (!binderCamera || !binderRoot) return null;
+
+  const meshes = [];
+  binderRoot.traverse((child) => {
+    if (child.isMesh && isVisibleThroughParents(child)) meshes.push(child);
+  });
+  if (!meshes.length) return null;
+
+  setBinderRaycasterFromEvent(event);
+  return binderRaycaster.intersectObjects(meshes, false)[0] || null;
+}
+
+function setBinderRaycasterFromEvent(event) {
   const rect = els.binderCanvas.getBoundingClientRect();
   binderPointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
   binderPointer.y = -(((event.clientY - rect.top) / rect.height) * 2 - 1);
   binderRaycaster.setFromCamera(binderPointer, binderCamera);
-  return binderRaycaster
-    .intersectObjects(binderCardMeshes, false)
-    .find((intersection) => (
-      Number.isInteger(intersection.object.userData.cardIndex)
-      && isVisibleThroughParents(intersection.object)
-      && isBinderCardOnCurrentPages(intersection.object)
-    )) || null;
 }
 
 function isVisibleThroughParents(object) {
@@ -3408,6 +4555,23 @@ function resetCardPan(immediate = false) {
   }
 }
 
+function resetIndividualCardZoom() {
+  targetCameraZ = CARD_CAMERA_DEFAULT_Z;
+  currentCameraZ = CARD_CAMERA_DEFAULT_Z;
+  smoothZoomVelocity = 0;
+  resetCardPan(true);
+  if (cardCamera) {
+    cardCamera.position.z = CARD_CAMERA_DEFAULT_Z;
+    cardCamera.updateMatrixWorld(true);
+  }
+  if (cardGroup) {
+    cardGroup.scale.setScalar(getResponsiveIndividualCardScale());
+    cardGroup.position.x = getTraitCardOffsetX();
+    cardGroup.position.y = INDIVIDUAL_CARD_WORLD_Y;
+    cardGroup.updateMatrixWorld(true);
+  }
+}
+
 function clampCardPan(x, y) {
   const view = getCardVisibleWorldSize();
   const cardScale = getResponsiveIndividualCardScale();
@@ -3426,7 +4590,27 @@ function getResponsiveIndividualCardScale() {
     0,
     1,
   );
-  return CARD_MOBILE_SCALE_MIN + (1 - CARD_MOBILE_SCALE_MIN) * progress;
+  const responsiveScale = CARD_MOBILE_SCALE_MIN + (1 - CARD_MOBILE_SCALE_MIN) * progress;
+  return Math.min(responsiveScale, getDefaultCardHorizontalFitScale());
+}
+
+function getDefaultCardHorizontalFitScale() {
+  const rect = els.cardCanvas?.getBoundingClientRect();
+  const viewportWidth = rect?.width
+    || window.innerWidth
+    || document.documentElement.clientWidth
+    || CARD_MOBILE_SCALE_FULL_WIDTH;
+  const viewportHeight = rect?.height
+    || window.innerHeight
+    || document.documentElement.clientHeight
+    || viewportWidth;
+  const aspect = Math.max(0.1, viewportWidth / Math.max(1, viewportHeight));
+  const fov = THREE.MathUtils.degToRad(cardCamera?.fov || 34);
+  const visibleHeight = 2 * Math.tan(fov / 2) * CARD_CAMERA_DEFAULT_Z;
+  const visibleWidth = visibleHeight * aspect;
+  const marginWidthRatio = clamp((CARD_DEFAULT_HORIZONTAL_MARGIN_PX * 2) / Math.max(1, viewportWidth), 0, 0.35);
+  const availableWidth = visibleWidth * (1 - marginWidthRatio);
+  return Math.max(0.03, availableWidth / CARD_WIDTH);
 }
 
 function getCardWorldUnitsPerPixel() {
@@ -3540,12 +4724,13 @@ function requestBinderMaintenance(delay = 90) {
   binderMaintenanceTimer = window.setTimeout(() => {
     binderMaintenanceTimer = 0;
     if (!galleryOpen || !isBinderMode || els.binderPanel.hidden) return;
-    if (isBinderTurnMoving()) {
+    if (isBinderTurnMoving() || binderPreparingSpread) {
       requestBinderMaintenance(delay);
       return;
     }
 
     ensureBinderPageWindow();
+    loadBinderBackTexture(binderBuildToken);
     queueBinderTextureLoads(binderBuildToken, { force: true, includePreload: true });
     pumpBinderTextureQueue();
     requestBinderRenderOnce();
@@ -3570,13 +4755,15 @@ function updateBinderAnimation() {
   }
 
   const interactionActive = now < binderInteractionActiveUntil;
-  if (turnActive || interactionActive || !wasIdleOnly) {
+  const introNoteFadeActive = updateBinderIntroNoteModeOpacity(now);
+  if (turnActive || interactionActive || !wasIdleOnly || introNoteFadeActive) {
     updateBinderPageTransforms();
   }
   updateBinderCameraFrame(false);
   const cameraMoving = isBinderCameraMoving();
   const animatedRecords = getBinderVisibleAnimatedTextureRecords();
-  if (!turnActive && !cameraMoving && animatedRecords.size && !interactionActive) {
+  const fadeActive = updateBinderCardLoadFades(now) || introNoteFadeActive;
+  if (!turnActive && !cameraMoving && animatedRecords.size && !interactionActive && !fadeActive) {
     const animatedUpdated = updateAnimatedTextureRecords(animatedRecords);
     if (animatedUpdated) binderRenderer.render(binderScene, binderCamera);
     binderLastAnimationIdleOnly = true;
@@ -3588,11 +4775,11 @@ function updateBinderAnimation() {
   }
   const cameraActive = isBinderCameraMoving();
   const animatedUpdated = updateAnimatedTextureRecords(animatedRecords);
-  if (turnActive || cameraActive || animatedUpdated || interactionActive) {
+  if (turnActive || cameraActive || animatedUpdated || interactionActive || fadeActive) {
     binderRenderer.render(binderScene, binderCamera);
   }
-  const keepAnimating = turnActive || cameraActive || interactionActive || animatedRecords.size > 0;
-  binderLastAnimationIdleOnly = !turnActive && !cameraActive && !interactionActive && animatedRecords.size > 0;
+  const keepAnimating = turnActive || cameraActive || interactionActive || animatedRecords.size > 0 || fadeActive;
+  binderLastAnimationIdleOnly = !turnActive && !cameraActive && !interactionActive && !fadeActive && animatedRecords.size > 0;
   if (!keepAnimating) requestBinderMaintenance();
   return keepAnimating;
 }
@@ -3605,6 +4792,7 @@ function isBinderCameraMoving() {
 
 function updateBinderPageTransforms() {
   const turn = clamp(binderTurn, 0, binderPageCount);
+  updateBinderIntroNoteOpacity(turn);
   const lowerTurn = Math.floor(turn);
   const turnFraction = turn - lowerTurn;
   const isTurning = turnFraction > 0.001 && lowerTurn < binderPageCount;
@@ -3641,6 +4829,7 @@ function updateBinderPageTransforms() {
         restLayout.rightStackDepth,
         restLayout.isGapRevealPage,
       ),
+      { activePage: isActivePage },
     );
     const turnActivity = Math.sin(rawTurn * Math.PI);
     const sheetVisibility = isActivePage
@@ -3822,33 +5011,131 @@ function setBinderSheetOpacity(page, turnActivity, visibilityFactor = 1) {
   }
 }
 
-function setBinderPageOpacity(page, visibilityFactor = 1) {
+function setBinderPageOpacity(page, visibilityFactor = 1, now = performance.now()) {
   const opacity = clamp(visibilityFactor, 0, 1);
-  if (Math.abs((page.cardOpacity ?? 1) - opacity) <= 0.0005) return;
+  const previousOpacity = page.cardOpacity ?? 1;
+  const pageOpacityChanged = Math.abs(previousOpacity - opacity) > 0.0005;
   page.cardOpacity = opacity;
   for (const mesh of page.cardMeshes || []) {
     const material = mesh.material;
     if (!material) continue;
-    material.opacity = opacity;
+    const cardOpacity = getBinderCardRenderedOpacity(mesh, opacity, now);
+    if (pageOpacityChanged || Math.abs((material.opacity ?? 1) - cardOpacity) > 0.0005) {
+      material.opacity = cardOpacity;
+    }
   }
 }
 
-function getBinderPageRenderOrder(isActivePage, isLeftStack, leftStackDepth, rightStackDepth, isGapRevealPage = false) {
-  if (isActivePage) return 620;
-  if (isGapRevealPage) return 600;
-  if (isLeftStack) return leftStackDepth === 0 ? 620 : 420 - leftStackDepth * 28;
-  return rightStackDepth === 0 ? 620 : 300 - rightStackDepth * 28;
+function getBinderCardRenderedOpacity(mesh, pageOpacity, now = performance.now()) {
+  if (!mesh.userData.binderCard) return pageOpacity;
+  if (!mesh.userData.textureLoaded) return 0;
+  if (mesh.userData.textureFadeComplete) return pageOpacity;
+
+  const startedAt = mesh.userData.textureFadeStartedAt;
+  if (!Number.isFinite(startedAt)) {
+    mesh.userData.textureFadeComplete = true;
+    return pageOpacity;
+  }
+
+  const progress = clamp((now - startedAt) / BINDER_CARD_LOAD_FADE_MS, 0, 1);
+  if (progress >= 1) {
+    mesh.userData.textureFadeComplete = true;
+    return pageOpacity;
+  }
+
+  return pageOpacity * easeInOutCubic(progress);
 }
 
-function setBinderPageRenderOrder(page, baseOrder) {
-  if (page.renderOrderBase === baseOrder) return;
+function updateBinderCardLoadFades(now = performance.now()) {
+  let fadeActive = false;
+  for (const mesh of binderCardMeshes) {
+    if (!mesh.visible || !mesh.userData.textureLoaded || mesh.userData.textureFadeComplete) continue;
+    const material = mesh.material;
+    if (!material) continue;
+    const targetOpacity = getBinderPageOpacityForPosition(mesh.userData.binderPosition);
+    const opacity = getBinderCardRenderedOpacity(mesh, targetOpacity, now);
+    if (Math.abs((material.opacity ?? 1) - opacity) > 0.0005) {
+      material.opacity = opacity;
+    }
+    if (!mesh.userData.textureFadeComplete) fadeActive = true;
+  }
+  return fadeActive;
+}
+
+function updateBinderIntroNoteOpacity(turn) {
+  if (!binderIntroNoteGroup || !binderIntroNoteMesh?.material) return;
+
+  const pageOpacity = 1 - easeInOut(clamp(turn, 0, 1));
+  const opacity = pageOpacity * binderIntroNoteModeOpacity;
+  binderIntroNoteGroup.visible = opacity > 0.001;
+  binderIntroNoteMesh.material.opacity = opacity;
+  binderIntroNoteMesh.material.transparent = true;
+  binderIntroNoteMesh.material.needsUpdate = true;
+  for (const mesh of binderIntroLinkMeshes) {
+    mesh.visible = opacity > 0.08;
+  }
+  if (opacity <= 0.08) clearBinderIntroLinkCursor();
+}
+
+function updateBinderIntroNoteModeOpacity(now = performance.now()) {
+  syncBinderIntroNoteModeTarget(now);
+  const delta = binderIntroNoteModeTargetOpacity - binderIntroNoteModeOpacity;
+  if (Math.abs(delta) <= 0.001) {
+    binderIntroNoteModeOpacity = binderIntroNoteModeTargetOpacity;
+    binderIntroNoteFadeLastAt = now;
+    return false;
+  }
+
+  const elapsed = binderIntroNoteFadeLastAt ? Math.max(0, now - binderIntroNoteFadeLastAt) : 16.7;
+  binderIntroNoteFadeLastAt = now;
+  const step = Math.max(0, elapsed / BINDER_INTRO_NOTE_FILTER_FADE_MS);
+  binderIntroNoteModeOpacity += Math.sign(delta) * Math.min(Math.abs(delta), step);
+  return Math.abs(binderIntroNoteModeTargetOpacity - binderIntroNoteModeOpacity) > 0.001;
+}
+
+function syncBinderIntroNoteModeTarget(now = performance.now()) {
+  const targetOpacity = hasActiveBinderIntroSuppressor() ? 0 : 1;
+  if (binderIntroNoteModeTargetOpacity === targetOpacity) return false;
+
+  binderIntroNoteModeTargetOpacity = targetOpacity;
+  binderIntroNoteFadeLastAt = now;
+  return true;
+}
+
+function getBinderPageOpacityForPosition(position) {
+  if (!Number.isInteger(position) || position < 0) return 1;
+
+  const pageIndex = Math.floor(position / BINDER_PAGE_SLOTS);
+  const page = binderPages.find((entry) => entry.pageIndex === pageIndex);
+  return page?.cardOpacity ?? 1;
+}
+
+function getBinderPageRenderOrder(isActivePage, isLeftStack, leftStackDepth, rightStackDepth, isGapRevealPage = false) {
+  if (isActivePage) return BINDER_FLIPPING_PAGE_RENDER_ORDER;
+  if (isGapRevealPage) return BINDER_GAP_REVEAL_PAGE_RENDER_ORDER;
+  if (isLeftStack) {
+    return leftStackDepth === 0
+      ? BINDER_TOP_PAGE_RENDER_ORDER
+      : BINDER_LEFT_STACK_RENDER_ORDER - leftStackDepth * BINDER_STACK_RENDER_ORDER_STEP;
+  }
+  return rightStackDepth === 0
+    ? BINDER_TOP_PAGE_RENDER_ORDER
+    : BINDER_RIGHT_STACK_RENDER_ORDER - rightStackDepth * BINDER_STACK_RENDER_ORDER_STEP;
+}
+
+function setBinderPageRenderOrder(page, baseOrder, { activePage = false } = {}) {
+  if (page.renderOrderBase === baseOrder && page.renderOrderActivePage === activePage) return;
   page.renderOrderBase = baseOrder;
+  page.renderOrderActivePage = activePage;
   page.group.traverse((child) => {
     if (!child.isMesh) return;
     if (child.userData.binderRenderOffset === undefined) {
       child.userData.binderRenderOffset = child.renderOrder || 0;
     }
-    child.renderOrder = baseOrder + child.userData.binderRenderOffset;
+    const renderBase = activePage && (child.userData.binderCard || child.userData.binderBackCard)
+      ? BINDER_FLIPPING_PAGE_CARD_RENDER_ORDER
+      : baseOrder;
+    child.renderOrder = renderBase + child.userData.binderRenderOffset;
   });
 }
 
@@ -3926,11 +5213,11 @@ function getBinderFocusDistance() {
   return Math.max(distanceForHeight, distanceForWidth) + 0.16;
 }
 
-function renderBinderSceneOnce() {
+function renderBinderSceneOnce({ includePreload = !isBinderTurnMoving() } = {}) {
   if (!binderRenderer || !binderScene || !binderCamera) return;
   updateBinderPageTransforms();
   updateBinderCameraFrame(true);
-  queueBinderTextureLoads(binderBuildToken, { includePreload: !isBinderTurnMoving() });
+  queueBinderTextureLoads(binderBuildToken, { includePreload });
   updateAnimatedTextureRecords(getBinderVisibleAnimatedTextureRecords());
   binderRenderer.render(binderScene, binderCamera);
 }
@@ -4047,6 +5334,142 @@ function createBinderCoverTexture() {
   texture.needsUpdate = true;
   binderCoverTexture = texture;
   return binderCoverTexture;
+}
+
+function createBinderIntroNoteTexture() {
+  if (binderIntroNoteTexture) {
+    return {
+      texture: binderIntroNoteTexture,
+      linkBounds: binderIntroNoteTexture.userData.linkBounds,
+    };
+  }
+
+  const width = 1024;
+  const height = 584;
+  const surface = document.createElement("canvas");
+  surface.width = width;
+  surface.height = height;
+  const ctx = surface.getContext("2d");
+  ctx.clearRect(0, 0, width, height);
+  ctx.textBaseline = "alphabetic";
+  ctx.fillStyle = "rgba(156, 153, 146, 0.74)";
+
+  const fontStack = SITE_FONT_STACK;
+  const baseFontSize = 33;
+  const linkText = "evil biscuit";
+  const firstLinePrefix = "this is a 3d binder viewer for card nft by  ";
+  const maxTextWidth = width * 0.9;
+  const textFillStyle = "rgba(156, 153, 146, 0.74)";
+  const linkFillStyle = "rgba(176, 172, 164, 0.9)";
+  const textOffsetY = -54;
+
+  const evilBiscuitLinkBounds = drawBinderIntroLinkedLine(ctx, {
+    prefix: firstLinePrefix,
+    linkText,
+    y: 144 + textOffsetY,
+    maxWidth: maxTextWidth,
+    fontSize: baseFontSize,
+    fontStack,
+    textFillStyle,
+    linkFillStyle,
+    url: BINDER_INTRO_LINK_URL,
+  });
+
+  ctx.fillStyle = textFillStyle;
+  drawCenteredBinderIntroText(
+    ctx,
+    "you can navigate with swiping, zooming, and/or the ui buttons",
+    width / 2,
+    224 + textOffsetY,
+    maxTextWidth,
+    31,
+    fontStack,
+  );
+  drawCenteredBinderIntroText(
+    ctx,
+    "please explore and enjoy :)",
+    width / 2,
+    300 + textOffsetY,
+    maxTextWidth,
+    32,
+    fontStack,
+  );
+
+  ctx.font = `400 42px ${fontStack}`;
+  ctx.fillStyle = "rgba(150, 146, 139, 0.78)";
+  ctx.textAlign = "center";
+  ctx.fillText("🩸", width / 2, 390 + textOffsetY);
+
+  const cardNft2LinkBounds = drawBinderIntroLinkedLine(ctx, {
+    prefix: "card nft 2 coming soon to ",
+    linkText: "mons.shop",
+    y: 510 + textOffsetY,
+    maxWidth: maxTextWidth,
+    fontSize: 32,
+    fontStack,
+    textFillStyle,
+    linkFillStyle,
+    url: BINDER_CARD_NFT_2_LINK_URL,
+  });
+
+  const texture = new THREE.CanvasTexture(surface);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  texture.minFilter = THREE.LinearMipmapLinearFilter;
+  texture.magFilter = THREE.LinearFilter;
+  texture.generateMipmaps = true;
+  texture.needsUpdate = true;
+  texture.userData.linkBounds = [evilBiscuitLinkBounds, cardNft2LinkBounds];
+  binderIntroNoteTexture = texture;
+  return {
+    texture,
+    linkBounds: texture.userData.linkBounds,
+  };
+}
+
+function drawBinderIntroLinkedLine(
+  ctx,
+  { prefix, linkText, y, maxWidth, fontSize, fontStack, textFillStyle, linkFillStyle, url },
+) {
+  let size = fontSize;
+  while (size > 18) {
+    ctx.font = `400 ${size}px ${fontStack}`;
+    if (ctx.measureText(prefix + linkText).width <= maxWidth) break;
+    size -= 1;
+  }
+
+  ctx.font = `400 ${size}px ${fontStack}`;
+  const prefixWidth = ctx.measureText(prefix).width;
+  const linkWidth = ctx.measureText(linkText).width;
+  const lineStartX = (ctx.canvas.width - prefixWidth - linkWidth) / 2;
+  ctx.textAlign = "left";
+  ctx.fillStyle = textFillStyle;
+  ctx.fillText(prefix, lineStartX, y);
+  ctx.fillStyle = linkFillStyle;
+  ctx.fillText(linkText, lineStartX + prefixWidth, y);
+
+  const underlineY = y + Math.max(8, size * 0.25);
+  ctx.globalAlpha = 0.55;
+  ctx.fillRect(lineStartX + prefixWidth, underlineY, linkWidth, Math.max(2, size * 0.06));
+  ctx.globalAlpha = 1;
+
+  return {
+    x: (lineStartX + prefixWidth) / ctx.canvas.width,
+    y: (y - size * 0.94) / ctx.canvas.height,
+    width: linkWidth / ctx.canvas.width,
+    height: (size * 1.25) / ctx.canvas.height,
+    url,
+  };
+}
+
+function drawCenteredBinderIntroText(ctx, text, x, y, maxWidth, fontSize, fontStack) {
+  let size = fontSize;
+  while (size > 18) {
+    ctx.font = `400 ${size}px ${fontStack}`;
+    if (ctx.measureText(text).width <= maxWidth) break;
+    size -= 1;
+  }
+  ctx.textAlign = "center";
+  ctx.fillText(text, x, y);
 }
 
 function createBinderSleeveFrostTexture() {
@@ -4731,7 +6154,16 @@ function applyRestoredSessionViewState(state) {
 }
 
 function restoreSessionGalleryView(state) {
-  if (!state?.galleryOpen) return;
+  if (!state?.galleryOpen) {
+    if (!state) {
+      isBinderMode = true;
+      resetBinderGalleryPosition();
+      binderSinglePageSide = BINDER_SINGLE_PAGE_COVER_SIDE;
+      binderSinglePageSideTouched = false;
+      setGalleryOpen(true);
+    }
+    return;
+  }
 
   setGalleryOpen(true);
   if (!isBinderMode || traitSearchOpen) {
@@ -4756,8 +6188,18 @@ function restoreSessionGalleryView(state) {
     : 0;
   binderTargetTurn = clamp(turn, 0, binderPageCount);
   binderTurn = binderTargetTurn;
-  if (Number.isInteger(state.binderSinglePageSide)) {
-    binderSinglePageSide = clamp(state.binderSinglePageSide, 0, getBinderTotalPageSides() - 1);
+  binderSinglePageSideTouched = Boolean(state.binderSinglePageSideTouched);
+  if (
+    Number.isInteger(state.binderSinglePageSide)
+    && (
+      binderSinglePageSideTouched
+      || binderTargetTurn > 0
+      || state.binderSinglePageSide === BINDER_SINGLE_PAGE_COVER_SIDE
+    )
+  ) {
+    binderSinglePageSide = clamp(state.binderSinglePageSide, BINDER_SINGLE_PAGE_COVER_SIDE, getBinderTotalPageSides() - 1);
+  } else {
+    binderSinglePageSide = null;
   }
   ensureBinderPageWindow({ force: true });
   updateBinderPageControls();
@@ -4807,6 +6249,7 @@ function getSessionViewState() {
       : null,
     binderTargetTurn: Math.round(binderTargetTurn),
     binderSinglePageSide: Number.isInteger(binderSinglePageSide) ? binderSinglePageSide : null,
+    binderSinglePageSideTouched,
     binderFocusedCardIndex: Number.isInteger(focusedCardIndex) ? focusedCardIndex : null,
   };
 }

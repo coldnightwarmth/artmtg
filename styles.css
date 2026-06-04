@@ -8,12 +8,14 @@
   --button-border: rgba(255, 255, 255, 0.2);
   --button-shadow: 0 10px 30px rgba(0, 0, 0, 0.34);
   --accent: #d7b454;
-  --gallery-sort-width: min(162px, calc(100vw - 112px));
-  --gallery-trait-search-width: 82px;
+  --gallery-clear-filter-width: 28px;
+  --gallery-sort-width: min(150px, calc(100vw - 188px));
+  --gallery-trait-search-width: 108px;
   --gallery-control-gap: 12px;
-  --gallery-favorite-space: 56px;
+  --gallery-favorite-space: 54px;
   --gallery-corner-inset: max(20px, env(safe-area-inset-right));
   --gallery-corner-bottom: max(20px, env(safe-area-inset-bottom));
+  --site-font: Optima, Candara, "Lucida Sans", "Lucida Grande", "Trebuchet MS", Arial, sans-serif;
 }
 
 *,
@@ -45,11 +47,25 @@ body {
   height: 100%;
   margin: 0;
   overflow: hidden;
+  isolation: isolate;
   background:
     radial-gradient(circle at 64% 78%, rgba(108, 84, 30, 0.32), transparent 46%),
     linear-gradient(145deg, var(--bg-a), var(--bg-b));
   color: var(--text);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--site-font);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.86' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.64'/%3E%3C/svg%3E");
+  background-size: 140px 140px;
+  mix-blend-mode: soft-light;
+  filter: contrast(135%);
+  opacity: 0.24;
 }
 
 body.is-light {
@@ -61,6 +77,11 @@ body.is-light {
   --button-bg: rgba(255, 255, 255, 0.6);
   --button-border: rgba(31, 28, 20, 0.18);
   --button-shadow: 0 8px 22px rgba(44, 35, 16, 0.14);
+}
+
+body.is-light::before {
+  mix-blend-mode: multiply;
+  opacity: 0.15;
 }
 
 button {
@@ -116,7 +137,7 @@ body.is-light #cardCanvas {
   align-items: center;
   justify-content: center;
   gap: 18px;
-  min-height: 44px;
+  min-height: 42px;
 }
 
 .button-row {
@@ -128,8 +149,7 @@ body.is-light #cardCanvas {
   margin-top: 0;
 }
 
-.card-filename,
-.card-counter {
+.card-filename {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
@@ -140,15 +160,11 @@ body.is-light #cardCanvas {
   bottom: clamp(78px, 10.2vh, 116px);
 }
 
-.card-counter {
-  bottom: clamp(58px, 7.8vh, 92px);
-}
-
 .icon-button {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   border: 1px solid var(--button-border);
-  border-radius: 10px;
+  border-radius: 9px;
   background: var(--button-bg);
   box-shadow: var(--button-shadow);
   display: inline-grid;
@@ -157,6 +173,11 @@ body.is-light #cardCanvas {
   -webkit-tap-highlight-color: transparent;
   backdrop-filter: blur(16px);
   transition: transform 160ms ease, border-color 160ms ease, background 160ms ease, opacity 160ms ease;
+}
+
+a.icon-button {
+  color: var(--text);
+  text-decoration: none;
 }
 
 .icon-button:hover {
@@ -169,8 +190,8 @@ body.is-light #cardCanvas {
 }
 
 .icon-button svg {
-  width: 21px;
-  height: 21px;
+  width: 20px;
+  height: 20px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.85;
@@ -210,6 +231,11 @@ body.is-light #cardCanvas {
 .icon-button[aria-pressed="true"] {
   color: var(--accent);
   border-color: rgba(215, 180, 84, 0.62);
+}
+
+#galleryToggleButton[aria-pressed="true"] {
+  color: var(--text);
+  border-color: var(--button-border);
 }
 
 .icon-button[aria-expanded="true"] {
@@ -252,7 +278,8 @@ body.traits-open .trait-panel {
 
 .trait-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(118px, 132px));
+  justify-content: center;
   gap: 10px;
   max-height: calc(min(62vh, 580px) - 48px);
   overflow: auto;
@@ -309,7 +336,7 @@ body.is-light .trait-tile {
   color: var(--muted);
   font-size: 9px;
   line-height: 1.1;
-  font-weight: 750;
+  font-weight: 520;
   text-transform: uppercase;
 }
 
@@ -317,13 +344,13 @@ body.is-light .trait-tile {
   color: var(--text);
   font-size: 12px;
   line-height: 1.15;
-  font-weight: 720;
+  font-weight: 520;
 }
 
 .trait-total {
   color: var(--muted);
   font-size: 9px;
-  font-weight: 700;
+  font-weight: 480;
   line-height: 1;
 }
 
@@ -332,14 +359,40 @@ body.is-light .trait-tile {
   min-height: 96px;
 }
 
-.trait-download-button {
-  justify-self: center;
-  color: var(--text);
+.trait-action-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
   margin-top: 2px;
 }
 
+.trait-link-button,
+.trait-download-button {
+  justify-self: center;
+  color: var(--text);
+}
+
+.trait-link-button[aria-disabled="true"] {
+  opacity: 0.42;
+  pointer-events: none;
+}
+
+.trait-logo-image {
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.solscan-logo {
+  width: 22px;
+  height: 22px;
+  transform: translateY(-1px);
+}
+
 .card-filename,
-.card-counter,
 .binder-page-status {
   width: min(86vw, 600px);
   text-align: center;
@@ -352,13 +405,51 @@ body.is-light .trait-tile {
 
 .card-filename {
   margin-top: 0;
-  font-weight: 650;
+  font-weight: 500;
 }
 
-.card-counter {
-  margin-top: 0;
-  font-weight: 700;
-  color: color-mix(in srgb, var(--muted), var(--text) 12%);
+.card-filename.is-card-jump-enabled {
+  width: max-content;
+  max-width: min(86vw, 600px);
+  cursor: pointer;
+}
+
+.card-filename.is-editing {
+  width: max-content;
+  max-width: min(86vw, 600px);
+  color: var(--text);
+  min-width: 118px;
+  transform: translate(-50%, 5px);
+}
+
+.card-name-jump-input {
+  width: 118px;
+  height: 24px;
+  border: 1px solid var(--button-border);
+  border-radius: 6px;
+  background: var(--button-bg);
+  box-shadow: var(--button-shadow);
+  color: var(--text);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 22px;
+  outline: none;
+  padding: 0 8px;
+  text-align: center;
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.card-name-jump-input:focus {
+  border-color: rgba(215, 180, 84, 0.62);
+  box-shadow: 0 0 0 2px rgba(215, 180, 84, 0.16), var(--button-shadow);
+}
+
+.card-name-jump-input::selection {
+  background: rgba(215, 180, 84, 0.36);
+  color: var(--text);
 }
 
 .gallery-panel {
@@ -385,22 +476,21 @@ body.binder-card-transitioning.binder-card-transition-show-card .card-rig {
 }
 
 body.binder-card-transitioning .button-row,
-body.binder-card-transitioning .card-filename,
-body.binder-card-transitioning .card-counter {
+body.binder-card-transitioning .card-filename {
   opacity: 0;
   transition: opacity 360ms ease;
 }
 
 body.binder-card-transitioning.binder-card-transition-show-card .button-row,
-body.binder-card-transitioning.binder-card-transition-show-card .card-filename,
-body.binder-card-transitioning.binder-card-transition-show-card .card-counter {
+body.binder-card-transitioning.binder-card-transition-show-card .card-filename {
   opacity: 1;
 }
 
 body.binder-card-transitioning .gallery-panel,
 body.binder-card-transitioning .binder-page-controls,
 body.binder-card-transitioning .binder-page-status,
-body.binder-card-transitioning .binder-switch,
+body.binder-card-transitioning .gallery-view-toggle,
+body.binder-card-transitioning .wallet-search-toggle,
 body.binder-card-transitioning .corner-favorites {
   transition: opacity 420ms ease;
 }
@@ -408,7 +498,8 @@ body.binder-card-transitioning .corner-favorites {
 body.binder-card-transitioning.binder-card-transition-away .gallery-panel,
 body.binder-card-transitioning.binder-card-transition-away .binder-page-controls,
 body.binder-card-transitioning.binder-card-transition-away .binder-page-status,
-body.binder-card-transitioning.binder-card-transition-away .binder-switch,
+body.binder-card-transitioning.binder-card-transition-away .gallery-view-toggle,
+body.binder-card-transitioning.binder-card-transition-away .wallet-search-toggle,
 body.binder-card-transitioning.binder-card-transition-away .corner-favorites {
   opacity: 0;
   pointer-events: none;
@@ -457,11 +548,22 @@ body.binder-card-transitioning.binder-card-transition-away .corner-favorites {
   scrollbar-width: thin;
 }
 
-.gallery-sort-control,
-.gallery-trait-search-button {
+.gallery-filter-controls {
   position: fixed;
   z-index: 8;
+  left: 50%;
   bottom: var(--gallery-corner-bottom);
+  display: grid;
+  grid-template-columns: var(--gallery-sort-width) var(--gallery-trait-search-width);
+  align-items: center;
+  gap: var(--gallery-control-gap);
+  transform: translateX(-50%);
+}
+
+.gallery-clear-filters-button,
+.gallery-sort-control,
+.gallery-trait-search-button {
+  position: static;
   display: flex;
   align-items: center;
   min-height: 36px;
@@ -472,24 +574,49 @@ body.binder-card-transitioning.binder-card-transition-away .corner-favorites {
   box-shadow: var(--button-shadow);
   color: var(--muted);
   font-size: 11px;
-  font-weight: 650;
+  font-weight: 500;
   letter-spacing: 0;
   line-height: 1;
   backdrop-filter: blur(16px);
 }
 
-.gallery-sort-control {
-  right: calc(
-    var(--gallery-corner-inset)
-    + var(--gallery-favorite-space)
-    + var(--gallery-favorite-space)
-    + var(--gallery-trait-search-width)
-    + var(--gallery-control-gap)
-  );
-  gap: 9px;
-  width: var(--gallery-sort-width);
-  position: fixed;
+.gallery-clear-filters-button {
+  position: absolute;
+  left: calc((var(--gallery-clear-filter-width) + var(--gallery-control-gap)) * -1);
+  top: 50%;
+  transform: translateY(-50%);
+  flex: 0 0 var(--gallery-clear-filter-width);
+  justify-content: center;
+  width: var(--gallery-clear-filter-width);
+  min-height: 28px;
+  height: 28px;
+  padding: 0;
+  border-radius: 8px;
+  color: var(--text);
   cursor: pointer;
+}
+
+.gallery-clear-filters-button svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.gallery-sort-control {
+  grid-column: 1;
+  flex: 0 0 var(--gallery-sort-width);
+  gap: 6px;
+  width: var(--gallery-sort-width);
+  cursor: pointer;
+}
+
+body.is-binder-view .gallery-sort-control {
+  flex-basis: min(148px, calc(100vw - 298px));
+  width: min(148px, calc(100vw - 298px));
 }
 
 .gallery-sort-control::after {
@@ -530,7 +657,8 @@ body.binder-card-transitioning.binder-card-transition-away .corner-favorites {
   background: transparent;
   color: var(--text);
   font: inherit;
-  font-weight: 700;
+  font-weight: 520;
+  line-height: 1.2;
   outline: none;
   cursor: pointer;
   overflow: hidden;
@@ -544,18 +672,34 @@ body.binder-card-transitioning.binder-card-transition-away .corner-favorites {
 }
 
 .gallery-trait-search-button {
-  right: calc(
-    var(--gallery-corner-inset)
-    + var(--gallery-favorite-space)
-    + var(--gallery-favorite-space)
-  );
+  grid-column: 2;
+  flex: 0 0 var(--gallery-trait-search-width);
   justify-content: center;
+  min-width: 0;
   width: var(--gallery-trait-search-width);
   border-radius: 10px;
   color: var(--text);
   text-transform: lowercase;
   cursor: pointer;
   display: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gallery-trait-search-button.has-active-trait {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.gallery-trait-search-label {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 body.is-gallery .gallery-trait-search-button {
@@ -634,25 +778,110 @@ body.is-light #binderCanvas {
 .binder-page-controls {
   position: absolute;
   left: 50%;
-  bottom: 98px;
+  bottom: 87px;
   transform: translateX(-50%);
 }
 
 .binder-page-status {
   position: absolute;
   left: 50%;
-  bottom: 76px;
+  bottom: 65px;
   transform: translateX(-50%);
   width: max-content;
 }
 
+.binder-page-status.is-page-jump-enabled {
+  cursor: pointer;
+}
+
+.binder-page-status.is-editing {
+  color: var(--text);
+  min-width: 62px;
+  transform: translate(-50%, 5px);
+}
+
+.binder-page-status.is-card-editing {
+  min-width: 118px;
+}
+
+.binder-page-jump-input {
+  width: 62px;
+  height: 24px;
+  border: 1px solid var(--button-border);
+  border-radius: 6px;
+  background: var(--button-bg);
+  box-shadow: var(--button-shadow);
+  color: var(--text);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 22px;
+  outline: none;
+  padding: 0 8px;
+  text-align: center;
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.binder-page-jump-input.is-card-jump {
+  width: 118px;
+}
+
+.binder-page-jump-input:focus {
+  border-color: rgba(215, 180, 84, 0.62);
+  box-shadow: 0 0 0 2px rgba(215, 180, 84, 0.16), var(--button-shadow);
+}
+
+.binder-page-jump-input::selection {
+  background: rgba(215, 180, 84, 0.36);
+  color: var(--text);
+}
+
 .trait-search-panel {
   position: absolute;
-  inset: clamp(44px, 7vh, 78px) clamp(20px, 5vw, 76px) clamp(102px, 15vh, 146px);
+  inset: clamp(30px, 4.8vh, 56px) clamp(20px, 5vw, 76px) clamp(102px, 15vh, 146px);
   z-index: 5;
   display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 12px;
   place-items: stretch center;
   pointer-events: auto;
+}
+
+.trait-search-filter {
+  width: min(360px, 100%);
+  justify-self: center;
+  transform: translateY(-6px);
+}
+
+.trait-search-input {
+  width: 100%;
+  min-height: 32px;
+  border: 1px solid var(--button-border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: var(--button-shadow);
+  color: var(--text);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
+  outline: none;
+  padding: 0 10px;
+  text-align: center;
+  -webkit-user-select: text;
+  user-select: text;
+  backdrop-filter: blur(16px);
+}
+
+.trait-search-input::placeholder {
+  color: var(--muted);
+  opacity: 0.84;
+}
+
+.trait-search-input:focus {
+  border-color: rgba(215, 180, 84, 0.62);
 }
 
 .trait-search-layout {
@@ -673,12 +902,16 @@ body.is-light #binderCanvas {
   overscroll-behavior: contain;
   padding: 12px 6px 26px;
   display: grid;
+  align-content: start;
   gap: 22px;
+  grid-auto-rows: max-content;
   scrollbar-width: thin;
 }
 
 .trait-search-group {
   display: grid;
+  align-content: start;
+  align-self: start;
   gap: 10px;
 }
 
@@ -686,7 +919,7 @@ body.is-light #binderCanvas {
   margin: 0;
   color: var(--muted);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0;
   line-height: 1;
   text-transform: lowercase;
@@ -713,7 +946,7 @@ body.is-light #binderCanvas {
   color: var(--muted);
   cursor: pointer;
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.1;
   overflow: hidden;
   padding: 6px 9px;
@@ -731,7 +964,9 @@ body.is-light #binderCanvas {
 
 .trait-search-tile-grid {
   display: grid;
+  align-content: start;
   grid-template-columns: repeat(auto-fill, minmax(138px, 1fr));
+  grid-auto-rows: minmax(70px, max-content);
   gap: 10px;
 }
 
@@ -766,15 +1001,26 @@ body.is-light .trait-search-tile {
   min-width: 0;
   overflow-wrap: anywhere;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 520;
   line-height: 1.15;
 }
 
 .trait-search-count {
   color: var(--muted);
   font-size: 10px;
-  font-weight: 650;
+  font-weight: 480;
   line-height: 1;
+}
+
+.trait-search-empty {
+  align-self: start;
+  justify-self: center;
+  margin-top: clamp(42px, 12vh, 96px);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-align: center;
 }
 
 .gallery-empty {
@@ -786,9 +1032,87 @@ body.is-light .trait-search-tile {
   font-size: 13px;
 }
 
+.wallet-search-panel {
+  position: absolute;
+  inset: 0;
+  z-index: 9;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  pointer-events: auto;
+}
+
+.wallet-search-dialog {
+  width: min(620px, calc(100vw - 44px));
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid color-mix(in srgb, var(--button-border), var(--accent) 10%);
+  border-radius: 8px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.078), rgba(255, 255, 255, 0.024)),
+    rgba(15, 14, 12, 0.72);
+  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(18px);
+  pointer-events: auto;
+}
+
+body.is-light .wallet-search-dialog {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.58)),
+    rgba(255, 255, 255, 0.72);
+  box-shadow: 0 16px 36px rgba(44, 35, 16, 0.14);
+}
+
+.wallet-search-message {
+  margin: 0;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.wallet-address-input {
+  width: min(100%, 540px);
+  min-height: 40px;
+  border: 1px solid var(--button-border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--text);
+  font: inherit;
+  font-size: 13px;
+  letter-spacing: 0;
+  outline: none;
+  padding: 0 10px;
+  text-align: left;
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.wallet-address-input:focus {
+  border-color: rgba(215, 180, 84, 0.62);
+}
+
+.wallet-address-input:disabled {
+  opacity: 0.64;
+}
+
+.wallet-search-submit-button {
+  color: var(--text);
+}
+
+.wallet-search-submit-button:disabled {
+  cursor: progress;
+  opacity: 0.58;
+}
+
 .corner-gallery,
 .corner-favorites,
-.binder-switch,
+.gallery-view-toggle,
+.wallet-search-toggle,
 .theme-switch {
   position: fixed;
   z-index: 10;
@@ -799,8 +1123,57 @@ body.is-light .trait-search-tile {
   bottom: var(--gallery-corner-bottom);
 }
 
+.gallery-toggle-icon {
+  grid-area: 1 / 1;
+}
+
+#galleryToggleButton .gallery-binder-icon,
+#galleryToggleButton .gallery-grid-icon {
+  width: 22px;
+  height: 22px;
+}
+
+#galleryToggleButton .gallery-binder-icon {
+  transform: translateY(-1px);
+}
+
+.gallery-grid-icon,
+.gallery-card-icon {
+  display: none;
+}
+
+#galleryToggleButton .gallery-card-icon {
+  width: 22px;
+  height: 22px;
+}
+
+#galleryToggleButton .gallery-card-icon-body {
+  fill: currentColor;
+  stroke: none;
+}
+
+body.is-gallery .gallery-binder-icon {
+  display: none;
+}
+
+body:not(.is-gallery):not(.is-binder-view) .gallery-binder-icon {
+  display: none;
+}
+
+body:not(.is-gallery):not(.is-binder-view) .gallery-grid-icon {
+  display: block;
+}
+
+body.is-gallery .gallery-card-icon {
+  display: block;
+}
+
 .corner-favorites {
-  right: calc(var(--gallery-corner-inset) + var(--gallery-favorite-space));
+  right: calc(
+    var(--gallery-corner-inset)
+    + var(--gallery-favorite-space)
+    + var(--gallery-favorite-space)
+  );
   bottom: var(--gallery-corner-bottom);
   display: none;
 }
@@ -809,23 +1182,40 @@ body.is-gallery .corner-favorites {
   display: inline-grid;
 }
 
+.wallet-search-toggle {
+  right: calc(
+    var(--gallery-corner-inset)
+    + var(--gallery-favorite-space)
+    + var(--gallery-favorite-space)
+    + var(--gallery-favorite-space)
+  );
+  bottom: var(--gallery-corner-bottom);
+  display: none;
+}
+
+body.is-gallery .wallet-search-toggle:not([hidden]) {
+  display: inline-grid;
+}
+
+.gallery-view-toggle {
+  right: calc(
+    var(--gallery-corner-inset)
+    + var(--gallery-favorite-space)
+  );
+  bottom: var(--gallery-corner-bottom);
+  display: none;
+}
+
+body.is-gallery .gallery-view-toggle:not([hidden]) {
+  display: inline-grid;
+}
+
 .theme-switch {
   left: max(20px, env(safe-area-inset-left));
   bottom: max(20px, env(safe-area-inset-bottom));
 }
 
-.binder-switch {
-  left: max(20px, env(safe-area-inset-left));
-  bottom: calc(max(20px, env(safe-area-inset-bottom)) + 40px);
-  display: none;
-}
-
-body.is-gallery .binder-switch {
-  display: block;
-}
-
-.theme-switch input,
-.binder-switch input {
+.theme-switch input {
   position: absolute;
   opacity: 0;
   pointer-events: none;
@@ -853,13 +1243,11 @@ body.is-gallery .binder-switch {
   transition: transform 180ms ease, background 180ms ease;
 }
 
-.theme-switch input:checked + .switch-track,
-.binder-switch input:checked + .switch-track {
+.theme-switch input:checked + .switch-track {
   background: rgba(190, 154, 57, 0.72);
 }
 
-.theme-switch input:checked + .switch-track .switch-thumb,
-.binder-switch input:checked + .switch-track .switch-thumb {
+.theme-switch input:checked + .switch-track .switch-thumb {
   transform: translateX(20px);
 }
 
@@ -867,12 +1255,20 @@ body.is-gallery .binder-switch {
   display: none !important;
 }
 
+.gallery-clear-filters-button[hidden] {
+  display: flex !important;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
 @media (max-width: 720px) {
   :root {
-    --gallery-sort-width: min(120px, calc(100vw - 210px));
-    --gallery-trait-search-width: 66px;
+    --gallery-clear-filter-width: 26px;
+    --gallery-sort-width: min(112px, calc(100vw - 252px));
+    --gallery-trait-search-width: 82px;
     --gallery-control-gap: 10px;
-    --gallery-favorite-space: 50px;
+    --gallery-favorite-space: 48px;
     --gallery-corner-inset: max(12px, env(safe-area-inset-right));
     --gallery-corner-bottom: max(12px, env(safe-area-inset-bottom));
   }
@@ -891,6 +1287,7 @@ body.is-gallery .binder-switch {
     gap: 14px;
   }
 
+  .gallery-clear-filters-button,
   .gallery-sort-control,
   .gallery-trait-search-button {
     min-height: 32px;
@@ -898,8 +1295,27 @@ body.is-gallery .binder-switch {
     font-size: 10px;
   }
 
+  .gallery-clear-filters-button {
+    flex-basis: 26px;
+    width: 26px;
+    min-height: 26px;
+    height: 26px;
+    padding: 0;
+    font-size: 11px;
+  }
+
+  .gallery-clear-filters-button svg {
+    width: 14px;
+    height: 14px;
+  }
+
   .gallery-sort-control {
-    gap: 7px;
+    gap: 5px;
+  }
+
+  body.is-binder-view .gallery-sort-control {
+    flex-basis: min(112px, calc(100vw - 266px));
+    width: min(112px, calc(100vw - 266px));
   }
 
   .gallery-sort-control select {
@@ -908,31 +1324,32 @@ body.is-gallery .binder-switch {
   }
 
   .icon-button {
-    width: 38px;
-    height: 38px;
-    border-radius: 9px;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
   }
 
   .icon-button svg {
-    width: 19px;
-    height: 19px;
+    width: 18px;
+    height: 18px;
   }
 
   .button-row,
   .binder-page-controls {
     gap: 12px;
+    min-height: 36px;
   }
 
   .binder-page-controls {
-    bottom: 91px;
+    bottom: 80px;
   }
 
   .binder-page-status {
-    bottom: 70px;
+    bottom: 59px;
   }
 
   .trait-search-panel {
-    inset: 32px 14px 92px;
+    inset: 22px 14px 92px;
   }
 
   .trait-search-layout {
@@ -970,10 +1387,6 @@ body.is-gallery .binder-switch {
     bottom: clamp(66px, 9.4vh, 92px);
   }
 
-  .card-counter {
-    bottom: clamp(49px, 7.1vh, 72px);
-  }
-
   .trait-panel {
     left: 50%;
     right: auto;
@@ -993,6 +1406,7 @@ body.is-gallery .binder-switch {
   }
 
   .trait-grid {
+    grid-template-columns: repeat(auto-fit, minmax(108px, 126px));
     gap: 8px;
     max-height: calc(min(56vh, 520px) - 44px);
   }
@@ -1020,8 +1434,7 @@ body.is-gallery .binder-switch {
     height: 18px;
   }
 
-  .theme-switch input:checked + .switch-track .switch-thumb,
-  .binder-switch input:checked + .switch-track .switch-thumb {
+  .theme-switch input:checked + .switch-track .switch-thumb {
     transform: translateX(18px);
   }
 }
@@ -1057,10 +1470,11 @@ body.is-gallery .binder-switch {
 
 @media (max-width: 420px) {
   :root {
-    --gallery-sort-width: min(94px, calc(100vw - 180px));
-    --gallery-trait-search-width: 54px;
+    --gallery-clear-filter-width: 24px;
+    --gallery-sort-width: min(84px, calc(100vw - 258px));
+    --gallery-trait-search-width: 72px;
     --gallery-control-gap: 6px;
-    --gallery-favorite-space: 44px;
+    --gallery-favorite-space: 42px;
     --gallery-corner-inset: max(8px, env(safe-area-inset-right));
     --gallery-corner-bottom: max(10px, env(safe-area-inset-bottom));
   }
@@ -1074,8 +1488,8 @@ body.is-gallery .binder-switch {
   }
 
   .button-row .icon-button {
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
   }
 
   #cardCanvas {
@@ -1094,6 +1508,7 @@ body.is-gallery .binder-switch {
   }
 
   .trait-grid {
+    grid-template-columns: repeat(auto-fit, minmax(96px, 118px));
     gap: 7px;
     max-height: calc(min(52vh, 460px) - 44px);
     padding: 4px;
@@ -1114,8 +1529,21 @@ body.is-gallery .binder-switch {
   }
 
   .gallery-sort-control {
-    gap: 5px;
+    gap: 6px;
     padding-inline: 6px;
+  }
+
+  .gallery-clear-filters-button {
+    flex-basis: 24px;
+    width: 24px;
+    min-height: 24px;
+    height: 24px;
+    font-size: 10px;
+  }
+
+  body.is-binder-view .gallery-sort-control {
+    flex-basis: min(84px, calc(100vw - 262px));
+    width: min(84px, calc(100vw - 262px));
   }
 
   .gallery-trait-search-button {
@@ -1124,11 +1552,11 @@ body.is-gallery .binder-switch {
   }
 
   .binder-page-controls {
-    bottom: 88px;
+    bottom: 77px;
   }
 
   .binder-page-status {
-    bottom: 68px;
+    bottom: 57px;
   }
 
   .theme-switch {
@@ -1136,8 +1564,49 @@ body.is-gallery .binder-switch {
     bottom: 10px;
   }
 
-  .binder-switch {
-    left: 8px;
-    bottom: 44px;
+}
+
+@media (max-width: 640px) {
+  body.is-gallery.is-binder-view .gallery-filter-controls {
+    bottom: calc(var(--gallery-corner-bottom) + 54px);
+  }
+
+  body.is-gallery.is-binder-view .binder-page-controls {
+    bottom: calc(var(--gallery-corner-bottom) + 116px);
+  }
+
+  body.is-gallery.is-binder-view .binder-page-status {
+    bottom: calc(var(--gallery-corner-bottom) + 94px);
+  }
+}
+
+@media (max-width: 360px) {
+  body.is-gallery.is-binder-view .gallery-filter-controls {
+    width: 100vw;
+    padding-inline: 6px;
+    grid-template-columns: minmax(0, 1fr) var(--gallery-trait-search-width);
+  }
+
+  body.is-gallery.is-binder-view .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) {
+    grid-template-columns: var(--gallery-clear-filter-width) minmax(0, 1fr) var(--gallery-trait-search-width);
+  }
+
+  body.is-gallery.is-binder-view .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) .gallery-clear-filters-button {
+    position: static;
+    grid-column: 1;
+    transform: none;
+  }
+
+  body.is-gallery.is-binder-view .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) .gallery-sort-control {
+    grid-column: 2;
+  }
+
+  body.is-gallery.is-binder-view .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) .gallery-trait-search-button {
+    grid-column: 3;
+  }
+
+  body.is-gallery.is-binder-view .gallery-sort-control {
+    flex-basis: auto;
+    width: auto;
   }
 }

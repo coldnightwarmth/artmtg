@@ -35,6 +35,7 @@
   --caption-muted: rgba(242, 241, 234, 0.3);
   --switch-track: rgba(242, 241, 234, 0.18);
   --switch-thumb: #f2f1ea;
+  --site-font: Optima, Candara, "Lucida Sans", "Lucida Grande", "Trebuchet MS", Arial, sans-serif;
   --rendered-object-filter:
     drop-shadow(0 0 12px rgba(225, 199, 118, 0.16))
     drop-shadow(0 18px 36px rgba(0, 0, 0, 0.2));
@@ -72,12 +73,25 @@ body {
 
 body {
   overflow: hidden;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  isolation: isolate;
+  font-family: var(--site-font);
   color: var(--ink);
   background:
     linear-gradient(135deg, rgba(111, 143, 147, 0.14), transparent 34%),
     linear-gradient(315deg, rgba(193, 155, 79, 0.16), transparent 38%),
     #15130f;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.86' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.64'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  mix-blend-mode: soft-light;
+  opacity: 0.14;
 }
 
 body.light-theme {
@@ -96,6 +110,11 @@ body.light-theme {
     linear-gradient(135deg, rgba(101, 132, 134, 0.16), transparent 34%),
     linear-gradient(315deg, rgba(196, 168, 104, 0.18), transparent 38%),
     #eee9dd;
+}
+
+body.light-theme::before {
+  mix-blend-mode: multiply;
+  opacity: 0.08;
 }
 
 button {
@@ -244,7 +263,7 @@ button {
   max-width: min(92vw, calc(var(--card-width) * 2 + var(--detail-gap)));
   text-align: center;
   color: var(--caption);
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--site-font);
   font-size: 0.68rem;
   font-weight: 500;
   line-height: 1.05;
@@ -519,7 +538,7 @@ body.binder-card-transitioning.binder-card-transition-away .corner-favorites {
   z-index: 45;
   min-width: 4.5em;
   color: var(--caption-muted);
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--site-font);
   font-size: 0.66rem;
   font-weight: 500;
   line-height: 1;
@@ -881,9 +900,9 @@ body.light-theme .corner-gallery:hover {
 
 .upload-header h1 {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--site-font);
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.1;
 }
 
@@ -1042,7 +1061,7 @@ body.light-theme .corner-gallery:hover {
   border-radius: 8px;
   background: #d6b765;
   cursor: pointer;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .create-button:disabled {
