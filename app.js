@@ -36,6 +36,26 @@ const WALLET_SEARCH_PROMPT = "Enter a SOL address to view collected cards:";
 const WALLET_SEARCH_EMPTY_MESSAGE = "No cards found, try again.";
 const WALLET_SEARCH_BUSY_MESSAGE = "Checking wallet holdings...";
 const WALLET_SEARCH_ERROR_MESSAGE = "Search failed, try again.";
+const BINDER_INTRO_SPRITES = [
+  {
+    url: new URL("./assets/ui/drif-iii-card-back-square.png", import.meta.url).href,
+    xRatio: 0,
+    yRatio: 0.27,
+    sizeRatio: 0.082,
+  },
+  {
+    url: new URL("./assets/ui/drif-egg-sticker-square.png", import.meta.url).href,
+    xRatio: -0.285,
+    yRatio: -0.08,
+    sizeRatio: 0.072,
+  },
+  {
+    url: new URL("./assets/ui/drif-general-sprite-square.png", import.meta.url).href,
+    xRatio: 0.29,
+    yRatio: -0.08,
+    sizeRatio: 0.074,
+  },
+];
 const CARD_WIDTH = 2.5;
 const CARD_HEIGHT = 3.54;
 const CARD_DEPTH = 0.022;
@@ -2314,6 +2334,9 @@ function createBinderIntroNote(coverWidth, coverHeight) {
   noteMesh.renderOrder = 66;
   noteMesh.userData.binderIntroNoteText = true;
   note.add(noteMesh);
+  for (const spriteMesh of createBinderIntroSpriteMeshes(coverWidth, coverHeight)) {
+    note.add(spriteMesh);
+  }
   binderIntroNoteGroup = note;
   binderIntroNoteMesh = noteMesh;
 
@@ -2345,6 +2368,38 @@ function createBinderIntroNote(coverWidth, coverHeight) {
   }
 
   return note;
+}
+
+function createBinderIntroSpriteMeshes(coverWidth, coverHeight) {
+  const textureLoader = new THREE.TextureLoader();
+  return BINDER_INTRO_SPRITES.map((sprite) => {
+    const size = coverHeight * sprite.sizeRatio;
+    const material = new THREE.MeshBasicMaterial({
+      transparent: true,
+      opacity: 0.92,
+      toneMapped: false,
+      side: THREE.DoubleSide,
+      depthWrite: false,
+      depthTest: true,
+    });
+    textureLoader.load(
+      sprite.url,
+      (texture) => {
+        texture.colorSpace = THREE.SRGBColorSpace;
+        texture.minFilter = THREE.LinearMipmapLinearFilter;
+        texture.magFilter = THREE.LinearFilter;
+        texture.generateMipmaps = true;
+        material.map = texture;
+        material.needsUpdate = true;
+        requestBinderRenderOnce();
+      },
+    );
+
+    const mesh = new THREE.Mesh(new THREE.PlaneGeometry(size, size), material);
+    mesh.position.set(coverWidth * sprite.xRatio, coverHeight * sprite.yRatio, 0.006);
+    mesh.renderOrder = 68;
+    return mesh;
+  });
 }
 
 function createBinderPageMaterials() {
@@ -5350,6 +5405,25 @@ function createBinderIntroNoteTexture() {
   surface.width = width;
   surface.height = height;
   const ctx = surface.getContext("2d");
+  const linkBounds = drawBinderIntroNoteSurface(ctx);
+
+  const texture = new THREE.CanvasTexture(surface);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  texture.minFilter = THREE.LinearMipmapLinearFilter;
+  texture.magFilter = THREE.LinearFilter;
+  texture.generateMipmaps = true;
+  texture.needsUpdate = true;
+  texture.userData.linkBounds = linkBounds;
+  texture.userData.surfaceContext = ctx;
+  binderIntroNoteTexture = texture;
+  return {
+    texture,
+    linkBounds: texture.userData.linkBounds,
+  };
+}
+
+function drawBinderIntroNoteSurface(ctx) {
+  const { width, height } = ctx.canvas;
   ctx.clearRect(0, 0, width, height);
   ctx.textBaseline = "alphabetic";
   ctx.fillStyle = "rgba(156, 153, 146, 0.74)";
@@ -5411,19 +5485,7 @@ function createBinderIntroNoteTexture() {
     linkFillStyle,
     url: BINDER_CARD_NFT_2_LINK_URL,
   });
-
-  const texture = new THREE.CanvasTexture(surface);
-  texture.colorSpace = THREE.SRGBColorSpace;
-  texture.minFilter = THREE.LinearMipmapLinearFilter;
-  texture.magFilter = THREE.LinearFilter;
-  texture.generateMipmaps = true;
-  texture.needsUpdate = true;
-  texture.userData.linkBounds = [evilBiscuitLinkBounds, cardNft2LinkBounds];
-  binderIntroNoteTexture = texture;
-  return {
-    texture,
-    linkBounds: texture.userData.linkBounds,
-  };
+  return [evilBiscuitLinkBounds, cardNft2LinkBounds];
 }
 
 function drawBinderIntroLinkedLine(
