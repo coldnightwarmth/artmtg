@@ -614,7 +614,7 @@ body.binder-card-transitioning.binder-card-transition-away .corner-favorites {
   cursor: pointer;
 }
 
-body.is-binder-view .gallery-sort-control {
+body.is-gallery .gallery-sort-control {
   flex-basis: min(148px, calc(100vw - 298px));
   width: min(148px, calc(100vw - 298px));
 }
@@ -1330,7 +1330,7 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
     gap: 5px;
   }
 
-  body.is-binder-view .gallery-sort-control {
+  body.is-gallery .gallery-sort-control {
     flex-basis: min(112px, calc(100vw - 266px));
     width: min(112px, calc(100vw - 266px));
   }
@@ -1585,7 +1585,7 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
     font-size: 10px;
   }
 
-  body.is-binder-view .gallery-sort-control {
+  body.is-gallery .gallery-sort-control {
     flex-basis: var(--gallery-sort-width);
     width: var(--gallery-sort-width);
   }
@@ -1611,49 +1611,49 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
 }
 
 @media (max-width: 720px) {
-  body.is-gallery.is-binder-view .gallery-filter-controls {
+  body.is-gallery .gallery-filter-controls {
     left: calc(50vw + var(--gallery-filter-center-shift));
     bottom: var(--gallery-corner-bottom);
     transform: none;
   }
 
-  body.is-gallery.is-binder-view .gallery-filter-controls {
+  body.is-gallery .gallery-filter-controls {
     width: auto;
     padding-inline: 0;
     grid-template-columns: var(--gallery-sort-width) var(--gallery-trait-search-width);
   }
 
-  body.is-gallery.is-binder-view .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) {
+  body.is-gallery .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) {
     left: calc(50vw + var(--gallery-filter-center-shift-clear));
     grid-template-columns: var(--gallery-clear-filter-width) var(--gallery-sort-width) var(--gallery-trait-search-width);
   }
 
-  body.is-gallery.is-binder-view .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) .gallery-clear-filters-button {
+  body.is-gallery .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) .gallery-clear-filters-button {
     position: static;
     grid-column: 1;
     transform: none;
   }
 
-  body.is-gallery.is-binder-view .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) .gallery-sort-control {
+  body.is-gallery .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) .gallery-sort-control {
     grid-column: 2;
   }
 
-  body.is-gallery.is-binder-view .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) .gallery-trait-search-button {
+  body.is-gallery .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) .gallery-trait-search-button {
     grid-column: 3;
   }
 
-  body.is-gallery.is-binder-view .gallery-sort-control {
+  body.is-gallery .gallery-sort-control {
     flex-basis: auto;
     width: var(--gallery-sort-width);
   }
 }
 
 @media (max-width: 420px) {
-  body.is-gallery.is-binder-view .gallery-filter-controls {
+  body.is-gallery .gallery-filter-controls {
     left: calc(50vw + var(--gallery-filter-center-shift));
   }
 
-  body.is-gallery.is-binder-view .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) {
+  body.is-gallery .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) {
     left: calc(50vw + var(--gallery-filter-center-shift-clear));
   }
 }
@@ -1680,7 +1680,7 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
     height: 16px;
   }
 
-  body.is-gallery.is-binder-view .gallery-filter-controls {
+  body.is-gallery .gallery-filter-controls {
     left: calc(50vw + var(--gallery-filter-center-shift));
   }
 
@@ -1754,7 +1754,7 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
     height: 15px;
   }
 
-  body.is-gallery.is-binder-view .gallery-filter-controls {
+  body.is-gallery .gallery-filter-controls {
     left: calc(50vw + var(--gallery-filter-center-shift));
   }
 
@@ -1788,7 +1788,7 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
 }
 
 @media (max-width: 360px) and (orientation: landscape) {
-  body.is-gallery.is-binder-view .gallery-filter-controls {
+  body.is-gallery .gallery-filter-controls {
     left: 50%;
     bottom: calc(var(--gallery-corner-bottom) + 54px);
     width: 100vw;
@@ -1797,25 +1797,25 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
     transform: translateX(-50%);
   }
 
-  body.is-gallery.is-binder-view .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) {
+  body.is-gallery .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) {
     grid-template-columns: var(--gallery-clear-filter-width) minmax(0, 1fr) var(--gallery-trait-search-width);
   }
 
-  body.is-gallery.is-binder-view .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) .gallery-clear-filters-button {
+  body.is-gallery .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) .gallery-clear-filters-button {
     position: static;
     grid-column: 1;
     transform: none;
   }
 
-  body.is-gallery.is-binder-view .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) .gallery-sort-control {
+  body.is-gallery .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) .gallery-sort-control {
     grid-column: 2;
   }
 
-  body.is-gallery.is-binder-view .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) .gallery-trait-search-button {
+  body.is-gallery .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) .gallery-trait-search-button {
     grid-column: 3;
   }
 
-  body.is-gallery.is-binder-view .gallery-sort-control {
+  body.is-gallery .gallery-sort-control {
     flex-basis: auto;
     width: auto;
   }
@@ -1878,8 +1878,8 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
     height: 6px;
   }
 
-  body.is-gallery.is-binder-view .gallery-filter-controls,
-  body.is-gallery.is-binder-view .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) {
+  body.is-gallery .gallery-filter-controls,
+  body.is-gallery .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) {
     left: 50%;
     bottom: calc(var(--gallery-corner-bottom) + 54px);
     width: auto;
@@ -1887,11 +1887,11 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
     transform: translateX(-50%);
   }
 
-  body.is-gallery.is-binder-view .gallery-filter-controls {
+  body.is-gallery .gallery-filter-controls {
     grid-template-columns: var(--gallery-sort-width) var(--gallery-trait-search-width);
   }
 
-  body.is-gallery.is-binder-view .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) {
+  body.is-gallery .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) {
     grid-template-columns: var(--gallery-clear-filter-width) var(--gallery-sort-width) var(--gallery-trait-search-width);
   }
 
@@ -1905,14 +1905,14 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
 }
 
 @media (max-width: 720px) and (orientation: portrait) {
-  body.is-gallery.is-binder-view .gallery-filter-controls {
+  body.is-gallery .gallery-filter-controls {
     bottom: var(--gallery-corner-bottom);
   }
 }
 
 @media (max-width: 360px) and (hover: hover) and (pointer: fine) {
-  body.is-gallery.is-binder-view .gallery-filter-controls,
-  body.is-gallery.is-binder-view .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) {
+  body.is-gallery .gallery-filter-controls,
+  body.is-gallery .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) {
     bottom: calc(var(--gallery-corner-bottom) + 54px);
   }
 }
