@@ -535,13 +535,12 @@ body.binder-card-transitioning.binder-card-transition-away .corner-favorites {
   position: fixed;
   top: 0;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(1180px, calc(100vw - 88px));
+  left: 0;
+  right: 0;
   height: auto;
   overflow-x: hidden;
   overflow-y: auto;
-  padding: clamp(58px, 13vh, 96px) 10px clamp(116px, 18vh, 158px);
+  padding: clamp(58px, 13vh, 96px) calc((100vw - min(1180px, calc(100vw - 88px))) / 2 + 10px) clamp(116px, 18vh, 158px);
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   align-content: start;
@@ -1083,7 +1082,7 @@ body.is-light .wallet-search-dialog {
 }
 
 .wallet-address-input {
-  width: min(100%, 540px);
+  width: min(100%, 420px);
   min-height: 40px;
   border: 1px solid var(--button-border);
   border-radius: 8px;
@@ -1114,6 +1113,14 @@ body.is-light .wallet-search-dialog {
 .wallet-search-submit-button:disabled {
   cursor: progress;
   opacity: 0.58;
+}
+
+input[type="text"]::selection,
+input[type="search"]::selection,
+input:not([type])::selection,
+textarea::selection {
+  background: rgba(215, 180, 84, 0.64);
+  color: #16120b;
 }
 
 .corner-gallery,
@@ -1289,7 +1296,8 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
   }
 
   .gallery-grid {
-    width: calc(100vw - 34px);
+    padding-left: 27px;
+    padding-right: 27px;
     padding-top: clamp(46px, 10vh, 76px);
     padding-bottom: clamp(106px, 16vh, 132px);
     grid-template-columns: repeat(3, minmax(0, 1fr));

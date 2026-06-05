@@ -1404,6 +1404,13 @@ function parseCardNumberJumpValue(value, total) {
   return clamp(parsed, 1, total) - 1;
 }
 
+function parseFocusedBinderNumberJumpValue(value, total) {
+  const parsed = parseCardJumpNumber(value);
+  if (!Number.isFinite(parsed) || total < 1 || parsed < 0) return null;
+  if (parsed === 0) return BINDER_SINGLE_PAGE_COVER_SIDE;
+  return clamp(parsed, 1, total) - 1;
+}
+
 function parseCardJumpNumber(value) {
   const match = String(value || "").match(/^\s*(?:card\s*)?#?\s*(\d+)\s*$/i);
   if (!match) return null;
@@ -3512,10 +3519,9 @@ function getBinderPageStatusEditMode() {
     && binderPageCount >= 1;
   if (!canEditBase) return null;
 
-  if (isBinderIntroFocused()) return null;
+  if (isBinderIntroFocused()) return binderVisibleIndexes.length > 0 ? "focus-card" : null;
   if (isBinderFocused()) return binderVisibleIndexes.length > 0 ? "focus-card" : null;
-  if (!isBinderSinglePageView()) return "page";
-  return null;
+  return "page";
 }
 
 function startBinderPageStatusEdit(event) {
@@ -3539,7 +3545,7 @@ function startBinderPageStatusEdit(event) {
   input.autocomplete = "off";
   input.spellcheck = false;
   input.value = editMode === "focus-card"
-    ? String(binderFocusPosition + 1)
+    ? String(isBinderIntroFocused() ? 0 : binderFocusPosition + 1)
     : String(getCurrentBinderPageStatusNumber());
   input.setAttribute("aria-label", editMode === "focus-card" ? "Go to binder card" : "Go to binder page");
   input.addEventListener("keydown", onBinderPageStatusInputKeydown);
@@ -3576,7 +3582,7 @@ function submitBinderPageStatusEdit() {
 
   const editMode = binderPageStatusEditMode;
   if (editMode === "focus-card") {
-    const targetPosition = parseCardNumberJumpValue(input.value, binderVisibleIndexes.length);
+    const targetPosition = parseFocusedBinderNumberJumpValue(input.value, binderVisibleIndexes.length);
     if (!Number.isInteger(targetPosition)) {
       input.focus();
       input.select();
@@ -3584,7 +3590,13 @@ function submitBinderPageStatusEdit() {
     }
 
     closeBinderPageStatusEdit({ update: false });
-    jumpFocusedBinderCard(targetPosition).catch(console.error);
+    if (targetPosition === BINDER_SINGLE_PAGE_COVER_SIDE) {
+      focusBinderIntroNote({ immediate: true });
+    } else if (isBinderIntroFocused()) {
+      focusBinderPosition(targetPosition, { immediate: true });
+    } else {
+      jumpFocusedBinderCard(targetPosition).catch(console.error);
+    }
     return;
   }
 
@@ -3596,8 +3608,8 @@ function submitBinderPageStatusEdit() {
   }
 
   const totalSides = getBinderTotalPageSides();
-  const pageNumber = clamp(Number.parseInt(rawValue, 10), 1, totalSides);
-  const targetSide = pageNumber - 1;
+  const pageNumber = clamp(Number.parseInt(rawValue, 10), 0, totalSides);
+  const targetSide = pageNumber === 0 ? BINDER_SINGLE_PAGE_COVER_SIDE : pageNumber - 1;
   const nextTurn = getBinderTurnForSinglePageSide(targetSide);
   const currentTurn = clamp(Math.round(binderTargetTurn), 0, binderPageCount);
   closeBinderPageStatusEdit({ update: false });
@@ -3624,6 +3636,11 @@ function closeBinderPageStatusEdit({ update = true } = {}) {
 }
 
 function getCurrentBinderPageStatusNumber() {
+  if (isBinderSinglePageView()) {
+    const singlePageSide = getBinderSinglePageSide();
+    return singlePageSide === BINDER_SINGLE_PAGE_COVER_SIDE ? 0 : singlePageSide + 1;
+  }
+
   const currentTurn = clamp(Math.round(binderTargetTurn), 0, binderPageCount);
   const totalSides = getBinderTotalPageSides();
   if (currentTurn <= 0 || totalSides <= 1) return 1;
