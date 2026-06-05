@@ -125,10 +125,14 @@ const BINDER_CARD_LOAD_FADE_MS = 280;
 const BINDER_INTRO_LINK_URL = "https://x.com/bis__cut";
 const BINDER_CARD_NFT_2_LINK_URL = "https://mons.shop";
 const BINDER_INTRO_NOTE_FILTER_FADE_MS = 260;
+const BINDER_INTRO_FOCUS_MARGIN_RATIO = 0.12;
+const BINDER_INTRO_FOCUS_MOBILE_MARGIN_RATIO = 0.04;
+const BINDER_INTRO_FOCUS_EXTRA_Z = 0.08;
 const BINDER_CARD_VIEW_TRANSITION_MS = 820;
 const INDIVIDUAL_TO_BINDER_WHEEL_THRESHOLD = 1560;
 const BINDER_TO_INDIVIDUAL_WHEEL_THRESHOLD = 680;
 const VIEW_SWITCH_WHEEL_IDLE_MS = 900;
+const DOUBLE_TAP_ZOOM_SUPPRESSION_MS = 320;
 const BINDER_FOCUS_ZOOM_OUT_LOCK_MS = 620;
 const BINDER_TO_CARD_SCROLL_LOCK_BUFFER_MS = 120;
 const BINDER_FOCUS_TRANSITION_LOCK_MS = BINDER_CARD_VIEW_TRANSITION_MS + BINDER_FOCUS_ZOOM_OUT_LOCK_MS;
@@ -147,6 +151,7 @@ const CARD_SWAP_MIN_OPACITY = 0.1;
 const CARD_SWAP_MS = 230;
 const CARD_SHUFFLE_SPIN_MS = 520;
 const CARD_SHUFFLE_SPIN_DIRECTION = -1;
+const GALLERY_PRIORITY_ROWS = 4;
 const SHUFFLE_TOUCH_UNDO_HOLD_MS = 560;
 const SHUFFLE_TOUCH_UNDO_SUPPRESS_MS = 1000;
 const SHUFFLE_TOUCH_UNDO_MOVE_LIMIT = 14;
@@ -228,6 +233,7 @@ let traitSortPickerOpen = false;
 let traitSortPickerOpenedAt = 0;
 let traitSortPickerSyncFrame = 0;
 let sessionViewSaveFrame = 0;
+let lastTouchEndAt = 0;
 let walletSearchOpen = false;
 let walletSearchLoading = false;
 let walletSearchToken = 0;
@@ -338,6 +344,7 @@ let binderMaintenanceTimer = 0;
 let binderSpreadPreparationToken = 0;
 let binderPreparingSpread = false;
 let binderFocusPosition = -1;
+let binderIntroFocused = false;
 let binderDrag = null;
 let binderLastOpenTap = null;
 let binderWheelFocusLockUntil = 0;
@@ -362,6 +369,9 @@ const binderDesiredCameraPosition = new THREE.Vector3();
 const binderDesiredCameraLookAt = new THREE.Vector3();
 const binderCurrentCameraLookAt = binderDefaultCameraLookAt.clone();
 const binderFocusWorldPosition = new THREE.Vector3();
+const binderIntroFocusWorldPosition = new THREE.Vector3();
+const binderIntroFocusLocalPosition = new THREE.Vector3();
+const binderIntroFocusWorldScale = new THREE.Vector3();
 
 init();
 
@@ -465,7 +475,26 @@ function initCardScene() {
   resizeCardRenderer();
 }
 
+function suppressDoubleTapZoom(event) {
+  if (!event.changedTouches || event.changedTouches.length !== 1) {
+    lastTouchEndAt = 0;
+    return;
+  }
+
+  const now = performance.now();
+  if (now - lastTouchEndAt <= DOUBLE_TAP_ZOOM_SUPPRESSION_MS) {
+    event.preventDefault();
+  }
+  lastTouchEndAt = now;
+}
+
+function preventBrowserZoomGesture(event) {
+  event.preventDefault();
+}
+
 function initEvents() {
+  document.addEventListener("touchend", suppressDoubleTapZoom, { passive: false });
+  document.addEventListener("gesturestart", preventBrowserZoomGesture, { passive: false });
   els.previousButton.addEventListener("click", () => transitionAdjacentCard(-1).catch(console.error));
   els.nextButton.addEventListener("click", () => transitionAdjacentCard(1).catch(console.error));
   els.shuffleButton.addEventListener("click", (event) => {
@@ -1417,6 +1446,13 @@ function updateFavoriteButtons() {
 }
 
 function updateBinderFavoriteButton() {
+  if (isBinderIntroFocused()) {
+    els.binderFavoriteButton.setAttribute("aria-pressed", "false");
+    els.binderFavoriteButton.setAttribute("title", "No card to favorite");
+    els.binderFavoriteButton.setAttribute("aria-label", "No card to favorite");
+    return;
+  }
+
   const cardIndex = getFocusedBinderCardIndex();
   const active = Number.isInteger(cardIndex) && favorites.has(favoriteKey(cardIndex));
   els.binderFavoriteButton.setAttribute("aria-pressed", String(active));
@@ -2124,7 +2160,8 @@ function renderGrid(indexes) {
   closeBinderPageStatusEdit({ update: false });
   els.galleryGrid.replaceChildren();
   const fragment = document.createDocumentFragment();
-  for (const index of indexes) {
+  const priorityImageCount = getGalleryPriorityImageCount(indexes.length);
+  indexes.forEach((index, position) => {
     const card = CARDS[index];
     const button = document.createElement("button");
     button.className = "gallery-card";
@@ -2136,15 +2173,30 @@ function renderGrid(indexes) {
     });
 
     const image = document.createElement("img");
-    image.loading = "lazy";
+    const priorityImage = position < priorityImageCount;
+    image.loading = priorityImage ? "eager" : "lazy";
     image.decoding = "async";
+    if (priorityImage) {
+      image.fetchPriority = "high";
+      image.setAttribute("fetchpriority", "high");
+    }
     image.alt = card.title;
     image.src = cardAssetUrl(card);
     button.append(image);
     fragment.append(button);
-  }
+  });
   els.galleryGrid.append(fragment);
   els.binderPageStatus.textContent = withWalletStatusLabel(`${indexes.length} cards`);
+}
+
+function getGalleryPriorityImageCount(totalCards) {
+  if (!totalCards) return 0;
+
+  const width = window.innerWidth || document.documentElement.clientWidth || 0;
+  const columns = width <= 520
+    ? 2
+    : (width <= 720 ? 3 : 5);
+  return Math.min(totalCards, columns * GALLERY_PRIORITY_ROWS);
 }
 
 function initBinderScene() {
@@ -2192,6 +2244,9 @@ function updateBinderItems(indexes) {
 
   const focusedCardIndex = getFocusedBinderCardIndex();
   binderVisibleIndexes = indexes.slice();
+  if (binderIntroFocused && hasActiveBinderIntroSuppressor()) {
+    clearBinderFocus({ silent: true });
+  }
   if (Number.isInteger(focusedCardIndex)) {
     const nextFocusPosition = binderVisibleIndexes.indexOf(focusedCardIndex);
     if (nextFocusPosition === -1) {
@@ -2222,6 +2277,8 @@ function updateBinderItems(indexes) {
   binderRoot.add(createBinderModel(indexes, getBinderPlaceholderTexture()));
   if (isBinderFocused()) {
     binderTargetTurn = getBinderTurnForPosition(binderFocusPosition);
+  } else if (isBinderIntroFocused()) {
+    binderTargetTurn = 0;
   }
   binderTargetTurn = clamp(binderTargetTurn, 0, binderPageCount);
   binderTurn = clamp(binderTurn, 0, binderPageCount);
@@ -2317,7 +2374,7 @@ function createBinderShell() {
 function createBinderIntroNote(coverWidth, coverHeight) {
   const noteWidth = coverWidth * 0.7;
   const noteHeight = coverHeight * 0.31;
-  const { texture, linkBounds } = createBinderIntroNoteTexture();
+  const { texture, linkBounds, focusBounds } = createBinderIntroNoteTexture();
   const note = new THREE.Group();
 
   const noteMesh = new THREE.Mesh(
@@ -2333,6 +2390,7 @@ function createBinderIntroNote(coverWidth, coverHeight) {
   );
   noteMesh.renderOrder = 66;
   noteMesh.userData.binderIntroNoteText = true;
+  noteMesh.userData.binderIntroFocusBounds = focusBounds;
   note.add(noteMesh);
   for (const spriteMesh of createBinderIntroSpriteMeshes(coverWidth, coverHeight)) {
     note.add(spriteMesh);
@@ -3158,7 +3216,7 @@ function turnBinderSinglePage(direction) {
 function turnBinderPage(direction) {
   if (!galleryOpen || !isBinderMode || binderPageCount < 1) return;
 
-  if (isBinderFocused()) {
+  if (isBinderFocusView()) {
     moveBinderFocus(direction);
     return;
   }
@@ -3183,7 +3241,7 @@ function turnBinderPage(direction) {
 }
 
 async function shuffleBinderSpread() {
-  if (!galleryOpen || !isBinderMode || isBinderFocused() || binderPageCount < 1) return;
+  if (!galleryOpen || !isBinderMode || isBinderFocusView() || binderPageCount < 1) return;
 
   const currentPage = clamp(Math.round(binderTargetTurn), 0, binderPageCount);
   let nextTurn = currentPage;
@@ -3205,7 +3263,7 @@ async function shuffleBinderSpread() {
 }
 
 async function applyPreviousBinderSpread() {
-  if (!galleryOpen || !isBinderMode || isBinderFocused()) return;
+  if (!galleryOpen || !isBinderMode || isBinderFocusView()) return;
 
   const previousTurn = binderShuffleHistory.pop();
   if (Number.isInteger(previousTurn)) {
@@ -3438,6 +3496,7 @@ function getBinderPageStatusEditMode() {
     && binderPageCount >= 1;
   if (!canEditBase) return null;
 
+  if (isBinderIntroFocused()) return null;
   if (isBinderFocused()) return binderVisibleIndexes.length > 0 ? "focus-card" : null;
   if (!isBinderSinglePageView()) return "page";
   return null;
@@ -3567,20 +3626,29 @@ function updateBinderPageControls() {
     return;
   }
 
-  const focused = isBinderFocused();
+  const introFocused = isBinderIntroFocused();
+  const focused = isBinderFocused() || introFocused;
   if (binderPageStatusInput && !canEditBinderPageStatus()) closeBinderPageStatusEdit({ update: false });
   els.binderPageStatus.classList.toggle("is-page-jump-enabled", !binderPageStatusInput && canEditBinderPageStatus());
   els.binderPageControls.classList.toggle("is-focused", focused);
+  els.binderPageControls.classList.toggle("is-intro-focused", introFocused);
   els.binderZoomOutButton.hidden = !focused;
   els.binderOpenCardButton.hidden = !focused;
   els.binderFavoriteButton.hidden = !focused;
+  els.binderOpenCardButton.disabled = introFocused;
+  els.binderFavoriteButton.disabled = introFocused;
+  els.binderOpenCardButton.setAttribute("aria-disabled", String(introFocused));
+  els.binderFavoriteButton.setAttribute("aria-disabled", String(introFocused));
+  els.binderOpenCardButton.setAttribute("title", introFocused ? "No card to open" : "Open card view");
+  els.binderOpenCardButton.setAttribute("aria-label", introFocused ? "No card to open" : "Open card view");
   els.binderShuffleButton.hidden = focused;
   updateBinderFavoriteButton();
   updateBinderPageStatus(focused);
 
   if (focused) {
-    els.binderPreviousPageButton.disabled = binderFocusPosition <= 0;
-    els.binderNextPageButton.disabled = binderFocusPosition >= binderVisibleIndexes.length - 1;
+    const hasCards = binderVisibleIndexes.length > 0;
+    els.binderPreviousPageButton.disabled = !hasCards;
+    els.binderNextPageButton.disabled = !hasCards;
     els.binderPreviousPageButton.setAttribute("title", "Previous card in binder");
     els.binderPreviousPageButton.setAttribute("aria-label", "Previous card in binder");
     els.binderNextPageButton.setAttribute("title", "Next card in binder");
@@ -3611,11 +3679,12 @@ function updateBinderPageControls() {
   queueSessionViewStateSave();
 }
 
-function updateBinderPageStatus(focused = isBinderFocused()) {
+function updateBinderPageStatus(focused = isBinderFocusView()) {
   if (binderPageStatusInput) return;
 
   if (focused) {
-    els.binderPageStatus.textContent = withWalletStatusLabel(`${binderFocusPosition + 1} / ${binderVisibleIndexes.length}`);
+    const number = isBinderIntroFocused() ? 0 : binderFocusPosition + 1;
+    els.binderPageStatus.textContent = withWalletStatusLabel(`${number} / ${binderVisibleIndexes.length}`);
     return;
   }
 
@@ -3642,6 +3711,14 @@ function updateBinderPageStatus(focused = isBinderFocused()) {
 
 function isBinderFocused() {
   return binderFocusPosition >= 0 && binderFocusPosition < binderVisibleIndexes.length;
+}
+
+function isBinderIntroFocused() {
+  return binderIntroFocused;
+}
+
+function isBinderFocusView() {
+  return isBinderFocused() || isBinderIntroFocused();
 }
 
 function getFocusedBinderCardIndex() {
@@ -3695,7 +3772,7 @@ function showBinderSinglePageSide(side, { immediate = false } = {}) {
 function isBinderSinglePageView(width = binderLastWidth, height = binderLastHeight) {
   return galleryOpen
     && isBinderMode
-    && !isBinderFocused()
+    && !isBinderFocusView()
     && isBinderSinglePageViewport(width, height);
 }
 
@@ -3765,12 +3842,18 @@ function focusBinderPosition(position, { immediate = false } = {}) {
   markBinderInteractionActive();
   const nextTurn = getBinderTurnForPosition(position);
   if (nextTurn !== binderTargetTurn) binderBendDirection = Math.sign(nextTurn - binderTargetTurn);
+  binderIntroFocused = false;
   binderFocusPosition = position;
   binderSinglePageSide = getBinderSinglePageSideForPosition(position);
   binderSinglePageSideTouched = true;
   binderTargetTurn = nextTurn;
   binderTextureQueueKey = "";
   if (immediate) binderTurn = binderTargetTurn;
+  ensureBinderPageWindow({
+    force: true,
+    center: Math.floor(position / BINDER_PAGE_SLOTS),
+    queueTextures: false,
+  });
   els.body.classList.add("binder-focused");
   els.binderPanel.classList.add("is-focused");
   updateBinderPageControls();
@@ -3778,14 +3861,42 @@ function focusBinderPosition(position, { immediate = false } = {}) {
   updateBinderAnimation();
 }
 
+function focusBinderIntroNote({ immediate = false } = {}) {
+  if (hasActiveBinderIntroSuppressor()) return false;
+
+  markBinderInteractionActive();
+  binderIntroFocused = true;
+  binderFocusPosition = -1;
+  binderLastOpenTap = null;
+  binderSinglePageSide = BINDER_SINGLE_PAGE_COVER_SIDE;
+  binderSinglePageSideTouched = true;
+  if (binderTargetTurn !== 0) binderBendDirection = Math.sign(-binderTargetTurn) || binderBendDirection;
+  binderTargetTurn = 0;
+  binderTextureQueueKey = "";
+  if (immediate) binderTurn = 0;
+  ensureBinderPageWindow({ force: true, center: 0, queueTextures: false });
+  els.body.classList.add("binder-focused");
+  els.binderPanel.classList.add("is-focused");
+  updateBinderPageControls();
+  startBinderRenderLoop();
+  updateBinderAnimation();
+  return true;
+}
+
 function clearBinderFocus(options = {}) {
   markBinderInteractionActive();
-  const focusedSide = getBinderSinglePageSideForPosition(binderFocusPosition);
+  const introFocused = isBinderIntroFocused();
+  const focusedSide = isBinderFocused() ? getBinderSinglePageSideForPosition(binderFocusPosition) : null;
+  binderIntroFocused = false;
   binderFocusPosition = -1;
   binderLastOpenTap = null;
   els.body.classList.remove("binder-focused");
   els.binderPanel.classList.remove("is-focused");
-  if (Number.isInteger(focusedSide)) {
+  if (introFocused) {
+    binderSinglePageSide = BINDER_SINGLE_PAGE_COVER_SIDE;
+    binderSinglePageSideTouched = true;
+    binderTargetTurn = 0;
+  } else if (Number.isInteger(focusedSide)) {
     binderSinglePageSide = focusedSide;
     binderSinglePageSideTouched = true;
     binderTargetTurn = getBinderTurnForSinglePageSide(focusedSide);
@@ -3819,6 +3930,28 @@ function lockBinderFocusZoomOut(duration = BINDER_FOCUS_ZOOM_OUT_LOCK_MS) {
 }
 
 function moveBinderFocus(direction) {
+  if (!binderVisibleIndexes.length) {
+    focusBinderIntroNote();
+    return;
+  }
+
+  if (isBinderIntroFocused()) {
+    focusBinderPosition(direction < 0 ? binderVisibleIndexes.length - 1 : 0);
+    return;
+  }
+
+  if (!isBinderFocused()) return;
+
+  if (direction < 0 && binderFocusPosition <= 0) {
+    focusBinderIntroNote({ immediate: true });
+    return;
+  }
+
+  if (direction > 0 && binderFocusPosition >= binderVisibleIndexes.length - 1) {
+    focusBinderIntroNote({ immediate: true });
+    return;
+  }
+
   const nextPosition = clamp(
     binderFocusPosition + direction,
     0,
@@ -3858,6 +3991,7 @@ async function jumpFocusedBinderCard(position) {
 
 function leaveBinderFocusForCardJump() {
   markBinderInteractionActive();
+  binderIntroFocused = false;
   binderFocusPosition = -1;
   binderLastOpenTap = null;
   binderSinglePageSide = null;
@@ -3879,6 +4013,7 @@ async function openFocusedBinderCard() {
   if (!focusedMesh) {
     resetIndividualCardZoom();
     setCard(cardIndex);
+    binderIntroFocused = false;
     binderFocusPosition = -1;
     setGalleryOpen(false);
     return;
@@ -4024,6 +4159,7 @@ async function transitionFocusedBinderCardToIndividual(cardIndex, focusedMesh) {
     els.body.classList.add("binder-card-transition-show-card");
     await delay(BINDER_CARD_VIEW_TRANSITION_MS * 0.54);
 
+    binderIntroFocused = false;
     binderFocusPosition = -1;
     setGalleryOpen(false);
     transitionCard.classList.add("is-dissolving");
@@ -4273,7 +4409,7 @@ function onBinderPointerMove(event) {
   binderDrag.lastX = event.clientX;
   binderDrag.moved = binderDrag.moved || Math.hypot(deltaX, deltaY) > 7;
 
-  if (!isBinderFocused()) {
+  if (!isBinderFocusView()) {
     const pageDelta = -(deltaX / Math.max(rect.width, 1)) / 0.26;
     binderTargetTurn = clamp(binderDrag.startTurn + pageDelta, 0, binderPageCount);
     if (Math.abs(pageDelta) > 0.002) {
@@ -4299,11 +4435,12 @@ function onBinderPointerUp(event) {
   }
 
   if (wasClick) {
+    if (handleBinderIntroNoteTap(event)) return;
     if (handleBinderIntroLinkTap(event)) return;
     if (handleFocusedBinderCardTap(event)) return;
     if (selectBinderCard(event)) return;
     handleFocusedBinderBackgroundTap(event);
-  } else if (!isBinderFocused()) {
+  } else if (!isBinderFocusView()) {
     binderTargetTurn = Math.round(binderTargetTurn);
     if (isBinderSinglePageView()) binderSinglePageSide = deriveBinderSinglePageSideFromTurn(binderTargetTurn);
     updateBinderPageControls();
@@ -4315,8 +4452,8 @@ function onBinderPointerCancel(event) {
   if (!binderDrag || binderDrag.pointerId !== event.pointerId) return;
   markBinderInteractionActive();
   binderDrag = null;
-  if (!isBinderFocused()) binderTargetTurn = Math.round(binderTargetTurn);
-  if (!isBinderFocused() && isBinderSinglePageView()) binderSinglePageSide = deriveBinderSinglePageSideFromTurn(binderTargetTurn);
+  if (!isBinderFocusView()) binderTargetTurn = Math.round(binderTargetTurn);
+  if (!isBinderFocusView() && isBinderSinglePageView()) binderSinglePageSide = deriveBinderSinglePageSideFromTurn(binderTargetTurn);
   updateBinderPageControls();
   startBinderRenderLoop();
 }
@@ -4332,7 +4469,15 @@ function handleBinderWheel(event) {
   const now = performance.now();
   if (now < binderWheelFocusLockUntil) return;
 
-  if (isBinderFocused()) {
+  if (isBinderFocusView()) {
+    if (isBinderIntroFocused()) {
+      resetBinderFocusWheelInDistance();
+      if (wheelDelta < 0 || binderCardViewTransitionActive || now < binderFocusZoomOutLockUntil) return;
+      binderWheelFocusLockUntil = now + 700;
+      clearBinderFocus();
+      return;
+    }
+
     if (wheelDelta < 0) {
       if (addBinderFocusWheelInDistance(-wheelDelta, now)) {
         binderWheelFocusLockUntil = now + BINDER_CARD_VIEW_TRANSITION_MS + BINDER_TO_CARD_SCROLL_LOCK_BUFFER_MS;
@@ -4353,6 +4498,13 @@ function handleBinderWheel(event) {
 
   resetBinderFocusWheelInDistance();
   if (wheelDelta >= 0) return;
+
+  if (getBinderIntroNoteHit(event)) {
+    binderWheelFocusLockUntil = now + 700;
+    focusBinderIntroNote();
+    return;
+  }
+
   const hit = getBinderCardHit(event);
   if (!hit) return;
 
@@ -4378,12 +4530,30 @@ function handleBinderIntroLinkTap(event) {
   return true;
 }
 
+function handleBinderIntroNoteTap(event) {
+  const linkHit = getBinderIntroLinkHit(event);
+  const noteHit = getBinderIntroNoteHit(event);
+  if (!linkHit && !noteHit) return false;
+
+  if (isBinderIntroFocused()) {
+    if (linkHit) {
+      window.open(linkHit.object.userData.binderIntroLinkUrl || BINDER_INTRO_LINK_URL, "_blank", "noopener,noreferrer");
+    }
+    return true;
+  }
+
+  return focusBinderIntroNote();
+}
+
 function updateBinderIntroLinkCursor(event) {
   if (event.pointerType && event.pointerType !== "mouse") {
     clearBinderIntroLinkCursor();
     return;
   }
-  els.binderCanvas.style.cursor = getBinderIntroLinkHit(event) ? "pointer" : "";
+  const hasPointerTarget = getBinderCardHit(event)
+    || getBinderIntroLinkHit(event)
+    || (!isBinderIntroFocused() && getBinderIntroNoteHit(event));
+  els.binderCanvas.style.cursor = hasPointerTarget ? "pointer" : "";
 }
 
 function clearBinderIntroLinkCursor() {
@@ -4402,6 +4572,28 @@ function getBinderIntroLinkHit(event) {
 
   setBinderRaycasterFromEvent(event);
   return binderRaycaster.intersectObjects(meshes, false)[0] || null;
+}
+
+function getBinderIntroNoteHit(event) {
+  if (!binderCamera || !binderIntroNoteMesh || !isVisibleThroughParents(binderIntroNoteMesh)) return null;
+  if (hasActiveBinderIntroSuppressor()) return null;
+  if (Math.abs(binderTurn) > 0.08 || Math.abs(binderTargetTurn) > 0.08) return null;
+
+  setBinderRaycasterFromEvent(event);
+  const hit = binderRaycaster.intersectObject(binderIntroNoteMesh, false)[0] || null;
+  if (!hit || !isBinderIntroFocusUv(hit.uv, binderIntroNoteMesh.userData.binderIntroFocusBounds)) return null;
+  return hit;
+}
+
+function isBinderIntroFocusUv(uv, bounds) {
+  if (!uv || !bounds) return false;
+
+  const textureX = uv.x;
+  const textureY = 1 - uv.y;
+  return textureX >= bounds.x
+    && textureX <= bounds.x + bounds.width
+    && textureY >= bounds.y
+    && textureY <= bounds.y + bounds.height;
 }
 
 function showOtherVisibleBinderSinglePageSide(position) {
@@ -4443,7 +4635,7 @@ function handleFocusedBinderCardTap(event) {
 }
 
 function handleFocusedBinderBackgroundTap(event) {
-  if (!isBinderFocused() || binderCardViewTransitionActive) return false;
+  if (!isBinderFocusView() || binderCardViewTransitionActive) return false;
   if (getBinderObjectHit(event)) return false;
 
   binderLastOpenTap = null;
@@ -5025,7 +5217,7 @@ function getBinderSheetVisibilityFactor({
   turnActivity = 0,
   stackCoverProgress = 0,
 }) {
-  const focused = isBinderFocused();
+  const focused = isBinderFocusView();
   const currentPageFactor = focused ? 0.68 : 1;
   if (stackCoverProgress > 0) {
     return THREE.MathUtils.lerp(currentPageFactor, getBinderUnderlyingSheetVisibility(1, focused), stackCoverProgress);
@@ -5150,6 +5342,9 @@ function updateBinderIntroNoteModeOpacity(now = performance.now()) {
 
 function syncBinderIntroNoteModeTarget(now = performance.now()) {
   const targetOpacity = hasActiveBinderIntroSuppressor() ? 0 : 1;
+  if (targetOpacity === 0 && isBinderIntroFocused()) {
+    clearBinderFocus();
+  }
   if (binderIntroNoteModeTargetOpacity === targetOpacity) return false;
 
   binderIntroNoteModeTargetOpacity = targetOpacity;
@@ -5201,17 +5396,28 @@ function updateBinderCameraFrame(immediate = false) {
   binderDesiredCameraPosition.copy(binderDefaultCameraPosition);
   binderDesiredCameraLookAt.copy(binderDefaultCameraLookAt);
 
-  const focusMesh = getBinderFocusedMesh();
-  if (focusMesh && binderRoot) {
-    binderRoot.updateMatrixWorld(true);
-    focusMesh.getWorldPosition(binderFocusWorldPosition);
-    const focusDistance = getBinderFocusDistance();
-    binderDesiredCameraLookAt.copy(binderFocusWorldPosition);
+  const introFocusFrame = getBinderIntroFocusFrame();
+  if (introFocusFrame) {
+    const focusDistance = getBinderIntroFocusDistance(introFocusFrame);
+    binderDesiredCameraLookAt.copy(introFocusFrame.center);
     binderDesiredCameraPosition.set(
-      binderFocusWorldPosition.x,
-      binderFocusWorldPosition.y,
-      binderFocusWorldPosition.z + focusDistance,
+      introFocusFrame.center.x,
+      introFocusFrame.center.y,
+      introFocusFrame.center.z + focusDistance,
     );
+  } else {
+    const focusMesh = getBinderFocusedMesh();
+    if (focusMesh && binderRoot) {
+      binderRoot.updateMatrixWorld(true);
+      focusMesh.getWorldPosition(binderFocusWorldPosition);
+      const focusDistance = getBinderFocusDistance();
+      binderDesiredCameraLookAt.copy(binderFocusWorldPosition);
+      binderDesiredCameraPosition.set(
+        binderFocusWorldPosition.x,
+        binderFocusWorldPosition.y,
+        binderFocusWorldPosition.z + focusDistance,
+      );
+    }
   }
 
   if (immediate || !binderCameraReady) {
@@ -5222,7 +5428,7 @@ function updateBinderCameraFrame(immediate = false) {
     return;
   }
 
-  const alpha = isBinderFocused() ? 0.12 : 0.1;
+  const alpha = isBinderFocusView() ? 0.12 : 0.1;
   binderCamera.position.lerp(binderDesiredCameraPosition, alpha);
   binderCurrentCameraLookAt.lerp(binderDesiredCameraLookAt, alpha);
   binderCamera.lookAt(binderCurrentCameraLookAt);
@@ -5235,7 +5441,7 @@ function updateBinderDefaultCameraFrame() {
   const height = binderLastHeight || els.binderPanel?.getBoundingClientRect().height || window.innerHeight || 1;
   const aspect = Math.max(width / Math.max(1, height), 0.1);
   const fov = THREE.MathUtils.degToRad(binderCamera.fov);
-  const singlePage = isBinderSinglePageViewport(width, height) && !isBinderFocused();
+  const singlePage = isBinderSinglePageViewport(width, height) && !isBinderFocusView();
   const singlePageSide = singlePage ? getBinderSinglePageSide() : null;
   const centerX = singlePage ? getBinderSinglePageCenterX(singlePageSide) : 0;
   const fitHeight = BINDER_PAGE_HEIGHT + (
@@ -5266,6 +5472,51 @@ function getBinderFocusDistance() {
   const distanceForHeight = BINDER_CARD_HEIGHT / (2 * Math.tan(fov / 2) * 0.59);
   const distanceForWidth = BINDER_CARD_WIDTH / (2 * Math.tan(fov / 2) * aspect * 0.42);
   return Math.max(distanceForHeight, distanceForWidth) + 0.16;
+}
+
+function getBinderIntroFocusFrame() {
+  if (!isBinderIntroFocused() || !binderRoot || !binderIntroNoteMesh || !isVisibleThroughParents(binderIntroNoteMesh)) {
+    return null;
+  }
+
+  const bounds = binderIntroNoteMesh.userData.binderIntroFocusBounds;
+  const width = binderIntroNoteMesh.geometry?.parameters?.width || 1;
+  const height = binderIntroNoteMesh.geometry?.parameters?.height || 1;
+  const focusBounds = bounds && Number.isFinite(bounds.width) && Number.isFinite(bounds.height)
+    ? bounds
+    : { x: 0, y: 0, width: 1, height: 1 };
+  const worldScale = binderIntroNoteMesh.getWorldScale(binderIntroFocusWorldScale);
+
+  binderRoot.updateMatrixWorld(true);
+  binderIntroNoteMesh.updateWorldMatrix(true, false);
+  binderIntroFocusLocalPosition.set(
+    width * (focusBounds.x + focusBounds.width / 2 - 0.5),
+    height * (0.5 - focusBounds.y - focusBounds.height / 2),
+    0,
+  );
+  binderIntroFocusWorldPosition.copy(binderIntroFocusLocalPosition).applyMatrix4(binderIntroNoteMesh.matrixWorld);
+
+  return {
+    center: binderIntroFocusWorldPosition,
+    width: Math.max(0.1, width * focusBounds.width * Math.abs(worldScale.x || 1)),
+    height: Math.max(0.1, height * focusBounds.height * Math.abs(worldScale.y || 1)),
+  };
+}
+
+function getBinderIntroFocusDistance(frame) {
+  const fov = THREE.MathUtils.degToRad(binderCamera.fov);
+  const aspect = Math.max(binderCamera.aspect || 1, 0.1);
+  const marginRatio = getBinderIntroFocusMarginRatio();
+  const usableRatio = Math.max(0.1, 1 - marginRatio * 2);
+  const distanceForHeight = frame.height / (2 * Math.tan(fov / 2) * usableRatio);
+  const distanceForWidth = frame.width / (2 * Math.tan(fov / 2) * aspect * usableRatio);
+  return Math.max(distanceForHeight, distanceForWidth) + BINDER_INTRO_FOCUS_EXTRA_Z;
+}
+
+function getBinderIntroFocusMarginRatio() {
+  return isBinderSinglePageViewport()
+    ? BINDER_INTRO_FOCUS_MOBILE_MARGIN_RATIO
+    : BINDER_INTRO_FOCUS_MARGIN_RATIO;
 }
 
 function renderBinderSceneOnce({ includePreload = !isBinderTurnMoving() } = {}) {
@@ -5339,7 +5590,7 @@ function resizeBinderRenderer() {
   }
 
   updateBinderDefaultCameraFrame();
-  updateBinderCameraFrame(!isBinderFocused() || !binderCameraReady);
+  updateBinderCameraFrame(!isBinderFocusView() || !binderCameraReady);
   updateBinderPageControls();
 }
 
@@ -5396,6 +5647,7 @@ function createBinderIntroNoteTexture() {
     return {
       texture: binderIntroNoteTexture,
       linkBounds: binderIntroNoteTexture.userData.linkBounds,
+      focusBounds: binderIntroNoteTexture.userData.focusBounds,
     };
   }
 
@@ -5405,7 +5657,7 @@ function createBinderIntroNoteTexture() {
   surface.width = width;
   surface.height = height;
   const ctx = surface.getContext("2d");
-  const linkBounds = drawBinderIntroNoteSurface(ctx);
+  const noteBounds = drawBinderIntroNoteSurface(ctx);
 
   const texture = new THREE.CanvasTexture(surface);
   texture.colorSpace = THREE.SRGBColorSpace;
@@ -5413,12 +5665,14 @@ function createBinderIntroNoteTexture() {
   texture.magFilter = THREE.LinearFilter;
   texture.generateMipmaps = true;
   texture.needsUpdate = true;
-  texture.userData.linkBounds = linkBounds;
+  texture.userData.linkBounds = noteBounds.linkBounds;
+  texture.userData.focusBounds = noteBounds.focusBounds;
   texture.userData.surfaceContext = ctx;
   binderIntroNoteTexture = texture;
   return {
     texture,
     linkBounds: texture.userData.linkBounds,
+    focusBounds: texture.userData.focusBounds,
   };
 }
 
@@ -5485,7 +5739,18 @@ function drawBinderIntroNoteSurface(ctx) {
     linkFillStyle,
     url: BINDER_CARD_NFT_2_LINK_URL,
   });
-  return [evilBiscuitLinkBounds, cardNft2LinkBounds];
+
+  const focusTop = Math.max(0, (144 + textOffsetY - baseFontSize * 1.28) / height);
+  const focusBottom = Math.min(1, (510 + textOffsetY + 32 * 0.48) / height);
+  return {
+    linkBounds: [evilBiscuitLinkBounds, cardNft2LinkBounds],
+    focusBounds: {
+      x: 0.04,
+      y: focusTop,
+      width: 0.92,
+      height: focusBottom - focusTop,
+    },
+  };
 }
 
 function drawBinderIntroLinkedLine(
@@ -6233,6 +6498,12 @@ function restoreSessionGalleryView(state) {
     return;
   }
 
+  if (state.binderIntroFocused && !hasActiveBinderIntroSuppressor()) {
+    focusBinderIntroNote({ immediate: true });
+    queueSessionViewStateSave();
+    return;
+  }
+
   const focusedCardIndex = Number.isInteger(state.binderFocusedCardIndex)
     ? state.binderFocusedCardIndex
     : -1;
@@ -6313,6 +6584,7 @@ function getSessionViewState() {
     binderSinglePageSide: Number.isInteger(binderSinglePageSide) ? binderSinglePageSide : null,
     binderSinglePageSideTouched,
     binderFocusedCardIndex: Number.isInteger(focusedCardIndex) ? focusedCardIndex : null,
+    binderIntroFocused: isBinderIntroFocused(),
   };
 }
 
