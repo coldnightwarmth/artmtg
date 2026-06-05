@@ -432,17 +432,29 @@ function initCardScene() {
   const faceGeometry = createRoundedPlaneGeometry(CARD_WIDTH, CARD_HEIGHT, CARD_RADIUS);
   cardFrontMesh = new THREE.Mesh(
     faceGeometry,
-    new THREE.MeshBasicMaterial({ map: getCardPlaceholderTexture(), toneMapped: false }),
+    new THREE.MeshBasicMaterial({
+      map: getCardPlaceholderTexture(),
+      depthWrite: false,
+      depthTest: false,
+      toneMapped: false,
+    }),
   );
   cardFrontMesh.position.z = CARD_DEPTH / 2 + 0.003;
+  cardFrontMesh.renderOrder = 22;
   cardGroup.add(cardFrontMesh);
 
   cardBackMesh = new THREE.Mesh(
     faceGeometry.clone(),
-    new THREE.MeshBasicMaterial({ map: getCardPlaceholderTexture(), toneMapped: false }),
+    new THREE.MeshBasicMaterial({
+      map: getCardPlaceholderTexture(),
+      depthWrite: false,
+      depthTest: false,
+      toneMapped: false,
+    }),
   );
   cardBackMesh.position.z = -CARD_DEPTH / 2 - 0.003;
   cardBackMesh.rotation.y = Math.PI;
+  cardBackMesh.renderOrder = 22;
   cardGroup.add(cardBackMesh);
 
   cardFrontNoiseMesh = createCardSurfaceNoisePlane();
@@ -852,10 +864,13 @@ function createCardSwapGroup(frontTexture, backTexture) {
     new THREE.MeshBasicMaterial({
       map: frontTexture || getCardPlaceholderTexture(),
       transparent: true,
+      depthWrite: false,
+      depthTest: false,
       toneMapped: false,
     }),
   );
   frontMesh.position.z = CARD_DEPTH / 2 + 0.003;
+  frontMesh.renderOrder = 22;
   group.add(frontMesh);
 
   const backMesh = new THREE.Mesh(
@@ -863,11 +878,14 @@ function createCardSwapGroup(frontTexture, backTexture) {
     new THREE.MeshBasicMaterial({
       map: backTexture || getBackPlaceholderTexture(),
       transparent: true,
+      depthWrite: false,
+      depthTest: false,
       toneMapped: false,
     }),
   );
   backMesh.position.z = -CARD_DEPTH / 2 - 0.003;
   backMesh.rotation.y = Math.PI;
+  backMesh.renderOrder = 22;
   group.add(backMesh);
 
   const frontNoise = createCardSurfaceNoisePlane();
@@ -2434,7 +2452,7 @@ function createBinderIntroSpriteMeshes(coverWidth, coverHeight) {
     const size = coverHeight * sprite.sizeRatio;
     const material = new THREE.MeshBasicMaterial({
       transparent: true,
-      opacity: 0.92,
+      opacity: 0,
       toneMapped: false,
       side: THREE.DoubleSide,
       depthWrite: false,
@@ -2443,11 +2461,9 @@ function createBinderIntroSpriteMeshes(coverWidth, coverHeight) {
     textureLoader.load(
       sprite.url,
       (texture) => {
-        texture.colorSpace = THREE.SRGBColorSpace;
-        texture.minFilter = THREE.LinearMipmapLinearFilter;
-        texture.magFilter = THREE.LinearFilter;
-        texture.generateMipmaps = true;
+        configureDisplayTexture(texture);
         material.map = texture;
+        material.opacity = 0.92;
         material.needsUpdate = true;
         requestBinderRenderOnce();
       },
@@ -5660,11 +5676,7 @@ function createBinderIntroNoteTexture() {
   const noteBounds = drawBinderIntroNoteSurface(ctx);
 
   const texture = new THREE.CanvasTexture(surface);
-  texture.colorSpace = THREE.SRGBColorSpace;
-  texture.minFilter = THREE.LinearMipmapLinearFilter;
-  texture.magFilter = THREE.LinearFilter;
-  texture.generateMipmaps = true;
-  texture.needsUpdate = true;
+  configureDisplayTexture(texture);
   texture.userData.linkBounds = noteBounds.linkBounds;
   texture.userData.focusBounds = noteBounds.focusBounds;
   texture.userData.surfaceContext = ctx;
@@ -5802,7 +5814,7 @@ function drawCenteredBinderIntroText(ctx, text, x, y, maxWidth, fontSize, fontSt
 function createBinderSleeveFrostTexture() {
   if (binderSleeveFrostTexture) return binderSleeveFrostTexture;
 
-  const size = 192;
+  const size = 256;
   const surface = document.createElement("canvas");
   surface.width = size;
   surface.height = size;
@@ -5853,8 +5865,7 @@ function getBinderPlaceholderTexture() {
   addPaperNoise(ctx, surface.width, surface.height, 0.045);
 
   binderPlaceholderTexture = new THREE.CanvasTexture(surface);
-  binderPlaceholderTexture.colorSpace = THREE.SRGBColorSpace;
-  binderPlaceholderTexture.needsUpdate = true;
+  configureDisplayTexture(binderPlaceholderTexture);
   return binderPlaceholderTexture;
 }
 
@@ -5880,8 +5891,7 @@ function createPaperRoughnessTexture() {
 
   ctx.putImageData(imageData, 0, 0);
   const texture = new THREE.CanvasTexture(surface);
-  texture.colorSpace = THREE.NoColorSpace;
-  texture.needsUpdate = true;
+  configureDisplayTexture(texture, { colorSpace: THREE.NoColorSpace });
   paperRoughnessTexture = texture;
   return paperRoughnessTexture;
 }
@@ -6037,15 +6047,21 @@ function getBackTexture() {
   return backTexturePromise;
 }
 
+function configureDisplayTexture(texture, { colorSpace = THREE.SRGBColorSpace } = {}) {
+  texture.colorSpace = colorSpace;
+  texture.minFilter = THREE.LinearFilter;
+  texture.magFilter = THREE.LinearFilter;
+  texture.wrapS = THREE.ClampToEdgeWrapping;
+  texture.wrapT = THREE.ClampToEdgeWrapping;
+  texture.generateMipmaps = false;
+  texture.needsUpdate = true;
+  return texture;
+}
+
 function loadTexture(url) {
   return new Promise((resolve, reject) => {
     textureLoader.load(url, (texture) => {
-      texture.colorSpace = THREE.SRGBColorSpace;
-      texture.minFilter = THREE.LinearMipmapLinearFilter;
-      texture.magFilter = THREE.LinearFilter;
-      texture.generateMipmaps = true;
-      texture.needsUpdate = true;
-      resolve(texture);
+      resolve(configureDisplayTexture(texture));
     }, undefined, reject);
   });
 }
@@ -6055,11 +6071,6 @@ function loadAnimatedTexture(card) {
   if (!sprite) return loadTexture(cardAssetUrl(card));
 
   return loadTexture(new URL(sprite.file, import.meta.url).href).then((texture) => {
-    texture.generateMipmaps = false;
-    texture.minFilter = THREE.LinearFilter;
-    texture.magFilter = THREE.LinearFilter;
-    texture.wrapS = THREE.ClampToEdgeWrapping;
-    texture.wrapT = THREE.ClampToEdgeWrapping;
     texture.repeat.set(1 / sprite.columns, 1 / sprite.rows);
     texture.offset.set(0, 1 - (1 / sprite.rows));
     texture.needsUpdate = true;
@@ -6094,7 +6105,7 @@ function getCardPlaceholderTexture() {
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   addPaperNoise(ctx, canvas.width, canvas.height, 0.045);
   cardPlaceholderTexture = new THREE.CanvasTexture(canvas);
-  cardPlaceholderTexture.colorSpace = THREE.SRGBColorSpace;
+  configureDisplayTexture(cardPlaceholderTexture);
   return cardPlaceholderTexture;
 }
 
@@ -6161,13 +6172,7 @@ function createCardSurfaceNoiseTexture() {
   }
 
   cardSurfaceNoiseTexture = new THREE.CanvasTexture(canvas);
-  cardSurfaceNoiseTexture.colorSpace = THREE.SRGBColorSpace;
-  cardSurfaceNoiseTexture.minFilter = THREE.LinearMipmapLinearFilter;
-  cardSurfaceNoiseTexture.magFilter = THREE.LinearFilter;
-  cardSurfaceNoiseTexture.wrapS = THREE.ClampToEdgeWrapping;
-  cardSurfaceNoiseTexture.wrapT = THREE.ClampToEdgeWrapping;
-  cardSurfaceNoiseTexture.generateMipmaps = true;
-  cardSurfaceNoiseTexture.needsUpdate = true;
+  configureDisplayTexture(cardSurfaceNoiseTexture);
   return cardSurfaceNoiseTexture;
 }
 
