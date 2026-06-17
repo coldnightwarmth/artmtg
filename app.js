@@ -132,6 +132,11 @@ const BINDER_CARD_VIEW_TRANSITION_MS = 820;
 const INDIVIDUAL_TO_BINDER_WHEEL_THRESHOLD = 1560;
 const BINDER_TO_INDIVIDUAL_WHEEL_THRESHOLD = 680;
 const VIEW_SWITCH_WHEEL_IDLE_MS = 900;
+const PINCH_WHEEL_DELTA_SCALE = 1120;
+const PINCH_MIN_DISTANCE_PX = 28;
+const PINCH_DELTA_EPSILON = 0.004;
+const BINDER_FOCUS_SWIPE_MIN_DISTANCE = 46;
+const BINDER_FOCUS_SWIPE_MAX_OFF_AXIS_RATIO = 0.86;
 const DOUBLE_TAP_ZOOM_SUPPRESSION_MS = 320;
 const BINDER_FOCUS_ZOOM_OUT_LOCK_MS = 620;
 const BINDER_TO_CARD_SCROLL_LOCK_BUFFER_MS = 120;
@@ -297,6 +302,10 @@ let individualWheelOutDistance = 0;
 let individualWheelOutLastAt = 0;
 let binderFocusWheelInDistance = 0;
 let binderFocusWheelInLastAt = 0;
+const cardTouchPointers = new Map();
+const binderTouchPointers = new Map();
+let cardPinchGesture = null;
+let binderPinchGesture = null;
 let resizeFrame = 0;
 
 let binderRenderer;
@@ -603,7 +612,10 @@ function initEvents() {
     if (!binderPageStatusInput || binderPageStatusInput.contains(event.target)) return;
     closeBinderPageStatusEdit();
   }, true);
-  window.addEventListener("blur", () => setTraitSortPickerOpen(false));
+  window.addEventListener("blur", () => {
+    setTraitSortPickerOpen(false);
+    resetTouchGestures();
+  });
   els.themeToggle.addEventListener("change", () => applyTheme(els.themeToggle.checked));
   els.binderPreviousPageButton.addEventListener("click", previousBinderPage);
   els.binderNextPageButton.addEventListener("click", nextBinderPage);
@@ -1493,6 +1505,7 @@ function updateBinderFavoriteButton() {
 
 function setGalleryOpen(open, options = {}) {
   resetViewSwitchWheelDistances();
+  resetTouchGestures();
   binderSpreadPreparationToken += 1;
   binderPreparingSpread = false;
   if (open) closeCardNameEdit({ update: false });
@@ -4328,6 +4341,22 @@ function delay(ms) {
 function onCardPointerDown(event) {
   if (cardSwapAnimating || cardShuffleSpinAnimating) return;
   els.cardCanvas.setPointerCapture(event.pointerId);
+
+  if (isTouchLikePointer(event)) {
+    trackTouchPointer(cardTouchPointers, event);
+    if (cardTouchPointers.size >= 2) {
+      dragState = null;
+      beginCardPinchGesture();
+      event.preventDefault();
+      return;
+    }
+  }
+
+  if (cardPinchGesture) {
+    event.preventDefault();
+    return;
+  }
+
   const panMode = isCardPanMode();
   dragState = {
     pointerId: event.pointerId,
@@ -4342,6 +4371,16 @@ function onCardPointerDown(event) {
 }
 
 function onCardPointerMove(event) {
+  if (isTouchLikePointer(event)) {
+    updateTouchPointer(cardTouchPointers, event);
+    if (cardPinchGesture || cardTouchPointers.size >= 2) {
+      dragState = null;
+      updateCardPinchGesture();
+      event.preventDefault();
+      return;
+    }
+  }
+
   if (!dragState || event.pointerId !== dragState.pointerId) return;
   const dx = event.clientX - dragState.x;
   const dy = event.clientY - dragState.y;
@@ -4364,6 +4403,19 @@ function onCardPointerMove(event) {
 }
 
 function onCardPointerUp(event) {
+  if (isTouchLikePointer(event)) {
+    removeTouchPointer(cardTouchPointers, event);
+    if (cardPinchGesture) {
+      if (cardTouchPointers.size >= 2) {
+        beginCardPinchGesture();
+      } else {
+        cardPinchGesture = null;
+      }
+      event.preventDefault();
+      return;
+    }
+  }
+
   if (!dragState || event.pointerId !== dragState.pointerId) return;
   dragState = null;
   if (!isCardPanMode()) {
@@ -4377,7 +4429,10 @@ function onCardWheel(event) {
   event.stopImmediatePropagation();
 
   const normalizedDelta = normalizeWheelDelta(event.deltaY || 0, event);
+  handleIndividualZoomInput(normalizedDelta);
+}
 
+function handleIndividualZoomInput(normalizedDelta) {
   if (
     normalizedDelta > 0
     && !galleryOpen
@@ -4405,6 +4460,121 @@ function onCardWheel(event) {
   );
 }
 
+function isTouchLikePointer(event) {
+  return event.pointerType && event.pointerType !== "mouse";
+}
+
+function trackTouchPointer(pointerMap, event) {
+  pointerMap.set(event.pointerId, {
+    id: event.pointerId,
+    x: event.clientX,
+    y: event.clientY,
+  });
+}
+
+function updateTouchPointer(pointerMap, event) {
+  if (!pointerMap.has(event.pointerId)) return;
+  pointerMap.set(event.pointerId, {
+    id: event.pointerId,
+    x: event.clientX,
+    y: event.clientY,
+  });
+}
+
+function removeTouchPointer(pointerMap, event) {
+  pointerMap.delete(event.pointerId);
+}
+
+function getTouchPointerPair(pointerMap) {
+  const pointers = Array.from(pointerMap.values());
+  return pointers.length >= 2 ? [pointers[0], pointers[1]] : null;
+}
+
+function getTouchPairDistance(pair) {
+  if (!pair) return 0;
+  return Math.hypot(pair[0].x - pair[1].x, pair[0].y - pair[1].y);
+}
+
+function getTouchPairCenter(pair) {
+  return {
+    clientX: (pair[0].x + pair[1].x) / 2,
+    clientY: (pair[0].y + pair[1].y) / 2,
+  };
+}
+
+function getPinchWheelDelta(lastDistance, nextDistance) {
+  if (lastDistance < PINCH_MIN_DISTANCE_PX || nextDistance < PINCH_MIN_DISTANCE_PX) return 0;
+  const ratio = nextDistance / lastDistance;
+  if (!Number.isFinite(ratio) || ratio <= 0 || Math.abs(ratio - 1) < PINCH_DELTA_EPSILON) return 0;
+  return clamp(-Math.log(ratio) * PINCH_WHEEL_DELTA_SCALE, -900, 900);
+}
+
+function beginCardPinchGesture() {
+  const pair = getTouchPointerPair(cardTouchPointers);
+  const distance = getTouchPairDistance(pair);
+  cardPinchGesture = distance >= PINCH_MIN_DISTANCE_PX
+    ? { lastDistance: distance }
+    : null;
+}
+
+function updateCardPinchGesture() {
+  const pair = getTouchPointerPair(cardTouchPointers);
+  const distance = getTouchPairDistance(pair);
+  if (!pair || distance < PINCH_MIN_DISTANCE_PX) return;
+  if (!cardPinchGesture) {
+    cardPinchGesture = { lastDistance: distance };
+    return;
+  }
+
+  const delta = getPinchWheelDelta(cardPinchGesture.lastDistance, distance);
+  cardPinchGesture.lastDistance = distance;
+  if (Math.abs(delta) < 0.5) return;
+  handleIndividualZoomInput(delta);
+}
+
+function cancelBinderDragForPinch() {
+  if (!binderDrag) return;
+
+  binderDrag = null;
+  binderLastOpenTap = null;
+  if (!isBinderFocusView()) {
+    binderTargetTurn = Math.round(binderTargetTurn);
+    if (isBinderSinglePageView()) binderSinglePageSide = deriveBinderSinglePageSideFromTurn(binderTargetTurn);
+    updateBinderPageControls();
+    startBinderRenderLoop();
+  }
+}
+
+function beginBinderPinchGesture() {
+  const pair = getTouchPointerPair(binderTouchPointers);
+  const distance = getTouchPairDistance(pair);
+  binderPinchGesture = distance >= PINCH_MIN_DISTANCE_PX
+    ? { lastDistance: distance }
+    : null;
+}
+
+function updateBinderPinchGesture() {
+  const pair = getTouchPointerPair(binderTouchPointers);
+  const distance = getTouchPairDistance(pair);
+  if (!pair || distance < PINCH_MIN_DISTANCE_PX) return;
+  if (!binderPinchGesture) {
+    binderPinchGesture = { lastDistance: distance };
+    return;
+  }
+
+  const delta = getPinchWheelDelta(binderPinchGesture.lastDistance, distance);
+  binderPinchGesture.lastDistance = distance;
+  if (Math.abs(delta) < 0.5) return;
+  handleBinderZoomInput(delta, getTouchPairCenter(pair));
+}
+
+function resetTouchGestures() {
+  cardTouchPointers.clear();
+  binderTouchPointers.clear();
+  cardPinchGesture = null;
+  binderPinchGesture = null;
+}
+
 function onBinderPointerDown(event) {
   if (!galleryOpen || !isBinderMode || binderPageCount < 1) return;
 
@@ -4415,6 +4585,22 @@ function onBinderPointerDown(event) {
   initBinderScene();
   startBinderRenderLoop();
   els.binderCanvas.setPointerCapture(event.pointerId);
+
+  if (isTouchLikePointer(event)) {
+    trackTouchPointer(binderTouchPointers, event);
+    if (binderTouchPointers.size >= 2) {
+      cancelBinderDragForPinch();
+      beginBinderPinchGesture();
+      event.preventDefault();
+      return;
+    }
+  }
+
+  if (binderPinchGesture) {
+    event.preventDefault();
+    return;
+  }
+
   binderDrag = {
     pointerId: event.pointerId,
     startX: event.clientX,
@@ -4428,6 +4614,16 @@ function onBinderPointerDown(event) {
 }
 
 function onBinderPointerMove(event) {
+  if (isTouchLikePointer(event)) {
+    updateTouchPointer(binderTouchPointers, event);
+    if (binderPinchGesture || binderTouchPointers.size >= 2) {
+      cancelBinderDragForPinch();
+      updateBinderPinchGesture();
+      event.preventDefault();
+      return;
+    }
+  }
+
   if (!binderDrag) {
     updateBinderIntroLinkCursor(event);
     return;
@@ -4458,10 +4654,24 @@ function onBinderPointerMove(event) {
 }
 
 function onBinderPointerUp(event) {
+  if (isTouchLikePointer(event)) {
+    removeTouchPointer(binderTouchPointers, event);
+    if (binderPinchGesture) {
+      if (binderTouchPointers.size >= 2) {
+        beginBinderPinchGesture();
+      } else {
+        binderPinchGesture = null;
+      }
+      event.preventDefault();
+      return;
+    }
+  }
+
   if (!binderDrag || binderDrag.pointerId !== event.pointerId) return;
 
   markBinderInteractionActive();
-  const wasClick = !binderDrag.moved;
+  const finishedDrag = binderDrag;
+  const wasClick = !finishedDrag.moved;
   binderDrag = null;
   if (els.binderCanvas.hasPointerCapture(event.pointerId)) {
     els.binderCanvas.releasePointerCapture(event.pointerId);
@@ -4473,6 +4683,8 @@ function onBinderPointerUp(event) {
     if (handleFocusedBinderCardTap(event)) return;
     if (selectBinderCard(event)) return;
     handleFocusedBinderBackgroundTap(event);
+  } else if (isBinderFocused()) {
+    handleFocusedBinderSwipe(finishedDrag, event);
   } else if (!isBinderFocusView()) {
     binderTargetTurn = Math.round(binderTargetTurn);
     if (isBinderSinglePageView()) binderSinglePageSide = deriveBinderSinglePageSideFromTurn(binderTargetTurn);
@@ -4482,6 +4694,10 @@ function onBinderPointerUp(event) {
 }
 
 function onBinderPointerCancel(event) {
+  if (isTouchLikePointer(event)) {
+    removeTouchPointer(binderTouchPointers, event);
+    if (binderPinchGesture && binderTouchPointers.size < 2) binderPinchGesture = null;
+  }
   if (!binderDrag || binderDrag.pointerId !== event.pointerId) return;
   markBinderInteractionActive();
   binderDrag = null;
@@ -4497,6 +4713,13 @@ function handleBinderWheel(event) {
   event.preventDefault();
   markBinderInteractionActive();
   const wheelDelta = getDominantNormalizedWheelDelta(event);
+  handleBinderZoomInput(wheelDelta, event);
+}
+
+function handleBinderZoomInput(wheelDelta, event) {
+  if (!galleryOpen || !isBinderMode || binderPageCount < 1) return;
+
+  markBinderInteractionActive();
   if (Math.abs(wheelDelta) < 0.5) return;
 
   const now = performance.now();
@@ -4543,6 +4766,25 @@ function handleBinderWheel(event) {
 
   binderWheelFocusLockUntil = now + 700;
   focusBinderPosition(hit.object.userData.binderPosition);
+}
+
+function handleFocusedBinderSwipe(drag, event) {
+  if (!drag || !isBinderFocused()) return false;
+  if (!isTouchLikePointer(event)) return false;
+
+  const deltaX = event.clientX - drag.startX;
+  const deltaY = event.clientY - drag.startY;
+  const distance = Math.hypot(deltaX, deltaY);
+  if (distance < BINDER_FOCUS_SWIPE_MIN_DISTANCE) return false;
+
+  const horizontal = Math.abs(deltaX) >= Math.abs(deltaY);
+  const primary = horizontal ? deltaX : deltaY;
+  const offAxis = horizontal ? Math.abs(deltaY) : Math.abs(deltaX);
+  if (offAxis / Math.max(1, Math.abs(primary)) > BINDER_FOCUS_SWIPE_MAX_OFF_AXIS_RATIO) return false;
+
+  binderLastOpenTap = null;
+  moveBinderFocus(primary < 0 ? 1 : -1);
+  return true;
 }
 
 function selectBinderCard(event) {
