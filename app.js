@@ -513,9 +513,36 @@ function preventBrowserZoomGesture(event) {
   event.preventDefault();
 }
 
+function preventBrowserZoomWheel(event) {
+  if (!event.ctrlKey && !event.metaKey) return;
+  event.preventDefault();
+}
+
+function preventBrowserZoomKeydown(event) {
+  if (!event.ctrlKey && !event.metaKey) return;
+  const key = event.key;
+  const code = event.code;
+  if (
+    key === "+"
+    || key === "-"
+    || key === "="
+    || key === "_"
+    || key === "0"
+    || code === "NumpadAdd"
+    || code === "NumpadSubtract"
+    || code === "Numpad0"
+  ) {
+    event.preventDefault();
+  }
+}
+
 function initEvents() {
   document.addEventListener("touchend", suppressDoubleTapZoom, { passive: false });
-  document.addEventListener("gesturestart", preventBrowserZoomGesture, { passive: false });
+  document.addEventListener("gesturestart", preventBrowserZoomGesture, { passive: false, capture: true });
+  document.addEventListener("gesturechange", preventBrowserZoomGesture, { passive: false, capture: true });
+  document.addEventListener("gestureend", preventBrowserZoomGesture, { passive: false, capture: true });
+  document.addEventListener("wheel", preventBrowserZoomWheel, { passive: false, capture: true });
+  document.addEventListener("keydown", preventBrowserZoomKeydown, { capture: true });
   els.previousButton.addEventListener("click", () => transitionAdjacentCard(-1).catch(console.error));
   els.nextButton.addEventListener("click", () => transitionAdjacentCard(1).catch(console.error));
   els.shuffleButton.addEventListener("click", (event) => {
@@ -4007,6 +4034,62 @@ function moveBinderFocus(direction) {
   focusBinderPosition(nextPosition);
 }
 
+function getBinderFocusedGridPosition(position = binderFocusPosition) {
+  if (!Number.isInteger(position) || position < 0 || position >= binderVisibleIndexes.length) return null;
+
+  const pageIndex = Math.floor(position / BINDER_PAGE_SLOTS);
+  const sideSlot = position % BINDER_PAGE_SLOTS;
+  const isBackSide = sideSlot >= BINDER_SIDE_SLOTS;
+  const localSlot = sideSlot - (isBackSide ? BINDER_SIDE_SLOTS : 0);
+  const row = Math.floor(localSlot / BINDER_COLUMNS);
+  const rawColumn = localSlot % BINDER_COLUMNS;
+  return {
+    pageIndex,
+    isBackSide,
+    row,
+    column: isBackSide ? BINDER_COLUMNS - 1 - rawColumn : rawColumn,
+  };
+}
+
+function getBinderPositionForGridSpot(gridSpot) {
+  if (!gridSpot) return -1;
+  const { pageIndex, isBackSide, row, column } = gridSpot;
+  if (
+    !Number.isInteger(pageIndex)
+    || !Number.isInteger(row)
+    || !Number.isInteger(column)
+    || pageIndex < 0
+    || pageIndex >= binderPageCount
+    || row < 0
+    || row >= BINDER_ROWS
+    || column < 0
+    || column >= BINDER_COLUMNS
+  ) {
+    return -1;
+  }
+
+  const localColumn = isBackSide ? BINDER_COLUMNS - 1 - column : column;
+  const sideOffset = isBackSide ? BINDER_SIDE_SLOTS : 0;
+  const position = pageIndex * BINDER_PAGE_SLOTS
+    + sideOffset
+    + row * BINDER_COLUMNS
+    + localColumn;
+  return position < binderVisibleIndexes.length ? position : -1;
+}
+
+function moveBinderFocusVertically(rowDirection) {
+  if (!isBinderFocused()) return false;
+  const currentSpot = getBinderFocusedGridPosition();
+  if (!currentSpot) return false;
+  const nextPosition = getBinderPositionForGridSpot({
+    ...currentSpot,
+    row: currentSpot.row + rowDirection,
+  });
+  if (nextPosition < 0 || nextPosition === binderFocusPosition) return false;
+  focusBinderPosition(nextPosition);
+  return true;
+}
+
 async function jumpFocusedBinderCard(position) {
   if (!galleryOpen || !isBinderMode || !isBinderFocused() || !Number.isInteger(position)) return false;
 
@@ -4783,7 +4866,11 @@ function handleFocusedBinderSwipe(drag, event) {
   if (offAxis / Math.max(1, Math.abs(primary)) > BINDER_FOCUS_SWIPE_MAX_OFF_AXIS_RATIO) return false;
 
   binderLastOpenTap = null;
-  moveBinderFocus(primary < 0 ? 1 : -1);
+  if (horizontal) {
+    moveBinderFocus(primary < 0 ? 1 : -1);
+  } else {
+    moveBinderFocusVertically(primary < 0 ? -1 : 1);
+  }
   return true;
 }
 
