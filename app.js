@@ -287,9 +287,9 @@ const CARD_MOBILE_SCALE_MIN = 0.88;
 const CARD_MOBILE_SCALE_FULL_WIDTH = 700;
 const CARD_MOBILE_SCALE_MIN_WIDTH = 340;
 const CARD_DEFAULT_HORIZONTAL_MARGIN_PX = 14;
-const CARD_SWAP_DISTANCE = CARD_WIDTH * 1.08;
-const CARD_SWAP_MIN_OPACITY = 0.1;
-const CARD_SWAP_MS = 230;
+const CARD_SWAP_DISTANCE = CARD_WIDTH * 1.12;
+const CARD_SWAP_MIN_OPACITY = 0;
+const CARD_SWAP_MS = 285;
 const CARD_SHUFFLE_SPIN_MS = 520;
 const CARD_SHUFFLE_SPIN_DIRECTION = -1;
 const MAX_WARMED_INDIVIDUAL_CARD_EFFECTS = 64;
@@ -443,6 +443,8 @@ let cardSwapIncomingGroup = null;
 let cardSwapIncomingFrontMesh = null;
 let cardSwapIncomingOffsetX = 0;
 let cardSwapIncomingOpacity = 0;
+let lastAppliedCardSwapOpacity = Number.NaN;
+let lastAppliedCardSwapIncomingOpacity = Number.NaN;
 let cardSwapAnimating = false;
 let cardSwapToken = 0;
 let cardShuffleSpinY = 0;
@@ -479,6 +481,8 @@ const binderTouchPointers = new Map();
 let cardPinchGesture = null;
 let binderPinchGesture = null;
 let resizeFrame = 0;
+let cardLastWidth = 0;
+let cardLastHeight = 0;
 
 let binderRenderer;
 let binderScene;
@@ -1167,11 +1171,13 @@ function tweenCardSwap(direction, nextIndex, nextTexture, backTexture, effectTex
       }
 
       const progress = clamp((now - startedAt) / CARD_SWAP_MS, 0, 1);
-      const eased = easeInOutCubic(progress);
-      cardSwapOffsetX = -direction * CARD_SWAP_DISTANCE * eased;
-      cardSwapIncomingOffsetX = direction * CARD_SWAP_DISTANCE * (1 - eased);
-      cardSwapOpacity = THREE.MathUtils.lerp(1, CARD_SWAP_MIN_OPACITY, eased);
-      cardSwapIncomingOpacity = THREE.MathUtils.lerp(CARD_SWAP_MIN_OPACITY, 1, eased);
+      const outgoingEase = easeOutCubic(progress);
+      const incomingProgress = clamp((progress - 0.06) / 0.94, 0, 1);
+      const incomingEase = easeOutCubic(incomingProgress);
+      cardSwapOffsetX = -direction * CARD_SWAP_DISTANCE * outgoingEase;
+      cardSwapIncomingOffsetX = direction * CARD_SWAP_DISTANCE * (1 - incomingEase);
+      cardSwapOpacity = 1 - outgoingEase;
+      cardSwapIncomingOpacity = THREE.MathUtils.lerp(CARD_SWAP_MIN_OPACITY, 1, incomingEase);
       applyCardSwapOpacity();
 
       if (progress >= 1) {
@@ -1198,7 +1204,7 @@ function prepareCardSwapIncomingGroup(direction, frontTexture, backTexture, card
   cardSwapIncomingOpacity = CARD_SWAP_MIN_OPACITY;
   cardScene.add(cardSwapIncomingGroup);
   updateCardSwapIncomingTransform();
-  applyCardSwapOpacity();
+  applyCardSwapOpacity({ force: true });
 }
 
 function createCardSwapGroup(frontTexture, backTexture, card = null, effectTextures = null) {
@@ -1404,7 +1410,7 @@ function resetCardSwapVisualState() {
   cardSwapOpacity = 1;
   cardSwapIncomingOffsetX = 0;
   cardSwapIncomingOpacity = 0;
-  applyCardSwapOpacity();
+  applyCardSwapOpacity({ force: true });
   removeCardSwapIncomingGroup();
 }
 
@@ -1415,9 +1421,16 @@ function setIndividualCardControlsDisabled(disabled) {
   els.shuffleButton.disabled = disabled;
 }
 
-function applyCardSwapOpacity() {
-  applyCardGroupOpacity(cardGroup, cardSwapOpacity);
-  applyCardGroupOpacity(cardSwapIncomingGroup, cardSwapIncomingOpacity);
+function applyCardSwapOpacity(options = {}) {
+  const force = Boolean(options.force);
+  if (force || Math.abs(cardSwapOpacity - lastAppliedCardSwapOpacity) > 0.0005) {
+    applyCardGroupOpacity(cardGroup, cardSwapOpacity);
+    lastAppliedCardSwapOpacity = cardSwapOpacity;
+  }
+  if (force || Math.abs(cardSwapIncomingOpacity - lastAppliedCardSwapIncomingOpacity) > 0.0005) {
+    applyCardGroupOpacity(cardSwapIncomingGroup, cardSwapIncomingOpacity);
+    lastAppliedCardSwapIncomingOpacity = cardSwapIncomingOpacity;
+  }
 }
 
 function applyCardGroupOpacity(group, opacityValue) {
@@ -1464,6 +1477,7 @@ function removeCardSwapIncomingGroup() {
   disposeCardSwapGroup(cardSwapIncomingGroup);
   cardSwapIncomingGroup = null;
   cardSwapIncomingFrontMesh = null;
+  lastAppliedCardSwapIncomingOpacity = Number.NaN;
 }
 
 function disposeCardSwapGroup(group) {
@@ -1678,6 +1692,10 @@ function easeInOutCubic(progress) {
   return progress < 0.5
     ? 4 * progress * progress * progress
     : 1 - ((-2 * progress + 2) ** 3) / 2;
+}
+
+function easeOutCubic(progress) {
+  return 1 - ((1 - clamp(progress, 0, 1)) ** 3);
 }
 
 function toggleCurrentFavorite() {
@@ -6670,7 +6688,7 @@ function isBinderCardOnCurrentPages(mesh) {
   );
 }
 
-function animateCard() {
+function animateCard(now = performance.now()) {
   requestAnimationFrame(animateCard);
   resizeCardRenderer();
   updateSmoothZoom();
@@ -6689,14 +6707,15 @@ function animateCard() {
   cardGroup.position.y = INDIVIDUAL_CARD_WORLD_Y + currentPanY;
   updateCardSwapIncomingTransform();
   applyCardSwapOpacity();
+  const cardEffectTime = now * 0.001;
   updateCardGlossActivity();
   updateCardEffectPointer();
-  updateCardEffectViewOpacity();
-  updateCardGlossUniforms(cardGradientMesh);
-  updateCardGlossUniforms(cardBackGradientMesh);
-  updateCardGlossUniforms(cardGlareMesh);
-  updateCardGlossUniforms(cardBackGlareMesh);
-  updateCardSwapIncomingEffectUniforms();
+  updateCardEffectViewOpacity(now);
+  updateCardGlossUniforms(cardGradientMesh, cardEffectTime);
+  updateCardGlossUniforms(cardBackGradientMesh, cardEffectTime);
+  updateCardGlossUniforms(cardGlareMesh, cardEffectTime);
+  updateCardGlossUniforms(cardBackGlareMesh, cardEffectTime);
+  updateCardSwapIncomingEffectUniforms(cardEffectTime);
   if (!galleryOpen) {
     updateAnimatedTextureRecords(getIndividualAnimatedTextureRecords());
   }
@@ -6789,12 +6808,11 @@ function getResponsiveIndividualCardScale() {
 }
 
 function getDefaultCardHorizontalFitScale() {
-  const rect = els.cardCanvas?.getBoundingClientRect();
-  const viewportWidth = rect?.width
+  const viewportWidth = cardLastWidth
     || window.innerWidth
     || document.documentElement.clientWidth
     || CARD_MOBILE_SCALE_FULL_WIDTH;
-  const viewportHeight = rect?.height
+  const viewportHeight = cardLastHeight
     || window.innerHeight
     || document.documentElement.clientHeight
     || viewportWidth;
@@ -6843,25 +6861,24 @@ function updateCardGlossActivity() {
   if (cardGlossActivity < 0.002 && targetActivity === 0) cardGlossActivity = 0;
 }
 
-function updateCardGlossUniforms(mesh) {
+function updateCardGlossUniforms(mesh, time = performance.now() * 0.001) {
   const uniforms = mesh?.material?.uniforms;
   if (!uniforms) return;
   uniforms.uCameraPosition.value.copy(cardCamera.position);
-  uniforms.uTime.value = performance.now() * 0.001;
+  uniforms.uTime.value = time;
   if (uniforms.uPointer) uniforms.uPointer.value.set(cardEffectPointerX, cardEffectPointerY);
   if (uniforms.uPointerActive) uniforms.uPointerActive.value = cardEffectPointerActive;
   uniforms.uActivity.value = getCardEffectUniformActivity(uniforms.uEffectMode?.value || CARD_EFFECT_MODE_DEFAULT);
 }
 
-function updateCardSwapIncomingEffectUniforms() {
-  updateCardEffectUniformsForGroup(cardSwapIncomingGroup);
+function updateCardSwapIncomingEffectUniforms(time) {
+  updateCardEffectUniformsForGroup(cardSwapIncomingGroup, time);
 }
 
-function updateCardEffectUniformsForGroup(group) {
+function updateCardEffectUniformsForGroup(group, time = performance.now() * 0.001) {
   const effectMeshes = group?.userData?.effectMeshes || [];
   if (!effectMeshes.length) return;
 
-  const time = performance.now() * 0.001;
   for (const mesh of effectMeshes) {
     const uniforms = mesh?.material?.uniforms;
     if (!uniforms) continue;
@@ -7610,6 +7627,8 @@ function resizeCardRenderer() {
   const rect = els.cardCanvas.getBoundingClientRect();
   const width = Math.max(1, Math.floor(rect.width));
   const height = Math.max(1, Math.floor(rect.height));
+  cardLastWidth = width;
+  cardLastHeight = height;
   if (els.cardCanvas.width === Math.floor(width * cardRenderer.getPixelRatio())
     && els.cardCanvas.height === Math.floor(height * cardRenderer.getPixelRatio())) {
     return;
