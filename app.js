@@ -1,30 +1,161 @@
 import * as THREE from "three";
-import { CARD_NFTS } from "./cardnft-data.js";
+import { CARD_NFTS as CARD_NFT_1S } from "./cardnft-data.js";
+import { CARD_NFT_2S } from "./cardnft2-data.js";
 import { CARD_NFT_OWNER_SNAPSHOT } from "./cardnft-owners.js?v=cardnft-2";
-import { CARD_NFT_TRAIT_CATEGORIES, CARD_NFT_TRAITS } from "./cardnft-traits.js";
+import { CARD_NFT_TRAIT_CATEGORIES as CARD_NFT_1_TRAIT_CATEGORIES, CARD_NFT_TRAITS as CARD_NFT_1_TRAITS } from "./cardnft-traits.js";
+import { CARD_NFT_2_TRAIT_CATEGORIES, CARD_NFT_2_TRAITS } from "./cardnft2-traits.js";
+import { CARD_NFT_2_COMMON_IDS } from "./cardnft2-common-ids.js";
 import { CARD_NFT_ANIMATED } from "./cardnft-animated.js";
 import { CARD_NFT_ANIMATED_SPRITES } from "./cardnft-animated-sprites.js";
+import { TRAIT_THUMBNAILS } from "./trait-thumbnails.js";
 
-const CARDS = CARD_NFTS.map((card, index) => ({ ...card, setIndex: index }));
+const COLLECTION_CONFIGS = {
+  cardnft1: {
+    id: "cardnft1",
+    label: "Card NFT",
+    cards: CARD_NFT_1S,
+    traitCategories: CARD_NFT_1_TRAIT_CATEGORIES,
+    traits: CARD_NFT_1_TRAITS,
+    traitFiltersEnabled: true,
+    backImage: "./cardnft back.png",
+  },
+  cardnft2: {
+    id: "cardnft2",
+    label: "Card NFT 2",
+    cards: CARD_NFT_2S,
+    traitCategories: CARD_NFT_2_TRAIT_CATEGORIES,
+    traits: CARD_NFT_2_TRAITS,
+    traitFiltersEnabled: true,
+    backImages: [
+      "assets/cardnft2/backs/cardnft2-back-orange.webp",
+      "assets/cardnft2/backs/cardnft2-back-purple.webp",
+      "assets/cardnft2/backs/cardnft2-back-blue.webp",
+      "assets/cardnft2/backs/cardnft2-back-red.webp",
+    ],
+  },
+};
+const ACTIVE_COLLECTION_ID = COLLECTION_CONFIGS[document.documentElement.dataset.collectionId]?.id || "cardnft1";
+const ACTIVE_COLLECTION = COLLECTION_CONFIGS[ACTIVE_COLLECTION_ID];
+const CARDS = Object.values(COLLECTION_CONFIGS).flatMap((collection) => (
+  collection.cards.map((card, index) => ({
+    ...card,
+    collection: card.collection || collection.id,
+    collectionIndex: index,
+    stableId: card.stableId || `${collection.id}:${card.mint || card.title || index}`,
+    setIndex: index,
+  }))
+));
+const ACTIVE_COLLECTION_INDEXES = CARDS
+  .map((card, index) => (card.collection === ACTIVE_COLLECTION_ID ? index : null))
+  .filter(Number.isInteger);
+const ACTIVE_TRAIT_CATEGORIES = ACTIVE_COLLECTION.traitCategories;
+const ACTIVE_TRAITS = ACTIVE_COLLECTION.traits;
+const TRAIT_FILTERS_ENABLED = Boolean(ACTIVE_COLLECTION.traitFiltersEnabled);
 const CARD_NFT_MINT_TO_INDEX = new Map(CARDS
   .map((card, index) => [String(card?.mint || "").trim(), index])
   .filter(([mint]) => mint));
 const CARD_NFT_TITLE_NUMBER_TO_INDEX = new Map(CARDS
   .map((card, index) => {
     const match = String(card?.title || "").match(/^card\s+#?\s*(\d+)$/i);
-    return match ? [Number.parseInt(match[1], 10), index] : null;
+    return match && card?.collection === ACTIVE_COLLECTION_ID ? [Number.parseInt(match[1], 10), index] : null;
   })
   .filter(Boolean));
-const TRAIT_CATEGORY_INDEX = new Map(CARD_NFT_TRAIT_CATEGORIES.map((category, index) => [category, index]));
-const HIDDEN_TRAIT_CATEGORIES = new Set(["98noise"]);
+const HIDDEN_TRAIT_CATEGORIES = new Set([
+  "98noise",
+  "Collection",
+  "Source File",
+  "Source Card",
+  "reconstructed",
+  "pixel mosaic",
+]);
 const EXCLUDED_SORT_TRAIT_VALUES = new Set(["no", "none", "null", "undefined"]);
+const CARD_NFT_2_COLLAPSED_TRAIT_CATEGORY_PREFIXES = [
+  "rare addon - ",
+  "top rare addon - ",
+  "top top rare addon - ",
+];
+const CARD_NFT_2_OTHER_TRAIT_CATEGORIES = new Set([
+  "blood energy sprite overlay",
+  "blood energy sprite overlay - overlay paint engraving",
+  "blood energy overlay",
+  "blood energy sprite overlay - center",
+  "under mask embryos",
+  "under mask aura eggs",
+  "archetype",
+  "over mask gradient stars",
+  "over mask gradient icons",
+]);
+const CARD_NFT_2_TRAIT_CATEGORY_ALIASES = new Map([
+  ["pixel line outline", "pixel line overlay"],
+]);
+const CARD_NFT_2_TRAIT_DISPLAY_ORDER = [
+  "status",
+  "rarity",
+  "altered",
+  "base card",
+  "border",
+  "top left",
+  "top center",
+  "top right",
+  "left",
+  "center",
+  "right",
+  "bottom left",
+  "bottom center",
+  "bottom right",
+  "overlay paint engraving",
+  "hero",
+  "sprite",
+  "bw mask",
+  "pixel line overlay",
+  "color shapes",
+  "gradient shapes",
+  "background",
+  "other",
+];
+const CARD_NFT_2_TRAIT_DISPLAY_ORDER_OVERRIDES = new Map(
+  CARD_NFT_2_TRAIT_DISPLAY_ORDER.map((category, index) => [category, index])
+);
+const TRAIT_PANEL_CATEGORY_PRIORITY = new Map([
+  ["base card", 0],
+  ["rarity", 1],
+  ["status", 2],
+  ["altered", 3],
+]);
+const CARD_NFT_2_COMMON_ID_SET = new Set(CARD_NFT_2_COMMON_IDS);
+const CARD_EFFECT_MODE_DEFAULT = 0;
+const CARD_EFFECT_MODE_CARD_NFT_2_LIGHTING = 1;
+const CARD_EFFECT_MODE_CARD_NFT_2_RARE_HOLO_V = 2;
+const CARD_EFFECT_MODE_CARD_NFT_2_REGULAR_HOLO = 3;
+const CARD_EFFECT_MODE_CARD_NFT_2_TRAINER_FULL_ART = 4;
+const CARD_EFFECT_MODE_CARD_NFT_2_AMAZING_RARE = 5;
+const CARD_NFT_2_HOLO_EFFECT_MODES_BY_REMAINDER = [
+  CARD_EFFECT_MODE_CARD_NFT_2_RARE_HOLO_V,
+  CARD_EFFECT_MODE_CARD_NFT_2_REGULAR_HOLO,
+  CARD_EFFECT_MODE_CARD_NFT_2_TRAINER_FULL_ART,
+  CARD_EFFECT_MODE_CARD_NFT_2_AMAZING_RARE,
+];
+const CARD_NFT_2_EFFECT_TEXTURE_GATEWAY = "https://silver-real-rhinoceros-781.mypinata.cloud/ipfs";
+const CARD_NFT_2_EFFECT_TEXTURE_CIDS = {
+  foil: "bafybeigzyk3qd7brxfd3uinftdywhwao65gdxuleqirv5zje3okftmxczy",
+  mask: "bafybeiapwcv66aqu2wzh3f5mp4j4j6h7zej3no7paae4qcqxpu3mg436ia",
+};
+const MAX_CARD_NFT_2_EFFECT_TEXTURE_CACHE_SIZE = 160;
+const CARD_NFT_2_EFFECT_DEFAULT_POINTER_X = 0.18;
+const CARD_NFT_2_EFFECT_DEFAULT_POINTER_Y = 0.78;
+const CARD_NFT_2_EFFECT_OFFCARD_POINTER_X = -1.25;
+const CARD_NFT_2_EFFECT_OFFCARD_POINTER_Y = -1.25;
+const CARD_NFT_2_EFFECT_POINTER_EXTENT = 0.72;
+const CARD_NFT_2_EFFECT_EDGE_FADE_DISTANCE = 0.46;
+const CARD_EFFECT_VIEW_TRANSITION_FADE_MS = 260;
 const SITE_FONT_STACK = "Optima, Candara, \"Lucida Sans\", \"Lucida Grande\", \"Trebuchet MS\", Arial, sans-serif";
 const SOLANA_RPC_URL = "https://api.mainnet-beta.solana.com";
 const SOLANA_TOKEN_PROGRAM_IDS = [
   "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
   "TokenzQdBNbLqP5VEhdkAS6EP6KkQ6p3Msk3VQ5DA",
 ];
-const CARD_NFT_COLLECTION_SYMBOL = "cardnft";
+const CARD_NFT_COLLECTION_SYMBOLS = ["cardnft", "card_nft_2"];
+const CARD_NFT_2_WALLET_API_URL = "https://cardnft2.taile73682.ts.net/wallet";
 const MAGIC_EDEN_API_URL = "https://api-mainnet.magiceden.dev/v2";
 const MAGIC_EDEN_WALLET_PAGE_LIMIT = 500;
 const MAGIC_EDEN_WALLET_MAX_TOKENS = 10000;
@@ -123,7 +254,8 @@ const BINDER_PRELOAD_PAGE_RADIUS = 4;
 const BINDER_INITIAL_PRELOAD_IDLE_DELAY_MS = 180;
 const BINDER_CARD_LOAD_FADE_MS = 280;
 const BINDER_INTRO_LINK_URL = "https://x.com/bis__cut";
-const BINDER_CARD_NFT_2_LINK_URL = "https://mons.shop";
+const BINDER_CARD_NFT_1_LINK_URL = "/";
+const BINDER_CARD_NFT_2_LINK_URL = "/cardnft2/";
 const BINDER_INTRO_NOTE_FILTER_FADE_MS = 260;
 const BINDER_INTRO_FOCUS_MARGIN_RATIO = 0.12;
 const BINDER_INTRO_FOCUS_MOBILE_MARGIN_RATIO = 0.04;
@@ -156,7 +288,16 @@ const CARD_SWAP_MIN_OPACITY = 0.1;
 const CARD_SWAP_MS = 230;
 const CARD_SHUFFLE_SPIN_MS = 520;
 const CARD_SHUFFLE_SPIN_DIRECTION = -1;
+const MAX_WARMED_INDIVIDUAL_CARD_EFFECTS = 64;
 const GALLERY_PRIORITY_ROWS = 4;
+const GALLERY_CARD_HOVER_EXPAND_PX = 5;
+const GALLERY_CARD_TILT_MAX_X_DEG = 4.8;
+const GALLERY_CARD_TILT_MAX_Y_DEG = 5.8;
+const GALLERY_CARD_TILT_LIFT_PX = -3.5;
+const GALLERY_CARD_TILT_SPRING = 0.082;
+const GALLERY_CARD_TILT_DAMPING = 0.82;
+const GALLERY_CARD_TILT_SETTLE_EPSILON = 0.018;
+const TRAIT_SEARCH_TILE_RENDER_BATCH_SIZE = 320;
 const SHUFFLE_TOUCH_UNDO_HOLD_MS = 560;
 const SHUFFLE_TOUCH_UNDO_SUPPRESS_MS = 1000;
 const SHUFFLE_TOUCH_UNDO_MOVE_LIMIT = 14;
@@ -166,7 +307,12 @@ const SHUFFLE_HISTORY_LIMIT = 10;
 const MAX_TEXTURE_CACHE_SIZE = 260;
 const BINDER_ANIMATED_IDLE_MS = 84;
 const BINDER_INTERACTION_ACTIVE_MS = 900;
-const SESSION_VIEW_STATE_KEY = "cardnft:sessionView:v1";
+const BINDER_FRAME_MS = 1000 / 60;
+const BINDER_MAX_FRAME_DELTA_MS = 34;
+const BINDER_TURN_BASE_ALPHA = 0.16;
+const BINDER_CAMERA_BASE_ALPHA = 0.1;
+const BINDER_FOCUS_CAMERA_BASE_ALPHA = 0.12;
+const SESSION_VIEW_STATE_KEY = `cardnft:${ACTIVE_COLLECTION_ID}:sessionView:v1`;
 const TENSOR_ITEM_URL_BASE = "https://www.tensor.trade/item/";
 const SOLSCAN_TOKEN_URL_BASE = "https://solscan.io/token/";
 const restoredSessionViewState = loadSessionViewState();
@@ -221,9 +367,14 @@ const els = {
 };
 
 const textureLoader = new THREE.TextureLoader();
+textureLoader.setCrossOrigin("anonymous");
 const nftTextureCache = new Map();
+const cardNft2EffectTextureCache = new Map();
+const warmedIndividualCardEffectKeys = new Set();
+const warmedIndividualCardEffectQueue = [];
 const animatedTextureRecords = new Set();
 const favorites = loadSet("cardnft:favorites:v1");
+migrateLegacyFavorites(favorites);
 const shuffleHistory = [];
 const binderShuffleHistory = [];
 
@@ -234,9 +385,16 @@ let traitSortCategory = "all";
 let activeTraitFilter = null;
 let traitSearchOpen = false;
 let traitSearchQuery = "";
+const traitSearchCollapsedCategories = new Set();
+const traitSearchGroupDataByKey = new Map();
+let traitSearchRenderToken = 0;
+let traitSearchRenderFrame = 0;
 let traitSortPickerOpen = false;
 let traitSortPickerOpenedAt = 0;
 let traitSortPickerSyncFrame = 0;
+let activeGalleryTiltCard = null;
+let galleryTiltFrame = 0;
+const galleryTiltStates = new Map();
 let sessionViewSaveFrame = 0;
 let lastTouchEndAt = 0;
 let walletSearchOpen = false;
@@ -262,7 +420,7 @@ let cardFrontNoiseMesh;
 let cardBackNoiseMesh;
 let cardPlaceholderTexture;
 let cardSurfaceNoiseTexture;
-let backTexturePromise;
+const backTexturePromises = new Map();
 let cardApplyToken = 0;
 let dragState = null;
 let currentRotationX = 0;
@@ -297,6 +455,16 @@ let targetCameraZ = CARD_CAMERA_DEFAULT_Z;
 let currentCameraZ = targetCameraZ;
 let smoothZoomVelocity = 0;
 let cardGlossActivity = 0;
+let cardEffectPointerTargetX = CARD_NFT_2_EFFECT_OFFCARD_POINTER_X;
+let cardEffectPointerTargetY = CARD_NFT_2_EFFECT_OFFCARD_POINTER_Y;
+let cardEffectPointerTargetActive = 0;
+let cardEffectPointerX = CARD_NFT_2_EFFECT_OFFCARD_POINTER_X;
+let cardEffectPointerY = CARD_NFT_2_EFFECT_OFFCARD_POINTER_Y;
+let cardEffectPointerActive = 0;
+let cardEffectViewOpacity = 1;
+let cardEffectViewTargetOpacity = 1;
+let cardEffectViewStartOpacity = 1;
+let cardEffectViewFadeStartedAt = 0;
 let traitsOpen = false;
 let individualWheelOutDistance = 0;
 let individualWheelOutLastAt = 0;
@@ -346,6 +514,7 @@ let binderResizeFrame = 0;
 let binderLastWidth = 0;
 let binderLastHeight = 0;
 let binderAnimationFrame = 0;
+let binderLastAnimationAt = 0;
 let binderAnimationDelayTimer = 0;
 let binderLastAnimationIdleOnly = false;
 let binderRenderFrame = 0;
@@ -370,6 +539,8 @@ let binderPageStatusInput = null;
 let binderPageStatusEditMode = null;
 const binderTextureQueue = [];
 const binderTextureQueuedPositions = new Set();
+const cardRaycaster = new THREE.Raycaster();
+const cardPointer = new THREE.Vector2();
 const binderRaycaster = new THREE.Raycaster();
 const binderPointer = new THREE.Vector2();
 const binderDefaultCameraPosition = new THREE.Vector3(0, 0.24, 10);
@@ -386,6 +557,7 @@ init();
 
 function init() {
   applyTheme(localStorage.getItem("cardnft:theme:v1") === "light");
+  els.body.classList.toggle("trait-filters-disabled", !TRAIT_FILTERS_ENABLED);
   applyRestoredSessionViewState(restoredSessionViewState);
   updateGalleryViewModeButton();
   populateTraitSortOptions();
@@ -568,8 +740,15 @@ function initEvents() {
     downloadCurrentCardArt().catch(console.error);
   });
   els.cardFileName.addEventListener("dblclick", startCardNameEdit);
-  els.galleryToggleButton.addEventListener("click", () => setGalleryOpen(!galleryOpen, { resetFilters: !galleryOpen }));
+  els.galleryToggleButton.addEventListener("click", () => {
+    setGalleryOpen(!galleryOpen, { resetFilters: !galleryOpen && !hasActiveGalleryMode() });
+  });
   els.galleryViewToggleButton.addEventListener("click", toggleGalleryViewMode);
+  els.galleryGrid.addEventListener("pointerover", onGalleryGridTiltPointerMove);
+  els.galleryGrid.addEventListener("pointermove", onGalleryGridTiltPointerMove);
+  els.galleryGrid.addEventListener("pointerout", onGalleryGridTiltPointerOut);
+  els.galleryGrid.addEventListener("pointerleave", releaseActiveGalleryCardTilt);
+  els.galleryGrid.addEventListener("pointercancel", releaseActiveGalleryCardTilt);
   els.galleryClearFiltersButton.addEventListener("click", clearGallerySortAndFilters);
   els.walletSearchButton.addEventListener("click", toggleWalletSearchPanel);
   els.walletSearchPanel.addEventListener("pointerdown", (event) => {
@@ -587,6 +766,7 @@ function initEvents() {
   els.favoriteFilterButton.addEventListener("click", toggleFavoriteFilter);
   els.traitSearchButton.addEventListener("click", toggleTraitSearch);
   els.traitSearchInput.addEventListener("input", updateTraitSearchQuery);
+  els.traitSearchGroups.addEventListener("click", onTraitSearchGroupsClick);
   els.gallerySortControl.addEventListener("click", (event) => {
     if (event.target === els.traitSortSelect) return;
     event.preventDefault();
@@ -664,6 +844,9 @@ function initEvents() {
   els.cardCanvas.addEventListener("pointermove", onCardPointerMove);
   els.cardCanvas.addEventListener("pointerup", onCardPointerUp);
   els.cardCanvas.addEventListener("pointercancel", onCardPointerUp);
+  els.cardCanvas.addEventListener("pointerleave", clearCardEffectPointer);
+  els.cardCanvas.addEventListener("mousemove", updateCardEffectPointerFromEvent);
+  els.cardCanvas.addEventListener("mouseleave", clearCardEffectPointer);
   els.cardCanvas.addEventListener("wheel", onCardWheel, { passive: false });
 
   els.binderCanvas.addEventListener("pointerdown", onBinderPointerDown);
@@ -680,10 +863,15 @@ function initEvents() {
 
 function populateTraitSortOptions() {
   if (HIDDEN_TRAIT_CATEGORIES.has(traitSortCategory)) traitSortCategory = "all";
+  els.traitSortSelect.disabled = !TRAIT_FILTERS_ENABLED;
+  els.traitSearchButton.disabled = !TRAIT_FILTERS_ENABLED;
+  if (!TRAIT_FILTERS_ENABLED) {
+    els.gallerySortControl.title = "Trait sorting is not available for this collection yet";
+    els.traitSearchButton.title = "Trait search is not available for this collection yet";
+  }
 
   const fragment = document.createDocumentFragment();
-  for (const category of CARD_NFT_TRAIT_CATEGORIES) {
-    if (HIDDEN_TRAIT_CATEGORIES.has(category)) continue;
+  for (const { category } of TRAIT_FILTERS_ENABLED ? getTraitDisplayCategoryOptions() : []) {
     const option = document.createElement("option");
     option.value = category;
     option.textContent = category;
@@ -703,6 +891,7 @@ function updateTraitSearchPlaceholder() {
 }
 
 function openTraitSortPicker() {
+  if (!TRAIT_FILTERS_ENABLED) return;
   setTraitSortPickerOpen(true);
   els.traitSortSelect.focus();
   if (typeof els.traitSortSelect.showPicker === "function") {
@@ -773,6 +962,11 @@ function setCard(index, options = {}) {
   const card = CARDS[currentIndex];
   const token = ++cardApplyToken;
   resetViewSwitchWheelDistances();
+  if (Object.prototype.hasOwnProperty.call(options, "effectTextures")) {
+    applyLoadedIndividualCardEffect(card, options.effectTextures);
+  } else {
+    applyCardEffectProfile(card, token);
+  }
 
   if (options.frontTexture) {
     prepareTextureForImmediateDisplay(options.frontTexture);
@@ -790,12 +984,18 @@ function setCard(index, options = {}) {
   }
 
   preloadAdjacentIndividualTextures(currentIndex);
-  getBackTexture().then((texture) => {
-    if (token !== cardApplyToken) return;
-    prepareTextureForImmediateDisplay(texture);
-    cardBackMesh.material.map = texture;
+  if (options.backTexture) {
+    prepareTextureForImmediateDisplay(options.backTexture);
+    cardBackMesh.material.map = options.backTexture;
     cardBackMesh.material.needsUpdate = true;
-  }).catch(console.error);
+  } else {
+    getBackTexture(card).then((texture) => {
+      if (token !== cardApplyToken) return;
+      prepareTextureForImmediateDisplay(texture);
+      cardBackMesh.material.map = texture;
+      cardBackMesh.material.needsUpdate = true;
+    }).catch(console.error);
+  }
 
   targetRotationX = 0;
   targetRotationY = 0;
@@ -809,29 +1009,135 @@ function setCard(index, options = {}) {
   queueSessionViewStateSave();
 }
 
+function applyCardEffectProfile(card, token = cardApplyToken) {
+  const frontProfile = getCardEffectProfile(card);
+  const backProfile = frontProfile.effectMode === CARD_EFFECT_MODE_DEFAULT
+    ? frontProfile
+    : { ...frontProfile, effectMode: CARD_EFFECT_MODE_CARD_NFT_2_LIGHTING, needsEffectTextures: false };
+
+  applyCardEffectProfileToMesh(cardGradientMesh, frontProfile);
+  applyCardEffectProfileToMesh(cardGlareMesh, frontProfile);
+  applyCardEffectProfileToMesh(cardBackGradientMesh, backProfile);
+  applyCardEffectProfileToMesh(cardBackGlareMesh, backProfile);
+
+  if (!frontProfile.needsEffectTextures) return;
+
+  loadCardNft2EffectTextures(frontProfile.cardNumber)
+    .then(({ foil, mask }) => {
+      if (token !== cardApplyToken) return;
+      applyCardEffectTexturesToMesh(cardGradientMesh, foil, mask);
+      applyCardEffectTexturesToMesh(cardGlareMesh, foil, mask);
+    })
+    .catch(() => {
+      if (token !== cardApplyToken) return;
+      applyCardEffectTexturesToMesh(cardGradientMesh, null, null);
+      applyCardEffectTexturesToMesh(cardGlareMesh, null, null);
+    });
+}
+
+function getCardEffectProfile(card) {
+  const cardNumber = getCardNft2Number(card);
+  if (card?.collection !== "cardnft2" || !Number.isInteger(cardNumber)) {
+    return {
+      effectMode: CARD_EFFECT_MODE_DEFAULT,
+      cardNumber: 0,
+      needsEffectTextures: false,
+    };
+  }
+
+  const common = CARD_NFT_2_COMMON_ID_SET.has(cardNumber);
+  const effectMode = common
+    ? CARD_EFFECT_MODE_CARD_NFT_2_LIGHTING
+    : CARD_NFT_2_HOLO_EFFECT_MODES_BY_REMAINDER[modulo(cardNumber, CARD_NFT_2_HOLO_EFFECT_MODES_BY_REMAINDER.length)];
+
+  return {
+    effectMode,
+    cardNumber,
+    needsEffectTextures: effectMode !== CARD_EFFECT_MODE_CARD_NFT_2_LIGHTING,
+  };
+}
+
+function applyCardEffectProfileToMesh(mesh, profile) {
+  const uniforms = mesh?.material?.uniforms;
+  if (!uniforms) return;
+  uniforms.uEffectMode.value = profile.effectMode;
+  uniforms.uUseEffectTextures.value = 0;
+  uniforms.uFoilTexture.value = getCardPlaceholderTexture();
+  uniforms.uMaskTexture.value = getCardPlaceholderTexture();
+}
+
+function applyCardEffectTexturesToMesh(mesh, foilTexture, maskTexture) {
+  const uniforms = mesh?.material?.uniforms;
+  if (!uniforms) return;
+  uniforms.uFoilTexture.value = foilTexture || getCardPlaceholderTexture();
+  uniforms.uMaskTexture.value = maskTexture || getCardPlaceholderTexture();
+  uniforms.uUseEffectTextures.value = foilTexture && maskTexture ? 1 : 0;
+}
+
+function applyLoadedIndividualCardEffect(card, textures = null) {
+  const frontProfile = getCardEffectProfile(card);
+  const backProfile = frontProfile.effectMode === CARD_EFFECT_MODE_DEFAULT
+    ? frontProfile
+    : { ...frontProfile, effectMode: CARD_EFFECT_MODE_CARD_NFT_2_LIGHTING, needsEffectTextures: false };
+
+  applyCardEffectProfileToMesh(cardGradientMesh, frontProfile);
+  applyCardEffectProfileToMesh(cardGlareMesh, frontProfile);
+  applyCardEffectProfileToMesh(cardBackGradientMesh, backProfile);
+  applyCardEffectProfileToMesh(cardBackGlareMesh, backProfile);
+  if (frontProfile.needsEffectTextures) {
+    applyCardEffectTexturesToMesh(cardGradientMesh, textures?.foil, textures?.mask);
+    applyCardEffectTexturesToMesh(cardGlareMesh, textures?.foil, textures?.mask);
+  }
+}
+
+function loadCardEffectTexturesForProfile(profile) {
+  if (!profile?.needsEffectTextures) return Promise.resolve(null);
+  return loadCardNft2EffectTextures(profile.cardNumber);
+}
+
+function preloadCardEffectTextures(card) {
+  const profile = getCardEffectProfile(card);
+  if (!profile.needsEffectTextures) return;
+  loadCardEffectTexturesForProfile(profile).catch(() => {});
+}
+
+function getCardNft2Number(card) {
+  if (!card) return null;
+  const values = [card.title, card.stableId, card.file];
+  for (const value of values) {
+    const match = String(value || "").match(/card[-\s#]*(\d+)/i);
+    if (match) return Number.parseInt(match[1], 10);
+  }
+  return null;
+}
+
 async function transitionAdjacentCard(direction) {
   if (cardSwapAnimating || cardShuffleSpinAnimating || galleryOpen || !CARDS.length) return;
 
   cardSwapAnimating = true;
   const token = ++cardSwapToken;
-  const nextIndex = modulo(currentIndex + direction, CARDS.length);
+  const nextIndex = getAdjacentIndividualCardIndex(direction);
+  const nextCard = CARDS[nextIndex];
+  const nextEffectProfile = getCardEffectProfile(nextCard);
   setIndividualCardControlsDisabled(true);
   updateCardNameJumpState();
   try {
     if (token !== cardSwapToken) return;
-    const [nextTexture, backTexture] = await Promise.all([
-      getPreparedCardTexture(CARDS[nextIndex]).catch((error) => {
+    const [nextTexture, backTexture, effectTextures] = await Promise.all([
+      getPreparedCardTexture(nextCard).catch((error) => {
         console.error(error);
         return null;
       }),
-      getBackTexture().catch((error) => {
+      getBackTexture(nextCard).catch((error) => {
         console.error(error);
         return getBackPlaceholderTexture();
       }),
+      loadCardEffectTexturesForProfile(nextEffectProfile).catch(() => null),
     ]);
     if (token !== cardSwapToken) return;
-    prepareCardSwapIncomingGroup(direction, nextTexture, backTexture);
-    await tweenCardSwap(direction, nextIndex, nextTexture, token);
+    prewarmIndividualCardEffect(nextCard, nextTexture, backTexture, effectTextures);
+    prepareCardSwapIncomingGroup(direction, nextTexture, backTexture, nextCard, effectTextures);
+    await tweenCardSwap(direction, nextIndex, nextTexture, backTexture, effectTextures, token);
   } finally {
     if (token === cardSwapToken) {
       resetCardSwapVisualState();
@@ -842,7 +1148,7 @@ async function transitionAdjacentCard(direction) {
   }
 }
 
-function tweenCardSwap(direction, nextIndex, nextTexture, token) {
+function tweenCardSwap(direction, nextIndex, nextTexture, backTexture, effectTextures, token) {
   const startedAt = performance.now();
 
   return new Promise((resolve) => {
@@ -861,7 +1167,12 @@ function tweenCardSwap(direction, nextIndex, nextTexture, token) {
       applyCardSwapOpacity();
 
       if (progress >= 1) {
-        setCard(nextIndex, { frontTexture: nextTexture, preserveSwapVisuals: true });
+        setCard(nextIndex, {
+          frontTexture: nextTexture,
+          backTexture,
+          effectTextures,
+          preserveSwapVisuals: true,
+        });
         resolve();
         return;
       }
@@ -871,9 +1182,9 @@ function tweenCardSwap(direction, nextIndex, nextTexture, token) {
   });
 }
 
-function prepareCardSwapIncomingGroup(direction, frontTexture, backTexture) {
+function prepareCardSwapIncomingGroup(direction, frontTexture, backTexture, card, effectTextures) {
   removeCardSwapIncomingGroup();
-  cardSwapIncomingGroup = createCardSwapGroup(frontTexture, backTexture);
+  cardSwapIncomingGroup = createCardSwapGroup(frontTexture, backTexture, card, effectTextures);
   cardSwapIncomingFrontMesh = cardSwapIncomingGroup.userData.frontMesh || null;
   cardSwapIncomingOffsetX = direction * CARD_SWAP_DISTANCE;
   cardSwapIncomingOpacity = CARD_SWAP_MIN_OPACITY;
@@ -882,7 +1193,7 @@ function prepareCardSwapIncomingGroup(direction, frontTexture, backTexture) {
   applyCardSwapOpacity();
 }
 
-function createCardSwapGroup(frontTexture, backTexture) {
+function createCardSwapGroup(frontTexture, backTexture, card = null, effectTextures = null) {
   const group = new THREE.Group();
 
   const core = new THREE.Mesh(
@@ -936,8 +1247,42 @@ function createCardSwapGroup(frontTexture, backTexture) {
   backNoise.position.z = -CARD_DEPTH / 2 - 0.005;
   group.add(backNoise);
 
+  const effectMeshes = createCardSwapEffectMeshes(card, effectTextures);
+  for (const effectMesh of effectMeshes) group.add(effectMesh);
+
   group.userData.frontMesh = frontMesh;
+  group.userData.effectMeshes = effectMeshes;
   return group;
+}
+
+function createCardSwapEffectMeshes(card, effectTextures = null) {
+  const frontProfile = getCardEffectProfile(card);
+  const backProfile = frontProfile.effectMode === CARD_EFFECT_MODE_DEFAULT
+    ? frontProfile
+    : { ...frontProfile, effectMode: CARD_EFFECT_MODE_CARD_NFT_2_LIGHTING, needsEffectTextures: false };
+
+  const frontGradient = createCardGradientPlane(1);
+  frontGradient.position.z = CARD_DEPTH / 2 + 0.007;
+  const frontGlare = createCardGlossPlane(1);
+  frontGlare.position.z = CARD_DEPTH / 2 + 0.009;
+
+  const backGradient = createCardGradientPlane(-1);
+  backGradient.rotation.y = Math.PI;
+  backGradient.position.z = -CARD_DEPTH / 2 - 0.007;
+  const backGlare = createCardGlossPlane(-1);
+  backGlare.rotation.y = Math.PI;
+  backGlare.position.z = -CARD_DEPTH / 2 - 0.009;
+
+  applyCardEffectProfileToMesh(frontGradient, frontProfile);
+  applyCardEffectProfileToMesh(frontGlare, frontProfile);
+  applyCardEffectProfileToMesh(backGradient, backProfile);
+  applyCardEffectProfileToMesh(backGlare, backProfile);
+  if (frontProfile.needsEffectTextures) {
+    applyCardEffectTexturesToMesh(frontGradient, effectTextures?.foil, effectTextures?.mask);
+    applyCardEffectTexturesToMesh(frontGlare, effectTextures?.foil, effectTextures?.mask);
+  }
+
+  return [frontGradient, frontGlare, backGradient, backGlare];
 }
 
 function getPreparedCardTexture(card) {
@@ -949,13 +1294,101 @@ function getPreparedCardTexture(card) {
 
 function preloadAdjacentIndividualTextures(index) {
   if (CARDS.length < 2) return;
+  const sequence = getIndividualCardSequenceIndexes();
+  const position = sequence.indexOf(index);
+  if (position === -1 || sequence.length < 2) return;
   const indexes = new Set([
-    modulo(index - 1, CARDS.length),
-    modulo(index + 1, CARDS.length),
+    sequence[modulo(position - 1, sequence.length)],
+    sequence[modulo(position + 1, sequence.length)],
   ]);
   for (const adjacentIndex of indexes) {
-    getCardTexture(CARDS[adjacentIndex]).catch(() => {});
+    const card = CARDS[adjacentIndex];
+    const effectProfile = getCardEffectProfile(card);
+    Promise.all([
+      getPreparedCardTexture(card).catch(() => null),
+      getBackTexture(card).catch(() => null),
+      loadCardEffectTexturesForProfile(effectProfile).catch(() => null),
+    ]).then(([frontTexture, backTexture, effectTextures]) => {
+      prewarmIndividualCardEffect(card, frontTexture, backTexture, effectTextures);
+    }).catch(() => {});
   }
+}
+
+function prewarmIndividualCardEffect(card, frontTexture, backTexture, effectTextures = null) {
+  warmTextureForImmediateDisplay(frontTexture);
+  warmTextureForImmediateDisplay(backTexture);
+  warmTextureForImmediateDisplay(effectTextures?.foil);
+  warmTextureForImmediateDisplay(effectTextures?.mask);
+
+  if (!card || !cardRenderer || !cardScene || !cardCamera) return;
+  const key = getIndividualCardEffectWarmKey(card, effectTextures);
+  if (warmedIndividualCardEffectKeys.has(key)) return;
+
+  const group = createCardSwapGroup(frontTexture, backTexture, card, effectTextures);
+  group.position.set(10000, 10000, 0);
+  if (cardGroup) {
+    group.rotation.copy(cardGroup.rotation);
+    group.scale.copy(cardGroup.scale);
+  }
+  group.traverse((object) => {
+    object.frustumCulled = false;
+  });
+
+  cardScene.add(group);
+  try {
+    updateCardEffectUniformsForGroup(group);
+    if (typeof cardRenderer.compile === "function") cardRenderer.compile(cardScene, cardCamera);
+    cardRenderer.render(cardScene, cardCamera);
+    rememberWarmedIndividualCardEffectKey(key);
+  } catch {
+    // If the driver refuses an eager compile, the normal render path still works.
+  } finally {
+    cardScene.remove(group);
+    disposeCardSwapGroup(group);
+  }
+}
+
+function warmTextureForImmediateDisplay(texture) {
+  if (!texture) return;
+  prepareTextureForImmediateDisplay(texture);
+  if (typeof cardRenderer?.initTexture !== "function") return;
+  try {
+    cardRenderer.initTexture(texture);
+  } catch {
+    // Some WebGL drivers only allow upload during render; the offscreen pass handles that.
+  }
+}
+
+function getIndividualCardEffectWarmKey(card, effectTextures = null) {
+  const profile = getCardEffectProfile(card);
+  const cardKey = card?.stableId || `${card?.collection || ACTIVE_COLLECTION_ID}:${card?.mint || card?.title || card?.setIndex || 0}`;
+  const textureState = profile.needsEffectTextures
+    ? (effectTextures?.foil && effectTextures?.mask ? "textures" : "fallback")
+    : "none";
+  return `${cardKey}:${profile.effectMode}:${textureState}`;
+}
+
+function rememberWarmedIndividualCardEffectKey(key) {
+  if (warmedIndividualCardEffectKeys.has(key)) return;
+  warmedIndividualCardEffectKeys.add(key);
+  warmedIndividualCardEffectQueue.push(key);
+  while (warmedIndividualCardEffectQueue.length > MAX_WARMED_INDIVIDUAL_CARD_EFFECTS) {
+    const oldest = warmedIndividualCardEffectQueue.shift();
+    warmedIndividualCardEffectKeys.delete(oldest);
+  }
+}
+
+function getAdjacentIndividualCardIndex(direction) {
+  const sequence = getIndividualCardSequenceIndexes();
+  if (!sequence.length) return currentIndex;
+  const position = sequence.indexOf(currentIndex);
+  const currentPosition = position === -1 ? 0 : position;
+  return sequence[modulo(currentPosition + Math.sign(direction || 1), sequence.length)];
+}
+
+function getIndividualCardSequenceIndexes() {
+  if (ACTIVE_COLLECTION_INDEXES.includes(currentIndex)) return ACTIVE_COLLECTION_INDEXES;
+  return CARDS.map((_, index) => index);
 }
 
 function resetCardSwapVisualState() {
@@ -1034,11 +1467,12 @@ function disposeCardSwapGroup(group) {
 }
 
 async function shuffleCard() {
-  if (CARDS.length < 2) return;
+  const sequence = getIndividualCardSequenceIndexes();
+  if (sequence.length < 2) return;
 
   let next = currentIndex;
   while (next === currentIndex) {
-    next = Math.floor(Math.random() * CARDS.length);
+    next = sequence[Math.floor(Math.random() * sequence.length)];
   }
 
   await spinToCard(next, { recordHistory: true });
@@ -1047,7 +1481,7 @@ async function shuffleCard() {
 async function spinToCard(nextIndex, { recordHistory = false } = {}) {
   if (CARDS.length < 2 || cardSwapAnimating || cardShuffleSpinAnimating || galleryOpen) return false;
 
-  const targetIndex = modulo(nextIndex, CARDS.length);
+  const targetIndex = clamp(nextIndex, 0, CARDS.length - 1);
   if (targetIndex === currentIndex) return false;
 
   if (recordHistory) {
@@ -1055,7 +1489,6 @@ async function spinToCard(nextIndex, { recordHistory = false } = {}) {
     if (shuffleHistory.length > SHUFFLE_HISTORY_LIMIT) shuffleHistory.shift();
   }
 
-  getCardTexture(CARDS[targetIndex]).catch(() => {});
   cardShuffleSpinAnimating = true;
   const token = ++cardShuffleSpinToken;
   setIndividualCardControlsDisabled(true);
@@ -1065,7 +1498,25 @@ async function spinToCard(nextIndex, { recordHistory = false } = {}) {
   targetRotationY = 0;
 
   try {
-    await tweenCardShuffleSpin(targetIndex, token);
+    const [frontTexture, backTexture] = await Promise.all([
+      getPreparedCardTexture(CARDS[targetIndex]).catch((error) => {
+        console.error(error);
+        return null;
+      }),
+      getBackTexture(CARDS[targetIndex]).catch((error) => {
+        console.error(error);
+        return null;
+      }),
+    ]);
+    if (token !== cardShuffleSpinToken) return false;
+
+    await tweenCardShuffleSpin(targetIndex, frontTexture, token);
+    if (token !== cardShuffleSpinToken) return false;
+    setCard(targetIndex, {
+      frontTexture,
+      backTexture,
+      preserveSpinVisuals: true,
+    });
     return true;
   } finally {
     if (token === cardShuffleSpinToken) {
@@ -1146,7 +1597,7 @@ function isRecentShuffleTouchUndo() {
   return performance.now() - shuffleTouchUndoTriggeredAt < SHUFFLE_TOUCH_UNDO_SUPPRESS_MS;
 }
 
-function tweenCardShuffleSpin(nextIndex, token) {
+function tweenCardShuffleSpin(nextIndex, frontTexture, token) {
   const startedAt = performance.now();
   let swapped = false;
 
@@ -1164,7 +1615,7 @@ function tweenCardShuffleSpin(nextIndex, token) {
       if (!swapped && eased >= 0.5) {
         swapped = true;
         cardShuffleSpinY = CARD_SHUFFLE_SPIN_DIRECTION * Math.PI;
-        setCard(nextIndex, { preserveSpinVisuals: true });
+        applyShuffleFrontFace(nextIndex, frontTexture);
       }
 
       if (progress >= 1) {
@@ -1175,6 +1626,39 @@ function tweenCardShuffleSpin(nextIndex, token) {
     };
     requestAnimationFrame(step);
   });
+}
+
+function applyShuffleFrontFace(nextIndex, frontTexture) {
+  const card = CARDS[nextIndex];
+  if (frontTexture) {
+    prepareTextureForImmediateDisplay(frontTexture);
+    cardFrontMesh.material.map = frontTexture;
+    cardFrontMesh.material.needsUpdate = true;
+  } else {
+    cardFrontMesh.material.map = getCardPlaceholderTexture();
+    cardFrontMesh.material.needsUpdate = true;
+  }
+  applyCardFrontEffectProfile(card, cardApplyToken, { loadTextures: false });
+}
+
+function applyCardFrontEffectProfile(card, token = cardApplyToken, { loadTextures = true } = {}) {
+  const profile = getCardEffectProfile(card);
+  applyCardEffectProfileToMesh(cardGradientMesh, profile);
+  applyCardEffectProfileToMesh(cardGlareMesh, profile);
+
+  if (!profile.needsEffectTextures || !loadTextures) return;
+
+  loadCardNft2EffectTextures(profile.cardNumber)
+    .then(({ foil, mask }) => {
+      if (token !== cardApplyToken) return;
+      applyCardEffectTexturesToMesh(cardGradientMesh, foil, mask);
+      applyCardEffectTexturesToMesh(cardGlareMesh, foil, mask);
+    })
+    .catch(() => {
+      if (token !== cardApplyToken) return;
+      applyCardEffectTexturesToMesh(cardGradientMesh, null, null);
+      applyCardEffectTexturesToMesh(cardGlareMesh, null, null);
+    });
 }
 
 function resetCardShuffleSpinVisualState() {
@@ -1214,18 +1698,23 @@ function setTraitInfoOpen(open) {
 function renderTraitPanel() {
   if (!els.traitGrid) return;
 
+  updateTraitExternalLinks();
   const traits = getCardTraitEntries(currentIndex);
   const fragment = document.createDocumentFragment();
   for (const trait of traits) {
     const tile = document.createElement("button");
     tile.className = "trait-tile";
     tile.type = "button";
-    tile.title = `Show cards with ${trait.value}`;
-    tile.addEventListener("click", () => openTraitFilteredGallery(trait));
+    if (TRAIT_FILTERS_ENABLED) {
+      tile.title = `Show cards with ${trait.value}`;
+      tile.addEventListener("click", () => openTraitFilteredGallery(trait));
+    } else {
+      tile.disabled = true;
+    }
 
     const category = document.createElement("div");
     category.className = "trait-category";
-    category.textContent = trait.category;
+    category.textContent = getTraitCategoryDisplayLabel(trait.category);
 
     const value = document.createElement("div");
     value.className = "trait-value";
@@ -1233,10 +1722,21 @@ function renderTraitPanel() {
 
     const count = document.createElement("div");
     count.className = "trait-total";
-    const total = getTraitOccurrenceCount(trait.category, trait.value);
+    const total = getTraitOccurrenceCount(trait.category, trait.value, trait.collection);
     count.textContent = `${total} total`;
 
-    tile.append(category, value, count);
+    const thumbnail = createTraitThumbnailImage(
+      trait.collection,
+      trait.category,
+      trait.value,
+      "trait-thumbnail"
+    );
+    if (thumbnail) {
+      tile.classList.add("has-trait-thumbnail");
+      tile.append(category, value, count, thumbnail);
+    } else {
+      tile.append(category, value, count);
+    }
     fragment.append(tile);
   }
 
@@ -1298,17 +1798,21 @@ function getAssetExtension(path) {
 }
 
 function openTraitFilteredGallery(trait) {
-  applyTraitFilter(trait.category, trait.value);
+  applyTraitFilter(trait.category, trait.value, { sourceCategories: trait.sourceCategories });
 }
 
-function applyTraitFilter(category, value) {
+function applyTraitFilter(category, value, options = {}) {
+  if (!TRAIT_FILTERS_ENABLED) return;
+  const displayCategory = getTraitSearchDisplayCategory(category);
+  const sourceCategories = getValidTraitFilterSourceCategories(options.sourceCategories, category);
   activeTraitFilter = {
-    category,
+    category: displayCategory,
     value,
     normalizedValue: normalizeTraitValue(value),
+    sourceCategories,
   };
-  traitSortCategory = category;
-  els.traitSortSelect.value = category;
+  traitSortCategory = displayCategory;
+  els.traitSortSelect.value = displayCategory;
   favoritesOnly = false;
   traitSearchOpen = false;
   resetTraitSearchQuery();
@@ -1320,25 +1824,102 @@ function applyTraitFilter(category, value) {
 }
 
 function getCardTraitEntries(index) {
-  const values = CARD_NFT_TRAITS[index]?.values || [];
-  return CARD_NFT_TRAIT_CATEGORIES
+  const card = CARDS[index];
+  const collection = getCollectionConfigForCard(card);
+  const traitRecord = collection.traits[card?.collectionIndex] || {};
+  if (Array.isArray(traitRecord.entries)) {
+    const entries = traitRecord.entries
+      .map((entry) => ({
+        collection: collection.id,
+        category: String(entry?.category || "").trim(),
+        value: String(entry?.value || "").trim(),
+      }))
+      .filter(({ category, value }) => !HIDDEN_TRAIT_CATEGORIES.has(category) && isVisibleTraitValue(value));
+    return orderTraitPanelEntries(entries);
+  }
+
+  const values = traitRecord.values || [];
+  const entries = collection.traitCategories
     .map((category, categoryIndex) => ({
+      collection: collection.id,
       category,
       value: String(values[categoryIndex] || "").trim(),
     }))
     .filter(({ category, value }) => !HIDDEN_TRAIT_CATEGORIES.has(category) && isVisibleTraitValue(value));
+  return orderTraitPanelEntries(entries);
 }
 
-function getTraitOccurrenceCount(category, value) {
-  const categoryIndex = TRAIT_CATEGORY_INDEX.get(category);
-  const normalizedValue = normalizeTraitValue(value);
-  if (!Number.isInteger(categoryIndex) || !normalizedValue) return 0;
+function orderTraitPanelEntries(entries) {
+  return entries
+    .map((entry, index) => ({ entry, index }))
+    .sort((a, b) => {
+      const rankA = getTraitPanelCategoryRank(a.entry.category);
+      const rankB = getTraitPanelCategoryRank(b.entry.category);
+      if (rankA !== rankB) return rankA - rankB;
+      const orderA = getTraitPanelCategoryOrder(a.entry);
+      const orderB = getTraitPanelCategoryOrder(b.entry);
+      if (orderA !== orderB) return orderA - orderB;
+      return a.index - b.index;
+    })
+    .map(({ entry }) => entry);
+}
 
-  return CARD_NFT_TRAITS.reduce((total, traitRecord) => (
-    normalizeTraitValue(traitRecord?.values?.[categoryIndex]) === normalizedValue
-      ? total + 1
-      : total
-  ), 0);
+function getTraitPanelCategoryRank(category) {
+  return TRAIT_PANEL_CATEGORY_PRIORITY.get(String(category || "").trim().toLowerCase())
+    ?? TRAIT_PANEL_CATEGORY_PRIORITY.size;
+}
+
+function getTraitPanelCategoryOrder(entry) {
+  const collection = COLLECTION_CONFIGS[entry.collection] || ACTIVE_COLLECTION;
+  const normalizedCategory = String(entry.category || "").trim().toLowerCase();
+  const categoryIndex = collection.traitCategories.findIndex((category) => (
+    String(category || "").trim().toLowerCase() === normalizedCategory
+  ));
+  return categoryIndex >= 0 ? categoryIndex : Number.MAX_SAFE_INTEGER;
+}
+
+function getTraitOccurrenceCount(category, value, collectionId = ACTIVE_COLLECTION_ID) {
+  const collection = COLLECTION_CONFIGS[collectionId] || ACTIVE_COLLECTION;
+  const normalizedValue = normalizeTraitValue(value);
+  const sourceCategories = getTraitOccurrenceSourceCategories(collection, category);
+  if (!sourceCategories.length || !normalizedValue) return 0;
+
+  return collection.traits.reduce((total, traitRecord) => {
+    const hasTrait = sourceCategories.some((sourceCategory) => {
+      const categoryIndex = collection.traitCategories.indexOf(sourceCategory);
+      if (categoryIndex < 0) return false;
+
+      if (Array.isArray(traitRecord?.entries)) {
+        return traitRecord.entries.some((entry) => (
+          String(entry?.category || "").trim() === sourceCategory
+          && normalizeTraitValue(entry?.value) === normalizedValue
+        ));
+      }
+
+      return normalizeTraitValue(traitRecord?.values?.[categoryIndex]) === normalizedValue;
+    });
+    return hasTrait ? total + 1 : total;
+  }, 0);
+}
+
+function getTraitOccurrenceSourceCategories(collection, category) {
+  const trimmed = String(category || "").trim();
+  if (!trimmed) return [];
+
+  if (collection.id !== "cardnft2") {
+    return collection.traitCategories.includes(trimmed) ? [trimmed] : [];
+  }
+
+  const displayCategory = getTraitSearchDisplayCategory(trimmed, collection.id);
+  const normalizedDisplayCategory = normalizeTraitValue(displayCategory);
+  return collection.traitCategories.filter((sourceCategory) => (
+    !HIDDEN_TRAIT_CATEGORIES.has(sourceCategory)
+    && normalizeTraitValue(getTraitSearchDisplayCategory(sourceCategory, collection.id)) === normalizedDisplayCategory
+  ));
+}
+
+function getCollectionConfigForCard(card) {
+  return COLLECTION_CONFIGS[card?.collection] || ACTIVE_COLLECTION;
 }
 
 function toggleFocusedBinderFavorite() {
@@ -1384,7 +1965,7 @@ function startCardNameEdit(event) {
   input.inputMode = "numeric";
   input.autocomplete = "off";
   input.spellcheck = false;
-  input.value = String(currentIndex + 1);
+  input.value = String(getCardJumpDisplayNumber(currentIndex));
   input.setAttribute("aria-label", "Go to card number");
   input.addEventListener("keydown", onCardNameInputKeydown);
   input.addEventListener("blur", () => closeCardNameEdit());
@@ -1435,6 +2016,13 @@ function parseCardNameJumpValue(value) {
   const parsed = parseCardJumpNumber(value);
   if (!Number.isInteger(parsed)) return null;
   return CARD_NFT_TITLE_NUMBER_TO_INDEX.get(parsed) ?? null;
+}
+
+function getCardJumpDisplayNumber(index) {
+  const parsed = parseCardJumpNumber(CARDS[index]?.title);
+  if (Number.isInteger(parsed)) return parsed;
+  const position = getIndividualCardSequenceIndexes().indexOf(index);
+  return position >= 0 ? position + 1 : index + 1;
 }
 
 function parseCardNumberJumpValue(value, total) {
@@ -1491,11 +2079,13 @@ function updateTraitExternalLinks() {
 function updateExternalCardLink(link, mint, href, label) {
   if (!link) return;
   if (!mint) {
+    link.hidden = true;
     link.removeAttribute("href");
     link.setAttribute("aria-disabled", "true");
     link.tabIndex = -1;
     return;
   }
+  link.hidden = false;
   link.href = href;
   link.title = label;
   link.setAttribute("aria-label", label);
@@ -1553,8 +2143,12 @@ function setGalleryOpen(open, options = {}) {
   } else {
     clearBinderFocus({ silent: true });
     snapBinderToWholePage();
+    clearGalleryCardTilts();
     clearBinderIntroLinkCursor();
     stopBinderRenderLoop();
+    if (!binderCardViewTransitionActive) {
+      setCardEffectViewTargetOpacity(1, { immediate: true });
+    }
   }
   updateCardNameJumpState();
   queueSessionViewStateSave();
@@ -1564,6 +2158,7 @@ function resetGalleryFilters({ preserveFavorites = false } = {}) {
   activeTraitFilter = null;
   if (!preserveFavorites) favoritesOnly = false;
   traitSearchOpen = false;
+  cancelTraitSearchRender();
   resetTraitSearchQuery();
   traitSortCategory = "all";
   resetWalletCardFilter();
@@ -1589,12 +2184,14 @@ function toggleFavoriteFilter() {
 }
 
 function toggleTraitSearch() {
+  if (!TRAIT_FILTERS_ENABLED) return;
   traitSearchOpen = !traitSearchOpen;
   if (traitSearchOpen) {
     clearBinderFocus({ silent: true });
     deactivateAllAnimatedRecords();
   } else {
     resetTraitSearchQuery();
+    cancelTraitSearchRender();
   }
   updateTraitSearchState();
   renderGallery();
@@ -1613,6 +2210,7 @@ function resetTraitSearchQuery() {
 
 function updateTraitSearchState() {
   const open = galleryOpen && traitSearchOpen;
+  if (!open) cancelTraitSearchRender();
   els.body.classList.toggle("trait-search-open", open);
   els.traitSearchPanel.hidden = !open;
   els.traitSearchButton.setAttribute("aria-pressed", String(open));
@@ -1637,6 +2235,14 @@ function hasActiveGallerySortOrFilter() {
     activeTraitFilter
     || walletFilterCardIndexSet
     || traitSortCategory !== "all"
+  );
+}
+
+function hasActiveGalleryMode() {
+  return Boolean(
+    favoritesOnly
+    || traitSearchOpen
+    || hasActiveGallerySortOrFilter()
   );
 }
 
@@ -1776,15 +2382,16 @@ function resetWalletCardFilter() {
 }
 
 async function findWalletCardIndexes(address) {
-  const snapshotIndexes = getSnapshotWalletCardIndexes(address);
-  if (snapshotIndexes.length) return snapshotIndexes;
-
-  const magicEdenIndexes = await fetchMagicEdenWalletCardIndexes(address).catch(() => null);
-  if (magicEdenIndexes?.length) return magicEdenIndexes;
-
-  const tokenAccountIndexes = await fetchWalletTokenAccountCardIndexes(address).catch(() => null);
-  if (tokenAccountIndexes?.length) return tokenAccountIndexes;
-  return [];
+  const indexes = new Set(getSnapshotWalletCardIndexes(address));
+  const [magicEdenIndexes, tokenAccountIndexes, cardNft2Indexes] = await Promise.all([
+    fetchMagicEdenWalletCardIndexes(address).catch(() => []),
+    fetchWalletTokenAccountCardIndexes(address).catch(() => []),
+    fetchCardNft2WalletCardIndexes(address).catch(() => []),
+  ]);
+  for (const index of magicEdenIndexes || []) indexes.add(index);
+  for (const index of tokenAccountIndexes || []) indexes.add(index);
+  for (const index of cardNft2Indexes || []) indexes.add(index);
+  return [...indexes].sort(compareCardIndexes);
 }
 
 function getSnapshotWalletCardIndexes(address) {
@@ -1819,22 +2426,24 @@ function buildCardNftOwnerIndex(snapshot) {
 
 async function fetchMagicEdenWalletCardIndexes(address) {
   const indexes = [];
-  let offset = 0;
+  for (const symbol of CARD_NFT_COLLECTION_SYMBOLS) {
+    let offset = 0;
 
-  while (offset < MAGIC_EDEN_WALLET_MAX_TOKENS) {
-    const tokens = await magicEdenApi(
-      `/wallets/${encodeURIComponent(address)}/tokens?collection_symbol=${encodeURIComponent(CARD_NFT_COLLECTION_SYMBOL)}&offset=${offset}&limit=${MAGIC_EDEN_WALLET_PAGE_LIMIT}&listStatus=both`,
-    );
-    const page = Array.isArray(tokens) ? tokens : tokens?.results || [];
+    while (offset < MAGIC_EDEN_WALLET_MAX_TOKENS) {
+      const tokens = await magicEdenApi(
+        `/wallets/${encodeURIComponent(address)}/tokens?collection_symbol=${encodeURIComponent(symbol)}&offset=${offset}&limit=${MAGIC_EDEN_WALLET_PAGE_LIMIT}&listStatus=both`,
+      );
+      const page = Array.isArray(tokens) ? tokens : tokens?.results || [];
 
-    for (const token of page) {
-      const index = CARD_NFT_MINT_TO_INDEX.get(String(token?.mintAddress || "").trim());
-      if (Number.isInteger(index)) indexes.push(index);
+      for (const token of page) {
+        const index = CARD_NFT_MINT_TO_INDEX.get(String(token?.mintAddress || "").trim());
+        if (Number.isInteger(index)) indexes.push(index);
+      }
+
+      if (page.length < MAGIC_EDEN_WALLET_PAGE_LIMIT) break;
+      offset += MAGIC_EDEN_WALLET_PAGE_LIMIT;
+      await delay(MAGIC_EDEN_WALLET_PAGE_DELAY_MS);
     }
-
-    if (page.length < MAGIC_EDEN_WALLET_PAGE_LIMIT) break;
-    offset += MAGIC_EDEN_WALLET_PAGE_LIMIT;
-    await delay(MAGIC_EDEN_WALLET_PAGE_DELAY_MS);
   }
 
   return indexes;
@@ -1843,6 +2452,41 @@ async function fetchMagicEdenWalletCardIndexes(address) {
 async function fetchWalletTokenAccountCardIndexes(address) {
   const ownedMints = await fetchWalletTokenMints(address);
   return getCardIndexesForMints(ownedMints);
+}
+
+async function fetchCardNft2WalletCardIndexes(address) {
+  const payload = await fetchCardNft2Wallet(address);
+  return getCardIndexesForMints(getCardNft2WalletMints(payload));
+}
+
+async function fetchCardNft2Wallet(address) {
+  const url = `${CARD_NFT_2_WALLET_API_URL}?address=${encodeURIComponent(address)}`;
+  const response = await fetchWithTimeout(url, { headers: { accept: "application/json,*/*;q=0.8" } });
+  if (!response.ok) throw new Error(`Card NFT 2 wallet API failed: ${response.status}`);
+  return response.json();
+}
+
+function getCardNft2WalletMints(payload) {
+  const candidates = Array.isArray(payload?.mints)
+    ? payload.mints
+    : Array.isArray(payload?.assets)
+      ? payload.assets
+      : Array.isArray(payload)
+        ? payload
+        : [];
+
+  const mints = new Set();
+  for (const candidate of candidates) {
+    const mint = typeof candidate === "string"
+      ? candidate
+      : candidate?.mint
+        || candidate?.mintAddress
+        || candidate?.id
+        || candidate?.assetId
+        || "";
+    if (mint) mints.add(String(mint).trim());
+  }
+  return mints;
 }
 
 function getCardIndexesForMints(mints) {
@@ -1955,7 +2599,9 @@ function resetBinderGalleryPosition() {
 }
 
 function getVisibleIndexes() {
-  let indexes = CARDS.map((_, index) => index);
+  let indexes = (favoritesOnly || walletFilterCardIndexSet)
+    ? CARDS.map((_, index) => index)
+    : ACTIVE_COLLECTION_INDEXES.slice();
   if (favoritesOnly) {
     indexes = indexes.filter((index) => favorites.has(favoriteKey(index)));
   }
@@ -1963,33 +2609,67 @@ function getVisibleIndexes() {
     indexes = indexes.filter((index) => walletFilterCardIndexSet.has(index));
   }
   if (activeTraitFilter) {
+    const sourceCategories = getTraitFilterSourceCategories(activeTraitFilter);
     indexes = indexes.filter((index) => (
-      normalizeTraitValue(getCardTraitValue(index, activeTraitFilter.category))
-        === activeTraitFilter.normalizedValue
+      cardHasTraitValue(index, sourceCategories, activeTraitFilter.normalizedValue)
     ));
   }
   if (traitSortCategory === "all") return indexes;
+  if (activeTraitFilter && traitSortCategory === activeTraitFilter.category) {
+    return indexes.sort(compareCardIndexes);
+  }
   return getTraitGroupedIndexes(indexes, traitSortCategory);
 }
 
 function getTraitGroupedIndexes(indexes, category) {
   const groups = new Map();
+  const sourceCategories = getTraitSortSourceCategories(category);
   for (const index of indexes) {
-    const value = getCardTraitValue(index, category);
+    const value = getFirstCardTraitValue(index, sourceCategories);
     if (!isVisibleTraitValue(value)) continue;
-    if (!groups.has(value)) groups.set(value, []);
-    groups.get(value).push(index);
+    const normalized = normalizeTraitValue(value);
+    if (!groups.has(normalized)) {
+      groups.set(normalized, {
+        value,
+        indexes: [],
+      });
+    }
+    groups.get(normalized).indexes.push(index);
   }
 
-  return [...groups.keys()]
-    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }))
-    .flatMap((value) => groups.get(value).sort(compareCardIndexes));
+  return [...groups.values()]
+    .sort((a, b) => a.value.localeCompare(b.value, undefined, { numeric: true, sensitivity: "base" }))
+    .flatMap((group) => group.indexes.sort(compareCardIndexes));
+}
+
+function cardHasTraitValue(index, categories, normalizedValue) {
+  if (!normalizedValue) return false;
+  return categories.some((category) => (
+    normalizeTraitValue(getCardTraitValue(index, category)) === normalizedValue
+  ));
+}
+
+function getFirstCardTraitValue(index, categories) {
+  for (const category of categories) {
+    const value = getCardTraitValue(index, category);
+    if (isVisibleTraitValue(value)) return value;
+  }
+  return "";
 }
 
 function getCardTraitValue(index, category) {
-  const categoryIndex = TRAIT_CATEGORY_INDEX.get(category);
-  if (!Number.isInteger(categoryIndex)) return "";
-  return CARD_NFT_TRAITS[index]?.values?.[categoryIndex] || "";
+  const card = CARDS[index];
+  const collection = getCollectionConfigForCard(card);
+  const categoryIndex = collection.traitCategories.indexOf(category);
+  if (categoryIndex < 0) return "";
+  const traitRecord = collection.traits[card?.collectionIndex] || {};
+  if (Array.isArray(traitRecord.entries)) {
+    const matched = traitRecord.entries.find((entry) => (
+      String(entry?.category || "").trim() === category
+    ));
+    return String(matched?.value || "").trim();
+  }
+  return traitRecord.values?.[categoryIndex] || "";
 }
 
 function isVisibleTraitValue(value) {
@@ -1998,45 +2678,237 @@ function isVisibleTraitValue(value) {
 }
 
 function normalizeTraitValue(value) {
-  return String(value || "").trim().toLowerCase();
+  return String(value || "").normalize("NFC").trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+function getTraitValueLookupKeys(value) {
+  const keys = [normalizeTraitValue(value)];
+  const decomposed = String(value || "").normalize("NFD").trim().toLowerCase().replace(/\s+/g, " ");
+  if (decomposed && !keys.includes(decomposed)) keys.push(decomposed);
+  return keys;
+}
+
+function getTraitCategoryDisplayLabel(category) {
+  const normalizedCategory = normalizeTraitValue(category);
+  if (normalizedCategory === "status" || normalizedCategory === "rarity") {
+    return normalizedCategory;
+  }
+  return category;
+}
+
+function getTraitRecordValue(traitRecord, category, categoryIndex) {
+  if (Array.isArray(traitRecord?.entries)) {
+    const matched = traitRecord.entries.find((entry) => (
+      String(entry?.category || "").trim() === category
+    ));
+    return String(matched?.value || "").trim();
+  }
+  return String(traitRecord?.values?.[categoryIndex] || "").trim();
+}
+
+function getTraitFilterSourceCategories(filter) {
+  return getValidTraitFilterSourceCategories(filter?.sourceCategories, filter?.category);
+}
+
+function getValidTraitFilterSourceCategories(sourceCategories, fallbackCategory) {
+  const validCategories = new Set(ACTIVE_TRAIT_CATEGORIES);
+  const categories = Array.isArray(sourceCategories)
+    ? sourceCategories
+    : [];
+  const result = categories
+    .map((category) => String(category || "").trim())
+    .filter((category) => (
+      category
+      && validCategories.has(category)
+      && !HIDDEN_TRAIT_CATEGORIES.has(category)
+    ));
+  if (result.length) return [...new Set(result)];
+
+  const displaySources = getTraitSortSourceCategories(fallbackCategory);
+  if (displaySources.length) return displaySources;
+
+  if (
+    fallbackCategory
+    && validCategories.has(fallbackCategory)
+    && !HIDDEN_TRAIT_CATEGORIES.has(fallbackCategory)
+  ) {
+    return [fallbackCategory];
+  }
+  return [];
+}
+
+function getTraitDisplayCategoryOptions() {
+  const options = new Map();
+  ACTIVE_TRAIT_CATEGORIES.forEach((sourceCategory) => {
+    if (HIDDEN_TRAIT_CATEGORIES.has(sourceCategory)) return;
+
+    const category = getTraitSearchDisplayCategory(sourceCategory);
+    if (!category) return;
+    if (!options.has(category)) {
+      options.set(category, {
+        category,
+        sourceCategories: [],
+      });
+    }
+    const option = options.get(category);
+    if (!option.sourceCategories.includes(sourceCategory)) {
+      option.sourceCategories.push(sourceCategory);
+    }
+  });
+
+  return [...options.values()].sort(compareTraitDisplayCategoryOptions);
+}
+
+function compareTraitDisplayCategoryOptions(a, b) {
+  const orderA = getTraitDisplayCategoryOrder(a);
+  const orderB = getTraitDisplayCategoryOrder(b);
+  return orderA - orderB
+    || a.category.localeCompare(b.category, undefined, { numeric: true, sensitivity: "base" });
+}
+
+function getTraitDisplayCategoryOrder(option) {
+  const normalizedCategory = normalizeTraitValue(option?.category);
+  if (normalizedCategory === "other") return Number.MAX_SAFE_INTEGER;
+  if (CARD_NFT_2_TRAIT_DISPLAY_ORDER_OVERRIDES.has(normalizedCategory)) {
+    return CARD_NFT_2_TRAIT_DISPLAY_ORDER_OVERRIDES.get(normalizedCategory);
+  }
+  const indexes = (option?.sourceCategories || [])
+    .map((category) => ACTIVE_TRAIT_CATEGORIES.indexOf(category))
+    .filter((index) => index >= 0);
+  return indexes.length ? Math.min(...indexes) : Number.MAX_SAFE_INTEGER - 1;
+}
+
+function getTraitSortSourceCategories(category) {
+  if (!category || category === "all") return [];
+  const normalizedCategory = normalizeTraitValue(category);
+  const option = getTraitDisplayCategoryOptions()
+    .find((candidate) => normalizeTraitValue(candidate.category) === normalizedCategory);
+  return option?.sourceCategories || [];
+}
+
+function getTraitSearchDisplayCategory(category, collectionId = ACTIVE_COLLECTION_ID) {
+  const collection = COLLECTION_CONFIGS[collectionId] || ACTIVE_COLLECTION;
+  const trimmed = String(category || "").trim();
+  if (collection.id !== "cardnft2") return getTraitCategoryDisplayLabel(trimmed);
+
+  const normalized = normalizeTraitValue(trimmed);
+  if (normalized === "status" || normalized === "rarity") return normalized;
+  if (CARD_NFT_2_OTHER_TRAIT_CATEGORIES.has(normalized)) return "other";
+  if (CARD_NFT_2_TRAIT_CATEGORY_ALIASES.has(normalized)) {
+    return CARD_NFT_2_TRAIT_CATEGORY_ALIASES.get(normalized);
+  }
+
+  const matchedPrefix = CARD_NFT_2_COLLAPSED_TRAIT_CATEGORY_PREFIXES
+    .find((prefix) => normalized.startsWith(prefix));
+  if (!matchedPrefix) return trimmed;
+
+  const baseCategory = trimmed.slice(matchedPrefix.length).trim();
+  return collection.traitCategories.find((candidate) => (
+    normalizeTraitValue(candidate) === normalizeTraitValue(baseCategory)
+  )) || baseCategory;
+}
+
+function getTraitThumbnailPath(collectionId, category, value, sourceCategories = []) {
+  const collectionThumbnails = TRAIT_THUMBNAILS[collectionId];
+  if (!collectionThumbnails) return "";
+  const categories = [category, ...sourceCategories]
+    .map((sourceCategory) => String(sourceCategory || "").trim())
+    .filter(Boolean);
+  const valueKeys = getTraitValueLookupKeys(value);
+  for (const sourceCategory of [...new Set(categories)]) {
+    const categoryKey = normalizeTraitValue(sourceCategory);
+    for (const valueKey of valueKeys) {
+      const path = collectionThumbnails[`${categoryKey}|${valueKey}`];
+      if (path) return path;
+    }
+  }
+  return "";
+}
+
+function createTraitThumbnailImage(collectionId, category, value, className, sourceCategories = []) {
+  const path = getTraitThumbnailPath(collectionId, category, value, sourceCategories);
+  if (!path) return null;
+
+  const image = document.createElement("img");
+  image.className = className;
+  image.src = new URL(path, import.meta.url).href;
+  image.alt = "";
+  image.loading = "lazy";
+  image.decoding = "async";
+  image.setAttribute("aria-hidden", "true");
+  return image;
 }
 
 function getTraitSearchGroups() {
-  return CARD_NFT_TRAIT_CATEGORIES
-    .map((category, categoryIndex) => {
-      if (HIDDEN_TRAIT_CATEGORIES.has(category)) return null;
+  const groups = new Map();
 
-      const traits = new Map();
-      for (const traitRecord of CARD_NFT_TRAITS) {
-        const value = String(traitRecord?.values?.[categoryIndex] || "").trim();
-        if (!isVisibleTraitValue(value)) continue;
+  ACTIVE_TRAIT_CATEGORIES.forEach((category, categoryIndex) => {
+    if (HIDDEN_TRAIT_CATEGORIES.has(category)) return;
 
-        const normalized = normalizeTraitValue(value);
-        const existing = traits.get(normalized);
-        if (existing) {
-          existing.count += 1;
-        } else {
-          traits.set(normalized, { value, count: 1 });
-        }
+    const displayCategory = getTraitSearchDisplayCategory(category);
+    if (!displayCategory) return;
+
+    if (!groups.has(displayCategory)) {
+      groups.set(displayCategory, {
+        category: displayCategory,
+        sourceCategories: [],
+        traits: new Map(),
+      });
+    }
+
+    const group = groups.get(displayCategory);
+    if (!group.sourceCategories.includes(category)) group.sourceCategories.push(category);
+
+    ACTIVE_TRAITS.forEach((traitRecord, traitRecordIndex) => {
+      const value = getTraitRecordValue(traitRecord, category, categoryIndex);
+      if (!isVisibleTraitValue(value)) return;
+
+      const normalized = normalizeTraitValue(value);
+      const existing = group.traits.get(normalized);
+      if (existing) {
+        existing.cardIndexes.add(traitRecordIndex);
+        if (!existing.sourceCategories.includes(category)) existing.sourceCategories.push(category);
+      } else {
+        group.traits.set(normalized, {
+          value,
+          cardIndexes: new Set([traitRecordIndex]),
+          sourceCategories: [category],
+        });
       }
+    });
+  });
 
-      if (!traits.size) return null;
-      return {
-        category,
-        total: traits.size,
-        traits: [...traits.values()].sort((a, b) => (
+  return [...groups.values()]
+    .map((group) => {
+      const traits = [...group.traits.values()]
+        .map((trait) => ({
+          value: trait.value,
+          count: trait.cardIndexes.size,
+          sourceCategories: trait.sourceCategories,
+        }))
+        .sort((a, b) => (
           a.value.localeCompare(b.value, undefined, { numeric: true, sensitivity: "base" })
-        )),
+        ));
+
+      if (!traits.length) return null;
+      return {
+        category: group.category,
+        sourceCategories: group.sourceCategories,
+        total: traits.length,
+        traits,
       };
     })
-    .filter(Boolean);
+    .filter(Boolean)
+    .sort(compareTraitDisplayCategoryOptions);
 }
 
 function renderTraitSearch() {
+  const renderToken = startTraitSearchRender();
   const groupFragment = document.createDocumentFragment();
   const sidebarFragment = document.createDocumentFragment();
   const query = normalizeTraitSearchQuery(traitSearchQuery);
   const groups = getFilteredTraitSearchGroups(getTraitSearchGroups(), query);
+  traitSearchGroupDataByKey.clear();
 
   if (!groups.length) {
     const empty = document.createElement("div");
@@ -2051,14 +2923,27 @@ function renderTraitSearch() {
     const section = document.createElement("section");
     section.className = "trait-search-group";
     const sectionId = `trait-search-${slugifyTraitSearchId(group.category)}`;
+    const gridId = `${sectionId}-tiles`;
+    const collapsed = isTraitSearchCategoryCollapsed(group.category);
+    const categoryKey = getTraitSearchCollapseKey(group.category);
     section.id = sectionId;
+    section.dataset.traitCategoryKey = categoryKey;
+    section.classList.toggle("is-collapsed", collapsed);
+    traitSearchGroupDataByKey.set(categoryKey, group);
 
     const heading = document.createElement("h2");
     heading.className = "trait-search-heading";
     const headingCount = query
       ? `${group.traits.length} ${group.traits.length === 1 ? "match" : "matches"}`
       : `${group.total} total`;
-    heading.textContent = `${group.category} (${headingCount})`;
+    const headingButton = document.createElement("button");
+    headingButton.className = "trait-search-heading-button";
+    headingButton.type = "button";
+    headingButton.textContent = `${group.category} (${headingCount})`;
+    headingButton.dataset.traitCategory = group.category;
+    headingButton.setAttribute("aria-expanded", String(!collapsed));
+    headingButton.setAttribute("aria-controls", gridId);
+    heading.append(headingButton);
 
     const jump = document.createElement("button");
     jump.className = "trait-search-sidebar-button";
@@ -2071,25 +2956,9 @@ function renderTraitSearch() {
 
     const grid = document.createElement("div");
     grid.className = "trait-search-tile-grid";
-
-    for (const trait of group.traits) {
-      const tile = document.createElement("button");
-      tile.className = "trait-search-tile";
-      tile.type = "button";
-      tile.title = `Show cards with ${trait.value}`;
-      tile.addEventListener("click", () => applyTraitFilter(group.category, trait.value));
-
-      const value = document.createElement("div");
-      value.className = "trait-search-value";
-      value.textContent = trait.value;
-
-      const count = document.createElement("div");
-      count.className = "trait-search-count";
-      count.textContent = `${trait.count} ${trait.count === 1 ? "card" : "cards"}`;
-
-      tile.append(value, count);
-      grid.append(tile);
-    }
+    grid.id = gridId;
+    grid.dataset.renderState = "pending";
+    grid.hidden = collapsed;
 
     section.append(heading, grid);
     groupFragment.append(section);
@@ -2097,6 +2966,184 @@ function renderTraitSearch() {
 
   els.traitSearchGroups.replaceChildren(groupFragment);
   els.traitSearchSidebar.replaceChildren(sidebarFragment);
+  scheduleTraitSearchTileRender(groups, renderToken);
+}
+
+function startTraitSearchRender() {
+  cancelTraitSearchRender();
+  return traitSearchRenderToken;
+}
+
+function cancelTraitSearchRender() {
+  if (traitSearchRenderFrame) {
+    cancelAnimationFrame(traitSearchRenderFrame);
+    traitSearchRenderFrame = 0;
+  }
+  traitSearchRenderToken += 1;
+}
+
+function scheduleTraitSearchTileRender(groups, renderToken) {
+  const queue = groups
+    .filter((group) => group.traits.length)
+    .map((group) => ({
+      group,
+      nextIndex: document.getElementById(getTraitSearchGridId(group.category))?.children.length || 0,
+    }))
+    .filter((item) => item.nextIndex < item.group.traits.length);
+
+  if (!queue.length) {
+    traitSearchRenderFrame = 0;
+    return;
+  }
+
+  const renderBatch = () => {
+    if (renderToken !== traitSearchRenderToken) return;
+
+    let remaining = TRAIT_SEARCH_TILE_RENDER_BATCH_SIZE;
+    while (queue.length && remaining > 0) {
+      const item = queue[0];
+      const grid = document.getElementById(getTraitSearchGridId(item.group.category));
+      if (!grid) {
+        queue.shift();
+        continue;
+      }
+      if (isTraitSearchCategoryCollapsed(item.group.category)) {
+        grid.dataset.renderState = "pending";
+        queue.shift();
+        continue;
+      }
+
+      const rendered = appendTraitSearchTiles(grid, item.group, item.nextIndex, remaining);
+      remaining -= rendered;
+      item.nextIndex += rendered;
+
+      if (item.nextIndex >= item.group.traits.length) {
+        grid.dataset.renderState = "complete";
+        queue.shift();
+      }
+    }
+
+    if (queue.length) {
+      traitSearchRenderFrame = requestAnimationFrame(renderBatch);
+    } else {
+      traitSearchRenderFrame = 0;
+    }
+  };
+
+  traitSearchRenderFrame = requestAnimationFrame(renderBatch);
+}
+
+function appendTraitSearchTiles(grid, group, startIndex, limit) {
+  const fragment = document.createDocumentFragment();
+  const endIndex = Math.min(group.traits.length, startIndex + limit);
+  for (let index = startIndex; index < endIndex; index += 1) {
+    fragment.append(createTraitSearchTile(group, group.traits[index], index));
+  }
+  grid.append(fragment);
+  return endIndex - startIndex;
+}
+
+function createTraitSearchTile(group, trait, traitIndex) {
+  const sourceCategories = trait.sourceCategories || group.sourceCategories;
+  const tile = document.createElement("button");
+  tile.className = "trait-search-tile";
+  tile.type = "button";
+  tile.title = `Show cards with ${trait.value}`;
+  tile.dataset.traitCategoryKey = getTraitSearchCollapseKey(group.category);
+  tile.dataset.traitIndex = String(traitIndex);
+
+  const value = document.createElement("div");
+  value.className = "trait-search-value";
+  value.textContent = trait.value;
+
+  const count = document.createElement("div");
+  count.className = "trait-search-count";
+  count.textContent = `${trait.count} ${trait.count === 1 ? "card" : "cards"}`;
+
+  const thumbnail = createTraitThumbnailImage(
+    ACTIVE_COLLECTION_ID,
+    group.category,
+    trait.value,
+    "trait-search-thumbnail",
+    sourceCategories
+  );
+  if (thumbnail) {
+    tile.classList.add("has-trait-thumbnail");
+    tile.append(value, count, thumbnail);
+  } else {
+    tile.append(value, count);
+  }
+  return tile;
+}
+
+function getTraitSearchGridId(category) {
+  return `trait-search-${slugifyTraitSearchId(category)}-tiles`;
+}
+
+function onTraitSearchGroupsClick(event) {
+  const headingButton = event.target.closest(".trait-search-heading-button");
+  if (headingButton && els.traitSearchGroups.contains(headingButton)) {
+    toggleTraitSearchCategoryCollapse(headingButton.dataset.traitCategory || "");
+    return;
+  }
+
+  const tile = event.target.closest(".trait-search-tile");
+  if (!tile || !els.traitSearchGroups.contains(tile)) return;
+
+  const group = traitSearchGroupDataByKey.get(tile.dataset.traitCategoryKey);
+  const trait = group?.traits?.[Number.parseInt(tile.dataset.traitIndex || "", 10)];
+  if (!group || !trait) return;
+
+  applyTraitFilter(
+    group.category,
+    trait.value,
+    { sourceCategories: trait.sourceCategories || group.sourceCategories }
+  );
+}
+
+function isTraitSearchCategoryCollapsed(category) {
+  return traitSearchCollapsedCategories.has(getTraitSearchCollapseKey(category));
+}
+
+function toggleTraitSearchCategoryCollapse(category) {
+  const key = getTraitSearchCollapseKey(category);
+  if (traitSearchCollapsedCategories.has(key)) {
+    traitSearchCollapsedCategories.delete(key);
+  } else {
+    traitSearchCollapsedCategories.add(key);
+  }
+
+  const collapsed = traitSearchCollapsedCategories.has(key);
+  const section = getTraitSearchSectionByKey(key);
+  if (!section) return;
+
+  const grid = section.querySelector(".trait-search-tile-grid");
+  const headingButton = section.querySelector(".trait-search-heading-button");
+  section.classList.toggle("is-collapsed", collapsed);
+  if (grid) grid.hidden = collapsed;
+  if (headingButton) headingButton.setAttribute("aria-expanded", String(!collapsed));
+
+  const group = traitSearchGroupDataByKey.get(key);
+  if (
+    !collapsed
+    && group
+    && grid
+    && grid.dataset.renderState !== "complete"
+    && !traitSearchRenderFrame
+  ) {
+    scheduleTraitSearchTileRender([group], startTraitSearchRender());
+  }
+}
+
+function getTraitSearchCollapseKey(category) {
+  return normalizeTraitValue(category);
+}
+
+function getTraitSearchSectionByKey(key) {
+  for (const section of els.traitSearchGroups.querySelectorAll(".trait-search-group")) {
+    if (section.dataset.traitCategoryKey === key) return section;
+  }
+  return null;
 }
 
 function getFilteredTraitSearchGroups(groups, query) {
@@ -2145,6 +3192,7 @@ function renderGallery() {
   updateGalleryViewModeButton();
   syncBinderIntroNoteModeTarget();
   if (traitSearchOpen) {
+    clearGalleryCardTilts();
     renderTraitSearch();
     els.galleryEmpty.hidden = true;
     els.galleryGrid.hidden = true;
@@ -2167,6 +3215,7 @@ function renderGallery() {
   updateGalleryViewModeButton();
 
   if (empty) {
+    clearGalleryCardTilts();
     els.galleryGrid.hidden = true;
     els.binderPanel.hidden = true;
     els.binderPageControls.hidden = true;
@@ -2179,6 +3228,7 @@ function renderGallery() {
   els.binderPanel.hidden = !isBinderMode;
   els.galleryGrid.hidden = isBinderMode;
   if (isBinderMode) {
+    clearGalleryCardTilts();
     updateBinderItems(indexes);
     startBinderRenderLoop();
   } else {
@@ -2223,6 +3273,7 @@ function updateGalleryViewModeButton() {
 
 function renderGrid(indexes) {
   closeBinderPageStatusEdit({ update: false });
+  clearGalleryCardTilts();
   els.galleryGrid.replaceChildren();
   const fragment = document.createDocumentFragment();
   const priorityImageCount = getGalleryPriorityImageCount(indexes.length);
@@ -2232,6 +3283,7 @@ function renderGrid(indexes) {
     button.className = "gallery-card";
     button.type = "button";
     button.title = card.title;
+    button.style.setProperty("--gallery-card-hover-expand", `${GALLERY_CARD_HOVER_EXPAND_PX}px`);
     button.addEventListener("click", () => {
       setCard(index);
       setGalleryOpen(false);
@@ -2247,11 +3299,172 @@ function renderGrid(indexes) {
     }
     image.alt = card.title;
     image.src = cardAssetUrl(card);
-    button.append(image);
+    const tiltSurface = document.createElement("span");
+    tiltSurface.className = "gallery-card-tilt";
+    tiltSurface.append(image);
+    button.append(tiltSurface);
     fragment.append(button);
   });
   els.galleryGrid.append(fragment);
   els.binderPageStatus.textContent = withWalletStatusLabel(`${indexes.length} cards`);
+}
+
+function onGalleryGridTiltPointerMove(event) {
+  if (!isGalleryTiltPointer(event)) return;
+  const card = getGalleryCardFromEventTarget(event.target);
+  if (!card) {
+    releaseActiveGalleryCardTilt();
+    return;
+  }
+  updateGalleryCardTiltTarget(card, event);
+}
+
+function onGalleryGridTiltPointerOut(event) {
+  if (!isGalleryTiltPointer(event)) return;
+  const card = getGalleryCardFromEventTarget(event.target);
+  if (!card) return;
+
+  const relatedCard = getGalleryCardFromEventTarget(event.relatedTarget);
+  if (relatedCard === card) return;
+  releaseGalleryCardTilt(card);
+}
+
+function isGalleryTiltPointer(event) {
+  if (!galleryOpen || isBinderMode || !event || event.pointerType === "touch") return false;
+  return !window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+}
+
+function getGalleryCardFromEventTarget(target) {
+  if (!(target instanceof Element)) return null;
+  const card = target.closest(".gallery-card");
+  return card && els.galleryGrid.contains(card) ? card : null;
+}
+
+function updateGalleryCardTiltTarget(card, event) {
+  if (activeGalleryTiltCard && activeGalleryTiltCard !== card) {
+    releaseGalleryCardTilt(activeGalleryTiltCard);
+  }
+  activeGalleryTiltCard = card;
+
+  const state = getGalleryCardTiltState(card);
+  const rect = card.getBoundingClientRect();
+  const localX = clamp((event.clientX - rect.left) / Math.max(1, rect.width), 0, 1);
+  const localY = clamp((event.clientY - rect.top) / Math.max(1, rect.height), 0, 1);
+
+  state.hovering = true;
+  state.targetX = (0.5 - localY) * GALLERY_CARD_TILT_MAX_X_DEG;
+  state.targetY = (localX - 0.5) * GALLERY_CARD_TILT_MAX_Y_DEG;
+  state.targetLift = GALLERY_CARD_TILT_LIFT_PX;
+  card.classList.add("is-gallery-tilting");
+  startGalleryCardTiltAnimation();
+}
+
+function getGalleryCardTiltState(card) {
+  let state = galleryTiltStates.get(card);
+  if (!state) {
+    state = {
+      x: 0,
+      y: 0,
+      lift: 0,
+      vx: 0,
+      vy: 0,
+      vlift: 0,
+      targetX: 0,
+      targetY: 0,
+      targetLift: 0,
+      hovering: false,
+    };
+    galleryTiltStates.set(card, state);
+  }
+  return state;
+}
+
+function releaseActiveGalleryCardTilt() {
+  releaseGalleryCardTilt(activeGalleryTiltCard);
+}
+
+function releaseGalleryCardTilt(card) {
+  if (!card) return;
+  const state = galleryTiltStates.get(card);
+  if (!state) return;
+
+  state.hovering = false;
+  state.targetX = 0;
+  state.targetY = 0;
+  state.targetLift = 0;
+  if (activeGalleryTiltCard === card) activeGalleryTiltCard = null;
+  startGalleryCardTiltAnimation();
+}
+
+function startGalleryCardTiltAnimation() {
+  if (galleryTiltFrame || !galleryTiltStates.size) return;
+  galleryTiltFrame = requestAnimationFrame(animateGalleryCardTilts);
+}
+
+function animateGalleryCardTilts() {
+  galleryTiltFrame = 0;
+  let keepAnimating = false;
+
+  for (const [card, state] of galleryTiltStates) {
+    if (!card.isConnected) {
+      galleryTiltStates.delete(card);
+      if (activeGalleryTiltCard === card) activeGalleryTiltCard = null;
+      continue;
+    }
+
+    state.vx = (state.vx + (state.targetX - state.x) * GALLERY_CARD_TILT_SPRING) * GALLERY_CARD_TILT_DAMPING;
+    state.vy = (state.vy + (state.targetY - state.y) * GALLERY_CARD_TILT_SPRING) * GALLERY_CARD_TILT_DAMPING;
+    state.vlift = (state.vlift + (state.targetLift - state.lift) * GALLERY_CARD_TILT_SPRING) * GALLERY_CARD_TILT_DAMPING;
+    state.x += state.vx;
+    state.y += state.vy;
+    state.lift += state.vlift;
+
+    const settled = isGalleryCardTiltSettled(state);
+    if (!state.hovering && settled) {
+      resetGalleryCardTilt(card);
+      galleryTiltStates.delete(card);
+      continue;
+    }
+
+    applyGalleryCardTilt(card, state);
+    keepAnimating = true;
+  }
+
+  if (keepAnimating) galleryTiltFrame = requestAnimationFrame(animateGalleryCardTilts);
+}
+
+function isGalleryCardTiltSettled(state) {
+  return Math.abs(state.x) < GALLERY_CARD_TILT_SETTLE_EPSILON
+    && Math.abs(state.y) < GALLERY_CARD_TILT_SETTLE_EPSILON
+    && Math.abs(state.lift) < GALLERY_CARD_TILT_SETTLE_EPSILON
+    && Math.abs(state.vx) < GALLERY_CARD_TILT_SETTLE_EPSILON
+    && Math.abs(state.vy) < GALLERY_CARD_TILT_SETTLE_EPSILON
+    && Math.abs(state.vlift) < GALLERY_CARD_TILT_SETTLE_EPSILON;
+}
+
+function applyGalleryCardTilt(card, state) {
+  card.style.setProperty("--gallery-card-tilt-x", `${state.x.toFixed(3)}deg`);
+  card.style.setProperty("--gallery-card-tilt-y", `${state.y.toFixed(3)}deg`);
+  card.style.setProperty("--gallery-card-lift", `${state.lift.toFixed(3)}px`);
+}
+
+function resetGalleryCardTilt(card) {
+  card.classList.remove("is-gallery-tilting");
+  card.style.removeProperty("--gallery-card-tilt-x");
+  card.style.removeProperty("--gallery-card-tilt-y");
+  card.style.removeProperty("--gallery-card-lift");
+}
+
+function clearGalleryCardTilts() {
+  if (galleryTiltFrame) {
+    cancelAnimationFrame(galleryTiltFrame);
+    galleryTiltFrame = 0;
+  }
+  for (const card of galleryTiltStates.keys()) {
+    if (card.isConnected) resetGalleryCardTilt(card);
+  }
+  galleryTiltStates.clear();
+  activeGalleryTiltCard = null;
 }
 
 function getGalleryPriorityImageCount(totalCards) {
@@ -2351,7 +3564,7 @@ function updateBinderItems(indexes) {
   loadBinderBackTexture(token);
   updateBinderPageControls();
   resizeBinderRenderer();
-  renderBinderSceneOnce({ includePreload: false });
+  renderBinderSceneOnce({ includePreload: false, immediateCamera: true });
   queueBinderTextureLoads(token, { force: true, includePreload: false });
   requestBinderMaintenance(BINDER_INITIAL_PRELOAD_IDLE_DELAY_MS);
 }
@@ -2578,7 +3791,7 @@ function createBinderPage(pageIndex, indexes, placeholderTexture, materials) {
         cell.group.add(card);
         cardMeshes.push(card);
       } else if (hasFrontCard) {
-        const card = createBinderBackCard(placeholderTexture);
+        const card = createBinderBackCard(placeholderTexture, frontCardIndex);
         cell.group.add(card);
         cardMeshes.push(card);
       }
@@ -2826,6 +4039,7 @@ function collectBinderSheetMeshes(group) {
 }
 
 function createBinderCard(texture, cardIndex, side, binderPosition = -1) {
+  const hasCard = Number.isInteger(cardIndex);
   const material = new THREE.MeshPhysicalMaterial({
     map: texture,
     roughness: 0.62,
@@ -2834,7 +4048,7 @@ function createBinderCard(texture, cardIndex, side, binderPosition = -1) {
     clearcoat: 0.2,
     clearcoatRoughness: 0.52,
     transparent: true,
-    opacity: Number.isInteger(cardIndex) ? 0 : 1,
+    opacity: hasCard ? 0 : 1,
     depthTest: false,
     depthWrite: false,
     side: THREE.FrontSide,
@@ -2844,7 +4058,7 @@ function createBinderCard(texture, cardIndex, side, binderPosition = -1) {
   card.position.z = side * BINDER_CARD_LIFT;
   if (side < 0) card.rotation.y = Math.PI;
   card.renderOrder = 12;
-  if (Number.isInteger(cardIndex)) {
+  if (hasCard) {
     card.userData.cardIndex = cardIndex;
     card.userData.binderPosition = binderPosition;
     card.userData.binderCard = true;
@@ -2855,9 +4069,10 @@ function createBinderCard(texture, cardIndex, side, binderPosition = -1) {
   return card;
 }
 
-function createBinderBackCard(texture) {
+function createBinderBackCard(texture, sourceCardIndex = null) {
   const card = createBinderCard(texture, null, -1);
   card.userData.binderBackCard = true;
+  card.userData.binderBackCardIndex = sourceCardIndex;
   return card;
 }
 
@@ -3006,19 +4221,28 @@ async function loadQueuedBinderTexture(task) {
 }
 
 function loadBinderBackTexture(token) {
-  getBackTexture().then((texture) => {
-    if (token !== binderBuildToken) return;
-    if (isBinderTurnMoving()) {
-      requestBinderMaintenance(120);
-      return;
+  const backCards = [];
+  binderRoot.traverse((child) => {
+    if (child.isMesh && child.userData.binderBackCard) {
+      backCards.push(child);
     }
-    binderRoot.traverse((child) => {
-      if (!child.isMesh || !child.userData.binderBackCard) return;
+  });
+
+  for (const child of backCards) {
+    const card = Number.isInteger(child.userData.binderBackCardIndex)
+      ? CARDS[child.userData.binderBackCardIndex]
+      : null;
+    getBackTexture(card).then((texture) => {
+      if (token !== binderBuildToken || !child.parent) return;
+      if (isBinderTurnMoving()) {
+        requestBinderMaintenance(120);
+        return;
+      }
       child.material.map = texture;
       child.material.needsUpdate = true;
-    });
-    requestBinderRenderOnce();
-  }).catch(console.error);
+      requestBinderRenderOnce();
+    }).catch(console.error);
+  }
 }
 
 function ensureBinderPageWindow({
@@ -4048,6 +5272,10 @@ function getBinderFocusedGridPosition(position = binderFocusPosition) {
     isBackSide,
     row,
     column: isBackSide ? BINDER_COLUMNS - 1 - rawColumn : rawColumn,
+    spreadColumn: isBackSide
+      ? BINDER_COLUMNS - 1 - rawColumn
+      : BINDER_COLUMNS + rawColumn,
+    turn: getBinderTurnForPosition(position),
   };
 }
 
@@ -4077,13 +5305,42 @@ function getBinderPositionForGridSpot(gridSpot) {
   return position < binderVisibleIndexes.length ? position : -1;
 }
 
-function moveBinderFocusVertically(rowDirection) {
+function getBinderPositionForSpreadSpot(spreadSpot) {
+  if (!spreadSpot) return -1;
+  const { turn, row, spreadColumn } = spreadSpot;
+  if (
+    !Number.isInteger(turn)
+    || !Number.isInteger(row)
+    || !Number.isInteger(spreadColumn)
+    || turn < 0
+    || turn > binderPageCount
+    || row < 0
+    || row >= BINDER_ROWS
+    || spreadColumn < 0
+    || spreadColumn >= BINDER_COLUMNS * 2
+  ) {
+    return -1;
+  }
+
+  const isBackSide = spreadColumn < BINDER_COLUMNS;
+  const pageIndex = isBackSide ? turn - 1 : turn;
+  const column = isBackSide ? spreadColumn : spreadColumn - BINDER_COLUMNS;
+  return getBinderPositionForGridSpot({
+    pageIndex,
+    isBackSide,
+    row,
+    column,
+  });
+}
+
+function moveBinderFocusSpatially(rowDirection, columnDirection) {
   if (!isBinderFocused()) return false;
   const currentSpot = getBinderFocusedGridPosition();
   if (!currentSpot) return false;
-  const nextPosition = getBinderPositionForGridSpot({
-    ...currentSpot,
+  const nextPosition = getBinderPositionForSpreadSpot({
+    turn: currentSpot.turn,
     row: currentSpot.row + rowDirection,
+    spreadColumn: currentSpot.spreadColumn + columnDirection,
   });
   if (nextPosition < 0 || nextPosition === binderFocusPosition) return false;
   focusBinderPosition(nextPosition);
@@ -4156,6 +5413,7 @@ async function transitionIndividualCardToFocusedBinder() {
 
   const cardIndex = currentIndex;
   lockBinderFocusZoomOut(BINDER_FOCUS_TRANSITION_LOCK_MS);
+  setCardEffectViewTargetOpacity(0);
   const transitionCard = document.createElement("img");
   transitionCard.className = "binder-card-transition-card";
   transitionCard.alt = "";
@@ -4176,7 +5434,7 @@ async function transitionIndividualCardToFocusedBinder() {
   try {
     const prepared = await openFocusedBinderGalleryForCard(cardIndex);
     const focusedMesh = prepared ? getBinderFocusedMesh() : null;
-    renderBinderSceneOnce();
+    renderBinderSceneOnce({ immediateCamera: true });
     const targetRect = getBinderMeshScreenRect(focusedMesh) || getCenteredFallbackRect();
 
     requestAnimationFrame(() => {
@@ -4229,21 +5487,22 @@ async function openFocusedBinderGalleryForCard(cardIndex) {
   if (focusPosition === -1) return false;
 
   focusBinderPosition(focusPosition, { immediate: true });
-  renderBinderSceneOnce();
+  renderBinderSceneOnce({ immediateCamera: true });
   return true;
 }
 
 async function transitionFocusedBinderCardToIndividual(cardIndex, focusedMesh) {
   binderCardViewTransitionActive = true;
   if (!focusedMesh.userData.textureLoaded) {
-    await getBinderTexture(CARDS[cardIndex]).then((texture) => {
+    const card = CARDS[cardIndex];
+    await getBinderTexture(card).then((texture) => {
       prepareTextureForImmediateDisplay(texture);
       focusedMesh.material.map = texture;
       focusedMesh.material.opacity = getBinderPageOpacityForPosition(focusedMesh.userData.binderPosition);
       focusedMesh.material.needsUpdate = true;
       focusedMesh.userData.textureLoaded = true;
       focusedMesh.userData.textureLoading = false;
-      renderBinderSceneOnce();
+      renderBinderSceneOnce({ immediateCamera: true });
     }).catch(console.error);
   }
 
@@ -4262,6 +5521,10 @@ async function transitionFocusedBinderCardToIndividual(cardIndex, focusedMesh) {
 
   try {
     resetIndividualCardZoom();
+    setCardEffectViewTargetOpacity(0, { immediate: true });
+    const card = CARDS[cardIndex];
+    const effectProfile = getCardEffectProfile(card);
+    const effectTexturesPromise = loadCardEffectTexturesForProfile(effectProfile).catch(() => null);
     setCard(cardIndex);
     currentRotationX = 0;
     currentRotationY = 0;
@@ -4270,8 +5533,12 @@ async function transitionFocusedBinderCardToIndividual(cardIndex, focusedMesh) {
     cardShuffleSpinY = 0;
     cardGroup.rotation.x = 0;
     cardGroup.rotation.y = 0;
-    await getCardTexture(CARDS[cardIndex]).then((texture) => {
+    await Promise.all([
+      getCardTexture(card),
+      effectTexturesPromise,
+    ]).then(([texture, effectTextures]) => {
       prepareTextureForImmediateDisplay(texture);
+      applyLoadedIndividualCardEffect(card, effectTextures);
       cardFrontMesh.material.map = texture;
       cardFrontMesh.material.needsUpdate = true;
     }).catch(console.error);
@@ -4285,6 +5552,7 @@ async function transitionFocusedBinderCardToIndividual(cardIndex, focusedMesh) {
     });
 
     await delay(BINDER_CARD_VIEW_TRANSITION_MS * 0.46);
+    setCardEffectViewTargetOpacity(1);
     els.body.classList.add("binder-card-transition-show-card");
     await delay(BINDER_CARD_VIEW_TRANSITION_MS * 0.54);
 
@@ -4411,18 +5679,158 @@ function getCenteredFallbackRect() {
 }
 
 function applyTransitionRect(element, rect) {
+  const radius = getTransitionCardRadius(rect);
   element.style.left = `${rect.left}px`;
   element.style.top = `${rect.top}px`;
   element.style.width = `${rect.width}px`;
   element.style.height = `${rect.height}px`;
+  element.style.borderRadius = `${radius}px`;
+}
+
+function getTransitionCardRadius(rect) {
+  if (!rect || !Number.isFinite(rect.width) || !Number.isFinite(rect.height)) return 8;
+  return Math.max(
+    0,
+    Math.min(
+      rect.width * (CARD_RADIUS / CARD_WIDTH),
+      rect.height * (CARD_RADIUS / CARD_HEIGHT),
+    ),
+  );
 }
 
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+function getCardEffectPlaneUvFromCurrentRay() {
+  if (!cardGroup || !cardRaycaster?.ray) return null;
+
+  const inverseMatrix = new THREE.Matrix4().copy(cardGroup.matrixWorld).invert();
+  const localOrigin = cardRaycaster.ray.origin.clone().applyMatrix4(inverseMatrix);
+  const localDirection = cardRaycaster.ray.direction.clone().transformDirection(inverseMatrix);
+  if (Math.abs(localDirection.z) < 0.00001) return null;
+
+  const surfaces = [
+    { z: CARD_DEPTH / 2 + 0.003, back: false },
+    { z: -CARD_DEPTH / 2 - 0.003, back: true },
+  ];
+  let closest = null;
+  for (const surface of surfaces) {
+    const distance = (surface.z - localOrigin.z) / localDirection.z;
+    if (distance < 0 || (closest && distance >= closest.distance)) continue;
+    const localX = localOrigin.x + localDirection.x * distance;
+    const localY = localOrigin.y + localDirection.y * distance;
+    const frontUvX = (localX + CARD_WIDTH / 2) / CARD_WIDTH;
+    closest = {
+      distance,
+      x: surface.back ? 1 - frontUvX : frontUvX,
+      y: (localY + CARD_HEIGHT / 2) / CARD_HEIGHT,
+    };
+  }
+
+  return closest;
+}
+
+function getCardEffectOutsideDistance(x, y) {
+  return Math.max(0, -x, x - 1, -y, y - 1);
+}
+
+function getCardEffectEdgeActivity(x, y) {
+  const fade = clamp(1 - getCardEffectOutsideDistance(x, y) / CARD_NFT_2_EFFECT_EDGE_FADE_DISTANCE, 0, 1);
+  return fade * fade * (3 - fade * 2);
+}
+
+function setCardEffectPointerTarget(x, y, active, snapWhenInactive = false) {
+  const nextX = clamp(x, -CARD_NFT_2_EFFECT_POINTER_EXTENT, 1 + CARD_NFT_2_EFFECT_POINTER_EXTENT);
+  const nextY = clamp(y, -CARD_NFT_2_EFFECT_POINTER_EXTENT, 1 + CARD_NFT_2_EFFECT_POINTER_EXTENT);
+  if (snapWhenInactive && cardEffectPointerTargetActive < 0.5) {
+    cardEffectPointerX = nextX;
+    cardEffectPointerY = nextY;
+  }
+  cardEffectPointerTargetX = nextX;
+  cardEffectPointerTargetY = nextY;
+  cardEffectPointerTargetActive = clamp(active, 0, 1);
+}
+
+function updateCardEffectPointerFromEvent(event) {
+  if (!cardCamera || !els.cardCanvas || !cardFrontMesh || !cardBackMesh) return;
+
+  const rect = els.cardCanvas.getBoundingClientRect();
+  if (!rect.width || !rect.height) return;
+
+  cardGroup?.updateMatrixWorld(true);
+  cardCamera.updateMatrixWorld(true);
+  cardPointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+  cardPointer.y = -(((event.clientY - rect.top) / rect.height) * 2 - 1);
+  cardRaycaster.setFromCamera(cardPointer, cardCamera);
+  const hit = cardRaycaster.intersectObjects([cardFrontMesh, cardBackMesh], false)[0];
+
+  if (!hit?.uv) {
+    const planeUv = getCardEffectPlaneUvFromCurrentRay();
+    if (planeUv) {
+      const edgeActivity = getCardEffectEdgeActivity(planeUv.x, planeUv.y);
+      setCardEffectPointerTarget(planeUv.x, planeUv.y, edgeActivity, false);
+    } else if (!dragState) {
+      clearCardEffectPointer(event);
+    }
+    return;
+  }
+
+  const nextX = clamp(hit.uv.x, 0, 1);
+  const nextY = clamp(hit.uv.y, 0, 1);
+  setCardEffectPointerTarget(nextX, nextY, 1, true);
+}
+
+function clearCardEffectPointer(event) {
+  if (event?.clientX != null && cardCamera && els.cardCanvas && cardGroup) {
+    const rect = els.cardCanvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      cardGroup.updateMatrixWorld(true);
+      cardCamera.updateMatrixWorld(true);
+      cardPointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+      cardPointer.y = -(((event.clientY - rect.top) / rect.height) * 2 - 1);
+      cardRaycaster.setFromCamera(cardPointer, cardCamera);
+      const planeUv = getCardEffectPlaneUvFromCurrentRay();
+      if (planeUv) {
+        setCardEffectPointerTarget(planeUv.x, planeUv.y, 0, false);
+        return;
+      }
+    }
+  }
+
+  const directionX = cardEffectPointerX - 0.5;
+  const directionY = cardEffectPointerY - 0.5;
+  const length = Math.hypot(directionX, directionY);
+  if (length > 0.001) {
+    setCardEffectPointerTarget(
+      cardEffectPointerX + (directionX / length) * CARD_NFT_2_EFFECT_POINTER_EXTENT,
+      cardEffectPointerY + (directionY / length) * CARD_NFT_2_EFFECT_POINTER_EXTENT,
+      0,
+      false,
+    );
+    return;
+  }
+
+  setCardEffectPointerTarget(
+    CARD_NFT_2_EFFECT_OFFCARD_POINTER_X,
+    CARD_NFT_2_EFFECT_OFFCARD_POINTER_Y,
+    0,
+    false,
+  );
+}
+
+function updateCardEffectPointer() {
+  const activeAlpha = cardEffectPointerTargetActive > cardEffectPointerActive ? 0.2 : 0.1;
+  const positionAlpha = cardEffectPointerTargetActive > cardEffectPointerActive ? 0.24 : 0.18;
+  cardEffectPointerX += (cardEffectPointerTargetX - cardEffectPointerX) * positionAlpha;
+  cardEffectPointerY += (cardEffectPointerTargetY - cardEffectPointerY) * positionAlpha;
+  cardEffectPointerActive += (cardEffectPointerTargetActive - cardEffectPointerActive) * activeAlpha;
+  if (cardEffectPointerActive < 0.002 && cardEffectPointerTargetActive === 0) cardEffectPointerActive = 0;
+}
+
 function onCardPointerDown(event) {
   if (cardSwapAnimating || cardShuffleSpinAnimating) return;
+  updateCardEffectPointerFromEvent(event);
   els.cardCanvas.setPointerCapture(event.pointerId);
 
   if (isTouchLikePointer(event)) {
@@ -4454,6 +5862,8 @@ function onCardPointerDown(event) {
 }
 
 function onCardPointerMove(event) {
+  updateCardEffectPointerFromEvent(event);
+
   if (isTouchLikePointer(event)) {
     updateTouchPointer(cardTouchPointers, event);
     if (cardPinchGesture || cardTouchPointers.size >= 2) {
@@ -4486,6 +5896,8 @@ function onCardPointerMove(event) {
 }
 
 function onCardPointerUp(event) {
+  if (isTouchLikePointer(event)) clearCardEffectPointer();
+
   if (isTouchLikePointer(event)) {
     removeTouchPointer(cardTouchPointers, event);
     if (cardPinchGesture) {
@@ -4501,6 +5913,7 @@ function onCardPointerUp(event) {
 
   if (!dragState || event.pointerId !== dragState.pointerId) return;
   dragState = null;
+  if (!isTouchLikePointer(event)) updateCardEffectPointerFromEvent(event);
   if (!isCardPanMode()) {
     targetRotationX = 0;
     targetRotationY = 0;
@@ -4731,7 +6144,7 @@ function onBinderPointerMove(event) {
     binderTurn = binderTargetTurn;
     updateBinderPageTransforms();
     updateBinderPageControls();
-    renderBinderSceneOnce();
+    renderBinderSceneOnce({ immediateCamera: true });
   }
   event.preventDefault();
 }
@@ -4761,8 +6174,8 @@ function onBinderPointerUp(event) {
   }
 
   if (wasClick) {
-    if (handleBinderIntroNoteTap(event)) return;
     if (handleBinderIntroLinkTap(event)) return;
+    if (handleBinderIntroNoteTap(event)) return;
     if (handleFocusedBinderCardTap(event)) return;
     if (selectBinderCard(event)) return;
     handleFocusedBinderBackgroundTap(event);
@@ -4867,9 +6280,9 @@ function handleFocusedBinderSwipe(drag, event) {
 
   binderLastOpenTap = null;
   if (horizontal) {
-    moveBinderFocus(primary < 0 ? 1 : -1);
+    moveBinderFocusSpatially(0, primary < 0 ? 1 : -1);
   } else {
-    moveBinderFocusVertically(primary < 0 ? -1 : 1);
+    moveBinderFocusSpatially(primary < 0 ? 1 : -1, 0);
   }
   return true;
 }
@@ -5111,10 +6524,13 @@ function animateCard() {
   updateCardSwapIncomingTransform();
   applyCardSwapOpacity();
   updateCardGlossActivity();
+  updateCardEffectPointer();
+  updateCardEffectViewOpacity();
   updateCardGlossUniforms(cardGradientMesh);
   updateCardGlossUniforms(cardBackGradientMesh);
   updateCardGlossUniforms(cardGlareMesh);
   updateCardGlossUniforms(cardBackGlareMesh);
+  updateCardSwapIncomingEffectUniforms();
   if (!galleryOpen) {
     updateAnimatedTextureRecords(getIndividualAnimatedTextureRecords());
   }
@@ -5126,11 +6542,14 @@ function getTraitCardOffsetX() {
 
   const viewportWidth = window.innerWidth || document.documentElement.clientWidth || 0;
   const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
-  if (viewportWidth < 820 || viewportWidth / Math.max(1, viewportHeight) < 1.12) return 0;
+  if (viewportWidth <= 820 || viewportWidth / Math.max(1, viewportHeight) < 1.12) return 0;
 
   const visibleHeight = 2 * Math.tan(THREE.MathUtils.degToRad(cardCamera.fov) / 2) * currentCameraZ;
   const visibleWidth = visibleHeight * cardCamera.aspect;
-  const pixelShift = clamp(viewportWidth * 0.2, 190, 330);
+  const isIntermediateWidth = viewportWidth <= 1280;
+  const pixelShift = isIntermediateWidth
+    ? clamp(viewportWidth * 0.22, 205, 350)
+    : 264;
   return -(visibleWidth * pixelShift) / Math.max(1, viewportWidth);
 }
 
@@ -5263,7 +6682,76 @@ function updateCardGlossUniforms(mesh) {
   if (!uniforms) return;
   uniforms.uCameraPosition.value.copy(cardCamera.position);
   uniforms.uTime.value = performance.now() * 0.001;
-  uniforms.uActivity.value = cardGlossActivity;
+  if (uniforms.uPointer) uniforms.uPointer.value.set(cardEffectPointerX, cardEffectPointerY);
+  if (uniforms.uPointerActive) uniforms.uPointerActive.value = cardEffectPointerActive;
+  uniforms.uActivity.value = getCardEffectUniformActivity(uniforms.uEffectMode?.value || CARD_EFFECT_MODE_DEFAULT);
+}
+
+function updateCardSwapIncomingEffectUniforms() {
+  updateCardEffectUniformsForGroup(cardSwapIncomingGroup);
+}
+
+function updateCardEffectUniformsForGroup(group) {
+  const effectMeshes = group?.userData?.effectMeshes || [];
+  if (!effectMeshes.length) return;
+
+  const time = performance.now() * 0.001;
+  for (const mesh of effectMeshes) {
+    const uniforms = mesh?.material?.uniforms;
+    if (!uniforms) continue;
+    uniforms.uCameraPosition.value.copy(cardCamera.position);
+    uniforms.uTime.value = time;
+    if (uniforms.uPointer) uniforms.uPointer.value.set(cardEffectPointerX, cardEffectPointerY);
+    if (uniforms.uPointerActive) uniforms.uPointerActive.value = cardEffectPointerActive;
+    uniforms.uActivity.value = getCardEffectUniformActivity(uniforms.uEffectMode?.value || CARD_EFFECT_MODE_DEFAULT);
+  }
+}
+
+function updateCardEffectViewOpacity(now = performance.now()) {
+  if (cardEffectViewOpacity === cardEffectViewTargetOpacity) {
+    setIndividualCardEffectOpacity(cardEffectViewOpacity);
+    return;
+  }
+
+  const progress = CARD_EFFECT_VIEW_TRANSITION_FADE_MS <= 0
+    ? 1
+    : clamp((now - cardEffectViewFadeStartedAt) / CARD_EFFECT_VIEW_TRANSITION_FADE_MS, 0, 1);
+  cardEffectViewOpacity = THREE.MathUtils.lerp(
+    cardEffectViewStartOpacity,
+    cardEffectViewTargetOpacity,
+    easeInOutCubic(progress),
+  );
+  if (progress >= 1) cardEffectViewOpacity = cardEffectViewTargetOpacity;
+  setIndividualCardEffectOpacity(cardEffectViewOpacity);
+}
+
+function setCardEffectViewTargetOpacity(opacity, { immediate = false } = {}) {
+  const nextOpacity = clamp(opacity, 0, 1);
+  cardEffectViewTargetOpacity = nextOpacity;
+  if (immediate) {
+    cardEffectViewOpacity = nextOpacity;
+    cardEffectViewStartOpacity = nextOpacity;
+    cardEffectViewFadeStartedAt = performance.now();
+    setIndividualCardEffectOpacity(nextOpacity);
+    return;
+  }
+
+  cardEffectViewStartOpacity = cardEffectViewOpacity;
+  cardEffectViewFadeStartedAt = performance.now();
+}
+
+function setIndividualCardEffectOpacity(opacity) {
+  const nextOpacity = clamp(opacity, 0, 1) * clamp(cardSwapOpacity, 0, 1);
+  for (const mesh of [cardGradientMesh, cardBackGradientMesh, cardGlareMesh, cardBackGlareMesh]) {
+    const uniforms = mesh?.material?.uniforms;
+    if (!uniforms?.uTransitionOpacity) continue;
+    uniforms.uTransitionOpacity.value = nextOpacity;
+  }
+}
+
+function getCardEffectUniformActivity(effectMode) {
+  if (effectMode > CARD_EFFECT_MODE_DEFAULT + 0.5) return 1;
+  return cardGlossActivity;
 }
 
 function renderBinderScene() {
@@ -5282,24 +6770,28 @@ function startBinderRenderLoop() {
     cancelAnimationFrame(binderAnimationFrame);
     binderAnimationFrame = 0;
   }
+  binderLastAnimationAt = 0;
   if (binderAnimationDelayTimer) {
     window.clearTimeout(binderAnimationDelayTimer);
     binderAnimationDelayTimer = 0;
   }
 
-  const renderFrame = () => {
+  const renderFrame = (frameTime) => {
     if (!galleryOpen || !isBinderMode || els.binderPanel.hidden) {
       binderAnimationFrame = 0;
       binderAnimationDelayTimer = 0;
+      binderLastAnimationAt = 0;
       return;
     }
-    const keepAnimating = updateBinderAnimation();
+    const keepAnimating = updateBinderAnimation(frameTime);
     if (!keepAnimating) {
       binderAnimationFrame = 0;
+      binderLastAnimationAt = 0;
       return;
     }
     if (binderLastAnimationIdleOnly) {
       binderAnimationFrame = 0;
+      binderLastAnimationAt = 0;
       binderAnimationDelayTimer = window.setTimeout(() => {
         binderAnimationDelayTimer = 0;
         binderAnimationFrame = requestAnimationFrame(renderFrame);
@@ -5317,6 +6809,7 @@ function stopBinderRenderLoop() {
     cancelAnimationFrame(binderAnimationFrame);
     binderAnimationFrame = 0;
   }
+  binderLastAnimationAt = 0;
   if (binderAnimationDelayTimer) {
     window.clearTimeout(binderAnimationDelayTimer);
     binderAnimationDelayTimer = 0;
@@ -5333,7 +6826,7 @@ function requestBinderMaintenance(delay = 90) {
   binderMaintenanceTimer = window.setTimeout(() => {
     binderMaintenanceTimer = 0;
     if (!galleryOpen || !isBinderMode || els.binderPanel.hidden) return;
-    if (isBinderTurnMoving() || binderPreparingSpread) {
+    if (isBinderTurnMoving() || isBinderCameraMoving() || binderPreparingSpread) {
       requestBinderMaintenance(delay);
       return;
     }
@@ -5346,19 +6839,36 @@ function requestBinderMaintenance(delay = 90) {
   }, delay);
 }
 
-function updateBinderAnimation() {
+function getBinderAnimationDeltaMs(now) {
+  if (!binderLastAnimationAt) {
+    binderLastAnimationAt = now;
+    return BINDER_FRAME_MS;
+  }
+
+  const deltaMs = clamp(now - binderLastAnimationAt, 1, BINDER_MAX_FRAME_DELTA_MS);
+  binderLastAnimationAt = now;
+  return deltaMs;
+}
+
+function getFrameDampedAlpha(baseAlpha, deltaMs) {
+  const frameCount = clamp(deltaMs / BINDER_FRAME_MS, 0.25, BINDER_MAX_FRAME_DELTA_MS / BINDER_FRAME_MS);
+  return 1 - Math.pow(1 - baseAlpha, frameCount);
+}
+
+function updateBinderAnimation(frameTime = performance.now()) {
   const wasIdleOnly = binderLastAnimationIdleOnly;
   binderLastAnimationIdleOnly = false;
   if (!binderRenderer || !binderScene || !binderCamera || !galleryOpen || !isBinderMode) {
     return false;
   }
 
-  const now = performance.now();
+  const now = Number.isFinite(frameTime) ? frameTime : performance.now();
+  const deltaMs = getBinderAnimationDeltaMs(now);
   let turnActive = Boolean(binderDrag);
   if (!binderDrag) {
     const delta = binderTargetTurn - binderTurn;
     if (Math.abs(delta) > 0.0015) binderBendDirection = Math.sign(delta);
-    binderTurn += delta * 0.16;
+    binderTurn += delta * getFrameDampedAlpha(BINDER_TURN_BASE_ALPHA, deltaMs);
     turnActive = Math.abs(delta) >= 0.0015;
     if (!turnActive) binderTurn = binderTargetTurn;
   }
@@ -5368,13 +6878,15 @@ function updateBinderAnimation() {
   if (turnActive || interactionActive || !wasIdleOnly || introNoteFadeActive) {
     updateBinderPageTransforms();
   }
-  updateBinderCameraFrame(false);
+  updateBinderCameraFrame(false, deltaMs);
   const cameraMoving = isBinderCameraMoving();
   const animatedRecords = getBinderVisibleAnimatedTextureRecords();
   const fadeActive = updateBinderCardLoadFades(now) || introNoteFadeActive;
   if (!turnActive && !cameraMoving && animatedRecords.size && !interactionActive && !fadeActive) {
     const animatedUpdated = updateAnimatedTextureRecords(animatedRecords);
-    if (animatedUpdated) binderRenderer.render(binderScene, binderCamera);
+    if (animatedUpdated) {
+      binderRenderer.render(binderScene, binderCamera);
+    }
     binderLastAnimationIdleOnly = true;
     return true;
   }
@@ -5751,7 +7263,7 @@ function setBinderPageRenderOrder(page, baseOrder, { activePage = false } = {}) 
   });
 }
 
-function updateBinderCameraFrame(immediate = false) {
+function updateBinderCameraFrame(immediate = false, deltaMs = BINDER_FRAME_MS) {
   if (!binderCamera) return;
 
   updateBinderDefaultCameraFrame();
@@ -5790,7 +7302,10 @@ function updateBinderCameraFrame(immediate = false) {
     return;
   }
 
-  const alpha = isBinderFocusView() ? 0.12 : 0.1;
+  const alpha = getFrameDampedAlpha(
+    isBinderFocusView() ? BINDER_FOCUS_CAMERA_BASE_ALPHA : BINDER_CAMERA_BASE_ALPHA,
+    deltaMs,
+  );
   binderCamera.position.lerp(binderDesiredCameraPosition, alpha);
   binderCurrentCameraLookAt.lerp(binderDesiredCameraLookAt, alpha);
   binderCamera.lookAt(binderCurrentCameraLookAt);
@@ -5881,10 +7396,13 @@ function getBinderIntroFocusMarginRatio() {
     : BINDER_INTRO_FOCUS_MARGIN_RATIO;
 }
 
-function renderBinderSceneOnce({ includePreload = !isBinderTurnMoving() } = {}) {
+function renderBinderSceneOnce({
+  includePreload = !isBinderTurnMoving(),
+  immediateCamera = false,
+} = {}) {
   if (!binderRenderer || !binderScene || !binderCamera) return;
   updateBinderPageTransforms();
-  updateBinderCameraFrame(true);
+  updateBinderCameraFrame(immediateCamera || !binderCameraReady);
   queueBinderTextureLoads(binderBuildToken, { includePreload });
   updateAnimatedTextureRecords(getBinderVisibleAnimatedTextureRecords());
   binderRenderer.render(binderScene, binderCamera);
@@ -6043,7 +7561,8 @@ function drawBinderIntroNoteSurface(ctx) {
   const fontStack = SITE_FONT_STACK;
   const baseFontSize = 33;
   const linkText = "evil biscuit";
-  const firstLinePrefix = "this is a 3d binder viewer for card nft by  ";
+  const binderName = ACTIVE_COLLECTION_ID === "cardnft2" ? "card nft 2" : "card nft";
+  const firstLinePrefix = `this is a 3d binder viewer for ${binderName} by  `;
   const maxTextWidth = width * 0.9;
   const textFillStyle = "rgba(156, 153, 146, 0.74)";
   const linkFillStyle = "rgba(176, 172, 164, 0.9)";
@@ -6064,7 +7583,7 @@ function drawBinderIntroNoteSurface(ctx) {
   ctx.fillStyle = textFillStyle;
   drawCenteredBinderIntroText(
     ctx,
-    "you can navigate with swiping, zooming, and/or the ui buttons",
+    "navigate by tapping, swiping, zooming, and/or the ui buttons",
     width / 2,
     224 + textOffsetY,
     maxTextWidth,
@@ -6086,22 +7605,43 @@ function drawBinderIntroNoteSurface(ctx) {
   ctx.textAlign = "center";
   ctx.fillText("🩸", width / 2, 390 + textOffsetY);
 
-  const cardNft2LinkBounds = drawBinderIntroLinkedLine(ctx, {
-    prefix: "card nft 2 coming soon to ",
-    linkText: "mons.shop",
-    y: 510 + textOffsetY,
-    maxWidth: maxTextWidth,
-    fontSize: 32,
-    fontStack,
-    textFillStyle,
-    linkFillStyle,
-    url: BINDER_CARD_NFT_2_LINK_URL,
-  });
+  const linkBounds = [evilBiscuitLinkBounds];
+  let focusBottomY = 390 + textOffsetY + 42 * 0.48;
+  if (ACTIVE_COLLECTION_ID === "cardnft1") {
+    const cardNft2LinkBounds = drawBinderIntroLinkedLine(ctx, {
+      prefix: "card nft 2 out now. ",
+      linkText: "click here",
+      suffix: " to view",
+      y: 510 + textOffsetY,
+      maxWidth: maxTextWidth,
+      fontSize: 32,
+      fontStack,
+      textFillStyle,
+      linkFillStyle,
+      url: BINDER_CARD_NFT_2_LINK_URL,
+    });
+    linkBounds.push(cardNft2LinkBounds);
+    focusBottomY = 510 + textOffsetY + 32 * 0.48;
+  } else if (ACTIVE_COLLECTION_ID === "cardnft2") {
+    const cardNft1LinkBounds = drawBinderIntroLinkedLine(ctx, {
+      prefix: "to view the card nft 1 collection ",
+      linkText: "click here",
+      y: 510 + textOffsetY,
+      maxWidth: maxTextWidth,
+      fontSize: 32,
+      fontStack,
+      textFillStyle,
+      linkFillStyle,
+      url: BINDER_CARD_NFT_1_LINK_URL,
+    });
+    linkBounds.push(cardNft1LinkBounds);
+    focusBottomY = 510 + textOffsetY + 32 * 0.48;
+  }
 
   const focusTop = Math.max(0, (144 + textOffsetY - baseFontSize * 1.28) / height);
-  const focusBottom = Math.min(1, (510 + textOffsetY + 32 * 0.48) / height);
+  const focusBottom = Math.min(1, focusBottomY / height);
   return {
-    linkBounds: [evilBiscuitLinkBounds, cardNft2LinkBounds],
+    linkBounds,
     focusBounds: {
       x: 0.04,
       y: focusTop,
@@ -6113,24 +7653,29 @@ function drawBinderIntroNoteSurface(ctx) {
 
 function drawBinderIntroLinkedLine(
   ctx,
-  { prefix, linkText, y, maxWidth, fontSize, fontStack, textFillStyle, linkFillStyle, url },
+  { prefix, linkText, suffix = "", y, maxWidth, fontSize, fontStack, textFillStyle, linkFillStyle, url },
 ) {
   let size = fontSize;
   while (size > 18) {
     ctx.font = `400 ${size}px ${fontStack}`;
-    if (ctx.measureText(prefix + linkText).width <= maxWidth) break;
+    if (ctx.measureText(prefix + linkText + suffix).width <= maxWidth) break;
     size -= 1;
   }
 
   ctx.font = `400 ${size}px ${fontStack}`;
   const prefixWidth = ctx.measureText(prefix).width;
   const linkWidth = ctx.measureText(linkText).width;
-  const lineStartX = (ctx.canvas.width - prefixWidth - linkWidth) / 2;
+  const suffixWidth = ctx.measureText(suffix).width;
+  const lineStartX = (ctx.canvas.width - prefixWidth - linkWidth - suffixWidth) / 2;
   ctx.textAlign = "left";
   ctx.fillStyle = textFillStyle;
   ctx.fillText(prefix, lineStartX, y);
   ctx.fillStyle = linkFillStyle;
   ctx.fillText(linkText, lineStartX + prefixWidth, y);
+  if (suffix) {
+    ctx.fillStyle = textFillStyle;
+    ctx.fillText(suffix, lineStartX + prefixWidth + linkWidth, y);
+  }
 
   const underlineY = y + Math.max(8, size * 0.25);
   ctx.globalAlpha = 0.55;
@@ -6386,11 +7931,52 @@ function getProtectedTextureKeys() {
   return keys;
 }
 
-function getBackTexture() {
-  if (!backTexturePromise) {
-    backTexturePromise = loadTexture(new URL("./cardnft back.png", import.meta.url).href);
+function getBackTexture(card = null) {
+  const assetPath = cardBackAssetPath(card);
+  if (backTexturePromises.has(assetPath)) {
+    return backTexturePromises.get(assetPath);
   }
-  return backTexturePromise;
+
+  const promise = loadTexture(new URL(assetPath, import.meta.url).href).catch((error) => {
+    backTexturePromises.delete(assetPath);
+    throw error;
+  });
+  backTexturePromises.set(assetPath, promise);
+  return promise;
+}
+
+function cardBackAssetPath(card = null) {
+  const collection = getCollectionConfigForCard(card);
+  const backImages = Array.isArray(collection.backImages) ? collection.backImages : [];
+  if (backImages.length) {
+    return backImages[getStableCardBackIndex(card, backImages.length)];
+  }
+  return collection.backImage || "./cardnft back.png";
+}
+
+function getStableCardBackIndex(card, length) {
+  if (!length) return 0;
+  const key = card?.stableId
+    || card?.mint
+    || card?.title
+    || card?.file
+    || `${card?.collection || ACTIVE_COLLECTION_ID}:${card?.collectionIndex || 0}`;
+  return stableHash(key) % length;
+}
+
+function stableHash(value) {
+  let hash = 0x811c9dc5;
+  const input = String(value || "");
+  for (let index = 0; index < input.length; index += 1) {
+    hash ^= input.charCodeAt(index);
+    hash = Math.imul(hash, 0x01000193) >>> 0;
+  }
+  hash ^= hash >>> 16;
+  hash = Math.imul(hash, 0x7feb352d) >>> 0;
+  hash ^= hash >>> 15;
+  hash = Math.imul(hash, 0x846ca68b) >>> 0;
+  hash ^= hash >>> 16;
+  return hash >>> 0;
 }
 
 function configureDisplayTexture(texture, { colorSpace = THREE.SRGBColorSpace } = {}) {
@@ -6404,12 +7990,95 @@ function configureDisplayTexture(texture, { colorSpace = THREE.SRGBColorSpace } 
   return texture;
 }
 
-function loadTexture(url) {
+function loadTexture(url, options = {}) {
   return new Promise((resolve, reject) => {
     textureLoader.load(url, (texture) => {
-      resolve(configureDisplayTexture(texture));
+      resolve(configureDisplayTexture(texture, options));
     }, undefined, reject);
   });
+}
+
+function loadCardNft2EffectTextures(cardNumber) {
+  return Promise.all([
+    getCardNft2EffectTexture("foil", cardNumber),
+    getCardNft2EffectTexture("mask", cardNumber),
+  ]).then(([foil, mask]) => ({ foil, mask }));
+}
+
+function getCardNft2EffectTexture(kind, cardNumber) {
+  const normalizedNumber = Number(cardNumber);
+  if (!Number.isInteger(normalizedNumber) || !CARD_NFT_2_EFFECT_TEXTURE_CIDS[kind]) {
+    return Promise.reject(new Error("Invalid CardNFT2 effect texture"));
+  }
+
+  const key = `${kind}:${normalizedNumber}`;
+  if (cardNft2EffectTextureCache.has(key)) {
+    const promise = cardNft2EffectTextureCache.get(key);
+    cardNft2EffectTextureCache.delete(key);
+    cardNft2EffectTextureCache.set(key, promise);
+    return promise;
+  }
+
+  const url = cardNft2EffectTextureUrl(kind, normalizedNumber);
+  const options = kind === "mask" ? { colorSpace: THREE.NoColorSpace } : undefined;
+  const promise = loadTexture(url, options).catch((error) => {
+    cardNft2EffectTextureCache.delete(key);
+    throw error;
+  });
+  cardNft2EffectTextureCache.set(key, promise);
+  trimCardNft2EffectTextureCache();
+  return promise;
+}
+
+function cardNft2EffectTextureUrl(kind, cardNumber) {
+  const id = String(cardNumber).padStart(4, "0");
+  return `${CARD_NFT_2_EFFECT_TEXTURE_GATEWAY}/${CARD_NFT_2_EFFECT_TEXTURE_CIDS[kind]}/${id}.webp`;
+}
+
+function trimCardNft2EffectTextureCache() {
+  const protectedKeys = getProtectedCardEffectTextureKeys();
+  let protectedScans = 0;
+  while (
+    cardNft2EffectTextureCache.size > MAX_CARD_NFT_2_EFFECT_TEXTURE_CACHE_SIZE
+    && protectedScans < cardNft2EffectTextureCache.size
+  ) {
+    const oldest = cardNft2EffectTextureCache.entries().next().value;
+    if (!oldest) return;
+    const [key, promise] = oldest;
+    cardNft2EffectTextureCache.delete(key);
+    if (protectedKeys.has(key)) {
+      cardNft2EffectTextureCache.set(key, promise);
+      protectedScans += 1;
+      continue;
+    }
+    protectedScans = 0;
+    Promise.resolve(promise).then(disposeNftTexture).catch(() => {});
+  }
+}
+
+function getProtectedCardEffectTextureKeys() {
+  const keys = new Set();
+  if (Number.isInteger(currentIndex) && CARDS[currentIndex]) {
+    addCardEffectTextureCacheKeys(keys, CARDS[currentIndex]);
+  }
+
+  if (binderVisibleIndexes.length) {
+    for (const position of getBinderPreloadPositions()) {
+      const cardIndex = binderVisibleIndexes[position];
+      if (Number.isInteger(cardIndex) && CARDS[cardIndex]) {
+        addCardEffectTextureCacheKeys(keys, CARDS[cardIndex]);
+      }
+    }
+  }
+
+  return keys;
+}
+
+function addCardEffectTextureCacheKeys(keys, card) {
+  const profile = getCardEffectProfile(card);
+  if (!profile.needsEffectTextures) return;
+  keys.add(`foil:${profile.cardNumber}`);
+  keys.add(`mask:${profile.cardNumber}`);
 }
 
 function loadAnimatedTexture(card) {
@@ -6535,6 +8204,12 @@ function createCardGradientPlane(normalDirection) {
       uNormalDirection: { value: normalDirection },
       uActivity: { value: 0 },
       uTransitionOpacity: { value: 1 },
+      uEffectMode: { value: CARD_EFFECT_MODE_DEFAULT },
+      uUseEffectTextures: { value: 0 },
+      uFoilTexture: { value: getCardPlaceholderTexture() },
+      uMaskTexture: { value: getCardPlaceholderTexture() },
+      uPointer: { value: new THREE.Vector2(CARD_NFT_2_EFFECT_OFFCARD_POINTER_X, CARD_NFT_2_EFFECT_OFFCARD_POINTER_Y) },
+      uPointerActive: { value: 0 },
     },
     vertexShader: `
       varying vec2 vUv;
@@ -6555,9 +8230,23 @@ function createCardGradientPlane(normalDirection) {
       uniform float uNormalDirection;
       uniform float uActivity;
       uniform float uTransitionOpacity;
+      uniform float uEffectMode;
+      uniform float uUseEffectTextures;
+      uniform vec2 uPointer;
+      uniform float uPointerActive;
+      uniform sampler2D uFoilTexture;
+      uniform sampler2D uMaskTexture;
       varying vec2 vUv;
       varying vec3 vWorldNormal;
       varying vec3 vWorldPosition;
+
+      float stripe(float value, float width) {
+        return smoothstep(width, 0.0, abs(fract(value) - 0.5));
+      }
+
+      vec3 rainbow(float value) {
+        return 0.5 + 0.5 * cos(6.2831853 * (value + vec3(0.0, 0.33, 0.67)));
+      }
 
       void main() {
         vec3 normal = normalize(vWorldNormal) * uNormalDirection;
@@ -6566,6 +8255,81 @@ function createCardGradientPlane(normalDirection) {
         float fresnel = pow(1.0 - clamp(facing, 0.0, 1.0), 1.18);
         vec3 reflected = reflect(-viewDir, normal);
         vec2 centered = vUv - 0.5;
+
+        if (uEffectMode > 0.5) {
+          vec2 motionPointer = clamp(vec2(0.5 + reflected.x * 0.62, 0.5 - reflected.y * 0.56), 0.0, 1.0);
+          vec2 background = clamp(vec2(0.37 + motionPointer.x * 0.26, 0.33 + motionPointer.y * 0.34), 0.0, 1.0);
+          float motionFromCenter = clamp(length(motionPointer - 0.5) / 0.5, 0.0, 1.0);
+          float motionRadial = smoothstep(0.92, 0.0, distance(vUv, motionPointer));
+          float motionCore = smoothstep(0.2, 0.0, distance(vUv, motionPointer));
+          float grain = fract(sin(dot(vUv * vec2(811.3, 1247.1), vec2(12.9898, 78.233))) * 43758.5453);
+          float fine = fract(sin(dot((vUv + background) * vec2(315.7, 924.6), vec2(37.719, 11.137))) * 24634.6345);
+
+          if (uEffectMode < 1.5) {
+            gl_FragColor = vec4(0.0);
+            return;
+          }
+
+          float maskValue = 1.0;
+          float textureBlend = smoothstep(0.0, 1.0, uUseEffectTextures);
+          if (uUseEffectTextures > 0.5) {
+            vec4 maskSample = texture2D(uMaskTexture, vUv);
+            float maskLight = dot(maskSample.rgb, vec3(0.299, 0.587, 0.114));
+            maskValue = mix(0.96, 1.08, maskLight);
+          }
+          vec3 proceduralFoil = mix(
+            vec3(0.12, 0.14, 0.18),
+            vec3(0.88, 0.92, 0.9),
+            stripe((vUv.x - vUv.y) * 5.4 + background.x * 1.8, 0.16)
+          );
+          vec3 textureFoil = uUseEffectTextures > 0.5 ? texture2D(uFoilTexture, vUv).rgb : proceduralFoil;
+          vec3 foil = mix(proceduralFoil, max(textureFoil, proceduralFoil * 0.72), 0.36 * textureBlend);
+          vec3 sunPillar = rainbow(vUv.y * 6.8 + background.y * 7.0);
+          vec3 reverseSunPillar = rainbow(-vUv.y * 4.2 - background.y * 5.0 + background.x * 1.2);
+          float metalLine = stripe((vUv.x * 0.74 - vUv.y * 0.54) * 5.8 + background.x * 2.2 + background.y * 0.85, 0.075);
+          float metalBand = stripe((vUv.x * 0.74 - vUv.y * 0.54) * 2.35 + background.x * 1.15, 0.18);
+          float scan = stripe(vUv.y * 145.0 + background.y * 3.0, 0.18);
+          float barsA = stripe(vUv.x * 8.8 + background.y * 4.0, 0.08);
+          float barsB = stripe(vUv.x * 5.6 - background.y * 3.0 + background.x * 2.2, 0.11);
+          float radialDark = smoothstep(0.08, 0.92, distance(vUv, motionPointer));
+          vec3 color = vec3(0.0);
+          float alpha = 0.0;
+
+          if (uEffectMode < 2.5) {
+            vec3 metal = mix(vec3(0.015, 0.028, 0.075), vec3(0.58, 0.68, 0.68), metalLine);
+            color = mix(metal, sunPillar, 0.46);
+            color = mix(color, reverseSunPillar, metalBand * 0.28);
+            color = color * mix(0.76, 1.18, grain) + foil * 0.12;
+            color = mix(color, vec3(0.93, 0.96, 1.0), motionCore * 0.16);
+            color *= mix(0.78, 1.0, radialDark);
+            alpha = (0.135 + metalLine * 0.135 + metalBand * 0.055 + motionRadial * 0.045) * maskValue;
+          } else if (uEffectMode < 3.5) {
+            vec3 holo = rainbow(((0.5 - background.x) * 2.6) + ((0.5 - background.y) * 3.5) + vUv.x * 1.2 + vUv.y * 3.4);
+            float scanMix = mix(0.42, 1.0, scan);
+            color = holo * scanMix;
+            color = mix(color, vec3(0.72), (barsA + barsB) * 0.16);
+            color = mix(color, vec3(0.98, 1.0, 1.0), motionCore * 0.18);
+            alpha = (0.16 + barsA * 0.07 + barsB * 0.055 + motionRadial * 0.075) * maskValue;
+          } else if (uEffectMode < 4.5) {
+            vec3 support = mix(foil, sunPillar, 0.38);
+            support = mix(support, reverseSunPillar, metalLine * 0.22);
+            color = support * mix(0.72, 1.28, motionFromCenter * 0.55 + motionRadial * 0.35);
+            color = mix(color, vec3(1.0, 0.94, 0.98), motionCore * 0.22);
+            alpha = (0.12 + metalLine * 0.085 + motionRadial * 0.11 + motionFromCenter * 0.035) * maskValue;
+          } else {
+            float sparkle = step(0.982, fine) * smoothstep(0.9, 0.0, distance(vUv, motionPointer));
+            float glitter = step(0.975, grain);
+            vec3 amazing = mix(vec3(0.08, 0.18, 0.12), rainbow((vUv.x - vUv.y) * 2.1 + background.x * 3.0), 0.58);
+            color = amazing + foil * 0.18 + (sparkle + glitter * 0.38) * vec3(1.0, 0.92, 0.65);
+            color = mix(color, sunPillar, metalBand * 0.18);
+            alpha = (0.13 + metalLine * 0.045 + motionRadial * 0.1 + sparkle * 0.28 + glitter * 0.04) * maskValue;
+          }
+
+          alpha *= mix(0.88, 1.08, grain);
+          gl_FragColor = vec4(color, clamp(alpha, 0.0, 0.34) * uActivity * uTransitionOpacity);
+          return;
+        }
+
         float lightShift = reflected.x * 0.32 - reflected.y * 0.22 - 0.34;
         float wash = smoothstep(-0.76, 0.82, centered.x * -0.84 + centered.y * 0.58 + lightShift);
         float counterWash = smoothstep(-0.68, 0.78, centered.x * 0.7 + centered.y * 0.36 - reflected.x * 0.18 + 0.12);
@@ -6606,6 +8370,12 @@ function createCardGlossPlane(normalDirection) {
       uNormalDirection: { value: normalDirection },
       uActivity: { value: 0 },
       uTransitionOpacity: { value: 1 },
+      uEffectMode: { value: CARD_EFFECT_MODE_DEFAULT },
+      uUseEffectTextures: { value: 0 },
+      uFoilTexture: { value: getCardPlaceholderTexture() },
+      uMaskTexture: { value: getCardPlaceholderTexture() },
+      uPointer: { value: new THREE.Vector2(CARD_NFT_2_EFFECT_OFFCARD_POINTER_X, CARD_NFT_2_EFFECT_OFFCARD_POINTER_Y) },
+      uPointerActive: { value: 0 },
     },
     vertexShader: `
       varying vec2 vUv;
@@ -6626,9 +8396,19 @@ function createCardGlossPlane(normalDirection) {
       uniform float uNormalDirection;
       uniform float uActivity;
       uniform float uTransitionOpacity;
+      uniform float uEffectMode;
+      uniform float uUseEffectTextures;
+      uniform vec2 uPointer;
+      uniform float uPointerActive;
+      uniform sampler2D uFoilTexture;
+      uniform sampler2D uMaskTexture;
       varying vec2 vUv;
       varying vec3 vWorldNormal;
       varying vec3 vWorldPosition;
+
+      float stripe(float value, float width) {
+        return smoothstep(width, 0.0, abs(fract(value) - 0.5));
+      }
 
       void main() {
         vec3 normal = normalize(vWorldNormal) * uNormalDirection;
@@ -6637,6 +8417,64 @@ function createCardGlossPlane(normalDirection) {
         float fresnel = pow(1.0 - clamp(facing, 0.0, 1.0), 1.18);
         vec3 reflected = reflect(-viewDir, normal);
         vec2 centered = vUv - 0.5;
+
+        if (uEffectMode > 0.5) {
+          vec2 spotlightPointer = uPointer;
+          vec2 motionPointer = clamp(vec2(0.5 + reflected.x * 0.62, 0.5 - reflected.y * 0.56), 0.0, 1.0);
+          vec2 background = clamp(vec2(0.37 + motionPointer.x * 0.26, 0.33 + motionPointer.y * 0.34), 0.0, 1.0);
+          float radial = smoothstep(0.88, 0.0, distance(vUv, spotlightPointer));
+          float inner = smoothstep(0.22, 0.0, distance(vUv, spotlightPointer));
+          float spotlight = smoothstep(0.01, 0.85, uPointerActive);
+          float maskValue = 1.0;
+          if (uUseEffectTextures > 0.5) {
+            vec4 maskSample = texture2D(uMaskTexture, vUv);
+            float maskLight = dot(maskSample.rgb, vec3(0.299, 0.587, 0.114));
+            maskValue = mix(0.97, 1.06, maskLight);
+          }
+          float fineGrain = fract(sin(dot(vUv * vec2(811.3, 1247.1), vec2(12.9898, 78.233))) * 43758.5453);
+          vec3 baseColor = vec3(1.0);
+          vec3 spotColor = vec3(1.0);
+          float baseAlpha = 0.0;
+          float spotAlpha = 0.0;
+
+          if (uEffectMode < 1.5) {
+            spotColor = mix(vec3(1.0), vec3(0.78, 0.82, 0.88), radial * 0.34);
+            spotAlpha = (inner * 0.2 + radial * 0.13) * 0.56 * spotlight;
+          } else if (uEffectMode < 2.5) {
+            float sweep = stripe((vUv.x * 0.92 - vUv.y * 0.52) * 3.8 + background.x * 2.2 + background.y * 1.1, 0.1);
+            baseAlpha = (0.045 + sweep * 0.09) * 0.5 * maskValue;
+            spotAlpha = (radial * 0.14 + inner * 0.17) * 0.5 * spotlight * maskValue;
+            baseColor = mix(vec3(0.36, 0.38, 0.42), vec3(1.0), sweep * 0.34);
+            spotColor = mix(vec3(0.78, 0.84, 0.96), vec3(1.0), inner * 0.7);
+          } else if (uEffectMode < 3.5) {
+            float bars = stripe(vUv.x * 8.0 + background.y * 3.0, 0.1);
+            baseAlpha = (0.06 + bars * 0.055) * 0.8 * maskValue;
+            spotAlpha = (radial * 0.17 + inner * 0.19) * 0.8 * spotlight * maskValue;
+            baseColor = mix(vec3(0.68, 0.88, 0.95), vec3(1.0), bars * 0.22);
+            spotColor = mix(vec3(0.8, 0.9, 0.98), vec3(1.0), inner * 0.72);
+          } else if (uEffectMode < 4.5) {
+            baseAlpha = 0.052 * 0.74 * maskValue;
+            spotAlpha = (radial * 0.18 + inner * 0.16) * 0.74 * spotlight * maskValue;
+            baseColor = vec3(0.44, 0.42, 0.48);
+            spotColor = mix(vec3(0.78, 0.78, 0.86), vec3(1.0, 0.82, 0.94), inner * 0.68);
+          } else {
+            baseAlpha = 0.052 * 0.72 * maskValue;
+            spotAlpha = (radial * 0.14 + inner * 0.17) * 0.72 * spotlight * maskValue;
+            baseColor = vec3(0.5, 0.68, 0.54);
+            spotColor = mix(vec3(0.76, 0.88, 0.72), vec3(1.0, 0.95, 0.72), inner * 0.62);
+          }
+
+          float grainAdjust = mix(0.9, 1.06, fineGrain);
+          baseAlpha *= grainAdjust;
+          spotAlpha *= grainAdjust;
+          float alpha = clamp(baseAlpha + spotAlpha, 0.0, 0.42);
+          vec3 color = alpha > 0.0001
+            ? ((baseColor * baseAlpha) + (spotColor * spotAlpha)) / max(baseAlpha + spotAlpha, 0.0001)
+            : vec3(0.0);
+          gl_FragColor = vec4(color, alpha * uActivity * uTransitionOpacity);
+          return;
+        }
+
         float sweepAxis = centered.x * 0.92 - centered.y * 0.52 + reflected.x * 0.72 + reflected.y * 0.42 - 0.36 + sin(uTime * 0.38) * 0.025;
         float sharpSweep = smoothstep(0.11, 0.0, abs(sweepAxis));
         float broadSweep = smoothstep(0.5, 0.0, abs(sweepAxis + centered.y * 0.18));
@@ -6817,7 +8655,22 @@ function disposeNftTexture(texture) {
 
 function favoriteKey(index) {
   const card = CARDS[index];
-  return card?.mint || card?.title || String(index);
+  return card?.stableId || `${card?.collection || ACTIVE_COLLECTION_ID}:${card?.mint || card?.title || index}`;
+}
+
+function migrateLegacyFavorites(set) {
+  let changed = false;
+  for (const card of CARDS) {
+    const legacyKeys = [card?.mint, card?.title].filter(Boolean);
+    const nextKey = card?.stableId;
+    if (!nextKey) continue;
+    for (const legacyKey of legacyKeys) {
+      if (!set.has(legacyKey)) continue;
+      set.add(nextKey);
+      changed = true;
+    }
+  }
+  if (changed) saveSet("cardnft:favorites:v1", set);
 }
 
 function applyRestoredSessionViewState(state) {
@@ -6825,9 +8678,9 @@ function applyRestoredSessionViewState(state) {
 
   if (typeof state.isBinderMode === "boolean") isBinderMode = state.isBinderMode;
   favoritesOnly = Boolean(state.favoritesOnly);
-  traitSearchOpen = Boolean(state.traitSearchOpen);
-  traitSortCategory = getValidTraitSortCategory(state.traitSortCategory);
-  activeTraitFilter = getValidSessionTraitFilter(state.activeTraitFilter);
+  traitSearchOpen = TRAIT_FILTERS_ENABLED && Boolean(state.traitSearchOpen);
+  traitSortCategory = TRAIT_FILTERS_ENABLED ? getValidTraitSortCategory(state.traitSortCategory) : "all";
+  activeTraitFilter = TRAIT_FILTERS_ENABLED ? getValidSessionTraitFilter(state.activeTraitFilter) : null;
   if (activeTraitFilter) traitSortCategory = activeTraitFilter.category;
 }
 
@@ -6889,20 +8742,22 @@ function restoreSessionGalleryView(state) {
   updateBinderPageControls();
   startBinderRenderLoop();
   updateBinderAnimation();
-  renderBinderSceneOnce();
+  renderBinderSceneOnce({ immediateCamera: true });
   queueSessionViewStateSave();
 }
 
 function getRestoredSessionCardIndex(state) {
-  if (!Number.isInteger(state?.currentIndex) || !CARDS.length) return 0;
-  return clamp(state.currentIndex, 0, CARDS.length - 1);
+  const fallback = ACTIVE_COLLECTION_INDEXES[0] || 0;
+  if (!Number.isInteger(state?.currentIndex) || !CARDS.length) return fallback;
+  const index = clamp(state.currentIndex, 0, CARDS.length - 1);
+  return CARDS[index]?.collection === ACTIVE_COLLECTION_ID ? index : fallback;
 }
 
 function getValidTraitSortCategory(category) {
   if (category === "all") return "all";
-  if (CARD_NFT_TRAIT_CATEGORIES.includes(category) && !HIDDEN_TRAIT_CATEGORIES.has(category)) {
-    return category;
-  }
+  const matched = getTraitDisplayCategoryOptions()
+    .find((option) => normalizeTraitValue(option.category) === normalizeTraitValue(category));
+  if (matched) return matched.category;
   return "all";
 }
 
@@ -6916,6 +8771,7 @@ function getValidSessionTraitFilter(filter) {
     category,
     value,
     normalizedValue: normalizeTraitValue(value),
+    sourceCategories: getValidTraitFilterSourceCategories(filter.sourceCategories, category),
   };
 }
 
@@ -6929,7 +8785,11 @@ function getSessionViewState() {
     traitSearchOpen,
     traitSortCategory,
     activeTraitFilter: activeTraitFilter
-      ? { category: activeTraitFilter.category, value: activeTraitFilter.value }
+      ? {
+        category: activeTraitFilter.category,
+        value: activeTraitFilter.value,
+        sourceCategories: activeTraitFilter.sourceCategories,
+      }
       : null,
     binderTargetTurn: Math.round(binderTargetTurn),
     binderSinglePageSide: Number.isInteger(binderSinglePageSide) ? binderSinglePageSide : null,
