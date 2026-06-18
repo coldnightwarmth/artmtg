@@ -578,6 +578,14 @@ body.binder-card-transitioning.binder-card-transition-away .corner-favorites {
   align-content: start;
   gap: 22px;
   scrollbar-width: thin;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+}
+
+body.is-gallery:not(.is-binder-view) .gallery-grid,
+body.is-gallery:not(.is-binder-view) .gallery-grid * {
+  touch-action: pan-y;
 }
 
 .gallery-filter-controls {
