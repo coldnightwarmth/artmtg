@@ -6150,6 +6150,7 @@ function onBinderPointerDown(event) {
     startY: event.clientY,
     lastX: event.clientX,
     startTurn: binderTargetTurn,
+    startSinglePageSide: isBinderSinglePageView() ? getBinderSinglePageSide() : null,
     moved: false,
   };
   binderWheelFocusLockUntil = 0;
@@ -6181,7 +6182,7 @@ function onBinderPointerMove(event) {
   binderDrag.lastX = event.clientX;
   binderDrag.moved = binderDrag.moved || Math.hypot(deltaX, deltaY) > 7;
 
-  if (!isBinderFocusView()) {
+  if (!isBinderFocusView() && !(isBinderSinglePageView() && isTouchLikePointer(event))) {
     const pageDelta = -(deltaX / Math.max(rect.width, 1)) / 0.26;
     binderTargetTurn = clamp(binderDrag.startTurn + pageDelta, 0, binderPageCount);
     if (Math.abs(pageDelta) > 0.002) {
@@ -6229,6 +6230,7 @@ function onBinderPointerUp(event) {
   } else if (isBinderFocused()) {
     handleFocusedBinderSwipe(finishedDrag, event);
   } else if (!isBinderFocusView()) {
+    if (handleBinderSinglePageSwipe(finishedDrag, event)) return;
     binderTargetTurn = Math.round(binderTargetTurn);
     if (isBinderSinglePageView()) binderSinglePageSide = deriveBinderSinglePageSideFromTurn(binderTargetTurn);
     updateBinderPageControls();
@@ -6348,6 +6350,34 @@ function handleFocusedBinderSwipe(drag, event) {
     moveBinderFocusSpatially(primary < 0 ? 1 : -1, 0);
   }
   return true;
+}
+
+function handleBinderSinglePageSwipe(drag, event) {
+  if (!drag || !isTouchLikePointer(event) || !isBinderSinglePageView()) return false;
+
+  const deltaX = event.clientX - drag.startX;
+  const deltaY = event.clientY - drag.startY;
+  const distance = Math.hypot(deltaX, deltaY);
+  if (distance < BINDER_FOCUS_SWIPE_MIN_DISTANCE) return false;
+  if (Math.abs(deltaX) < Math.abs(deltaY)) return false;
+  if (Math.abs(deltaY) / Math.max(1, Math.abs(deltaX)) > BINDER_FOCUS_SWIPE_MAX_OFF_AXIS_RATIO) return false;
+
+  const currentSide = Number.isInteger(drag.startSinglePageSide)
+    ? drag.startSinglePageSide
+    : getBinderSinglePageSide();
+  const nextSide = clamp(
+    currentSide + (deltaX < 0 ? 1 : -1),
+    BINDER_SINGLE_PAGE_COVER_SIDE,
+    getBinderTotalPageSides() - 1,
+  );
+  if (nextSide === currentSide) {
+    updateBinderPageControls();
+    startBinderRenderLoop();
+    return true;
+  }
+
+  binderLastOpenTap = null;
+  return showBinderSinglePageSide(nextSide);
 }
 
 function selectBinderCard(event) {
