@@ -34,7 +34,7 @@ const COLLECTION_CONFIGS = {
     ],
   },
 };
-const ACTIVE_COLLECTION_ID = COLLECTION_CONFIGS[document.documentElement.dataset.collectionId]?.id || "cardnft1";
+const ACTIVE_COLLECTION_ID = COLLECTION_CONFIGS[document.documentElement.dataset.collectionId]?.id || "cardnft2";
 const ACTIVE_COLLECTION = COLLECTION_CONFIGS[ACTIVE_COLLECTION_ID];
 const CARDS = Object.values(COLLECTION_CONFIGS).flatMap((collection) => (
   collection.cards.map((card, index) => ({
@@ -173,6 +173,10 @@ const BINDER_INTRO_SPRITES = [
     xRatio: 0,
     yRatio: 0.27,
     sizeRatio: 0.082,
+    focusTarget: true,
+    focusHitboxWidthRatio: 0.26,
+    focusHitboxHeightRatio: 0.24,
+    focusHitboxYRatio: 0.19,
   },
   {
     url: new URL("./assets/ui/drif-egg-sticker-square.png", import.meta.url).href,
@@ -254,8 +258,8 @@ const BINDER_PRELOAD_PAGE_RADIUS = 4;
 const BINDER_INITIAL_PRELOAD_IDLE_DELAY_MS = 180;
 const BINDER_CARD_LOAD_FADE_MS = 280;
 const BINDER_INTRO_LINK_URL = "https://x.com/bis__cut";
-const BINDER_CARD_NFT_1_LINK_URL = "/";
-const BINDER_CARD_NFT_2_LINK_URL = "/cardnft2/";
+const BINDER_CARD_NFT_1_LINK_URL = "/cardnft1/";
+const BINDER_CARD_NFT_2_LINK_URL = "/";
 const BINDER_INTRO_NOTE_FILTER_FADE_MS = 260;
 const BINDER_INTRO_FOCUS_MARGIN_RATIO = 0.12;
 const BINDER_INTRO_FOCUS_MOBILE_MARGIN_RATIO = 0.04;
@@ -291,12 +295,11 @@ const CARD_SHUFFLE_SPIN_DIRECTION = -1;
 const MAX_WARMED_INDIVIDUAL_CARD_EFFECTS = 64;
 const GALLERY_PRIORITY_ROWS = 4;
 const GALLERY_CARD_HOVER_EXPAND_PX = 5;
-const GALLERY_CARD_TILT_MAX_X_DEG = 4.8;
-const GALLERY_CARD_TILT_MAX_Y_DEG = 5.8;
-const GALLERY_CARD_TILT_LIFT_PX = -3.5;
-const GALLERY_CARD_TILT_SPRING = 0.082;
-const GALLERY_CARD_TILT_DAMPING = 0.82;
-const GALLERY_CARD_TILT_SETTLE_EPSILON = 0.018;
+const GALLERY_CARD_TILT_MAX_X_DEG = 12.5;
+const GALLERY_CARD_TILT_MAX_Y_DEG = 15.5;
+const GALLERY_CARD_TILT_SPRING = 0.14;
+const GALLERY_CARD_TILT_DAMPING = 0.76;
+const GALLERY_CARD_TILT_SETTLE_EPSILON = 0.02;
 const TRAIT_SEARCH_TILE_RENDER_BATCH_SIZE = 320;
 const SHUFFLE_TOUCH_UNDO_HOLD_MS = 560;
 const SHUFFLE_TOUCH_UNDO_SUPPRESS_MS = 1000;
@@ -498,6 +501,7 @@ let binderIntroNoteModeOpacity = 1;
 let binderIntroNoteModeTargetOpacity = 1;
 let binderIntroNoteFadeLastAt = 0;
 let binderIntroLinkMeshes = [];
+let binderIntroFocusMeshes = [];
 let binderPages = [];
 let binderVisibleIndexes = [];
 let binderBuildToken = 0;
@@ -744,6 +748,7 @@ function initEvents() {
     setGalleryOpen(!galleryOpen, { resetFilters: !galleryOpen && !hasActiveGalleryMode() });
   });
   els.galleryViewToggleButton.addEventListener("click", toggleGalleryViewMode);
+  els.galleryGrid.addEventListener("click", onGalleryGridClick);
   els.galleryGrid.addEventListener("pointerover", onGalleryGridTiltPointerMove);
   els.galleryGrid.addEventListener("pointermove", onGalleryGridTiltPointerMove);
   els.galleryGrid.addEventListener("pointerout", onGalleryGridTiltPointerOut);
@@ -1853,23 +1858,37 @@ function orderTraitPanelEntries(entries) {
   return entries
     .map((entry, index) => ({ entry, index }))
     .sort((a, b) => {
-      const rankA = getTraitPanelCategoryRank(a.entry.category);
-      const rankB = getTraitPanelCategoryRank(b.entry.category);
-      if (rankA !== rankB) return rankA - rankB;
-      const orderA = getTraitPanelCategoryOrder(a.entry);
-      const orderB = getTraitPanelCategoryOrder(b.entry);
+      const orderA = getTraitPanelDisplayCategoryOrder(a.entry);
+      const orderB = getTraitPanelDisplayCategoryOrder(b.entry);
       if (orderA !== orderB) return orderA - orderB;
+      const sourceOrderA = getTraitPanelSourceCategoryOrder(a.entry);
+      const sourceOrderB = getTraitPanelSourceCategoryOrder(b.entry);
+      if (sourceOrderA !== sourceOrderB) return sourceOrderA - sourceOrderB;
       return a.index - b.index;
     })
     .map(({ entry }) => entry);
 }
 
-function getTraitPanelCategoryRank(category) {
-  return TRAIT_PANEL_CATEGORY_PRIORITY.get(String(category || "").trim().toLowerCase())
-    ?? TRAIT_PANEL_CATEGORY_PRIORITY.size;
+function getTraitPanelDisplayCategoryOrder(entry) {
+  const collection = COLLECTION_CONFIGS[entry.collection] || ACTIVE_COLLECTION;
+  const displayCategory = getTraitSearchDisplayCategory(entry.category, collection.id);
+  return getTraitDisplayCategoryOrder({
+    category: displayCategory || entry.category,
+    sourceCategories: getTraitPanelDisplaySourceCategories(entry, collection),
+  }, collection.id);
 }
 
-function getTraitPanelCategoryOrder(entry) {
+function getTraitPanelDisplaySourceCategories(entry, collection = ACTIVE_COLLECTION) {
+  const displayCategory = getTraitSearchDisplayCategory(entry.category, collection.id);
+  const normalizedDisplayCategory = normalizeTraitValue(displayCategory);
+  const sourceCategories = collection.traitCategories.filter((sourceCategory) => (
+    !HIDDEN_TRAIT_CATEGORIES.has(sourceCategory)
+    && normalizeTraitValue(getTraitSearchDisplayCategory(sourceCategory, collection.id)) === normalizedDisplayCategory
+  ));
+  return sourceCategories.length ? sourceCategories : [entry.category].filter(Boolean);
+}
+
+function getTraitPanelSourceCategoryOrder(entry) {
   const collection = COLLECTION_CONFIGS[entry.collection] || ACTIVE_COLLECTION;
   const normalizedCategory = String(entry.category || "").trim().toLowerCase();
   const categoryIndex = collection.traitCategories.findIndex((category) => (
@@ -2766,14 +2785,19 @@ function compareTraitDisplayCategoryOptions(a, b) {
     || a.category.localeCompare(b.category, undefined, { numeric: true, sensitivity: "base" });
 }
 
-function getTraitDisplayCategoryOrder(option) {
+function getTraitDisplayCategoryOrder(option, collectionId = ACTIVE_COLLECTION_ID) {
+  const collection = COLLECTION_CONFIGS[collectionId] || ACTIVE_COLLECTION;
+  const traitCategories = collection.traitCategories;
   const normalizedCategory = normalizeTraitValue(option?.category);
   if (normalizedCategory === "other") return Number.MAX_SAFE_INTEGER;
-  if (CARD_NFT_2_TRAIT_DISPLAY_ORDER_OVERRIDES.has(normalizedCategory)) {
+  if (
+    collection.id === "cardnft2"
+    && CARD_NFT_2_TRAIT_DISPLAY_ORDER_OVERRIDES.has(normalizedCategory)
+  ) {
     return CARD_NFT_2_TRAIT_DISPLAY_ORDER_OVERRIDES.get(normalizedCategory);
   }
   const indexes = (option?.sourceCategories || [])
-    .map((category) => ACTIVE_TRAIT_CATEGORIES.indexOf(category))
+    .map((category) => traitCategories.indexOf(category))
     .filter((index) => index >= 0);
   return indexes.length ? Math.min(...indexes) : Number.MAX_SAFE_INTEGER - 1;
 }
@@ -3274,6 +3298,7 @@ function updateGalleryViewModeButton() {
 function renderGrid(indexes) {
   closeBinderPageStatusEdit({ update: false });
   clearGalleryCardTilts();
+  els.galleryGrid.style.setProperty("--gallery-card-hover-expand", `${GALLERY_CARD_HOVER_EXPAND_PX}px`);
   els.galleryGrid.replaceChildren();
   const fragment = document.createDocumentFragment();
   const priorityImageCount = getGalleryPriorityImageCount(indexes.length);
@@ -3283,11 +3308,7 @@ function renderGrid(indexes) {
     button.className = "gallery-card";
     button.type = "button";
     button.title = card.title;
-    button.style.setProperty("--gallery-card-hover-expand", `${GALLERY_CARD_HOVER_EXPAND_PX}px`);
-    button.addEventListener("click", () => {
-      setCard(index);
-      setGalleryOpen(false);
-    });
+    button.dataset.cardIndex = String(index);
 
     const image = document.createElement("img");
     const priorityImage = position < priorityImageCount;
@@ -3307,6 +3328,17 @@ function renderGrid(indexes) {
   });
   els.galleryGrid.append(fragment);
   els.binderPageStatus.textContent = withWalletStatusLabel(`${indexes.length} cards`);
+}
+
+function onGalleryGridClick(event) {
+  if (!galleryOpen || isBinderMode) return;
+  const cardButton = getGalleryCardFromEventTarget(event.target);
+  if (!cardButton) return;
+
+  const index = Number.parseInt(cardButton.dataset.cardIndex || "", 10);
+  if (!Number.isInteger(index) || !CARDS[index]) return;
+  setCard(index);
+  setGalleryOpen(false);
 }
 
 function onGalleryGridTiltPointerMove(event) {
@@ -3354,7 +3386,6 @@ function updateGalleryCardTiltTarget(card, event) {
   state.hovering = true;
   state.targetX = (0.5 - localY) * GALLERY_CARD_TILT_MAX_X_DEG;
   state.targetY = (localX - 0.5) * GALLERY_CARD_TILT_MAX_Y_DEG;
-  state.targetLift = GALLERY_CARD_TILT_LIFT_PX;
   card.classList.add("is-gallery-tilting");
   startGalleryCardTiltAnimation();
 }
@@ -3365,13 +3396,10 @@ function getGalleryCardTiltState(card) {
     state = {
       x: 0,
       y: 0,
-      lift: 0,
       vx: 0,
       vy: 0,
-      vlift: 0,
       targetX: 0,
       targetY: 0,
-      targetLift: 0,
       hovering: false,
     };
     galleryTiltStates.set(card, state);
@@ -3391,7 +3419,6 @@ function releaseGalleryCardTilt(card) {
   state.hovering = false;
   state.targetX = 0;
   state.targetY = 0;
-  state.targetLift = 0;
   if (activeGalleryTiltCard === card) activeGalleryTiltCard = null;
   startGalleryCardTiltAnimation();
 }
@@ -3414,10 +3441,8 @@ function animateGalleryCardTilts() {
 
     state.vx = (state.vx + (state.targetX - state.x) * GALLERY_CARD_TILT_SPRING) * GALLERY_CARD_TILT_DAMPING;
     state.vy = (state.vy + (state.targetY - state.y) * GALLERY_CARD_TILT_SPRING) * GALLERY_CARD_TILT_DAMPING;
-    state.vlift = (state.vlift + (state.targetLift - state.lift) * GALLERY_CARD_TILT_SPRING) * GALLERY_CARD_TILT_DAMPING;
     state.x += state.vx;
     state.y += state.vy;
-    state.lift += state.vlift;
 
     const settled = isGalleryCardTiltSettled(state);
     if (!state.hovering && settled) {
@@ -3436,23 +3461,19 @@ function animateGalleryCardTilts() {
 function isGalleryCardTiltSettled(state) {
   return Math.abs(state.x) < GALLERY_CARD_TILT_SETTLE_EPSILON
     && Math.abs(state.y) < GALLERY_CARD_TILT_SETTLE_EPSILON
-    && Math.abs(state.lift) < GALLERY_CARD_TILT_SETTLE_EPSILON
     && Math.abs(state.vx) < GALLERY_CARD_TILT_SETTLE_EPSILON
-    && Math.abs(state.vy) < GALLERY_CARD_TILT_SETTLE_EPSILON
-    && Math.abs(state.vlift) < GALLERY_CARD_TILT_SETTLE_EPSILON;
+    && Math.abs(state.vy) < GALLERY_CARD_TILT_SETTLE_EPSILON;
 }
 
 function applyGalleryCardTilt(card, state) {
   card.style.setProperty("--gallery-card-tilt-x", `${state.x.toFixed(3)}deg`);
   card.style.setProperty("--gallery-card-tilt-y", `${state.y.toFixed(3)}deg`);
-  card.style.setProperty("--gallery-card-lift", `${state.lift.toFixed(3)}px`);
 }
 
 function resetGalleryCardTilt(card) {
   card.classList.remove("is-gallery-tilting");
   card.style.removeProperty("--gallery-card-tilt-x");
   card.style.removeProperty("--gallery-card-tilt-y");
-  card.style.removeProperty("--gallery-card-lift");
 }
 
 function clearGalleryCardTilts() {
@@ -3593,6 +3614,7 @@ function createBinderShell() {
   binderIntroNoteGroup = null;
   binderIntroNoteMesh = null;
   binderIntroLinkMeshes = [];
+  binderIntroFocusMeshes = [];
   const coverMaterial = createBinderCoverMaterial();
   const ringMaterial = new THREE.MeshPhysicalMaterial({
     color: 0x171615,
@@ -3708,7 +3730,7 @@ function createBinderIntroNote(coverWidth, coverHeight) {
 
 function createBinderIntroSpriteMeshes(coverWidth, coverHeight) {
   const textureLoader = new THREE.TextureLoader();
-  return BINDER_INTRO_SPRITES.map((sprite) => {
+  return BINDER_INTRO_SPRITES.flatMap((sprite) => {
     const size = coverHeight * sprite.sizeRatio;
     const material = new THREE.MeshBasicMaterial({
       transparent: true,
@@ -3732,7 +3754,31 @@ function createBinderIntroSpriteMeshes(coverWidth, coverHeight) {
     const mesh = new THREE.Mesh(new THREE.PlaneGeometry(size, size), material);
     mesh.position.set(coverWidth * sprite.xRatio, coverHeight * sprite.yRatio, 0.006);
     mesh.renderOrder = 68;
-    return mesh;
+    if (!sprite.focusTarget) return [mesh];
+
+    const focusHitbox = new THREE.Mesh(
+      new THREE.PlaneGeometry(
+        coverWidth * (sprite.focusHitboxWidthRatio || sprite.sizeRatio),
+        coverHeight * (sprite.focusHitboxHeightRatio || sprite.sizeRatio),
+      ),
+      new THREE.MeshBasicMaterial({
+        transparent: true,
+        opacity: 0,
+        toneMapped: false,
+        side: THREE.DoubleSide,
+        depthWrite: false,
+        depthTest: false,
+      }),
+    );
+    focusHitbox.position.set(
+      coverWidth * sprite.xRatio,
+      coverHeight * (sprite.focusHitboxYRatio ?? sprite.yRatio),
+      0.008,
+    );
+    focusHitbox.renderOrder = 69;
+    focusHitbox.userData.binderIntroFocusHitbox = true;
+    binderIntroFocusMeshes.push(focusHitbox);
+    return [mesh, focusHitbox];
   });
 }
 
@@ -4438,6 +4484,7 @@ function clearBinderRoot() {
   binderIntroNoteGroup = null;
   binderIntroNoteMesh = null;
   binderIntroLinkMeshes = [];
+  binderIntroFocusMeshes = [];
   clearBinderIntroLinkCursor();
   binderPageWindowKey = "";
   binderTextureQueueKey = "";
@@ -6231,6 +6278,8 @@ function handleBinderZoomInput(wheelDelta, event) {
     }
 
     if (wheelDelta < 0) {
+      if (focusBinderWheelHitCard(event, now)) return;
+
       if (addBinderFocusWheelInDistance(-wheelDelta, now)) {
         binderWheelFocusLockUntil = now + BINDER_CARD_VIEW_TRANSITION_MS + BINDER_TO_CARD_SCROLL_LOCK_BUFFER_MS;
         resetViewSwitchWheelDistances();
@@ -6262,6 +6311,20 @@ function handleBinderZoomInput(wheelDelta, event) {
 
   binderWheelFocusLockUntil = now + 700;
   focusBinderPosition(hit.object.userData.binderPosition);
+}
+
+function focusBinderWheelHitCard(event, now = performance.now()) {
+  if (!isBinderFocused()) return false;
+
+  const hit = getBinderCardHit(event);
+  const position = hit?.object?.userData?.binderPosition;
+  if (!Number.isInteger(position) || position === binderFocusPosition) return false;
+
+  resetBinderFocusWheelInDistance();
+  binderWheelFocusLockUntil = now + 700;
+  binderLastOpenTap = null;
+  focusBinderPosition(position);
+  return true;
 }
 
 function handleFocusedBinderSwipe(drag, event) {
@@ -6355,6 +6418,12 @@ function getBinderIntroNoteHit(event) {
   if (Math.abs(binderTurn) > 0.08 || Math.abs(binderTargetTurn) > 0.08) return null;
 
   setBinderRaycasterFromEvent(event);
+  const focusMeshes = binderIntroFocusMeshes.filter((mesh) => isVisibleThroughParents(mesh));
+  if (focusMeshes.length) {
+    const focusHit = binderRaycaster.intersectObjects(focusMeshes, false)[0] || null;
+    if (focusHit) return focusHit;
+  }
+
   const hit = binderRaycaster.intersectObject(binderIntroNoteMesh, false)[0] || null;
   if (!hit || !isBinderIntroFocusUv(hit.uv, binderIntroNoteMesh.userData.binderIntroFocusBounds)) return null;
   return hit;
@@ -6411,7 +6480,7 @@ function handleFocusedBinderCardTap(event) {
 
 function handleFocusedBinderBackgroundTap(event) {
   if (!isBinderFocusView() || binderCardViewTransitionActive) return false;
-  if (getBinderObjectHit(event)) return false;
+  if (getBinderFocusBlockingHit(event)) return false;
 
   binderLastOpenTap = null;
   clearBinderFocus();
@@ -6455,17 +6524,30 @@ function getBinderCardRaycastMeshes() {
   ));
 }
 
-function getBinderObjectHit(event) {
+function getBinderFocusBlockingHit(event) {
   if (!binderCamera || !binderRoot) return null;
 
   const meshes = [];
   binderRoot.traverse((child) => {
-    if (child.isMesh && isVisibleThroughParents(child)) meshes.push(child);
+    if (!child.isMesh || !isVisibleThroughParents(child)) return;
+    if (!isBinderFocusBlockingMesh(child)) return;
+    meshes.push(child);
   });
   if (!meshes.length) return null;
 
   setBinderRaycasterFromEvent(event);
   return binderRaycaster.intersectObjects(meshes, false)[0] || null;
+}
+
+function isBinderFocusBlockingMesh(mesh) {
+  return Boolean(
+    mesh?.userData?.binderCard
+    || mesh?.userData?.binderBackCard
+    || mesh?.userData?.binderSheetLayer
+    || mesh?.userData?.binderIntroNoteText
+    || mesh?.userData?.binderIntroLinkUrl
+    || mesh?.userData?.binderIntroFocusHitbox
+  );
 }
 
 function setBinderRaycasterFromEvent(event) {
@@ -8424,7 +8506,7 @@ function createCardGlossPlane(normalDirection) {
           vec2 background = clamp(vec2(0.37 + motionPointer.x * 0.26, 0.33 + motionPointer.y * 0.34), 0.0, 1.0);
           float radial = smoothstep(0.88, 0.0, distance(vUv, spotlightPointer));
           float inner = smoothstep(0.22, 0.0, distance(vUv, spotlightPointer));
-          float spotlight = smoothstep(0.01, 0.85, uPointerActive);
+          float spotlight = smoothstep(0.01, 0.85, uPointerActive) * 0.74;
           float maskValue = 1.0;
           if (uUseEffectTextures > 0.5) {
             vec4 maskSample = texture2D(uMaskTexture, vUv);
