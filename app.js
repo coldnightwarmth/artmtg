@@ -51,6 +51,12 @@ const ACTIVE_COLLECTION_INDEXES = CARDS
 const ACTIVE_TRAIT_CATEGORIES = ACTIVE_COLLECTION.traitCategories;
 const ACTIVE_TRAITS = ACTIVE_COLLECTION.traits;
 const TRAIT_FILTERS_ENABLED = Boolean(ACTIVE_COLLECTION.traitFiltersEnabled);
+const ACTIVE_CARD_ASPECT_SOURCE = ACTIVE_COLLECTION.cards.find((card) => (
+  Number.isFinite(card?.width)
+  && Number.isFinite(card?.height)
+  && card.width > 0
+  && card.height > 0
+));
 const CARD_NFT_MINT_TO_INDEX = new Map(CARDS
   .map((card, index) => [String(card?.mint || "").trim(), index])
   .filter(([mint]) => mint));
@@ -192,7 +198,11 @@ const BINDER_INTRO_SPRITES = [
   },
 ];
 const CARD_WIDTH = 2.5;
-const CARD_HEIGHT = 3.5;
+const CARD_HEIGHT = CARD_WIDTH * (
+  ACTIVE_CARD_ASPECT_SOURCE
+    ? ACTIVE_CARD_ASPECT_SOURCE.height / ACTIVE_CARD_ASPECT_SOURCE.width
+    : 1.4
+);
 const CARD_DEPTH = 0.022;
 const CARD_RADIUS = 0.12;
 const INDIVIDUAL_CARD_WORLD_Y = 0.26;

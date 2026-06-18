@@ -15,7 +15,14 @@
   --gallery-favorite-space: 54px;
   --gallery-corner-inset: max(20px, env(safe-area-inset-right));
   --gallery-corner-bottom: max(20px, env(safe-area-inset-bottom));
+  --card-aspect-padding: 140%;
+  --gallery-card-intrinsic-height: 308px;
   --site-font: Optima, Candara, "Lucida Sans", "Lucida Grande", "Trebuchet MS", Arial, sans-serif;
+}
+
+html[data-collection-id="cardnft1"] {
+  --card-aspect-padding: 141.428571%;
+  --gallery-card-intrinsic-height: 311px;
 }
 
 *,
@@ -768,7 +775,7 @@ body.trait-filters-disabled .gallery-trait-search-button {
   background: transparent;
   cursor: pointer;
   content-visibility: auto;
-  contain-intrinsic-size: 220px 308px;
+  contain-intrinsic-size: 220px var(--gallery-card-intrinsic-height);
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -789,7 +796,7 @@ body.trait-filters-disabled .gallery-trait-search-button {
 .gallery-card-tilt::before {
   content: "";
   display: block;
-  padding-top: 140%;
+  padding-top: var(--card-aspect-padding);
 }
 
 .gallery-card.is-gallery-tilting .gallery-card-tilt {
@@ -805,7 +812,7 @@ body.trait-filters-disabled .gallery-trait-search-button {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 14px 26px rgba(0, 0, 0, 0.32);
   pointer-events: none;
@@ -1721,7 +1728,7 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 480px) {
   :root {
     --gallery-clear-filter-width: 22px;
     --gallery-sort-width: 82px;
