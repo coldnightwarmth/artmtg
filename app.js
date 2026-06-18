@@ -497,6 +497,10 @@ let binderPinchGesture = null;
 let resizeFrame = 0;
 let cardLastWidth = 0;
 let cardLastHeight = 0;
+let appViewportWidth = 0;
+let appViewportHeight = 0;
+let appViewportLeft = 0;
+let appViewportTop = 0;
 
 let binderRenderer;
 let binderScene;
@@ -580,6 +584,7 @@ const binderIntroFocusWorldScale = new THREE.Vector3();
 init();
 
 function init() {
+  updateAppViewportVars();
   applyTheme(localStorage.getItem("cardnft:theme:v1") === "light");
   els.body.classList.toggle("trait-filters-disabled", !TRAIT_FILTERS_ENABLED);
   applyRestoredSessionViewState(restoredSessionViewState);
@@ -590,6 +595,67 @@ function init() {
   setCard(getRestoredSessionCardIndex(restoredSessionViewState));
   restoreSessionGalleryView(restoredSessionViewState);
   animateCard();
+}
+
+function updateAppViewportVars() {
+  const visualViewport = window.visualViewport;
+  const layoutWidth = document.documentElement.clientWidth || window.innerWidth || CARD_MOBILE_SCALE_FULL_WIDTH;
+  const layoutHeight = document.documentElement.clientHeight || window.innerHeight || layoutWidth;
+  const width = Math.max(1, Math.round(visualViewport?.width || window.innerWidth || layoutWidth));
+  const height = Math.max(1, Math.round(visualViewport?.height || window.innerHeight || layoutHeight));
+  const left = Math.max(0, Math.round(visualViewport?.offsetLeft || 0));
+  const top = Math.max(0, Math.round(visualViewport?.offsetTop || 0));
+  const rightInset = Math.max(0, Math.round(layoutWidth - width - left));
+  const bottomInset = Math.max(0, Math.round(layoutHeight - height - top));
+  const centerX = left + width / 2;
+  const centerY = top + height / 2;
+
+  appViewportWidth = width;
+  appViewportHeight = height;
+  appViewportLeft = left;
+  appViewportTop = top;
+
+  const style = document.documentElement.style;
+  style.setProperty("--app-vw", `${width}px`);
+  style.setProperty("--app-vh", `${height}px`);
+  style.setProperty("--app-left", `${left}px`);
+  style.setProperty("--app-top", `${top}px`);
+  style.setProperty("--app-center-x", `${centerX}px`);
+  style.setProperty("--app-center-y", `${centerY}px`);
+  style.setProperty("--app-right-inset", `${rightInset}px`);
+  style.setProperty("--app-bottom-inset", `${bottomInset}px`);
+  style.setProperty("--app-vw-05", `${width * 0.05}px`);
+  style.setProperty("--app-vw-13", `${width * 0.13}px`);
+  style.setProperty("--app-vw-16", `${width * 0.16}px`);
+  style.setProperty("--app-vw-50", `${width * 0.5}px`);
+  style.setProperty("--app-vw-54", `${width * 0.54}px`);
+  style.setProperty("--app-vw-86", `${width * 0.86}px`);
+  style.setProperty("--app-vw-92", `${width * 0.92}px`);
+  style.setProperty("--app-vh-048", `${height * 0.048}px`);
+  style.setProperty("--app-vh-08", `${height * 0.08}px`);
+  style.setProperty("--app-vh-088", `${height * 0.088}px`);
+  style.setProperty("--app-vh-10", `${height * 0.1}px`);
+  style.setProperty("--app-vh-112", `${height * 0.112}px`);
+  style.setProperty("--app-vh-115", `${height * 0.115}px`);
+  style.setProperty("--app-vh-12", `${height * 0.12}px`);
+  style.setProperty("--app-vh-126", `${height * 0.126}px`);
+  style.setProperty("--app-vh-128", `${height * 0.128}px`);
+  style.setProperty("--app-vh-13", `${height * 0.13}px`);
+  style.setProperty("--app-vh-15", `${height * 0.15}px`);
+  style.setProperty("--app-vh-16", `${height * 0.16}px`);
+  style.setProperty("--app-vh-18", `${height * 0.18}px`);
+  style.setProperty("--app-vh-21", `${height * 0.21}px`);
+  style.setProperty("--app-vh-22", `${height * 0.22}px`);
+  style.setProperty("--app-vh-435", `${height * 0.435}px`);
+  style.setProperty("--app-vh-62", `${height * 0.62}px`);
+}
+
+function getAppViewportWidth() {
+  return appViewportWidth || window.visualViewport?.width || window.innerWidth || document.documentElement.clientWidth || 0;
+}
+
+function getAppViewportHeight() {
+  return appViewportHeight || window.visualViewport?.height || window.innerHeight || document.documentElement.clientHeight || 0;
 }
 
 function initCardScene() {
@@ -872,6 +938,9 @@ function initEvents() {
   els.binderCanvas.addEventListener("wheel", handleBinderWheel, { passive: false });
 
   window.addEventListener("resize", requestResize);
+  window.addEventListener("orientationchange", requestResize);
+  window.visualViewport?.addEventListener("resize", requestResize);
+  window.visualViewport?.addEventListener("scroll", requestResize);
   window.addEventListener("pagehide", saveSessionViewState);
 }
 
@@ -3708,7 +3777,7 @@ function clearGalleryCardTilts() {
 function getGalleryPriorityImageCount(totalCards) {
   if (!totalCards) return 0;
 
-  const width = window.innerWidth || document.documentElement.clientWidth || 0;
+  const width = getAppViewportWidth();
   const columns = width <= 520
     ? 2
     : (width <= 720 ? 3 : 5);
@@ -5338,8 +5407,8 @@ function isBinderSinglePageView(width = binderLastWidth, height = binderLastHeig
 }
 
 function isBinderSinglePageViewport(width = binderLastWidth, height = binderLastHeight) {
-  const viewportWidth = width || window.innerWidth || document.documentElement.clientWidth || 0;
-  const viewportHeight = height || window.innerHeight || document.documentElement.clientHeight || 0;
+  const viewportWidth = width || getAppViewportWidth();
+  const viewportHeight = height || getAppViewportHeight();
   return viewportWidth <= 760 || viewportWidth / Math.max(1, viewportHeight) <= 0.86;
 }
 
@@ -5933,11 +6002,13 @@ function getIndividualCardScreenRect() {
 }
 
 function getCenteredFallbackRect() {
-  const width = Math.min(window.innerWidth * 0.42, 360);
+  const viewportWidth = getAppViewportWidth() || window.innerWidth || 1;
+  const viewportHeight = getAppViewportHeight() || window.innerHeight || viewportWidth;
+  const width = Math.min(viewportWidth * 0.42, 360);
   const height = width * (CARD_HEIGHT / CARD_WIDTH);
   return {
-    left: window.innerWidth / 2 - width / 2,
-    top: window.innerHeight / 2 - height / 2,
+    left: appViewportLeft + viewportWidth / 2 - width / 2,
+    top: appViewportTop + viewportHeight / 2 - height / 2,
     width,
     height,
   };
@@ -6876,8 +6947,8 @@ function animateCard(now = performance.now()) {
 function getTraitCardOffsetX() {
   if (!traitsOpen || galleryOpen || isTraitPanelCompact()) return 0;
 
-  const viewportWidth = window.innerWidth || document.documentElement.clientWidth || 0;
-  const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+  const viewportWidth = getAppViewportWidth();
+  const viewportHeight = getAppViewportHeight();
   if (viewportWidth <= 820 || viewportWidth / Math.max(1, viewportHeight) < 1.12) return 0;
 
   const visibleHeight = 2 * Math.tan(THREE.MathUtils.degToRad(cardCamera.fov) / 2) * currentCameraZ;
@@ -6948,7 +7019,7 @@ function clampCardPan(x, y) {
 }
 
 function getResponsiveIndividualCardScale() {
-  const viewportWidth = window.innerWidth || document.documentElement.clientWidth || CARD_MOBILE_SCALE_FULL_WIDTH;
+  const viewportWidth = getAppViewportWidth() || CARD_MOBILE_SCALE_FULL_WIDTH;
   const progress = clamp(
     (viewportWidth - CARD_MOBILE_SCALE_MIN_WIDTH) / (CARD_MOBILE_SCALE_FULL_WIDTH - CARD_MOBILE_SCALE_MIN_WIDTH),
     0,
@@ -6960,12 +7031,10 @@ function getResponsiveIndividualCardScale() {
 
 function getDefaultCardHorizontalFitScale() {
   const viewportWidth = cardLastWidth
-    || window.innerWidth
-    || document.documentElement.clientWidth
+    || getAppViewportWidth()
     || CARD_MOBILE_SCALE_FULL_WIDTH;
   const viewportHeight = cardLastHeight
-    || window.innerHeight
-    || document.documentElement.clientHeight
+    || getAppViewportHeight()
     || viewportWidth;
   const aspect = Math.max(0.1, viewportWidth / Math.max(1, viewportHeight));
   const fov = THREE.MathUtils.degToRad(cardCamera?.fov || 34);
@@ -6994,8 +7063,8 @@ function getCardVisibleWorldSize() {
 }
 
 function isTraitPanelCompact() {
-  const viewportWidth = window.innerWidth || document.documentElement.clientWidth || 0;
-  const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+  const viewportWidth = getAppViewportWidth();
+  const viewportHeight = getAppViewportHeight();
   return viewportWidth < 820 || viewportWidth / Math.max(1, viewportHeight) < 1.12;
 }
 
@@ -7648,8 +7717,8 @@ function updateBinderCameraFrame(immediate = false, deltaMs = BINDER_FRAME_MS) {
 function updateBinderDefaultCameraFrame() {
   if (!binderCamera) return;
 
-  const width = binderLastWidth || els.binderPanel?.getBoundingClientRect().width || window.innerWidth || 1;
-  const height = binderLastHeight || els.binderPanel?.getBoundingClientRect().height || window.innerHeight || 1;
+  const width = binderLastWidth || els.binderPanel?.getBoundingClientRect().width || getAppViewportWidth() || 1;
+  const height = binderLastHeight || els.binderPanel?.getBoundingClientRect().height || getAppViewportHeight() || 1;
   const aspect = Math.max(width / Math.max(1, height), 0.1);
   const fov = THREE.MathUtils.degToRad(binderCamera.fov);
   const singlePage = isBinderSinglePageViewport(width, height) && !isBinderFocusView();
@@ -7761,6 +7830,7 @@ function requestBinderRenderOnce() {
 }
 
 function requestResize() {
+  updateAppViewportVars();
   if (resizeFrame) cancelAnimationFrame(resizeFrame);
   resizeFrame = requestAnimationFrame(() => {
     resizeFrame = 0;
@@ -8138,7 +8208,7 @@ function getWheelDeltaScale(event) {
   return event.deltaMode === 1
     ? 16
     : event.deltaMode === 2
-      ? window.innerHeight
+      ? getAppViewportHeight()
       : 1;
 }
 

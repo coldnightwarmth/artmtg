@@ -8,13 +8,45 @@
   --button-border: rgba(255, 255, 255, 0.2);
   --button-shadow: 0 10px 30px rgba(0, 0, 0, 0.34);
   --accent: #d7b454;
+  --app-vw: 100vw;
+  --app-vh: 100svh;
+  --app-left: 0px;
+  --app-top: 0px;
+  --app-center-x: 50vw;
+  --app-center-y: 50svh;
+  --app-right-inset: 0px;
+  --app-bottom-inset: 0px;
+  --app-vw-05: 5vw;
+  --app-vw-13: 13vw;
+  --app-vw-16: 16vw;
+  --app-vw-50: 50vw;
+  --app-vw-54: 54vw;
+  --app-vw-86: 86vw;
+  --app-vw-92: 92vw;
+  --app-vh-048: 4.8svh;
+  --app-vh-08: 8svh;
+  --app-vh-088: 8.8svh;
+  --app-vh-10: 10svh;
+  --app-vh-112: 11.2svh;
+  --app-vh-115: 11.5svh;
+  --app-vh-12: 12svh;
+  --app-vh-126: 12.6svh;
+  --app-vh-128: 12.8svh;
+  --app-vh-13: 13svh;
+  --app-vh-15: 15svh;
+  --app-vh-16: 16svh;
+  --app-vh-18: 18svh;
+  --app-vh-21: 21svh;
+  --app-vh-22: 22svh;
+  --app-vh-435: 43.5svh;
+  --app-vh-62: 62svh;
   --gallery-clear-filter-width: 28px;
-  --gallery-sort-width: min(150px, calc(100vw - 188px));
+  --gallery-sort-width: min(150px, calc(var(--app-vw) - 188px));
   --gallery-trait-search-width: 108px;
   --gallery-control-gap: 12px;
   --gallery-favorite-space: 54px;
-  --gallery-corner-inset: max(20px, env(safe-area-inset-right));
-  --gallery-corner-bottom: max(20px, env(safe-area-inset-bottom));
+  --gallery-corner-inset: calc(var(--app-right-inset) + max(20px, env(safe-area-inset-right)));
+  --gallery-corner-bottom: calc(var(--app-bottom-inset) + max(20px, env(safe-area-inset-bottom)));
   --card-aspect-padding: 140%;
   --gallery-card-intrinsic-height: 308px;
   --site-font: Optima, Candara, "Lucida Sans", "Lucida Grande", "Trebuchet MS", Arial, sans-serif;
@@ -99,7 +131,10 @@ button {
 
 .table {
   position: fixed;
-  inset: 0;
+  left: var(--app-left);
+  top: var(--app-top);
+  width: var(--app-vw);
+  height: var(--app-vh);
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -123,11 +158,11 @@ body.is-gallery .card-rig {
 
 #cardCanvas {
   position: fixed;
-  inset: 0;
+  left: var(--app-left);
+  top: var(--app-top);
   z-index: 1;
-  width: 100vw;
-  height: 100vh;
-  height: 100svh;
+  width: var(--app-vw);
+  height: var(--app-vh);
   display: block;
   touch-action: none;
   filter: drop-shadow(0 0 18px rgba(230, 210, 148, 0.1));
@@ -150,8 +185,8 @@ body.is-light #cardCanvas {
 
 .button-row {
   position: fixed;
-  left: 50%;
-  bottom: clamp(90px, 12.6vh, 136px);
+  left: var(--app-center-x);
+  bottom: calc(var(--app-bottom-inset) + clamp(90px, var(--app-vh-126), 136px));
   transform: translateX(-50%);
   z-index: 2;
   margin-top: 0;
@@ -159,13 +194,13 @@ body.is-light #cardCanvas {
 
 .card-filename {
   position: fixed;
-  left: 50%;
+  left: var(--app-center-x);
   transform: translateX(-50%);
   z-index: 2;
 }
 
 .card-filename {
-  bottom: clamp(60px, 8.8vh, 98px);
+  bottom: calc(var(--app-bottom-inset) + clamp(60px, var(--app-vh-088), 98px));
 }
 
 .icon-button {
@@ -261,10 +296,10 @@ a.icon-button {
 .trait-panel {
   position: fixed;
   z-index: 3;
-  top: 43.5%;
-  right: clamp(132px, 16vw, 260px);
-  width: min(430px, calc(50vw - 96px));
-  max-height: min(62vh, 580px);
+  top: calc(var(--app-top) + var(--app-vh-435));
+  right: calc(var(--app-right-inset) + clamp(132px, var(--app-vw-16), 260px));
+  width: min(430px, calc(var(--app-vw-50) - 96px));
+  max-height: min(var(--app-vh-62), 580px);
   opacity: 0;
   pointer-events: none;
   transform: translate(22px, -50%);
@@ -290,7 +325,7 @@ body.traits-open .trait-panel {
   grid-template-columns: repeat(auto-fit, minmax(118px, 132px));
   justify-content: center;
   gap: 10px;
-  max-height: calc(min(62vh, 580px) - 48px);
+  max-height: calc(min(var(--app-vh-62), 580px) - 48px);
   overflow: auto;
   padding: 5px;
   scrollbar-width: thin;
@@ -433,7 +468,7 @@ body.is-light .trait-tile {
 
 .card-filename,
 .binder-page-status {
-  width: min(86vw, 600px);
+  width: min(var(--app-vw-86), 600px);
   text-align: center;
   font-size: 11px;
   line-height: 1.2;
@@ -449,13 +484,13 @@ body.is-light .trait-tile {
 
 .card-filename.is-card-jump-enabled {
   width: max-content;
-  max-width: min(86vw, 600px);
+  max-width: min(var(--app-vw-86), 600px);
   cursor: pointer;
 }
 
 .card-filename.is-editing {
   width: max-content;
-  max-width: min(86vw, 600px);
+  max-width: min(var(--app-vw-86), 600px);
   color: var(--text);
   min-width: 118px;
   transform: translate(-50%, 5px);
@@ -573,14 +608,15 @@ body.binder-card-transitioning.binder-card-transition-away .corner-favorites {
 
 .gallery-grid {
   position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: auto;
+  top: var(--app-top);
+  left: var(--app-left);
+  right: auto;
+  bottom: auto;
+  width: var(--app-vw);
+  height: var(--app-vh);
   overflow-x: hidden;
   overflow-y: auto;
-  padding: clamp(58px, 13vh, 96px) calc((100vw - min(1180px, calc(100vw - 88px))) / 2 + 10px) clamp(116px, 18vh, 158px);
+  padding: clamp(58px, var(--app-vh-13), 96px) calc((var(--app-vw) - min(1180px, calc(var(--app-vw) - 88px))) / 2 + 10px) clamp(116px, var(--app-vh-18), 158px);
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   align-content: start;
@@ -599,7 +635,7 @@ body.is-gallery:not(.is-binder-view) .gallery-grid * {
 .gallery-filter-controls {
   position: fixed;
   z-index: 8;
-  left: 50%;
+  left: var(--app-center-x);
   bottom: var(--gallery-corner-bottom);
   display: grid;
   grid-template-columns: var(--gallery-sort-width) var(--gallery-trait-search-width);
@@ -663,8 +699,8 @@ body.is-gallery:not(.is-binder-view) .gallery-grid * {
 }
 
 body.is-gallery .gallery-sort-control {
-  flex-basis: min(148px, calc(100vw - 298px));
-  width: min(148px, calc(100vw - 298px));
+  flex-basis: min(148px, calc(var(--app-vw) - 298px));
+  width: min(148px, calc(var(--app-vw) - 298px));
 }
 
 .gallery-sort-control::after {
@@ -841,8 +877,8 @@ body.trait-filters-disabled .gallery-trait-search-button {
 }
 
 #binderCanvas {
-  width: 100vw;
-  height: 100vh;
+  width: var(--app-vw);
+  height: var(--app-vh);
   display: block;
   touch-action: none;
   filter: drop-shadow(0 0 18px rgba(230, 210, 148, 0.09));
@@ -856,7 +892,7 @@ body.is-light #binderCanvas {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: min(240px, 54vw);
+  width: min(240px, var(--app-vw-54));
   height: 4px;
   transform: translate(-50%, -50%);
   overflow: hidden;
@@ -949,7 +985,7 @@ body.is-light #binderCanvas {
 
 .trait-search-panel {
   position: absolute;
-  inset: clamp(30px, 4.8vh, 56px) clamp(20px, 5vw, 76px) clamp(102px, 15vh, 146px);
+  inset: clamp(30px, var(--app-vh-048), 56px) clamp(20px, var(--app-vw-05), 76px) clamp(102px, var(--app-vh-15), 146px);
   z-index: 5;
   display: grid;
   grid-template-rows: auto minmax(0, 1fr);
@@ -1185,7 +1221,7 @@ body.is-light .trait-search-tile {
 .trait-search-empty {
   align-self: start;
   justify-self: center;
-  margin-top: clamp(42px, 12vh, 96px);
+  margin-top: clamp(42px, var(--app-vh-12), 96px);
   color: var(--muted);
   font-size: 13px;
   font-weight: 500;
@@ -1213,7 +1249,7 @@ body.is-light .trait-search-tile {
 }
 
 .wallet-search-dialog {
-  width: min(620px, calc(100vw - 44px));
+  width: min(620px, calc(var(--app-vw) - 44px));
   display: grid;
   justify-items: center;
   gap: 12px;
@@ -1389,8 +1425,8 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
 }
 
 .theme-switch {
-  left: max(20px, env(safe-area-inset-left));
-  bottom: max(20px, env(safe-area-inset-bottom));
+  left: calc(var(--app-left) + max(20px, env(safe-area-inset-left)));
+  bottom: var(--gallery-corner-bottom);
 }
 
 .theme-switch input {
@@ -1442,13 +1478,13 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
 
 @media (min-width: 821px) and (max-width: 1280px) and (min-aspect-ratio: 28 / 25) {
   .trait-panel {
-    right: clamp(112px, 13vw, 162px);
+    right: calc(var(--app-right-inset) + clamp(112px, var(--app-vw-13), 162px));
   }
 }
 
 @media (min-width: 1281px) and (min-aspect-ratio: 28 / 25) {
   .trait-panel {
-    left: calc(50vw + 34px);
+    left: calc(var(--app-center-x) + 34px);
     right: auto;
   }
 }
@@ -1456,27 +1492,26 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
 @media (max-width: 720px) {
   :root {
     --gallery-clear-filter-width: 26px;
-    --gallery-sort-width: min(112px, calc(100vw - 252px));
+    --gallery-sort-width: min(112px, calc(var(--app-vw) - 252px));
     --gallery-trait-search-width: 82px;
     --gallery-control-gap: 10px;
     --gallery-favorite-space: 48px;
     --gallery-filter-center-shift: -167px;
     --gallery-filter-center-shift-clear: -185px;
-    --gallery-corner-inset: max(12px, env(safe-area-inset-right));
-    --gallery-corner-bottom: max(12px, env(safe-area-inset-bottom));
+    --gallery-corner-inset: calc(var(--app-right-inset) + max(12px, env(safe-area-inset-right)));
+    --gallery-corner-bottom: calc(var(--app-bottom-inset) + max(12px, env(safe-area-inset-bottom)));
   }
 
   #cardCanvas {
-    width: 100vw;
-    height: 100vh;
-    height: 100svh;
+    width: var(--app-vw);
+    height: var(--app-vh);
   }
 
   .gallery-grid {
     padding-left: 27px;
     padding-right: 27px;
-    padding-top: clamp(46px, 10vh, 76px);
-    padding-bottom: clamp(106px, 16vh, 132px);
+    padding-top: clamp(46px, var(--app-vh-10), 76px);
+    padding-bottom: clamp(106px, var(--app-vh-16), 132px);
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 14px;
   }
@@ -1508,8 +1543,8 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
   }
 
   body.is-gallery .gallery-sort-control {
-    flex-basis: min(112px, calc(100vw - 266px));
-    width: min(112px, calc(100vw - 266px));
+    flex-basis: min(112px, calc(var(--app-vw) - 266px));
+    width: min(112px, calc(var(--app-vw) - 266px));
   }
 
   .gallery-sort-control select {
@@ -1584,23 +1619,22 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
   }
 
   .button-row {
-    bottom: clamp(78px, 11.2vh, 110px);
+    bottom: calc(var(--app-bottom-inset) + clamp(78px, var(--app-vh-112), 110px));
   }
 
   .card-filename {
-    bottom: clamp(52px, 8vh, 78px);
+    bottom: calc(var(--app-bottom-inset) + clamp(52px, var(--app-vh-08), 78px));
   }
 
   .trait-panel {
-    left: 50%;
+    left: var(--app-center-x);
     right: auto;
-    --trait-panel-compact-top: clamp(74px, 12.8vh, 126px);
-    --trait-panel-compact-bottom: clamp(188px, 22vh, 238px);
-    top: var(--trait-panel-compact-top);
+    --trait-panel-compact-top: clamp(74px, var(--app-vh-128), 126px);
+    --trait-panel-compact-bottom: clamp(188px, var(--app-vh-22), 238px);
+    top: calc(var(--app-top) + var(--trait-panel-compact-top));
     bottom: auto;
-    width: min(92vw, 440px);
-    max-height: calc(100vh - var(--trait-panel-compact-top) - var(--trait-panel-compact-bottom));
-    max-height: calc(100svh - var(--trait-panel-compact-top) - var(--trait-panel-compact-bottom));
+    width: min(var(--app-vw-92), 440px);
+    max-height: calc(var(--app-vh) - var(--trait-panel-compact-top) - var(--trait-panel-compact-bottom));
     transform: translate(-50%, 18px);
   }
 
@@ -1616,8 +1650,7 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
   .trait-grid {
     grid-template-columns: repeat(auto-fit, minmax(108px, 126px));
     gap: 8px;
-    max-height: calc(100vh - var(--trait-panel-compact-top) - var(--trait-panel-compact-bottom) - 52px);
-    max-height: calc(100svh - var(--trait-panel-compact-top) - var(--trait-panel-compact-bottom) - 52px);
+    max-height: calc(var(--app-vh) - var(--trait-panel-compact-top) - var(--trait-panel-compact-bottom) - 52px);
     min-height: 0;
   }
 
@@ -1669,15 +1702,14 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
   }
 
   .trait-panel {
-    left: 50%;
+    left: var(--app-center-x);
     right: auto;
-    --trait-panel-compact-top: clamp(74px, 12.8vh, 126px);
-    --trait-panel-compact-bottom: clamp(188px, 22vh, 238px);
-    top: var(--trait-panel-compact-top);
+    --trait-panel-compact-top: clamp(74px, var(--app-vh-128), 126px);
+    --trait-panel-compact-bottom: clamp(188px, var(--app-vh-22), 238px);
+    top: calc(var(--app-top) + var(--trait-panel-compact-top));
     bottom: auto;
-    width: min(92vw, 440px);
-    max-height: calc(100vh - var(--trait-panel-compact-top) - var(--trait-panel-compact-bottom));
-    max-height: calc(100svh - var(--trait-panel-compact-top) - var(--trait-panel-compact-bottom));
+    width: min(var(--app-vw-92), 440px);
+    max-height: calc(var(--app-vh) - var(--trait-panel-compact-top) - var(--trait-panel-compact-bottom));
     transform: translate(-50%, 18px);
   }
 
@@ -1698,8 +1730,7 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
   }
 
   .trait-grid {
-    max-height: calc(100vh - var(--trait-panel-compact-top) - var(--trait-panel-compact-bottom) - 52px);
-    max-height: calc(100svh - var(--trait-panel-compact-top) - var(--trait-panel-compact-bottom) - 52px);
+    max-height: calc(var(--app-vh) - var(--trait-panel-compact-top) - var(--trait-panel-compact-bottom) - 52px);
     min-height: 0;
   }
 }
@@ -1713,7 +1744,7 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
     --gallery-favorite-space: 42px;
     --gallery-filter-center-shift: -131.5px;
     --gallery-filter-center-shift-clear: -146px;
-    --gallery-corner-inset: max(8px, env(safe-area-inset-right));
+    --gallery-corner-inset: calc(var(--app-right-inset) + max(8px, env(safe-area-inset-right)));
   }
 
   .icon-button,
@@ -1737,8 +1768,8 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
     --gallery-favorite-space: 38px;
     --gallery-filter-center-shift: -128.5px;
     --gallery-filter-center-shift-clear: -142px;
-    --gallery-corner-inset: max(8px, env(safe-area-inset-right));
-    --gallery-corner-bottom: max(10px, env(safe-area-inset-bottom));
+    --gallery-corner-inset: calc(var(--app-right-inset) + max(8px, env(safe-area-inset-right)));
+    --gallery-corner-bottom: calc(var(--app-bottom-inset) + max(10px, env(safe-area-inset-bottom)));
   }
 
   .card-rig {
@@ -1756,9 +1787,8 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
   }
 
   #cardCanvas {
-    width: 100vw;
-    height: 100vh;
-    height: 100svh;
+    width: var(--app-vw);
+    height: var(--app-vh);
   }
 
   .gallery-grid {
@@ -1766,9 +1796,9 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
   }
 
   .trait-panel {
-    --trait-panel-compact-top: clamp(64px, 11.5vh, 104px);
-    --trait-panel-compact-bottom: clamp(176px, 21vh, 214px);
-    width: calc(100vw - 28px);
+    --trait-panel-compact-top: clamp(64px, var(--app-vh-115), 104px);
+    --trait-panel-compact-bottom: clamp(176px, var(--app-vh-21), 214px);
+    width: calc(var(--app-vw) - 28px);
     bottom: auto;
   }
 
@@ -1794,7 +1824,7 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
   }
 
   .corner-gallery {
-    right: 8px;
+    right: var(--gallery-corner-inset);
     bottom: var(--gallery-corner-bottom);
   }
 
@@ -1834,15 +1864,15 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
   }
 
   .theme-switch {
-    left: 8px;
-    bottom: 10px;
+    left: calc(var(--app-left) + 8px);
+    bottom: var(--gallery-corner-bottom);
   }
 
 }
 
 @media (max-width: 720px) {
   body.is-gallery .gallery-filter-controls {
-    left: calc(50vw + var(--gallery-filter-center-shift));
+    left: calc(var(--app-center-x) + var(--gallery-filter-center-shift));
     bottom: var(--gallery-corner-bottom);
     transform: none;
   }
@@ -1854,7 +1884,7 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
   }
 
   body.is-gallery .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) {
-    left: calc(50vw + var(--gallery-filter-center-shift-clear));
+    left: calc(var(--app-center-x) + var(--gallery-filter-center-shift-clear));
     grid-template-columns: var(--gallery-clear-filter-width) var(--gallery-sort-width) var(--gallery-trait-search-width);
   }
 
@@ -1880,11 +1910,11 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
 
 @media (max-width: 420px) {
   body.is-gallery .gallery-filter-controls {
-    left: calc(50vw + var(--gallery-filter-center-shift));
+    left: calc(var(--app-center-x) + var(--gallery-filter-center-shift));
   }
 
   body.is-gallery .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) {
-    left: calc(50vw + var(--gallery-filter-center-shift-clear));
+    left: calc(var(--app-center-x) + var(--gallery-filter-center-shift-clear));
   }
 }
 
@@ -1911,7 +1941,7 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
   }
 
   body.is-gallery .gallery-filter-controls {
-    left: calc(50vw + var(--gallery-filter-center-shift));
+    left: calc(var(--app-center-x) + var(--gallery-filter-center-shift));
   }
 
   .gallery-clear-filters-button {
@@ -1985,7 +2015,7 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
   }
 
   body.is-gallery .gallery-filter-controls {
-    left: calc(50vw + var(--gallery-filter-center-shift));
+    left: calc(var(--app-center-x) + var(--gallery-filter-center-shift));
   }
 
   .gallery-clear-filters-button,
@@ -2019,9 +2049,9 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
 
 @media (max-width: 360px) and (orientation: landscape) {
   body.is-gallery .gallery-filter-controls {
-    left: 50%;
+    left: var(--app-center-x);
     bottom: calc(var(--gallery-corner-bottom) + 54px);
-    width: 100vw;
+    width: var(--app-vw);
     padding-inline: 6px;
     grid-template-columns: minmax(0, 1fr) var(--gallery-trait-search-width);
     transform: translateX(-50%);
@@ -2110,7 +2140,7 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
 
   body.is-gallery .gallery-filter-controls,
   body.is-gallery .gallery-filter-controls:has(.gallery-clear-filters-button:not([hidden])) {
-    left: 50%;
+    left: var(--app-center-x);
     bottom: calc(var(--gallery-corner-bottom) + 54px);
     width: auto;
     padding-inline: 0;
