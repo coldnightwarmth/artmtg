@@ -144,7 +144,7 @@ body.is-light #cardCanvas {
 .button-row {
   position: fixed;
   left: 50%;
-  bottom: clamp(108px, 14vh, 154px);
+  bottom: clamp(90px, 12.6vh, 136px);
   transform: translateX(-50%);
   z-index: 2;
   margin-top: 0;
@@ -158,7 +158,7 @@ body.is-light #cardCanvas {
 }
 
 .card-filename {
-  bottom: clamp(78px, 10.2vh, 116px);
+  bottom: clamp(60px, 8.8vh, 98px);
 }
 
 .icon-button {
@@ -778,9 +778,17 @@ body.trait-filters-disabled .gallery-trait-search-button {
 
 .gallery-card-tilt {
   display: block;
+  position: relative;
+  width: 100%;
   border-radius: 8px;
   pointer-events: none;
   transform-origin: 50% 50%;
+}
+
+.gallery-card-tilt::before {
+  content: "";
+  display: block;
+  padding-top: 141.494845%;
 }
 
 .gallery-card.is-gallery-tilting .gallery-card-tilt {
@@ -792,8 +800,10 @@ body.trait-filters-disabled .gallery-trait-search-button {
 
 .gallery-card img {
   display: block;
+  position: absolute;
+  inset: 0;
   width: 100%;
-  aspect-ratio: 776 / 1098;
+  height: 100%;
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 14px 26px rgba(0, 0, 0, 0.32);
@@ -1566,11 +1576,11 @@ body.is-gallery .gallery-view-toggle:not([hidden]) {
   }
 
   .button-row {
-    bottom: clamp(92px, 12.6vh, 124px);
+    bottom: clamp(78px, 11.2vh, 110px);
   }
 
   .card-filename {
-    bottom: clamp(66px, 9.4vh, 92px);
+    bottom: clamp(52px, 8vh, 78px);
   }
 
   .trait-panel {

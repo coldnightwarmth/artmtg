@@ -195,7 +195,7 @@ const CARD_WIDTH = 2.5;
 const CARD_HEIGHT = 3.54;
 const CARD_DEPTH = 0.022;
 const CARD_RADIUS = 0.12;
-const INDIVIDUAL_CARD_WORLD_Y = 0.42;
+const INDIVIDUAL_CARD_WORLD_Y = 0.26;
 const BINDER_FACE_WIDTH = 420;
 const BINDER_FACE_HEIGHT = 594;
 const BINDER_COLUMNS = 3;
@@ -323,6 +323,7 @@ const restoredSessionViewState = loadSessionViewState();
 const els = {
   body: document.body,
   cardCanvas: document.querySelector("#cardCanvas"),
+  cardBinderReturnButton: document.querySelector("#cardBinderReturnButton"),
   previousButton: document.querySelector("#previousButton"),
   nextButton: document.querySelector("#nextButton"),
   shuffleButton: document.querySelector("#shuffleButton"),
@@ -541,6 +542,7 @@ let binderInteractionActiveUntil = 0;
 let binderShuffleLoadingToken = 0;
 let binderPageStatusInput = null;
 let binderPageStatusEditMode = null;
+let rememberedBinderViewFocus = null;
 const binderTextureQueue = [];
 const binderTextureQueuedPositions = new Set();
 const cardRaycaster = new THREE.Raycaster();
@@ -719,6 +721,9 @@ function initEvents() {
   document.addEventListener("gestureend", preventBrowserZoomGesture, { passive: false, capture: true });
   document.addEventListener("wheel", preventBrowserZoomWheel, { passive: false, capture: true });
   document.addEventListener("keydown", preventBrowserZoomKeydown, { capture: true });
+  els.cardBinderReturnButton.addEventListener("click", () => {
+    transitionIndividualCardToFocusedBinder().catch(console.error);
+  });
   els.previousButton.addEventListener("click", () => transitionAdjacentCard(-1).catch(console.error));
   els.nextButton.addEventListener("click", () => transitionAdjacentCard(1).catch(console.error));
   els.shuffleButton.addEventListener("click", (event) => {
@@ -744,9 +749,7 @@ function initEvents() {
     downloadCurrentCardArt().catch(console.error);
   });
   els.cardFileName.addEventListener("dblclick", startCardNameEdit);
-  els.galleryToggleButton.addEventListener("click", () => {
-    setGalleryOpen(!galleryOpen, { resetFilters: !galleryOpen && !hasActiveGalleryMode() });
-  });
+  els.galleryToggleButton.addEventListener("click", toggleCornerGalleryView);
   els.galleryViewToggleButton.addEventListener("click", toggleGalleryViewMode);
   els.galleryGrid.addEventListener("click", onGalleryGridClick);
   els.galleryGrid.addEventListener("pointerover", onGalleryGridTiltPointerMove);
@@ -1406,6 +1409,7 @@ function resetCardSwapVisualState() {
 }
 
 function setIndividualCardControlsDisabled(disabled) {
+  els.cardBinderReturnButton.disabled = disabled;
   els.previousButton.disabled = disabled;
   els.nextButton.disabled = disabled;
   els.shuffleButton.disabled = disabled;
@@ -2137,6 +2141,55 @@ function updateBinderFavoriteButton() {
     "aria-label",
     active ? "Remove focused card from favorites" : "Add focused card to favorites",
   );
+}
+
+function toggleCornerGalleryView() {
+  const nextOpen = !galleryOpen;
+  if (!nextOpen && !rememberCurrentBinderViewFocus()) {
+    clearRememberedBinderViewFocus();
+  }
+
+  setGalleryOpen(nextOpen, { resetFilters: nextOpen && !hasActiveGalleryMode() });
+  if (nextOpen && restoreRememberedBinderViewFocus()) {
+    queueSessionViewStateSave();
+  }
+}
+
+function rememberCurrentBinderViewFocus() {
+  if (!galleryOpen || !isBinderMode || !isBinderFocusView()) return false;
+
+  if (isBinderIntroFocused()) {
+    rememberedBinderViewFocus = { type: "intro" };
+    return true;
+  }
+
+  const cardIndex = getFocusedBinderCardIndex();
+  if (!Number.isInteger(cardIndex)) return false;
+  rememberedBinderViewFocus = { type: "card", cardIndex };
+  return true;
+}
+
+function clearRememberedBinderViewFocus() {
+  rememberedBinderViewFocus = null;
+}
+
+function restoreRememberedBinderViewFocus() {
+  if (!rememberedBinderViewFocus || !galleryOpen || !isBinderMode || traitSearchOpen) return false;
+
+  if (rememberedBinderViewFocus.type === "intro") {
+    if (!focusBinderIntroNote({ immediate: true })) return false;
+    renderBinderSceneOnce({ immediateCamera: true });
+    return true;
+  }
+
+  const cardIndex = rememberedBinderViewFocus.cardIndex;
+  if (!Number.isInteger(cardIndex)) return false;
+  const focusPosition = binderVisibleIndexes.indexOf(cardIndex);
+  if (focusPosition === -1) return false;
+
+  focusBinderPosition(focusPosition, { immediate: true });
+  renderBinderSceneOnce({ immediateCamera: true });
+  return true;
 }
 
 function setGalleryOpen(open, options = {}) {
@@ -5603,6 +5656,7 @@ async function transitionFocusedBinderCardToIndividual(cardIndex, focusedMesh) {
     els.body.classList.add("binder-card-transition-show-card");
     await delay(BINDER_CARD_VIEW_TRANSITION_MS * 0.54);
 
+    rememberCurrentBinderViewFocus();
     binderIntroFocused = false;
     binderFocusPosition = -1;
     setGalleryOpen(false);
