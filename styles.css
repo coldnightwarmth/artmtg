@@ -991,12 +991,20 @@ body.is-light #binderCanvas {
   min-height: 0;
   overflow: auto;
   overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
   padding: 12px 6px 26px;
   display: grid;
   align-content: start;
   gap: 22px;
   grid-auto-rows: max-content;
   scrollbar-width: thin;
+}
+
+.trait-search-groups *,
+.trait-search-sidebar,
+.trait-search-sidebar * {
+  touch-action: pan-y;
 }
 
 .trait-search-group {
@@ -1057,6 +1065,8 @@ body.is-light #binderCanvas {
   align-self: start;
   max-height: 100%;
   overflow: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   padding: 12px 4px 18px;
   display: grid;
   align-content: start;
