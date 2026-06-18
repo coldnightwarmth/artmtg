@@ -192,7 +192,7 @@ const BINDER_INTRO_SPRITES = [
   },
 ];
 const CARD_WIDTH = 2.5;
-const CARD_HEIGHT = 3.54;
+const CARD_HEIGHT = 3.5;
 const CARD_DEPTH = 0.022;
 const CARD_RADIUS = 0.12;
 const INDIVIDUAL_CARD_WORLD_Y = 0.26;
@@ -448,6 +448,7 @@ let lastAppliedCardSwapOpacity = Number.NaN;
 let lastAppliedCardSwapIncomingOpacity = Number.NaN;
 let cardSwapAnimating = false;
 let cardSwapToken = 0;
+let cardSwapTweenState = null;
 let cardSwapLoadingTimer = 0;
 let cardSwapLoadingButton = null;
 let cardShuffleSpinY = 0;
@@ -613,25 +614,14 @@ function initCardScene() {
 
   const core = new THREE.Mesh(
     createRoundedCoreGeometry(CARD_WIDTH, CARD_HEIGHT, CARD_DEPTH, CARD_RADIUS),
-    new THREE.MeshPhysicalMaterial({
-      color: 0x14110e,
-      roughness: 0.64,
-      metalness: 0.02,
-      clearcoat: 0.2,
-      clearcoatRoughness: 0.5,
-    }),
+    createCardCoreMaterial(),
   );
   cardGroup.add(core);
 
   const faceGeometry = createRoundedPlaneGeometry(CARD_WIDTH, CARD_HEIGHT, CARD_RADIUS);
   cardFrontMesh = new THREE.Mesh(
     faceGeometry,
-    new THREE.MeshBasicMaterial({
-      map: getCardPlaceholderTexture(),
-      depthWrite: false,
-      depthTest: false,
-      toneMapped: false,
-    }),
+    createCardFaceMaterial(getCardPlaceholderTexture()),
   );
   cardFrontMesh.position.z = CARD_DEPTH / 2 + 0.003;
   cardFrontMesh.renderOrder = 22;
@@ -639,12 +629,7 @@ function initCardScene() {
 
   cardBackMesh = new THREE.Mesh(
     faceGeometry.clone(),
-    new THREE.MeshBasicMaterial({
-      map: getCardPlaceholderTexture(),
-      depthWrite: false,
-      depthTest: false,
-      toneMapped: false,
-    }),
+    createCardFaceMaterial(getCardPlaceholderTexture()),
   );
   cardBackMesh.position.z = -CARD_DEPTH / 2 - 0.003;
   cardBackMesh.rotation.y = Math.PI;
@@ -1201,39 +1186,97 @@ function clearCardSwapButtonLoading() {
 }
 
 function tweenCardSwap(direction, nextIndex, nextTexture, backTexture, effectTextures, token) {
-  const startedAt = performance.now();
-
   return new Promise((resolve) => {
-    const step = (now) => {
-      if (token !== cardSwapToken) {
-        resolve();
-        return;
-      }
-
-      const progress = clamp((now - startedAt) / CARD_SWAP_MS, 0, 1);
-      const outgoingEase = easeOutCubic(progress);
-      const incomingProgress = clamp((progress - 0.06) / 0.94, 0, 1);
-      const incomingEase = easeOutCubic(incomingProgress);
-      cardSwapOffsetX = -direction * CARD_SWAP_DISTANCE * outgoingEase;
-      cardSwapIncomingOffsetX = direction * CARD_SWAP_DISTANCE * (1 - incomingEase);
-      cardSwapOpacity = 1 - outgoingEase;
-      cardSwapIncomingOpacity = THREE.MathUtils.lerp(CARD_SWAP_MIN_OPACITY, 1, incomingEase);
-      applyCardSwapOpacity();
-
-      if (progress >= 1) {
-        setCard(nextIndex, {
-          frontTexture: nextTexture,
-          backTexture,
-          effectTextures,
-          preserveSwapVisuals: true,
-        });
-        resolve();
-        return;
-      }
-      requestAnimationFrame(step);
+    if (cardSwapTweenState?.resolve) {
+      cardSwapTweenState.resolve();
+    }
+    cardSwapTweenState = {
+      direction,
+      nextIndex,
+      nextTexture,
+      backTexture,
+      effectTextures,
+      token,
+      startedAt: performance.now(),
+      resolve,
     };
-    requestAnimationFrame(step);
   });
+}
+
+function updateCardSwapTween(now) {
+  const state = cardSwapTweenState;
+  if (!state) return;
+  if (state.token !== cardSwapToken) {
+    cardSwapTweenState = null;
+    state.resolve();
+    return;
+  }
+
+  const progress = clamp((now - state.startedAt) / CARD_SWAP_MS, 0, 1);
+  const outgoingEase = easeOutCubic(progress);
+  const incomingProgress = clamp((progress - 0.06) / 0.94, 0, 1);
+  const incomingEase = easeOutCubic(incomingProgress);
+  cardSwapOffsetX = -state.direction * CARD_SWAP_DISTANCE * outgoingEase;
+  cardSwapIncomingOffsetX = state.direction * CARD_SWAP_DISTANCE * (1 - incomingEase);
+  cardSwapOpacity = 1 - outgoingEase;
+  cardSwapIncomingOpacity = THREE.MathUtils.lerp(CARD_SWAP_MIN_OPACITY, 1, incomingEase);
+  applyCardSwapOpacity();
+
+  if (progress < 1) return;
+
+  promoteCardSwapIncomingGroup(state);
+  cardSwapTweenState = null;
+  state.resolve();
+}
+
+function promoteCardSwapIncomingGroup(state) {
+  if (!cardSwapIncomingGroup) return;
+
+  const oldCardGroup = cardGroup;
+  const nextGroup = cardSwapIncomingGroup;
+  updateCardSwapIncomingTransform();
+  cardScene.remove(oldCardGroup);
+
+  cardGroup = nextGroup;
+  cardGroup.rotation.x = currentRotationX;
+  cardGroup.rotation.y = currentRotationY + cardShuffleSpinY;
+  cardGroup.scale.setScalar(getResponsiveIndividualCardScale());
+  cardFrontMesh = nextGroup.userData.frontMesh || cardFrontMesh;
+  cardBackMesh = nextGroup.userData.backMesh || cardBackMesh;
+  cardFrontNoiseMesh = nextGroup.userData.frontNoiseMesh || cardFrontNoiseMesh;
+  cardBackNoiseMesh = nextGroup.userData.backNoiseMesh || cardBackNoiseMesh;
+  cardGradientMesh = nextGroup.userData.frontGradientMesh || cardGradientMesh;
+  cardGlareMesh = nextGroup.userData.frontGlareMesh || cardGlareMesh;
+  cardBackGradientMesh = nextGroup.userData.backGradientMesh || cardBackGradientMesh;
+  cardBackGlareMesh = nextGroup.userData.backGlareMesh || cardBackGlareMesh;
+
+  cardSwapIncomingGroup = null;
+  cardSwapIncomingFrontMesh = null;
+  lastAppliedCardSwapIncomingOpacity = Number.NaN;
+
+  currentIndex = modulo(state.nextIndex, CARDS.length);
+  cardApplyToken += 1;
+  resetViewSwitchWheelDistances();
+  preloadAdjacentIndividualTextures(currentIndex);
+
+  targetRotationX = 0;
+  targetRotationY = 0;
+  resetCardPan(true);
+  cardGlossActivity = 0;
+  cardSwapOffsetX = 0;
+  cardSwapOpacity = 1;
+  cardSwapIncomingOffsetX = 0;
+  cardSwapIncomingOpacity = 0;
+  lastAppliedCardSwapOpacity = Number.NaN;
+  applyCardSwapOpacity({ force: true });
+  setIndividualCardEffectOpacity(cardEffectViewOpacity);
+
+  updateCardText();
+  renderTraitPanel();
+  updateFavoriteButtons();
+  queueSessionViewStateSave();
+
+  disposeCardSwapGroup(oldCardGroup);
 }
 
 function prepareCardSwapIncomingGroup(direction, frontTexture, backTexture, card, effectTextures) {
@@ -1282,26 +1325,14 @@ function createCardSwapGroup(frontTexture, backTexture, card = null, effectTextu
 
   const core = new THREE.Mesh(
     createRoundedCoreGeometry(CARD_WIDTH, CARD_HEIGHT, CARD_DEPTH, CARD_RADIUS),
-    new THREE.MeshPhysicalMaterial({
-      color: 0x14110e,
-      roughness: 0.64,
-      metalness: 0.02,
-      clearcoat: 0.2,
-      clearcoatRoughness: 0.5,
-    }),
+    createCardCoreMaterial(),
   );
   group.add(core);
 
   const faceGeometry = createRoundedPlaneGeometry(CARD_WIDTH, CARD_HEIGHT, CARD_RADIUS);
   const frontMesh = new THREE.Mesh(
     faceGeometry,
-    new THREE.MeshBasicMaterial({
-      map: frontTexture || getCardPlaceholderTexture(),
-      transparent: true,
-      depthWrite: false,
-      depthTest: false,
-      toneMapped: false,
-    }),
+    createCardFaceMaterial(frontTexture || getCardPlaceholderTexture()),
   );
   frontMesh.position.z = CARD_DEPTH / 2 + 0.003;
   frontMesh.renderOrder = 22;
@@ -1309,13 +1340,7 @@ function createCardSwapGroup(frontTexture, backTexture, card = null, effectTextu
 
   const backMesh = new THREE.Mesh(
     faceGeometry.clone(),
-    new THREE.MeshBasicMaterial({
-      map: backTexture || getBackPlaceholderTexture(),
-      transparent: true,
-      depthWrite: false,
-      depthTest: false,
-      toneMapped: false,
-    }),
+    createCardFaceMaterial(backTexture || getBackPlaceholderTexture()),
   );
   backMesh.position.z = -CARD_DEPTH / 2 - 0.003;
   backMesh.rotation.y = Math.PI;
@@ -1333,10 +1358,46 @@ function createCardSwapGroup(frontTexture, backTexture, card = null, effectTextu
 
   const effectMeshes = createCardSwapEffectMeshes(card, effectTextures);
   for (const effectMesh of effectMeshes) group.add(effectMesh);
+  const [frontGradientMesh, frontGlareMesh, backGradientMesh, backGlareMesh] = effectMeshes;
 
   group.userData.frontMesh = frontMesh;
+  group.userData.backMesh = backMesh;
+  group.userData.frontNoiseMesh = frontNoise;
+  group.userData.backNoiseMesh = backNoise;
+  group.userData.frontGradientMesh = frontGradientMesh || null;
+  group.userData.frontGlareMesh = frontGlareMesh || null;
+  group.userData.backGradientMesh = backGradientMesh || null;
+  group.userData.backGlareMesh = backGlareMesh || null;
   group.userData.effectMeshes = effectMeshes;
   return group;
+}
+
+function createCardCoreMaterial() {
+  return stabilizeCardTransitionMaterial(new THREE.MeshPhysicalMaterial({
+    color: 0x14110e,
+    roughness: 0.64,
+    metalness: 0.02,
+    clearcoat: 0.2,
+    clearcoatRoughness: 0.5,
+  }));
+}
+
+function createCardFaceMaterial(texture) {
+  return stabilizeCardTransitionMaterial(new THREE.MeshBasicMaterial({
+    map: texture || getCardPlaceholderTexture(),
+    transparent: true,
+    depthWrite: false,
+    depthTest: false,
+    toneMapped: false,
+  }));
+}
+
+function stabilizeCardTransitionMaterial(material) {
+  material.transparent = true;
+  material.depthWrite = false;
+  material.userData.baseTransparent = true;
+  material.userData.transitionTransparencyLocked = true;
+  return material;
 }
 
 function createCardSwapEffectMeshes(card, effectTextures = null) {
@@ -1476,6 +1537,7 @@ function getIndividualCardSequenceIndexes() {
 }
 
 function resetCardSwapVisualState() {
+  cardSwapTweenState = null;
   cardSwapOffsetX = 0;
   cardSwapOpacity = 1;
   cardSwapIncomingOffsetX = 0;
@@ -1523,7 +1585,10 @@ function applyCardGroupOpacity(group, opacityValue, options = {}) {
         const nextOpacity = material.userData.baseOpacity * opacity;
         if (Math.abs(material.opacity - nextOpacity) > 0.001) material.opacity = nextOpacity;
       }
-      const nextTransparent = material.userData.baseTransparent || forceTransparent || opacity < 0.999;
+      const nextTransparent = material.userData.transitionTransparencyLocked
+        || material.userData.baseTransparent
+        || forceTransparent
+        || opacity < 0.999;
       if (material.transparent !== nextTransparent) {
         material.transparent = nextTransparent;
         material.needsUpdate = true;
@@ -6778,6 +6843,7 @@ function animateCard(now = performance.now()) {
   currentCameraZ += (targetCameraZ - currentCameraZ) * 0.12;
   cardCamera.position.z = currentCameraZ;
   updateCardPan();
+  updateCardSwapTween(now);
   cardGroup.position.x = currentCardOffsetX + currentPanX + cardSwapOffsetX;
   cardGroup.position.y = INDIVIDUAL_CARD_WORLD_Y + currentPanY;
   updateCardSwapIncomingTransform();

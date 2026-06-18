@@ -768,7 +768,7 @@ body.trait-filters-disabled .gallery-trait-search-button {
   background: transparent;
   cursor: pointer;
   content-visibility: auto;
-  contain-intrinsic-size: 220px 312px;
+  contain-intrinsic-size: 220px 308px;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -789,7 +789,7 @@ body.trait-filters-disabled .gallery-trait-search-button {
 .gallery-card-tilt::before {
   content: "";
   display: block;
-  padding-top: 141.494845%;
+  padding-top: 140%;
 }
 
 .gallery-card.is-gallery-tilting .gallery-card-tilt {
@@ -805,7 +805,7 @@ body.trait-filters-disabled .gallery-trait-search-button {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   border-radius: 8px;
   box-shadow: 0 14px 26px rgba(0, 0, 0, 0.32);
   pointer-events: none;
