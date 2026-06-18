@@ -162,6 +162,7 @@ body.is-light #cardCanvas {
 }
 
 .icon-button {
+  position: relative;
   width: 42px;
   height: 42px;
   border: 1px solid var(--button-border);
@@ -200,7 +201,7 @@ a.icon-button {
   stroke-linejoin: round;
 }
 
-#binderShuffleButton::before {
+.icon-button::before {
   content: "";
   display: none;
   position: absolute;
@@ -217,11 +218,11 @@ a.icon-button {
   animation: binder-shuffle-spin 680ms linear infinite;
 }
 
-#binderShuffleButton.is-loading::before {
+.icon-button.is-loading::before {
   display: block;
 }
 
-#binderShuffleButton.is-loading svg {
+.icon-button.is-loading svg {
   opacity: 0;
 }
 
