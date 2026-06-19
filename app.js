@@ -260,13 +260,18 @@ const BINDER_GAP_REVEAL_PAGE_RENDER_ORDER = 600;
 const BINDER_LEFT_STACK_RENDER_ORDER = 420;
 const BINDER_RIGHT_STACK_RENDER_ORDER = 300;
 const BINDER_STACK_RENDER_ORDER_STEP = 28;
-const BINDER_TEXTURE_CONCURRENCY = 10;
+const BINDER_TEXTURE_CONCURRENCY = 6;
+const BINDER_TEXTURE_URGENT_PRIORITY = 0;
+const BINDER_TEXTURE_APPLY_IDLE_BUDGET = 2;
+const BINDER_TEXTURE_APPLY_BATCH_DELAY_MS = 34;
+const BINDER_TEXTURE_APPLY_DEFER_MS = 120;
 const BINDER_ANIMATED_PRELOAD_PAGE_RADIUS = 1;
-const BINDER_PAGE_WINDOW_RADIUS = 8;
+const BINDER_PAGE_WINDOW_RADIUS = 6;
 const BINDER_PAGE_WINDOW_RECENTER_THRESHOLD = 4;
 const BINDER_PRELOAD_PAGE_RADIUS = 4;
 const BINDER_INITIAL_PRELOAD_IDLE_DELAY_MS = 180;
 const BINDER_CARD_LOAD_FADE_MS = 280;
+const BINDER_CARD_PLACEHOLDER_OPACITY = 0.24;
 const BINDER_INTRO_LINK_URL = "https://x.com/bis__cut";
 const BINDER_CARD_NFT_1_LINK_URL = "/cardnft1/";
 const BINDER_CARD_NFT_2_LINK_URL = "/";
@@ -576,6 +581,8 @@ let binderTextureQueueKey = "";
 let binderTextureTaskSequence = 0;
 let binderTextureActiveLoads = 0;
 let binderTextureActiveAnimatedLoads = 0;
+let binderTextureApplyFrame = 0;
+let binderTextureApplyTimer = 0;
 let binderInteractionActiveUntil = 0;
 let binderShuffleLoadingToken = 0;
 let binderPageStatusInput = null;
@@ -583,6 +590,8 @@ let binderPageStatusEditMode = null;
 let rememberedBinderViewFocus = null;
 const binderTextureQueue = [];
 const binderTextureQueuedPositions = new Set();
+const binderTextureApplyQueue = [];
+const binderTextureApplyPositions = new Set();
 const cardRaycaster = new THREE.Raycaster();
 const cardPointer = new THREE.Vector2();
 const binderRaycaster = new THREE.Raycaster();
@@ -1374,7 +1383,7 @@ function beginBinderOpenCardButtonLoading(token) {
   binderOpenCardLoadingToken = token;
   binderOpenCardLoadingTimer = window.setTimeout(() => {
     binderOpenCardLoadingTimer = 0;
-    if (token !== binderOpenCardLoadingToken || !binderCardViewTransitionActive) return;
+    if (token !== binderOpenCardLoadingToken) return;
     els.binderOpenCardButton.classList.add("is-loading");
     els.binderOpenCardButton.setAttribute("aria-busy", "true");
   }, BINDER_OPEN_CARD_LOADING_DELAY_MS);
@@ -1382,6 +1391,7 @@ function beginBinderOpenCardButtonLoading(token) {
 
 function markBinderOpenCardPrepared(token) {
   if (token !== binderOpenCardLoadingToken) return;
+  if (els.binderOpenCardButton.classList.contains("is-loading")) return;
   if (!binderOpenCardLoadingTimer) return;
   window.clearTimeout(binderOpenCardLoadingTimer);
   binderOpenCardLoadingTimer = 0;
@@ -4616,7 +4626,7 @@ function createBinderCard(texture, cardIndex, side, binderPosition = -1) {
     clearcoat: 0.2,
     clearcoatRoughness: 0.52,
     transparent: true,
-    opacity: hasCard ? 0 : 1,
+    opacity: hasCard ? BINDER_CARD_PLACEHOLDER_OPACITY : 1,
     depthTest: false,
     depthWrite: false,
     side: THREE.FrontSide,
@@ -4725,7 +4735,11 @@ function promoteBinderTextureTask(position, priority) {
 }
 
 function pumpBinderTextureQueue() {
-  if (isBinderTurnMoving()) {
+  if (!binderTextureQueue.length) return;
+
+  const now = performance.now();
+  const hasRunnableTask = binderTextureQueue.some((entry) => !shouldDeferBinderTextureEntry(entry, now));
+  if (!hasRunnableTask) {
     requestBinderMaintenance(120);
     return;
   }
@@ -4733,7 +4747,8 @@ function pumpBinderTextureQueue() {
   const concurrencyLimit = BINDER_TEXTURE_CONCURRENCY;
   while (binderTextureActiveLoads < concurrencyLimit && binderTextureQueue.length) {
     const taskIndex = binderTextureQueue.findIndex((entry) => (
-      !entry.animated || binderTextureActiveAnimatedLoads < 1
+      !shouldDeferBinderTextureEntry(entry, now)
+      && (!entry.animated || binderTextureActiveAnimatedLoads < 1)
     ));
     if (taskIndex === -1) break;
     const [task] = binderTextureQueue.splice(taskIndex, 1);
@@ -4755,25 +4770,7 @@ async function loadQueuedBinderTexture(task) {
     if (task.token !== binderBuildToken) return;
     const currentMesh = binderCardMeshByPosition.get(task.position);
     if (currentMesh) {
-      if (isBinderTurnMoving()) {
-        currentMesh.userData.textureLoading = false;
-        requestBinderMaintenance(120);
-        return;
-      }
-
-      prepareTextureForImmediateDisplay(texture);
-      currentMesh.material.map = texture;
-      currentMesh.material.opacity = 0;
-      currentMesh.material.needsUpdate = true;
-      currentMesh.userData.textureLoaded = true;
-      currentMesh.userData.textureLoading = false;
-      currentMesh.userData.textureFadeStartedAt = performance.now();
-      currentMesh.userData.textureFadeComplete = false;
-      const shouldRender = currentMesh.userData.renderOnApply || isBinderPositionVisible(task.position);
-      currentMesh.userData.renderOnApply = false;
-      if (shouldRender) {
-        startBinderRenderLoop();
-      }
+      queueBinderTextureApply(task, texture);
     }
   } catch (error) {
     const currentMesh = binderCardMeshByPosition.get(task.position);
@@ -4786,6 +4783,137 @@ async function loadQueuedBinderTexture(task) {
     }
     pumpBinderTextureQueue();
   }
+}
+
+function queueBinderTextureApply(task, texture) {
+  const currentMesh = binderCardMeshByPosition.get(task.position);
+  if (!currentMesh || currentMesh.userData.textureLoaded) return;
+
+  const existing = binderTextureApplyQueue.find((entry) => entry.position === task.position);
+  if (existing) {
+    existing.texture = texture;
+    existing.token = task.token;
+    existing.priority = Math.min(existing.priority, task.priority);
+  } else {
+    binderTextureApplyQueue.push({
+      position: task.position,
+      token: task.token,
+      texture,
+      priority: task.priority,
+      sequence: task.sequence,
+    });
+    binderTextureApplyPositions.add(task.position);
+  }
+
+  binderTextureApplyQueue.sort((a, b) => a.priority - b.priority || a.sequence - b.sequence);
+  requestBinderTextureApplyFlush();
+}
+
+function shouldDeferBinderTextureWork(now = performance.now(), options = {}) {
+  return binderCardViewTransitionActive
+    || (!options.allowPreparingSpread && binderPreparingSpread)
+    || isBinderTurnMoving()
+    || isBinderCameraMoving()
+    || now < binderInteractionActiveUntil;
+}
+
+function shouldDeferBinderTextureEntry(entry, now = performance.now()) {
+  return shouldDeferBinderTextureWork(now, {
+    allowPreparingSpread: isUrgentBinderTexturePriority(entry?.priority),
+  });
+}
+
+function isUrgentBinderTexturePriority(priority) {
+  return Number.isFinite(priority) && priority < BINDER_TEXTURE_URGENT_PRIORITY;
+}
+
+function requestBinderTextureApplyFlush(delay = 0) {
+  if (!binderTextureApplyQueue.length || binderTextureApplyFrame || binderTextureApplyTimer) return;
+
+  if (delay > 0) {
+    binderTextureApplyTimer = window.setTimeout(() => {
+      binderTextureApplyTimer = 0;
+      requestBinderTextureApplyFlush();
+    }, delay);
+    return;
+  }
+
+  binderTextureApplyFrame = requestAnimationFrame(flushBinderTextureApplyQueue);
+}
+
+function flushBinderTextureApplyQueue(now = performance.now()) {
+  binderTextureApplyFrame = 0;
+  if (!binderTextureApplyQueue.length) return;
+
+  if (!galleryOpen || !isBinderMode || !binderRoot || els.binderPanel.hidden) {
+    clearBinderTextureApplyQueue();
+    return;
+  }
+
+  const hasRunnableEntry = binderTextureApplyQueue.some((entry) => !shouldDeferBinderTextureEntry(entry, now));
+  if (!hasRunnableEntry) {
+    requestBinderTextureApplyFlush(BINDER_TEXTURE_APPLY_DEFER_MS);
+    return;
+  }
+
+  let applied = 0;
+  while (applied < BINDER_TEXTURE_APPLY_IDLE_BUDGET && binderTextureApplyQueue.length) {
+    const entryIndex = binderTextureApplyQueue.findIndex((candidate) => !shouldDeferBinderTextureEntry(candidate, now));
+    if (entryIndex === -1) break;
+    const [entry] = binderTextureApplyQueue.splice(entryIndex, 1);
+    binderTextureApplyPositions.delete(entry.position);
+    if (applyQueuedBinderTexture(entry, now)) applied += 1;
+  }
+
+  if (applied > 0) startBinderRenderLoop();
+  if (binderTextureApplyQueue.length) {
+    requestBinderTextureApplyFlush(BINDER_TEXTURE_APPLY_BATCH_DELAY_MS);
+  }
+  pumpBinderTextureQueue();
+}
+
+function applyQueuedBinderTexture(entry, now = performance.now()) {
+  const currentMesh = binderCardMeshByPosition.get(entry.position);
+  if (entry.token !== binderBuildToken || !currentMesh || currentMesh.userData.textureLoaded) {
+    if (currentMesh) currentMesh.userData.textureLoading = false;
+    return false;
+  }
+
+  const targetOpacity = getBinderPageOpacityForPosition(entry.position);
+  const visibleFloor = getBinderUnloadedCardOpacity(targetOpacity);
+  const startOpacity = clamp(
+    Math.max(currentMesh.material.opacity ?? 0, visibleFloor),
+    0,
+    Math.max(targetOpacity, visibleFloor),
+  );
+  prepareTextureForImmediateDisplay(entry.texture);
+  currentMesh.material.map = entry.texture;
+  currentMesh.material.opacity = startOpacity;
+  currentMesh.material.needsUpdate = true;
+  currentMesh.userData.textureLoaded = true;
+  currentMesh.userData.textureLoading = false;
+  currentMesh.userData.textureFadeStartedAt = now;
+  currentMesh.userData.textureFadeStartOpacity = startOpacity;
+  currentMesh.userData.textureFadeComplete = false;
+  currentMesh.userData.renderOnApply = false;
+  return true;
+}
+
+function clearBinderTextureApplyQueue() {
+  if (binderTextureApplyFrame) {
+    cancelAnimationFrame(binderTextureApplyFrame);
+    binderTextureApplyFrame = 0;
+  }
+  if (binderTextureApplyTimer) {
+    window.clearTimeout(binderTextureApplyTimer);
+    binderTextureApplyTimer = 0;
+  }
+  for (const entry of binderTextureApplyQueue) {
+    const mesh = binderCardMeshByPosition.get(entry.position);
+    if (mesh && !mesh.userData.textureLoaded) mesh.userData.textureLoading = false;
+  }
+  binderTextureApplyQueue.length = 0;
+  binderTextureApplyPositions.clear();
 }
 
 function loadBinderBackTexture(token) {
@@ -4802,7 +4930,7 @@ function loadBinderBackTexture(token) {
       : null;
     getBackTexture(card).then((texture) => {
       if (token !== binderBuildToken || !child.parent) return;
-      if (isBinderTurnMoving()) {
+      if (shouldDeferBinderTextureWork()) {
         requestBinderMaintenance(120);
         return;
       }
@@ -5012,6 +5140,7 @@ function clearBinderRoot() {
   binderTextureQueueKey = "";
   binderTextureQueue.length = 0;
   binderTextureQueuedPositions.clear();
+  clearBinderTextureApplyQueue();
 }
 
 function removeBinderPage(page) {
@@ -6036,7 +6165,6 @@ async function transitionIndividualCardToFocusedBinder() {
   try {
     const prepared = await openFocusedBinderGalleryForCard(cardIndex);
     const focusedMesh = prepared ? getBinderFocusedMesh() : null;
-    renderBinderSceneOnce({ immediateCamera: true });
     const targetRect = getBinderMeshScreenRect(focusedMesh) || getCenteredFallbackRect();
 
     requestAnimationFrame(() => {
@@ -6089,7 +6217,7 @@ async function openFocusedBinderGalleryForCard(cardIndex) {
   if (focusPosition === -1) return false;
 
   focusBinderPosition(focusPosition, { immediate: true });
-  renderBinderSceneOnce({ immediateCamera: true });
+  renderBinderSceneOnce({ includePreload: false, immediateCamera: true });
   return true;
 }
 
@@ -6124,7 +6252,6 @@ async function transitionFocusedBinderCardToIndividual(cardIndex, focusedMesh, {
     const frontTexture = prepared?.frontTexture || getImmediateBinderMeshTexture(focusedMesh);
     const backTexture = prepared?.backTexture || null;
     const effectTextures = prepared?.effectTextures || null;
-    markBinderOpenCardPrepared(loadingToken);
     const cardOptions = {};
     if (frontTexture) cardOptions.frontTexture = frontTexture;
     if (backTexture) cardOptions.backTexture = backTexture;
@@ -6138,9 +6265,14 @@ async function transitionFocusedBinderCardToIndividual(cardIndex, focusedMesh, {
     cardGroup.rotation.x = 0;
     cardGroup.rotation.y = 0;
     resizeCardRenderer();
-    cardRenderer.render(cardScene, cardCamera);
 
     const targetRect = getIndividualCardScreenRect() || getCenteredFallbackRect();
+    await new Promise((resolve) => {
+      requestAnimationFrame(() => {
+        markBinderOpenCardPrepared(loadingToken);
+        resolve();
+      });
+    });
     requestAnimationFrame(() => {
       els.body.classList.add("binder-card-transition-away");
       applyTransitionRect(transitionCard, targetRect);
@@ -7573,6 +7705,10 @@ function updateBinderAnimation(frameTime = performance.now()) {
   }
   const keepAnimating = turnActive || cameraActive || interactionActive || animatedRecords.size > 0 || fadeActive;
   binderLastAnimationIdleOnly = !turnActive && !cameraActive && !interactionActive && !fadeActive && animatedRecords.size > 0;
+  if (!turnActive && !cameraActive && !interactionActive) {
+    if (binderTextureApplyQueue.length) requestBinderTextureApplyFlush();
+    pumpBinderTextureQueue();
+  }
   if (!keepAnimating) requestBinderMaintenance();
   return keepAnimating;
 }
@@ -7821,7 +7957,7 @@ function setBinderPageOpacity(page, visibilityFactor = 1, now = performance.now(
 
 function getBinderCardRenderedOpacity(mesh, pageOpacity, now = performance.now()) {
   if (!mesh.userData.binderCard) return pageOpacity;
-  if (!mesh.userData.textureLoaded) return 0;
+  if (!mesh.userData.textureLoaded) return getBinderUnloadedCardOpacity(pageOpacity);
   if (mesh.userData.textureFadeComplete) return pageOpacity;
 
   const startedAt = mesh.userData.textureFadeStartedAt;
@@ -7836,7 +7972,18 @@ function getBinderCardRenderedOpacity(mesh, pageOpacity, now = performance.now()
     return pageOpacity;
   }
 
-  return pageOpacity * easeInOutCubic(progress);
+  const startOpacity = Number.isFinite(mesh.userData.textureFadeStartOpacity)
+    ? clamp(mesh.userData.textureFadeStartOpacity, 0, Math.max(pageOpacity, 1))
+    : getBinderUnloadedCardOpacity(pageOpacity);
+  return THREE.MathUtils.lerp(
+    Math.min(startOpacity, pageOpacity),
+    pageOpacity,
+    easeInOutCubic(progress),
+  );
+}
+
+function getBinderUnloadedCardOpacity(pageOpacity) {
+  return clamp(pageOpacity, 0, 1) * BINDER_CARD_PLACEHOLDER_OPACITY;
 }
 
 function updateBinderCardLoadFades(now = performance.now()) {
