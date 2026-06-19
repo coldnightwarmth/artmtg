@@ -1,9 +1,9 @@
 import * as THREE from "three";
 import { CARD_NFTS as CARD_NFT_1S } from "./cardnft-data.js";
-import { CARD_NFT_2S } from "./cardnft2-data.js";
-import { CARD_NFT_OWNER_SNAPSHOT } from "./cardnft-owners.js?v=cardnft-2";
+import { CARD_NFT_2S } from "./cardnft2-data.js?v=cardnft2-2";
+import { CARD_NFT_OWNER_SNAPSHOT } from "./cardnft-owners.js?v=cardnft-3";
 import { CARD_NFT_TRAIT_CATEGORIES as CARD_NFT_1_TRAIT_CATEGORIES, CARD_NFT_TRAITS as CARD_NFT_1_TRAITS } from "./cardnft-traits.js";
-import { CARD_NFT_2_TRAIT_CATEGORIES, CARD_NFT_2_TRAITS } from "./cardnft2-traits.js";
+import { CARD_NFT_2_TRAIT_CATEGORIES, CARD_NFT_2_TRAITS } from "./cardnft2-traits.js?v=cardnft2-2";
 import { CARD_NFT_2_COMMON_IDS } from "./cardnft2-common-ids.js";
 import { CARD_NFT_ANIMATED } from "./cardnft-animated.js";
 import { CARD_NFT_ANIMATED_SPRITES } from "./cardnft-animated-sprites.js";
@@ -265,6 +265,7 @@ const BINDER_TEXTURE_URGENT_PRIORITY = 0;
 const BINDER_TEXTURE_APPLY_IDLE_BUDGET = 2;
 const BINDER_TEXTURE_APPLY_BATCH_DELAY_MS = 34;
 const BINDER_TEXTURE_APPLY_DEFER_MS = 120;
+const BINDER_SHUFFLE_PRELOAD_CONCURRENCY = 6;
 const BINDER_ANIMATED_PRELOAD_PAGE_RADIUS = 1;
 const BINDER_PAGE_WINDOW_RADIUS = 6;
 const BINDER_PAGE_WINDOW_RECENTER_THRESHOLD = 4;
@@ -5322,17 +5323,34 @@ function prepareAndMoveBinderToSpread(turn, currentPage) {
 }
 
 async function prepareAndMoveBinderToSpreadAfterCardsLoad(turn, currentPage, loadingToken) {
-  const prepared = prepareBinderSpreadWindow(turn, currentPage);
+  const prepared = beginBinderSpreadPreparation(turn, currentPage);
   if (!prepared) return false;
 
   try {
     const positions = getBinderFlipReadyPositions(prepared.startTurn, prepared.nextTurn);
-    queueBinderTextureLoadsForPositions(positions, binderBuildToken, { priority: -4 });
-    const ready = await waitForBinderPositionsLoaded(positions, {
+    const preloadedTextures = await preloadBinderTexturesForPositions(positions, {
       loadingToken,
       preparationToken: prepared.token,
     });
-    if (!ready || prepared.token !== binderSpreadPreparationToken) return false;
+    if (!preloadedTextures || prepared.token !== binderSpreadPreparationToken) return false;
+
+    ensureBinderPageWindow({
+      force: true,
+      center: getBinderPageWindowCenterForTurn(prepared.nextTurn),
+      queueTextures: false,
+      updateTransforms: false,
+    });
+    if (prepared.token !== binderSpreadPreparationToken) return false;
+    applyPreloadedBinderTexturesForPositions(preloadedTextures);
+
+    if (!areBinderPositionsLoaded(positions)) {
+      queueBinderTextureLoadsForPositions(positions, binderBuildToken, { priority: -4 });
+      const ready = await waitForBinderPositionsLoaded(positions, {
+        loadingToken,
+        preparationToken: prepared.token,
+      });
+      if (!ready || prepared.token !== binderSpreadPreparationToken) return false;
+    }
 
     clearBinderSpreadPreparation(prepared.token);
     moveBinderToSpread(prepared.nextTurn, { startTurn: prepared.startTurn });
@@ -5345,25 +5363,31 @@ async function prepareAndMoveBinderToSpreadAfterCardsLoad(turn, currentPage, loa
 }
 
 function prepareBinderSpreadWindow(turn, currentPage) {
+  const prepared = beginBinderSpreadPreparation(turn, currentPage);
+  if (!prepared) return null;
+
+  ensureBinderPageWindow({
+    force: true,
+    center: getBinderPageWindowCenterForTurn(prepared.nextTurn),
+    queueTextures: false,
+    updateTransforms: false,
+  });
+  if (prepared.token !== binderSpreadPreparationToken) {
+    clearBinderSpreadPreparation(prepared.token);
+    return null;
+  }
+
+  return prepared;
+}
+
+function beginBinderSpreadPreparation(turn, currentPage) {
   const nextTurn = clamp(Math.round(turn), 0, binderPageCount);
   if (nextTurn === clamp(Math.round(binderTargetTurn), 0, binderPageCount)) return null;
 
   const token = ++binderSpreadPreparationToken;
   const direction = Math.sign(nextTurn - currentPage) || 1;
   const startTurn = clamp(nextTurn - direction, 0, binderPageCount);
-
   binderPreparingSpread = true;
-  ensureBinderPageWindow({
-    force: true,
-    center: getBinderPageWindowCenterForTurn(nextTurn),
-    queueTextures: false,
-    updateTransforms: false,
-  });
-  if (token !== binderSpreadPreparationToken) {
-    clearBinderSpreadPreparation(token);
-    return null;
-  }
-
   return { nextTurn, startTurn, token };
 }
 
@@ -5400,6 +5424,73 @@ function getBinderSpreadPositionsForTurn(turn) {
   }
 
   return positions;
+}
+
+async function preloadBinderTexturesForPositions(positions, { loadingToken = null, preparationToken = null } = {}) {
+  const entries = Array.from(positions)
+    .map((position) => ({ position, cardIndex: binderVisibleIndexes[position] }))
+    .filter(({ cardIndex }) => Number.isInteger(cardIndex));
+  if (!entries.length) return new Map();
+
+  const textures = new Map();
+  let nextEntry = 0;
+  let cancelled = false;
+  const isCancelled = () => (
+    (Number.isInteger(loadingToken) && loadingToken !== binderShuffleLoadingToken)
+    || (Number.isInteger(preparationToken) && preparationToken !== binderSpreadPreparationToken)
+    || !galleryOpen
+    || !isBinderMode
+    || !binderVisibleIndexes.length
+  );
+
+  const worker = async () => {
+    while (!cancelled) {
+      if (isCancelled()) {
+        cancelled = true;
+        return;
+      }
+
+      const entry = entries[nextEntry];
+      nextEntry += 1;
+      if (!entry) return;
+
+      try {
+        const texture = await getBinderTexture(CARDS[entry.cardIndex]);
+        if (isCancelled()) {
+          cancelled = true;
+          return;
+        }
+        textures.set(entry.position, texture);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  };
+
+  const workerCount = Math.min(BINDER_SHUFFLE_PRELOAD_CONCURRENCY, entries.length);
+  await Promise.all(Array.from({ length: workerCount }, worker));
+  if (cancelled || isCancelled()) return null;
+  return textures;
+}
+
+function applyPreloadedBinderTexturesForPositions(textures) {
+  const now = performance.now();
+  for (const [position, texture] of textures) {
+    removePendingBinderTextureApplyPosition(position);
+    applyQueuedBinderTexture({
+      position,
+      token: binderBuildToken,
+      texture,
+      priority: -4,
+      sequence: binderTextureTaskSequence += 1,
+    }, now);
+  }
+}
+
+function removePendingBinderTextureApplyPosition(position) {
+  const entryIndex = binderTextureApplyQueue.findIndex((entry) => entry.position === position);
+  if (entryIndex !== -1) binderTextureApplyQueue.splice(entryIndex, 1);
+  binderTextureApplyPositions.delete(position);
 }
 
 function queueBinderTextureLoadsForPositions(positions, token, { priority = 0 } = {}) {
@@ -5854,7 +5945,7 @@ function getBinderSinglePageCenterX(side = getBinderSinglePageSide()) {
   return side % 2 === 0 ? BINDER_PAGE_WIDTH / 2 : -BINDER_PAGE_WIDTH / 2;
 }
 
-function focusBinderPosition(position, { immediate = false } = {}) {
+function focusBinderPosition(position, { immediate = false, pinnedTexture = null } = {}) {
   if (!Number.isInteger(position) || position < 0 || position >= binderVisibleIndexes.length) return;
 
   markBinderInteractionActive();
@@ -5872,6 +5963,7 @@ function focusBinderPosition(position, { immediate = false } = {}) {
     center: Math.floor(position / BINDER_PAGE_SLOTS),
     queueTextures: false,
   });
+  if (pinnedTexture) pinBinderFocusedCardTexture(getBinderFocusedMesh(), pinnedTexture);
   els.body.classList.add("binder-focused");
   els.binderPanel.classList.add("is-focused");
   updateBinderPageControls();
@@ -6143,6 +6235,7 @@ async function transitionIndividualCardToFocusedBinder() {
   if (binderCardViewTransitionActive || !Number.isInteger(currentIndex)) return;
 
   const cardIndex = currentIndex;
+  const returnTexture = getIndividualCardReturnTexture(cardIndex);
   lockBinderFocusZoomOut(BINDER_FOCUS_TRANSITION_LOCK_MS);
   setCardEffectViewTargetOpacity(0);
   const transitionCard = document.createElement("img");
@@ -6163,8 +6256,9 @@ async function transitionIndividualCardToFocusedBinder() {
   transitionCard.getBoundingClientRect();
 
   try {
-    const prepared = await openFocusedBinderGalleryForCard(cardIndex);
+    const prepared = await openFocusedBinderGalleryForCard(cardIndex, { pinnedTexture: returnTexture });
     const focusedMesh = prepared ? getBinderFocusedMesh() : null;
+    pinBinderFocusedCardTexture(focusedMesh, returnTexture);
     const targetRect = getBinderMeshScreenRect(focusedMesh) || getCenteredFallbackRect();
 
     requestAnimationFrame(() => {
@@ -6187,7 +6281,35 @@ async function transitionIndividualCardToFocusedBinder() {
   }
 }
 
-async function openFocusedBinderGalleryForCard(cardIndex) {
+function getIndividualCardReturnTexture(cardIndex = currentIndex) {
+  const currentTexture = cardFrontMesh?.material?.map || null;
+  if (currentTexture && currentTexture !== getCardPlaceholderTexture()) return currentTexture;
+  return getPreparedIndividualCardResult(CARDS[cardIndex])?.frontTexture || null;
+}
+
+function pinBinderFocusedCardTexture(mesh, texture) {
+  if (!mesh || !texture) return false;
+
+  const position = mesh.userData.binderPosition;
+  if (Number.isInteger(position)) {
+    removePendingBinderTextureApplyPosition(position);
+  }
+
+  const targetOpacity = 1;
+  prepareTextureForImmediateDisplay(texture);
+  mesh.material.map = texture;
+  mesh.material.opacity = Math.max(mesh.material.opacity ?? 0, targetOpacity);
+  mesh.material.needsUpdate = true;
+  mesh.userData.textureLoaded = true;
+  mesh.userData.textureLoading = false;
+  mesh.userData.renderOnApply = false;
+  mesh.userData.textureFadeStartedAt = performance.now();
+  mesh.userData.textureFadeStartOpacity = mesh.material.opacity;
+  mesh.userData.textureFadeComplete = true;
+  return true;
+}
+
+async function openFocusedBinderGalleryForCard(cardIndex, options = {}) {
   if (!Number.isInteger(cardIndex)) return false;
 
   traitSearchOpen = false;
@@ -6216,7 +6338,8 @@ async function openFocusedBinderGalleryForCard(cardIndex) {
   const focusPosition = binderVisibleIndexes.indexOf(cardIndex);
   if (focusPosition === -1) return false;
 
-  focusBinderPosition(focusPosition, { immediate: true });
+  focusBinderPosition(focusPosition, { immediate: true, pinnedTexture: options.pinnedTexture });
+  pinBinderFocusedCardTexture(getBinderFocusedMesh(), options.pinnedTexture);
   renderBinderSceneOnce({ includePreload: false, immediateCamera: true });
   return true;
 }
