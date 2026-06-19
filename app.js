@@ -301,9 +301,15 @@ const CARD_SWAP_DISTANCE = CARD_WIDTH * 1.12;
 const CARD_SWAP_MIN_OPACITY = 0;
 const CARD_SWAP_MS = 285;
 const CARD_SWAP_LOADING_DELAY_MS = 300;
+const BINDER_OPEN_CARD_LOADING_DELAY_MS = CARD_SWAP_LOADING_DELAY_MS;
+const CARD_SHUFFLE_LOADING_DELAY_MS = CARD_SWAP_LOADING_DELAY_MS;
 const CARD_SHUFFLE_SPIN_MS = 520;
 const CARD_SHUFFLE_SPIN_DIRECTION = -1;
 const MAX_WARMED_INDIVIDUAL_CARD_EFFECTS = 64;
+const MAX_PREPARED_INDIVIDUAL_CARDS = 80;
+const INDIVIDUAL_CARD_PREWARM_RADIUS = 5;
+const INDIVIDUAL_CARD_PREWARM_STEP_DELAY_MS = 55;
+const FOCUSED_BINDER_CARD_PREWARM_DELAY_MS = 70;
 const GALLERY_PRIORITY_ROWS = 4;
 const GALLERY_CARD_HOVER_EXPAND_PX = 5;
 const GALLERY_CARD_TILT_MAX_X_DEG = 12.5;
@@ -385,6 +391,8 @@ const textureLoader = new THREE.TextureLoader();
 textureLoader.setCrossOrigin("anonymous");
 const nftTextureCache = new Map();
 const cardNft2EffectTextureCache = new Map();
+const preparedIndividualCardPromises = new Map();
+const preparedIndividualCardResults = new Map();
 const warmedIndividualCardEffectKeys = new Set();
 const warmedIndividualCardEffectQueue = [];
 const animatedTextureRecords = new Set();
@@ -461,6 +469,14 @@ let cardSwapToken = 0;
 let cardSwapTweenState = null;
 let cardSwapLoadingTimer = 0;
 let cardSwapLoadingButton = null;
+let individualCardPrewarmTimer = 0;
+let individualCardPrewarmToken = 0;
+let focusedBinderCardPrewarmTimer = 0;
+let focusedBinderCardPrewarmToken = 0;
+let binderOpenCardLoadingTimer = 0;
+let binderOpenCardLoadingToken = 0;
+let cardShuffleLoadingTimer = 0;
+let cardShuffleLoadingButton = null;
 let cardShuffleSpinY = 0;
 let cardShuffleSpinAnimating = false;
 let cardShuffleSpinToken = 0;
@@ -1080,6 +1096,23 @@ function setCard(index, options = {}) {
     }).catch(console.error);
   }
 
+  prepareIndividualCardFor3D(card).then(({ frontTexture, backTexture, effectTextures }) => {
+    if (token !== cardApplyToken) return;
+    if (!options.frontTexture && frontTexture) {
+      prepareTextureForImmediateDisplay(frontTexture);
+      cardFrontMesh.material.map = frontTexture;
+      cardFrontMesh.material.needsUpdate = true;
+    }
+    if (!options.backTexture && backTexture) {
+      prepareTextureForImmediateDisplay(backTexture);
+      cardBackMesh.material.map = backTexture;
+      cardBackMesh.material.needsUpdate = true;
+    }
+    if (!Object.prototype.hasOwnProperty.call(options, "effectTextures")) {
+      applyLoadedIndividualCardEffect(card, effectTextures);
+    }
+  }).catch(console.error);
+
   targetRotationX = 0;
   targetRotationY = 0;
   resetCardPan(true);
@@ -1184,6 +1217,86 @@ function preloadCardEffectTextures(card) {
   loadCardEffectTexturesForProfile(profile).catch(() => {});
 }
 
+function prepareIndividualCardFor3D(card) {
+  if (!card) {
+    return Promise.resolve({
+      frontTexture: null,
+      backTexture: getBackPlaceholderTexture(),
+      effectTextures: null,
+    });
+  }
+
+  const key = getPreparedIndividualCardKey(card);
+  if (preparedIndividualCardPromises.has(key)) {
+    const promise = preparedIndividualCardPromises.get(key);
+    preparedIndividualCardPromises.delete(key);
+    preparedIndividualCardPromises.set(key, promise);
+    return promise;
+  }
+
+  const effectProfile = getCardEffectProfile(card);
+  const promise = Promise.all([
+    getPreparedCardTexture(card).catch((error) => {
+      console.error(error);
+      return null;
+    }),
+    getBackTexture(card).catch((error) => {
+      console.error(error);
+      return getBackPlaceholderTexture();
+    }),
+    loadCardEffectTexturesForProfile(effectProfile).catch(() => null),
+  ]).then(([frontTexture, backTexture, effectTextures]) => {
+    try {
+      prewarmIndividualCardEffect(card, frontTexture, backTexture, effectTextures);
+    } catch {
+      // Texture preparation still succeeded; the visible render path can compile lazily.
+    }
+    const prepared = { frontTexture, backTexture, effectTextures };
+    rememberPreparedIndividualCardResult(key, prepared);
+    return prepared;
+  });
+
+  preparedIndividualCardPromises.set(key, promise);
+  trimPreparedIndividualCardPromises();
+  return promise;
+}
+
+function getPreparedIndividualCardKey(card) {
+  return card?.stableId || `${card?.collection || ACTIVE_COLLECTION_ID}:${card?.mint || card?.title || card?.setIndex || card?.file || 0}`;
+}
+
+function trimPreparedIndividualCardPromises() {
+  while (preparedIndividualCardPromises.size > MAX_PREPARED_INDIVIDUAL_CARDS) {
+    const oldestKey = preparedIndividualCardPromises.keys().next().value;
+    if (oldestKey === undefined) break;
+    preparedIndividualCardPromises.delete(oldestKey);
+    preparedIndividualCardResults.delete(oldestKey);
+  }
+
+  while (preparedIndividualCardResults.size > MAX_PREPARED_INDIVIDUAL_CARDS) {
+    const oldestKey = preparedIndividualCardResults.keys().next().value;
+    if (oldestKey === undefined) break;
+    preparedIndividualCardResults.delete(oldestKey);
+    preparedIndividualCardPromises.delete(oldestKey);
+  }
+}
+
+function rememberPreparedIndividualCardResult(key, prepared) {
+  preparedIndividualCardResults.delete(key);
+  preparedIndividualCardResults.set(key, prepared);
+  trimPreparedIndividualCardPromises();
+}
+
+function getPreparedIndividualCardResult(card) {
+  if (!card) return null;
+  const key = getPreparedIndividualCardKey(card);
+  if (!preparedIndividualCardResults.has(key)) return null;
+  const prepared = preparedIndividualCardResults.get(key);
+  preparedIndividualCardResults.delete(key);
+  preparedIndividualCardResults.set(key, prepared);
+  return prepared;
+}
+
 function getCardNft2Number(card) {
   if (!card) return null;
   const values = [card.title, card.stableId, card.file];
@@ -1201,25 +1314,17 @@ async function transitionAdjacentCard(direction, loadingButton = null) {
   const token = ++cardSwapToken;
   const nextIndex = getAdjacentIndividualCardIndex(direction);
   const nextCard = CARDS[nextIndex];
-  const nextEffectProfile = getCardEffectProfile(nextCard);
   setIndividualCardControlsDisabled(true);
   beginCardSwapButtonLoading(loadingButton, token);
   updateCardNameJumpState();
   try {
     if (token !== cardSwapToken) return;
-    const [nextTexture, backTexture, effectTextures] = await Promise.all([
-      getPreparedCardTexture(nextCard).catch((error) => {
-        console.error(error);
-        return null;
-      }),
-      getBackTexture(nextCard).catch((error) => {
-        console.error(error);
-        return getBackPlaceholderTexture();
-      }),
-      loadCardEffectTexturesForProfile(nextEffectProfile).catch(() => null),
-    ]);
+    const {
+      frontTexture: nextTexture,
+      backTexture,
+      effectTextures,
+    } = await prepareIndividualCardFor3D(nextCard);
     if (token !== cardSwapToken) return;
-    prewarmIndividualCardEffect(nextCard, nextTexture, backTexture, effectTextures);
     prepareCardSwapIncomingGroup(direction, nextTexture, backTexture, nextCard, effectTextures);
     await warmPreparedCardSwapIncomingGroup(token);
     if (token !== cardSwapToken) return;
@@ -1262,6 +1367,73 @@ function clearCardSwapButtonLoading() {
     cardSwapLoadingButton.setAttribute("aria-busy", "false");
     cardSwapLoadingButton = null;
   }
+}
+
+function beginBinderOpenCardButtonLoading(token) {
+  clearBinderOpenCardButtonLoading();
+  binderOpenCardLoadingToken = token;
+  binderOpenCardLoadingTimer = window.setTimeout(() => {
+    binderOpenCardLoadingTimer = 0;
+    if (token !== binderOpenCardLoadingToken || !binderCardViewTransitionActive) return;
+    els.binderOpenCardButton.classList.add("is-loading");
+    els.binderOpenCardButton.setAttribute("aria-busy", "true");
+  }, BINDER_OPEN_CARD_LOADING_DELAY_MS);
+}
+
+function markBinderOpenCardPrepared(token) {
+  if (token !== binderOpenCardLoadingToken) return;
+  if (!binderOpenCardLoadingTimer) return;
+  window.clearTimeout(binderOpenCardLoadingTimer);
+  binderOpenCardLoadingTimer = 0;
+}
+
+function endBinderOpenCardButtonLoading(token) {
+  if (token !== binderOpenCardLoadingToken) return;
+  clearBinderOpenCardButtonLoading();
+}
+
+function clearBinderOpenCardButtonLoading() {
+  if (binderOpenCardLoadingTimer) {
+    window.clearTimeout(binderOpenCardLoadingTimer);
+    binderOpenCardLoadingTimer = 0;
+  }
+  els.binderOpenCardButton.classList.remove("is-loading");
+  els.binderOpenCardButton.setAttribute("aria-busy", "false");
+}
+
+function beginCardShuffleButtonLoading(button, token) {
+  clearCardShuffleButtonLoading();
+  if (!(button instanceof HTMLElement)) return;
+  cardShuffleLoadingButton = button;
+  cardShuffleLoadingTimer = window.setTimeout(() => {
+    cardShuffleLoadingTimer = 0;
+    if (token !== cardShuffleSpinToken || !cardShuffleSpinAnimating || cardShuffleLoadingButton !== button) return;
+    button.classList.add("is-loading");
+    button.setAttribute("aria-busy", "true");
+  }, CARD_SHUFFLE_LOADING_DELAY_MS);
+}
+
+function markCardShufflePrepared(token) {
+  if (token !== cardShuffleSpinToken) return;
+  if (!cardShuffleLoadingTimer) return;
+  window.clearTimeout(cardShuffleLoadingTimer);
+  cardShuffleLoadingTimer = 0;
+}
+
+function endCardShuffleButtonLoading(token) {
+  if (token !== cardShuffleSpinToken) return;
+  clearCardShuffleButtonLoading();
+}
+
+function clearCardShuffleButtonLoading() {
+  if (cardShuffleLoadingTimer) {
+    window.clearTimeout(cardShuffleLoadingTimer);
+    cardShuffleLoadingTimer = 0;
+  }
+  if (!cardShuffleLoadingButton) return;
+  cardShuffleLoadingButton.classList.remove("is-loading");
+  cardShuffleLoadingButton.setAttribute("aria-busy", "false");
+  cardShuffleLoadingButton = null;
 }
 
 function tweenCardSwap(direction, nextIndex, nextTexture, backTexture, effectTextures, token) {
@@ -1517,25 +1689,62 @@ function getPreparedCardTexture(card) {
 }
 
 function preloadAdjacentIndividualTextures(index) {
+  cancelIndividualCardPrewarmQueue();
   if (CARDS.length < 2) return;
   const sequence = getIndividualCardSequenceIndexes();
   const position = sequence.indexOf(index);
   if (position === -1 || sequence.length < 2) return;
-  const indexes = new Set([
-    sequence[modulo(position - 1, sequence.length)],
-    sequence[modulo(position + 1, sequence.length)],
-  ]);
-  for (const adjacentIndex of indexes) {
-    const card = CARDS[adjacentIndex];
-    const effectProfile = getCardEffectProfile(card);
-    Promise.all([
-      getPreparedCardTexture(card).catch(() => null),
-      getBackTexture(card).catch(() => null),
-      loadCardEffectTexturesForProfile(effectProfile).catch(() => null),
-    ]).then(([frontTexture, backTexture, effectTextures]) => {
-      prewarmIndividualCardEffect(card, frontTexture, backTexture, effectTextures);
-    }).catch(() => {});
+
+  const indexes = getNearbyIndividualCardPrewarmIndexes(sequence, position);
+  if (!indexes.length) return;
+
+  const token = ++individualCardPrewarmToken;
+  preloadNextIndividualCardTexture(indexes, token);
+}
+
+function getNearbyIndividualCardPrewarmIndexes(sequence, position) {
+  const indexes = [];
+  const seen = new Set([sequence[position]]);
+  const radius = Math.min(INDIVIDUAL_CARD_PREWARM_RADIUS, sequence.length - 1);
+
+  for (let distance = 1; distance <= radius; distance += 1) {
+    const previous = sequence[modulo(position - distance, sequence.length)];
+    if (!seen.has(previous)) {
+      seen.add(previous);
+      indexes.push(previous);
+    }
+
+    const next = sequence[modulo(position + distance, sequence.length)];
+    if (!seen.has(next)) {
+      seen.add(next);
+      indexes.push(next);
+    }
   }
+
+  return indexes;
+}
+
+function preloadNextIndividualCardTexture(indexes, token, offset = 0) {
+  if (token !== individualCardPrewarmToken || offset >= indexes.length) return;
+
+  const card = CARDS[indexes[offset]];
+  Promise.resolve()
+    .then(() => prepareIndividualCardFor3D(card))
+    .catch(() => {})
+    .finally(() => {
+      if (token !== individualCardPrewarmToken) return;
+      individualCardPrewarmTimer = window.setTimeout(() => {
+        individualCardPrewarmTimer = 0;
+        preloadNextIndividualCardTexture(indexes, token, offset + 1);
+      }, INDIVIDUAL_CARD_PREWARM_STEP_DELAY_MS);
+    });
+}
+
+function cancelIndividualCardPrewarmQueue() {
+  individualCardPrewarmToken += 1;
+  if (!individualCardPrewarmTimer) return;
+  window.clearTimeout(individualCardPrewarmTimer);
+  individualCardPrewarmTimer = 0;
 }
 
 function prewarmIndividualCardEffect(card, frontTexture, backTexture, effectTextures = null) {
@@ -1713,14 +1922,15 @@ async function shuffleCard() {
     next = sequence[Math.floor(Math.random() * sequence.length)];
   }
 
-  await spinToCard(next, { recordHistory: true });
+  await spinToCard(next, { recordHistory: true, loadingButton: els.shuffleButton });
 }
 
-async function spinToCard(nextIndex, { recordHistory = false } = {}) {
+async function spinToCard(nextIndex, { recordHistory = false, loadingButton = null } = {}) {
   if (CARDS.length < 2 || cardSwapAnimating || cardShuffleSpinAnimating || galleryOpen) return false;
 
   const targetIndex = clamp(nextIndex, 0, CARDS.length - 1);
   if (targetIndex === currentIndex) return false;
+  const targetCard = CARDS[targetIndex];
 
   if (recordHistory) {
     shuffleHistory.push(currentIndex);
@@ -1734,32 +1944,44 @@ async function spinToCard(nextIndex, { recordHistory = false } = {}) {
   dragState = null;
   targetRotationX = 0;
   targetRotationY = 0;
+  beginCardShuffleButtonLoading(loadingButton, token);
 
   try {
-    const [frontTexture, backTexture] = await Promise.all([
-      getPreparedCardTexture(CARDS[targetIndex]).catch((error) => {
+    let preparedResult = getPreparedIndividualCardResult(targetCard);
+    prepareIndividualCardFor3D(targetCard)
+      .then((result) => {
+        preparedResult = result;
+        return result;
+      })
+      .catch((error) => {
         console.error(error);
         return null;
-      }),
-      getBackTexture(CARDS[targetIndex]).catch((error) => {
+      });
+    const frontTexture = preparedResult?.frontTexture || (
+      await getPreparedCardTexture(targetCard).catch((error) => {
         console.error(error);
         return null;
-      }),
-    ]);
+      })
+    );
+    markCardShufflePrepared(token);
     if (token !== cardShuffleSpinToken) return false;
 
     await tweenCardShuffleSpin(targetIndex, frontTexture, token);
     if (token !== cardShuffleSpinToken) return false;
-    setCard(targetIndex, {
-      frontTexture,
-      backTexture,
+    preparedResult = preparedResult || getPreparedIndividualCardResult(targetCard);
+    const cardOptions = {
+      frontTexture: preparedResult?.frontTexture || frontTexture,
       preserveSpinVisuals: true,
-    });
+    };
+    if (preparedResult?.backTexture) cardOptions.backTexture = preparedResult.backTexture;
+    if (preparedResult) cardOptions.effectTextures = preparedResult.effectTextures;
+    setCard(targetIndex, cardOptions);
     return true;
   } finally {
     if (token === cardShuffleSpinToken) {
       resetCardShuffleSpinVisualState();
       cardShuffleSpinAnimating = false;
+      endCardShuffleButtonLoading(token);
       setIndividualCardControlsDisabled(false);
       updateCardNameJumpState();
     }
@@ -2895,6 +3117,7 @@ function withWalletStatusLabel(value) {
 function resetBinderGalleryPosition() {
   binderSpreadPreparationToken += 1;
   binderPreparingSpread = false;
+  cancelFocusedBinderCardPrewarm();
   binderTargetTurn = 0;
   binderTurn = 0;
   binderSinglePageSide = null;
@@ -3502,6 +3725,7 @@ function renderGallery() {
   updateGalleryViewModeButton();
   syncBinderIntroNoteModeTarget();
   if (traitSearchOpen) {
+    cancelFocusedBinderCardPrewarm();
     clearGalleryCardTilts();
     renderTraitSearch();
     els.galleryEmpty.hidden = true;
@@ -3525,6 +3749,7 @@ function renderGallery() {
   updateGalleryViewModeButton();
 
   if (empty) {
+    cancelFocusedBinderCardPrewarm();
     clearGalleryCardTilts();
     els.galleryGrid.hidden = true;
     els.binderPanel.hidden = true;
@@ -3542,6 +3767,7 @@ function renderGallery() {
     updateBinderItems(indexes);
     startBinderRenderLoop();
   } else {
+    cancelFocusedBinderCardPrewarm();
     stopBinderRenderLoop();
     deactivateAllAnimatedRecords();
     renderGrid(indexes);
@@ -3847,6 +4073,11 @@ function updateBinderItems(indexes) {
   const nextKey = indexes.map((index) => favoriteKey(index)).join("\u001f");
   if (nextKey === binderIndexesKey) {
     updateBinderPageControls();
+    if (isBinderFocused()) {
+      scheduleFocusedBinderCardPrewarm();
+    } else {
+      cancelFocusedBinderCardPrewarm();
+    }
     ensureBinderPageWindow();
     queueBinderTextureLoads(binderBuildToken, { force: true });
     return;
@@ -3870,6 +4101,11 @@ function updateBinderItems(indexes) {
   els.binderLoading.hidden = true;
   loadBinderBackTexture(token);
   updateBinderPageControls();
+  if (isBinderFocused()) {
+    scheduleFocusedBinderCardPrewarm();
+  } else {
+    cancelFocusedBinderCardPrewarm();
+  }
   resizeBinderRenderer();
   renderBinderSceneOnce({ includePreload: false, immediateCamera: true });
   queueBinderTextureLoads(token, { force: true, includePreload: false });
@@ -5355,6 +5591,29 @@ function getFocusedBinderCardIndex() {
   return isBinderFocused() ? binderVisibleIndexes[binderFocusPosition] : null;
 }
 
+function scheduleFocusedBinderCardPrewarm() {
+  cancelFocusedBinderCardPrewarm();
+  if (!galleryOpen || !isBinderMode || !isBinderFocused()) return;
+
+  const cardIndex = getFocusedBinderCardIndex();
+  if (!Number.isInteger(cardIndex) || !CARDS[cardIndex]) return;
+
+  const token = ++focusedBinderCardPrewarmToken;
+  focusedBinderCardPrewarmTimer = window.setTimeout(() => {
+    focusedBinderCardPrewarmTimer = 0;
+    if (token !== focusedBinderCardPrewarmToken) return;
+    if (!galleryOpen || !isBinderMode || getFocusedBinderCardIndex() !== cardIndex) return;
+    prepareIndividualCardFor3D(CARDS[cardIndex]).catch(console.error);
+  }, FOCUSED_BINDER_CARD_PREWARM_DELAY_MS);
+}
+
+function cancelFocusedBinderCardPrewarm() {
+  focusedBinderCardPrewarmToken += 1;
+  if (!focusedBinderCardPrewarmTimer) return;
+  window.clearTimeout(focusedBinderCardPrewarmTimer);
+  focusedBinderCardPrewarmTimer = 0;
+}
+
 function getBinderTurnForPosition(position) {
   if (!Number.isInteger(position) || position < 0) {
     return clamp(Math.round(binderTargetTurn), 0, binderPageCount);
@@ -5489,6 +5748,7 @@ function focusBinderPosition(position, { immediate = false } = {}) {
   updateBinderPageControls();
   startBinderRenderLoop();
   updateBinderAnimation();
+  scheduleFocusedBinderCardPrewarm();
 }
 
 function focusBinderIntroNote({ immediate = false } = {}) {
@@ -5510,6 +5770,7 @@ function focusBinderIntroNote({ immediate = false } = {}) {
   updateBinderPageControls();
   startBinderRenderLoop();
   updateBinderAnimation();
+  cancelFocusedBinderCardPrewarm();
   return true;
 }
 
@@ -5522,6 +5783,7 @@ function clearBinderFocus(options = {}) {
   binderLastOpenTap = null;
   els.body.classList.remove("binder-focused");
   els.binderPanel.classList.remove("is-focused");
+  cancelFocusedBinderCardPrewarm();
   if (introFocused) {
     binderSinglePageSide = BINDER_SINGLE_PAGE_COVER_SIDE;
     binderSinglePageSideTouched = true;
@@ -5716,6 +5978,7 @@ function leaveBinderFocusForCardJump() {
   binderSinglePageSide = null;
   els.body.classList.remove("binder-focused");
   els.binderPanel.classList.remove("is-focused");
+  cancelFocusedBinderCardPrewarm();
   updateBinderPageControls();
   startBinderRenderLoop();
   updateBinderAnimation();
@@ -5738,7 +6001,13 @@ async function openFocusedBinderCard() {
     return;
   }
 
-  await transitionFocusedBinderCardToIndividual(cardIndex, focusedMesh);
+  const loadingToken = binderOpenCardLoadingToken + 1;
+  beginBinderOpenCardButtonLoading(loadingToken);
+  try {
+    await transitionFocusedBinderCardToIndividual(cardIndex, focusedMesh, { loadingToken });
+  } finally {
+    endBinderOpenCardButtonLoading(loadingToken);
+  }
 }
 
 async function transitionIndividualCardToFocusedBinder() {
@@ -5824,19 +6093,14 @@ async function openFocusedBinderGalleryForCard(cardIndex) {
   return true;
 }
 
-async function transitionFocusedBinderCardToIndividual(cardIndex, focusedMesh) {
+async function transitionFocusedBinderCardToIndividual(cardIndex, focusedMesh, { loadingToken = 0 } = {}) {
   binderCardViewTransitionActive = true;
   if (!focusedMesh.userData.textureLoaded) {
-    const card = CARDS[cardIndex];
-    await getBinderTexture(card).then((texture) => {
-      prepareTextureForImmediateDisplay(texture);
-      focusedMesh.material.map = texture;
-      focusedMesh.material.opacity = getBinderPageOpacityForPosition(focusedMesh.userData.binderPosition);
-      focusedMesh.material.needsUpdate = true;
-      focusedMesh.userData.textureLoaded = true;
-      focusedMesh.userData.textureLoading = false;
-      renderBinderSceneOnce({ immediateCamera: true });
-    }).catch(console.error);
+    loadBinderTextureForPosition(
+      focusedMesh.userData.binderPosition,
+      binderBuildToken,
+      { renderOnApply: true, priority: 0 },
+    );
   }
 
   const transitionCard = document.createElement("img");
@@ -5856,9 +6120,16 @@ async function transitionFocusedBinderCardToIndividual(cardIndex, focusedMesh) {
     resetIndividualCardZoom();
     setCardEffectViewTargetOpacity(0, { immediate: true });
     const card = CARDS[cardIndex];
-    const effectProfile = getCardEffectProfile(card);
-    const effectTexturesPromise = loadCardEffectTexturesForProfile(effectProfile).catch(() => null);
-    setCard(cardIndex);
+    const prepared = getPreparedIndividualCardResult(card);
+    const frontTexture = prepared?.frontTexture || getImmediateBinderMeshTexture(focusedMesh);
+    const backTexture = prepared?.backTexture || null;
+    const effectTextures = prepared?.effectTextures || null;
+    markBinderOpenCardPrepared(loadingToken);
+    const cardOptions = {};
+    if (frontTexture) cardOptions.frontTexture = frontTexture;
+    if (backTexture) cardOptions.backTexture = backTexture;
+    if (prepared) cardOptions.effectTextures = effectTextures;
+    setCard(cardIndex, cardOptions);
     currentRotationX = 0;
     currentRotationY = 0;
     targetRotationX = 0;
@@ -5866,15 +6137,6 @@ async function transitionFocusedBinderCardToIndividual(cardIndex, focusedMesh) {
     cardShuffleSpinY = 0;
     cardGroup.rotation.x = 0;
     cardGroup.rotation.y = 0;
-    await Promise.all([
-      getCardTexture(card),
-      effectTexturesPromise,
-    ]).then(([texture, effectTextures]) => {
-      prepareTextureForImmediateDisplay(texture);
-      applyLoadedIndividualCardEffect(card, effectTextures);
-      cardFrontMesh.material.map = texture;
-      cardFrontMesh.material.needsUpdate = true;
-    }).catch(console.error);
     resizeCardRenderer();
     cardRenderer.render(cardScene, cardCamera);
 
@@ -5907,6 +6169,8 @@ async function transitionFocusedBinderCardToIndividual(cardIndex, focusedMesh) {
 }
 
 function getBinderTransitionImageSource(mesh, cardIndex) {
+  if (!mesh?.userData?.textureLoaded) return cardAssetUrl(CARDS[cardIndex]);
+
   const texture = mesh.material?.map;
   if (texture?.userData?.animatedRecord) return cardStillAssetUrl(CARDS[cardIndex]);
 
@@ -5919,6 +6183,11 @@ function getBinderTransitionImageSource(mesh, cardIndex) {
     }
   }
   return image?.currentSrc || image?.src || cardAssetUrl(CARDS[cardIndex]);
+}
+
+function getImmediateBinderMeshTexture(mesh) {
+  if (!mesh?.userData?.textureLoaded) return null;
+  return mesh.material?.map || null;
 }
 
 function getIndividualTransitionImageSource() {
