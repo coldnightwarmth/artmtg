@@ -2,18 +2,18 @@
 export const CARD_NFT_2_TRAIT_CATEGORIES = [
   "Status",
   "base card",
-  "top left",
-  "hero",
-  "bottom center",
-  "Rarity",
   "sprite",
-  "top center",
-  "right",
-  "bottom left",
-  "top right",
-  "left",
-  "bottom right",
   "center",
+  "right",
+  "hero",
+  "bottom left",
+  "Rarity",
+  "left",
+  "top center",
+  "top left",
+  "bottom center",
+  "top right",
+  "bottom right",
   "border",
   "overlay paint engraving",
   "color shapes",
@@ -67,7 +67,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -104,7 +104,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -693,7 +693,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -936,7 +936,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -1084,7 +1084,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -1310,7 +1310,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -1580,7 +1580,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -2067,7 +2067,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -2528,7 +2528,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -2751,7 +2751,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "top right",
@@ -3086,7 +3086,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -3586,7 +3586,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -3667,7 +3667,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -3700,7 +3700,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -3766,7 +3766,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -3934,7 +3934,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -4724,7 +4724,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "base card",
@@ -4831,7 +4831,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -5116,7 +5116,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -6548,7 +6548,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -8097,7 +8097,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "base card",
@@ -8544,7 +8544,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -8672,7 +8672,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -8894,7 +8894,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -8943,7 +8943,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -8972,7 +8972,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -9387,7 +9387,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -9936,7 +9936,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -10010,7 +10010,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "base card",
@@ -10080,7 +10080,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -10113,7 +10113,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -10356,7 +10356,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -11740,7 +11740,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -11814,7 +11814,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -12119,7 +12119,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "base card",
@@ -12152,7 +12152,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -12452,7 +12452,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -13213,7 +13213,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -13242,7 +13242,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -13357,7 +13357,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -13451,7 +13451,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -13595,7 +13595,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -13624,7 +13624,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -13760,7 +13760,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -13908,7 +13908,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -13990,7 +13990,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -14894,7 +14894,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -15437,7 +15437,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -15657,7 +15657,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -15954,7 +15954,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -16012,7 +16012,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -16407,7 +16407,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -16772,7 +16772,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -16846,7 +16846,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -17159,7 +17159,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -17320,7 +17320,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -17698,7 +17698,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -17739,7 +17739,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -18476,7 +18476,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -18538,7 +18538,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -18821,7 +18821,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -19224,7 +19224,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -19335,7 +19335,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -19504,7 +19504,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -19553,7 +19553,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "base card",
@@ -19586,7 +19586,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "base card",
@@ -19947,7 +19947,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -21372,7 +21372,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -22067,7 +22067,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -22290,7 +22290,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "base card",
@@ -22615,7 +22615,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -22652,7 +22652,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -24071,7 +24071,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -24437,7 +24437,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -24503,7 +24503,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -24540,7 +24540,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -24644,7 +24644,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -25712,7 +25712,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -25942,7 +25942,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -25967,7 +25967,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -26404,7 +26404,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -26581,7 +26581,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -26844,7 +26844,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -26943,7 +26943,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -27468,7 +27468,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -27760,7 +27760,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -28007,7 +28007,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "base card",
@@ -28266,7 +28266,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "base card",
@@ -28625,7 +28625,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -30223,7 +30223,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -30602,7 +30602,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -31266,7 +31266,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -31554,7 +31554,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -31744,7 +31744,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -31892,7 +31892,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -32213,7 +32213,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -32308,7 +32308,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -32564,7 +32564,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -32815,7 +32815,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -33080,7 +33080,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -33216,7 +33216,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -33290,7 +33290,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -33418,7 +33418,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -33476,7 +33476,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -33546,7 +33546,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -34930,7 +34930,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -35264,7 +35264,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -35463,7 +35463,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -35805,7 +35805,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -35925,7 +35925,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -36011,7 +36011,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -36092,7 +36092,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -36604,7 +36604,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -36633,7 +36633,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -36748,7 +36748,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -37287,7 +37287,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -37579,7 +37579,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -37620,7 +37620,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -37731,7 +37731,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -38031,7 +38031,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -38084,7 +38084,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -38310,7 +38310,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -38516,7 +38516,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -38582,7 +38582,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -39199,7 +39199,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -39232,7 +39232,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -39309,7 +39309,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -39866,7 +39866,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -40241,7 +40241,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -40556,7 +40556,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -40626,7 +40626,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "base card",
@@ -40824,7 +40824,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -40939,7 +40939,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -41024,7 +41024,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -41139,7 +41139,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -41164,7 +41164,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -41374,7 +41374,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -41646,7 +41646,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -41946,7 +41946,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -42609,7 +42609,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -42725,7 +42725,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -42999,7 +42999,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -43028,7 +43028,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -43213,7 +43213,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -43361,7 +43361,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "base card",
@@ -43793,7 +43793,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -46449,7 +46449,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -47671,7 +47671,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "base card",
@@ -47921,7 +47921,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -48395,7 +48395,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -48685,7 +48685,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -48792,7 +48792,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "base card",
@@ -49480,7 +49480,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -49678,7 +49678,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -50143,7 +50143,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -50201,7 +50201,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -50325,7 +50325,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -50662,7 +50662,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -51067,7 +51067,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -52465,7 +52465,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -53765,7 +53765,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -54543,7 +54543,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -54609,7 +54609,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -54712,7 +54712,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "base card",
@@ -55666,7 +55666,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -55831,7 +55831,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -55864,7 +55864,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "base card",
@@ -57352,7 +57352,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -57521,7 +57521,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -57554,7 +57554,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -57932,7 +57932,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -58287,7 +58287,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "base card",
@@ -58875,7 +58875,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -59068,7 +59068,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -59266,7 +59266,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -60841,7 +60841,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -61365,7 +61365,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -61579,7 +61579,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -61616,7 +61616,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -62159,7 +62159,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -62295,7 +62295,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -62480,7 +62480,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -62521,7 +62521,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -63563,7 +63563,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -63653,7 +63653,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -63744,7 +63744,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -65485,7 +65485,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -66176,7 +66176,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -66369,7 +66369,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -66599,7 +66599,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -67609,7 +67609,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -68567,7 +68567,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "base card",
@@ -68892,7 +68892,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -69978,7 +69978,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -70270,7 +70270,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -70615,7 +70615,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -70644,7 +70644,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "base card",
@@ -71448,7 +71448,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -73017,7 +73017,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -73050,7 +73050,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -73433,7 +73433,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -75998,7 +75998,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "hero",
@@ -76776,7 +76776,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -76829,7 +76829,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom left",
@@ -77004,7 +77004,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -77273,7 +77273,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "hero",
@@ -77685,7 +77685,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "hero",
@@ -79047,7 +79047,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "center",
@@ -81154,7 +81154,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -81465,7 +81465,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "overlay paint engraving",
@@ -82041,7 +82041,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "sprite",
@@ -82303,7 +82303,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -84641,7 +84641,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "center",
@@ -85139,7 +85139,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "right",
@@ -85918,7 +85918,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "hero",
@@ -86040,7 +86040,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -86617,7 +86617,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "center",
@@ -88387,7 +88387,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "center",
@@ -88811,7 +88811,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -88848,7 +88848,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -89007,7 +89007,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom left",
@@ -89417,7 +89417,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "bottom center",
@@ -90683,7 +90683,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "right",
@@ -90740,7 +90740,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -91394,7 +91394,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -91544,7 +91544,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -91711,7 +91711,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "center",
@@ -93157,7 +93157,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -95764,7 +95764,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -96392,7 +96392,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "overlay paint engraving",
@@ -97169,7 +97169,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -97255,7 +97255,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom left",
@@ -97964,7 +97964,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -98013,7 +98013,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "bottom right",
@@ -98596,7 +98596,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -98926,7 +98926,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -101157,7 +101157,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -102377,7 +102377,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -102939,7 +102939,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "bottom left",
@@ -103327,7 +103327,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -104203,7 +104203,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -104714,7 +104714,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -104836,7 +104836,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -105106,7 +105106,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "border",
@@ -105396,7 +105396,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -105620,7 +105620,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -105739,7 +105739,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -105910,7 +105910,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "center",
@@ -105967,7 +105967,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -106061,7 +106061,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom left",
@@ -106375,7 +106375,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "bottom right",
@@ -108405,7 +108405,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "overlay paint engraving",
@@ -109128,7 +109128,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "top left",
@@ -110513,7 +110513,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "center",
@@ -111108,7 +111108,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "hero",
@@ -111393,7 +111393,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "sprite",
@@ -111911,7 +111911,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "hero",
@@ -111960,7 +111960,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "border",
@@ -112229,7 +112229,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -112391,7 +112391,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -113100,7 +113100,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -114670,7 +114670,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -115070,7 +115070,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "hero",
@@ -115785,7 +115785,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "hero",
@@ -116811,7 +116811,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "sprite",
@@ -118208,7 +118208,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "sprite",
@@ -118477,7 +118477,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "sprite",
@@ -120034,7 +120034,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -120850,7 +120850,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "sprite",
@@ -121214,7 +121214,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "overlay paint engraving",
@@ -123737,7 +123737,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -124745,7 +124745,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -124835,7 +124835,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -125132,7 +125132,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "top left",
@@ -125255,7 +125255,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -125447,7 +125447,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "center",
@@ -126890,7 +126890,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -127065,7 +127065,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom left",
@@ -127745,7 +127745,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -128665,7 +128665,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "overlay paint engraving",
@@ -128743,7 +128743,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "sprite",
@@ -129139,7 +129139,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -129984,7 +129984,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "hero",
@@ -130457,7 +130457,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "overlay paint engraving",
@@ -130743,7 +130743,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "sprite",
@@ -131110,7 +131110,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "sprite",
@@ -131498,7 +131498,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -132129,7 +132129,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -132325,7 +132325,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -133086,7 +133086,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "border",
@@ -133282,7 +133282,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom left",
@@ -133339,7 +133339,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "left",
@@ -134469,7 +134469,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom left",
@@ -134783,7 +134783,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "sprite",
@@ -136111,7 +136111,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -136181,7 +136181,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "sprite",
@@ -137506,7 +137506,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -137689,7 +137689,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom left",
@@ -138187,7 +138187,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -138643,7 +138643,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "overlay paint engraving",
@@ -139222,7 +139222,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -139785,7 +139785,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "border",
@@ -140408,7 +140408,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -140563,7 +140563,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -140755,7 +140755,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -140812,7 +140812,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -141511,7 +141511,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "border",
@@ -141706,7 +141706,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -142152,7 +142152,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "sprite",
@@ -143449,7 +143449,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "overlay paint engraving",
@@ -143551,7 +143551,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -144700,7 +144700,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom left",
@@ -145213,7 +145213,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "bottom left",
@@ -145943,7 +145943,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -146785,7 +146785,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -147612,7 +147612,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -148099,7 +148099,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -151760,7 +151760,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "overlay paint engraving",
@@ -152607,7 +152607,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "sprite",
@@ -154026,7 +154026,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -154203,7 +154203,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "sprite",
@@ -154679,7 +154679,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "sprite",
@@ -157684,7 +157684,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "overlay paint engraving",
@@ -159172,7 +159172,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "sprite",
@@ -159338,7 +159338,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -161618,7 +161618,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom left",
@@ -163806,7 +163806,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -166172,7 +166172,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "border",
@@ -166270,7 +166270,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "sprite",
@@ -169127,7 +169127,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -170315,7 +170315,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -171884,7 +171884,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "sprite",
@@ -174576,7 +174576,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "sprite",
@@ -175065,7 +175065,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "center",
@@ -177633,7 +177633,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -179412,7 +179412,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -182659,7 +182659,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -184518,7 +184518,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "top right",
@@ -184825,7 +184825,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "hero",
@@ -185317,7 +185317,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "top right",
@@ -185728,7 +185728,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -185849,7 +185849,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom left",
@@ -185931,7 +185931,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "overlay paint engraving",
@@ -186376,7 +186376,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -186885,7 +186885,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -187329,7 +187329,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom left",
@@ -188162,7 +188162,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "sprite",
@@ -188276,7 +188276,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -188479,7 +188479,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -189292,7 +189292,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -189832,7 +189832,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "bottom center",
@@ -190084,7 +190084,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -191153,7 +191153,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -191234,7 +191234,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "top right",
@@ -191311,7 +191311,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "top center",
@@ -191514,7 +191514,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -191592,7 +191592,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom left",
@@ -192357,7 +192357,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "center",
@@ -193118,7 +193118,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -193477,7 +193477,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom left",
@@ -194115,7 +194115,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -194826,7 +194826,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "center",
@@ -195322,7 +195322,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -199813,7 +199813,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -200586,7 +200586,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -200964,7 +200964,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -201980,7 +201980,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -204177,7 +204177,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -206369,7 +206369,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -206935,7 +206935,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "overlay paint engraving",
@@ -207424,7 +207424,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -207623,7 +207623,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -210051,7 +210051,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -210450,7 +210450,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "overlay paint engraving",
@@ -210568,7 +210568,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -210889,7 +210889,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -211402,7 +211402,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -211439,7 +211439,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -211821,7 +211821,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -212227,7 +212227,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -214683,7 +214683,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -216719,7 +216719,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -217358,7 +217358,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -217407,7 +217407,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "top center",
@@ -221067,7 +221067,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -222755,7 +222755,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -224754,7 +224754,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -226828,7 +226828,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -227438,7 +227438,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -228259,7 +228259,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -228916,7 +228916,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -229124,7 +229124,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -229676,7 +229676,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -229981,7 +229981,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "overlay paint engraving",
@@ -231026,7 +231026,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -231523,7 +231523,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -232128,7 +232128,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "top left",
@@ -232461,7 +232461,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -233627,7 +233627,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "top left",
@@ -233668,7 +233668,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "top right",
@@ -233871,7 +233871,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -234233,7 +234233,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -234737,7 +234737,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "center",
@@ -235463,7 +235463,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -235605,7 +235605,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "bottom left",
@@ -235940,7 +235940,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -236200,7 +236200,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -236294,7 +236294,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "color shapes",
@@ -236460,7 +236460,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -236594,7 +236594,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "color shapes",
@@ -238316,7 +238316,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "pixel line outline",
@@ -238749,7 +238749,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -239102,7 +239102,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "color shapes",
@@ -239256,7 +239256,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -239397,7 +239397,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -242195,7 +242195,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "color shapes",
@@ -242709,7 +242709,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -243597,7 +243597,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "color shapes",
@@ -243767,7 +243767,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "pixel line outline",
@@ -244562,7 +244562,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -244915,7 +244915,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "left",
@@ -245102,7 +245102,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "color shapes",
@@ -245990,7 +245990,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -246116,7 +246116,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -247032,7 +247032,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "pixel line outline",
@@ -247303,7 +247303,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "pixel line outline",
@@ -248182,7 +248182,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "pixel line outline",
@@ -251200,7 +251200,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -251738,7 +251738,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "color shapes",
@@ -251787,7 +251787,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom left",
@@ -253476,7 +253476,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "hero",
@@ -253776,7 +253776,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -254381,7 +254381,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom left",
@@ -256124,7 +256124,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "color shapes",
@@ -256302,7 +256302,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "color shapes",
@@ -256626,7 +256626,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -257277,7 +257277,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "color shapes",
@@ -258654,7 +258654,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "overlay paint engraving",
@@ -259284,7 +259284,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "color shapes",
@@ -264994,7 +264994,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -265776,7 +265776,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "pixel line outline",
@@ -266000,7 +266000,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -266235,7 +266235,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -267309,7 +267309,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "color shapes",
@@ -267479,7 +267479,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -267976,7 +267976,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "color shapes",
@@ -271593,7 +271593,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "bottom center",
@@ -272061,7 +272061,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -272603,7 +272603,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "overlay paint engraving",
@@ -273197,7 +273197,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "sprite",
@@ -273885,7 +273885,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "sprite",
@@ -273955,7 +273955,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -274061,7 +274061,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "sprite",
@@ -275047,7 +275047,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "sprite",
@@ -276218,7 +276218,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -276539,7 +276539,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "border",
@@ -278151,7 +278151,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -278236,7 +278236,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "bottom center",
@@ -280139,7 +280139,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -281429,7 +281429,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -281580,7 +281580,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "sprite",
@@ -283184,7 +283184,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "overlay paint engraving",
@@ -284104,7 +284104,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "bottom center",
@@ -284706,7 +284706,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -288612,7 +288612,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "bottom left",
@@ -288770,7 +288770,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "overlay paint engraving",
@@ -289848,7 +289848,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -290246,7 +290246,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "overlay paint engraving",
@@ -291040,7 +291040,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "sprite",
@@ -291219,7 +291219,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "bottom left",
@@ -292167,7 +292167,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -293915,7 +293915,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "sprite",
@@ -295324,7 +295324,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "sprite",
@@ -295442,7 +295442,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -295503,7 +295503,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -295564,7 +295564,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -295621,7 +295621,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "hero",
@@ -295755,7 +295755,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "sprite",
@@ -295844,7 +295844,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -295942,7 +295942,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "overlay paint engraving",
@@ -296081,7 +296081,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -296749,7 +296749,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -298165,7 +298165,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "overlay paint engraving",
@@ -301644,7 +301644,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -301819,7 +301819,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -302135,7 +302135,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -303254,7 +303254,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "color shapes",
@@ -303295,7 +303295,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom left",
@@ -304194,7 +304194,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -304948,7 +304948,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -306233,7 +306233,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "color shapes",
@@ -307428,7 +307428,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "color shapes",
@@ -307521,7 +307521,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "overlay paint engraving",
@@ -308476,7 +308476,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "pixel line outline",
@@ -308934,7 +308934,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -309290,7 +309290,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "color shapes",
@@ -309327,7 +309327,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "color shapes",
@@ -309842,7 +309842,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom left",
@@ -309988,7 +309988,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -310510,7 +310510,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "pixel line outline",
@@ -310762,7 +310762,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -311172,7 +311172,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "color shapes",
@@ -312155,7 +312155,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -312270,7 +312270,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "hero",
@@ -312303,7 +312303,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -312868,7 +312868,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -312917,7 +312917,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "pixel mosaic",
@@ -313274,7 +313274,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -313458,7 +313458,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "pixel line outline",
@@ -313659,7 +313659,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -314318,7 +314318,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -314604,7 +314604,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "center",
@@ -314784,7 +314784,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "overlay paint engraving",
@@ -315034,7 +315034,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -315116,7 +315116,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -315693,7 +315693,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -316190,7 +316190,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -316452,7 +316452,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -316951,7 +316951,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "pixel line outline",
@@ -317066,7 +317066,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -317368,7 +317368,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -317425,7 +317425,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -320268,7 +320268,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom left",
@@ -321217,7 +321217,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -321414,7 +321414,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "top center",
@@ -321565,7 +321565,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -323101,7 +323101,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -323171,7 +323171,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "overlay paint engraving",
@@ -323261,7 +323261,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -323555,7 +323555,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom left",
@@ -323870,7 +323870,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "center",
@@ -325056,7 +325056,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "pixel line outline",
@@ -325093,7 +325093,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -325599,7 +325599,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -326132,7 +326132,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom left",
@@ -326181,7 +326181,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -326418,7 +326418,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "pixel mosaic",
@@ -326697,7 +326697,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "left",
@@ -327302,7 +327302,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -327531,7 +327531,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -327662,7 +327662,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -327768,7 +327768,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "top center",
@@ -328088,7 +328088,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -328758,7 +328758,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -329179,7 +329179,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "pixel line outline",
@@ -329673,7 +329673,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -330045,7 +330045,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -330204,7 +330204,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "pixel line outline",
@@ -330237,7 +330237,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "pixel line outline",
@@ -330916,7 +330916,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "pixel line outline",
@@ -331370,7 +331370,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -332031,7 +332031,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -332147,7 +332147,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -332225,7 +332225,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -332291,7 +332291,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -332341,7 +332341,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -332481,7 +332481,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -333009,7 +333009,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -333120,7 +333120,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -334216,7 +334216,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -334418,7 +334418,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -334451,7 +334451,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "base card",
@@ -335230,7 +335230,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -335407,7 +335407,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -335506,7 +335506,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -335848,7 +335848,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -336005,7 +336005,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -336334,7 +336334,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -336565,7 +336565,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -336787,7 +336787,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -338169,7 +338169,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -338239,7 +338239,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -338321,7 +338321,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -338925,7 +338925,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -339074,7 +339074,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -339729,7 +339729,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -340084,7 +340084,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -340278,7 +340278,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -340340,7 +340340,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -340526,7 +340526,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "base card",
@@ -341133,7 +341133,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -342714,7 +342714,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "color shapes",
@@ -342833,7 +342833,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -342870,7 +342870,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -342993,7 +342993,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -343104,7 +343104,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "top left",
@@ -343852,7 +343852,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -343975,7 +343975,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -344041,7 +344041,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -344210,7 +344210,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "right",
@@ -344501,7 +344501,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -344841,7 +344841,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -345367,7 +345367,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "pixel line outline",
@@ -346083,7 +346083,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -346271,7 +346271,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -346320,7 +346320,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -346435,7 +346435,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -346562,7 +346562,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "overlay paint engraving",
@@ -346755,7 +346755,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "overlay paint engraving",
@@ -346846,7 +346846,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -347120,7 +347120,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "color shapes",
@@ -347288,7 +347288,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -347407,7 +347407,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -347514,7 +347514,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -348154,7 +348154,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -348290,7 +348290,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -348561,7 +348561,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "color shapes",
@@ -348655,7 +348655,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "color shapes",
@@ -349709,7 +349709,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -349815,7 +349815,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom left",
@@ -349914,7 +349914,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -349996,7 +349996,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -350254,7 +350254,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -350328,7 +350328,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -350418,7 +350418,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "pixel line outline",
@@ -350533,7 +350533,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -350796,7 +350796,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -351065,7 +351065,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -351550,7 +351550,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -351660,7 +351660,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -351993,7 +351993,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -352705,7 +352705,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "right",
@@ -353089,7 +353089,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "bottom center",
@@ -353748,7 +353748,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -354296,7 +354296,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -354778,7 +354778,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -354859,7 +354859,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "right",
@@ -354904,7 +354904,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -355498,7 +355498,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "left",
@@ -355912,7 +355912,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -356115,7 +356115,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -356623,7 +356623,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top center",
@@ -357037,7 +357037,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom center",
@@ -358236,7 +358236,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom left",
@@ -358273,7 +358273,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -358331,7 +358331,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -358529,7 +358529,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -359043,7 +359043,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -359105,7 +359105,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -359283,7 +359283,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -359312,7 +359312,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "base card",
@@ -360383,7 +360383,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "pixel line outline",
@@ -361162,7 +361162,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -362457,7 +362457,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "base card",
@@ -363292,7 +363292,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -364405,7 +364405,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "overlay paint engraving",
@@ -364551,7 +364551,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom left",
@@ -365019,7 +365019,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom right",
@@ -365068,7 +365068,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -365666,7 +365666,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "overlay paint engraving",
@@ -365915,7 +365915,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -366724,7 +366724,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "center",
@@ -367585,7 +367585,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -368281,7 +368281,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "right",
@@ -369106,7 +369106,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "top left",
@@ -369325,7 +369325,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -369382,7 +369382,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -369741,7 +369741,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "overlay paint engraving",
@@ -370014,7 +370014,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "sprite",
@@ -370067,7 +370067,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -370254,7 +370254,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "overlay paint engraving",
@@ -370393,7 +370393,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top left",
@@ -371751,7 +371751,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "bottom left",
@@ -372584,7 +372584,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "color shapes",
@@ -372758,7 +372758,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "top right",
@@ -373615,7 +373615,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -376151,7 +376151,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -376393,7 +376393,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -376623,7 +376623,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -376701,7 +376701,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -376812,7 +376812,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -377050,7 +377050,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -377324,7 +377324,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -377749,7 +377749,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -378257,7 +378257,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -378642,7 +378642,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -378757,7 +378757,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -379404,7 +379404,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -379997,7 +379997,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -380136,7 +380136,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -380795,7 +380795,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -381888,7 +381888,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -383013,7 +383013,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -383558,7 +383558,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -383669,7 +383669,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -384721,7 +384721,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -385169,7 +385169,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -385202,7 +385202,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -385494,7 +385494,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -385650,7 +385650,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -385954,7 +385954,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -386061,7 +386061,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -386957,7 +386957,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -387179,7 +387179,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -387438,7 +387438,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -388100,7 +388100,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -388416,7 +388416,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -388909,7 +388909,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -389098,7 +389098,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -389147,7 +389147,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -389184,7 +389184,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -393127,7 +393127,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -393216,7 +393216,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -394309,7 +394309,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -394653,7 +394653,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -395730,7 +395730,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -396665,7 +396665,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -398754,7 +398754,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -400713,7 +400713,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -401110,7 +401110,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -401535,7 +401535,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -402738,7 +402738,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -403653,7 +403653,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -403908,7 +403908,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -404074,7 +404074,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -404540,7 +404540,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -405046,7 +405046,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -405641,7 +405641,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -406252,7 +406252,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -407649,7 +407649,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -407916,7 +407916,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -409394,7 +409394,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -412066,7 +412066,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -412507,7 +412507,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -412600,7 +412600,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -413911,7 +413911,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -413992,7 +413992,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -416611,7 +416611,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -418748,7 +418748,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -419618,7 +419618,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -421533,7 +421533,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -423180,7 +423180,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -423544,7 +423544,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -426089,7 +426089,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -426348,7 +426348,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -427080,7 +427080,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -427618,7 +427618,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -428043,7 +428043,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -428768,7 +428768,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -431630,7 +431630,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -432795,7 +432795,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -433209,7 +433209,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -434885,7 +434885,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -436021,7 +436021,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -436082,7 +436082,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -436403,7 +436403,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -437929,7 +437929,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -438201,7 +438201,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -438509,7 +438509,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -438883,7 +438883,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -439512,7 +439512,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -439581,7 +439581,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -439893,7 +439893,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -440733,7 +440733,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -441918,7 +441918,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -443163,7 +443163,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -443447,7 +443447,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -443788,7 +443788,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -443999,7 +443999,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -444121,7 +444121,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -444324,7 +444324,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -444624,7 +444624,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -444912,7 +444912,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -445058,7 +445058,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -447159,7 +447159,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -447317,7 +447317,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -447930,7 +447930,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -447991,7 +447991,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -448417,7 +448417,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -448709,7 +448709,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -448855,7 +448855,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -449691,7 +449691,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -450478,7 +450478,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -452979,7 +452979,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -455123,7 +455123,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -455449,7 +455449,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -455893,7 +455893,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -458619,7 +458619,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -459171,7 +459171,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -459419,7 +459419,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -459484,7 +459484,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -459509,7 +459509,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -460260,7 +460260,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -460325,7 +460325,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -460630,7 +460630,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -460837,7 +460837,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -461924,7 +461924,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -462652,7 +462652,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -462721,7 +462721,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -463313,7 +463313,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -464025,7 +464025,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -464525,7 +464525,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -465123,7 +465123,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -465399,7 +465399,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -465707,7 +465707,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -466991,7 +466991,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -467805,7 +467805,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -469207,7 +469207,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -469414,7 +469414,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -469663,7 +469663,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -470693,7 +470693,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -472686,7 +472686,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -472711,7 +472711,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -474107,7 +474107,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -474379,7 +474379,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -474672,7 +474672,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -474867,7 +474867,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -476769,7 +476769,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -477297,7 +477297,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -478042,7 +478042,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -478676,7 +478676,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -478814,7 +478814,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -479258,7 +479258,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -479392,7 +479392,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -480890,7 +480890,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -481831,7 +481831,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -482523,7 +482523,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -482780,7 +482780,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -482867,7 +482867,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -482925,7 +482925,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -483099,7 +483099,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -483128,7 +483128,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -483385,7 +483385,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -483812,7 +483812,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -483924,7 +483924,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -484116,7 +484116,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -487492,7 +487492,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -489716,7 +489716,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -490668,7 +490668,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -490862,7 +490862,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -491123,7 +491123,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -491953,7 +491953,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -492690,7 +492690,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -493857,7 +493857,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -493986,7 +493986,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -496252,7 +496252,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -499201,7 +499201,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -500550,7 +500550,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -500670,7 +500670,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -500786,7 +500786,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -501099,7 +501099,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -501299,7 +501299,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -501324,7 +501324,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -501613,7 +501613,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -501770,7 +501770,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -501946,7 +501946,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -502003,7 +502003,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -502073,7 +502073,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -502106,7 +502106,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -502264,7 +502264,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -502553,7 +502553,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -502866,7 +502866,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -502973,7 +502973,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -504064,7 +504064,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -504406,7 +504406,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -504835,7 +504835,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -505795,7 +505795,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -506866,7 +506866,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -507135,7 +507135,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -507613,7 +507613,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -508916,7 +508916,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -509030,7 +509030,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -509197,7 +509197,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -509580,7 +509580,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -509829,7 +509829,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -510837,7 +510837,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -511701,7 +511701,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -511791,7 +511791,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -512215,7 +512215,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -512399,7 +512399,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -512566,7 +512566,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -512648,7 +512648,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -514058,7 +514058,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -514654,7 +514654,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -514756,7 +514756,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -515577,7 +515577,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -515634,7 +515634,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -515801,7 +515801,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -517076,7 +517076,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -517133,7 +517133,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -517390,7 +517390,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -518124,7 +518124,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -518161,7 +518161,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -520132,7 +520132,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -520255,7 +520255,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -520512,7 +520512,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -520817,7 +520817,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -521293,7 +521293,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -522072,7 +522072,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -522668,7 +522668,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -522709,7 +522709,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -522973,7 +522973,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -523250,7 +523250,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -527090,7 +527090,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -528348,7 +528348,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -528377,7 +528377,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -528545,7 +528545,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -528808,7 +528808,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -531748,7 +531748,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -534373,7 +534373,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -534709,7 +534709,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -534985,7 +534985,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -535210,7 +535210,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -535756,7 +535756,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -535806,7 +535806,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -536237,7 +536237,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -536862,7 +536862,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -538022,7 +538022,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -539091,7 +539091,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -540233,7 +540233,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -541946,7 +541946,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -542109,7 +542109,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -543181,7 +543181,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -547608,7 +547608,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -548836,7 +548836,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -549233,7 +549233,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -550497,7 +550497,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -551311,7 +551311,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -552785,7 +552785,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -554106,7 +554106,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -555135,7 +555135,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -555285,7 +555285,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -555597,7 +555597,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -555674,7 +555674,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -555739,7 +555739,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -556298,7 +556298,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -556460,7 +556460,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -557587,7 +557587,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -558997,7 +558997,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -560171,7 +560171,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -561071,7 +561071,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -561444,7 +561444,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -564576,7 +564576,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -565167,7 +565167,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -565662,7 +565662,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -566221,7 +566221,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -566586,7 +566586,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -567789,7 +567789,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -567874,7 +567874,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -568259,7 +568259,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -569268,7 +569268,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -569345,7 +569345,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -571135,7 +571135,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -573060,7 +573060,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -574258,7 +574258,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -574448,7 +574448,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -575246,7 +575246,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -577799,7 +577799,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -579098,7 +579098,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -585894,7 +585894,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -586052,7 +586052,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -586659,7 +586659,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -587116,7 +587116,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -587318,7 +587318,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -587593,7 +587593,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -589471,7 +589471,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -590014,7 +590014,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -590091,7 +590091,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -590781,7 +590781,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -591050,7 +591050,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -592094,7 +592094,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -592164,7 +592164,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -592545,7 +592545,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -592582,7 +592582,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -592995,7 +592995,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -593138,7 +593138,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -593212,7 +593212,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -593524,7 +593524,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -594738,7 +594738,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -595009,7 +595009,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -595107,7 +595107,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -595259,7 +595259,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -596129,7 +596129,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -596328,7 +596328,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -598795,7 +598795,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -598868,7 +598868,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -600291,7 +600291,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -602208,7 +602208,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -605982,7 +605982,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -606177,7 +606177,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -606493,7 +606493,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -606753,7 +606753,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -609218,7 +609218,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -609815,7 +609815,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -611786,7 +611786,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -612535,7 +612535,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -613204,7 +613204,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -613407,7 +613407,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -615985,7 +615985,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -616748,7 +616748,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -620176,7 +620176,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -620844,7 +620844,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -621783,7 +621783,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -622459,7 +622459,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -624212,7 +624212,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -625208,7 +625208,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -625914,7 +625914,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -626958,7 +626958,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "Collection",
@@ -627158,7 +627158,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "Collection",
@@ -627233,7 +627233,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "Collection",
@@ -627413,7 +627413,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "Collection",
@@ -627644,7 +627644,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "Collection",
@@ -627686,7 +627686,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "Collection",
@@ -627896,7 +627896,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "Collection",
@@ -627938,7 +627938,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "Collection",
@@ -627959,7 +627959,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "Collection",
@@ -628148,7 +628148,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "Collection",
@@ -628169,7 +628169,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "Collection",
@@ -628232,7 +628232,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "Collection",
@@ -628316,7 +628316,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "Collection",
@@ -628688,7 +628688,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "Collection",
@@ -628864,7 +628864,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "Collection",
@@ -628990,7 +628990,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "Collection",
@@ -629284,7 +629284,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "Collection",
@@ -629368,7 +629368,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "Collection",
@@ -629806,7 +629806,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
@@ -629980,7 +629980,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -630394,7 +630394,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Pulled"
+        "value": "Redeemed"
       },
       {
         "category": "background",
@@ -630803,7 +630803,7 @@ export const CARD_NFT_2_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Pulled"
       },
       {
         "category": "background",
