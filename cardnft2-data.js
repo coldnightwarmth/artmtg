@@ -134,11 +134,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 14",
     "stableId": "cardnft2:card-14",
-    "mint": "",
+    "mint": "CZyDbtormcJiQCZnkxq1hesbdVamwhEPaFS7CacMABYa",
     "file": "assets/cardnft2/cards/0000/card-14.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -334,11 +334,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 34",
     "stableId": "cardnft2:card-34",
-    "mint": "",
+    "mint": "2hjkYtwd94g6UiSzA7wfhcAZknCiE3SAu4VtDNbSkP85",
     "file": "assets/cardnft2/cards/0000/card-34.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -514,11 +514,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 52",
     "stableId": "cardnft2:card-52",
-    "mint": "",
+    "mint": "AQgknxAv3mnk92okg5qn7BkVQVcVKpdBMJp6sotkTrh2",
     "file": "assets/cardnft2/cards/0000/card-52.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -604,11 +604,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 61",
     "stableId": "cardnft2:card-61",
-    "mint": "",
+    "mint": "6SvCA98pxPjuxvgBQhebgnaN2XP4tYf5kZzQ1mwLHWup",
     "file": "assets/cardnft2/cards/0000/card-61.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -804,11 +804,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 81",
     "stableId": "cardnft2:card-81",
-    "mint": "",
+    "mint": "B5Z6iAfdjB7PKtpzschfAxjpsXQtgqpdb11j13jK1Vhr",
     "file": "assets/cardnft2/cards/0000/card-81.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -944,11 +944,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 95",
     "stableId": "cardnft2:card-95",
-    "mint": "",
+    "mint": "9WSP92WBRH1MRWKmf3Yb65T7Cbo3tkmxetNzgw6YABtm",
     "file": "assets/cardnft2/cards/0000/card-95.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -974,11 +974,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 98",
     "stableId": "cardnft2:card-98",
-    "mint": "",
+    "mint": "5LyoSmiFJrJVaweCVTY9zENMF4V1auT4KRAudaDSRQc2",
     "file": "assets/cardnft2/cards/0000/card-98.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -1024,11 +1024,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 103",
     "stableId": "cardnft2:card-103",
-    "mint": "",
+    "mint": "HPMoB4f6CWzTwEJ4PD62ibq9e3cLH7T89GRuf8mmTEZ5",
     "file": "assets/cardnft2/cards/0000/card-103.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -1344,11 +1344,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 135",
     "stableId": "cardnft2:card-135",
-    "mint": "",
+    "mint": "HbaLgfTq2CBgyShwAcfFUwbzLv8Bck4BAj7yu3pz2RRR",
     "file": "assets/cardnft2/cards/0000/card-135.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -1564,11 +1564,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 157",
     "stableId": "cardnft2:card-157",
-    "mint": "",
+    "mint": "GYqFJ5FwBmKuuj8FYrfo5rYPfrUC47LoDkqRhGaTVocs",
     "file": "assets/cardnft2/cards/0000/card-157.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -1704,11 +1704,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 171",
     "stableId": "cardnft2:card-171",
-    "mint": "",
+    "mint": "G5mvakAJQ1Vm5DjEovmjthbsVxX6LXiaHMTARMfYbXcp",
     "file": "assets/cardnft2/cards/0000/card-171.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -2004,11 +2004,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 201",
     "stableId": "cardnft2:card-201",
-    "mint": "",
+    "mint": "Gh4ujyj8amL8MPm4xuS6bAUzJ38erbnYWc2s5DRkeeXq",
     "file": "assets/cardnft2/cards/0000/card-201.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -2364,11 +2364,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 237",
     "stableId": "cardnft2:card-237",
-    "mint": "",
+    "mint": "4Hjvk1Tf4NnedV2eZavLjYoVtCWXE1StXGWg1G4J745G",
     "file": "assets/cardnft2/cards/0000/card-237.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -2794,11 +2794,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 280",
     "stableId": "cardnft2:card-280",
-    "mint": "",
+    "mint": "GiPgiDppThCG8gmeKKAUpwTVGKgk2UnpZcSyWjLVE4NW",
     "file": "assets/cardnft2/cards/0000/card-280.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -2834,11 +2834,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 284",
     "stableId": "cardnft2:card-284",
-    "mint": "6EMgN8Se8PCLsBg6EXnNPY4kHyGAFQoPfY6zpZidhUcY",
+    "mint": "HXsKA1qj6RzcHSjBbEBUYDfAbe2UfWYm2vWrjmDsMD4V",
     "file": "assets/cardnft2/cards/0000/card-284.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -2854,11 +2854,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 286",
     "stableId": "cardnft2:card-286",
-    "mint": "",
+    "mint": "Erq1Wam26LfxJvjZS3wSXZcccpf1QAZbWwayEe4vhPW8",
     "file": "assets/cardnft2/cards/0000/card-286.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -2974,11 +2974,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 298",
     "stableId": "cardnft2:card-298",
-    "mint": "57MstqazZuiY8CbBZtW9d94NN5sU8jYCBMmJXxJuR8bs",
+    "mint": "3VghaKk9J55tkgpxHDR52PWohfQcTfHJjfCijriYUfW7",
     "file": "assets/cardnft2/cards/0000/card-298.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -3144,11 +3144,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 315",
     "stableId": "cardnft2:card-315",
-    "mint": "",
+    "mint": "8WUTs1yhSFVq4fHB3RP5ekVh3SH247NhHwicwB5tddkB",
     "file": "assets/cardnft2/cards/0000/card-315.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -3184,11 +3184,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 319",
     "stableId": "cardnft2:card-319",
-    "mint": "",
+    "mint": "FFo2Z9wpLWEEbsxccXW2eZaXaB2ZdJn7TLaJ3bBFUvcK",
     "file": "assets/cardnft2/cards/0000/card-319.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -3294,11 +3294,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 330",
     "stableId": "cardnft2:card-330",
-    "mint": "",
+    "mint": "7gXs2h2M7xFydcLbW4NMP8EeGLY9RxYQygzteUDgW5tQ",
     "file": "assets/cardnft2/cards/0000/card-330.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -3644,11 +3644,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 365",
     "stableId": "cardnft2:card-365",
-    "mint": "CUK2f1HTwJ44kE4hybGK8hJxueW48QEuWALfmJf2ptN",
+    "mint": "9rCD9BFT6MYBbbMkAnSCHnah9JffaxtwmDWrAW6WxnsR",
     "file": "assets/cardnft2/cards/0000/card-365.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -3784,11 +3784,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 379",
     "stableId": "cardnft2:card-379",
-    "mint": "28w7RPxwoZ7iiMHVpqnLoWMYZefJZg6qhoVhks6no3F3",
+    "mint": "9PpeXJLpofWn9uSuutBYwirc6mc3oVPJKbwVkjzJsmPJ",
     "file": "assets/cardnft2/cards/0000/card-379.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -3874,11 +3874,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 388",
     "stableId": "cardnft2:card-388",
-    "mint": "",
+    "mint": "24xZsZzJ5s5efbfzGpaZaJxvZik1NvLfA6QxXANuEmcx",
     "file": "assets/cardnft2/cards/0000/card-388.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -4164,11 +4164,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 417",
     "stableId": "cardnft2:card-417",
-    "mint": "",
+    "mint": "4xVy48YpoTyXLyKNLMtZ2oQo3VuFTSxgwQywY6rvVMTk",
     "file": "assets/cardnft2/cards/0000/card-417.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -4254,11 +4254,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 426",
     "stableId": "cardnft2:card-426",
-    "mint": "",
+    "mint": "DyM1642aa849WxnQzRXhAsyjtzRQy2gmJMygJrMkDvgc",
     "file": "assets/cardnft2/cards/0000/card-426.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -4504,11 +4504,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 451",
     "stableId": "cardnft2:card-451",
-    "mint": "",
+    "mint": "AP3jPiqPSkQ8zz77CBqhx8z63J8YLdqa8aZTGR4MC62q",
     "file": "assets/cardnft2/cards/0000/card-451.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -4594,11 +4594,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 460",
     "stableId": "cardnft2:card-460",
-    "mint": "",
+    "mint": "HxERqacr9xd3bteP3YbWqLxCvmFKzMYmCvdSTuKeN1tu",
     "file": "assets/cardnft2/cards/0000/card-460.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -4754,11 +4754,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 476",
     "stableId": "cardnft2:card-476",
-    "mint": "",
+    "mint": "9TLUeANF2XBVCVZWd3UwQ6xhvPHHFy9eY7j7giCyeWhU",
     "file": "assets/cardnft2/cards/0000/card-476.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -4794,11 +4794,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 480",
     "stableId": "cardnft2:card-480",
-    "mint": "",
+    "mint": "C948Vv1sSv3oc8S7gVp6esstFNkYY5af5ZXKw2jcFxJp",
     "file": "assets/cardnft2/cards/0000/card-480.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -4914,11 +4914,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 492",
     "stableId": "cardnft2:card-492",
-    "mint": "",
+    "mint": "3svNeut8dhHieUYzuTXQN1B6DRjsDBq1nsgo9uZVqYj8",
     "file": "assets/cardnft2/cards/0000/card-492.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -5244,11 +5244,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 525",
     "stableId": "cardnft2:card-525",
-    "mint": "",
+    "mint": "86HiJUYjzKcWjxGkhBtWPVG37RJP54X2BQD4Xojn9SGF",
     "file": "assets/cardnft2/cards/0000/card-525.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -5624,11 +5624,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 563",
     "stableId": "cardnft2:card-563",
-    "mint": "",
+    "mint": "DZEzMuhbq4SkGuPoMjpDqwS8JN4t3zRxd3uYvcXZ9Lho",
     "file": "assets/cardnft2/cards/0000/card-563.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -5794,11 +5794,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 580",
     "stableId": "cardnft2:card-580",
-    "mint": "",
+    "mint": "HqRbBUv1o2ShYG4dogJTbmHK5v2o7W3wLsyiSsNipLeQ",
     "file": "assets/cardnft2/cards/0000/card-580.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -5864,11 +5864,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 587",
     "stableId": "cardnft2:card-587",
-    "mint": "",
+    "mint": "GDzW28KKuaD9C9wa7HxkVGakZguJJZhSu9FA6HVqUmco",
     "file": "assets/cardnft2/cards/0000/card-587.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -5984,11 +5984,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 599",
     "stableId": "cardnft2:card-599",
-    "mint": "GZshP6CKDf7Q4Xe9u3GUFkXaFd3vK5xHvf5fMHXNiw4o",
+    "mint": "8mBVj9qh5ZwvcKFn2uZRdiaugnxFxCEkLoYzxRB839T5",
     "file": "assets/cardnft2/cards/0000/card-599.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -6064,21 +6064,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 607",
     "stableId": "cardnft2:card-607",
-    "mint": "",
+    "mint": "H8xa5ybKr9k1BZYtMGaDccA7vXBML5Qs1nkTewQVvmYr",
     "file": "assets/cardnft2/cards/0000/card-607.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
     "title": "card 608",
     "stableId": "cardnft2:card-608",
-    "mint": "5K44SVUY4r6ksbgkBvfCEhoEWMm3ML7YKZeywhQBw74p",
+    "mint": "HD4Hhfjmrh8xZXZdfRVhQhMsV7W3yQvLREWJMdQP5HLh",
     "file": "assets/cardnft2/cards/0000/card-608.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -6304,11 +6304,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 631",
     "stableId": "cardnft2:card-631",
-    "mint": "",
+    "mint": "5oc72TES7b2rDSKtVQtSAWdCCPKkTGNyfPAfnJrgfGNC",
     "file": "assets/cardnft2/cards/0000/card-631.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -6514,11 +6514,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 652",
     "stableId": "cardnft2:card-652",
-    "mint": "",
+    "mint": "7dW8LsjvwebDQnPdMedhAkK56QXHhzJKrfT2UGeC7T5y",
     "file": "assets/cardnft2/cards/0000/card-652.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -6734,11 +6734,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 674",
     "stableId": "cardnft2:card-674",
-    "mint": "",
+    "mint": "CGYuBCzHngvv74i19yiWSEkGDBGJkvPPWfbJcwEy3dy6",
     "file": "assets/cardnft2/cards/0000/card-674.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -6874,11 +6874,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 688",
     "stableId": "cardnft2:card-688",
-    "mint": "",
+    "mint": "3P4jQeXQ4TpHZDBDBrwzuxiBJqkCqYuK9CmULt9T1SvA",
     "file": "assets/cardnft2/cards/0000/card-688.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -7104,11 +7104,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 711",
     "stableId": "cardnft2:card-711",
-    "mint": "",
+    "mint": "5yhdogYcaJtPkSAjM3ZEJdrxDq7EQfNTH4nFGaDSpZBx",
     "file": "assets/cardnft2/cards/0000/card-711.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -7284,11 +7284,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 729",
     "stableId": "cardnft2:card-729",
-    "mint": "",
+    "mint": "A5X8wvyu5xJVoBSFQb4Vpw1RBQKNR9F2yArxCjLn4NkN",
     "file": "assets/cardnft2/cards/0000/card-729.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -7594,11 +7594,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 760",
     "stableId": "cardnft2:card-760",
-    "mint": "",
+    "mint": "DoDCPxgdjggSeHJPhSDCgamW2PjLFwN6nk5qticbcD3h",
     "file": "assets/cardnft2/cards/0000/card-760.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -7634,11 +7634,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 764",
     "stableId": "cardnft2:card-764",
-    "mint": "",
+    "mint": "9vmn7dJ6ptzRvqYkQ5wUiBoXQzhwp2bTCh1FV35RdWUE",
     "file": "assets/cardnft2/cards/0000/card-764.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -7744,11 +7744,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 775",
     "stableId": "cardnft2:card-775",
-    "mint": "",
+    "mint": "EnUZWUPwCrP2xBFFaGkQz6jDeBUaY2StRqGQUnWYnqCJ",
     "file": "assets/cardnft2/cards/0000/card-775.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -7954,11 +7954,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 796",
     "stableId": "cardnft2:card-796",
-    "mint": "GyhHpY2p7NntLpWJ1GQKqJKKGo8ESkjc4DwUHGraVd5R",
+    "mint": "7RKPhpV9VVqqiotF4fVxykjDdRnuz6dGgLeAUmw9jd9i",
     "file": "assets/cardnft2/cards/0000/card-796.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -8324,11 +8324,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 833",
     "stableId": "cardnft2:card-833",
-    "mint": "",
+    "mint": "2Q5yQtFYANPFW2YkuUVXkzMJaq7oNjH967U4X5FvcPzH",
     "file": "assets/cardnft2/cards/0000/card-833.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -8644,11 +8644,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 865",
     "stableId": "cardnft2:card-865",
-    "mint": "",
+    "mint": "7WGdgLmienDEhJ9AXj79ogxzGag6aG4KikfwwyGC2DN9",
     "file": "assets/cardnft2/cards/0000/card-865.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -9104,11 +9104,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 911",
     "stableId": "cardnft2:card-911",
-    "mint": "",
+    "mint": "8vUnCpT21Qq8hEyhFPoYEqgTiCKCMaKPtrPzBiJUDtkj",
     "file": "assets/cardnft2/cards/0000/card-911.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -9214,11 +9214,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 922",
     "stableId": "cardnft2:card-922",
-    "mint": "",
+    "mint": "4tpuL1GHP9NDGPkgrmej4exrZFzN8mw5Eu82rQToyDwP",
     "file": "assets/cardnft2/cards/0000/card-922.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -9294,11 +9294,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 930",
     "stableId": "cardnft2:card-930",
-    "mint": "",
+    "mint": "GonNnkacbGFy3FNWdS7dzVqnvxjgrVJTLgSvmoEnSvqK",
     "file": "assets/cardnft2/cards/0000/card-930.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -9494,11 +9494,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 950",
     "stableId": "cardnft2:card-950",
-    "mint": "",
+    "mint": "A6rZSWYhQzxkVbhCYPJpGuZR2ymqtNa8Rs9UcwBexZPk",
     "file": "assets/cardnft2/cards/0000/card-950.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -9774,11 +9774,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 978",
     "stableId": "cardnft2:card-978",
-    "mint": "Et9N9oc6WiZarPyfhrjwZPp4QUxc52od8YfASW9kZUeZ",
+    "mint": "45mhhMkDSaNZTYm6q11rKkoXjfNPP1vL3Y26FhyHe3AR",
     "file": "assets/cardnft2/cards/0000/card-978.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -9944,11 +9944,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 995",
     "stableId": "cardnft2:card-995",
-    "mint": "",
+    "mint": "FHt2AT343S8RbQ7AHCJ3LXGFntNy8HBndkFb6UansPZs",
     "file": "assets/cardnft2/cards/0000/card-995.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -10034,11 +10034,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1004",
     "stableId": "cardnft2:card-1004",
-    "mint": "",
+    "mint": "HXtZNcXv5A1wesByFph9m4tAdZmaC61dU9rk1FhHBbSC",
     "file": "assets/cardnft2/cards/1000/card-1004.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -10074,11 +10074,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1008",
     "stableId": "cardnft2:card-1008",
-    "mint": "",
+    "mint": "91oX9HPTetsDSBmVjMfKYQPcpeMN3PiVwwBJE51BzX7V",
     "file": "assets/cardnft2/cards/1000/card-1008.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -10124,11 +10124,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1013",
     "stableId": "cardnft2:card-1013",
-    "mint": "",
+    "mint": "61mGF5XYHTkyM3KF4xaBVZ4BiymKWnhTGvhzyTM7AHRE",
     "file": "assets/cardnft2/cards/1000/card-1013.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -10214,11 +10214,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1022",
     "stableId": "cardnft2:card-1022",
-    "mint": "",
+    "mint": "2f1QaZjgmmpKPLFLBm6mw1VscCrpoEdaX98SA7wh7i8o",
     "file": "assets/cardnft2/cards/1000/card-1022.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -10254,11 +10254,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1026",
     "stableId": "cardnft2:card-1026",
-    "mint": "",
+    "mint": "GLhTChSkn9qZPWvY6LWNxP1hzcNTdPm6cjcDSmgLeTBG",
     "file": "assets/cardnft2/cards/1000/card-1026.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -10394,11 +10394,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1040",
     "stableId": "cardnft2:card-1040",
-    "mint": "",
+    "mint": "8LiozUQV5DvnpDfoAwQo44oSuEfd2mWrgKecZ9kBvHsw",
     "file": "assets/cardnft2/cards/1000/card-1040.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -10424,11 +10424,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1043",
     "stableId": "cardnft2:card-1043",
-    "mint": "",
+    "mint": "9ihTUTXXMNTQkUazr7mbsBivAdomwZQeVvnea4vCvszY",
     "file": "assets/cardnft2/cards/1000/card-1043.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -10734,11 +10734,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1074",
     "stableId": "cardnft2:card-1074",
-    "mint": "DZ51AUzNWmgsZMYcvrm7LF3NTGB1CnQXLUJwyD6o4fp5",
+    "mint": "7Pc6av6hHTERwzgG6Zdrk3stBvedVw9hxGq8yce8eM1c",
     "file": "assets/cardnft2/cards/1000/card-1074.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -10774,11 +10774,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1078",
     "stableId": "cardnft2:card-1078",
-    "mint": "",
+    "mint": "GFQ2Mkg91nJ23wqEtLrpz5N7KatWokynXXNThhW7N2d5",
     "file": "assets/cardnft2/cards/1000/card-1078.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -10804,11 +10804,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1081",
     "stableId": "cardnft2:card-1081",
-    "mint": "",
+    "mint": "DK5NhpfMXvTWd1KHAw2HPoyHxobNgVAanf3jBERHRJCY",
     "file": "assets/cardnft2/cards/1000/card-1081.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -11134,11 +11134,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1114",
     "stableId": "cardnft2:card-1114",
-    "mint": "",
+    "mint": "4KsRcszobepcYeivjQqqgrr8nTkUaXLB4Wuz6hNyxYnz",
     "file": "assets/cardnft2/cards/1000/card-1114.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -11184,11 +11184,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1119",
     "stableId": "cardnft2:card-1119",
-    "mint": "",
+    "mint": "C44YnoUG4ZGhkgjat6bjDrcnGqNg1ZYuLXxHTBnnJMTs",
     "file": "assets/cardnft2/cards/1000/card-1119.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -11634,11 +11634,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1164",
     "stableId": "cardnft2:card-1164",
-    "mint": "FXnM2meXmAiHqtCojgurq51YnK5kaP1aJNRdwst17gAL",
+    "mint": "AUmU753axvKuzcy6enCZiRQQbbsSzCPiWueR1AqmoQtW",
     "file": "assets/cardnft2/cards/1000/card-1164.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -11664,11 +11664,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1167",
     "stableId": "cardnft2:card-1167",
-    "mint": "",
+    "mint": "9DxSHHAswQuezgv2j9BSXYDJyFZLPFF2jmDcSpWGAVe4",
     "file": "assets/cardnft2/cards/1000/card-1167.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -11684,11 +11684,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1169",
     "stableId": "cardnft2:card-1169",
-    "mint": "",
+    "mint": "6ity1Hwsd34dZE3eAbQWN5ZVpoZ98zXp6WMBknDUi7pe",
     "file": "assets/cardnft2/cards/1000/card-1169.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -11764,11 +11764,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1177",
     "stableId": "cardnft2:card-1177",
-    "mint": "",
+    "mint": "GCfAVwEBpC6uAuo1tt3Q1u1KzSxf5QXfVmbovGrswQxN",
     "file": "assets/cardnft2/cards/1000/card-1177.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -12024,11 +12024,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1203",
     "stableId": "cardnft2:card-1203",
-    "mint": "",
+    "mint": "ivJThDWiZ1saj3RwP4psZ3e6UdSDSsKQ496XdTpFbXh",
     "file": "assets/cardnft2/cards/1000/card-1203.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -12134,11 +12134,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1214",
     "stableId": "cardnft2:card-1214",
-    "mint": "DugHyPHgmoQJVWv4ZHUtp2End2tbKGueAmzutCvPqGTQ",
+    "mint": "H8nkDArsisTSvPtrWbockKcqtVQtr2WxojdQtRPJoAsP",
     "file": "assets/cardnft2/cards/1000/card-1214.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -12254,11 +12254,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1226",
     "stableId": "cardnft2:card-1226",
-    "mint": "8uBBtwhcjFeYpVap1oxETPpKtUkTBPUy6DrL82tEQTER",
+    "mint": "59bHJgmvx3yXWisfi4f5tyqxKNMAsuvmW7CyqnNqbepM",
     "file": "assets/cardnft2/cards/1000/card-1226.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -12904,11 +12904,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1291",
     "stableId": "cardnft2:card-1291",
-    "mint": "",
+    "mint": "BiWpB1r3wizLD3cjRNXoqfeZnY56DdXpTsTBuGq7JK24",
     "file": "assets/cardnft2/cards/1000/card-1291.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -12934,11 +12934,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1294",
     "stableId": "cardnft2:card-1294",
-    "mint": "",
+    "mint": "CPEEVgcdARNcXazHHKoDj2Ce9Xn4fkY83QgE3v545Tac",
     "file": "assets/cardnft2/cards/1000/card-1294.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -13364,11 +13364,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1337",
     "stableId": "cardnft2:card-1337",
-    "mint": "",
+    "mint": "4yELY2gGTh36Z5wQXCgb3krniQPqkrryasZeSeh2eHy",
     "file": "assets/cardnft2/cards/1000/card-1337.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -13734,21 +13734,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1374",
     "stableId": "cardnft2:card-1374",
-    "mint": "H1GJFEzuWHrz6amcJEBchkewfz5Zoaj1aprFBMsqdEBo",
+    "mint": "2eF6U546tkKZ8mYgegD7SME1NDN77zA7MNzK3LpESFrM",
     "file": "assets/cardnft2/cards/1000/card-1374.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
     "title": "card 1375",
     "stableId": "cardnft2:card-1375",
-    "mint": "",
+    "mint": "9DymuzpbrUrwXtnnGgDjjoZRQJiLKvNZEzdfuTpb7UbD",
     "file": "assets/cardnft2/cards/1000/card-1375.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -13814,11 +13814,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1382",
     "stableId": "cardnft2:card-1382",
-    "mint": "",
+    "mint": "HfrvTCfTU9L8RkSgsPrPV1XiQFFZhEi3kRNbDsaiCzdE",
     "file": "assets/cardnft2/cards/1000/card-1382.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -14004,11 +14004,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1401",
     "stableId": "cardnft2:card-1401",
-    "mint": "",
+    "mint": "A2x2xoJiNLnb3dSq2Cs3scoira3vS7Fvvi8z5pnZh5NA",
     "file": "assets/cardnft2/cards/1000/card-1401.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -14254,11 +14254,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1426",
     "stableId": "cardnft2:card-1426",
-    "mint": "",
+    "mint": "DCuwxaAwYxLjx3f8czUHbUNoktUedWsqFaWjq4gCxhnp",
     "file": "assets/cardnft2/cards/1000/card-1426.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -14364,11 +14364,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1437",
     "stableId": "cardnft2:card-1437",
-    "mint": "",
+    "mint": "ArJCMcQrW8YKkteKRq9F4EK4zMf3jESKY1JsQij8kvF5",
     "file": "assets/cardnft2/cards/1000/card-1437.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -14474,11 +14474,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1448",
     "stableId": "cardnft2:card-1448",
-    "mint": "EkVrAYzfZJsnxrfecFwL89ZSuyhfLdAZ5UMHMSULhNmy",
+    "mint": "Y85bc1i3kndveHNj83R2j211cwVRH5VN3bUZKpJ2Fok",
     "file": "assets/cardnft2/cards/1000/card-1448.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -14524,11 +14524,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1453",
     "stableId": "cardnft2:card-1453",
-    "mint": "DQDSDhCC6bpbGTMKjYsUXMUEPLj2eiL2P87FDTyDyMcn",
+    "mint": "G5v6wcYX5JJDDCTk18Yy3KveosGovapTzsx1mdDAUVNB",
     "file": "assets/cardnft2/cards/1000/card-1453.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -14834,21 +14834,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1484",
     "stableId": "cardnft2:card-1484",
-    "mint": "",
+    "mint": "514bUv2TZ1SN1vTeZ3BUnESE1Az3YWRJ3aKupTTSN8NR",
     "file": "assets/cardnft2/cards/1000/card-1484.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
     "title": "card 1485",
     "stableId": "cardnft2:card-1485",
-    "mint": "",
+    "mint": "7Aqe7e7BBP2E147CDa5aXF7MV64W4wzJ8X3QFZ2YXWtQ",
     "file": "assets/cardnft2/cards/1000/card-1485.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -15164,11 +15164,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1517",
     "stableId": "cardnft2:card-1517",
-    "mint": "",
+    "mint": "2SEmCtme47MGjTzvtR1sw42KytYXuweDoxD6aLW6fFVt",
     "file": "assets/cardnft2/cards/1000/card-1517.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -15324,11 +15324,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1533",
     "stableId": "cardnft2:card-1533",
-    "mint": "",
+    "mint": "DaX6tWiRePBVNNSK9NPKdTopCLoR3VcJx4fuYBQfWe7h",
     "file": "assets/cardnft2/cards/1000/card-1533.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -15424,11 +15424,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1543",
     "stableId": "cardnft2:card-1543",
-    "mint": "",
+    "mint": "HYF1qHUCDMmvQEaxGfccq3xvm3pvFURQaoC2n1BCjty5",
     "file": "assets/cardnft2/cards/1000/card-1543.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -16104,11 +16104,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1611",
     "stableId": "cardnft2:card-1611",
-    "mint": "",
+    "mint": "Gvp17AuuQFZuxZPqQz1frE1kw6k6RhzcQjrF8GNEER99",
     "file": "assets/cardnft2/cards/1000/card-1611.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -16374,11 +16374,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1638",
     "stableId": "cardnft2:card-1638",
-    "mint": "txVdZWVvN2scXxAMoAxoCNqkb8KtzfRqgBNVnLdbv4Z",
+    "mint": "AbAjjzmfmF8Sd9wAvaEE3VRQVZTgCazS3PHqvkxP4PAE",
     "file": "assets/cardnft2/cards/1000/card-1638.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -16654,11 +16654,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1666",
     "stableId": "cardnft2:card-1666",
-    "mint": "",
+    "mint": "6nNKFYD9yZV7ZQUXbDFru14UsPoW2o3FPeRzErbf3mbJ",
     "file": "assets/cardnft2/cards/1000/card-1666.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -16674,11 +16674,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1668",
     "stableId": "cardnft2:card-1668",
-    "mint": "",
+    "mint": "Av3duvyxRAm6R2D5c7XyvdbL9hGnUHck9MqLGpiZodQJ",
     "file": "assets/cardnft2/cards/1000/card-1668.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -16954,11 +16954,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1696",
     "stableId": "cardnft2:card-1696",
-    "mint": "",
+    "mint": "Ak8SL4BzJjg8fSFLLixELk8BcMtnNYi1Aoh65FyKNAUo",
     "file": "assets/cardnft2/cards/1000/card-1696.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -17234,11 +17234,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1724",
     "stableId": "cardnft2:card-1724",
-    "mint": "3t3cEmncHc8UHcj2DfavVZSpWcuWAfY91GK2i2FhBq4h",
+    "mint": "AyR3Jj5zZSVbfayryfRg9P6Ccbw6SrhpxhLbiXQj2uvo",
     "file": "assets/cardnft2/cards/1000/card-1724.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -17744,21 +17744,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1775",
     "stableId": "cardnft2:card-1775",
-    "mint": "",
+    "mint": "2L65mqKhSoqHXqVoHyQz32EhgpqT7pKwKBVYJu7kCJ5D",
     "file": "assets/cardnft2/cards/1000/card-1775.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
     "title": "card 1776",
     "stableId": "cardnft2:card-1776",
-    "mint": "42EJ8BGc4E1AwJeTFjxN1tPs8R58dsW9uoyHKwtRcwGB",
+    "mint": "7w1Pj72wPiXzJQ1WBxXZC4b1sWjVoTgiMfdsPwuXBuU8",
     "file": "assets/cardnft2/cards/1000/card-1776.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -18594,11 +18594,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1860",
     "stableId": "cardnft2:card-1860",
-    "mint": "",
+    "mint": "CVFWBDSR7W6RK7xsN8W1LGiUYXDGFawRo7CGBQBZTNyy",
     "file": "assets/cardnft2/cards/1000/card-1860.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -18924,11 +18924,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1893",
     "stableId": "cardnft2:card-1893",
-    "mint": "EEEbhM1DNvqZhhSdPnAzqCdqjVBdkjaHB1YfW8GnVX2T",
+    "mint": "8LuNZAyB1YfWyZCNkYxfUTsSrxLJvQRFJjEJ25NcTycx",
     "file": "assets/cardnft2/cards/1000/card-1893.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -19044,11 +19044,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1905",
     "stableId": "cardnft2:card-1905",
-    "mint": "",
+    "mint": "2Zx81v8Ym17uKmiDX4kfEagErDKzW5TVUnmWLrs1oTPm",
     "file": "assets/cardnft2/cards/1000/card-1905.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -19534,11 +19534,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1954",
     "stableId": "cardnft2:card-1954",
-    "mint": "",
+    "mint": "Cn1w8Kai4Qxta6w2K41jQ86g3WYCCyyMSm1vuTQcZXph",
     "file": "assets/cardnft2/cards/1000/card-1954.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -19714,11 +19714,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 1972",
     "stableId": "cardnft2:card-1972",
-    "mint": "",
+    "mint": "GJJzsGMMKfZLGmnfLyUyTWenEGiypHa9XbfHgKVJmoAi",
     "file": "assets/cardnft2/cards/1000/card-1972.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -20054,11 +20054,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2006",
     "stableId": "cardnft2:card-2006",
-    "mint": "",
+    "mint": "8DnVvzdrY72joymDdeYkqfyhf4vD6FxRftsxYf1QKmWZ",
     "file": "assets/cardnft2/cards/2000/card-2006.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -20074,11 +20074,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2008",
     "stableId": "cardnft2:card-2008",
-    "mint": "",
+    "mint": "DMg1CwKFpERvmaaYpppPxW4BsjmvoVKVC16kDAzhFhcA",
     "file": "assets/cardnft2/cards/2000/card-2008.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -20194,11 +20194,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2020",
     "stableId": "cardnft2:card-2020",
-    "mint": "3QZ5w9RLUwHwv8J85SVHXu6QYULWB2uJ4VTdt74mFaYw",
+    "mint": "FBCk35pmF8q5pHp6PQtwzjFvybMvUx9CDBARzsx9itzB",
     "file": "assets/cardnft2/cards/2000/card-2020.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -20354,11 +20354,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2036",
     "stableId": "cardnft2:card-2036",
-    "mint": "",
+    "mint": "HzqA7qtjUn4u1ch4tJQuLJrDLQdiML7ymchu7awT5BXz",
     "file": "assets/cardnft2/cards/2000/card-2036.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -20644,11 +20644,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2065",
     "stableId": "cardnft2:card-2065",
-    "mint": "",
+    "mint": "9uoEen6eZ84zhaAsfaPH6Nr3noVnLEuTCAC5cDkk6DDu",
     "file": "assets/cardnft2/cards/2000/card-2065.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -20664,11 +20664,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2067",
     "stableId": "cardnft2:card-2067",
-    "mint": "",
+    "mint": "HmkLBT6rgVdFE8RYupfG3J8MSxmT6s4h95iyR5AGSJBf",
     "file": "assets/cardnft2/cards/2000/card-2067.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -20844,11 +20844,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2085",
     "stableId": "cardnft2:card-2085",
-    "mint": "",
+    "mint": "4jLY8RXqHJWjuGwfYEgVpdSgzEPYyqzqkdQJJ4H4Z65X",
     "file": "assets/cardnft2/cards/2000/card-2085.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -21104,11 +21104,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2111",
     "stableId": "cardnft2:card-2111",
-    "mint": "",
+    "mint": "BGVBgtZ5M4Uu7BUFpRAMoVaKgGiiYCy8KiE47SQ4a886",
     "file": "assets/cardnft2/cards/2000/card-2111.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -21354,21 +21354,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2136",
     "stableId": "cardnft2:card-2136",
-    "mint": "",
+    "mint": "H2d3sWd29QTho2xNmiJCQRFugDMkE3Q81U8y6tncv8SC",
     "file": "assets/cardnft2/cards/2000/card-2136.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
     "title": "card 2137",
     "stableId": "cardnft2:card-2137",
-    "mint": "",
+    "mint": "HA7g7AL5ZbAZvbipn3dy8WHm4CRHHQ8iF7LDqov3KJju",
     "file": "assets/cardnft2/cards/2000/card-2137.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -21424,11 +21424,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2143",
     "stableId": "cardnft2:card-2143",
-    "mint": "",
+    "mint": "8acaaEJiNjnEBTvxus3moSiF8KjboJURHnp4PAjQETsW",
     "file": "assets/cardnft2/cards/2000/card-2143.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -21714,21 +21714,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2172",
     "stableId": "cardnft2:card-2172",
-    "mint": "",
+    "mint": "3P4a5q5UaQ4fwjYTGT3N7eDtxwswXjHSwpjb8D88Ba2Q",
     "file": "assets/cardnft2/cards/2000/card-2172.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
     "title": "card 2173",
     "stableId": "cardnft2:card-2173",
-    "mint": "",
+    "mint": "9dcmQUsLcxcyXCb8DLpgxEjTaqtWoJi79tBNXiTJ8o7H",
     "file": "assets/cardnft2/cards/2000/card-2173.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -22374,11 +22374,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2238",
     "stableId": "cardnft2:card-2238",
-    "mint": "",
+    "mint": "DLJAthhiKH5YSf4EGHMwCF6wu3nKuL6UVf1R6vxBZvq6",
     "file": "assets/cardnft2/cards/2000/card-2238.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -22494,11 +22494,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2250",
     "stableId": "cardnft2:card-2250",
-    "mint": "",
+    "mint": "3LsN95dgXLRGVGbTSNNmwD2jUgWNQ4TMHFvspu5mwqHK",
     "file": "assets/cardnft2/cards/2000/card-2250.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -22954,11 +22954,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2296",
     "stableId": "cardnft2:card-2296",
-    "mint": "",
+    "mint": "D9FrxHDWiXY1R7V33dLUrHhm22LeFtZDkdCQJz1wk2Kc",
     "file": "assets/cardnft2/cards/2000/card-2296.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -23174,11 +23174,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2318",
     "stableId": "cardnft2:card-2318",
-    "mint": "",
+    "mint": "8VVTY5YcFWCyWPGZWuBqJ85b5zzkaMMLwCkLucXxy3Fe",
     "file": "assets/cardnft2/cards/2000/card-2318.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -23634,11 +23634,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2364",
     "stableId": "cardnft2:card-2364",
-    "mint": "",
+    "mint": "ZGKbHJAi55jtxz8EdKTVib5HERfe2anc6QES5eYrpxa",
     "file": "assets/cardnft2/cards/2000/card-2364.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -23694,11 +23694,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2370",
     "stableId": "cardnft2:card-2370",
-    "mint": "",
+    "mint": "6HjZWV2T2oEwtSEMZgDZ9BYiqbmNdRVzsBVq4cFgAaf",
     "file": "assets/cardnft2/cards/2000/card-2370.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -24034,11 +24034,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2404",
     "stableId": "cardnft2:card-2404",
-    "mint": "",
+    "mint": "21mvTvF5kNzJKEGGyQfoRczhFLfPdvsedoDPp6gAbTQy",
     "file": "assets/cardnft2/cards/2000/card-2404.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -24664,11 +24664,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2467",
     "stableId": "cardnft2:card-2467",
-    "mint": "D5UiU1X2YLWQbBhZ4r1cgJRRdLeNDh26UfkbCSTdAzWz",
+    "mint": "5R2nVS6aiPxfsZjSaH9whdJTdvJqcdowtEsd2LR64CsY",
     "file": "assets/cardnft2/cards/2000/card-2467.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -24864,11 +24864,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2487",
     "stableId": "cardnft2:card-2487",
-    "mint": "",
+    "mint": "4VZUmzN4jiW22Kx6AWhrr9pJmWUyLTmZNYXCbDZbPUyq",
     "file": "assets/cardnft2/cards/2000/card-2487.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -24884,11 +24884,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2489",
     "stableId": "cardnft2:card-2489",
-    "mint": "",
+    "mint": "ByXZRxzp5Jxvx7a28jTVVkFexwTLMnQiBcfMHU6g1Xiy",
     "file": "assets/cardnft2/cards/2000/card-2489.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -24974,11 +24974,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2498",
     "stableId": "cardnft2:card-2498",
-    "mint": "",
+    "mint": "H8gwUak4vuzrDZZCRrKDfHfwCtfA3Scp3DcvLXqNtN4Z",
     "file": "assets/cardnft2/cards/2000/card-2498.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -25054,21 +25054,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2506",
     "stableId": "cardnft2:card-2506",
-    "mint": "5bpUqnKAeUCeTGwivamcYTZ29oNPfGz9bqUwJgocSQ9d",
+    "mint": "2w484zoh7inGHbbzLvxYcbuNHFyBiAqMxNSJ4s1Wof3B",
     "file": "assets/cardnft2/cards/2000/card-2506.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
     "title": "card 2507",
     "stableId": "cardnft2:card-2507",
-    "mint": "",
+    "mint": "5iz23PbzdBuH5V4Tm7tyBS65fHNJjLXJqndiW5c9NjzC",
     "file": "assets/cardnft2/cards/2000/card-2507.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -25424,11 +25424,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2543",
     "stableId": "cardnft2:card-2543",
-    "mint": "",
+    "mint": "4cMDBRmNaQSQNoXZ31C8eXKjSPAMqNTCtaQSE5kLkWTs",
     "file": "assets/cardnft2/cards/2000/card-2543.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -25504,11 +25504,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2551",
     "stableId": "cardnft2:card-2551",
-    "mint": "FmX3fHiUeF7BrpkwB9EVHewXHgttZDKLMUJt6vHZVp4v",
+    "mint": "Eozm1gk4S6XBu8zzVaMMq3qM1Em4EX9auFyYSeXLXATc",
     "file": "assets/cardnft2/cards/2000/card-2551.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -25524,11 +25524,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2553",
     "stableId": "cardnft2:card-2553",
-    "mint": "",
+    "mint": "4S2H3zXcBprySojUWvzaCPgMtLNay82NtRgRUDr7bHu4",
     "file": "assets/cardnft2/cards/2000/card-2553.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -25554,11 +25554,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2556",
     "stableId": "cardnft2:card-2556",
-    "mint": "",
+    "mint": "CrWyUzthm3WgtuuUdc495FejA2TnCjXA24b7yvYAfhei",
     "file": "assets/cardnft2/cards/2000/card-2556.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -25594,11 +25594,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2560",
     "stableId": "cardnft2:card-2560",
-    "mint": "",
+    "mint": "AwcHZhUwEi5xtSGz1Z1oVRVg4Nhq43SLeJzAynFQbVbA",
     "file": "assets/cardnft2/cards/2000/card-2560.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -25774,11 +25774,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2578",
     "stableId": "cardnft2:card-2578",
-    "mint": "",
+    "mint": "CPaKDspcCB3t6Msgy7NmsbGnhGhq9dW5tduFrqj7963L",
     "file": "assets/cardnft2/cards/2000/card-2578.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -25894,11 +25894,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2590",
     "stableId": "cardnft2:card-2590",
-    "mint": "",
+    "mint": "31GEvDs8pAoVBQzfYsa5aVJV2iw6XfcVcnXG822MCeve",
     "file": "assets/cardnft2/cards/2000/card-2590.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -26144,11 +26144,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2615",
     "stableId": "cardnft2:card-2615",
-    "mint": "",
+    "mint": "Bcz4MUBC3ajsVc8QeMXEz1jjSQfuymBsNUVrAL8cnytX",
     "file": "assets/cardnft2/cards/2000/card-2615.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -26454,11 +26454,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2646",
     "stableId": "cardnft2:card-2646",
-    "mint": "",
+    "mint": "GwVzMe4BCmYLLsM3EH6UJJmRMj42rAi5z21SyiQXTpfq",
     "file": "assets/cardnft2/cards/2000/card-2646.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -26794,11 +26794,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2680",
     "stableId": "cardnft2:card-2680",
-    "mint": "",
+    "mint": "9PEmxcujSujE3sbNpa7FiMFp1cCmynMEP6dg6AGB6uLm",
     "file": "assets/cardnft2/cards/2000/card-2680.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -27714,11 +27714,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2772",
     "stableId": "cardnft2:card-2772",
-    "mint": "GFGB19HEBLGMRKbA1RvqLDVTqPtMZ2NiPuwqmMuELtsD",
+    "mint": "2cJTFdRjVSJHJovL2yQzrfjK1zJhmrSP8ZZ4FoUrgKDX",
     "file": "assets/cardnft2/cards/2000/card-2772.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -28174,11 +28174,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2818",
     "stableId": "cardnft2:card-2818",
-    "mint": "668FVZZjE8dd3DbuTNBwHy9FrUB7hKDhCdiVj3U1BkPy",
+    "mint": "3rK4FjEWpbUecudEnBKvfx3wFj2HK2cLpTk6Q1mJRixK",
     "file": "assets/cardnft2/cards/2000/card-2818.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -28334,11 +28334,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2834",
     "stableId": "cardnft2:card-2834",
-    "mint": "2NTW5nGHqh4pNt4YzHE8Nqd5AtxKrSFQxC8r5GryFgwm",
+    "mint": "68qiL6TV2Di98F6cmcxq27o6qdQSrADifrBBfyEVdmwd",
     "file": "assets/cardnft2/cards/2000/card-2834.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -28604,11 +28604,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2861",
     "stableId": "cardnft2:card-2861",
-    "mint": "",
+    "mint": "FbFM3zL2xXXGYFBEKLNTskAA4tPdEgrq5bpaccabBJfH",
     "file": "assets/cardnft2/cards/2000/card-2861.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -28644,11 +28644,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2865",
     "stableId": "cardnft2:card-2865",
-    "mint": "",
+    "mint": "CVDPFyffZve9UyM3e6kNjvTa1kqKdbdVetVH8BTycpW",
     "file": "assets/cardnft2/cards/2000/card-2865.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -28704,11 +28704,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2871",
     "stableId": "cardnft2:card-2871",
-    "mint": "",
+    "mint": "6SnmtvgzxGv5UyHgXDw4TiK2iq1H6ZMpWGvVPYDKDqcg",
     "file": "assets/cardnft2/cards/2000/card-2871.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -28794,11 +28794,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2880",
     "stableId": "cardnft2:card-2880",
-    "mint": "B6WvjXSEva1qFiiLYkkWmErvmXUb7FxAdUityBUJyYf7",
+    "mint": "2eFzGxLXJP3xd1DcuAPrkMKL5GfRoy8TZvb7nBX8RFv2",
     "file": "assets/cardnft2/cards/2000/card-2880.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -28844,11 +28844,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2885",
     "stableId": "cardnft2:card-2885",
-    "mint": "",
+    "mint": "3y9vrR1vZTsaJjduD2iAP1UTBScgVydAe9c7VBXPp47Z",
     "file": "assets/cardnft2/cards/2000/card-2885.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -28894,11 +28894,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2890",
     "stableId": "cardnft2:card-2890",
-    "mint": "",
+    "mint": "5x5sbVqjDeotcXCHsdUZXtQnsCcked7K4rnDngaxkusJ",
     "file": "assets/cardnft2/cards/2000/card-2890.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -28934,11 +28934,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2894",
     "stableId": "cardnft2:card-2894",
-    "mint": "",
+    "mint": "7nN11hYv7uX752TCYJiKuJ2XEDHaWMY4FLF7FQcNWLdB",
     "file": "assets/cardnft2/cards/2000/card-2894.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -29024,11 +29024,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2903",
     "stableId": "cardnft2:card-2903",
-    "mint": "BJ1FfQv9GKGc9frZbbtHq7P7rhMoKKXBB1DAuiydFdnB",
+    "mint": "GSu12GPL3dkcakE8ZYnsvKfubSUJZMdhgiJMvbf7gPuW",
     "file": "assets/cardnft2/cards/2000/card-2903.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -29314,11 +29314,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2932",
     "stableId": "cardnft2:card-2932",
-    "mint": "",
+    "mint": "58SXV2gwJKFo61FwQjtymiszvEaTTJPDvZcuGjVdzpRH",
     "file": "assets/cardnft2/cards/2000/card-2932.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -29344,11 +29344,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2935",
     "stableId": "cardnft2:card-2935",
-    "mint": "",
+    "mint": "GczpXSJTNtjhK3YwYSfJzQ9tsvrRymQS9KwHv9WAySAJ",
     "file": "assets/cardnft2/cards/2000/card-2935.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -29364,11 +29364,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2937",
     "stableId": "cardnft2:card-2937",
-    "mint": "CBxBtB9eYH5X4ccuQgzfHSEJKvgRw8uo2JWX2FnzFZtC",
+    "mint": "3pPGaRnA2XarmQ6W9F9ewkAdp6UqpReZJHRJSAQEzn1h",
     "file": "assets/cardnft2/cards/2000/card-2937.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -29644,11 +29644,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 2965",
     "stableId": "cardnft2:card-2965",
-    "mint": "",
+    "mint": "4bUoqJPPwAsbaPpAEZdTHMZ3RjfqtFM4fEJT6gSqiSdm",
     "file": "assets/cardnft2/cards/2000/card-2965.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -30344,11 +30344,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3035",
     "stableId": "cardnft2:card-3035",
-    "mint": "DHYVxP6kCpZF5P9CHxn46yAwPPWMDstd4gPTebrBQMJG",
+    "mint": "BttmXtkFHbaDwax6eY3KPR2H476Qxq4tzEYpfemdfADi",
     "file": "assets/cardnft2/cards/3000/card-3035.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -30534,11 +30534,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3054",
     "stableId": "cardnft2:card-3054",
-    "mint": "",
+    "mint": "5EP5DEZKrG1hhWwLyMDmGpxfwd6ffrXUFmKZDB4nL489",
     "file": "assets/cardnft2/cards/3000/card-3054.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -30714,21 +30714,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3072",
     "stableId": "cardnft2:card-3072",
-    "mint": "35S3NfUNmU6JhqaHZ7Y4uxNW6kcNWrxykghDLW6CuLA9",
+    "mint": "DpsCH2vJ4eHNvJpYxEVJ1sWQg3VpvxompWkKNKVzvScu",
     "file": "assets/cardnft2/cards/3000/card-3072.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
     "title": "card 3073",
     "stableId": "cardnft2:card-3073",
-    "mint": "",
+    "mint": "CYmPrNteC861Th5Qdvzs96wss12YgvPwXGNnP3Y2RGN1",
     "file": "assets/cardnft2/cards/3000/card-3073.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -30974,11 +30974,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3098",
     "stableId": "cardnft2:card-3098",
-    "mint": "",
+    "mint": "GtN2fB6qjiv8PT2kT32LD2w9R7sHVqAi57Ej4obmGUm1",
     "file": "assets/cardnft2/cards/3000/card-3098.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -31034,11 +31034,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3104",
     "stableId": "cardnft2:card-3104",
-    "mint": "",
+    "mint": "3y2JXM2dvaY3YNdsqfEMvFYoR2aR3x9Pf44evrpVsxjE",
     "file": "assets/cardnft2/cards/3000/card-3104.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -31154,11 +31154,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3116",
     "stableId": "cardnft2:card-3116",
-    "mint": "",
+    "mint": "G7XYXCXZFWtgePpQKHqzLW7kinoB3Sg88JtY2bqyQW6R",
     "file": "assets/cardnft2/cards/3000/card-3116.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -31284,11 +31284,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3129",
     "stableId": "cardnft2:card-3129",
-    "mint": "",
+    "mint": "E9pK5PqS6Zfz3nhihiv2Fw4cg8zgbCBKYBJU2fM3WY3D",
     "file": "assets/cardnft2/cards/3000/card-3129.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -31474,21 +31474,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3148",
     "stableId": "cardnft2:card-3148",
-    "mint": "",
+    "mint": "7R7DjN2xLU2EZmmDAtBaihqdm5QmGLEyhKmNPGxFa9wG",
     "file": "assets/cardnft2/cards/3000/card-3148.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
     "title": "card 3149",
     "stableId": "cardnft2:card-3149",
-    "mint": "",
+    "mint": "GrdYABa2rvrYQkTQ6SgtXcrq78GtoyAvA7HoDbFWi5cR",
     "file": "assets/cardnft2/cards/3000/card-3149.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -31754,21 +31754,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3176",
     "stableId": "cardnft2:card-3176",
-    "mint": "",
+    "mint": "2Unq46wFw3AYswHmXJYYv19FHbBtj4s51jiXi96hNu8a",
     "file": "assets/cardnft2/cards/3000/card-3176.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
     "title": "card 3177",
     "stableId": "cardnft2:card-3177",
-    "mint": "",
+    "mint": "5HArs8Go45PBcG3AN7typABhCUsZMaNRbqu6BNkVNQXA",
     "file": "assets/cardnft2/cards/3000/card-3177.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -31884,11 +31884,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3189",
     "stableId": "cardnft2:card-3189",
-    "mint": "",
+    "mint": "81nCXxmUAq6ytH8RF1RKFDD89u6CdjFJZ9pWbQ38mUUM",
     "file": "assets/cardnft2/cards/3000/card-3189.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -32034,11 +32034,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3204",
     "stableId": "cardnft2:card-3204",
-    "mint": "",
+    "mint": "ChukYKPNacT4R2JXEXJEsBk1Tdb9wy5LuVUEzoT3o2Av",
     "file": "assets/cardnft2/cards/3000/card-3204.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -32224,11 +32224,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3223",
     "stableId": "cardnft2:card-3223",
-    "mint": "9GiEDddndsFHq75onCnxDaZxjg6TkacrxUgMwURHf7r1",
+    "mint": "A8Kim4yoHBNagLVMFFPMy7Q9WWu3yFJuRimJ4UKD7Bno",
     "file": "assets/cardnft2/cards/3000/card-3223.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -32484,11 +32484,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3249",
     "stableId": "cardnft2:card-3249",
-    "mint": "",
+    "mint": "Bh3CfvsD6DRqzrR2cb5htN7gQPxYf29wfGNUmjW5KHy6",
     "file": "assets/cardnft2/cards/3000/card-3249.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -32784,11 +32784,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3279",
     "stableId": "cardnft2:card-3279",
-    "mint": "",
+    "mint": "7pkt9gigZ9q4hG4qeMpmHWZfYVPAFzkvF7VmViJfVErF",
     "file": "assets/cardnft2/cards/3000/card-3279.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -32884,11 +32884,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3289",
     "stableId": "cardnft2:card-3289",
-    "mint": "",
+    "mint": "CCUP83AgeGacGr48f4FExDXbngC4hKWyt9SRMgMubpnn",
     "file": "assets/cardnft2/cards/3000/card-3289.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -32954,11 +32954,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3296",
     "stableId": "cardnft2:card-3296",
-    "mint": "",
+    "mint": "FFfuePEMzDRQmDs9THdempJAJ6ZCcyWvq1ye7TanKubR",
     "file": "assets/cardnft2/cards/3000/card-3296.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -32974,11 +32974,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3298",
     "stableId": "cardnft2:card-3298",
-    "mint": "",
+    "mint": "3PskefzLMbxWgeKF3gbJtEGEtZ4XPqfH446Szcegpm1y",
     "file": "assets/cardnft2/cards/3000/card-3298.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -33004,11 +33004,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3301",
     "stableId": "cardnft2:card-3301",
-    "mint": "",
+    "mint": "4YtYP5u6zNh8w3qwvvonU2KdspC6f49rkntK3My1Fq3L",
     "file": "assets/cardnft2/cards/3000/card-3301.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -33024,11 +33024,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3303",
     "stableId": "cardnft2:card-3303",
-    "mint": "",
+    "mint": "MfBLFKsAAi5L6TVr1w7dsEVUqrLDQXW2cmn5EDUwszw",
     "file": "assets/cardnft2/cards/3000/card-3303.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -33074,11 +33074,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3308",
     "stableId": "cardnft2:card-3308",
-    "mint": "",
+    "mint": "E9hHSHEq5H8fw5iXzjcroGVWuJSapJ5YxfNYVLcgUcb2",
     "file": "assets/cardnft2/cards/3000/card-3308.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -33614,11 +33614,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3362",
     "stableId": "cardnft2:card-3362",
-    "mint": "",
+    "mint": "AjRjybHLhkcLGE4tYsSPjXKBtzArCtaVak4Y2A2tjt2r",
     "file": "assets/cardnft2/cards/3000/card-3362.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -33874,21 +33874,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3388",
     "stableId": "cardnft2:card-3388",
-    "mint": "",
+    "mint": "3HtP4cYhWuNp5xcCqT6fV2KqwbCsiCMeFEwksMzJ7XAy",
     "file": "assets/cardnft2/cards/3000/card-3388.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
     "title": "card 3389",
     "stableId": "cardnft2:card-3389",
-    "mint": "",
+    "mint": "AsfZ74QG2B5Aug2VuJvvKEbTBx1mu9VvrqfmCi3jq3v9",
     "file": "assets/cardnft2/cards/3000/card-3389.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -34074,11 +34074,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3408",
     "stableId": "cardnft2:card-3408",
-    "mint": "",
+    "mint": "FKkHY6uvypqAZLSJYwdRzjyeGfAcfCsWD5VDVKJhe3VT",
     "file": "assets/cardnft2/cards/3000/card-3408.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -34164,11 +34164,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3417",
     "stableId": "cardnft2:card-3417",
-    "mint": "",
+    "mint": "6fGr5SoHEFfbrKA4diUEbZyGnmbBwM9xDiWtMGKfS2Sc",
     "file": "assets/cardnft2/cards/3000/card-3417.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -34354,11 +34354,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3436",
     "stableId": "cardnft2:card-3436",
-    "mint": "",
+    "mint": "Et8AVajjWptNAvjW6zqppDE5DEFtUohMWaauoE9ZMvif",
     "file": "assets/cardnft2/cards/3000/card-3436.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -34554,11 +34554,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3456",
     "stableId": "cardnft2:card-3456",
-    "mint": "BAYhEMWNvyiRWFXkKi5T9YEG5QX7VhYjdgmLpwyBWJFk",
+    "mint": "BvHUt3GGhG3zw9GtL8d4j24UApqB1duKt5Yg29eaGC2C",
     "file": "assets/cardnft2/cards/3000/card-3456.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -34664,11 +34664,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3467",
     "stableId": "cardnft2:card-3467",
-    "mint": "",
+    "mint": "7kt8aVZyV8jHjCkdBtWjixoSh712KBBSK2thbeMsbLpe",
     "file": "assets/cardnft2/cards/3000/card-3467.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -34764,11 +34764,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3477",
     "stableId": "cardnft2:card-3477",
-    "mint": "",
+    "mint": "7S8EwfBH6jsGDTY2q1hHgecnuKFRmhmK14YkUqfo2o76",
     "file": "assets/cardnft2/cards/3000/card-3477.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -35604,11 +35604,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3561",
     "stableId": "cardnft2:card-3561",
-    "mint": "HwQTmB2VxaeRC8gtwBPHkTqAJhk5wfk16Yeq3qqyp8RC",
+    "mint": "6dQaCeipv9nev9fs9SfoGTVnJj9aDoaiz31UwWR6Z4We",
     "file": "assets/cardnft2/cards/3000/card-3561.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -35694,11 +35694,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3570",
     "stableId": "cardnft2:card-3570",
-    "mint": "",
+    "mint": "2K4GgjVTVfJuG3qgnjDQT5KznToS4QaeyqqPGfEs4eLf",
     "file": "assets/cardnft2/cards/3000/card-3570.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -35974,11 +35974,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3598",
     "stableId": "cardnft2:card-3598",
-    "mint": "",
+    "mint": "KrZJ9yrHtxFnD5WCFQjZMxdrirEtAMQT75LorevLfHC",
     "file": "assets/cardnft2/cards/3000/card-3598.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -36364,11 +36364,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3637",
     "stableId": "cardnft2:card-3637",
-    "mint": "",
+    "mint": "9VpZK1LXQfyK7tdToXneBsv5wD9wbPBpbSder3EDNpJe",
     "file": "assets/cardnft2/cards/3000/card-3637.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -36544,11 +36544,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3655",
     "stableId": "cardnft2:card-3655",
-    "mint": "",
+    "mint": "EwzRR1DfZLLY67FXHf1t1nvvqSSWTz7eSmqrZXjoFPTD",
     "file": "assets/cardnft2/cards/3000/card-3655.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -36594,11 +36594,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3660",
     "stableId": "cardnft2:card-3660",
-    "mint": "",
+    "mint": "DCJBwLY1k5d2M8v4czxbvczJ2BTCAMfN13SbLGpeDaLC",
     "file": "assets/cardnft2/cards/3000/card-3660.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -36614,11 +36614,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3662",
     "stableId": "cardnft2:card-3662",
-    "mint": "",
+    "mint": "AX53XfTUec1rb9CHTGwDkXfXhGfNHjexNv4pc7S3sXYT",
     "file": "assets/cardnft2/cards/3000/card-3662.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -36804,11 +36804,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3681",
     "stableId": "cardnft2:card-3681",
-    "mint": "",
+    "mint": "EnPD9vAkUBT4L57Tsc2tzK7mEVzeNVyxyPtw4vafHCas",
     "file": "assets/cardnft2/cards/3000/card-3681.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -37594,11 +37594,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3760",
     "stableId": "cardnft2:card-3760",
-    "mint": "",
+    "mint": "3yxare5HigNHMZeWcKYNsNVnFhaApk9FZLsGzpVysNRR",
     "file": "assets/cardnft2/cards/3000/card-3760.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -38544,11 +38544,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3855",
     "stableId": "cardnft2:card-3855",
-    "mint": "5SHxfkKcSaGef7Dzr2QcC4F9YjW4nw73nFRzNSm7EWBE",
+    "mint": "4FoHYpJ8sSYDm2RM8qjbZtYXJ8HPmULZderWAaF4mqQR",
     "file": "assets/cardnft2/cards/3000/card-3855.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -38704,11 +38704,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3871",
     "stableId": "cardnft2:card-3871",
-    "mint": "",
+    "mint": "9cC6nDzpJy6Dy51p2sUQx19WufxHyTAYm4irZXkXitYU",
     "file": "assets/cardnft2/cards/3000/card-3871.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -38844,11 +38844,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3885",
     "stableId": "cardnft2:card-3885",
-    "mint": "",
+    "mint": "D3wAaKxyGuSVFTv2juYmMynfVERD37fuZQ4bgd667wCS",
     "file": "assets/cardnft2/cards/3000/card-3885.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -38864,11 +38864,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3887",
     "stableId": "cardnft2:card-3887",
-    "mint": "",
+    "mint": "5h4f2NeCwZYc6MSfty9ZYPxNLhBd91inNiti5FCdiEMU",
     "file": "assets/cardnft2/cards/3000/card-3887.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -38924,21 +38924,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3893",
     "stableId": "cardnft2:card-3893",
-    "mint": "",
+    "mint": "DNBagiXiAqhsYdb9x6RYMYvhfXkzsfmh4PH5VBnRbUXU",
     "file": "assets/cardnft2/cards/3000/card-3893.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
     "title": "card 3894",
     "stableId": "cardnft2:card-3894",
-    "mint": "",
+    "mint": "HxWZD2LxEYczSZqwXXx6EQvMYYt3TZAuMKGTjTEknjPk",
     "file": "assets/cardnft2/cards/3000/card-3894.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -39354,11 +39354,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3936",
     "stableId": "cardnft2:card-3936",
-    "mint": "",
+    "mint": "5ScmrQ5mpcb4gXaxtgXei1Zn9aATGxR4RZg9Jz8m99gi",
     "file": "assets/cardnft2/cards/3000/card-3936.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -39374,11 +39374,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3938",
     "stableId": "cardnft2:card-3938",
-    "mint": "",
+    "mint": "FAVjiSpsCV3yuX3t6AUz2Sd9WchiqoU2fDhrpqBUMfLP",
     "file": "assets/cardnft2/cards/3000/card-3938.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -39564,11 +39564,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 3957",
     "stableId": "cardnft2:card-3957",
-    "mint": "",
+    "mint": "7Mt7umwtGDKJ5YPz3GMkKieH6CVFYFCqSLV5zjxctPFp",
     "file": "assets/cardnft2/cards/3000/card-3957.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -40134,11 +40134,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4014",
     "stableId": "cardnft2:card-4014",
-    "mint": "",
+    "mint": "DNRnz62ZRE7QsBhPbCE6tFm81GGkCc97ZyZv4xP4UCvz",
     "file": "assets/cardnft2/cards/4000/card-4014.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -41424,11 +41424,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4143",
     "stableId": "cardnft2:card-4143",
-    "mint": "",
+    "mint": "BsXxaZJZZijyNd3k5PhfZn6Py1oR5UW7g5cT49PoAJtu",
     "file": "assets/cardnft2/cards/4000/card-4143.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -42364,11 +42364,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4237",
     "stableId": "cardnft2:card-4237",
-    "mint": "",
+    "mint": "DoyMEzjqn335Gizz47hBM83pgxKGNvzwotds1cukHtS7",
     "file": "assets/cardnft2/cards/4000/card-4237.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -42674,11 +42674,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4268",
     "stableId": "cardnft2:card-4268",
-    "mint": "",
+    "mint": "2aUAr6JvvzSHy8urSZa9GRzUtWZtg729XXbUPoqQMZXe",
     "file": "assets/cardnft2/cards/4000/card-4268.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -42924,21 +42924,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4293",
     "stableId": "cardnft2:card-4293",
-    "mint": "",
+    "mint": "8FtJxCuAy4SXpSye8QFBPxK6Xz6TW2cmirY6igPhb3NH",
     "file": "assets/cardnft2/cards/4000/card-4293.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
     "title": "card 4294",
     "stableId": "cardnft2:card-4294",
-    "mint": "",
+    "mint": "7s6YyKuinnv8cKPoxbnzn2aQDQMBLuFGhFKM78RY9U2v",
     "file": "assets/cardnft2/cards/4000/card-4294.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -43014,11 +43014,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4302",
     "stableId": "cardnft2:card-4302",
-    "mint": "",
+    "mint": "6RNpdRGRxEbbgEbqwEhoUuuUWbcKviwyFiS6dcmoPk2u",
     "file": "assets/cardnft2/cards/4000/card-4302.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -43164,11 +43164,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4317",
     "stableId": "cardnft2:card-4317",
-    "mint": "",
+    "mint": "7F4RwaQVZKncGf9kGgT7FXivkSBacsnhTZdVWKo6uzuR",
     "file": "assets/cardnft2/cards/4000/card-4317.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -44154,11 +44154,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4416",
     "stableId": "cardnft2:card-4416",
-    "mint": "",
+    "mint": "HvDBaVyrVAFMbwFSZU1WTSSNSJw1uCZYAaFUzLH2Vw2X",
     "file": "assets/cardnft2/cards/4000/card-4416.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -44184,11 +44184,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4419",
     "stableId": "cardnft2:card-4419",
-    "mint": "8X5vaApfFfrYUTZN3dGJoXSxFrhpdELocwfmcKgNK4xb",
+    "mint": "F4hYmRuFjUgZmhBSvrQ2C9k4Kt2gpZZGnJbrycmsg2f7",
     "file": "assets/cardnft2/cards/4000/card-4419.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -44484,11 +44484,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4449",
     "stableId": "cardnft2:card-4449",
-    "mint": "",
+    "mint": "GpnoBGG3grHr6vwm6PVKCzKMv79JpKxbzXxdKWpWopQS",
     "file": "assets/cardnft2/cards/4000/card-4449.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -44854,11 +44854,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4486",
     "stableId": "cardnft2:card-4486",
-    "mint": "",
+    "mint": "AqnvaUWpctg4HRtkzKFbB2117cX9mD36pgt4ik8APzng",
     "file": "assets/cardnft2/cards/4000/card-4486.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -45304,11 +45304,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4531",
     "stableId": "cardnft2:card-4531",
-    "mint": "",
+    "mint": "3VVPvnhdSueaQB5Uqfne1tPvEWyU8ccE74dDaHn1wSLr",
     "file": "assets/cardnft2/cards/4000/card-4531.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -45384,11 +45384,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4539",
     "stableId": "cardnft2:card-4539",
-    "mint": "",
+    "mint": "BiWYSqiX6F8Fo454HGqpMCVZovu2YsVoUnXRUUCG7AUd",
     "file": "assets/cardnft2/cards/4000/card-4539.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -45684,11 +45684,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4569",
     "stableId": "cardnft2:card-4569",
-    "mint": "",
+    "mint": "GPukrM6Ze9ZqPr5C7BLb3tRCE9mR49VTeL3cTvDnQtvb",
     "file": "assets/cardnft2/cards/4000/card-4569.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -45714,21 +45714,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4572",
     "stableId": "cardnft2:card-4572",
-    "mint": "",
+    "mint": "7ezzKNR4CVAFw35N38HJwBMf3hWH3jHWcsj3CngTBXp",
     "file": "assets/cardnft2/cards/4000/card-4572.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
     "title": "card 4573",
     "stableId": "cardnft2:card-4573",
-    "mint": "",
+    "mint": "AYNkpufZjzX7Ta5q69xvNQWRdLn7Ba6CV75Ym6zozqnD",
     "file": "assets/cardnft2/cards/4000/card-4573.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -47194,11 +47194,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4720",
     "stableId": "cardnft2:card-4720",
-    "mint": "8UpXTw7sw3RDrzvyoZmYzqd9aMcsam2dBcE4z9wX3xjk",
+    "mint": "FYQtyxL9EMDeae6HxjqZctwxHkx6hJ2aWDMCfSgWMB9v",
     "file": "assets/cardnft2/cards/4000/card-4720.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -47414,11 +47414,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4742",
     "stableId": "cardnft2:card-4742",
-    "mint": "DrpricRoU2DHBhBhQ92D7kW5XbFLRNDAtNeXgw2HaKoD",
+    "mint": "84mCqAYfwbyFqJEbYdtpmM5xCNRKJa5RzoCgg82kH1ZE",
     "file": "assets/cardnft2/cards/4000/card-4742.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -47554,11 +47554,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4756",
     "stableId": "cardnft2:card-4756",
-    "mint": "",
+    "mint": "2rbiew9UbHyXiphph31rUrboyc5VAPWMYcZfH17bhodB",
     "file": "assets/cardnft2/cards/4000/card-4756.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -48324,11 +48324,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4833",
     "stableId": "cardnft2:card-4833",
-    "mint": "",
+    "mint": "CSAveWJgEhpMfiqQ4HuC3s5sMW4ZTox74dMksNJktkbf",
     "file": "assets/cardnft2/cards/4000/card-4833.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -48414,11 +48414,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4842",
     "stableId": "cardnft2:card-4842",
-    "mint": "",
+    "mint": "CNUrNdqCDbm12a7WEWcAD6D2prrAVK8moyXuFrhZiGo7",
     "file": "assets/cardnft2/cards/4000/card-4842.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -48444,11 +48444,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4845",
     "stableId": "cardnft2:card-4845",
-    "mint": "7ZERY217s3i3uqbVFHZzSXvwcFwvLi1kT91LR5Ed9i13",
+    "mint": "GnFL7WcX5UmAwC69h1g6rxoZuH3vgbXu9yuDA4sM7Ha8",
     "file": "assets/cardnft2/cards/4000/card-4845.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -49164,11 +49164,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4917",
     "stableId": "cardnft2:card-4917",
-    "mint": "",
+    "mint": "7Zr7JPCjeReYFwHB5uTEPFByED9Z8t95BURrpCyDGKt2",
     "file": "assets/cardnft2/cards/4000/card-4917.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -49424,11 +49424,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4943",
     "stableId": "cardnft2:card-4943",
-    "mint": "EHwQ6rfhLiU2uiYihTWpFHFS1jQGspniMUaTc1fUEi8Y",
+    "mint": "6StTiqsoEbJQqQSsXu4TRGHQQdEciFsv8ARZDjt6CPAF",
     "file": "assets/cardnft2/cards/4000/card-4943.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -49454,11 +49454,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4946",
     "stableId": "cardnft2:card-4946",
-    "mint": "Ec5emPFdxGuh5ntZMaC3sbE6i9WxCQEc84cMAbYEUbTf",
+    "mint": "8eEyjdhYMqBVKt67NLFr4wDWVxGYY8SinG5w6kVeFqTA",
     "file": "assets/cardnft2/cards/4000/card-4946.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -49524,11 +49524,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4953",
     "stableId": "cardnft2:card-4953",
-    "mint": "",
+    "mint": "EQcTt5yyazf3SNbRR8nW4BUo4rXd4wgoG7LJSpXMihox",
     "file": "assets/cardnft2/cards/4000/card-4953.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -49634,11 +49634,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 4964",
     "stableId": "cardnft2:card-4964",
-    "mint": "",
+    "mint": "FtFWV6bdCQhJP7HqY8fEYwJH2RtGFE5brWyXK7HSACSa",
     "file": "assets/cardnft2/cards/4000/card-4964.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -50384,11 +50384,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5039",
     "stableId": "cardnft2:card-5039",
-    "mint": "",
+    "mint": "4uvwCKHTLVbuVavNfTr7UTqWxY5GirrGF5yvHehnSgTm",
     "file": "assets/cardnft2/cards/5000/card-5039.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -51074,11 +51074,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5108",
     "stableId": "cardnft2:card-5108",
-    "mint": "",
+    "mint": "5BQdLTUPRdNcd4doxmXmxnBp5TiUhgPEcyszF33CCQXu",
     "file": "assets/cardnft2/cards/5000/card-5108.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -51094,11 +51094,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5110",
     "stableId": "cardnft2:card-5110",
-    "mint": "",
+    "mint": "7UUWQJWwViDq9iMAc73Pj5K7w9gvhA6UYA7rmUJowcBW",
     "file": "assets/cardnft2/cards/5000/card-5110.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -51344,11 +51344,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5135",
     "stableId": "cardnft2:card-5135",
-    "mint": "",
+    "mint": "7KvCeDn4po1vDB65AWtgSRtoookZK3GVG9Aay5efD4ge",
     "file": "assets/cardnft2/cards/5000/card-5135.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -51424,11 +51424,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5143",
     "stableId": "cardnft2:card-5143",
-    "mint": "",
+    "mint": "GJhmkdyvWrkwvmYkMR78RiyN6LTqwzzwuxLxXarKGpPi",
     "file": "assets/cardnft2/cards/5000/card-5143.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -51744,11 +51744,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5175",
     "stableId": "cardnft2:card-5175",
-    "mint": "",
+    "mint": "2U4vxgeipExTSekLio7rNeScSkq7VkX4YXbTBqdUxNDV",
     "file": "assets/cardnft2/cards/5000/card-5175.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -51844,11 +51844,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5185",
     "stableId": "cardnft2:card-5185",
-    "mint": "",
+    "mint": "DZPcsqG6udcJfrCWM1omF5KTrw9GVzg5mnwHdhPR4F87",
     "file": "assets/cardnft2/cards/5000/card-5185.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -52324,11 +52324,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5233",
     "stableId": "cardnft2:card-5233",
-    "mint": "",
+    "mint": "FFT6Fnenr134cB553ksxjcxEYwd9JHL47QvGYhL1ebYr",
     "file": "assets/cardnft2/cards/5000/card-5233.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -52694,11 +52694,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5270",
     "stableId": "cardnft2:card-5270",
-    "mint": "",
+    "mint": "Bbwrmaa74EhCnxKf7wDdDbjbffS4Zdfsr2qemD9po1SU",
     "file": "assets/cardnft2/cards/5000/card-5270.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -52834,11 +52834,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5284",
     "stableId": "cardnft2:card-5284",
-    "mint": "",
+    "mint": "3qt6969xeEFJPuEk1HRBLrtPrPtiCHF9uCqZ2vSc1362",
     "file": "assets/cardnft2/cards/5000/card-5284.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -52924,11 +52924,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5293",
     "stableId": "cardnft2:card-5293",
-    "mint": "",
+    "mint": "ettAxt3AsJqEiVwdgT9YZpSCVWcLxv1Jgfc47wp59Tf",
     "file": "assets/cardnft2/cards/5000/card-5293.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -52964,11 +52964,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5297",
     "stableId": "cardnft2:card-5297",
-    "mint": "",
+    "mint": "AswpLGLCDZCn7dstdWTf6jREajU3tp1a1wch7bs6zwB3",
     "file": "assets/cardnft2/cards/5000/card-5297.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -53554,11 +53554,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5356",
     "stableId": "cardnft2:card-5356",
-    "mint": "",
+    "mint": "3aFDxn7izqioVxGg9TCyoF16auddERRWJ34MmSZKWbvY",
     "file": "assets/cardnft2/cards/5000/card-5356.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -54694,11 +54694,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5470",
     "stableId": "cardnft2:card-5470",
-    "mint": "",
+    "mint": "5Zx8kSf9dfhm9zLRn2sHUPYs1Mg5SRnkUUUUido1hKNB",
     "file": "assets/cardnft2/cards/5000/card-5470.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -54924,11 +54924,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5493",
     "stableId": "cardnft2:card-5493",
-    "mint": "",
+    "mint": "8evHJf9FALTAzpBQMgUcTQVxCdJUm3qtPz8zKprmKSSE",
     "file": "assets/cardnft2/cards/5000/card-5493.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -55124,11 +55124,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5513",
     "stableId": "cardnft2:card-5513",
-    "mint": "",
+    "mint": "BbgBrazcoR5VXKWQk8t6eNxEExrHgeqxSs7HvHgvFiZM",
     "file": "assets/cardnft2/cards/5000/card-5513.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -55294,11 +55294,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5530",
     "stableId": "cardnft2:card-5530",
-    "mint": "",
+    "mint": "CY1NEFmKYZtEiPgfUfSnDNpHzwuLBNAQC8zj3u75fKcq",
     "file": "assets/cardnft2/cards/5000/card-5530.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -55364,11 +55364,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5537",
     "stableId": "cardnft2:card-5537",
-    "mint": "",
+    "mint": "CKHYbLzPMkrGzgVUUBuBMLqcsEwfod5Z6358S3djVNYy",
     "file": "assets/cardnft2/cards/5000/card-5537.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -55734,21 +55734,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5574",
     "stableId": "cardnft2:card-5574",
-    "mint": "",
+    "mint": "HobCSUSSmd3fB5DUmLPfVSwdX4usYwsLG4xxhEwUqUhM",
     "file": "assets/cardnft2/cards/5000/card-5574.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
     "title": "card 5575",
     "stableId": "cardnft2:card-5575",
-    "mint": "",
+    "mint": "5nH5a78DkVnPi7G6so7Z7q7kzuXKWt14Fon9sL8gwX4H",
     "file": "assets/cardnft2/cards/5000/card-5575.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -55824,11 +55824,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5583",
     "stableId": "cardnft2:card-5583",
-    "mint": "GGzyj2U9umiQtt8z5owEyCb8r9zNTmHWEUgasaQ6yFzo",
+    "mint": "5h42xmcKqy189ATWjcshijd36x38aiHkuKEdnSV7jP6y",
     "file": "assets/cardnft2/cards/5000/card-5583.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -55994,11 +55994,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5600",
     "stableId": "cardnft2:card-5600",
-    "mint": "",
+    "mint": "9t3Z1s2QPeDcnc6hXkaPqhNXhspLRkC5rhQbofvnmfRe",
     "file": "assets/cardnft2/cards/5000/card-5600.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -56114,11 +56114,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5612",
     "stableId": "cardnft2:card-5612",
-    "mint": "",
+    "mint": "9kXs2TTZNtrtKcN6iLJw7jjRQzVY8FYK5qQV7Nsd68CW",
     "file": "assets/cardnft2/cards/5000/card-5612.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -56374,11 +56374,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5638",
     "stableId": "cardnft2:card-5638",
-    "mint": "",
+    "mint": "EhhY5WSLXfziue4b9Erp1vz2LQuqRqVtkWaxg2vaUcdj",
     "file": "assets/cardnft2/cards/5000/card-5638.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -56414,11 +56414,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5642",
     "stableId": "cardnft2:card-5642",
-    "mint": "",
+    "mint": "B3J7yv2yokt6uDu86Rxowj9D7hZ8YgMthZWQGA79hDFj",
     "file": "assets/cardnft2/cards/5000/card-5642.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -56604,11 +56604,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5661",
     "stableId": "cardnft2:card-5661",
-    "mint": "",
+    "mint": "AP6F4ezVnMemgJh5wT2nhDbVAt294ugWdrBos5sm1tgT",
     "file": "assets/cardnft2/cards/5000/card-5661.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -56724,11 +56724,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5673",
     "stableId": "cardnft2:card-5673",
-    "mint": "9VFyBXMcVych687B1ouEN8fnRoWFVywVv7Xd3DHJ8bC5",
+    "mint": "ENzi9bCSaA1RkJ1xWQwb5NBH5CdAvuCgez5p9SDLbnwY",
     "file": "assets/cardnft2/cards/5000/card-5673.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -56764,11 +56764,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5677",
     "stableId": "cardnft2:card-5677",
-    "mint": "7WVc1SiYrf7m74jpXLCvwBryT1TqZ39coz2WQ3gMof1y",
+    "mint": "8SFuDRYf1jXjgfqfVM2Lh3wx9LjVEkqYEu8c7jJx2G2H",
     "file": "assets/cardnft2/cards/5000/card-5677.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -57244,11 +57244,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5725",
     "stableId": "cardnft2:card-5725",
-    "mint": "FLRCmagoJujk3qyYkHjAcWd3XWUuhX29vgXvJWTVmqY2",
+    "mint": "AJrnEok2RELGW9do4F4jKmtJgz2rMqeMLv1aFfsmsT9c",
     "file": "assets/cardnft2/cards/5000/card-5725.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -57384,11 +57384,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5739",
     "stableId": "cardnft2:card-5739",
-    "mint": "",
+    "mint": "DPaxeLuMRq2n4gK1Yrz2XCPAGGL5EBGcVrzXWN8cEboG",
     "file": "assets/cardnft2/cards/5000/card-5739.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -57404,11 +57404,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5741",
     "stableId": "cardnft2:card-5741",
-    "mint": "",
+    "mint": "6trtMbC9WZg7GkWYuPVeoPf19vPbmUFqycTYQPAxuSLP",
     "file": "assets/cardnft2/cards/5000/card-5741.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -57914,11 +57914,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5792",
     "stableId": "cardnft2:card-5792",
-    "mint": "CqM6rDZ1vmMLonvN6UzH3q96sA7u1syMLMLHkpJK7bU5",
+    "mint": "HdsQcKrQnGe6gGCSuTV5iM7Q8r3Hep4jsRxshimYFJzG",
     "file": "assets/cardnft2/cards/5000/card-5792.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -58124,11 +58124,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5813",
     "stableId": "cardnft2:card-5813",
-    "mint": "",
+    "mint": "CBsYqT33dUXUVfBQ6N7kMQPHYGQPUa368f82jnokMWT6",
     "file": "assets/cardnft2/cards/5000/card-5813.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -58594,11 +58594,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5860",
     "stableId": "cardnft2:card-5860",
-    "mint": "",
+    "mint": "9KJKaQuNva1ji4GXKuYP9gGZjJ7sEBKgFDrpXkkoNCvK",
     "file": "assets/cardnft2/cards/5000/card-5860.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -58644,11 +58644,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5865",
     "stableId": "cardnft2:card-5865",
-    "mint": "AL5vnCo2RbWEowFUVse7YTWj5zXbEjZLELrQk1w7aqgG",
+    "mint": "F74w1kwva16sheRxHb5XzX31L8oqN2VXJMgvkpGLbF6A",
     "file": "assets/cardnft2/cards/5000/card-5865.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -58774,11 +58774,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5878",
     "stableId": "cardnft2:card-5878",
-    "mint": "FS1AqkAkLsJtcMUJXSyJo7WmMenVcZ1NqyzVMZRk4Kb3",
+    "mint": "HCkKgkjXFxqQQutbUuntwqn9a2ttf26No7QgL3NUx5ry",
     "file": "assets/cardnft2/cards/5000/card-5878.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -58864,11 +58864,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5887",
     "stableId": "cardnft2:card-5887",
-    "mint": "",
+    "mint": "C8z77iHXaxxvfdoHzDwyQdK1uaoq19rY7SmH7NTFBYDf",
     "file": "assets/cardnft2/cards/5000/card-5887.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -59144,11 +59144,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5915",
     "stableId": "cardnft2:card-5915",
-    "mint": "",
+    "mint": "HHyZAtS1LkoB2Sypo7oDtSCLPkWyx94hc7hzf3Nre5cF",
     "file": "assets/cardnft2/cards/5000/card-5915.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -59204,11 +59204,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5921",
     "stableId": "cardnft2:card-5921",
-    "mint": "",
+    "mint": "6j9GHav2dnMc4kBDLYGzZrF66ot8QFJNK4BUqt9TdKLj",
     "file": "assets/cardnft2/cards/5000/card-5921.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -59584,21 +59584,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5959",
     "stableId": "cardnft2:card-5959",
-    "mint": "",
+    "mint": "DpZiST2NHGNE6YaSNGzbSDE32r32tux5DTLR1mHCa937",
     "file": "assets/cardnft2/cards/5000/card-5959.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
     "title": "card 5960",
     "stableId": "cardnft2:card-5960",
-    "mint": "",
+    "mint": "6wwHDuVjYZMHhxZkZNxhrzVTWwRRyaysHcf4LXRhGNio",
     "file": "assets/cardnft2/cards/5000/card-5960.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -59914,11 +59914,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 5992",
     "stableId": "cardnft2:card-5992",
-    "mint": "",
+    "mint": "EWLbx66tonjXMvrZK9oQTDaCnb7czVuZrfhbDwrY2m6C",
     "file": "assets/cardnft2/cards/5000/card-5992.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -60104,11 +60104,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6011",
     "stableId": "cardnft2:card-6011",
-    "mint": "",
+    "mint": "AxMe3Lm7KM95yFAEx8VT2Kv6QxLXm1dhyRQuQPq3yLH5",
     "file": "assets/cardnft2/cards/6000/card-6011.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -60454,11 +60454,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6046",
     "stableId": "cardnft2:card-6046",
-    "mint": "",
+    "mint": "7WDtDuu46puQBuNwNFSH3UNJcCp2eLN3EKzmF25PusEB",
     "file": "assets/cardnft2/cards/6000/card-6046.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -60524,11 +60524,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6053",
     "stableId": "cardnft2:card-6053",
-    "mint": "",
+    "mint": "HTS3buEkW7YjFieMuMymsmiMweeYisAHFa1RpbM26nDv",
     "file": "assets/cardnft2/cards/6000/card-6053.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -60794,11 +60794,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6080",
     "stableId": "cardnft2:card-6080",
-    "mint": "",
+    "mint": "2ZJpa99MYCQqcxzweKPVJpjtyJdgctbJwhL35VKGaUvU",
     "file": "assets/cardnft2/cards/6000/card-6080.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -60834,11 +60834,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6084",
     "stableId": "cardnft2:card-6084",
-    "mint": "",
+    "mint": "7RteoBA2GTJaXdkLhwWNeC9wqLN84W9LqSgw6Mpe7uEd",
     "file": "assets/cardnft2/cards/6000/card-6084.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -60884,11 +60884,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6089",
     "stableId": "cardnft2:card-6089",
-    "mint": "",
+    "mint": "DbWSd9BNdsSt9pKKVQqoraahx6gpa5yrN4W5SYxsZQYF",
     "file": "assets/cardnft2/cards/6000/card-6089.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -61254,11 +61254,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6126",
     "stableId": "cardnft2:card-6126",
-    "mint": "",
+    "mint": "BKn6HzSCBrHuoQMueBEq8SXCnwGENHgn72wYLTZZ1wyM",
     "file": "assets/cardnft2/cards/6000/card-6126.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -61834,11 +61834,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6184",
     "stableId": "cardnft2:card-6184",
-    "mint": "",
+    "mint": "HSWKbhTVympPsbQbcFTsZ5kR1DK7xb9hABKPLQSV3BAi",
     "file": "assets/cardnft2/cards/6000/card-6184.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -61874,11 +61874,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6188",
     "stableId": "cardnft2:card-6188",
-    "mint": "",
+    "mint": "vSAbzKne69cP69h4EaiG1veyUYezFbJvpezhYvjHcW2",
     "file": "assets/cardnft2/cards/6000/card-6188.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -62144,11 +62144,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6215",
     "stableId": "cardnft2:card-6215",
-    "mint": "",
+    "mint": "6vSvq4DbjsyY64kzc5n1hbdiiknJC8h83JMQRVX6ytbc",
     "file": "assets/cardnft2/cards/6000/card-6215.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -62444,11 +62444,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6245",
     "stableId": "cardnft2:card-6245",
-    "mint": "",
+    "mint": "8yizLrESVxdbTdaMM9UwJvjjsJmuDX5maRSK1r43RrkW",
     "file": "assets/cardnft2/cards/6000/card-6245.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -62544,11 +62544,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6255",
     "stableId": "cardnft2:card-6255",
-    "mint": "",
+    "mint": "9zPqu15R19WKktaTRQJXHoFRJG2Mqfn85jQEUxrmYDMJ",
     "file": "assets/cardnft2/cards/6000/card-6255.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -63454,11 +63454,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6346",
     "stableId": "cardnft2:card-6346",
-    "mint": "",
+    "mint": "AUsVrijf7sPFimco9aXCbeE8ECcafN8xj1idfZZjkREY",
     "file": "assets/cardnft2/cards/6000/card-6346.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -63704,11 +63704,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6371",
     "stableId": "cardnft2:card-6371",
-    "mint": "FsjgmnCFXFTU4k8vkmyAupsoeUtC1ucFNqGcWNZASmMt",
+    "mint": "FUX6eJPmePboqaG4JYs5MnTCA6YfMgWEm6YpDedp9fdp",
     "file": "assets/cardnft2/cards/6000/card-6371.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -63984,11 +63984,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6399",
     "stableId": "cardnft2:card-6399",
-    "mint": "",
+    "mint": "98ia6xLrGw8m6AoLjEDwLyf2WKfu7EJ5cMeJsXu2NX4v",
     "file": "assets/cardnft2/cards/6000/card-6399.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -64214,11 +64214,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6422",
     "stableId": "cardnft2:card-6422",
-    "mint": "",
+    "mint": "GGLGzMc9ZiCAezgzzTMfo5oA3mUAe1tysVnpDW3TKE1e",
     "file": "assets/cardnft2/cards/6000/card-6422.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -64744,11 +64744,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6475",
     "stableId": "cardnft2:card-6475",
-    "mint": "",
+    "mint": "rX6AGhLe17HreKrrLeDz5LD3ZskjcnLbWYkjrjShJG7",
     "file": "assets/cardnft2/cards/6000/card-6475.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -64764,11 +64764,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6477",
     "stableId": "cardnft2:card-6477",
-    "mint": "",
+    "mint": "22fCM8hgWriUr3bYpAYnKYAPwuSEBktphnvFEV4p8Sjd",
     "file": "assets/cardnft2/cards/6000/card-6477.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -65084,11 +65084,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6509",
     "stableId": "cardnft2:card-6509",
-    "mint": "xGdqcCqs4X8BkfPdHn33Ai4XcELuMnapaVMEjWs3dpx",
+    "mint": "94NcBSbHYvk7uMrCP1LPRbBoRouLnChg8Ks5rDzCWwE",
     "file": "assets/cardnft2/cards/6000/card-6509.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -65104,11 +65104,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6511",
     "stableId": "cardnft2:card-6511",
-    "mint": "",
+    "mint": "68FnSbkN3fwvwrzzz3dugyHVPqnyXKx34cnrddLsA3uv",
     "file": "assets/cardnft2/cards/6000/card-6511.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -65174,11 +65174,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6518",
     "stableId": "cardnft2:card-6518",
-    "mint": "",
+    "mint": "2Qv9JXLFT83zKYmkdrhsRxKXdPkW8fCc2QqhdXEDJuV2",
     "file": "assets/cardnft2/cards/6000/card-6518.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -65194,21 +65194,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6520",
     "stableId": "cardnft2:card-6520",
-    "mint": "A1mWpRqDQcrjMsNZu7rrwRyXgEwBESwm21hUg8FS7dHC",
+    "mint": "734QzxdLwM2eQYuysSRcueqMCC6hRwJ2nPGWyEZmhMi2",
     "file": "assets/cardnft2/cards/6000/card-6520.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
     "title": "card 6521",
     "stableId": "cardnft2:card-6521",
-    "mint": "E9mk58kMTJAp5Z3DYtqnEr4XnDTVd5P3WCUgun4BU4Ve",
+    "mint": "BgEyEnwTPdgpqADYhCe59mwcob5d3D157QdpQ4Si2EDz",
     "file": "assets/cardnft2/cards/6000/card-6521.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -65234,11 +65234,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6524",
     "stableId": "cardnft2:card-6524",
-    "mint": "",
+    "mint": "BN2seUNF91zTjzx86Pwn4GTsL1Q9A9cuphbuP5ksoPWJ",
     "file": "assets/cardnft2/cards/6000/card-6524.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -65294,11 +65294,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6530",
     "stableId": "cardnft2:card-6530",
-    "mint": "",
+    "mint": "GmYAKTRnoHYLoL2QKv2t6n9CCLeC4CiYXWtSfLPUpJm",
     "file": "assets/cardnft2/cards/6000/card-6530.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -65594,11 +65594,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6560",
     "stableId": "cardnft2:card-6560",
-    "mint": "J8KToN6UL2D6NVDpBMqvUWVYWSNtiN3CXRnLdwo4dwGa",
+    "mint": "G2vodtRgczCeB8mPCqJHEiiW8gu3nqSGGwzGQYgZ7v6c",
     "file": "assets/cardnft2/cards/6000/card-6560.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -65734,11 +65734,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6574",
     "stableId": "cardnft2:card-6574",
-    "mint": "",
+    "mint": "9WnfDcFgE4A8wnkYjdYgNAny5wHU3Mn1EaBD1unJvXSX",
     "file": "assets/cardnft2/cards/6000/card-6574.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -65934,11 +65934,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6594",
     "stableId": "cardnft2:card-6594",
-    "mint": "",
+    "mint": "5VEiHkXKvfKntxgKNEeECkCVvs8yCgwLpaxkG8WQttYi",
     "file": "assets/cardnft2/cards/6000/card-6594.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -65964,11 +65964,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6597",
     "stableId": "cardnft2:card-6597",
-    "mint": "",
+    "mint": "EfysGyfhK5Ny2dsRHqpHnxPmcL7A987hKs7c3FQEDfjs",
     "file": "assets/cardnft2/cards/6000/card-6597.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -66054,11 +66054,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6606",
     "stableId": "cardnft2:card-6606",
-    "mint": "",
+    "mint": "2KwLFTmd9thRhEzfBC99u5QmUZ1a3drhzxh6jTpFpYCv",
     "file": "assets/cardnft2/cards/6000/card-6606.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -66354,11 +66354,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6636",
     "stableId": "cardnft2:card-6636",
-    "mint": "",
+    "mint": "9XsnfLCUoGDuk95tzdkn92Aw392sRccMccBP4jkxS7SM",
     "file": "assets/cardnft2/cards/6000/card-6636.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -66484,11 +66484,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6649",
     "stableId": "cardnft2:card-6649",
-    "mint": "",
+    "mint": "H8o3Ghieps7QohquMWozMh5e3Ruppmg3B844rwwHfTbw",
     "file": "assets/cardnft2/cards/6000/card-6649.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -66534,11 +66534,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6654",
     "stableId": "cardnft2:card-6654",
-    "mint": "EcT3hWEv3xHBSo8UwNpokJ1KW4tfrsySWwasiHqBThKw",
+    "mint": "91tETtwusUPfr3CVn6JH4wweDerzqfwtGv39ZcLRf2C5",
     "file": "assets/cardnft2/cards/6000/card-6654.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -66554,11 +66554,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6656",
     "stableId": "cardnft2:card-6656",
-    "mint": "",
+    "mint": "7TZn1rXN6g5ay4DSUWSq1eELFHDtFyAxKRGifeTMnzuF",
     "file": "assets/cardnft2/cards/6000/card-6656.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -66734,21 +66734,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6674",
     "stableId": "cardnft2:card-6674",
-    "mint": "7pAa1sSPcUQFTXsxkC3FQByQRcPqn8vjyQoHFbmJyq2",
+    "mint": "C3A2rmjG6zvVzDgRAUJGY82d8U4PDT4r1vJg1hQ2pDHZ",
     "file": "assets/cardnft2/cards/6000/card-6674.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
     "title": "card 6675",
     "stableId": "cardnft2:card-6675",
-    "mint": "",
+    "mint": "BrTJ1yVAwv7ihDzDQ7bP2jVEPTGZvcUDhtkvGUquaMca",
     "file": "assets/cardnft2/cards/6000/card-6675.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -67064,11 +67064,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6707",
     "stableId": "cardnft2:card-6707",
-    "mint": "",
+    "mint": "J3D5FXt3x5QiXQoNLisUrGq9HYeefuFAivV7n8RVHnXn",
     "file": "assets/cardnft2/cards/6000/card-6707.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -67784,11 +67784,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6779",
     "stableId": "cardnft2:card-6779",
-    "mint": "",
+    "mint": "DZvzeJFqG4L1vQtp2r8FWZvaBFbVwZLWTBQLtPsP4tpw",
     "file": "assets/cardnft2/cards/6000/card-6779.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -67994,11 +67994,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6800",
     "stableId": "cardnft2:card-6800",
-    "mint": "",
+    "mint": "AHzNWwEB4MPqA72xfbv4KKpotUGhJNx6X6tTzw7ZpnVN",
     "file": "assets/cardnft2/cards/6000/card-6800.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -68024,11 +68024,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6803",
     "stableId": "cardnft2:card-6803",
-    "mint": "56tZ96Zp7Mpyqscjo4N9qhhsqJPkpv4fhDHjrP1T64Kv",
+    "mint": "6xDbzaSGhAEgtNd399qS8RiEZab3pQhxnesrnK3pr4BY",
     "file": "assets/cardnft2/cards/6000/card-6803.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -68274,11 +68274,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6828",
     "stableId": "cardnft2:card-6828",
-    "mint": "",
+    "mint": "ayFgMqY5cmkH7JFxsUR3caqoJFqi9ZDpb9piJgdjWTt",
     "file": "assets/cardnft2/cards/6000/card-6828.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -68514,11 +68514,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6852",
     "stableId": "cardnft2:card-6852",
-    "mint": "",
+    "mint": "HtWVsDZm2WVq928t31QxRtC4G3pMkSCbLG2thxZiiYmn",
     "file": "assets/cardnft2/cards/6000/card-6852.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -68674,11 +68674,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6868",
     "stableId": "cardnft2:card-6868",
-    "mint": "",
+    "mint": "88Nf3tJtR9ZwbNxFXRpexJbcAhM1diho196wZj3SBwgT",
     "file": "assets/cardnft2/cards/6000/card-6868.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -68944,21 +68944,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6895",
     "stableId": "cardnft2:card-6895",
-    "mint": "",
+    "mint": "7fHNtvLmAY6JLAPhZHT8nbbckKi82gaYAV5QoJMqeMrs",
     "file": "assets/cardnft2/cards/6000/card-6895.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
     "title": "card 6896",
     "stableId": "cardnft2:card-6896",
-    "mint": "",
+    "mint": "GSScSgXCqi25f7dh8RDd4SiAc51UBzT1YWxvFemUaopp",
     "file": "assets/cardnft2/cards/6000/card-6896.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -69354,21 +69354,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6936",
     "stableId": "cardnft2:card-6936",
-    "mint": "",
+    "mint": "FNtJBMhsMoyAUbZvU135BnJVVvyKuBuPRBEo2h6t8nQz",
     "file": "assets/cardnft2/cards/6000/card-6936.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
     "title": "card 6937",
     "stableId": "cardnft2:card-6937",
-    "mint": "",
+    "mint": "5oBKy9P7U4awU2dxt7rmMFdUM5equ9pg8kRQHUwjjSzd",
     "file": "assets/cardnft2/cards/6000/card-6937.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -69384,11 +69384,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6939",
     "stableId": "cardnft2:card-6939",
-    "mint": "",
+    "mint": "93qtuPmsWvpSEpiuATqUrKpw2onSXPCfdi8KihUGSdRC",
     "file": "assets/cardnft2/cards/6000/card-6939.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -69544,11 +69544,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6955",
     "stableId": "cardnft2:card-6955",
-    "mint": "4PDipwu78DZWt7mYnuXCmcUziDL7SHVdtu6XB6GBsoiS",
+    "mint": "ouXoaaxfkwCX49C2s2MejtT6cvz7iafdgkKur9uABut",
     "file": "assets/cardnft2/cards/6000/card-6955.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -69574,11 +69574,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6958",
     "stableId": "cardnft2:card-6958",
-    "mint": "",
+    "mint": "BkuG7Dh3x7t1dBbuMpcPGxQRJMUWhWUjAuUnQJCKAdTJ",
     "file": "assets/cardnft2/cards/6000/card-6958.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -69894,11 +69894,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6990",
     "stableId": "cardnft2:card-6990",
-    "mint": "",
+    "mint": "CtXhVyqXLKp2d5bMWr7AKzbouRDHWEHqMtACggCXvvVx",
     "file": "assets/cardnft2/cards/6000/card-6990.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -69934,11 +69934,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 6994",
     "stableId": "cardnft2:card-6994",
-    "mint": "",
+    "mint": "6vf2k7YvZQc5MhPvCARtsxwAaFyDUvEkwwJQVJLcXKyP",
     "file": "assets/cardnft2/cards/6000/card-6994.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -70864,11 +70864,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7087",
     "stableId": "cardnft2:card-7087",
-    "mint": "",
+    "mint": "F2BhpfVgYuTUYCNEG9XnMUAS1XG732ufnNixFxaGsecN",
     "file": "assets/cardnft2/cards/7000/card-7087.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -70914,11 +70914,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7092",
     "stableId": "cardnft2:card-7092",
-    "mint": "4qRzwcS2y2V1DtNiDRNgQPcWbQsVRnSZAyzskr8iQcft",
+    "mint": "93L1mZk8Lad8fEGG3j8RXXAiKMkNPx9pWCCf19cf4iBP",
     "file": "assets/cardnft2/cards/7000/card-7092.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -71094,21 +71094,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7110",
     "stableId": "cardnft2:card-7110",
-    "mint": "",
+    "mint": "DMtEBYxyZWuVVCvjyTruWs1vixPrJp2q9UehvBmPHtgE",
     "file": "assets/cardnft2/cards/7000/card-7110.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
     "title": "card 7111",
     "stableId": "cardnft2:card-7111",
-    "mint": "",
+    "mint": "AniVat9gwiAWdsqgJJZKKiobkEZz4dxo2jkxsJVFVbvq",
     "file": "assets/cardnft2/cards/7000/card-7111.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -71614,11 +71614,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7162",
     "stableId": "cardnft2:card-7162",
-    "mint": "",
+    "mint": "7yt3kvmsH2fhUQTkRr5HrqS2ZwuX9xqwBKwfVt2BrtvA",
     "file": "assets/cardnft2/cards/7000/card-7162.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -71694,11 +71694,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7170",
     "stableId": "cardnft2:card-7170",
-    "mint": "",
+    "mint": "8ayNwJtFYFqSBH4EkzVEA67EuSusaV1NEkzgyWzEwrF6",
     "file": "assets/cardnft2/cards/7000/card-7170.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -71824,11 +71824,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7183",
     "stableId": "cardnft2:card-7183",
-    "mint": "",
+    "mint": "wHgStgUydtcGNjpbsMiCcGWBeo4gVfJ7cfyACu3xRrT",
     "file": "assets/cardnft2/cards/7000/card-7183.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -71894,11 +71894,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7190",
     "stableId": "cardnft2:card-7190",
-    "mint": "",
+    "mint": "2GSSgi6gEW1kirBwR4zQcr7qmx8vfXKiDHz765NB9Ywg",
     "file": "assets/cardnft2/cards/7000/card-7190.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -72064,11 +72064,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7207",
     "stableId": "cardnft2:card-7207",
-    "mint": "",
+    "mint": "FcxWFKXjH6s54njnnwzN8o8GxkCfWznfJ9WTCwqBtrbx",
     "file": "assets/cardnft2/cards/7000/card-7207.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -72104,11 +72104,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7211",
     "stableId": "cardnft2:card-7211",
-    "mint": "",
+    "mint": "G1itdvvdJNEjNuHWNCraJuc5tNb9hVWRJVZejJ1qarVc",
     "file": "assets/cardnft2/cards/7000/card-7211.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -72384,11 +72384,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7239",
     "stableId": "cardnft2:card-7239",
-    "mint": "",
+    "mint": "JAJzzAAueJmZVY5LFRuv5LwQuLG2XU2KGLRZQQuzC2FZ",
     "file": "assets/cardnft2/cards/7000/card-7239.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -72434,21 +72434,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7244",
     "stableId": "cardnft2:card-7244",
-    "mint": "",
+    "mint": "G2kWtDt2GYQnGoL1DSrP3NuVWBKsmw1cp3Eoh75f2cRd",
     "file": "assets/cardnft2/cards/7000/card-7244.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
     "title": "card 7245",
     "stableId": "cardnft2:card-7245",
-    "mint": "",
+    "mint": "JDoh4xWhZTvJScPq9gYQQ6JSegZeyc8BviHPPohhZZvY",
     "file": "assets/cardnft2/cards/7000/card-7245.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -72574,11 +72574,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7258",
     "stableId": "cardnft2:card-7258",
-    "mint": "",
+    "mint": "Ag66WvJDWgg8c5kQ7Yhu6xWe2n1oTxL21aaZVarXoo5C",
     "file": "assets/cardnft2/cards/7000/card-7258.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -72634,11 +72634,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7264",
     "stableId": "cardnft2:card-7264",
-    "mint": "",
+    "mint": "d7xNVzy6YzskyUfxi1nm1kEjRvitM64edhHLeRSRfRH",
     "file": "assets/cardnft2/cards/7000/card-7264.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -72664,11 +72664,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7267",
     "stableId": "cardnft2:card-7267",
-    "mint": "",
+    "mint": "87pKKbESCmgmzxXeyRzzxwadDRbRaD7uC3CNxCvxgyeL",
     "file": "assets/cardnft2/cards/7000/card-7267.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -72864,11 +72864,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7287",
     "stableId": "cardnft2:card-7287",
-    "mint": "",
+    "mint": "ET7dzaGuSoFipNxKN82SHR3abFbpokfEPsnccxKCwGim",
     "file": "assets/cardnft2/cards/7000/card-7287.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -73744,11 +73744,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7375",
     "stableId": "cardnft2:card-7375",
-    "mint": "",
+    "mint": "Ht4gH56TPddi1sDRsewkTF1NChz7LmXQWy9ewMx7mYGo",
     "file": "assets/cardnft2/cards/7000/card-7375.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -73944,11 +73944,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7395",
     "stableId": "cardnft2:card-7395",
-    "mint": "",
+    "mint": "BHC7HHFindZQ3DR4wku6vsa5qFf5jWtWURvuSrJFuzxF",
     "file": "assets/cardnft2/cards/7000/card-7395.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -74364,11 +74364,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7437",
     "stableId": "cardnft2:card-7437",
-    "mint": "",
+    "mint": "3u2tQRDNMdBG1LkTf4FePh6YNCeLgTZucts9jBuxMNBo",
     "file": "assets/cardnft2/cards/7000/card-7437.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -74394,11 +74394,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7440",
     "stableId": "cardnft2:card-7440",
-    "mint": "",
+    "mint": "5QGjAPx3CsQQCySh8zrhFyC4KoTG6Y3LH2W52PagWqup",
     "file": "assets/cardnft2/cards/7000/card-7440.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -74974,11 +74974,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7498",
     "stableId": "cardnft2:card-7498",
-    "mint": "",
+    "mint": "BaaTLWgjGJvYKnStYB5aKAkas5a2PHz3bCDjNmWYfJRS",
     "file": "assets/cardnft2/cards/7000/card-7498.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -75504,11 +75504,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7551",
     "stableId": "cardnft2:card-7551",
-    "mint": "3oFaZEn21KDKbeGGSBZhoSE9CG8XmWCiMGs4FcrrxZN2",
+    "mint": "4VUV2DzboT6YHKNxqTCfmV4DccEJgGLdcFBbWELyif7j",
     "file": "assets/cardnft2/cards/7000/card-7551.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -75534,11 +75534,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7554",
     "stableId": "cardnft2:card-7554",
-    "mint": "",
+    "mint": "H7YkrZaoRc8BSygR4kgsvdRAxiji9YmgWwMm82vuXfoh",
     "file": "assets/cardnft2/cards/7000/card-7554.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -75684,11 +75684,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7569",
     "stableId": "cardnft2:card-7569",
-    "mint": "HTspKLax9WZePerVDE2eaewCqyR4EnqBTFWz8T45298G",
+    "mint": "GoKh8VH4F6Bq5zUsC4wy34VRgPne62xBpmjdjHEstuEf",
     "file": "assets/cardnft2/cards/7000/card-7569.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -75794,11 +75794,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7580",
     "stableId": "cardnft2:card-7580",
-    "mint": "",
+    "mint": "3kh4eoRjJWKxWtL6PzJF1weCXUGqALSZ9EsTik4P8HyJ",
     "file": "assets/cardnft2/cards/7000/card-7580.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -76024,11 +76024,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7603",
     "stableId": "cardnft2:card-7603",
-    "mint": "",
+    "mint": "HkwnfvbhP2g64iQcm7iPhnY8b1WZ1tqmBtJcRZiDTPUh",
     "file": "assets/cardnft2/cards/7000/card-7603.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -76194,11 +76194,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7620",
     "stableId": "cardnft2:card-7620",
-    "mint": "",
+    "mint": "7SaxLtrRbqaw6ZoaA5wU7Wk8kb4wAUasDmxHgzfsXpE6",
     "file": "assets/cardnft2/cards/7000/card-7620.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -76614,11 +76614,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7662",
     "stableId": "cardnft2:card-7662",
-    "mint": "",
+    "mint": "9EmwbQKC9CxBUvd1DoBBnJ4gL3A4FawJ2KpY6XEN16JZ",
     "file": "assets/cardnft2/cards/7000/card-7662.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -76654,11 +76654,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7666",
     "stableId": "cardnft2:card-7666",
-    "mint": "",
+    "mint": "4ZXsVT6nE8R3JyszhRRzSxKw1E1PbQFBFLstSRUBrTpb",
     "file": "assets/cardnft2/cards/7000/card-7666.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -76744,11 +76744,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7675",
     "stableId": "cardnft2:card-7675",
-    "mint": "39zDeC8Sdx6uxD4CVceaV4eHjQHqNoBD9j3JM3FydSBM",
+    "mint": "84MxxJ5bm7x5263iPB1rUEd9EmuFZYHFjk4XdxQfChuA",
     "file": "assets/cardnft2/cards/7000/card-7675.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -76994,11 +76994,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7700",
     "stableId": "cardnft2:card-7700",
-    "mint": "7hCPpAzVPUyP4mrR2vePsHJFnawzRy2hCBgG1tTMejDe",
+    "mint": "E1WMY6Dp3NYn61beYEzpkPVoHWUWqjA2cA7N79ZSZBRz",
     "file": "assets/cardnft2/cards/7000/card-7700.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -77214,11 +77214,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7722",
     "stableId": "cardnft2:card-7722",
-    "mint": "",
+    "mint": "Kxm6qeWWUxVribfsfD2XT4goKxufDBq4793wUVPebYf",
     "file": "assets/cardnft2/cards/7000/card-7722.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -77774,11 +77774,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7778",
     "stableId": "cardnft2:card-7778",
-    "mint": "",
+    "mint": "8M4g2pddQKB248arW6iVmPRWCmNuJdy5RVQkK38DAbhU",
     "file": "assets/cardnft2/cards/7000/card-7778.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -78054,11 +78054,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7806",
     "stableId": "cardnft2:card-7806",
-    "mint": "3RBCVeNhgmyuhGRn9Lo6ErRCutPZr8dZ2k9Bkb6jdhQi",
+    "mint": "FTeUuvZTM1VMcwBAs9YL1kA69jogRfwGbkK3vHpHRUoT",
     "file": "assets/cardnft2/cards/7000/card-7806.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -78084,11 +78084,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7809",
     "stableId": "cardnft2:card-7809",
-    "mint": "",
+    "mint": "89sgLJEL46KRFtvXQJz5RBtW453zso7njHZ5zV9dD61",
     "file": "assets/cardnft2/cards/7000/card-7809.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -78124,11 +78124,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7813",
     "stableId": "cardnft2:card-7813",
-    "mint": "",
+    "mint": "43xvriEXpf78EVojCL3ytRnpQhBgxRfHKaJTZb1zJhVY",
     "file": "assets/cardnft2/cards/7000/card-7813.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -78204,11 +78204,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7821",
     "stableId": "cardnft2:card-7821",
-    "mint": "",
+    "mint": "3G77Gu6rRvDhXkfAKeXD1vvviCG8HQwt9FTKezgus4bW",
     "file": "assets/cardnft2/cards/7000/card-7821.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -78334,11 +78334,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7834",
     "stableId": "cardnft2:card-7834",
-    "mint": "",
+    "mint": "HXj5b7aG1RKY8EXVZKMXnbgHBvAxR9xVcVdYDrot7Cw2",
     "file": "assets/cardnft2/cards/7000/card-7834.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -78564,11 +78564,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7857",
     "stableId": "cardnft2:card-7857",
-    "mint": "BzBj4PyejxGDZq5cf88LRznQbfgnXHXemw2u7xZzXRcX",
+    "mint": "H7iNhFCnybf894Q5iEx5xiUwEbkw5bdhGQWL6z2o4Jmg",
     "file": "assets/cardnft2/cards/7000/card-7857.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -78824,11 +78824,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7883",
     "stableId": "cardnft2:card-7883",
-    "mint": "",
+    "mint": "EBo75qyjcBDZWqaNzoYqSwS6jMRgnwTNyodK7rxjnarE",
     "file": "assets/cardnft2/cards/7000/card-7883.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -78874,11 +78874,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7888",
     "stableId": "cardnft2:card-7888",
-    "mint": "",
+    "mint": "EcfBrKeRzKBY5QVxgXSDbh593qdXVYLeyyWUPfgD6Tq4",
     "file": "assets/cardnft2/cards/7000/card-7888.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -78974,11 +78974,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7898",
     "stableId": "cardnft2:card-7898",
-    "mint": "",
+    "mint": "AXEnuANAHJoc5VhEpdFQZTdffoqqB8yw1df7wbXf6sdB",
     "file": "assets/cardnft2/cards/7000/card-7898.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -79044,11 +79044,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7905",
     "stableId": "cardnft2:card-7905",
-    "mint": "",
+    "mint": "HZmmoN87hNWiiNjsWRhPXtxoBjDgsCPfkr4apaZaqVc9",
     "file": "assets/cardnft2/cards/7000/card-7905.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -79294,11 +79294,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7930",
     "stableId": "cardnft2:card-7930",
-    "mint": "uv77S1weuFSf3vZ6mgDSDY7MeLta42TcGvaZhcRGvUr",
+    "mint": "69Avc7R59vkv7xy7Hpgkuvdu4yqALz58PicWKKSpnHRR",
     "file": "assets/cardnft2/cards/7000/card-7930.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -79474,11 +79474,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7948",
     "stableId": "cardnft2:card-7948",
-    "mint": "",
+    "mint": "6stJW2UK3ADhSDT462bMC1dR7Fi67fve8eVnnnPu15Vc",
     "file": "assets/cardnft2/cards/7000/card-7948.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -79584,11 +79584,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 7959",
     "stableId": "cardnft2:card-7959",
-    "mint": "",
+    "mint": "5M6v9kGQQHSDYYewvDJRbmUNTdidFaiT3ruK51bPpfED",
     "file": "assets/cardnft2/cards/7000/card-7959.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -80174,11 +80174,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8018",
     "stableId": "cardnft2:card-8018",
-    "mint": "",
+    "mint": "Dicc6h72EaEfkRtV97nsAt1PcraVJ2ZmSzobUsNGyr5z",
     "file": "assets/cardnft2/cards/8000/card-8018.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -81304,11 +81304,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8131",
     "stableId": "cardnft2:card-8131",
-    "mint": "",
+    "mint": "iy6k6jTWTCNUrBRsW7b6vZBm5LkcYKmFnRfvLFmUfND",
     "file": "assets/cardnft2/cards/8000/card-8131.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -81574,11 +81574,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8158",
     "stableId": "cardnft2:card-8158",
-    "mint": "",
+    "mint": "65fPUAi3dSSXvj7MHxd1tZEVHdQwLHTCiC6hiE9ffaCh",
     "file": "assets/cardnft2/cards/8000/card-8158.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -81714,11 +81714,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8172",
     "stableId": "cardnft2:card-8172",
-    "mint": "",
+    "mint": "GjX6RjGnXgsVV9DaGRbykYzidUFZNh3WSFgdADNYN3qc",
     "file": "assets/cardnft2/cards/8000/card-8172.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -82224,11 +82224,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8223",
     "stableId": "cardnft2:card-8223",
-    "mint": "",
+    "mint": "J7YKHaqwki4Q9go6Yt4h3NQfe85uX3s2CqBPiybr1Y9h",
     "file": "assets/cardnft2/cards/8000/card-8223.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -82574,11 +82574,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8258",
     "stableId": "cardnft2:card-8258",
-    "mint": "8hZMRcwpQs5AzMouywGnrAcyiDBYpaWoHm8S29cQeDYn",
+    "mint": "85PUqQfjjoPWF21cfWH5y8nwo27yhhkHCYLgpQFFJfWp",
     "file": "assets/cardnft2/cards/8000/card-8258.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -82594,11 +82594,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8260",
     "stableId": "cardnft2:card-8260",
-    "mint": "",
+    "mint": "9vHGUQBzyRanAXNnLbyL15C6RQeJjTx7jQ7RLo58mm8w",
     "file": "assets/cardnft2/cards/8000/card-8260.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -82724,11 +82724,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8273",
     "stableId": "cardnft2:card-8273",
-    "mint": "FeRwWvFTSDFeqsEkuXe4sP2VnmrRugfULyrAmPVjx1wP",
+    "mint": "FgKrerrm9z5UdYdyFQLD4j61XuDUB5LedGsgjZUyYe8v",
     "file": "assets/cardnft2/cards/8000/card-8273.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -82994,11 +82994,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8300",
     "stableId": "cardnft2:card-8300",
-    "mint": "",
+    "mint": "JAxhqCNygpHogok5BpzUcmXsw3752iYRdztSpwFJURPr",
     "file": "assets/cardnft2/cards/8000/card-8300.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -83024,11 +83024,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8303",
     "stableId": "cardnft2:card-8303",
-    "mint": "8LnazEQasaFobtPyGjGurRjsjRVrUugBiebKbj9X4CBd",
+    "mint": "Bp3st3BCc7VDxxz9AfSeZ15PuQnxMQBHgiaHsfXmkhY",
     "file": "assets/cardnft2/cards/8000/card-8303.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -83044,11 +83044,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8305",
     "stableId": "cardnft2:card-8305",
-    "mint": "",
+    "mint": "5rL1iq1zG5dg1y5ZsogWKTdSsfh9rxEzTT3LTSqBG1t4",
     "file": "assets/cardnft2/cards/8000/card-8305.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -83354,11 +83354,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8336",
     "stableId": "cardnft2:card-8336",
-    "mint": "",
+    "mint": "um5sv1eaXEySCmkXfdQpmAMQwzZMK7FebcRnpeaBmvr",
     "file": "assets/cardnft2/cards/8000/card-8336.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -83654,11 +83654,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8366",
     "stableId": "cardnft2:card-8366",
-    "mint": "B8233zpWSdCQrdgYBDGP6Bxd4cApZMgVJ8VpQv49eTBF",
+    "mint": "5fzJwoH52hRp4uXXiHN1afFvH9XP2bn22hw5pUMgjxQ2",
     "file": "assets/cardnft2/cards/8000/card-8366.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -83754,11 +83754,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8376",
     "stableId": "cardnft2:card-8376",
-    "mint": "",
+    "mint": "8tRNEsNfeYTQauud7N1V5CmYcQ2m6uxse1Dn27LeDP9S",
     "file": "assets/cardnft2/cards/8000/card-8376.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -83974,11 +83974,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8398",
     "stableId": "cardnft2:card-8398",
-    "mint": "QdwEXwHkk71yPcddpqK7G6gXwNcMYKVKoNx9VSQwkcd",
+    "mint": "Hpzc4LD7vFbPrHbxgvgRbpZDRG6HW8W5fzcHGWWwv2Ac",
     "file": "assets/cardnft2/cards/8000/card-8398.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -84114,11 +84114,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8412",
     "stableId": "cardnft2:card-8412",
-    "mint": "",
+    "mint": "A5crMrSdd8DmkbH7eqDihRuJavxheLiP5YYAstHZGwiv",
     "file": "assets/cardnft2/cards/8000/card-8412.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -84524,11 +84524,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8453",
     "stableId": "cardnft2:card-8453",
-    "mint": "HJij2yMegyXjMz5zSXLgZbWh2evcVckmCTG7GC8G5A2W",
+    "mint": "6ikwh56byLW1He33MMMzBCmMvwDqV5bebSZGiHKWNcWb",
     "file": "assets/cardnft2/cards/8000/card-8453.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -84694,11 +84694,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8470",
     "stableId": "cardnft2:card-8470",
-    "mint": "E5XpyogbuJgCnnR4tixU8J73d2jAFfc96Y9czftdHQwk",
+    "mint": "BvXs89DsmJVhkjV4ciBgkGe6dp1FkuE6C2LJCmmAdT9T",
     "file": "assets/cardnft2/cards/8000/card-8470.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -85224,11 +85224,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8523",
     "stableId": "cardnft2:card-8523",
-    "mint": "3gMNbDC9wRrDe9FcosQaTFP82aeZQXcoBNzpWc5hE1eo",
+    "mint": "BLkcxNcbfp61jc2HMfyBdPGsiVo3xvPDoMnMAJKLpgzR",
     "file": "assets/cardnft2/cards/8000/card-8523.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -85484,11 +85484,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8549",
     "stableId": "cardnft2:card-8549",
-    "mint": "",
+    "mint": "B4vws568eKQMiXvwQPpaZfK9yptKfQxqc3vCi4wrGYHC",
     "file": "assets/cardnft2/cards/8000/card-8549.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -87114,11 +87114,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8712",
     "stableId": "cardnft2:card-8712",
-    "mint": "9UKMrA9mcJamiizhBwyrhJiXbsiHM989RfEwAS4t9etD",
+    "mint": "BHucVjcjjK2HkUuBxQ85rQ5LaMRDEy66AcbUNrafZzW",
     "file": "assets/cardnft2/cards/8000/card-8712.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -87144,21 +87144,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8715",
     "stableId": "cardnft2:card-8715",
-    "mint": "",
+    "mint": "42zWSVj7CYU16fAdpmmLAtEn2AcvK7KanYpEx6Y8fMCn",
     "file": "assets/cardnft2/cards/8000/card-8715.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
     "title": "card 8716",
     "stableId": "cardnft2:card-8716",
-    "mint": "",
+    "mint": "4J7odhW8rN2nwDqcZs36oBYVrsWnBKxFvtdVichwwEFt",
     "file": "assets/cardnft2/cards/8000/card-8716.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -87524,11 +87524,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8753",
     "stableId": "cardnft2:card-8753",
-    "mint": "",
+    "mint": "NrXuPsGwb6Xh1emYAMcNmF8eVyMSAVtkJgSRGMgNGgb",
     "file": "assets/cardnft2/cards/8000/card-8753.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -87564,11 +87564,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8757",
     "stableId": "cardnft2:card-8757",
-    "mint": "",
+    "mint": "94ozVPdcGUdZcAPmP4WtDioCuGAoQ7SRBvRiYtpvq7cW",
     "file": "assets/cardnft2/cards/8000/card-8757.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -87654,11 +87654,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8766",
     "stableId": "cardnft2:card-8766",
-    "mint": "",
+    "mint": "7vUAX8GDV2PTxGTPrHCkk61un6N7PjZtKcirprxW4RAT",
     "file": "assets/cardnft2/cards/8000/card-8766.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -87864,11 +87864,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8787",
     "stableId": "cardnft2:card-8787",
-    "mint": "",
+    "mint": "D2PWLqdno1MWfWeXrYiRYSBUv3nFkriLW9rATtA5DXGz",
     "file": "assets/cardnft2/cards/8000/card-8787.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -87914,11 +87914,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8792",
     "stableId": "cardnft2:card-8792",
-    "mint": "",
+    "mint": "GRJAtBLYiKSBEJKvaDED2tVTfaQj8dX46kmxxMw4KZS5",
     "file": "assets/cardnft2/cards/8000/card-8792.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -88024,11 +88024,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8803",
     "stableId": "cardnft2:card-8803",
-    "mint": "",
+    "mint": "EUkD4F16tSmHXHL4cZdLXCGVcNhNCcHwusu7ddob3NM9",
     "file": "assets/cardnft2/cards/8000/card-8803.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -88274,11 +88274,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8828",
     "stableId": "cardnft2:card-8828",
-    "mint": "BfMMjaatiBjkcP6c4VNZ9gmQH5S9oHkf4xBrdw9Cd3yP",
+    "mint": "6jEtt7ihJUKjAFzgyzyy5Eg5adbS19sRy2oCBZsBRACv",
     "file": "assets/cardnft2/cards/8000/card-8828.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -88604,11 +88604,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8861",
     "stableId": "cardnft2:card-8861",
-    "mint": "",
+    "mint": "AgX8cCUiEgH6WQsgtGq8owGrEAdEarTJFLHngMDvWFsj",
     "file": "assets/cardnft2/cards/8000/card-8861.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -88714,11 +88714,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8872",
     "stableId": "cardnft2:card-8872",
-    "mint": "",
+    "mint": "829Lij1YvJknFkyUoeRWUFmvox3o14tTUwaZ9kYqSgbJ",
     "file": "assets/cardnft2/cards/8000/card-8872.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -88854,11 +88854,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8886",
     "stableId": "cardnft2:card-8886",
-    "mint": "9xM4MQYcNikT3ZHc2jjVYjAQ8LrU1bj4YYUxNt1dVorf",
+    "mint": "66QiDkZqjnCmR1zBHfUSXWEkaH1yCt34FvUXUkEjxHLZ",
     "file": "assets/cardnft2/cards/8000/card-8886.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -89384,11 +89384,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8939",
     "stableId": "cardnft2:card-8939",
-    "mint": "",
+    "mint": "G5uwfSpqMFscQcwHo7hsLnS1HPQqBjN7589329VRBa5R",
     "file": "assets/cardnft2/cards/8000/card-8939.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -89534,11 +89534,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 8954",
     "stableId": "cardnft2:card-8954",
-    "mint": "",
+    "mint": "AeNzSGKbrHStV7Zao8emqajePssyY8i56enJpRZiBAmW",
     "file": "assets/cardnft2/cards/8000/card-8954.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -90534,11 +90534,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9054",
     "stableId": "cardnft2:card-9054",
-    "mint": "",
+    "mint": "3UX6BRUr4349Ray4CF1hArrNHFmJM33FsuvRZKqEREmK",
     "file": "assets/cardnft2/cards/9000/card-9054.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -90624,11 +90624,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9063",
     "stableId": "cardnft2:card-9063",
-    "mint": "",
+    "mint": "GFdmnbkoa5JiVPWPAnyd3nmpnFaHPy7qhw9WpSDJxuL4",
     "file": "assets/cardnft2/cards/9000/card-9063.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -91554,11 +91554,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9156",
     "stableId": "cardnft2:card-9156",
-    "mint": "",
+    "mint": "9QCAACd6hXY4sJwaYDtfKXnS2SMDm3Xpu8QD5LnGoV65",
     "file": "assets/cardnft2/cards/9000/card-9156.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -91774,11 +91774,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9178",
     "stableId": "cardnft2:card-9178",
-    "mint": "",
+    "mint": "FX5uEAqcZNv63Y9Dpt2CmXVrjqQ7dmcP6feNQ18kurGh",
     "file": "assets/cardnft2/cards/9000/card-9178.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -92014,11 +92014,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9202",
     "stableId": "cardnft2:card-9202",
-    "mint": "FBp5wDVfFDWjfnB6YBwGZsQzKVKm7UEY6EnPt7WMMBw3",
+    "mint": "4fRDm2nbeYC2FVnJxWfo9ASUEreS5pd8JUhpWgAMe9GT",
     "file": "assets/cardnft2/cards/9000/card-9202.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -92094,11 +92094,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9210",
     "stableId": "cardnft2:card-9210",
-    "mint": "",
+    "mint": "DDyehA8fYkeT61hX7A2kr1BPYxn29xWYsKbYXFMfwepS",
     "file": "assets/cardnft2/cards/9000/card-9210.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -92114,11 +92114,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9212",
     "stableId": "cardnft2:card-9212",
-    "mint": "",
+    "mint": "92hp99TNM9iiJZ6VUxsk1FF4Qoj9yMGPiyJbDJoedcnH",
     "file": "assets/cardnft2/cards/9000/card-9212.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -92284,11 +92284,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9229",
     "stableId": "cardnft2:card-9229",
-    "mint": "",
+    "mint": "Evr9XFS4x3owBBfjgJfUozPJhRBGUvcV8Nadkamq3qi6",
     "file": "assets/cardnft2/cards/9000/card-9229.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -92354,11 +92354,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9236",
     "stableId": "cardnft2:card-9236",
-    "mint": "B8gSnryuouHE2xnZvbaximQJaAZi2JCDeo8Pmwv3Tgjg",
+    "mint": "7ueNQPdvp3LRBzjebZzPYCSZCQUv89YZRnnErWYw2Lei",
     "file": "assets/cardnft2/cards/9000/card-9236.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -92654,11 +92654,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9266",
     "stableId": "cardnft2:card-9266",
-    "mint": "6EQTPpjRdJVPfCgXoRaaUB2CaJB51ZQSPNbjbfce4phZ",
+    "mint": "7PV9z79k47QMQJ3iJa5YnTPY1GsFpZPnVGCK449Xdbpp",
     "file": "assets/cardnft2/cards/9000/card-9266.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -92714,11 +92714,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9272",
     "stableId": "cardnft2:card-9272",
-    "mint": "",
+    "mint": "C8yxRBGUTdJFM1ipW8BCpvbYsXf4PDYHxBwPx8kXqQYG",
     "file": "assets/cardnft2/cards/9000/card-9272.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -92864,11 +92864,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9287",
     "stableId": "cardnft2:card-9287",
-    "mint": "",
+    "mint": "3xFaszwQThiQoBZzx4wEPmXAGc4QhvP8DbN7JRaBUKfp",
     "file": "assets/cardnft2/cards/9000/card-9287.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -93014,11 +93014,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9302",
     "stableId": "cardnft2:card-9302",
-    "mint": "",
+    "mint": "DmSAYySvq6w9UN6eAgFxSrYioo44rajxWNbTxPJXwwSP",
     "file": "assets/cardnft2/cards/9000/card-9302.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -93204,11 +93204,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9321",
     "stableId": "cardnft2:card-9321",
-    "mint": "",
+    "mint": "Ch2F3j9frpyhRtKNkHpcjRpCnqysYU2M6mEZSeHofK2M",
     "file": "assets/cardnft2/cards/9000/card-9321.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -93254,11 +93254,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9326",
     "stableId": "cardnft2:card-9326",
-    "mint": "",
+    "mint": "79tFFPayKHHqPw6VGS2FgCtzPfgBYm2P91EqMat5Z9VN",
     "file": "assets/cardnft2/cards/9000/card-9326.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -94014,11 +94014,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9402",
     "stableId": "cardnft2:card-9402",
-    "mint": "",
+    "mint": "8seqNpBFfVT7PXdu7UUJsSr5cxqTdfdBgkszGuZ5YpdF",
     "file": "assets/cardnft2/cards/9000/card-9402.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -94374,11 +94374,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9438",
     "stableId": "cardnft2:card-9438",
-    "mint": "",
+    "mint": "AUSmmexwPWY62AuGojHzkBgnbc4QCBBDekZknwxCzMfF",
     "file": "assets/cardnft2/cards/9000/card-9438.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -94814,11 +94814,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9482",
     "stableId": "cardnft2:card-9482",
-    "mint": "",
+    "mint": "7mAW1E3bVd2ttX7PoPJJ9zNyJSmJqjJ6dJ9mJkRW1Jw7",
     "file": "assets/cardnft2/cards/9000/card-9482.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -94874,21 +94874,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9488",
     "stableId": "cardnft2:card-9488",
-    "mint": "GLb7RZsNPybDjwrX27DW2d4kKTVcpXwJhXXABmrqVXqr",
+    "mint": "6KvN5nxCncrESeNSjTptpYfhpriouNWAN6VxAkhAgFAc",
     "file": "assets/cardnft2/cards/9000/card-9488.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
     "title": "card 9489",
     "stableId": "cardnft2:card-9489",
-    "mint": "",
+    "mint": "GkGVsspHLSbXCJ1aPkcyRMre3XJ6dcEXFRC23uR4EqDw",
     "file": "assets/cardnft2/cards/9000/card-9489.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -95464,11 +95464,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9547",
     "stableId": "cardnft2:card-9547",
-    "mint": "",
+    "mint": "CAFQQFj6C7JvZAga1ZER6jaFSUt2699dHMtSbyW13JPG",
     "file": "assets/cardnft2/cards/9000/card-9547.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -95604,21 +95604,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9561",
     "stableId": "cardnft2:card-9561",
-    "mint": "",
+    "mint": "3VJaQ43x65ThyaKb1VS17SzcBzGPFEeXU5nRrMFG4Kwt",
     "file": "assets/cardnft2/cards/9000/card-9561.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
     "title": "card 9562",
     "stableId": "cardnft2:card-9562",
-    "mint": "",
+    "mint": "EgRNaEdjgbjmeiMj6AE69ToZh4fN5afV6LY8ptvMuKUm",
     "file": "assets/cardnft2/cards/9000/card-9562.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -95804,11 +95804,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9581",
     "stableId": "cardnft2:card-9581",
-    "mint": "",
+    "mint": "ELPEY6Fb9wka4hFHQz4ycqu3m3wrGPG1xJW3x1gnXHKq",
     "file": "assets/cardnft2/cards/9000/card-9581.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -96014,11 +96014,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9602",
     "stableId": "cardnft2:card-9602",
-    "mint": "",
+    "mint": "4Dc3VsuhpGS69STgeKF67RYjLXVmPoTVq6ETw3NM4Jfp",
     "file": "assets/cardnft2/cards/9000/card-9602.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -96634,11 +96634,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9664",
     "stableId": "cardnft2:card-9664",
-    "mint": "",
+    "mint": "2nXfkBu7sWRDkuhdBWR2nbrdFe571dYvXMyHv5Ys8j3A",
     "file": "assets/cardnft2/cards/9000/card-9664.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -96994,11 +96994,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9700",
     "stableId": "cardnft2:card-9700",
-    "mint": "",
+    "mint": "5UtLoXkK9HVXZgL1eqtjAhXcW9giHdoTnv3BYUGwqm34",
     "file": "assets/cardnft2/cards/9000/card-9700.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -97044,11 +97044,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9705",
     "stableId": "cardnft2:card-9705",
-    "mint": "",
+    "mint": "3vDTekySarYSPCfTbGMTJSbG67WjAoW7bhW76yUAP94U",
     "file": "assets/cardnft2/cards/9000/card-9705.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -97174,21 +97174,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9718",
     "stableId": "cardnft2:card-9718",
-    "mint": "GTEKUWGhF5wweY1xAnuhZZfbFBRjo5ukNXMp2SGKBnoa",
+    "mint": "9Lx3crLPkeYyj3XhpnxM65GBKPqsnD5duScyLe4REoZX",
     "file": "assets/cardnft2/cards/9000/card-9718.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
     "title": "card 9719",
     "stableId": "cardnft2:card-9719",
-    "mint": "",
+    "mint": "JCTkxJVBowMMWy6kYnDAVXDEEkwbXmHir7WmEjh1aohP",
     "file": "assets/cardnft2/cards/9000/card-9719.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -97514,11 +97514,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9752",
     "stableId": "cardnft2:card-9752",
-    "mint": "",
+    "mint": "5fvT9CGgjK9zs3eKvgEbaPhHe3tcHrFsNZkuiYTLgTZb",
     "file": "assets/cardnft2/cards/9000/card-9752.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -97894,11 +97894,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9790",
     "stableId": "cardnft2:card-9790",
-    "mint": "",
+    "mint": "4JA8sSdw4RSTaZCTHkqHSysgfypfgVn2UqWFN53pwDPj",
     "file": "assets/cardnft2/cards/9000/card-9790.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -98024,21 +98024,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9803",
     "stableId": "cardnft2:card-9803",
-    "mint": "",
+    "mint": "3Mwpzvpov4N5rtiFRDNvfc8RXXEvLLC4PUdX59Nc2e3e",
     "file": "assets/cardnft2/cards/9000/card-9803.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
     "title": "card 9804",
     "stableId": "cardnft2:card-9804",
-    "mint": "69725SqG3toasrRsf9MQ7YjfpUvMcNbPVdtaVoHxTxwv",
+    "mint": "DfpgmPgFTpLn8VvUpbBdEiH3S6mpkgWuDBXf9SjDnpG7",
     "file": "assets/cardnft2/cards/9000/card-9804.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -98094,21 +98094,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9810",
     "stableId": "cardnft2:card-9810",
-    "mint": "",
+    "mint": "6WYTMkhf7JmhLymXfXtmrmH8zKTgrzTo5xVsway32D6G",
     "file": "assets/cardnft2/cards/9000/card-9810.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
     "title": "card 9811",
     "stableId": "cardnft2:card-9811",
-    "mint": "",
+    "mint": "8Hi7PjW41KahNqWgPd8SzDPdFbxrA5D2e8yWwLeqCbjr",
     "file": "assets/cardnft2/cards/9000/card-9811.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -98184,11 +98184,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9819",
     "stableId": "cardnft2:card-9819",
-    "mint": "",
+    "mint": "8VcWMWT4j4SytmQuLorAXk412z5WoDhZt44ebcvyhJ5f",
     "file": "assets/cardnft2/cards/9000/card-9819.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -98264,11 +98264,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9827",
     "stableId": "cardnft2:card-9827",
-    "mint": "",
+    "mint": "5sHiS1iod8AVynqZ81HmgA7AAW2jHFjLEpWpMPD49EAK",
     "file": "assets/cardnft2/cards/9000/card-9827.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -98354,11 +98354,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9836",
     "stableId": "cardnft2:card-9836",
-    "mint": "",
+    "mint": "5YCaFXPjLVZEpQwdnE6T2SqvAsVBdGM6wabWm9vUT1zA",
     "file": "assets/cardnft2/cards/9000/card-9836.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -98434,11 +98434,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9844",
     "stableId": "cardnft2:card-9844",
-    "mint": "",
+    "mint": "EzuQ24NAiWXEBNdNRAD6CE5eQj2eyvAZMbNYmdxakyPo",
     "file": "assets/cardnft2/cards/9000/card-9844.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -98554,11 +98554,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9856",
     "stableId": "cardnft2:card-9856",
-    "mint": "",
+    "mint": "NB4DwfGWHDNb9CEi5UcxMyShyPbu8UKsEeuZ4pFnuEE",
     "file": "assets/cardnft2/cards/9000/card-9856.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -99214,11 +99214,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9922",
     "stableId": "cardnft2:card-9922",
-    "mint": "",
+    "mint": "BHKR3j3FNCnrERjA1XUSwAsNV1LtUeU7dn2aDtwVzku5",
     "file": "assets/cardnft2/cards/9000/card-9922.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -99574,11 +99574,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9958",
     "stableId": "cardnft2:card-9958",
-    "mint": "EU4pUXoBgHKDEysjfgPQ1i8ULNVG6BRvGfofiTccKVYR",
+    "mint": "EUwhGW9QHWwJ4oQ5MadRf45BdgTTD4VVU9w7azRVt28A",
     "file": "assets/cardnft2/cards/9000/card-9958.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -99814,11 +99814,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9982",
     "stableId": "cardnft2:card-9982",
-    "mint": "",
+    "mint": "4PKG4GMLwHnuLXLAkQgxeA455ZDuYLARNe4a8eWSWZ6H",
     "file": "assets/cardnft2/cards/9000/card-9982.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -99884,11 +99884,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 9989",
     "stableId": "cardnft2:card-9989",
-    "mint": "",
+    "mint": "A4hsGsQUJZuy8TRGtGDH3NQwYY6Vz65fpzmv5kgpZ7vK",
     "file": "assets/cardnft2/cards/9000/card-9989.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -100624,11 +100624,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10064",
     "stableId": "cardnft2:card-10064",
-    "mint": "",
+    "mint": "BARre4hs6me9RvoxsPE9JYrwKBNPce5xWUqXMeeVJjnQ",
     "file": "assets/cardnft2/cards/10000/card-10064.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -100824,11 +100824,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10084",
     "stableId": "cardnft2:card-10084",
-    "mint": "",
+    "mint": "2sNA7hbsgYDEdHHoGubQoQA8AsquZqSzBHpKz1cRbgRe",
     "file": "assets/cardnft2/cards/10000/card-10084.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -101454,11 +101454,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10147",
     "stableId": "cardnft2:card-10147",
-    "mint": "",
+    "mint": "Xpy5LWpYDPEGg3gzp1a5rpXsuAFHxNUMYXTHetck2Lt",
     "file": "assets/cardnft2/cards/10000/card-10147.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -101534,11 +101534,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10155",
     "stableId": "cardnft2:card-10155",
-    "mint": "",
+    "mint": "A1Wiwfuuti4TAJA7WeKzKoqsEPmhv58iDQsQTewug74f",
     "file": "assets/cardnft2/cards/10000/card-10155.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -101934,11 +101934,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10195",
     "stableId": "cardnft2:card-10195",
-    "mint": "55yBCKANoo5McMMMSJY5s81nbQZBoK1w5GHshjB8v5EX",
+    "mint": "2BeHZFECyh95oSzovRmhuEnyKV7wEByBqJEDdnQvyqv8",
     "file": "assets/cardnft2/cards/10000/card-10195.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -102024,11 +102024,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10204",
     "stableId": "cardnft2:card-10204",
-    "mint": "",
+    "mint": "61FR8413MKRuTbTVp5hf4Mg1ChHwEv98n7zr4Ryizj91",
     "file": "assets/cardnft2/cards/10000/card-10204.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -102094,11 +102094,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10211",
     "stableId": "cardnft2:card-10211",
-    "mint": "BbdtG42o7LBKnev4NJ8M8betSZD1ipBu7gTRAzWSzL5s",
+    "mint": "7ukVStFsv4gGMpHJkRjLbK8apUAnUVizm9T3SC5G4SZM",
     "file": "assets/cardnft2/cards/10000/card-10211.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -102814,11 +102814,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10283",
     "stableId": "cardnft2:card-10283",
-    "mint": "AXifAbGR3BX2NpMRd7m1peJjxuz2UnBL6EotBHYHKKQd",
+    "mint": "FBiDBcQH3fctzu1ucoirUr2J4fxmCVLPHvePu4YDwtoC",
     "file": "assets/cardnft2/cards/10000/card-10283.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -103234,11 +103234,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10325",
     "stableId": "cardnft2:card-10325",
-    "mint": "",
+    "mint": "9vcewGDGUiqDKDwPk3RLPXwn1CdVwK9QUYZbZrvGDzNJ",
     "file": "assets/cardnft2/cards/10000/card-10325.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -103424,11 +103424,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10344",
     "stableId": "cardnft2:card-10344",
-    "mint": "",
+    "mint": "6oRVMQRwmqiAirfs8Zpt9mgs6QVRYtGF3xbPj8FKEcjT",
     "file": "assets/cardnft2/cards/10000/card-10344.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -103474,11 +103474,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10349",
     "stableId": "cardnft2:card-10349",
-    "mint": "",
+    "mint": "9t7Cjdofd8U8shTYMKdzNy3Pv1PrbGAy8jYmX3nQnwf5",
     "file": "assets/cardnft2/cards/10000/card-10349.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -104034,11 +104034,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10405",
     "stableId": "cardnft2:card-10405",
-    "mint": "37kLyWBvKEFz463SQnQrtLUVcLRFGYZvHf3wPFyYTtE1",
+    "mint": "GJxkgdWunMeaMdxAqRhYnw4paeo8QwfNAVAX4dN2u1is",
     "file": "assets/cardnft2/cards/10000/card-10405.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -104284,11 +104284,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10430",
     "stableId": "cardnft2:card-10430",
-    "mint": "",
+    "mint": "7JeMxTkkULEDYQ9shFMzgnU9SGhBUzxjv9quixS51qPm",
     "file": "assets/cardnft2/cards/10000/card-10430.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -104354,11 +104354,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10437",
     "stableId": "cardnft2:card-10437",
-    "mint": "",
+    "mint": "AASBBiQufevfPh82DTNAmj4Eynn6KY2vCKMdGKKU4rUU",
     "file": "assets/cardnft2/cards/10000/card-10437.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -104464,11 +104464,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10448",
     "stableId": "cardnft2:card-10448",
-    "mint": "",
+    "mint": "8ekvHuBZQwBXeJQhXRvVSsDWpGhiEx2FZg6PRB8hYRUR",
     "file": "assets/cardnft2/cards/10000/card-10448.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -104894,11 +104894,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10491",
     "stableId": "cardnft2:card-10491",
-    "mint": "GRvcMv9CsN8GWQjfRVPakbxm65YdzYvEhdGxiSGfkLyT",
+    "mint": "CDELNEjfU1E1ZKvQpKniR1nJ6aFCYtW1jFNWVhCooz7U",
     "file": "assets/cardnft2/cards/10000/card-10491.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -104934,11 +104934,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10495",
     "stableId": "cardnft2:card-10495",
-    "mint": "",
+    "mint": "9Vmash5gMcNskkmUwCsVRifGWU2rQiED7kMj9XuhpcDn",
     "file": "assets/cardnft2/cards/10000/card-10495.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -105684,11 +105684,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10570",
     "stableId": "cardnft2:card-10570",
-    "mint": "FDD7RuGTyCxdRC6EBCWP8CfTcv9SshgpGZZcWVJG41p2",
+    "mint": "9Ca6z4M8ZT3voMzY25HAdnnw362Cqvm5pc6ScvhBCzE4",
     "file": "assets/cardnft2/cards/10000/card-10570.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -106314,11 +106314,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10633",
     "stableId": "cardnft2:card-10633",
-    "mint": "",
+    "mint": "7rUGpRwo7hZdnZ3qoh5uzLDooRTyemcXz4R1YM12yeii",
     "file": "assets/cardnft2/cards/10000/card-10633.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -106454,11 +106454,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10647",
     "stableId": "cardnft2:card-10647",
-    "mint": "",
+    "mint": "9kVfMhPZ25EqfFTPb8xbkrxFCwmgL7dAsYdYQUZ8cmYi",
     "file": "assets/cardnft2/cards/10000/card-10647.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -106884,11 +106884,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10690",
     "stableId": "cardnft2:card-10690",
-    "mint": "",
+    "mint": "8JGJzqoA15svjqPVePMif2sCBv3ao9Lgynk8eedHRoNt",
     "file": "assets/cardnft2/cards/10000/card-10690.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -108034,11 +108034,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10805",
     "stableId": "cardnft2:card-10805",
-    "mint": "5VCDBmwusAhnf1JkjAvpmbNvK81n5rP2tqHRr38Y5jwR",
+    "mint": "8pZYEWSDkJTuyJmyp9YViEgzQitccfSdFTaKWDdNUniW",
     "file": "assets/cardnft2/cards/10000/card-10805.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -108114,11 +108114,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10813",
     "stableId": "cardnft2:card-10813",
-    "mint": "8yWWmXt55jGS6eR3xApLDeixi8NyYCzuoTMd6ymqQm1G",
+    "mint": "F8RGFnPRAkBXAJpQsxW7NhRMuRCoL64oMQRZDaJTbfQR",
     "file": "assets/cardnft2/cards/10000/card-10813.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -108194,11 +108194,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10821",
     "stableId": "cardnft2:card-10821",
-    "mint": "6s6HQd7xPQGxAGXvJeDuHfuoLo7iydXJie9u5z6zMUPX",
+    "mint": "2e8rAiNWc5wgMT536kPKD3oUtrZP2Qdoyrr89FDHKbhb",
     "file": "assets/cardnft2/cards/10000/card-10821.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -108244,11 +108244,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10826",
     "stableId": "cardnft2:card-10826",
-    "mint": "",
+    "mint": "EuoYQVamSk3qZ3D5bEjae2DgA9Mt9weBnR4BN92Q9FRA",
     "file": "assets/cardnft2/cards/10000/card-10826.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -108744,11 +108744,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10876",
     "stableId": "cardnft2:card-10876",
-    "mint": "DzqkCphtV7LNSs7Us3CfPt5tgeWMawt3ehnV15Ea5M2u",
+    "mint": "GMYgjc4grtkdgvsJHCE4KzhtZr2RCRE5sPmFTq1tv6Vg",
     "file": "assets/cardnft2/cards/10000/card-10876.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -108944,11 +108944,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10896",
     "stableId": "cardnft2:card-10896",
-    "mint": "",
+    "mint": "AXE7HgJ2w2D3hrDzzDGGExh8Yoq69MszSYZ1XW3Tmvbj",
     "file": "assets/cardnft2/cards/10000/card-10896.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -109344,11 +109344,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10936",
     "stableId": "cardnft2:card-10936",
-    "mint": "DnFYYnFDgeN1uXzoSx2diPRTEVk5p1j924YUfDwNzy1i",
+    "mint": "8k3erwZ14RCUHurfjSPpiHmLc94RiqHiQH7AcJWyhz3f",
     "file": "assets/cardnft2/cards/10000/card-10936.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -109544,11 +109544,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10956",
     "stableId": "cardnft2:card-10956",
-    "mint": "",
+    "mint": "FCewQpwVg7pEgmjCfS3mnTGrfkBc8n3K7cUp8xcc5i44",
     "file": "assets/cardnft2/cards/10000/card-10956.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -109844,11 +109844,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10986",
     "stableId": "cardnft2:card-10986",
-    "mint": "5dXtcywDSaJz1Wy9PzmvzTSYzDHiiFEjeZegCsYTEfS2",
+    "mint": "3vUPYiLk7Jpyj9qS6qyza7TnerNyDsgbokWrFbnPhd2E",
     "file": "assets/cardnft2/cards/10000/card-10986.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -109894,11 +109894,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 10991",
     "stableId": "cardnft2:card-10991",
-    "mint": "GhBapLWYvc8UmgJc1UDKGWty2cXw8nUQVnssH9ahjTXZ",
+    "mint": "F98EjRaeBHn3RkPjNngF7eN4JjSy5XRwvDVkiKCukYaL",
     "file": "assets/cardnft2/cards/10000/card-10991.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -110404,11 +110404,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 11042",
     "stableId": "cardnft2:card-11042",
-    "mint": "",
+    "mint": "A2kHCi5jHuD9ozbd76e4TgmDZooEAs2LohjdzX14KhBS",
     "file": "assets/cardnft2/cards/11000/card-11042.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -110434,11 +110434,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 11045",
     "stableId": "cardnft2:card-11045",
-    "mint": "4Vqf2QmeE8oSE7tJ8Qqtj8wW29xy6U8KGk3oC1qzvbFy",
+    "mint": "2qB9FC2T1ZzJVFMSLiVPFqTiMV7Z57kFQCa6kxBV4osK",
     "file": "assets/cardnft2/cards/11000/card-11045.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -110604,11 +110604,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 11062",
     "stableId": "cardnft2:card-11062",
-    "mint": "",
+    "mint": "8GEUn39DPnHLwdBWr2ARDcokzQodqNaDjXW92QNsfp8V",
     "file": "assets/cardnft2/cards/11000/card-11062.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -110744,11 +110744,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 11076",
     "stableId": "cardnft2:card-11076",
-    "mint": "GyeYK9iUoF3f4KrUhtM94UT8Kus8KcRLPWZFQtS3S8PQ",
+    "mint": "D2yhqLgnayFBWS3s5jnhW2UmYLzwUdnjCQmFB4zLsV5t",
     "file": "assets/cardnft2/cards/11000/card-11076.webp",
     "width": 700,
     "height": 980,
-    "status": "pulled"
+    "status": "redeemed"
   },
   {
     "collection": "cardnft2",
@@ -110884,11 +110884,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 11090",
     "stableId": "cardnft2:card-11090",
-    "mint": "",
+    "mint": "2f745JcHW4jBBZVjckQSf5ey7ejMu6b1FgCTEN3Y6Jt7",
     "file": "assets/cardnft2/cards/11000/card-11090.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -110934,11 +110934,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 11095",
     "stableId": "cardnft2:card-11095",
-    "mint": "",
+    "mint": "EvFSH7qn9MLpP7tQGzvWWxPm9QjS24UeEtqHFKfunkAX",
     "file": "assets/cardnft2/cards/11000/card-11095.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -110974,11 +110974,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 11099",
     "stableId": "cardnft2:card-11099",
-    "mint": "",
+    "mint": "joGtHvEsa4C2GjEHjrU9Ahmynen5nNRBvLyUXTrgEyn",
     "file": "assets/cardnft2/cards/11000/card-11099.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -111024,21 +111024,21 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 11104",
     "stableId": "cardnft2:card-11104",
-    "mint": "",
+    "mint": "GtwNaRo2HSBuzAZVTKLsD7Tvr7R88vXnNvPJrPrvyxJw",
     "file": "assets/cardnft2/cards/11000/card-11104.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
     "title": "card 11105",
     "stableId": "cardnft2:card-11105",
-    "mint": "",
+    "mint": "6RWTkaufJWsafbrpzhijKEKKG7n6BVy3zadg9AXYFSmh",
     "file": "assets/cardnft2/cards/11000/card-11105.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
@@ -111194,11 +111194,11 @@ export const CARD_NFT_2S = [
     "collection": "cardnft2",
     "title": "card 11121",
     "stableId": "cardnft2:card-11121",
-    "mint": "",
+    "mint": "GHSwPDo1V9mi8tJzuL8egN6cUid4R34HTTVJGPAsS8Yp",
     "file": "assets/cardnft2/cards/11000/card-11121.webp",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "pulled"
   },
   {
     "collection": "cardnft2",
