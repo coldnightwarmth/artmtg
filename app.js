@@ -1,30 +1,73 @@
 import * as THREE from "three";
-import { CARD_NFTS as CARD_NFT_1S } from "./cardnft-data.js";
-import { CARD_NFT_2S } from "./cardnft2-data.js?v=cardnft2-2";
-import { CARD_NFT_OWNER_SNAPSHOT } from "./cardnft-owners.js?v=cardnft-3";
-import { CARD_NFT_TRAIT_CATEGORIES as CARD_NFT_1_TRAIT_CATEGORIES, CARD_NFT_TRAITS as CARD_NFT_1_TRAITS } from "./cardnft-traits.js";
-import { CARD_NFT_2_TRAIT_CATEGORIES, CARD_NFT_2_TRAITS } from "./cardnft2-traits.js?v=cardnft2-2";
-import { CARD_NFT_2_COMMON_IDS } from "./cardnft2-common-ids.js";
+import { BROWSER_TRAIT_CATALOG } from "./browser-traits-catalog.js?v=browser-traits-5";
 import { CARD_NFT_ANIMATED } from "./cardnft-animated.js";
 import { CARD_NFT_ANIMATED_SPRITES } from "./cardnft-animated-sprites.js";
-import { TRAIT_THUMBNAILS } from "./trait-thumbnails.js";
+
+const COLLECTION_DATA_SPECS = {
+  cardnft1: { module: "./cardnft-data.js?v=cardnft1-1", exportName: "CARD_NFTS" },
+  cardnft2: { module: "./cardnft2-data.js?v=cardnft2-2", exportName: "CARD_NFT_2S" },
+  poncho: { module: "./poncho-data.js?v=poncho-3", exportName: "PONCHO_CARDS" },
+  limited: { module: "./limited-data.js?v=community-8", exportName: "LIMITED_CARDS" },
+  cloudcastle: { module: "./cloudcastle-data.js?v=community-2", exportName: "CLOUDCASTLE_CARDS" },
+  badhand: { module: "./badhand-data.js?v=community-2", exportName: "BADHAND_CARDS" },
+  jpegs: { module: "./jpegs-data.js?v=community-7", exportName: "JPEGS_CARDS" },
+  nolegs: { module: "./nolegs-data.js?v=community-4", exportName: "NOLEGS_CARDS" },
+  playcards: { module: "./playcards-data.js?v=community-2", exportName: "PLAYCARDS_CARDS" },
+  kardmane: { module: "./kardmane-data.js?v=community-2", exportName: "KARDMANE_CARDS" },
+  cloudcastles: { module: "./cloudcastles-data.js?v=community-5", exportName: "CLOUDCASTLES_CARDS" },
+  sweetcurse: { module: "./sweetcurse-data.js?v=community-5", exportName: "SWEETCURSE_CARDS" },
+  winloop: { module: "./winloop-data.js?v=community-5", exportName: "WINLOOP_CARDS" },
+  mtgnft: { module: "./mtgnft-data.js?v=community-5", exportName: "MTGNFT_CARDS" },
+  igorsquest: { module: "./igorsquest-data.js?v=community-5", exportName: "IGORSQUEST_CARDS" },
+};
+const REQUESTED_COLLECTION_ID = COLLECTION_DATA_SPECS[document.documentElement.dataset.collectionId]
+  ? document.documentElement.dataset.collectionId
+  : "cardnft2";
+const INITIAL_COLLECTION_DATA_SPEC = COLLECTION_DATA_SPECS[REQUESTED_COLLECTION_ID];
+const INITIAL_COLLECTION_DATA_MODULE = await import(INITIAL_COLLECTION_DATA_SPEC.module);
+const INITIAL_COLLECTION_CARDS = INITIAL_COLLECTION_DATA_MODULE[INITIAL_COLLECTION_DATA_SPEC.exportName];
+if (!Array.isArray(INITIAL_COLLECTION_CARDS)) {
+  throw new Error(`Unable to load ${REQUESTED_COLLECTION_ID} card data`);
+}
+
+function getInitialCollectionCards(collectionId) {
+  return collectionId === REQUESTED_COLLECTION_ID ? INITIAL_COLLECTION_CARDS : [];
+}
+
+function getBrowserTraitConfig(collectionId) {
+  return BROWSER_TRAIT_CATALOG[collectionId] || {
+    categories: [],
+    module: "",
+    records: 0,
+  };
+}
 
 const COLLECTION_CONFIGS = {
   cardnft1: {
     id: "cardnft1",
     label: "Card NFT",
-    cards: CARD_NFT_1S,
-    traitCategories: CARD_NFT_1_TRAIT_CATEGORIES,
-    traits: CARD_NFT_1_TRAITS,
+    introLabel: "card nft 1",
+    cards: getInitialCollectionCards("cardnft1"),
+    traitCategories: getBrowserTraitConfig("cardnft1").categories,
+    traitModule: getBrowserTraitConfig("cardnft1").module,
+    traits: null,
     traitFiltersEnabled: true,
     backImage: "./cardnft back.png",
+    coverEmblem: "assets/ui/cardnft1-logo-cover.webp?v=cardnft1-cover-1",
+    coverEmblemAspect: 321 / 128,
+    coverEmblemScale: 0.78,
+    coverEmblemYRatio: 0.045,
+    path: "/cardnft1/",
+    introGroup: "evil",
   },
   cardnft2: {
     id: "cardnft2",
     label: "Card NFT 2",
-    cards: CARD_NFT_2S,
-    traitCategories: CARD_NFT_2_TRAIT_CATEGORIES,
-    traits: CARD_NFT_2_TRAITS,
+    introLabel: "card nft 2",
+    cards: getInitialCollectionCards("cardnft2"),
+    traitCategories: getBrowserTraitConfig("cardnft2").categories,
+    traitModule: getBrowserTraitConfig("cardnft2").module,
+    traits: null,
     traitFiltersEnabled: true,
     backImages: [
       "assets/cardnft2/backs/cardnft2-back-orange.webp",
@@ -32,40 +75,356 @@ const COLLECTION_CONFIGS = {
       "assets/cardnft2/backs/cardnft2-back-blue.webp",
       "assets/cardnft2/backs/cardnft2-back-red.webp",
     ],
+    path: "/",
+    introGroup: "evil",
+  },
+  poncho: {
+    id: "poncho",
+    label: "Poncho Drifella",
+    introLabel: "poncho drifella",
+    cards: getInitialCollectionCards("poncho"),
+    traitCategories: getBrowserTraitConfig("poncho").categories,
+    traitModule: getBrowserTraitConfig("poncho").module,
+    traits: null,
+    traitFiltersEnabled: true,
+    backImage: "assets/poncho/backs/poncho-pack.webp?v=pokemon-english-1",
+    coverEmblem: "assets/ui/poncho-drifella-cover.webp?v=poncho-cover-1",
+    coverEmblemAspect: 545 / 704,
+    coverEmblemScale: 0.78,
+    coverEmblemYRatio: 0.035,
+    path: "/poncho/",
+    introGroup: "evil",
+  },
+  limited: {
+    id: "limited",
+    label: "Limited 1/1s",
+    introLabel: "limited 1/1s",
+    cards: getInitialCollectionCards("limited"),
+    traitCategories: getBrowserTraitConfig("limited").categories,
+    traitModule: getBrowserTraitConfig("limited").module,
+    traits: null,
+    traitFiltersEnabled: getBrowserTraitConfig("limited").categories.length > 0,
+    backImage: "assets/limited/backs/limited-back.webp?v=yugioh-english-2",
+    path: "/limited/",
+    introGroup: "community",
+  },
+  cloudcastle: {
+    id: "cloudcastle",
+    label: "Cloudcastle Dessert Oasis 月下の夜想曲",
+    introLabel: "cloudcastle dessert oasis",
+    cards: getInitialCollectionCards("cloudcastle"),
+    traitCategories: getBrowserTraitConfig("cloudcastle").categories,
+    traitModule: getBrowserTraitConfig("cloudcastle").module,
+    traits: null,
+    traitFiltersEnabled: getBrowserTraitConfig("cloudcastle").categories.length > 0,
+    backImage: "assets/cloudcastle/backs/cloudcastle-back.webp?v=yugioh-english-2",
+    path: "/cloudcastle/",
+    introGroup: "community",
+  },
+  badhand: {
+    id: "badhand",
+    label: "BAD HAND",
+    introLabel: "bad hand",
+    cards: getInitialCollectionCards("badhand"),
+    traitCategories: getBrowserTraitConfig("badhand").categories,
+    traitModule: getBrowserTraitConfig("badhand").module,
+    traits: null,
+    traitFiltersEnabled: getBrowserTraitConfig("badhand").categories.length > 0,
+    backImage: "assets/badhand/backs/badhand-back.webp?v=yugioh-english-2",
+    path: "/badhand/",
+    introGroup: "community",
+  },
+  jpegs: {
+    id: "jpegs",
+    label: "judgement",
+    introLabel: "jpegs.cool",
+    cards: getInitialCollectionCards("jpegs"),
+    traitCategories: getBrowserTraitConfig("jpegs").categories,
+    traitModule: getBrowserTraitConfig("jpegs").module,
+    traits: null,
+    traitFiltersEnabled: getBrowserTraitConfig("jpegs").categories.length > 0,
+    backImage: "assets/jpegs/backs/jpegs-back.webp?v=jpegs-cards-logo-1",
+    path: "/jpegs/",
+    introGroup: "community",
+  },
+  nolegs: {
+    id: "nolegs",
+    label: "CARDS",
+    introLabel: "cards (no legs)",
+    cards: getInitialCollectionCards("nolegs"),
+    traitCategories: getBrowserTraitConfig("nolegs").categories,
+    traitModule: getBrowserTraitConfig("nolegs").module,
+    traits: null,
+    traitFiltersEnabled: getBrowserTraitConfig("nolegs").categories.length > 0,
+    backImage: "assets/nolegs/backs/nolegs-back.webp?v=nolegs-transparent-4",
+    path: "/nolegs/",
+    introGroup: "community",
+  },
+  playcards: {
+    id: "playcards",
+    label: "play cards alpha",
+    introLabel: "play cards alpha",
+    cards: getInitialCollectionCards("playcards"),
+    traitCategories: getBrowserTraitConfig("playcards").categories,
+    traitModule: getBrowserTraitConfig("playcards").module,
+    traits: null,
+    traitFiltersEnabled: getBrowserTraitConfig("playcards").categories.length > 0,
+    backImage: "assets/playcards/backs/playcards-back.webp?v=playcards-purple-back-1",
+    path: "/playcards/",
+    introGroup: "community",
+  },
+  kardmane: {
+    id: "kardmane",
+    label: "Kardmane",
+    introLabel: "kardmane",
+    cards: getInitialCollectionCards("kardmane"),
+    traitCategories: getBrowserTraitConfig("kardmane").categories,
+    traitModule: getBrowserTraitConfig("kardmane").module,
+    traits: null,
+    traitFiltersEnabled: getBrowserTraitConfig("kardmane").categories.length > 0,
+    backImage: "assets/kardmane/backs/kardmane-back.webp?v=kardmane-old-world-1",
+    path: "/kardmane/",
+    introGroup: "community",
+  },
+  cloudcastles: {
+    id: "cloudcastles",
+    label: "Cloudcastle ☆ Limited Edition Alpha",
+    introLabel: "cloudcastle ☆ limited edition alpha",
+    cards: getInitialCollectionCards("cloudcastles"),
+    traitCategories: getBrowserTraitConfig("cloudcastles").categories,
+    traitModule: getBrowserTraitConfig("cloudcastles").module,
+    traits: null,
+    traitFiltersEnabled: getBrowserTraitConfig("cloudcastles").categories.length > 0,
+    backImage: "assets/cloudcastles/backs/cloudcastles-back.webp?v=yugioh-english-2",
+    path: "/cloudcastles/",
+    introGroup: "community",
+  },
+  sweetcurse: {
+    id: "sweetcurse",
+    label: "Sweet Curse",
+    introLabel: "sweet curse",
+    cards: getInitialCollectionCards("sweetcurse"),
+    traitCategories: getBrowserTraitConfig("sweetcurse").categories,
+    traitModule: getBrowserTraitConfig("sweetcurse").module,
+    traits: null,
+    traitFiltersEnabled: getBrowserTraitConfig("sweetcurse").categories.length > 0,
+    backImage: "assets/sweetcurse/backs/sweetcurse-back.webp?v=sweetcurse-1",
+    path: "/sweetcurse/",
+    introGroup: "community",
+  },
+  winloop: {
+    id: "winloop",
+    label: "Win Loop, hi Miya Maker",
+    introLabel: "win loop, hi miya maker",
+    cards: getInitialCollectionCards("winloop"),
+    traitCategories: getBrowserTraitConfig("winloop").categories,
+    traitModule: getBrowserTraitConfig("winloop").module,
+    traits: null,
+    traitFiltersEnabled: getBrowserTraitConfig("winloop").categories.length > 0,
+    backImage: "assets/winloop/backs/winloop-back.webp?v=yugioh-english-2",
+    path: "/winloop/",
+    introGroup: "community",
+  },
+  mtgnft: {
+    id: "mtgnft",
+    label: "MTG NFT",
+    introLabel: "mtg nft",
+    cards: getInitialCollectionCards("mtgnft"),
+    traitCategories: getBrowserTraitConfig("mtgnft").categories,
+    traitModule: getBrowserTraitConfig("mtgnft").module,
+    traits: null,
+    traitFiltersEnabled: getBrowserTraitConfig("mtgnft").categories.length > 0,
+    backImage: "assets/mtgnft/backs/mtgnft-back.webp?v=mtgnft-1",
+    path: "/mtgnft/",
+    introGroup: "community",
+  },
+  igorsquest: {
+    id: "igorsquest",
+    label: "Igors Quest",
+    introLabel: "igors quest",
+    cards: getInitialCollectionCards("igorsquest"),
+    traitCategories: getBrowserTraitConfig("igorsquest").categories,
+    traitModule: getBrowserTraitConfig("igorsquest").module,
+    traits: null,
+    traitFiltersEnabled: getBrowserTraitConfig("igorsquest").categories.length > 0,
+    backImage: "assets/igorsquest/backs/igorsquest-back.webp?v=igorsquest-1",
+    path: "/igorsquest/",
+    introGroup: "community",
   },
 };
-const ACTIVE_COLLECTION_ID = COLLECTION_CONFIGS[document.documentElement.dataset.collectionId]?.id || "cardnft2";
-const ACTIVE_COLLECTION = COLLECTION_CONFIGS[ACTIVE_COLLECTION_ID];
-const CARDS = Object.values(COLLECTION_CONFIGS).flatMap((collection) => (
-  collection.cards.map((card, index) => ({
-    ...card,
-    collection: card.collection || collection.id,
-    collectionIndex: index,
-    stableId: card.stableId || `${collection.id}:${card.mint || card.title || index}`,
-    setIndex: index,
-  }))
-));
-const ACTIVE_COLLECTION_INDEXES = CARDS
-  .map((card, index) => (card.collection === ACTIVE_COLLECTION_ID ? index : null))
-  .filter(Number.isInteger);
-const ACTIVE_TRAIT_CATEGORIES = ACTIVE_COLLECTION.traitCategories;
-const ACTIVE_TRAITS = ACTIVE_COLLECTION.traits;
-const TRAIT_FILTERS_ENABLED = Boolean(ACTIVE_COLLECTION.traitFiltersEnabled);
-const ACTIVE_CARD_ASPECT_SOURCE = ACTIVE_COLLECTION.cards.find((card) => (
-  Number.isFinite(card?.width)
-  && Number.isFinite(card?.height)
-  && card.width > 0
-  && card.height > 0
-));
-const CARD_NFT_MINT_TO_INDEX = new Map(CARDS
-  .map((card, index) => [String(card?.mint || "").trim(), index])
-  .filter(([mint]) => mint));
-const CARD_NFT_TITLE_NUMBER_TO_INDEX = new Map(CARDS
-  .map((card, index) => {
-    const match = String(card?.title || "").match(/^card\s+#?\s*(\d+)$/i);
-    return match && card?.collection === ACTIVE_COLLECTION_ID ? [Number.parseInt(match[1], 10), index] : null;
-  })
-  .filter(Boolean));
+const COMMUNITY_COVER_COLLECTION_ORDER = [
+  "cardnft1",
+  "cardnft2",
+  "poncho",
+  "limited",
+  "cloudcastle",
+  "cloudcastles",
+  "badhand",
+  "jpegs",
+  "nolegs",
+  "mtgnft",
+  "playcards",
+  "kardmane",
+  "winloop",
+  "sweetcurse",
+  "igorsquest",
+];
+let ACTIVE_COLLECTION_ID = REQUESTED_COLLECTION_ID;
+let ACTIVE_COLLECTION = COLLECTION_CONFIGS[ACTIVE_COLLECTION_ID];
+const EVIL_BINDER_TABLE_SIDE_COLLECTIONS = Object.freeze({
+  cardnft1: ["cardnft2", "poncho"],
+  cardnft2: ["cardnft1", "poncho"],
+  poncho: ["cardnft1", "cardnft2"],
+});
+const CARDS = [];
+let ACTIVE_COLLECTION_INDEXES = [];
+const CARD_NFT_MINT_TO_INDEX = new Map();
+const CARD_NUMBER_TO_INDEX = new Map();
+const CARD_STABLE_ID_TO_INDEX = new Map();
+
+function registerCollectionCards(collectionId, cards) {
+  const collection = COLLECTION_CONFIGS[collectionId];
+  if (!collection || collection.cardsLoaded || !Array.isArray(cards)) return collection?.cards || [];
+
+  collection.cards = cards;
+  collection.globalIndexes = [];
+  cards.forEach((card, collectionIndex) => {
+    card.collection = card.collection || collectionId;
+    card.collectionIndex = collectionIndex;
+    card.stableId = card.stableId || `${collectionId}:${card.mint || card.title || collectionIndex}`;
+    card.setIndex = collectionIndex;
+
+    const globalIndex = CARDS.length;
+    CARDS.push(card);
+    collection.globalIndexes.push(globalIndex);
+    if (collectionId === ACTIVE_COLLECTION_ID) ACTIVE_COLLECTION_INDEXES.push(globalIndex);
+
+    for (const mint of [card?.mint, ...(Array.isArray(card?.mints) ? card.mints : [])]) {
+      const normalizedMint = String(mint || "").trim();
+      if (normalizedMint) CARD_NFT_MINT_TO_INDEX.set(normalizedMint, globalIndex);
+    }
+
+    const titleMatch = String(card?.title || "").match(/^card\s+#?\s*(\d+)$/i);
+    const number = Number.isInteger(card?.number)
+      ? card.number
+      : titleMatch
+        ? Number.parseInt(titleMatch[1], 10)
+        : null;
+    if (Number.isInteger(number)) CARD_NUMBER_TO_INDEX.set(`${collectionId}:${number}`, globalIndex);
+
+    const stableId = String(card?.stableId || "").trim();
+    if (stableId) CARD_STABLE_ID_TO_INDEX.set(stableId, globalIndex);
+  });
+  collection.cardsLoaded = true;
+  return collection.cards;
+}
+
+registerCollectionCards(ACTIVE_COLLECTION_ID, INITIAL_COLLECTION_CARDS);
+
+async function ensureCollectionCards(collectionId) {
+  const collection = COLLECTION_CONFIGS[collectionId];
+  const spec = COLLECTION_DATA_SPECS[collectionId];
+  if (!collection || !spec) return [];
+  if (collection.cardsLoaded) return collection.cards;
+  if (!collection.cardsPromise) {
+    collection.cardsPromise = import(spec.module)
+      .then((module) => {
+        const cards = module[spec.exportName];
+        if (!Array.isArray(cards)) throw new Error(`Invalid ${collectionId} card data`);
+        return registerCollectionCards(collectionId, cards);
+      })
+      .catch((error) => {
+        collection.cardsPromise = null;
+        throw error;
+      });
+  }
+  const cards = await collection.cardsPromise;
+  migrateLegacyFavorites(favorites, cards);
+  return cards;
+}
+
+async function ensureAllCollectionCards() {
+  await Promise.all(Object.keys(COLLECTION_CONFIGS).map(ensureCollectionCards));
+  return CARDS;
+}
+
+async function ensureFavoriteCollectionCards() {
+  const collectionIds = new Set([ACTIVE_COLLECTION_ID]);
+  for (const key of favorites) {
+    const collectionId = String(key || "").split(":", 1)[0];
+    if (COLLECTION_CONFIGS[collectionId]) collectionIds.add(collectionId);
+  }
+  await Promise.all([...collectionIds].map(ensureCollectionCards));
+  return CARDS;
+}
+
+let ACTIVE_TRAIT_CATEGORIES = ACTIVE_COLLECTION.traitCategories;
+let TRAIT_FILTERS_ENABLED = Boolean(ACTIVE_COLLECTION.traitFiltersEnabled);
+const traitFiltersEnabledForCollection = (collectionId) => (
+  Boolean(COLLECTION_CONFIGS[collectionId]?.traitFiltersEnabled)
+);
+
+async function ensureCollectionTraits(collectionId) {
+  const collection = COLLECTION_CONFIGS[collectionId];
+  if (!collection) return null;
+  if (collection.traits) return collection.traits;
+  if (!collection.traitModule || !collection.traitCategories.length) {
+    collection.traits = { dictionary: [], rows: [] };
+    return collection.traits;
+  }
+  if (!collection.traitsPromise) {
+    collection.traitsPromise = import(collection.traitModule)
+      .then((module) => {
+        const dictionary = module.TRAIT_VALUE_DICTIONARY;
+        const rows = module.TRAIT_ROWS;
+        if (!Array.isArray(dictionary) || !Array.isArray(rows)) {
+          throw new Error(`Invalid ${collectionId} trait data`);
+        }
+        const expectedRecords = getBrowserTraitConfig(collectionId).records;
+        if (expectedRecords && rows.length !== expectedRecords) {
+          throw new Error(`Unexpected ${collectionId} trait record count`);
+        }
+        collection.traits = { dictionary, rows };
+        collection.traitSearchGroupsCache = null;
+        collection.traitOccurrenceCountCache = null;
+        return collection.traits;
+      })
+      .catch((error) => {
+        collection.traitsPromise = null;
+        collection.traitsError = error;
+        throw error;
+      });
+  }
+  return collection.traitsPromise;
+}
+
+let traitThumbnails = null;
+let traitThumbnailsPromise = null;
+
+async function ensureTraitThumbnails() {
+  if (traitThumbnails) return traitThumbnails;
+  if (!traitThumbnailsPromise) {
+    traitThumbnailsPromise = import("./trait-thumbnails.js?v=browser-traits-1")
+      .then((module) => {
+        traitThumbnails = module.TRAIT_THUMBNAILS || {};
+        return traitThumbnails;
+      })
+      .catch((error) => {
+        console.warn("Trait thumbnails could not be loaded", error);
+        traitThumbnails = {};
+        return traitThumbnails;
+      });
+  }
+  return traitThumbnailsPromise;
+}
+
+async function ensureTraitUiData(collectionId) {
+  const [traits] = await Promise.all([
+    ensureCollectionTraits(collectionId),
+    ensureTraitThumbnails(),
+  ]);
+  return traits;
+}
 const HIDDEN_TRAIT_CATEGORIES = new Set([
   "98noise",
   "Collection",
@@ -128,9 +487,7 @@ const TRAIT_PANEL_CATEGORY_PRIORITY = new Map([
   ["status", 2],
   ["altered", 3],
 ]);
-const CARD_NFT_2_COMMON_ID_SET = new Set(CARD_NFT_2_COMMON_IDS);
 const CARD_EFFECT_MODE_DEFAULT = 0;
-const CARD_EFFECT_MODE_CARD_NFT_2_LIGHTING = 1;
 const CARD_EFFECT_MODE_CARD_NFT_2_RARE_HOLO_V = 2;
 const CARD_EFFECT_MODE_CARD_NFT_2_REGULAR_HOLO = 3;
 const CARD_EFFECT_MODE_CARD_NFT_2_TRAINER_FULL_ART = 4;
@@ -141,32 +498,50 @@ const CARD_NFT_2_HOLO_EFFECT_MODES_BY_REMAINDER = [
   CARD_EFFECT_MODE_CARD_NFT_2_TRAINER_FULL_ART,
   CARD_EFFECT_MODE_CARD_NFT_2_AMAZING_RARE,
 ];
-const CARD_NFT_2_EFFECT_TEXTURE_GATEWAY = "https://silver-real-rhinoceros-781.mypinata.cloud/ipfs";
-const CARD_NFT_2_EFFECT_TEXTURE_CIDS = {
-  foil: "bafybeigzyk3qd7brxfd3uinftdywhwao65gdxuleqirv5zje3okftmxczy",
-  mask: "bafybeiapwcv66aqu2wzh3f5mp4j4j6h7zej3no7paae4qcqxpu3mg436ia",
-};
-const MAX_CARD_NFT_2_EFFECT_TEXTURE_CACHE_SIZE = 160;
+const CARD_NFT_2_SUPER_RARE_RANGES = Object.freeze([
+  Object.freeze([7009, 10999]),
+  Object.freeze([11111, 11132]),
+]);
+const CARD_NFT_2_EFFECT_TEXTURE_BASE_URL = "https://cdn.lil.org/nft/card_nft_2";
+const MEMORY_CONSTRAINED_DEVICE = (
+  (Number(navigator.deviceMemory) > 0 && Number(navigator.deviceMemory) <= 4)
+  || window.matchMedia?.("(max-width: 720px)")?.matches
+);
+const MEBIBYTE = 1024 * 1024;
+const NFT_TEXTURE_CACHE_BUDGET_BYTES = (MEMORY_CONSTRAINED_DEVICE ? 64 : 144) * MEBIBYTE;
+const BINDER_TEXTURE_CACHE_BUDGET_BYTES = (MEMORY_CONSTRAINED_DEVICE ? 72 : 144) * MEBIBYTE;
+const CARD_EFFECT_TEXTURE_CACHE_BUDGET_BYTES = (MEMORY_CONSTRAINED_DEVICE ? 48 : 96) * MEBIBYTE;
+const MAX_RENDER_BUFFER_PIXELS = MEMORY_CONSTRAINED_DEVICE ? 3_500_000 : 8_300_000;
+const MAX_RENDERER_PIXEL_RATIO = 2;
+const MAX_CARD_NFT_2_EFFECT_TEXTURE_CACHE_SIZE = MEMORY_CONSTRAINED_DEVICE ? 12 : 24;
 const CARD_NFT_2_EFFECT_DEFAULT_POINTER_X = 0.18;
 const CARD_NFT_2_EFFECT_DEFAULT_POINTER_Y = 0.78;
-const CARD_NFT_2_EFFECT_OFFCARD_POINTER_X = -1.25;
-const CARD_NFT_2_EFFECT_OFFCARD_POINTER_Y = -1.25;
 const CARD_NFT_2_EFFECT_POINTER_EXTENT = 0.72;
 const CARD_NFT_2_EFFECT_EDGE_FADE_DISTANCE = 0.46;
 const CARD_EFFECT_VIEW_TRANSITION_FADE_MS = 260;
+const CARD_EFFECT_TEXTURE_FADE_MS = 180;
 const SITE_FONT_STACK = "Optima, Candara, \"Lucida Sans\", \"Lucida Grande\", \"Trebuchet MS\", Arial, sans-serif";
+const UI_BUTTON_TILT_SELECTOR = ".icon-button, .gallery-clear-filters-button";
+const UI_BUTTON_TILT_HOVER_QUERY = "(hover: hover) and (pointer: fine)";
+const UI_BUTTON_TILT_MAX_DEGREES = 5.5;
 const SOLANA_RPC_URL = "https://api.mainnet-beta.solana.com";
+const SOLANA_DAS_RPC_URL = "https://lauraine-qytyxk-fast-mainnet.helius-rpc.com";
+const TENSOR_GRAPHQL_URL = "https://graphql.tensor.trade/graphql";
 const SOLANA_TOKEN_PROGRAM_IDS = [
   "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
-  "TokenzQdBNbLqP5VEhdkAS6EP6KkQ6p3Msk3VQ5DA",
+  "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
 ];
-const CARD_NFT_COLLECTION_SYMBOLS = ["cardnft", "card_nft_2"];
+const CARD_NFT_COLLECTION_SYMBOLS = ["cardnft", "card_nft_2", "poncho_drifella"];
 const CARD_NFT_2_WALLET_API_URL = "https://cardnft2.taile73682.ts.net/wallet";
 const MAGIC_EDEN_API_URL = "https://api-mainnet.magiceden.dev/v2";
+const FAVORITES_STORAGE_KEY = "cardnft:favorites:v1";
 const MAGIC_EDEN_WALLET_PAGE_LIMIT = 500;
 const MAGIC_EDEN_WALLET_MAX_TOKENS = 10000;
 const MAGIC_EDEN_WALLET_PAGE_DELAY_MS = 520;
-const CARD_NFT_OWNER_TO_INDEXES = buildCardNftOwnerIndex(CARD_NFT_OWNER_SNAPSHOT);
+const DAS_WALLET_PAGE_LIMIT = 1000;
+const DAS_WALLET_MAX_ASSETS = 10000;
+let cardNftOwnerToIndexes = null;
+let cardNftOwnerIndexPromise = null;
 const WALLET_SEARCH_REQUEST_TIMEOUT_MS = 9000;
 const SOLANA_ADDRESS_PATTERN = /^[1-9A-HJ-NP-Za-km-z]{32,44}$/;
 const WALLET_SEARCH_PROMPT = "Enter a SOL address to view collected cards:";
@@ -198,11 +573,7 @@ const BINDER_INTRO_SPRITES = [
   },
 ];
 const CARD_WIDTH = 2.5;
-const CARD_HEIGHT = CARD_WIDTH * (
-  ACTIVE_CARD_ASPECT_SOURCE
-    ? ACTIVE_CARD_ASPECT_SOURCE.height / ACTIVE_CARD_ASPECT_SOURCE.width
-    : 1.4
-);
+const CARD_HEIGHT = 3.5;
 const CARD_DEPTH = 0.022;
 const CARD_RADIUS = 0.12;
 const INDIVIDUAL_CARD_WORLD_Y = 0.26;
@@ -235,7 +606,7 @@ const BINDER_PAGE_STACK_GAP = 0.026;
 const BINDER_VISIBLE_STACK_GAP = 0.104;
 const BINDER_LEFT_STACK_Z = 0.026;
 const BINDER_RIGHT_STACK_Z = -0.026;
-const BINDER_GAP_REVEAL_STACK_GAP = 0.028;
+const BINDER_GAP_REVEAL_STACK_GAP = BINDER_VISIBLE_STACK_GAP;
 const BINDER_PAGE_COLUMN_BEND = 0.042;
 const BINDER_ACTIVE_PAGE_LIFT = 0.22;
 const BINDER_STACK_TRANSITION_START = 0.75;
@@ -245,6 +616,105 @@ const BINDER_DEEP_PAGE_FADE_POWER = 1.35;
 const BINDER_COVER_OVERHANG = 0.14;
 const BINDER_COVER_VERTICAL_OVERHANG = 0.22;
 const BINDER_COVER_RADIUS = 0.15;
+const BINDER_COVER_SPINE_WIDTH = 0.42;
+const BINDER_COVER_SPINE_ARC_LENGTH = 0.72;
+const BINDER_COVER_Z = -0.34;
+const BINDER_COVER_OUTER_X = BINDER_PAGE_WIDTH + BINDER_COVER_OVERHANG * 1.42;
+const BINDER_CLOSED_COVER_CENTER_X = (
+  BINDER_COVER_OUTER_X + BINDER_COVER_SPINE_WIDTH / 2
+) / 2;
+const BINDER_CLOSED_COVER_CENTER_Z = (
+  BINDER_COVER_Z + BINDER_COVER_SPINE_ARC_LENGTH / Math.PI
+);
+const BINDER_COVER_SPINE_SEGMENTS = 24;
+const BINDER_COVER_THICKNESS = 0.09;
+const BINDER_SPINE_SEAM_HEIGHT_RATIO = 0.9;
+const BINDER_RING_SCALE_X = 0.52;
+const BINDER_RING_VISIBLE_ARC = Math.PI;
+const BINDER_TABLE_RING_DEPTH_SCALE = 0.68;
+const BINDER_CLOSURE_BASE_ALPHA = 0.115;
+const BINDER_CLOSURE_SETTLE_EPSILON = 0.0015;
+const BINDER_CLOSING_COVER_RENDER_ORDER = 1400;
+const BINDER_OUTER_FLIP_DURATION_MS = 780;
+const BINDER_OUTER_FLIP_MIN_SETTLE_MS = 160;
+const BINDER_OUTER_FLIP_LIFT = 0.3;
+const BINDER_TABLE_OUTER_FLIP_LIFT = BINDER_CLOSED_COVER_CENTER_X + 0.08;
+const BINDER_OUTER_FLIP_TILT = 0.065;
+const BINDER_OUTER_FLIP_COMMIT_PROGRESS = 0.5;
+const BINDER_TABLE_VIEW_DURATION_MS = 920;
+const BINDER_TABLE_TO_FOCUS_DURATION_MS = 420;
+const BINDER_TABLE_VIEW_TILT = -THREE.MathUtils.degToRad(42);
+const BINDER_TABLE_VIEW_SCALE = 0.64;
+const BINDER_TABLE_VIEW_Y = -0.12;
+const BINDER_TABLE_VIEW_Z = 0.28;
+const BINDER_TABLE_WIDTH = 13.8;
+const BINDER_TABLE_HEIGHT = 7.8;
+const BINDER_TABLE_DEPTH = 0.24;
+const BINDER_TABLE_RADIUS = 0.42;
+const BINDER_TABLE_SURFACE_TEXTURE_URL = new URL(
+  "./assets/ui/table-wood-seamless.png?v=table-wood-1",
+  import.meta.url,
+).href;
+const BINDER_TABLE_SURFACE_LIGHT_TEXTURE_URL = new URL(
+  "./assets/ui/table-wood-light-seamless.png?v=table-wood-light-1",
+  import.meta.url,
+).href;
+const BINDER_TABLE_SURFACE_REPEAT_X = 2.4;
+const BINDER_TABLE_SURFACE_REPEAT_Y = 2.7;
+const BINDER_TABLE_DISPLAY_MODEL_URL = new URL(
+  "./assets/models/table-white-mesh.glb?v=table-model-1",
+  import.meta.url,
+).href;
+const BINDER_TABLE_DISPLAY_MODEL_HEIGHT = 1.16;
+const BINDER_TABLE_DISPLAY_MODEL_X = -3.1;
+const BINDER_TABLE_DISPLAY_MODEL_Y = 2.78;
+const BINDER_TABLE_DISPLAY_MODEL_YAW = THREE.MathUtils.degToRad(28);
+const BINDER_TABLE_DISPLAY_MODEL_MAX_OPACITY = 0.76;
+const BINDER_TABLE_DISPLAY_MODEL_REVEAL_DURATION_MS = 360;
+const BINDER_TABLE_DISPLAY_MODEL_SHADOW_OPACITY = 0.12;
+const BINDER_TABLE_COIN_TEXTURE_URL = new URL(
+  "./assets/ui/table-swag-coin.png?v=table-coin-1",
+  import.meta.url,
+).href;
+const BINDER_TABLE_COIN_RADIUS = 0.5;
+const BINDER_TABLE_COIN_THICKNESS = 0.07;
+const BINDER_TABLE_COIN_X = -4.88;
+const BINDER_TABLE_COIN_Y = 2.43;
+const BINDER_TABLE_COIN_ROTATION = THREE.MathUtils.degToRad(-217);
+const BINDER_TABLE_DIE_SIZE = 0.36;
+const BINDER_TABLE_DIE_POSITIONS = Object.freeze([
+  Object.freeze([2.22, 2.5]),
+  Object.freeze([3.02, 2.42]),
+]);
+const BINDER_TABLE_DIE_TOSS_DURATION_MS = 920;
+const BINDER_TABLE_DIE_TOSS_HEIGHT = 1.55;
+const BINDER_TABLE_ACCESSORY_REVEAL_DURATION_MS = 320;
+const BINDER_TABLE_ACCESSORY_SHADOW_OPACITY = 0.11;
+const BINDER_TABLE_Y = 0.62;
+const BINDER_TABLE_Z = -1.45;
+const BINDER_COVER_BASE_COLOR = new THREE.Color(0x11100d);
+const BINDER_COVER_TABLE_COLOR = new THREE.Color(0x716958);
+const BINDER_COVER_BASE_EMISSIVE = new THREE.Color(0x040302);
+const BINDER_COVER_TABLE_EMISSIVE = new THREE.Color(0x252019);
+const BINDER_COVER_BASE_EMISSIVE_INTENSITY = 0.28;
+const BINDER_COVER_TABLE_EMISSIVE_INTENSITY = 1.05;
+const BINDER_TABLE_COVER_RENDER_ORDER = 12;
+const BINDER_FRONT_COVER_EMBLEM_DEFAULT_ASSET = "assets/ui/crucidrifella-statue-cover.webp?v=crucidrifella-cover-1";
+const BINDER_FRONT_COVER_EMBLEM_DEFAULT_ASPECT = 1142 / 1500;
+const BINDER_FRONT_COVER_EMBLEM_HEIGHT_RATIO = 0.74;
+const BINDER_FRONT_COVER_EMBLEM_Y_RATIO = -0.035;
+const BINDER_FRONT_COVER_EMBLEM_VISIBLE_PROGRESS = 0.52;
+const BINDER_EVIL_TABLE_SIDE_X = 6.45;
+const BINDER_EVIL_TABLE_SIDE_SCALE = 0.82;
+const BINDER_EVIL_TABLE_SIDE_Z = 0;
+const BINDER_EVIL_TABLE_SIDE_FADE_START = 0.14;
+const BINDER_EVIL_TABLE_SIDE_FADE_END = 0.78;
+const BINDER_EVIL_TABLE_SWAP_DURATION_MS = 940;
+const BINDER_EVIL_TABLE_SWAP_ACTIVE_LIFT = 0.64;
+const BINDER_EVIL_TABLE_SWAP_SELECTED_LIFT = 1.72;
+const BINDER_EVIL_TABLE_SWAP_PATH_BEND = 0.82;
+const BINDER_EVIL_TABLE_SWAP_STORAGE_KEY = "cardnft:evilBinderTableSwap:v1";
+const BINDER_EVIL_TABLE_SWAP_ARRIVAL_MAX_AGE_MS = 15_000;
 const BINDER_PLASTIC_REST_OPACITY = 0.066;
 const BINDER_PLASTIC_ACTIVE_OPACITY = 0.13;
 const BINDER_FROST_REST_OPACITY = 0.018;
@@ -260,45 +730,61 @@ const BINDER_GAP_REVEAL_PAGE_RENDER_ORDER = 600;
 const BINDER_LEFT_STACK_RENDER_ORDER = 420;
 const BINDER_RIGHT_STACK_RENDER_ORDER = 300;
 const BINDER_STACK_RENDER_ORDER_STEP = 28;
-const BINDER_TEXTURE_CONCURRENCY = 6;
+const BINDER_TEXTURE_CONCURRENCY = MEMORY_CONSTRAINED_DEVICE ? 4 : 6;
 const BINDER_TEXTURE_URGENT_PRIORITY = 0;
+const BINDER_TEXTURE_TARGET_PRIORITY = -8;
+const BINDER_TEXTURE_URGENT_RESERVE = 2;
 const BINDER_TEXTURE_APPLY_IDLE_BUDGET = 2;
 const BINDER_TEXTURE_APPLY_BATCH_DELAY_MS = 34;
 const BINDER_TEXTURE_APPLY_DEFER_MS = 120;
+const BINDER_TEXTURE_MAX_RETRIES = 3;
+const BINDER_TEXTURE_RETRY_BASE_MS = 900;
+const BINDER_TEXTURE_RETRY_MAX_MS = 12_000;
 const BINDER_SHUFFLE_PRELOAD_CONCURRENCY = 6;
 const BINDER_ANIMATED_PRELOAD_PAGE_RADIUS = 1;
-const BINDER_PAGE_WINDOW_RADIUS = 6;
-const BINDER_PAGE_WINDOW_RECENTER_THRESHOLD = 4;
-const BINDER_PRELOAD_PAGE_RADIUS = 4;
+const BINDER_PAGE_WINDOW_RADIUS = MEMORY_CONSTRAINED_DEVICE ? 2 : 4;
+const BINDER_PAGE_WINDOW_RECENTER_THRESHOLD = MEMORY_CONSTRAINED_DEVICE ? 1 : 3;
+const BINDER_PRELOAD_PAGE_RADIUS = MEMORY_CONSTRAINED_DEVICE ? 1 : 2;
 const BINDER_INITIAL_PRELOAD_IDLE_DELAY_MS = 180;
+const BINDER_TEXTURE_FRAME_WIDTH = MEMORY_CONSTRAINED_DEVICE ? 180 : 260;
 const BINDER_CARD_LOAD_FADE_MS = 280;
 const BINDER_CARD_PLACEHOLDER_OPACITY = 0.24;
+const BINDER_LOADING_RING_RADIUS = BINDER_CARD_WIDTH * 0.085;
+const BINDER_LOADING_RING_THICKNESS = BINDER_CARD_WIDTH * 0.012;
+const BINDER_LOADING_RING_SPEED = Math.PI * 0.00115;
+const BINDER_LOADING_RING_IDLE_MS = 42;
 const BINDER_INTRO_LINK_URL = "https://x.com/bis__cut";
-const BINDER_CARD_NFT_1_LINK_URL = "/cardnft1/";
-const BINDER_CARD_NFT_2_LINK_URL = "/";
+const BINDER_INTRO_LINK_UNDERLINE_ALPHA = 0.5;
+const BINDER_INTRO_LINK_UNDERLINE_MIN_HEIGHT = 3;
+const BINDER_INTRO_LINK_UNDERLINE_HEIGHT_RATIO = 0.08;
 const BINDER_INTRO_NOTE_FILTER_FADE_MS = 260;
 const BINDER_INTRO_FOCUS_MARGIN_RATIO = 0.12;
 const BINDER_INTRO_FOCUS_MOBILE_MARGIN_RATIO = 0.04;
 const BINDER_INTRO_FOCUS_EXTRA_Z = 0.08;
 const BINDER_CARD_VIEW_TRANSITION_MS = 820;
-const INDIVIDUAL_TO_BINDER_WHEEL_THRESHOLD = 1560;
-const BINDER_TO_INDIVIDUAL_WHEEL_THRESHOLD = 680;
+const INDIVIDUAL_TO_BINDER_WHEEL_THRESHOLD = 1240;
+const BINDER_TO_TABLE_WHEEL_THRESHOLD = INDIVIDUAL_TO_BINDER_WHEEL_THRESHOLD;
+const BINDER_TO_INDIVIDUAL_WHEEL_THRESHOLD = 540;
 const VIEW_SWITCH_WHEEL_IDLE_MS = 900;
+const VIEW_SWITCH_CONTINUOUS_STEP_DELAY_MS = 360;
 const PINCH_WHEEL_DELTA_SCALE = 1120;
 const PINCH_MIN_DISTANCE_PX = 28;
 const PINCH_DELTA_EPSILON = 0.004;
 const BINDER_FOCUS_SWIPE_MIN_DISTANCE = 46;
 const BINDER_FOCUS_SWIPE_MAX_OFF_AXIS_RATIO = 0.86;
 const DOUBLE_TAP_ZOOM_SUPPRESSION_MS = 320;
-const BINDER_FOCUS_ZOOM_OUT_LOCK_MS = 620;
-const BINDER_TO_CARD_SCROLL_LOCK_BUFFER_MS = 120;
+const BINDER_FOCUS_ZOOM_OUT_LOCK_MS = VIEW_SWITCH_CONTINUOUS_STEP_DELAY_MS;
 const BINDER_FOCUS_TRANSITION_LOCK_MS = BINDER_CARD_VIEW_TRANSITION_MS + BINDER_FOCUS_ZOOM_OUT_LOCK_MS;
 const INDIVIDUAL_MAX_ZOOM_EPSILON = 0.035;
 const CARD_CAMERA_DEFAULT_Z = 9.55;
 const CARD_CAMERA_MIN_Z = 4.55;
 const CARD_CAMERA_MAX_Z = 14.05;
-const CARD_PAN_MODE_Z = 7.25;
+const CARD_PAN_CLIP_TOLERANCE_PX = 1;
 const CARD_PAN_VISIBLE_MARGIN = 0.48;
+const INDIVIDUAL_CARD_HOVER_TILT_MAX_X_DEG = 12.5;
+const INDIVIDUAL_CARD_HOVER_TILT_MAX_Y_DEG = 15.5;
+const INDIVIDUAL_CARD_HOVER_TILT_SPRING = 0.14;
+const INDIVIDUAL_CARD_HOVER_TILT_DAMPING = 0.76;
 const CARD_MOBILE_SCALE_MIN = 0.88;
 const CARD_MOBILE_SCALE_FULL_WIDTH = 700;
 const CARD_MOBILE_SCALE_MIN_WIDTH = 340;
@@ -311,26 +797,41 @@ const BINDER_OPEN_CARD_LOADING_DELAY_MS = CARD_SWAP_LOADING_DELAY_MS;
 const CARD_SHUFFLE_LOADING_DELAY_MS = CARD_SWAP_LOADING_DELAY_MS;
 const CARD_SHUFFLE_SPIN_MS = 520;
 const CARD_SHUFFLE_SPIN_DIRECTION = -1;
-const MAX_WARMED_INDIVIDUAL_CARD_EFFECTS = 64;
-const MAX_PREPARED_INDIVIDUAL_CARDS = 80;
-const INDIVIDUAL_CARD_PREWARM_RADIUS = 5;
-const INDIVIDUAL_CARD_PREWARM_STEP_DELAY_MS = 55;
+const CARD_SHUFFLE_GLOSS_FADE_IN_START = 0.08;
+const CARD_SHUFFLE_GLOSS_FADE_IN_END = 0.22;
+const CARD_SHUFFLE_GLOSS_FADE_START = 0.62;
+const CARD_SHUFFLE_GLOSS_FADE_END = 0.94;
+const MAX_WARMED_INDIVIDUAL_CARD_EFFECTS = 16;
+const MAX_PREPARED_INDIVIDUAL_CARDS = 18;
+const INDIVIDUAL_CARD_PREWARM_RADIUS = 2;
+const INDIVIDUAL_CARD_PREWARM_STEP_DELAY_MS = 90;
+const INDIVIDUAL_BINDER_SPREAD_PREWARM_IDLE_TIMEOUT_MS = 900;
+const INDIVIDUAL_BINDER_SPREAD_PREWARM_FALLBACK_DELAY_MS = 180;
+const INDIVIDUAL_BINDER_SPREAD_PREWARM_CONCURRENCY = MEMORY_CONSTRAINED_DEVICE ? 1 : 2;
 const FOCUSED_BINDER_CARD_PREWARM_DELAY_MS = 70;
 const GALLERY_PRIORITY_ROWS = 4;
+const GALLERY_INITIAL_RENDER_MIN = 36;
+const GALLERY_RENDER_BATCH_SIZE = 72;
+const GALLERY_RENDER_IDLE_TIMEOUT_MS = 120;
+const GALLERY_RENDER_FALLBACK_DELAY_MS = 32;
+const GALLERY_RENDER_PREFETCH_MARGIN_PX = 1200;
 const GALLERY_CARD_HOVER_EXPAND_PX = 5;
 const GALLERY_CARD_TILT_MAX_X_DEG = 12.5;
 const GALLERY_CARD_TILT_MAX_Y_DEG = 15.5;
 const GALLERY_CARD_TILT_SPRING = 0.14;
 const GALLERY_CARD_TILT_DAMPING = 0.76;
 const GALLERY_CARD_TILT_SETTLE_EPSILON = 0.02;
-const TRAIT_SEARCH_TILE_RENDER_BATCH_SIZE = 320;
+const TRAIT_SEARCH_TILE_RENDER_BATCH_SIZE = 80;
 const SHUFFLE_TOUCH_UNDO_HOLD_MS = 560;
 const SHUFFLE_TOUCH_UNDO_SUPPRESS_MS = 1000;
 const SHUFFLE_TOUCH_UNDO_MOVE_LIMIT = 14;
+const BINDER_FIRST_PAGE_HOLD_MS = 1500;
+const BINDER_FIRST_PAGE_HOLD_SUPPRESS_MS = 1000;
+const BINDER_FIRST_PAGE_HOLD_MOVE_LIMIT = 14;
 const BINDER_DOUBLE_TAP_MS = 420;
 const BINDER_DOUBLE_TAP_DISTANCE = 28;
 const SHUFFLE_HISTORY_LIMIT = 10;
-const MAX_TEXTURE_CACHE_SIZE = 260;
+const MAX_TEXTURE_CACHE_SIZE = MEMORY_CONSTRAINED_DEVICE ? 32 : 72;
 const BINDER_ANIMATED_IDLE_MS = 84;
 const BINDER_INTERACTION_ACTIVE_MS = 900;
 const BINDER_FRAME_MS = 1000 / 60;
@@ -338,9 +839,10 @@ const BINDER_MAX_FRAME_DELTA_MS = 34;
 const BINDER_TURN_BASE_ALPHA = 0.16;
 const BINDER_CAMERA_BASE_ALPHA = 0.1;
 const BINDER_FOCUS_CAMERA_BASE_ALPHA = 0.12;
-const SESSION_VIEW_STATE_KEY = `cardnft:${ACTIVE_COLLECTION_ID}:sessionView:v1`;
+let SESSION_VIEW_STATE_KEY = `cardnft:${ACTIVE_COLLECTION_ID}:sessionView:v1`;
 const TENSOR_ITEM_URL_BASE = "https://www.tensor.trade/item/";
 const SOLSCAN_TOKEN_URL_BASE = "https://solscan.io/token/";
+const restoredEvilBinderTableSwap = consumeEvilBinderTableSwapArrival();
 const restoredSessionViewState = loadSessionViewState();
 
 const els = {
@@ -365,6 +867,7 @@ const els = {
   binderCanvas: document.querySelector("#binderCanvas"),
   binderLoading: document.querySelector("#binderLoading"),
   binderPageControls: document.querySelector("#binderPageControls"),
+  binderTableViewButton: document.querySelector("#binderTableViewButton"),
   binderZoomOutButton: document.querySelector("#binderZoomOutButton"),
   binderPreviousPageButton: document.querySelector("#binderPreviousPageButton"),
   binderNextPageButton: document.querySelector("#binderNextPageButton"),
@@ -396,17 +899,22 @@ const els = {
 const textureLoader = new THREE.TextureLoader();
 textureLoader.setCrossOrigin("anonymous");
 const nftTextureCache = new Map();
+const binderTextureCache = new Map();
 const cardNft2EffectTextureCache = new Map();
 const preparedIndividualCardPromises = new Map();
 const preparedIndividualCardResults = new Map();
 const warmedIndividualCardEffectKeys = new Set();
 const warmedIndividualCardEffectQueue = [];
 const animatedTextureRecords = new Set();
-const favorites = loadSet("cardnft:favorites:v1");
+const favorites = loadSet(FAVORITES_STORAGE_KEY);
 migrateLegacyFavorites(favorites);
+window.addEventListener("storage", (event) => {
+  syncFavoritesFromStorage(event).catch(console.error);
+});
 const shuffleHistory = [];
 const binderShuffleHistory = [];
 
+let activeUiButtonTiltTarget = null;
 let currentIndex = 0;
 let galleryOpen = false;
 let favoritesOnly = false;
@@ -418,11 +926,19 @@ const traitSearchCollapsedCategories = new Set();
 const traitSearchGroupDataByKey = new Map();
 let traitSearchRenderToken = 0;
 let traitSearchRenderFrame = 0;
+let traitSearchQueryFrame = 0;
+let traitSearchRenderObserver = null;
+const traitSearchRenderStates = new Map();
 let traitSortPickerOpen = false;
 let traitSortPickerOpenedAt = 0;
 let traitSortPickerSyncFrame = 0;
 let activeGalleryTiltCard = null;
 let galleryTiltFrame = 0;
+let galleryRenderToken = 0;
+let galleryRenderIdleCallback = 0;
+let galleryRenderTimer = 0;
+let galleryRenderObserver = null;
+let galleryRenderSentinel = null;
 const galleryTiltStates = new Map();
 let sessionViewSaveFrame = 0;
 let lastTouchEndAt = 0;
@@ -432,12 +948,16 @@ let walletSearchToken = 0;
 let walletFilterCardIndexes = null;
 let walletFilterCardIndexSet = null;
 let walletFilterAddress = "";
+let walletMatchedMintByCardIndex = new Map();
 let isBinderMode = typeof restoredSessionViewState?.isBinderMode === "boolean"
   ? restoredSessionViewState.isBinderMode
   : true;
 let cardRenderer;
 let cardScene;
 let cardCamera;
+let cardAnimationFrame = 0;
+let cardContextLost = false;
+let individualCardAssetsDeferred = false;
 let cardGroup;
 let cardFrontMesh;
 let cardBackMesh;
@@ -450,6 +970,9 @@ let cardBackNoiseMesh;
 let cardPlaceholderTexture;
 let cardSurfaceNoiseTexture;
 const backTexturePromises = new Map();
+const backTextures = new Map();
+let allBackTexturesPreloadPromise = null;
+const binderIntroSpriteTexturePromises = new Map();
 let cardApplyToken = 0;
 let dragState = null;
 let currentRotationX = 0;
@@ -477,6 +1000,10 @@ let cardSwapLoadingTimer = 0;
 let cardSwapLoadingButton = null;
 let individualCardPrewarmTimer = 0;
 let individualCardPrewarmToken = 0;
+let individualBinderSpreadPrewarmIdleCallback = 0;
+let individualBinderSpreadPrewarmTimer = 0;
+let individualBinderSpreadPrewarmToken = 0;
+let individualBinderSpreadPrewarmKeys = new Set();
 let focusedBinderCardPrewarmTimer = 0;
 let focusedBinderCardPrewarmToken = 0;
 let binderOpenCardLoadingTimer = 0;
@@ -484,6 +1011,7 @@ let binderOpenCardLoadingToken = 0;
 let cardShuffleLoadingTimer = 0;
 let cardShuffleLoadingButton = null;
 let cardShuffleSpinY = 0;
+let cardShuffleGlossOpacity = 1;
 let cardShuffleSpinAnimating = false;
 let cardShuffleSpinToken = 0;
 let cardNameInput = null;
@@ -493,23 +1021,46 @@ let shuffleTouchUndoStartX = 0;
 let shuffleTouchUndoStartY = 0;
 let shuffleTouchUndoTriggeredAt = 0;
 let suppressNextShuffleClick = false;
+let binderFirstPageHoldTimer = 0;
+let binderFirstPageHoldPointerId = null;
+let binderFirstPageHoldStartX = 0;
+let binderFirstPageHoldStartY = 0;
+let binderFirstPageHoldConfirmed = false;
+let binderFirstPageHoldTriggeredAt = 0;
+let suppressNextBinderPreviousPageClick = false;
 let targetCameraZ = CARD_CAMERA_DEFAULT_Z;
 let currentCameraZ = targetCameraZ;
 let smoothZoomVelocity = 0;
+let individualCardHoverTiltX = 0;
+let individualCardHoverTiltY = 0;
+let individualCardHoverTiltVelocityX = 0;
+let individualCardHoverTiltVelocityY = 0;
+let individualCardHoverTiltTargetX = 0;
+let individualCardHoverTiltTargetY = 0;
 let cardGlossActivity = 0;
-let cardEffectPointerTargetX = CARD_NFT_2_EFFECT_OFFCARD_POINTER_X;
-let cardEffectPointerTargetY = CARD_NFT_2_EFFECT_OFFCARD_POINTER_Y;
+let cardEffectPointerTargetX = CARD_NFT_2_EFFECT_DEFAULT_POINTER_X;
+let cardEffectPointerTargetY = CARD_NFT_2_EFFECT_DEFAULT_POINTER_Y;
 let cardEffectPointerTargetActive = 0;
-let cardEffectPointerX = CARD_NFT_2_EFFECT_OFFCARD_POINTER_X;
-let cardEffectPointerY = CARD_NFT_2_EFFECT_OFFCARD_POINTER_Y;
+let cardEffectPointerX = CARD_NFT_2_EFFECT_DEFAULT_POINTER_X;
+let cardEffectPointerY = CARD_NFT_2_EFFECT_DEFAULT_POINTER_Y;
 let cardEffectPointerActive = 0;
+let cardEffectPointerClientX = Number.NaN;
+let cardEffectPointerClientY = Number.NaN;
 let cardEffectViewOpacity = 1;
 let cardEffectViewTargetOpacity = 1;
 let cardEffectViewStartOpacity = 1;
 let cardEffectViewFadeStartedAt = 0;
 let traitsOpen = false;
+let traitInfoOpenRequested = false;
+let traitPanelOpenToken = 0;
+let traitPanelOpenFrame = 0;
+let traitUiPrewarmIdleCallback = 0;
+let traitUiPrewarmTimer = 0;
+let traitUiPrewarmCollectionId = "";
 let individualWheelOutDistance = 0;
 let individualWheelOutLastAt = 0;
+let binderTableWheelOutDistance = 0;
+let binderTableWheelOutLastAt = 0;
 let binderFocusWheelInDistance = 0;
 let binderFocusWheelInLastAt = 0;
 const cardTouchPointers = new Map();
@@ -527,19 +1078,53 @@ let appViewportTop = 0;
 let binderRenderer;
 let binderScene;
 let binderCamera;
+let binderContextLost = false;
+let binderPresentationRoot;
+let binderActivePlacementRoot;
 let binderRoot;
+let binderTableGroup;
+let binderTableMaterials = [];
+let binderTableSurfaceMaterial = null;
+let binderTableSurfaceTexturesPromise = null;
+const binderTableSurfaceTextures = new Map();
+let binderTableDisplayModelRoot = null;
+let binderTableDisplayModelPromise = null;
+let binderTableDisplayModelMaterial = null;
+let binderTableDisplayModelShadowMaterial = null;
+let binderTableDisplayModelLoadedAt = 0;
+let binderTableAccessoryRoot = null;
+let binderTableAccessoryMaterials = [];
+let binderTableAccessoryShadowMaterials = [];
+let binderTableDice = [];
+let binderTableCoinTopMaterial = null;
+let binderTableAccessoryPromise = null;
+let binderTableAccessoriesLoadedAt = 0;
+let binderEvilTableSetRoot;
+let binderEvilTableEntries = [];
+let binderEvilTableCollectionOrder = null;
+let binderEvilTableSetOpacity = 0;
+let binderEvilTableSwapState = null;
+let binderTableViewProgress = 0;
+let binderTableViewTarget = 0;
+let binderTableViewAnimation = null;
 let binderCardGeometry = null;
 let binderColumnSheetGeometry = null;
 let binderColumnGlossGeometry = null;
 let binderVerticalSeamGeometry = null;
 let binderHorizontalSeamGeometry = null;
+let binderLoadingRingGeometry = null;
+let binderLoadingRingMaterial = null;
 let binderCoverTexture = null;
+const binderFrontCoverEmblemTextures = new Map();
+const binderFrontCoverEmblemTexturePromises = new Map();
 let binderIntroNoteTexture = null;
 let binderSleeveFrostTexture = null;
 let paperRoughnessTexture = null;
 let binderPlaceholderTexture = null;
 let binderCardMeshes = [];
 let binderCardMeshByPosition = new Map();
+let binderLoadingRings = [];
+const binderFullResolutionMeshes = new Set();
 let binderIntroNoteGroup = null;
 let binderIntroNoteMesh = null;
 let binderIntroNoteModeOpacity = 1;
@@ -556,16 +1141,20 @@ let binderPageWindowCenter = 0;
 let binderPageCount = 1;
 let binderTurn = 0;
 let binderTargetTurn = 0;
+let binderClosure = 0;
+let binderTargetClosure = 0;
+let binderShellState = null;
+let binderOuterFlipState = null;
 let binderBendDirection = 1;
 let binderSinglePageSide = null;
 let binderSinglePageSideTouched = false;
-let binderResizeFrame = 0;
 let binderLastWidth = 0;
 let binderLastHeight = 0;
 let binderAnimationFrame = 0;
 let binderLastAnimationAt = 0;
 let binderAnimationDelayTimer = 0;
 let binderLastAnimationIdleOnly = false;
+let binderAnimationIdleDelayMs = BINDER_ANIMATED_IDLE_MS;
 let binderRenderFrame = 0;
 let binderMaintenanceTimer = 0;
 let binderSpreadPreparationToken = 0;
@@ -591,8 +1180,10 @@ let binderPageStatusEditMode = null;
 let rememberedBinderViewFocus = null;
 const binderTextureQueue = [];
 const binderTextureQueuedPositions = new Set();
+const binderTextureActiveTasks = new Map();
 const binderTextureApplyQueue = [];
 const binderTextureApplyPositions = new Set();
+const binderTextureFailures = new Map();
 const cardRaycaster = new THREE.Raycaster();
 const cardPointer = new THREE.Vector2();
 const binderRaycaster = new THREE.Raycaster();
@@ -607,20 +1198,61 @@ const binderIntroFocusWorldPosition = new THREE.Vector3();
 const binderIntroFocusLocalPosition = new THREE.Vector3();
 const binderIntroFocusWorldScale = new THREE.Vector3();
 
-init();
+init().catch((error) => {
+  console.error("Binder initialization failed", error);
+});
 
-function init() {
+async function init() {
+  await prepareRestoredLazyData(restoredSessionViewState);
   updateAppViewportVars();
-  applyTheme(localStorage.getItem("cardnft:theme:v1") === "light");
+  applyTheme(readStorageValue(getBrowserStorage("localStorage"), "cardnft:theme:v1") === "light");
   els.body.classList.toggle("trait-filters-disabled", !TRAIT_FILTERS_ENABLED);
   applyRestoredSessionViewState(restoredSessionViewState);
+  if (restoredEvilBinderTableSwap) applyEvilBinderTableSwapViewDefaults();
   updateGalleryViewModeButton();
   populateTraitSortOptions();
   initCardScene();
   initEvents();
-  setCard(getRestoredSessionCardIndex(restoredSessionViewState));
-  restoreSessionGalleryView(restoredSessionViewState);
-  animateCard();
+  initializeEvilBinderHistoryState();
+  await preloadCollectionBackTextures(ACTIVE_COLLECTION_ID);
+  const startsInGallery = !restoredSessionViewState || Boolean(restoredSessionViewState.galleryOpen);
+  setCard(getRestoredSessionCardIndex(restoredSessionViewState), {
+    deferAssets: startsInGallery,
+  });
+  if (restoredEvilBinderTableSwap) {
+    restoreEvilBinderTableSwapArrival();
+  } else {
+    restoreSessionGalleryView(restoredSessionViewState);
+  }
+  preloadAllConfiguredBackTextures().catch(console.error);
+  if (!galleryOpen) startCardRenderLoop();
+}
+
+async function prepareRestoredLazyData(state) {
+  if (!state || typeof state !== "object") return;
+
+  if (state.favoritesOnly) {
+    await ensureFavoriteCollectionCards();
+  } else if (
+    Array.isArray(state.walletFilterCardStableIds)
+    && state.walletFilterCardStableIds.length
+  ) {
+    await ensureAllCollectionCards();
+  } else {
+    const stableId = String(state.currentCardStableId || "");
+    const collectionId = stableId.slice(0, stableId.indexOf(":"));
+    if (COLLECTION_CONFIGS[collectionId]) await ensureCollectionCards(collectionId);
+  }
+
+  const traitCollectionId = COLLECTION_CONFIGS[state.activeTraitFilter?.collectionId]?.id
+    || ACTIVE_COLLECTION_ID;
+  if (state.traitSearchOpen || state.traitSortCategory !== "all" || state.activeTraitFilter) {
+    await Promise.all([
+      ensureCollectionCards(traitCollectionId),
+      ensureCollectionTraits(traitCollectionId),
+    ]);
+    if (state.traitSearchOpen) await ensureTraitThumbnails();
+  }
 }
 
 function updateAppViewportVars() {
@@ -691,7 +1323,7 @@ function initCardScene() {
     alpha: true,
     powerPreference: "high-performance",
   });
-  cardRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  cardRenderer.setPixelRatio(getRendererPixelRatio(getAppViewportWidth(), getAppViewportHeight()));
   cardRenderer.outputColorSpace = THREE.SRGBColorSpace;
   cardRenderer.setClearColor(0x000000, 0);
 
@@ -728,6 +1360,7 @@ function initCardScene() {
   cardFrontMesh.position.z = CARD_DEPTH / 2 + 0.003;
   cardFrontMesh.renderOrder = 22;
   cardGroup.add(cardFrontMesh);
+  cardGroup.userData.frontMesh = cardFrontMesh;
 
   cardBackMesh = new THREE.Mesh(
     faceGeometry.clone(),
@@ -808,6 +1441,87 @@ function preventBrowserZoomKeydown(event) {
   }
 }
 
+function initUiButtonHoverTilt() {
+  const hoverMedia = typeof window.matchMedia === "function"
+    ? window.matchMedia(UI_BUTTON_TILT_HOVER_QUERY)
+    : null;
+  const reducedMotion = typeof window.matchMedia === "function"
+    ? window.matchMedia("(prefers-reduced-motion: reduce)")
+    : null;
+  if (hoverMedia && !hoverMedia.matches) return;
+  if (reducedMotion?.matches) return;
+
+  document.addEventListener("pointerover", onUiButtonTiltPointerMove, { passive: true });
+  document.addEventListener("pointermove", onUiButtonTiltPointerMove, { passive: true });
+  document.addEventListener("pointerout", onUiButtonTiltPointerOut, { passive: true });
+  document.addEventListener("pointercancel", clearActiveUiButtonTilt, { passive: true, capture: true });
+  window.addEventListener("blur", clearActiveUiButtonTilt);
+}
+
+function onUiButtonTiltPointerMove(event) {
+  if (!isHoverTiltPointer(event)) return;
+  const button = getUiButtonTiltTarget(event.target);
+  if (!button) {
+    clearActiveUiButtonTilt();
+    return;
+  }
+
+  if (activeUiButtonTiltTarget && activeUiButtonTiltTarget !== button) {
+    resetUiButtonTilt(activeUiButtonTiltTarget);
+  }
+  activeUiButtonTiltTarget = button;
+  updateUiButtonTilt(button, event);
+}
+
+function onUiButtonTiltPointerOut(event) {
+  const button = getUiButtonTiltTarget(event.target);
+  if (!button) return;
+  const relatedTarget = event.relatedTarget;
+  if (relatedTarget instanceof Node && button.contains(relatedTarget)) return;
+  resetUiButtonTilt(button);
+  if (activeUiButtonTiltTarget === button) activeUiButtonTiltTarget = null;
+}
+
+function clearActiveUiButtonTilt() {
+  if (!activeUiButtonTiltTarget) return;
+  resetUiButtonTilt(activeUiButtonTiltTarget);
+  activeUiButtonTiltTarget = null;
+}
+
+function getUiButtonTiltTarget(target) {
+  if (!(target instanceof Element)) return null;
+  const button = target.closest(UI_BUTTON_TILT_SELECTOR);
+  if (!button || !document.documentElement.contains(button)) return null;
+  if (button.matches(":disabled, [aria-disabled='true']")) return null;
+  return button;
+}
+
+function isHoverTiltPointer(event) {
+  return !event.pointerType || event.pointerType === "mouse" || event.pointerType === "pen";
+}
+
+function updateUiButtonTilt(button, event) {
+  const rect = button.getBoundingClientRect();
+  if (rect.width <= 0 || rect.height <= 0) return;
+
+  const x = clamp((event.clientX - rect.left) / rect.width, 0, 1);
+  const y = clamp((event.clientY - rect.top) / rect.height, 0, 1);
+  const tiltX = (0.5 - y) * UI_BUTTON_TILT_MAX_DEGREES * 2;
+  const tiltY = (x - 0.5) * UI_BUTTON_TILT_MAX_DEGREES * 2;
+
+  button.style.setProperty("--ui-button-tilt-x", `${tiltX.toFixed(2)}deg`);
+  button.style.setProperty("--ui-button-tilt-y", `${tiltY.toFixed(2)}deg`);
+  button.style.setProperty("--ui-button-shine-x", `${(x * 100).toFixed(1)}%`);
+  button.style.setProperty("--ui-button-shine-y", `${(y * 100).toFixed(1)}%`);
+}
+
+function resetUiButtonTilt(button) {
+  button.style.removeProperty("--ui-button-tilt-x");
+  button.style.removeProperty("--ui-button-tilt-y");
+  button.style.removeProperty("--ui-button-shine-x");
+  button.style.removeProperty("--ui-button-shine-y");
+}
+
 function initEvents() {
   document.addEventListener("touchend", suppressDoubleTapZoom, { passive: false });
   document.addEventListener("gesturestart", preventBrowserZoomGesture, { passive: false, capture: true });
@@ -815,6 +1529,7 @@ function initEvents() {
   document.addEventListener("gestureend", preventBrowserZoomGesture, { passive: false, capture: true });
   document.addEventListener("wheel", preventBrowserZoomWheel, { passive: false, capture: true });
   document.addEventListener("keydown", preventBrowserZoomKeydown, { capture: true });
+  initUiButtonHoverTilt();
   els.cardBinderReturnButton.addEventListener("click", () => {
     transitionIndividualCardToFocusedBinder().catch(console.error);
   });
@@ -869,8 +1584,12 @@ function initEvents() {
   els.walletAddressInput.addEventListener("keydown", (event) => {
     if (event.key === "Escape") setWalletSearchPanelOpen(false, { preserveMessage: true });
   });
-  els.favoriteFilterButton.addEventListener("click", toggleFavoriteFilter);
-  els.traitSearchButton.addEventListener("click", toggleTraitSearch);
+  els.favoriteFilterButton.addEventListener("click", () => {
+    toggleFavoriteFilter().catch(console.error);
+  });
+  els.traitSearchButton.addEventListener("click", () => {
+    toggleTraitSearch().catch(console.error);
+  });
   els.traitSearchInput.addEventListener("input", updateTraitSearchQuery);
   els.traitSearchGroups.addEventListener("click", onTraitSearchGroupsClick);
   els.gallerySortControl.addEventListener("click", (event) => {
@@ -895,14 +1614,7 @@ function initEvents() {
     }
   });
   els.traitSortSelect.addEventListener("change", () => {
-    setTraitSortPickerOpen(false);
-    activeTraitFilter = null;
-    traitSearchOpen = false;
-    resetTraitSearchQuery();
-    traitSortCategory = els.traitSortSelect.value || "all";
-    updateTraitSearchState();
-    resetBinderGalleryPosition();
-    renderGallery();
+    applyTraitSortSelection().catch(console.error);
   });
   document.addEventListener("pointerdown", (event) => {
     if (!traitSortPickerOpen || els.gallerySortControl.contains(event.target)) return;
@@ -927,12 +1639,35 @@ function initEvents() {
   }, true);
   window.addEventListener("blur", () => {
     setTraitSortPickerOpen(false);
-    resetTouchGestures();
+    cancelInterruptedPointerInteractions();
+    cancelBinderFirstPageHold();
   });
   els.themeToggle.addEventListener("change", () => applyTheme(els.themeToggle.checked));
-  els.binderPreviousPageButton.addEventListener("click", previousBinderPage);
+  els.binderPreviousPageButton.addEventListener("click", (event) => {
+    if (consumeSuppressedBinderPreviousPageClick()) {
+      event.preventDefault();
+      return;
+    }
+    previousBinderPage();
+  });
+  els.binderPreviousPageButton.addEventListener("pointerdown", startBinderFirstPageHold);
+  els.binderPreviousPageButton.addEventListener("pointermove", moveBinderFirstPageHold);
+  els.binderPreviousPageButton.addEventListener("pointerup", finishBinderFirstPageHold);
+  els.binderPreviousPageButton.addEventListener("pointercancel", cancelBinderFirstPageHold);
+  els.binderPreviousPageButton.addEventListener("pointerleave", cancelPendingBinderFirstPageHold);
+  els.binderPreviousPageButton.addEventListener("lostpointercapture", cancelPendingBinderFirstPageHold);
+  els.binderPreviousPageButton.addEventListener(
+    "animationend",
+    confirmBinderFirstPageHoldFromAnimation,
+  );
+  els.binderPreviousPageButton.addEventListener("contextmenu", (event) => {
+    if (binderFirstPageHoldPointerId !== null || isRecentBinderFirstPageHold()) {
+      event.preventDefault();
+    }
+  });
   els.binderNextPageButton.addEventListener("click", nextBinderPage);
   els.binderPageStatus.addEventListener("dblclick", startBinderPageStatusEdit);
+  els.binderTableViewButton.addEventListener("click", toggleBinderTableView);
   els.binderZoomOutButton.addEventListener("click", clearBinderFocus);
   els.binderOpenCardButton.addEventListener("click", () => {
     openFocusedBinderCard().catch(console.error);
@@ -950,24 +1685,124 @@ function initEvents() {
   els.cardCanvas.addEventListener("pointermove", onCardPointerMove);
   els.cardCanvas.addEventListener("pointerup", onCardPointerUp);
   els.cardCanvas.addEventListener("pointercancel", onCardPointerUp);
-  els.cardCanvas.addEventListener("pointerleave", clearCardEffectPointer);
-  els.cardCanvas.addEventListener("mousemove", updateCardEffectPointerFromEvent);
-  els.cardCanvas.addEventListener("mouseleave", clearCardEffectPointer);
+  els.cardCanvas.addEventListener("lostpointercapture", onCardPointerCaptureLost);
+  els.cardCanvas.addEventListener("pointerleave", onCardPointerLeave);
+  els.cardCanvas.addEventListener("mouseleave", onCardPointerLeave);
   els.cardCanvas.addEventListener("wheel", onCardWheel, { passive: false });
+  els.cardCanvas.addEventListener("webglcontextlost", handleCardContextLost, { passive: false });
+  els.cardCanvas.addEventListener("webglcontextrestored", handleCardContextRestored);
+  document.addEventListener("pointermove", onGlobalCardEffectPointerMove, { passive: true });
+  document.addEventListener("mousemove", onGlobalCardEffectPointerMove, { passive: true });
 
   els.binderCanvas.addEventListener("pointerdown", onBinderPointerDown);
   els.binderCanvas.addEventListener("pointermove", onBinderPointerMove);
   els.binderCanvas.addEventListener("pointerup", onBinderPointerUp);
   els.binderCanvas.addEventListener("pointercancel", onBinderPointerCancel);
+  els.binderCanvas.addEventListener("lostpointercapture", onBinderPointerCaptureLost);
   els.binderCanvas.addEventListener("pointerleave", clearBinderIntroLinkCursor);
-  els.binderCanvas.addEventListener("dblclick", openFocusedBinderCardFromPointer);
+  els.binderCanvas.addEventListener("dblclick", handleBinderCanvasDoubleClick);
   els.binderCanvas.addEventListener("wheel", handleBinderWheel, { passive: false });
+  els.binderCanvas.addEventListener("webglcontextlost", handleBinderContextLost, { passive: false });
+  els.binderCanvas.addEventListener("webglcontextrestored", handleBinderContextRestored);
 
   window.addEventListener("resize", requestResize);
   window.addEventListener("orientationchange", requestResize);
   window.visualViewport?.addEventListener("resize", requestResize);
   window.visualViewport?.addEventListener("scroll", requestResize);
+  document.addEventListener("visibilitychange", handleDocumentVisibilityChange);
+  window.addEventListener("pageshow", handleDocumentVisibilityChange);
+  window.addEventListener("online", retryFailedBinderTextures);
   window.addEventListener("pagehide", saveSessionViewState);
+}
+
+function handleDocumentVisibilityChange() {
+  if (document.hidden) {
+    stopCardRenderLoop();
+    stopBinderRenderLoop();
+    cancelIndividualCardPrewarmQueue();
+    cancelFocusedBinderCardPrewarm();
+    return;
+  }
+
+  requestResize();
+  if (galleryOpen && isBinderMode && !els.binderPanel.hidden) {
+    startBinderRenderLoop();
+    requestBinderMaintenance(0);
+  } else if (!galleryOpen) {
+    if (individualCardAssetsDeferred) setCard(currentIndex);
+    startCardRenderLoop();
+  }
+}
+
+function handleCardContextLost(event) {
+  event.preventDefault();
+  cardContextLost = true;
+  stopCardRenderLoop();
+}
+
+function handleCardContextRestored() {
+  cardContextLost = false;
+  refreshSceneGpuResources(cardScene);
+  cardRenderer?.resetState();
+  requestResize();
+  if (!galleryOpen) startCardRenderLoop();
+}
+
+function handleBinderContextLost(event) {
+  event.preventDefault();
+  binderContextLost = true;
+  stopBinderRenderLoop();
+}
+
+function handleBinderContextRestored() {
+  binderContextLost = false;
+  refreshSceneGpuResources(binderScene);
+  binderRenderer?.resetState();
+  requestResize();
+  if (galleryOpen && isBinderMode && !els.binderPanel.hidden) {
+    startBinderRenderLoop();
+    requestBinderMaintenance(0);
+  }
+}
+
+function refreshSceneGpuResources(scene) {
+  scene?.traverse((object) => {
+    const geometry = object.geometry;
+    if (geometry) {
+      for (const attribute of Object.values(geometry.attributes || {})) {
+        if (attribute) attribute.needsUpdate = true;
+      }
+      if (geometry.index) geometry.index.needsUpdate = true;
+    }
+
+    const materials = Array.isArray(object.material)
+      ? object.material
+      : (object.material ? [object.material] : []);
+    for (const material of materials) {
+      material.needsUpdate = true;
+      for (const value of Object.values(material)) {
+        if (value?.isTexture) value.needsUpdate = true;
+      }
+      for (const uniform of Object.values(material.uniforms || {})) {
+        if (uniform?.value?.isTexture) uniform.value.needsUpdate = true;
+      }
+    }
+  });
+}
+
+function retryFailedBinderTextures() {
+  if (!binderTextureFailures.size) return;
+  binderTextureFailures.clear();
+  for (const mesh of binderCardMeshes) {
+    if (!mesh.userData.textureLoadFailed) continue;
+    mesh.userData.textureLoadFailed = false;
+    mesh.userData.textureLoaded = false;
+    mesh.userData.textureLoading = false;
+  }
+  if (galleryOpen && isBinderMode) {
+    binderTextureQueueKey = "";
+    queueBinderTextureLoads(binderBuildToken, { force: true });
+  }
 }
 
 function populateTraitSortOptions() {
@@ -993,10 +1828,32 @@ function populateTraitSortOptions() {
 
 function updateTraitSearchPlaceholder() {
   if (!els.traitSearchInput) return;
-
-  const traitTotal = getTraitSearchGroups()
-    .reduce((total, group) => total + group.total, 0);
+  if (!ACTIVE_COLLECTION.traits) {
+    els.traitSearchInput.placeholder = "search traits";
+    return;
+  }
+  const traitTotal = getTraitSearchGroups().reduce((total, group) => total + group.total, 0);
   els.traitSearchInput.placeholder = `search all ${traitTotal} traits`;
+}
+
+async function applyTraitSortSelection() {
+  setTraitSortPickerOpen(false);
+  const nextCategory = els.traitSortSelect.value || "all";
+  if (nextCategory !== "all") {
+    els.traitSortSelect.disabled = true;
+    try {
+      await ensureCollectionTraits(ACTIVE_COLLECTION_ID);
+    } finally {
+      els.traitSortSelect.disabled = !TRAIT_FILTERS_ENABLED;
+    }
+  }
+  activeTraitFilter = null;
+  traitSearchOpen = false;
+  resetTraitSearchQuery();
+  traitSortCategory = nextCategory;
+  updateTraitSearchState();
+  resetBinderGalleryPosition();
+  renderGallery();
 }
 
 function openTraitSortPicker() {
@@ -1069,77 +1926,91 @@ function setCard(index, options = {}) {
 
   currentIndex = modulo(index, CARDS.length);
   const card = CARDS[currentIndex];
+  applyCardAspectFitToGroup(cardGroup, card);
   const token = ++cardApplyToken;
   resetViewSwitchWheelDistances();
-  if (Object.prototype.hasOwnProperty.call(options, "effectTextures")) {
-    applyLoadedIndividualCardEffect(card, options.effectTextures);
-  } else {
-    applyCardEffectProfile(card, token);
-  }
+  const deferAssets = Boolean(options.deferAssets);
+  individualCardAssetsDeferred = deferAssets;
+  applyLoadedIndividualCardEffect(card, options.effectTextures || null, {
+    immediate: Boolean(options.effectTextures),
+  });
 
   if (options.frontTexture) {
     prepareTextureForImmediateDisplay(options.frontTexture);
     cardFrontMesh.material.map = options.frontTexture;
-    cardFrontMesh.material.needsUpdate = true;
   } else {
     cardFrontMesh.material.map = getCardPlaceholderTexture();
-    cardFrontMesh.material.needsUpdate = true;
-    getCardTexture(card).then((texture) => {
-      if (token !== cardApplyToken) return;
-      prepareTextureForImmediateDisplay(texture);
-      cardFrontMesh.material.map = texture;
-      cardFrontMesh.material.needsUpdate = true;
-    }).catch(console.error);
   }
 
-  preloadAdjacentIndividualTextures(currentIndex);
   if (options.backTexture) {
     prepareTextureForImmediateDisplay(options.backTexture);
     cardBackMesh.material.map = options.backTexture;
-    cardBackMesh.material.needsUpdate = true;
   } else {
-    getBackTexture(card).then((texture) => {
-      if (token !== cardApplyToken) return;
-      prepareTextureForImmediateDisplay(texture);
-      cardBackMesh.material.map = texture;
-      cardBackMesh.material.needsUpdate = true;
-    }).catch(console.error);
+    cardBackMesh.material.map = getBackPlaceholderTexture();
   }
 
-  prepareIndividualCardFor3D(card).then(({ frontTexture, backTexture, effectTextures }) => {
-    if (token !== cardApplyToken) return;
-    if (!options.frontTexture && frontTexture) {
-      prepareTextureForImmediateDisplay(frontTexture);
-      cardFrontMesh.material.map = frontTexture;
-      cardFrontMesh.material.needsUpdate = true;
+  if (deferAssets) {
+    cancelIndividualCardPrewarmQueue();
+    cancelIndividualBinderSpreadPrewarm();
+  } else {
+    individualCardAssetsDeferred = false;
+    if (!options.frontTexture) {
+      getCardTexture(card).then((texture) => {
+        if (token !== cardApplyToken) return;
+        prepareTextureForImmediateDisplay(texture);
+        cardFrontMesh.material.map = texture;
+      }).catch(console.error);
     }
-    if (!options.backTexture && backTexture) {
-      prepareTextureForImmediateDisplay(backTexture);
-      cardBackMesh.material.map = backTexture;
-      cardBackMesh.material.needsUpdate = true;
+    if (!options.backTexture) {
+      getBackTexture(card).then((texture) => {
+        if (token !== cardApplyToken) return;
+        prepareTextureForImmediateDisplay(texture);
+        cardBackMesh.material.map = texture;
+      }).catch(console.error);
     }
-    if (!Object.prototype.hasOwnProperty.call(options, "effectTextures")) {
-      applyLoadedIndividualCardEffect(card, effectTextures);
+
+    if (!options.effectTextures) {
+      const effectProfile = getCardEffectProfile(card);
+      loadCardEffectTexturesForProfile(effectProfile)
+        .then((effectTextures) => {
+          if (token !== cardApplyToken || !effectTextures) return;
+          applyLoadedIndividualCardEffect(card, effectTextures);
+        })
+        .catch(() => {});
     }
-  }).catch(console.error);
+
+    prepareIndividualCardFor3D(card).then(({ frontTexture, backTexture }) => {
+      if (token !== cardApplyToken) return;
+      if (!options.frontTexture && frontTexture) {
+        prepareTextureForImmediateDisplay(frontTexture);
+        cardFrontMesh.material.map = frontTexture;
+      }
+      if (!options.backTexture && backTexture) {
+        prepareTextureForImmediateDisplay(backTexture);
+        cardBackMesh.material.map = backTexture;
+      }
+    }).catch(console.error);
+    preloadAdjacentIndividualTextures(currentIndex);
+    scheduleIndividualBinderSpreadPrewarm(currentIndex);
+  }
 
   targetRotationX = 0;
   targetRotationY = 0;
+  releaseIndividualCardHoverTilt({ immediate: true });
   resetCardPan(true);
   cardGlossActivity = 0;
   if (!options.preserveSwapVisuals) resetCardSwapVisualState();
   if (!options.preserveSpinVisuals) resetCardShuffleSpinVisualState();
   updateCardText();
-  renderTraitPanel();
+  scheduleTraitUiPrewarm(card.collection || ACTIVE_COLLECTION_ID);
+  if (traitsOpen) renderTraitPanel();
   updateFavoriteButtons();
   queueSessionViewStateSave();
 }
 
 function applyCardEffectProfile(card, token = cardApplyToken) {
   const frontProfile = getCardEffectProfile(card);
-  const backProfile = frontProfile.effectMode === CARD_EFFECT_MODE_DEFAULT
-    ? frontProfile
-    : { ...frontProfile, effectMode: CARD_EFFECT_MODE_CARD_NFT_2_LIGHTING, needsEffectTextures: false };
+  const backProfile = getCardBackEffectProfile(frontProfile);
 
   applyCardEffectProfileToMesh(cardGradientMesh, frontProfile);
   applyCardEffectProfileToMesh(cardGlareMesh, frontProfile);
@@ -1163,7 +2034,11 @@ function applyCardEffectProfile(card, token = cardApplyToken) {
 
 function getCardEffectProfile(card) {
   const cardNumber = getCardNft2Number(card);
-  if (card?.collection !== "cardnft2" || !Number.isInteger(cardNumber)) {
+  if (
+    card?.collection !== "cardnft2"
+    || !Number.isInteger(cardNumber)
+    || !isCardNft2SuperRare(cardNumber)
+  ) {
     return {
       effectMode: CARD_EFFECT_MODE_DEFAULT,
       cardNumber: 0,
@@ -1171,15 +2046,28 @@ function getCardEffectProfile(card) {
     };
   }
 
-  const common = CARD_NFT_2_COMMON_ID_SET.has(cardNumber);
-  const effectMode = common
-    ? CARD_EFFECT_MODE_CARD_NFT_2_LIGHTING
-    : CARD_NFT_2_HOLO_EFFECT_MODES_BY_REMAINDER[modulo(cardNumber, CARD_NFT_2_HOLO_EFFECT_MODES_BY_REMAINDER.length)];
+  const effectMode = CARD_NFT_2_HOLO_EFFECT_MODES_BY_REMAINDER[
+    modulo(cardNumber, CARD_NFT_2_HOLO_EFFECT_MODES_BY_REMAINDER.length)
+  ];
 
   return {
     effectMode,
     cardNumber,
-    needsEffectTextures: effectMode !== CARD_EFFECT_MODE_CARD_NFT_2_LIGHTING,
+    needsEffectTextures: true,
+  };
+}
+
+function isCardNft2SuperRare(cardNumber) {
+  return CARD_NFT_2_SUPER_RARE_RANGES.some(([first, last]) => (
+    cardNumber >= first && cardNumber <= last
+  ));
+}
+
+function getCardBackEffectProfile(frontProfile) {
+  return {
+    effectMode: CARD_EFFECT_MODE_DEFAULT,
+    cardNumber: frontProfile?.cardNumber || 0,
+    needsEffectTextures: false,
   };
 }
 
@@ -1187,32 +2075,101 @@ function applyCardEffectProfileToMesh(mesh, profile) {
   const uniforms = mesh?.material?.uniforms;
   if (!uniforms) return;
   uniforms.uEffectMode.value = profile.effectMode;
-  uniforms.uUseEffectTextures.value = 0;
   uniforms.uFoilTexture.value = getCardPlaceholderTexture();
   uniforms.uMaskTexture.value = getCardPlaceholderTexture();
+  setCardEffectTextureUsage(mesh, 0, { immediate: true });
+  updateCardEffectMaterialBlending(mesh, profile.effectMode);
 }
 
-function applyCardEffectTexturesToMesh(mesh, foilTexture, maskTexture) {
+function updateCardEffectMaterialBlending(mesh, effectMode) {
+  const material = mesh?.material;
+  const layer = mesh?.userData?.cardEffectLayer;
+  if (!material || !layer) return;
+
+  let nextBlending = layer === "glare"
+    ? THREE.AdditiveBlending
+    : THREE.NormalBlending;
+  if (effectMode >= CARD_EFFECT_MODE_CARD_NFT_2_RARE_HOLO_V) {
+    if (layer === "shine") {
+      // The source applies color-dodge to both spectrum and trainer foil.
+      nextBlending = effectMode >= CARD_EFFECT_MODE_CARD_NFT_2_REGULAR_HOLO
+        && effectMode <= CARD_EFFECT_MODE_CARD_NFT_2_AMAZING_RARE
+        ? THREE.AdditiveBlending
+        : THREE.NormalBlending;
+    } else {
+      // Trainer and amazing-rare glare are intentionally dark compositing
+      // passes in mons.shop; multiply preserves their contrast in 3D.
+      nextBlending = effectMode >= CARD_EFFECT_MODE_CARD_NFT_2_TRAINER_FULL_ART
+        ? THREE.MultiplyBlending
+        : THREE.NormalBlending;
+    }
+  }
+  if (material.blending === nextBlending) return;
+  material.blending = nextBlending;
+  material.needsUpdate = true;
+}
+
+function applyCardEffectTexturesToMesh(mesh, foilTexture, maskTexture, { immediate = false } = {}) {
   const uniforms = mesh?.material?.uniforms;
   if (!uniforms) return;
+  const texturesReady = Boolean(foilTexture && maskTexture);
+  if (texturesReady) {
+    warmTextureForImmediateDisplay(foilTexture);
+    warmTextureForImmediateDisplay(maskTexture);
+  }
   uniforms.uFoilTexture.value = foilTexture || getCardPlaceholderTexture();
   uniforms.uMaskTexture.value = maskTexture || getCardPlaceholderTexture();
-  uniforms.uUseEffectTextures.value = foilTexture && maskTexture ? 1 : 0;
+  setCardEffectTextureUsage(mesh, texturesReady ? 1 : 0, {
+    immediate: immediate || !texturesReady,
+  });
 }
 
-function applyLoadedIndividualCardEffect(card, textures = null) {
+function setCardEffectTextureUsage(mesh, target, { immediate = false } = {}) {
+  const uniforms = mesh?.material?.uniforms;
+  if (!uniforms?.uUseEffectTextures) return;
+
+  const nextTarget = clamp(target, 0, 1);
+  const current = clamp(uniforms.uUseEffectTextures.value, 0, 1);
+  mesh.userData.cardEffectTextureUsageStart = immediate ? nextTarget : current;
+  mesh.userData.cardEffectTextureUsageTarget = nextTarget;
+  mesh.userData.cardEffectTextureUsageStartedAt = performance.now();
+  if (immediate) uniforms.uUseEffectTextures.value = nextTarget;
+}
+
+function updateCardEffectTextureUsage(mesh, now = performance.now()) {
+  const uniforms = mesh?.material?.uniforms;
+  if (!uniforms?.uUseEffectTextures) return;
+
+  const target = clamp(mesh.userData.cardEffectTextureUsageTarget ?? 0, 0, 1);
+  const start = clamp(mesh.userData.cardEffectTextureUsageStart ?? target, 0, 1);
+  if (uniforms.uUseEffectTextures.value === target) return;
+  const progress = CARD_EFFECT_TEXTURE_FADE_MS <= 0
+    ? 1
+    : clamp(
+      (now - (mesh.userData.cardEffectTextureUsageStartedAt || now))
+        / CARD_EFFECT_TEXTURE_FADE_MS,
+      0,
+      1,
+    );
+  uniforms.uUseEffectTextures.value = THREE.MathUtils.lerp(
+    start,
+    target,
+    easeOutCubic(progress),
+  );
+  if (progress >= 1) uniforms.uUseEffectTextures.value = target;
+}
+
+function applyLoadedIndividualCardEffect(card, textures = null, { immediate = false } = {}) {
   const frontProfile = getCardEffectProfile(card);
-  const backProfile = frontProfile.effectMode === CARD_EFFECT_MODE_DEFAULT
-    ? frontProfile
-    : { ...frontProfile, effectMode: CARD_EFFECT_MODE_CARD_NFT_2_LIGHTING, needsEffectTextures: false };
+  const backProfile = getCardBackEffectProfile(frontProfile);
 
   applyCardEffectProfileToMesh(cardGradientMesh, frontProfile);
   applyCardEffectProfileToMesh(cardGlareMesh, frontProfile);
   applyCardEffectProfileToMesh(cardBackGradientMesh, backProfile);
   applyCardEffectProfileToMesh(cardBackGlareMesh, backProfile);
   if (frontProfile.needsEffectTextures) {
-    applyCardEffectTexturesToMesh(cardGradientMesh, textures?.foil, textures?.mask);
-    applyCardEffectTexturesToMesh(cardGlareMesh, textures?.foil, textures?.mask);
+    applyCardEffectTexturesToMesh(cardGradientMesh, textures?.foil, textures?.mask, { immediate });
+    applyCardEffectTexturesToMesh(cardGlareMesh, textures?.foil, textures?.mask, { immediate });
   }
 }
 
@@ -1223,8 +2180,8 @@ function loadCardEffectTexturesForProfile(profile) {
 
 function preloadCardEffectTextures(card) {
   const profile = getCardEffectProfile(card);
-  if (!profile.needsEffectTextures) return;
-  loadCardEffectTexturesForProfile(profile).catch(() => {});
+  if (!profile.needsEffectTextures) return Promise.resolve(null);
+  return loadCardEffectTexturesForProfile(profile).catch(() => null);
 }
 
 function prepareIndividualCardFor3D(card) {
@@ -1244,7 +2201,6 @@ function prepareIndividualCardFor3D(card) {
     return promise;
   }
 
-  const effectProfile = getCardEffectProfile(card);
   const promise = Promise.all([
     getPreparedCardTexture(card).catch((error) => {
       console.error(error);
@@ -1254,13 +2210,8 @@ function prepareIndividualCardFor3D(card) {
       console.error(error);
       return getBackPlaceholderTexture();
     }),
-    loadCardEffectTexturesForProfile(effectProfile).catch(() => null),
+    preloadCardEffectTextures(card),
   ]).then(([frontTexture, backTexture, effectTextures]) => {
-    try {
-      prewarmIndividualCardEffect(card, frontTexture, backTexture, effectTextures);
-    } catch {
-      // Texture preparation still succeeded; the visible render path can compile lazily.
-    }
     const prepared = { frontTexture, backTexture, effectTextures };
     rememberPreparedIndividualCardResult(key, prepared);
     return prepared;
@@ -1518,11 +2469,18 @@ function promoteCardSwapIncomingGroup(state) {
 
   currentIndex = modulo(state.nextIndex, CARDS.length);
   cardApplyToken += 1;
+  if (state.effectTextures) {
+    applyLoadedIndividualCardEffect(CARDS[currentIndex], state.effectTextures, { immediate: true });
+  } else {
+    applyCardEffectProfile(CARDS[currentIndex], cardApplyToken);
+  }
   resetViewSwitchWheelDistances();
   preloadAdjacentIndividualTextures(currentIndex);
+  scheduleIndividualBinderSpreadPrewarm(currentIndex);
 
   targetRotationX = 0;
   targetRotationY = 0;
+  releaseIndividualCardHoverTilt({ immediate: true });
   resetCardPan(true);
   cardGlossActivity = 0;
   cardSwapOffsetX = 0;
@@ -1534,6 +2492,9 @@ function promoteCardSwapIncomingGroup(state) {
   setIndividualCardEffectOpacity(cardEffectViewOpacity);
 
   updateCardText();
+  scheduleTraitUiPrewarm(
+    CARDS[currentIndex]?.collection || ACTIVE_COLLECTION_ID,
+  );
   renderTraitPanel();
   updateFavoriteButtons();
   queueSessionViewStateSave();
@@ -1631,6 +2592,7 @@ function createCardSwapGroup(frontTexture, backTexture, card = null, effectTextu
   group.userData.backGradientMesh = backGradientMesh || null;
   group.userData.backGlareMesh = backGlareMesh || null;
   group.userData.effectMeshes = effectMeshes;
+  applyCardAspectFitToGroup(group, card);
   return group;
 }
 
@@ -1664,9 +2626,7 @@ function stabilizeCardTransitionMaterial(material) {
 
 function createCardSwapEffectMeshes(card, effectTextures = null) {
   const frontProfile = getCardEffectProfile(card);
-  const backProfile = frontProfile.effectMode === CARD_EFFECT_MODE_DEFAULT
-    ? frontProfile
-    : { ...frontProfile, effectMode: CARD_EFFECT_MODE_CARD_NFT_2_LIGHTING, needsEffectTextures: false };
+  const backProfile = getCardBackEffectProfile(frontProfile);
 
   const frontGradient = createCardGradientPlane(1);
   frontGradient.position.z = CARD_DEPTH / 2 + 0.007;
@@ -1685,8 +2645,18 @@ function createCardSwapEffectMeshes(card, effectTextures = null) {
   applyCardEffectProfileToMesh(backGradient, backProfile);
   applyCardEffectProfileToMesh(backGlare, backProfile);
   if (frontProfile.needsEffectTextures) {
-    applyCardEffectTexturesToMesh(frontGradient, effectTextures?.foil, effectTextures?.mask);
-    applyCardEffectTexturesToMesh(frontGlare, effectTextures?.foil, effectTextures?.mask);
+    applyCardEffectTexturesToMesh(
+      frontGradient,
+      effectTextures?.foil,
+      effectTextures?.mask,
+      { immediate: true },
+    );
+    applyCardEffectTexturesToMesh(
+      frontGlare,
+      effectTextures?.foil,
+      effectTextures?.mask,
+      { immediate: true },
+    );
   }
 
   return [frontGradient, frontGlare, backGradient, backGlare];
@@ -1741,6 +2711,9 @@ function preloadNextIndividualCardTexture(indexes, token, offset = 0) {
   const card = CARDS[indexes[offset]];
   Promise.resolve()
     .then(() => prepareIndividualCardFor3D(card))
+    .then(({ frontTexture, backTexture, effectTextures }) => {
+      prewarmIndividualCardEffect(card, frontTexture, backTexture, effectTextures);
+    })
     .catch(() => {})
     .finally(() => {
       if (token !== individualCardPrewarmToken) return;
@@ -1756,6 +2729,141 @@ function cancelIndividualCardPrewarmQueue() {
   if (!individualCardPrewarmTimer) return;
   window.clearTimeout(individualCardPrewarmTimer);
   individualCardPrewarmTimer = 0;
+}
+
+function scheduleIndividualBinderSpreadPrewarm(cardIndex = currentIndex) {
+  cancelIndividualBinderSpreadPrewarm();
+  if (galleryOpen || !Number.isInteger(cardIndex) || !CARDS[cardIndex]) return;
+
+  const sequence = getVisibleIndexes();
+  const position = sequence.indexOf(cardIndex);
+  if (position === -1) return;
+
+  const indexes = getIndividualBinderSpreadPrewarmIndexes(sequence, position);
+  if (!indexes.length) return;
+
+  individualBinderSpreadPrewarmKeys = new Set(
+    indexes.map((index) => textureAssetPath(CARDS[index])),
+  );
+  const token = ++individualBinderSpreadPrewarmToken;
+
+  prepareIndividualCardFor3D(CARDS[cardIndex])
+    .catch(() => null)
+    .then(() => {
+      if (
+        token !== individualBinderSpreadPrewarmToken
+        || galleryOpen
+        || currentIndex !== cardIndex
+      ) {
+        return;
+      }
+
+      const run = () => {
+        individualBinderSpreadPrewarmIdleCallback = 0;
+        individualBinderSpreadPrewarmTimer = 0;
+        if (
+          token !== individualBinderSpreadPrewarmToken
+          || galleryOpen
+          || currentIndex !== cardIndex
+        ) {
+          return;
+        }
+        prewarmIndividualBinderSpread(indexes, token).catch(() => {});
+      };
+
+      if (typeof window.requestIdleCallback === "function") {
+        individualBinderSpreadPrewarmIdleCallback = window.requestIdleCallback(run, {
+          timeout: INDIVIDUAL_BINDER_SPREAD_PREWARM_IDLE_TIMEOUT_MS,
+        });
+      } else {
+        individualBinderSpreadPrewarmTimer = window.setTimeout(
+          run,
+          INDIVIDUAL_BINDER_SPREAD_PREWARM_FALLBACK_DELAY_MS,
+        );
+      }
+    });
+}
+
+function getIndividualBinderSpreadPrewarmIndexes(sequence, position) {
+  if (!Array.isArray(sequence) || !sequence.length || position < 0 || position >= sequence.length) {
+    return [];
+  }
+
+  const pageCount = Math.max(1, Math.ceil(sequence.length / BINDER_PAGE_SLOTS));
+  const pageIndex = Math.floor(position / BINDER_PAGE_SLOTS);
+  const sideSlot = position % BINDER_PAGE_SLOTS;
+  const turn = clamp(
+    pageIndex + (sideSlot >= BINDER_SIDE_SLOTS ? 1 : 0),
+    0,
+    pageCount,
+  );
+  const positions = [];
+  const addSide = (targetPageIndex, backSide) => {
+    if (targetPageIndex < 0 || targetPageIndex >= pageCount) return;
+    const start = targetPageIndex * BINDER_PAGE_SLOTS
+      + (backSide ? BINDER_SIDE_SLOTS : 0);
+    for (let slot = 0; slot < BINDER_SIDE_SLOTS; slot += 1) {
+      const targetPosition = start + slot;
+      if (targetPosition < sequence.length) positions.push(targetPosition);
+    }
+  };
+
+  if (turn <= 0) {
+    addSide(0, false);
+  } else if (turn >= pageCount) {
+    addSide(pageCount - 1, true);
+  } else {
+    addSide(turn - 1, true);
+    addSide(turn, false);
+  }
+
+  positions.sort((a, b) => (
+    (a === position ? -1 : b === position ? 1 : 0)
+    || Math.abs(a - position) - Math.abs(b - position)
+  ));
+  return positions.map((targetPosition) => sequence[targetPosition]);
+}
+
+async function prewarmIndividualBinderSpread(indexes, token) {
+  let offset = 0;
+  const worker = async () => {
+    while (
+      token === individualBinderSpreadPrewarmToken
+      && !galleryOpen
+      && offset < indexes.length
+    ) {
+      const cardIndex = indexes[offset];
+      offset += 1;
+      if (!Number.isInteger(cardIndex) || !CARDS[cardIndex]) continue;
+      try {
+        await getBinderTexture(CARDS[cardIndex]);
+      } catch {
+        // The visible binder queue retains its normal retry behavior.
+      }
+    }
+  };
+
+  const workerCount = Math.min(
+    INDIVIDUAL_BINDER_SPREAD_PREWARM_CONCURRENCY,
+    indexes.length,
+  );
+  await Promise.all(Array.from({ length: workerCount }, worker));
+}
+
+function cancelIndividualBinderSpreadPrewarm({ preserveProtectedKeys = false } = {}) {
+  individualBinderSpreadPrewarmToken += 1;
+  if (
+    individualBinderSpreadPrewarmIdleCallback
+    && typeof window.cancelIdleCallback === "function"
+  ) {
+    window.cancelIdleCallback(individualBinderSpreadPrewarmIdleCallback);
+  }
+  if (individualBinderSpreadPrewarmTimer) {
+    window.clearTimeout(individualBinderSpreadPrewarmTimer);
+  }
+  individualBinderSpreadPrewarmIdleCallback = 0;
+  individualBinderSpreadPrewarmTimer = 0;
+  if (!preserveProtectedKeys) individualBinderSpreadPrewarmKeys = new Set();
 }
 
 function prewarmIndividualCardEffect(card, frontTexture, backTexture, effectTextures = null) {
@@ -1831,8 +2939,11 @@ function getAdjacentIndividualCardIndex(direction) {
 }
 
 function getIndividualCardSequenceIndexes() {
-  if (ACTIVE_COLLECTION_INDEXES.includes(currentIndex)) return ACTIVE_COLLECTION_INDEXES;
-  return CARDS.map((_, index) => index);
+  if (favoritesOnly || walletFilterCardIndexSet || activeTraitFilter) {
+    const visibleIndexes = getVisibleIndexes();
+    if (visibleIndexes.length) return visibleIndexes;
+  }
+  return ACTIVE_COLLECTION_INDEXES;
 }
 
 function resetCardSwapVisualState() {
@@ -1949,6 +3060,7 @@ async function spinToCard(nextIndex, { recordHistory = false, loadingButton = nu
   }
 
   cardShuffleSpinAnimating = true;
+  cardShuffleGlossOpacity = 0;
   const token = ++cardShuffleSpinToken;
   setIndividualCardControlsDisabled(true);
   updateCardNameJumpState();
@@ -1959,7 +3071,7 @@ async function spinToCard(nextIndex, { recordHistory = false, loadingButton = nu
 
   try {
     let preparedResult = getPreparedIndividualCardResult(targetCard);
-    prepareIndividualCardFor3D(targetCard)
+    const preparedPromise = prepareIndividualCardFor3D(targetCard)
       .then((result) => {
         preparedResult = result;
         return result;
@@ -1968,16 +3080,33 @@ async function spinToCard(nextIndex, { recordHistory = false, loadingButton = nu
         console.error(error);
         return null;
       });
+    if (!preparedResult && getCardEffectProfile(targetCard).needsEffectTextures) {
+      preparedResult = await preparedPromise;
+      if (token !== cardShuffleSpinToken) return false;
+    }
     const frontTexture = preparedResult?.frontTexture || (
       await getPreparedCardTexture(targetCard).catch((error) => {
         console.error(error);
         return null;
       })
     );
+    if (preparedResult) {
+      prewarmIndividualCardEffect(
+        targetCard,
+        preparedResult.frontTexture,
+        preparedResult.backTexture,
+        preparedResult.effectTextures,
+      );
+    }
     markCardShufflePrepared(token);
     if (token !== cardShuffleSpinToken) return false;
 
-    await tweenCardShuffleSpin(targetIndex, frontTexture, token);
+    await tweenCardShuffleSpin(
+      targetIndex,
+      frontTexture,
+      preparedResult?.effectTextures || null,
+      token,
+    );
     if (token !== cardShuffleSpinToken) return false;
     preparedResult = preparedResult || getPreparedIndividualCardResult(targetCard);
     const cardOptions = {
@@ -2040,8 +3169,14 @@ function moveShuffleTouchUndo(event) {
   if (distance > SHUFFLE_TOUCH_UNDO_MOVE_LIMIT) cancelShuffleTouchUndo(event);
 }
 
-function cancelShuffleTouchUndo(event) {
-  if (shuffleTouchUndoPointerId !== null && event.pointerId !== shuffleTouchUndoPointerId) return;
+function cancelShuffleTouchUndo(event = null) {
+  if (
+    shuffleTouchUndoPointerId !== null
+    && event?.pointerId != null
+    && event.pointerId !== shuffleTouchUndoPointerId
+  ) {
+    return;
+  }
 
   clearShuffleTouchUndoTimer();
   try {
@@ -2068,9 +3203,10 @@ function isRecentShuffleTouchUndo() {
   return performance.now() - shuffleTouchUndoTriggeredAt < SHUFFLE_TOUCH_UNDO_SUPPRESS_MS;
 }
 
-function tweenCardShuffleSpin(nextIndex, frontTexture, token) {
+function tweenCardShuffleSpin(nextIndex, frontTexture, effectTextures, token) {
   const startedAt = performance.now();
   let swapped = false;
+  cardShuffleGlossOpacity = 0;
 
   return new Promise((resolve) => {
     const step = (now) => {
@@ -2082,11 +3218,12 @@ function tweenCardShuffleSpin(nextIndex, frontTexture, token) {
       const progress = clamp((now - startedAt) / CARD_SHUFFLE_SPIN_MS, 0, 1);
       const eased = easeInOutCubic(progress);
       cardShuffleSpinY = CARD_SHUFFLE_SPIN_DIRECTION * eased * Math.PI * 2;
+      cardShuffleGlossOpacity = getCardShuffleGlossEnvelopeOpacity(progress);
 
       if (!swapped && eased >= 0.5) {
         swapped = true;
         cardShuffleSpinY = CARD_SHUFFLE_SPIN_DIRECTION * Math.PI;
-        applyShuffleFrontFace(nextIndex, frontTexture);
+        applyShuffleFrontFace(nextIndex, frontTexture, effectTextures);
       }
 
       if (progress >= 1) {
@@ -2099,17 +3236,46 @@ function tweenCardShuffleSpin(nextIndex, frontTexture, token) {
   });
 }
 
-function applyShuffleFrontFace(nextIndex, frontTexture) {
+function getCardShuffleGlossEnvelopeOpacity(progress) {
+  const fadeInProgress = clamp(
+    (progress - CARD_SHUFFLE_GLOSS_FADE_IN_START)
+      / (CARD_SHUFFLE_GLOSS_FADE_IN_END - CARD_SHUFFLE_GLOSS_FADE_IN_START),
+    0,
+    1,
+  );
+  const fadeOutProgress = clamp(
+    (progress - CARD_SHUFFLE_GLOSS_FADE_START)
+      / (CARD_SHUFFLE_GLOSS_FADE_END - CARD_SHUFFLE_GLOSS_FADE_START),
+    0,
+    1,
+  );
+  return easeInOutCubic(fadeInProgress)
+    * (1 - easeInOutCubic(fadeOutProgress));
+}
+
+function applyShuffleFrontFace(nextIndex, frontTexture, effectTextures = null) {
   const card = CARDS[nextIndex];
   if (frontTexture) {
     prepareTextureForImmediateDisplay(frontTexture);
     cardFrontMesh.material.map = frontTexture;
-    cardFrontMesh.material.needsUpdate = true;
   } else {
     cardFrontMesh.material.map = getCardPlaceholderTexture();
-    cardFrontMesh.material.needsUpdate = true;
   }
   applyCardFrontEffectProfile(card, cardApplyToken, { loadTextures: false });
+  if (effectTextures) {
+    applyCardEffectTexturesToMesh(
+      cardGradientMesh,
+      effectTextures.foil,
+      effectTextures.mask,
+      { immediate: true },
+    );
+    applyCardEffectTexturesToMesh(
+      cardGlareMesh,
+      effectTextures.foil,
+      effectTextures.mask,
+      { immediate: true },
+    );
+  }
 }
 
 function applyCardFrontEffectProfile(card, token = cardApplyToken, { loadTextures = true } = {}) {
@@ -2134,6 +3300,7 @@ function applyCardFrontEffectProfile(card, token = cardApplyToken, { loadTexture
 
 function resetCardShuffleSpinVisualState() {
   cardShuffleSpinY = 0;
+  cardShuffleGlossOpacity = 1;
 }
 
 function easeInOutCubic(progress) {
@@ -2153,34 +3320,135 @@ function toggleCurrentFavorite() {
   } else {
     favorites.add(key);
   }
-  saveSet("cardnft:favorites:v1", favorites);
+  saveSet(FAVORITES_STORAGE_KEY, favorites);
   updateFavoriteButtons();
   if (galleryOpen) renderGallery();
 }
 
 function toggleTraitInfo() {
-  setTraitInfoOpen(!traitsOpen);
+  setTraitInfoOpen(!traitInfoOpenRequested);
 }
 
 function setTraitInfoOpen(open) {
-  traitsOpen = Boolean(open) && !galleryOpen;
-  els.body.classList.toggle("traits-open", traitsOpen);
-  els.traitInfoButton.setAttribute("aria-expanded", String(traitsOpen));
-  els.traitPanel.setAttribute("aria-hidden", String(!traitsOpen));
-  if (traitsOpen) renderTraitPanel();
+  const shouldOpen = Boolean(open) && !galleryOpen;
+  traitInfoOpenRequested = shouldOpen;
+  const openToken = ++traitPanelOpenToken;
+  if (traitPanelOpenFrame) {
+    cancelAnimationFrame(traitPanelOpenFrame);
+    traitPanelOpenFrame = 0;
+  }
+
+  els.traitInfoButton.setAttribute("aria-expanded", String(shouldOpen));
+  if (!shouldOpen) {
+    traitsOpen = false;
+    els.body.classList.remove("traits-open");
+    els.traitPanel.setAttribute("aria-hidden", "true");
+    return;
+  }
+
+  els.traitPanel.setAttribute("aria-hidden", "true");
+  const collectionId = CARDS[currentIndex]?.collection || ACTIVE_COLLECTION_ID;
+  ensureTraitUiData(collectionId)
+    .then(() => {
+      if (!traitInfoOpenRequested || openToken !== traitPanelOpenToken) return;
+      const currentCollectionId = (
+        CARDS[currentIndex]?.collection || ACTIVE_COLLECTION_ID
+      );
+      if (currentCollectionId !== collectionId) {
+        setTraitInfoOpen(true);
+        return;
+      }
+      revealPreparedTraitPanel(openToken);
+    })
+    .catch((error) => {
+      console.error(error);
+      if (!traitInfoOpenRequested || openToken !== traitPanelOpenToken) return;
+      const currentCollectionId = (
+        CARDS[currentIndex]?.collection || ACTIVE_COLLECTION_ID
+      );
+      if (currentCollectionId !== collectionId) {
+        setTraitInfoOpen(true);
+        return;
+      }
+      revealPreparedTraitPanel(openToken);
+    });
+}
+
+function revealPreparedTraitPanel(openToken) {
+  if (!traitInfoOpenRequested || openToken !== traitPanelOpenToken) return;
+  renderTraitPanel();
+
+  // Commit the final tile geometry while the panel is still transparent.
+  // Its entrance can then animate as one stable composited layer.
+  void els.traitPanel.offsetHeight;
+  traitPanelOpenFrame = requestAnimationFrame(() => {
+    traitPanelOpenFrame = 0;
+    if (!traitInfoOpenRequested || openToken !== traitPanelOpenToken) return;
+    traitsOpen = true;
+    els.body.classList.add("traits-open");
+    els.traitPanel.setAttribute("aria-hidden", "false");
+  });
+}
+
+function scheduleTraitUiPrewarm(collectionId) {
+  if (!COLLECTION_CONFIGS[collectionId]) return;
+  if (
+    traitUiPrewarmCollectionId === collectionId
+    && (traitUiPrewarmIdleCallback || traitUiPrewarmTimer)
+  ) {
+    return;
+  }
+
+  if (
+    traitUiPrewarmIdleCallback
+    && typeof window.cancelIdleCallback === "function"
+  ) {
+    window.cancelIdleCallback(traitUiPrewarmIdleCallback);
+  }
+  if (traitUiPrewarmTimer) clearTimeout(traitUiPrewarmTimer);
+  traitUiPrewarmIdleCallback = 0;
+  traitUiPrewarmTimer = 0;
+  traitUiPrewarmCollectionId = collectionId;
+
+  const prewarm = () => {
+    traitUiPrewarmIdleCallback = 0;
+    traitUiPrewarmTimer = 0;
+    ensureTraitUiData(collectionId).catch((error) => {
+      console.warn("Trait panel prewarm failed", error);
+    });
+  };
+  if (typeof window.requestIdleCallback === "function") {
+    traitUiPrewarmIdleCallback = window.requestIdleCallback(prewarm, {
+      timeout: 700,
+    });
+  } else {
+    traitUiPrewarmTimer = window.setTimeout(prewarm, 120);
+  }
 }
 
 function renderTraitPanel() {
   if (!els.traitGrid) return;
 
   updateTraitExternalLinks();
+  const collection = getCollectionConfigForCard(CARDS[currentIndex]);
+  if (collection.traitCategories.length && !collection.traits) {
+    const tile = document.createElement("article");
+    tile.className = "trait-tile trait-tile-empty";
+    const value = document.createElement("div");
+    value.className = "trait-value";
+    value.textContent = collection.traitsError ? "Traits unavailable" : "Loading traits…";
+    tile.append(value);
+    els.traitGrid.replaceChildren(tile);
+    return;
+  }
+
   const traits = getCardTraitEntries(currentIndex);
   const fragment = document.createDocumentFragment();
   for (const trait of traits) {
     const tile = document.createElement("button");
     tile.className = "trait-tile";
     tile.type = "button";
-    if (TRAIT_FILTERS_ENABLED) {
+    if (traitFiltersEnabledForCollection(trait.collection)) {
       tile.title = `Show cards with ${trait.value}`;
       tile.addEventListener("click", () => openTraitFilteredGallery(trait));
     } else {
@@ -2273,22 +3541,34 @@ function getAssetExtension(path) {
 }
 
 function openTraitFilteredGallery(trait) {
-  applyTraitFilter(trait.category, trait.value, { sourceCategories: trait.sourceCategories });
+  applyTraitFilter(trait.category, trait.value, {
+    collectionId: trait.collection,
+    sourceCategories: trait.sourceCategories,
+  });
 }
 
 function applyTraitFilter(category, value, options = {}) {
-  if (!TRAIT_FILTERS_ENABLED) return;
-  const displayCategory = getTraitSearchDisplayCategory(category);
-  const sourceCategories = getValidTraitFilterSourceCategories(options.sourceCategories, category);
+  const collectionId = COLLECTION_CONFIGS[options.collectionId]?.id || ACTIVE_COLLECTION_ID;
+  if (!traitFiltersEnabledForCollection(collectionId)) return;
+  const displayCategory = getTraitSearchDisplayCategory(category, collectionId);
+  const sourceCategories = getValidTraitFilterSourceCategories(
+    options.sourceCategories,
+    category,
+    collectionId,
+  );
   activeTraitFilter = {
+    collectionId,
     category: displayCategory,
     value,
     normalizedValue: normalizeTraitValue(value),
     sourceCategories,
   };
-  traitSortCategory = displayCategory;
-  els.traitSortSelect.value = displayCategory;
+  const canShowSortCategory = collectionId === ACTIVE_COLLECTION_ID
+    && getValidTraitSortCategory(displayCategory) !== "all";
+  traitSortCategory = canShowSortCategory ? displayCategory : "all";
+  els.traitSortSelect.value = traitSortCategory;
   favoritesOnly = false;
+  resetWalletCardFilter();
   traitSearchOpen = false;
   resetTraitSearchQuery();
   setGalleryViewMode(true, { render: false });
@@ -2301,26 +3581,19 @@ function applyTraitFilter(category, value, options = {}) {
 function getCardTraitEntries(index) {
   const card = CARDS[index];
   const collection = getCollectionConfigForCard(card);
-  const traitRecord = collection.traits[card?.collectionIndex] || {};
-  if (Array.isArray(traitRecord.entries)) {
-    const entries = traitRecord.entries
-      .map((entry) => ({
-        collection: collection.id,
-        category: String(entry?.category || "").trim(),
-        value: String(entry?.value || "").trim(),
-      }))
-      .filter(({ category, value }) => !HIDDEN_TRAIT_CATEGORIES.has(category) && isVisibleTraitValue(value));
-    return orderTraitPanelEntries(entries);
-  }
-
-  const values = traitRecord.values || [];
-  const entries = collection.traitCategories
-    .map((category, categoryIndex) => ({
+  const row = collection.traits?.rows?.[card?.collectionIndex] || [];
+  const dictionary = collection.traits?.dictionary || [];
+  const entries = [];
+  for (let offset = 0; offset + 1 < row.length; offset += 2) {
+    const category = String(collection.traitCategories[row[offset]] || "").trim();
+    const value = String(dictionary[row[offset + 1]] || "").trim();
+    if (!category || HIDDEN_TRAIT_CATEGORIES.has(category) || !isVisibleTraitValue(value)) continue;
+    entries.push({
       collection: collection.id,
       category,
-      value: String(values[categoryIndex] || "").trim(),
-    }))
-    .filter(({ category, value }) => !HIDDEN_TRAIT_CATEGORIES.has(category) && isVisibleTraitValue(value));
+      value,
+    });
+  }
   return orderTraitPanelEntries(entries);
 }
 
@@ -2370,25 +3643,31 @@ function getTraitPanelSourceCategoryOrder(entry) {
 function getTraitOccurrenceCount(category, value, collectionId = ACTIVE_COLLECTION_ID) {
   const collection = COLLECTION_CONFIGS[collectionId] || ACTIVE_COLLECTION;
   const normalizedValue = normalizeTraitValue(value);
-  const sourceCategories = getTraitOccurrenceSourceCategories(collection, category);
-  if (!sourceCategories.length || !normalizedValue) return 0;
+  if (!collection.traits || !normalizedValue) return 0;
+  if (!collection.traitOccurrenceCountCache) buildTraitOccurrenceCountCache(collection);
+  const displayCategory = getTraitSearchDisplayCategory(category, collection.id);
+  return collection.traitOccurrenceCountCache.get(
+    `${normalizeTraitValue(displayCategory)}\u0000${normalizedValue}`,
+  ) || 0;
+}
 
-  return collection.traits.reduce((total, traitRecord) => {
-    const hasTrait = sourceCategories.some((sourceCategory) => {
-      const categoryIndex = collection.traitCategories.indexOf(sourceCategory);
-      if (categoryIndex < 0) return false;
-
-      if (Array.isArray(traitRecord?.entries)) {
-        return traitRecord.entries.some((entry) => (
-          String(entry?.category || "").trim() === sourceCategory
-          && normalizeTraitValue(entry?.value) === normalizedValue
-        ));
-      }
-
-      return normalizeTraitValue(traitRecord?.values?.[categoryIndex]) === normalizedValue;
-    });
-    return hasTrait ? total + 1 : total;
-  }, 0);
+function buildTraitOccurrenceCountCache(collection) {
+  const counts = new Map();
+  const dictionary = collection.traits?.dictionary || [];
+  for (const row of collection.traits?.rows || []) {
+    const seen = new Set();
+    for (let offset = 0; offset + 1 < row.length; offset += 2) {
+      const category = String(collection.traitCategories[row[offset]] || "").trim();
+      const value = String(dictionary[row[offset + 1]] || "").trim();
+      if (!category || HIDDEN_TRAIT_CATEGORIES.has(category) || !isVisibleTraitValue(value)) continue;
+      const displayCategory = getTraitSearchDisplayCategory(category, collection.id);
+      const key = `${normalizeTraitValue(displayCategory)}\u0000${normalizeTraitValue(value)}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      counts.set(key, (counts.get(key) || 0) + 1);
+    }
+  }
+  collection.traitOccurrenceCountCache = counts;
 }
 
 function getTraitOccurrenceSourceCategories(collection, category) {
@@ -2421,7 +3700,7 @@ function toggleFocusedBinderFavorite() {
   } else {
     favorites.add(key);
   }
-  saveSet("cardnft:favorites:v1", favorites);
+  saveSet(FAVORITES_STORAGE_KEY, favorites);
   updateFavoriteButtons();
   updateBinderFavoriteButton();
   if (galleryOpen) renderGallery();
@@ -2504,10 +3783,12 @@ function submitCardNameEdit() {
 function parseCardNameJumpValue(value) {
   const parsed = parseCardJumpNumber(value);
   if (!Number.isInteger(parsed)) return null;
-  return CARD_NFT_TITLE_NUMBER_TO_INDEX.get(parsed) ?? null;
+  const collectionId = CARDS[currentIndex]?.collection || ACTIVE_COLLECTION_ID;
+  return CARD_NUMBER_TO_INDEX.get(`${collectionId}:${parsed}`) ?? null;
 }
 
 function getCardJumpDisplayNumber(index) {
+  if (Number.isInteger(CARDS[index]?.number)) return CARDS[index].number;
   const parsed = parseCardJumpNumber(CARDS[index]?.title);
   if (Number.isInteger(parsed)) return parsed;
   const position = getIndividualCardSequenceIndexes().indexOf(index);
@@ -2559,7 +3840,11 @@ function updateCardText() {
 
 function updateTraitExternalLinks() {
   const card = CARDS[currentIndex];
-  const mint = String(card?.mint || "").trim();
+  const mint = String(
+    walletMatchedMintByCardIndex.get(currentIndex)
+    || card?.mint
+    || "",
+  ).trim();
   const title = card?.title || "card";
   updateExternalCardLink(els.traitTensorButton, mint, `${TENSOR_ITEM_URL_BASE}${encodeURIComponent(mint)}`, `Open ${title} on Tensor`);
   updateExternalCardLink(els.traitSolscanButton, mint, `${SOLSCAN_TOKEN_URL_BASE}${encodeURIComponent(mint)}`, `Open ${title} on Solscan`);
@@ -2661,6 +3946,10 @@ function restoreRememberedBinderViewFocus() {
 function setGalleryOpen(open, options = {}) {
   resetViewSwitchWheelDistances();
   resetTouchGestures();
+  binderOuterFlipState = null;
+  resetBinderOuterFlipTransform();
+  resetEvilBinderTableSwap();
+  if (!open) setBinderTableView(false, { immediate: true, updateControls: false });
   binderSpreadPreparationToken += 1;
   binderPreparingSpread = false;
   if (open) closeCardNameEdit({ update: false });
@@ -2674,19 +3963,27 @@ function setGalleryOpen(open, options = {}) {
   els.galleryPanel.hidden = !open;
   updateTraitSearchState();
   if (open) {
+    stopCardRenderLoop();
+    cancelIndividualCardPrewarmQueue();
+    cancelIndividualBinderSpreadPrewarm({ preserveProtectedKeys: true });
     clearBinderFocus({ silent: true });
     snapBinderToWholePage();
     renderGallery();
     startBinderRenderLoop();
   } else {
+    cancelGalleryRender();
+    els.galleryGrid.replaceChildren();
     clearBinderFocus({ silent: true });
     snapBinderToWholePage();
     clearGalleryCardTilts();
     clearBinderIntroLinkCursor();
     stopBinderRenderLoop();
+    if (individualCardAssetsDeferred) setCard(currentIndex);
+    else scheduleIndividualBinderSpreadPrewarm(currentIndex);
     if (!binderCardViewTransitionActive) {
       setCardEffectViewTargetOpacity(1, { immediate: true });
     }
+    startCardRenderLoop();
   }
   updateCardNameJumpState();
   queueSessionViewStateSave();
@@ -2712,19 +4009,42 @@ function clearGallerySortAndFilters() {
   renderGallery();
 }
 
-function toggleFavoriteFilter() {
-  favoritesOnly = !favoritesOnly;
+async function toggleFavoriteFilter() {
+  const nextFavoritesOnly = !favoritesOnly;
+  if (nextFavoritesOnly) await ensureFavoriteCollectionCards();
+  favoritesOnly = nextFavoritesOnly;
+  if (favoritesOnly) {
+    activeTraitFilter = null;
+    traitSortCategory = "all";
+    resetWalletCardFilter();
+    if (els.traitSortSelect) els.traitSortSelect.value = "all";
+  }
   traitSearchOpen = false;
+  resetTraitSearchQuery();
   updateTraitSearchState();
   updateFavoriteButtons();
   resetBinderGalleryPosition();
   renderGallery();
+  queueSessionViewStateSave();
 }
 
-function toggleTraitSearch() {
+async function toggleTraitSearch() {
   if (!TRAIT_FILTERS_ENABLED) return;
-  traitSearchOpen = !traitSearchOpen;
+  const nextOpen = !traitSearchOpen;
+  if (nextOpen) {
+    els.traitSearchButton.disabled = true;
+    els.traitSearchButton.setAttribute("aria-busy", "true");
+    try {
+      await ensureTraitUiData(ACTIVE_COLLECTION_ID);
+      updateTraitSearchPlaceholder();
+    } finally {
+      els.traitSearchButton.disabled = !TRAIT_FILTERS_ENABLED;
+      els.traitSearchButton.removeAttribute("aria-busy");
+    }
+  }
+  traitSearchOpen = nextOpen;
   if (traitSearchOpen) {
+    cancelGalleryRender();
     clearBinderFocus({ silent: true });
     deactivateAllAnimatedRecords();
   } else {
@@ -2737,11 +4057,20 @@ function toggleTraitSearch() {
 
 function updateTraitSearchQuery() {
   traitSearchQuery = els.traitSearchInput.value;
-  renderTraitSearch();
-  els.traitSearchGroups.scrollTop = 0;
+  if (traitSearchQueryFrame) return;
+  traitSearchQueryFrame = requestAnimationFrame(() => {
+    traitSearchQueryFrame = 0;
+    if (!traitSearchOpen) return;
+    renderTraitSearch();
+    els.traitSearchGroups.scrollTop = 0;
+  });
 }
 
 function resetTraitSearchQuery() {
+  if (traitSearchQueryFrame) {
+    cancelAnimationFrame(traitSearchQueryFrame);
+    traitSearchQueryFrame = 0;
+  }
   traitSearchQuery = "";
   if (els.traitSearchInput) els.traitSearchInput.value = "";
 }
@@ -2875,16 +4204,18 @@ async function submitWalletSearch() {
   els.walletSearchMessage.textContent = WALLET_SEARCH_BUSY_MESSAGE;
 
   try {
-    const cardIndexes = await findWalletCardIndexes(address);
+    await ensureAllCollectionCards();
+    if (token !== walletSearchToken) return;
+    const walletResult = await findWalletCardIndexes(address);
     if (token !== walletSearchToken) return;
 
-    if (!cardIndexes.length) {
+    if (!walletResult.indexes.length) {
       els.walletSearchMessage.textContent = WALLET_SEARCH_EMPTY_MESSAGE;
       els.walletAddressInput.focus();
       return;
     }
 
-    applyWalletCardFilter(address, cardIndexes);
+    applyWalletCardFilter(address, walletResult);
     setWalletSearchPanelOpen(false, { preserveMessage: true });
   } catch {
     if (token !== walletSearchToken) return;
@@ -2895,10 +4226,11 @@ async function submitWalletSearch() {
   }
 }
 
-function applyWalletCardFilter(address, cardIndexes) {
+function applyWalletCardFilter(address, { indexes, matchedMints }) {
   walletFilterAddress = address;
-  walletFilterCardIndexes = [...new Set(cardIndexes)].sort(compareCardIndexes);
+  walletFilterCardIndexes = [...new Set(indexes)].sort(compareCardIndexes);
   walletFilterCardIndexSet = new Set(walletFilterCardIndexes);
+  walletMatchedMintByCardIndex = new Map(matchedMints);
   favoritesOnly = false;
   activeTraitFilter = null;
   traitSearchOpen = false;
@@ -2916,24 +4248,85 @@ function resetWalletCardFilter() {
   walletFilterCardIndexes = null;
   walletFilterCardIndexSet = null;
   walletFilterAddress = "";
+  walletMatchedMintByCardIndex = new Map();
   updateWalletSearchState();
 }
 
 async function findWalletCardIndexes(address) {
-  const indexes = new Set(getSnapshotWalletCardIndexes(address));
-  const [magicEdenIndexes, tokenAccountIndexes, cardNft2Indexes] = await Promise.all([
-    fetchMagicEdenWalletCardIndexes(address).catch(() => []),
-    fetchWalletTokenAccountCardIndexes(address).catch(() => []),
-    fetchCardNft2WalletCardIndexes(address).catch(() => []),
+  const indexes = new Set();
+  const matchedMints = new Map();
+  for (const index of await getSnapshotWalletCardIndexes(address)) {
+    indexes.add(index);
+    const mint = String(CARDS[index]?.mint || "").trim();
+    if (mint) matchedMints.set(index, mint);
+  }
+  const [
+    magicEdenMatches,
+    dasResult,
+    tensorCoreResult,
+    tokenAccountResult,
+    cardNft2Result,
+  ] = await Promise.all([
+    fetchMagicEdenWalletCardMatches(address).catch(() => []),
+    settleWalletMatchSource(fetchWalletDasCardMatches(address)),
+    settleWalletMatchSource(fetchTensorMplCoreWalletCardMatches(address)),
+    settleWalletMatchSource(fetchWalletTokenAccountCardMatches(address)),
+    settleWalletMatchSource(fetchCardNft2WalletCardMatches(address)),
   ]);
-  for (const index of magicEdenIndexes || []) indexes.add(index);
-  for (const index of tokenAccountIndexes || []) indexes.add(index);
-  for (const index of cardNft2Indexes || []) indexes.add(index);
-  return [...indexes].sort(compareCardIndexes);
+  addWalletCardMatches(indexes, matchedMints, magicEdenMatches);
+  const liveResults = [
+    dasResult,
+    tensorCoreResult,
+    tokenAccountResult,
+    cardNft2Result,
+  ];
+  for (const result of liveResults) {
+    addWalletCardMatches(indexes, matchedMints, result.matches);
+  }
+  if (!liveResults.some((result) => result.ok) && !indexes.size) {
+    throw new Error("All live wallet sources failed");
+  }
+  return {
+    indexes: [...indexes].sort(compareCardIndexes),
+    matchedMints,
+  };
 }
 
-function getSnapshotWalletCardIndexes(address) {
-  return CARD_NFT_OWNER_TO_INDEXES.get(String(address || "").trim()) || [];
+function addWalletCardMatches(indexes, matchedMints, matches) {
+  for (const match of matches || []) {
+    if (!Number.isInteger(match?.index)) continue;
+    indexes.add(match.index);
+    if (!matchedMints.has(match.index) && match.mint) {
+      matchedMints.set(match.index, match.mint);
+    }
+  }
+}
+
+async function settleWalletMatchSource(promise) {
+  try {
+    return { ok: true, matches: await promise || [] };
+  } catch {
+    return { ok: false, matches: [] };
+  }
+}
+
+async function getSnapshotWalletCardIndexes(address) {
+  if (!cardNftOwnerToIndexes) {
+    if (!cardNftOwnerIndexPromise) {
+      cardNftOwnerIndexPromise = Promise.all([
+        import("./cardnft-owners.js?v=cardnft-3"),
+        ensureCollectionCards("cardnft1"),
+      ]).then(([module]) => {
+        cardNftOwnerToIndexes = buildCardNftOwnerIndex(module.CARD_NFT_OWNER_SNAPSHOT);
+        return cardNftOwnerToIndexes;
+      }).catch((error) => {
+        cardNftOwnerIndexPromise = null;
+        throw error;
+      });
+    }
+    await cardNftOwnerIndexPromise;
+  }
+  return cardNftOwnerToIndexes.get(String(address || "").trim()) || [];
 }
 
 function buildCardNftOwnerIndex(snapshot) {
@@ -2947,7 +4340,7 @@ function buildCardNftOwnerIndex(snapshot) {
 
     for (const card of cards) {
       const index = Number.isInteger(card)
-        ? card
+        ? COLLECTION_CONFIGS.cardnft1?.globalIndexes?.[card]
         : CARD_NFT_MINT_TO_INDEX.get(String(card || "").trim());
       if (Number.isInteger(index) && index >= 0 && index < CARDS.length) {
         indexes.push(index);
@@ -2962,39 +4355,115 @@ function buildCardNftOwnerIndex(snapshot) {
   return ownerIndex;
 }
 
-async function fetchMagicEdenWalletCardIndexes(address) {
-  const indexes = [];
+async function fetchMagicEdenWalletCardMatches(address) {
+  const matches = [];
   for (const symbol of CARD_NFT_COLLECTION_SYMBOLS) {
-    let offset = 0;
+    try {
+      let offset = 0;
 
-    while (offset < MAGIC_EDEN_WALLET_MAX_TOKENS) {
-      const tokens = await magicEdenApi(
-        `/wallets/${encodeURIComponent(address)}/tokens?collection_symbol=${encodeURIComponent(symbol)}&offset=${offset}&limit=${MAGIC_EDEN_WALLET_PAGE_LIMIT}&listStatus=both`,
-      );
-      const page = Array.isArray(tokens) ? tokens : tokens?.results || [];
+      while (offset < MAGIC_EDEN_WALLET_MAX_TOKENS) {
+        const tokens = await magicEdenApi(
+          `/wallets/${encodeURIComponent(address)}/tokens?collection_symbol=${encodeURIComponent(symbol)}&offset=${offset}&limit=${MAGIC_EDEN_WALLET_PAGE_LIMIT}&listStatus=both`,
+        );
+        const page = Array.isArray(tokens) ? tokens : tokens?.results || [];
 
-      for (const token of page) {
-        const index = CARD_NFT_MINT_TO_INDEX.get(String(token?.mintAddress || "").trim());
-        if (Number.isInteger(index)) indexes.push(index);
+        for (const token of page) {
+          const mint = String(token?.mintAddress || "").trim();
+          const index = CARD_NFT_MINT_TO_INDEX.get(mint);
+          if (Number.isInteger(index)) matches.push({ index, mint });
+        }
+
+        if (page.length < MAGIC_EDEN_WALLET_PAGE_LIMIT) break;
+        offset += MAGIC_EDEN_WALLET_PAGE_LIMIT;
+        await delay(MAGIC_EDEN_WALLET_PAGE_DELAY_MS);
       }
-
-      if (page.length < MAGIC_EDEN_WALLET_PAGE_LIMIT) break;
-      offset += MAGIC_EDEN_WALLET_PAGE_LIMIT;
-      await delay(MAGIC_EDEN_WALLET_PAGE_DELAY_MS);
+    } catch {
+      // One unavailable marketplace collection should not hide holdings from the others.
     }
   }
 
-  return indexes;
+  return matches;
 }
 
-async function fetchWalletTokenAccountCardIndexes(address) {
+async function fetchWalletTokenAccountCardMatches(address) {
   const ownedMints = await fetchWalletTokenMints(address);
-  return getCardIndexesForMints(ownedMints);
+  return getCardMatchesForMints(ownedMints);
 }
 
-async function fetchCardNft2WalletCardIndexes(address) {
+async function fetchWalletDasCardMatches(address) {
+  const matches = new Map();
+  let page = 1;
+  let fetched = 0;
+
+  while (fetched < DAS_WALLET_MAX_ASSETS) {
+    const result = await solanaDasRpc("getAssetsByOwner", {
+      ownerAddress: address,
+      page,
+      limit: DAS_WALLET_PAGE_LIMIT,
+      displayOptions: {
+        showFungible: false,
+        showNativeBalance: false,
+      },
+    });
+    const items = Array.isArray(result?.items) ? result.items : [];
+    for (const asset of items) {
+      const mint = String(asset?.id || "").trim();
+      const index = CARD_NFT_MINT_TO_INDEX.get(mint);
+      if (Number.isInteger(index) && !matches.has(index)) matches.set(index, mint);
+    }
+
+    fetched += items.length;
+    const total = Number(result?.total);
+    if (
+      items.length < DAS_WALLET_PAGE_LIMIT
+      || (Number.isFinite(total) && fetched >= total)
+    ) {
+      break;
+    }
+    page += 1;
+  }
+
+  return [...matches].map(([index, mint]) => ({ index, mint }));
+}
+
+async function fetchTensorMplCoreWalletCardMatches(address) {
+  const response = await fetchWithTimeout(TENSOR_GRAPHQL_URL, {
+    method: "POST",
+    headers: {
+      accept: "application/json",
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      operationName: "MplCoreMints",
+      variables: { owner: address },
+      query: `
+        query MplCoreMints($owner: String!) {
+          mplCoreMints(owner: $owner) {
+            mints {
+              mint {
+                onchainId
+              }
+            }
+          }
+        }
+      `,
+    }),
+  });
+  if (!response.ok) throw new Error(`Tensor wallet search failed: ${response.status}`);
+
+  const payload = await response.json();
+  if (payload?.errors) {
+    throw new Error(payload.errors[0]?.message || "Tensor wallet search error");
+  }
+  const mints = (payload?.data?.mplCoreMints?.mints || [])
+    .map((entry) => String(entry?.mint?.onchainId || "").trim())
+    .filter(Boolean);
+  return getCardMatchesForMints(mints);
+}
+
+async function fetchCardNft2WalletCardMatches(address) {
   const payload = await fetchCardNft2Wallet(address);
-  return getCardIndexesForMints(getCardNft2WalletMints(payload));
+  return getCardMatchesForMints(getCardNft2WalletMints(payload));
 }
 
 async function fetchCardNft2Wallet(address) {
@@ -3027,13 +4496,14 @@ function getCardNft2WalletMints(payload) {
   return mints;
 }
 
-function getCardIndexesForMints(mints) {
-  const indexes = [];
+function getCardMatchesForMints(mints) {
+  const matches = [];
   for (const mint of mints) {
-    const index = CARD_NFT_MINT_TO_INDEX.get(mint);
-    if (Number.isInteger(index)) indexes.push(index);
+    const normalizedMint = String(mint || "").trim();
+    const index = CARD_NFT_MINT_TO_INDEX.get(normalizedMint);
+    if (Number.isInteger(index)) matches.push({ index, mint: normalizedMint });
   }
-  return indexes;
+  return matches;
 }
 
 async function magicEdenApi(path) {
@@ -3086,6 +4556,24 @@ async function solanaRpc(method, params) {
   return payload.result;
 }
 
+async function solanaDasRpc(method, params) {
+  const response = await fetchWithTimeout(SOLANA_DAS_RPC_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      jsonrpc: "2.0",
+      id: `${method}-${Date.now()}`,
+      method,
+      params,
+    }),
+  });
+  if (!response.ok) throw new Error(`Solana DAS RPC failed: ${response.status}`);
+
+  const payload = await response.json();
+  if (payload?.error) throw new Error(payload.error.message || "Solana DAS RPC error");
+  return payload.result;
+}
+
 async function fetchWithTimeout(url, options = {}) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), WALLET_SEARCH_REQUEST_TIMEOUT_MS);
@@ -3128,9 +4616,15 @@ function withWalletStatusLabel(value) {
 function resetBinderGalleryPosition() {
   binderSpreadPreparationToken += 1;
   binderPreparingSpread = false;
+  binderOuterFlipState = null;
+  resetBinderOuterFlipTransform();
+  resetEvilBinderTableSwap();
+  setBinderTableView(false, { immediate: true, updateControls: false });
   cancelFocusedBinderCardPrewarm();
   binderTargetTurn = 0;
   binderTurn = 0;
+  binderTargetClosure = 0;
+  binderClosure = 0;
   binderSinglePageSide = null;
   binderSinglePageSideTouched = false;
   binderFocusPosition = -1;
@@ -3138,7 +4632,10 @@ function resetBinderGalleryPosition() {
 }
 
 function getVisibleIndexes() {
-  let indexes = (favoritesOnly || walletFilterCardIndexSet)
+  const traitCollectionId = activeTraitFilter?.collectionId;
+  let indexes = (favoritesOnly || walletFilterCardIndexSet || (
+    traitCollectionId && traitCollectionId !== ACTIVE_COLLECTION_ID
+  ))
     ? CARDS.map((_, index) => index)
     : ACTIVE_COLLECTION_INDEXES.slice();
   if (favoritesOnly) {
@@ -3149,9 +4646,12 @@ function getVisibleIndexes() {
   }
   if (activeTraitFilter) {
     const sourceCategories = getTraitFilterSourceCategories(activeTraitFilter);
-    indexes = indexes.filter((index) => (
-      cardHasTraitValue(index, sourceCategories, activeTraitFilter.normalizedValue)
-    ));
+    indexes = indexes.filter((index) => {
+      const matchesCollection = !traitCollectionId
+        || CARDS[index]?.collection === traitCollectionId;
+      return matchesCollection
+        && cardHasTraitValue(index, sourceCategories, activeTraitFilter.normalizedValue);
+    });
   }
   if (traitSortCategory === "all") return indexes;
   if (activeTraitFilter && traitSortCategory === activeTraitFilter.category) {
@@ -3184,7 +4684,8 @@ function getTraitGroupedIndexes(indexes, category) {
 function cardHasTraitValue(index, categories, normalizedValue) {
   if (!normalizedValue) return false;
   return categories.some((category) => (
-    normalizeTraitValue(getCardTraitValue(index, category)) === normalizedValue
+    getCardTraitValues(index, category)
+      .some((value) => normalizeTraitValue(value) === normalizedValue)
   ));
 }
 
@@ -3197,18 +4698,15 @@ function getFirstCardTraitValue(index, categories) {
 }
 
 function getCardTraitValue(index, category) {
+  return getCardTraitValues(index, category)[0] || "";
+}
+
+function getCardTraitValues(index, category) {
   const card = CARDS[index];
   const collection = getCollectionConfigForCard(card);
   const categoryIndex = collection.traitCategories.indexOf(category);
-  if (categoryIndex < 0) return "";
-  const traitRecord = collection.traits[card?.collectionIndex] || {};
-  if (Array.isArray(traitRecord.entries)) {
-    const matched = traitRecord.entries.find((entry) => (
-      String(entry?.category || "").trim() === category
-    ));
-    return String(matched?.value || "").trim();
-  }
-  return traitRecord.values?.[categoryIndex] || "";
+  if (categoryIndex < 0 || !collection.traits) return [];
+  return getPackedTraitRecordValues(collection, card?.collectionIndex, categoryIndex);
 }
 
 function isVisibleTraitValue(value) {
@@ -3235,22 +4733,33 @@ function getTraitCategoryDisplayLabel(category) {
   return category;
 }
 
-function getTraitRecordValue(traitRecord, category, categoryIndex) {
-  if (Array.isArray(traitRecord?.entries)) {
-    const matched = traitRecord.entries.find((entry) => (
-      String(entry?.category || "").trim() === category
-    ));
-    return String(matched?.value || "").trim();
+function getPackedTraitRecordValues(collection, recordIndex, categoryIndex) {
+  const row = collection.traits?.rows?.[recordIndex] || [];
+  const dictionary = collection.traits?.dictionary || [];
+  const values = [];
+  for (let offset = 0; offset + 1 < row.length; offset += 2) {
+    if (row[offset] !== categoryIndex) continue;
+    const value = String(dictionary[row[offset + 1]] || "").trim();
+    if (value) values.push(value);
   }
-  return String(traitRecord?.values?.[categoryIndex] || "").trim();
+  return values;
 }
 
 function getTraitFilterSourceCategories(filter) {
-  return getValidTraitFilterSourceCategories(filter?.sourceCategories, filter?.category);
+  return getValidTraitFilterSourceCategories(
+    filter?.sourceCategories,
+    filter?.category,
+    filter?.collectionId,
+  );
 }
 
-function getValidTraitFilterSourceCategories(sourceCategories, fallbackCategory) {
-  const validCategories = new Set(ACTIVE_TRAIT_CATEGORIES);
+function getValidTraitFilterSourceCategories(
+  sourceCategories,
+  fallbackCategory,
+  collectionId = ACTIVE_COLLECTION_ID,
+) {
+  const collection = COLLECTION_CONFIGS[collectionId] || ACTIVE_COLLECTION;
+  const validCategories = new Set(collection.traitCategories);
   const categories = Array.isArray(sourceCategories)
     ? sourceCategories
     : [];
@@ -3263,7 +4772,7 @@ function getValidTraitFilterSourceCategories(sourceCategories, fallbackCategory)
     ));
   if (result.length) return [...new Set(result)];
 
-  const displaySources = getTraitSortSourceCategories(fallbackCategory);
+  const displaySources = getTraitSortSourceCategories(fallbackCategory, collection.id);
   if (displaySources.length) return displaySources;
 
   if (
@@ -3276,12 +4785,13 @@ function getValidTraitFilterSourceCategories(sourceCategories, fallbackCategory)
   return [];
 }
 
-function getTraitDisplayCategoryOptions() {
+function getTraitDisplayCategoryOptions(collectionId = ACTIVE_COLLECTION_ID) {
+  const collection = COLLECTION_CONFIGS[collectionId] || ACTIVE_COLLECTION;
   const options = new Map();
-  ACTIVE_TRAIT_CATEGORIES.forEach((sourceCategory) => {
+  collection.traitCategories.forEach((sourceCategory) => {
     if (HIDDEN_TRAIT_CATEGORIES.has(sourceCategory)) return;
 
-    const category = getTraitSearchDisplayCategory(sourceCategory);
+    const category = getTraitSearchDisplayCategory(sourceCategory, collection.id);
     if (!category) return;
     if (!options.has(category)) {
       options.set(category, {
@@ -3295,12 +4805,12 @@ function getTraitDisplayCategoryOptions() {
     }
   });
 
-  return [...options.values()].sort(compareTraitDisplayCategoryOptions);
+  return [...options.values()].sort((a, b) => compareTraitDisplayCategoryOptions(a, b, collection.id));
 }
 
-function compareTraitDisplayCategoryOptions(a, b) {
-  const orderA = getTraitDisplayCategoryOrder(a);
-  const orderB = getTraitDisplayCategoryOrder(b);
+function compareTraitDisplayCategoryOptions(a, b, collectionId = ACTIVE_COLLECTION_ID) {
+  const orderA = getTraitDisplayCategoryOrder(a, collectionId);
+  const orderB = getTraitDisplayCategoryOrder(b, collectionId);
   return orderA - orderB
     || a.category.localeCompare(b.category, undefined, { numeric: true, sensitivity: "base" });
 }
@@ -3322,10 +4832,10 @@ function getTraitDisplayCategoryOrder(option, collectionId = ACTIVE_COLLECTION_I
   return indexes.length ? Math.min(...indexes) : Number.MAX_SAFE_INTEGER - 1;
 }
 
-function getTraitSortSourceCategories(category) {
+function getTraitSortSourceCategories(category, collectionId = ACTIVE_COLLECTION_ID) {
   if (!category || category === "all") return [];
   const normalizedCategory = normalizeTraitValue(category);
-  const option = getTraitDisplayCategoryOptions()
+  const option = getTraitDisplayCategoryOptions(collectionId)
     .find((candidate) => normalizeTraitValue(candidate.category) === normalizedCategory);
   return option?.sourceCategories || [];
 }
@@ -3353,7 +4863,7 @@ function getTraitSearchDisplayCategory(category, collectionId = ACTIVE_COLLECTIO
 }
 
 function getTraitThumbnailPath(collectionId, category, value, sourceCategories = []) {
-  const collectionThumbnails = TRAIT_THUMBNAILS[collectionId];
+  const collectionThumbnails = traitThumbnails?.[collectionId];
   if (!collectionThumbnails) return "";
   const categories = [category, ...sourceCategories]
     .map((sourceCategory) => String(sourceCategory || "").trim())
@@ -3384,30 +4894,37 @@ function createTraitThumbnailImage(collectionId, category, value, className, sou
 }
 
 function getTraitSearchGroups() {
+  if (ACTIVE_COLLECTION.traitSearchGroupsCache) {
+    return ACTIVE_COLLECTION.traitSearchGroupsCache;
+  }
+  if (!ACTIVE_COLLECTION.traits) return [];
+
   const groups = new Map();
+  const dictionary = ACTIVE_COLLECTION.traits.dictionary;
+  ACTIVE_COLLECTION.traits.rows.forEach((row, traitRecordIndex) => {
+    const seenValues = new Set();
+    for (let offset = 0; offset + 1 < row.length; offset += 2) {
+      const category = String(ACTIVE_TRAIT_CATEGORIES[row[offset]] || "").trim();
+      const value = String(dictionary[row[offset + 1]] || "").trim();
+      if (!category || HIDDEN_TRAIT_CATEGORIES.has(category) || !isVisibleTraitValue(value)) continue;
 
-  ACTIVE_TRAIT_CATEGORIES.forEach((category, categoryIndex) => {
-    if (HIDDEN_TRAIT_CATEGORIES.has(category)) return;
+      const displayCategory = getTraitSearchDisplayCategory(category);
+      if (!displayCategory) continue;
+      if (!groups.has(displayCategory)) {
+        groups.set(displayCategory, {
+          category: displayCategory,
+          sourceCategories: [],
+          traits: new Map(),
+        });
+      }
 
-    const displayCategory = getTraitSearchDisplayCategory(category);
-    if (!displayCategory) return;
-
-    if (!groups.has(displayCategory)) {
-      groups.set(displayCategory, {
-        category: displayCategory,
-        sourceCategories: [],
-        traits: new Map(),
-      });
-    }
-
-    const group = groups.get(displayCategory);
-    if (!group.sourceCategories.includes(category)) group.sourceCategories.push(category);
-
-    ACTIVE_TRAITS.forEach((traitRecord, traitRecordIndex) => {
-      const value = getTraitRecordValue(traitRecord, category, categoryIndex);
-      if (!isVisibleTraitValue(value)) return;
-
+      const group = groups.get(displayCategory);
+      if (!group.sourceCategories.includes(category)) group.sourceCategories.push(category);
       const normalized = normalizeTraitValue(value);
+      const seenKey = `${normalizeTraitValue(displayCategory)}\u0000${normalized}`;
+      if (seenValues.has(seenKey)) continue;
+      seenValues.add(seenKey);
+
       const existing = group.traits.get(normalized);
       if (existing) {
         existing.cardIndexes.add(traitRecordIndex);
@@ -3419,10 +4936,10 @@ function getTraitSearchGroups() {
           sourceCategories: [category],
         });
       }
-    });
+    }
   });
 
-  return [...groups.values()]
+  const result = [...groups.values()]
     .map((group) => {
       const traits = [...group.traits.values()]
         .map((trait) => ({
@@ -3444,6 +4961,8 @@ function getTraitSearchGroups() {
     })
     .filter(Boolean)
     .sort(compareTraitDisplayCategoryOptions);
+  ACTIVE_COLLECTION.traitSearchGroupsCache = result;
+  return result;
 }
 
 function renderTraitSearch() {
@@ -3523,67 +5042,137 @@ function cancelTraitSearchRender() {
     cancelAnimationFrame(traitSearchRenderFrame);
     traitSearchRenderFrame = 0;
   }
+  traitSearchRenderObserver?.disconnect();
+  traitSearchRenderObserver = null;
+  traitSearchRenderStates.clear();
+  for (const sentinel of els.traitSearchGroups?.querySelectorAll(".trait-search-render-sentinel") || []) {
+    sentinel.remove();
+  }
   traitSearchRenderToken += 1;
 }
 
 function scheduleTraitSearchTileRender(groups, renderToken) {
-  const queue = groups
-    .filter((group) => group.traits.length)
-    .map((group) => ({
-      group,
-      nextIndex: document.getElementById(getTraitSearchGridId(group.category))?.children.length || 0,
-    }))
-    .filter((item) => item.nextIndex < item.group.traits.length);
-
-  if (!queue.length) {
-    traitSearchRenderFrame = 0;
+  if (typeof window.IntersectionObserver !== "function") {
+    scheduleTraitSearchTileRenderFallback(groups, renderToken);
     return;
   }
 
-  const renderBatch = () => {
-    if (renderToken !== traitSearchRenderToken) return;
-
-    let remaining = TRAIT_SEARCH_TILE_RENDER_BATCH_SIZE;
-    while (queue.length && remaining > 0) {
-      const item = queue[0];
-      const grid = document.getElementById(getTraitSearchGridId(item.group.category));
-      if (!grid) {
-        queue.shift();
-        continue;
+  if (!traitSearchRenderObserver) {
+    traitSearchRenderObserver = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        const state = traitSearchRenderStates.get(entry.target);
+        if (!state || state.renderToken !== traitSearchRenderToken) continue;
+        traitSearchRenderObserver?.unobserve(entry.target);
+        renderObservedTraitSearchBatch(state);
       }
-      if (isTraitSearchCategoryCollapsed(item.group.category)) {
-        grid.dataset.renderState = "pending";
-        queue.shift();
-        continue;
-      }
+    }, {
+      root: els.traitSearchGroups,
+      rootMargin: "700px 0px",
+    });
+  }
 
-      const rendered = appendTraitSearchTiles(grid, item.group, item.nextIndex, remaining);
-      remaining -= rendered;
-      item.nextIndex += rendered;
-
-      if (item.nextIndex >= item.group.traits.length) {
-        grid.dataset.renderState = "complete";
-        queue.shift();
-      }
+  for (const group of groups) {
+    const grid = document.getElementById(getTraitSearchGridId(group.category));
+    if (!grid || !group.traits.length || isTraitSearchCategoryCollapsed(group.category)) continue;
+    const nextIndex = grid.querySelectorAll(".trait-search-tile").length;
+    if (nextIndex >= group.traits.length) {
+      grid.dataset.renderState = "complete";
+      continue;
     }
 
-    if (queue.length) {
-      traitSearchRenderFrame = requestAnimationFrame(renderBatch);
-    } else {
-      traitSearchRenderFrame = 0;
+    let sentinel = grid.querySelector(".trait-search-render-sentinel");
+    if (!sentinel) {
+      sentinel = document.createElement("div");
+      sentinel.className = "trait-search-render-sentinel";
+      sentinel.setAttribute("aria-hidden", "true");
+      grid.append(sentinel);
     }
-  };
-
-  traitSearchRenderFrame = requestAnimationFrame(renderBatch);
+    traitSearchRenderStates.set(sentinel, {
+      grid,
+      group,
+      nextIndex,
+      renderToken,
+      sentinel,
+    });
+    traitSearchRenderObserver.observe(sentinel);
+  }
 }
 
-function appendTraitSearchTiles(grid, group, startIndex, limit) {
+function renderObservedTraitSearchBatch(state) {
+  if (
+    state.renderToken !== traitSearchRenderToken
+    || !state.grid.isConnected
+    || isTraitSearchCategoryCollapsed(state.group.category)
+  ) {
+    return;
+  }
+
+  const rendered = appendTraitSearchTiles(
+    state.grid,
+    state.group,
+    state.nextIndex,
+    TRAIT_SEARCH_TILE_RENDER_BATCH_SIZE,
+    state.sentinel,
+  );
+  state.nextIndex += rendered;
+  if (state.nextIndex >= state.group.traits.length) {
+    state.grid.dataset.renderState = "complete";
+    traitSearchRenderStates.delete(state.sentinel);
+    state.sentinel.remove();
+    return;
+  }
+
+  traitSearchRenderFrame = requestAnimationFrame(() => {
+    traitSearchRenderFrame = 0;
+    if (
+      state.renderToken === traitSearchRenderToken
+      && traitSearchRenderObserver
+      && state.sentinel.isConnected
+    ) {
+      traitSearchRenderObserver.observe(state.sentinel);
+    }
+  });
+}
+
+function scheduleTraitSearchTileRenderFallback(groups, renderToken) {
+  const queue = groups
+    .filter((group) => group.traits.length && !isTraitSearchCategoryCollapsed(group.category))
+    .map((group) => ({
+      group,
+      grid: document.getElementById(getTraitSearchGridId(group.category)),
+      nextIndex: document.getElementById(getTraitSearchGridId(group.category))
+        ?.querySelectorAll(".trait-search-tile").length || 0,
+    }))
+    .filter((item) => item.grid && item.nextIndex < item.group.traits.length);
+
+  const renderBatch = () => {
+    traitSearchRenderFrame = 0;
+    if (renderToken !== traitSearchRenderToken || !queue.length) return;
+    const item = queue[0];
+    const rendered = appendTraitSearchTiles(
+      item.grid,
+      item.group,
+      item.nextIndex,
+      TRAIT_SEARCH_TILE_RENDER_BATCH_SIZE,
+    );
+    item.nextIndex += rendered;
+    if (item.nextIndex >= item.group.traits.length) {
+      item.grid.dataset.renderState = "complete";
+      queue.shift();
+    }
+    if (queue.length) traitSearchRenderFrame = requestAnimationFrame(renderBatch);
+  };
+  if (queue.length) traitSearchRenderFrame = requestAnimationFrame(renderBatch);
+}
+
+function appendTraitSearchTiles(grid, group, startIndex, limit, before = null) {
   const fragment = document.createDocumentFragment();
   const endIndex = Math.min(group.traits.length, startIndex + limit);
   for (let index = startIndex; index < endIndex; index += 1) {
     fragment.append(createTraitSearchTile(group, group.traits[index], index));
   }
-  grid.append(fragment);
+  grid.insertBefore(fragment, before);
   return endIndex - startIndex;
 }
 
@@ -3666,6 +5255,8 @@ function toggleTraitSearchCategoryCollapse(category) {
   section.classList.toggle("is-collapsed", collapsed);
   if (grid) grid.hidden = collapsed;
   if (headingButton) headingButton.setAttribute("aria-expanded", String(!collapsed));
+  const sentinel = grid?.querySelector(".trait-search-render-sentinel");
+  if (collapsed && sentinel) traitSearchRenderObserver?.unobserve(sentinel);
 
   const group = traitSearchGroupDataByKey.get(key);
   if (
@@ -3673,9 +5264,8 @@ function toggleTraitSearchCategoryCollapse(category) {
     && group
     && grid
     && grid.dataset.renderState !== "complete"
-    && !traitSearchRenderFrame
   ) {
-    scheduleTraitSearchTileRender([group], startTraitSearchRender());
+    scheduleTraitSearchTileRender([group], traitSearchRenderToken);
   }
 }
 
@@ -3736,6 +5326,8 @@ function renderGallery() {
   updateGalleryViewModeButton();
   syncBinderIntroNoteModeTarget();
   if (traitSearchOpen) {
+    cancelGalleryRender();
+    els.galleryGrid.replaceChildren();
     cancelFocusedBinderCardPrewarm();
     clearGalleryCardTilts();
     renderTraitSearch();
@@ -3760,6 +5352,8 @@ function renderGallery() {
   updateGalleryViewModeButton();
 
   if (empty) {
+    cancelGalleryRender();
+    els.galleryGrid.replaceChildren();
     cancelFocusedBinderCardPrewarm();
     clearGalleryCardTilts();
     els.galleryGrid.hidden = true;
@@ -3774,6 +5368,8 @@ function renderGallery() {
   els.binderPanel.hidden = !isBinderMode;
   els.galleryGrid.hidden = isBinderMode;
   if (isBinderMode) {
+    cancelGalleryRender();
+    els.galleryGrid.replaceChildren();
     clearGalleryCardTilts();
     updateBinderItems(indexes);
     startBinderRenderLoop();
@@ -3793,8 +5389,15 @@ function toggleGalleryViewMode() {
 
 function setGalleryViewMode(useBinder, options = {}) {
   isBinderMode = Boolean(useBinder);
-  if (!isBinderMode) closeBinderPageStatusEdit({ update: false });
-  localStorage.setItem("cardnft:binderMode:v1", isBinderMode ? "binder" : "grid");
+  if (!isBinderMode) {
+    closeBinderPageStatusEdit({ update: false });
+    setBinderTableView(false, { immediate: true, updateControls: false });
+  }
+  writeStorageValue(
+    getBrowserStorage("localStorage"),
+    "cardnft:binderMode:v1",
+    isBinderMode ? "binder" : "grid",
+  );
   updateGalleryViewModeButton();
   if (options.render === false || !galleryOpen) return;
 
@@ -3821,12 +5424,35 @@ function updateGalleryViewModeButton() {
 function renderGrid(indexes) {
   closeBinderPageStatusEdit({ update: false });
   clearGalleryCardTilts();
+  cancelGalleryRender();
   els.galleryGrid.style.setProperty("--gallery-card-hover-expand", `${GALLERY_CARD_HOVER_EXPAND_PX}px`);
   els.galleryGrid.replaceChildren();
-  const fragment = document.createDocumentFragment();
   const priorityImageCount = getGalleryPriorityImageCount(indexes.length);
-  indexes.forEach((index, position) => {
+  const initialCount = Math.min(
+    indexes.length,
+    Math.max(priorityImageCount, GALLERY_INITIAL_RENDER_MIN),
+  );
+  appendGalleryCardRange(indexes, 0, initialCount, priorityImageCount);
+  els.binderPageStatus.textContent = withWalletStatusLabel(`${indexes.length} cards`);
+  if (initialCount < indexes.length) {
+    const token = ++galleryRenderToken;
+    els.galleryGrid.setAttribute("aria-busy", "true");
+    beginGalleryIncrementalRender({
+      indexes,
+      position: initialCount,
+      priorityImageCount,
+      token,
+    });
+  }
+}
+
+function appendGalleryCardRange(indexes, start, end, priorityImageCount, before = null) {
+  const fragment = document.createDocumentFragment();
+  for (let position = start; position < end; position += 1) {
+    const index = indexes[position];
     const card = CARDS[index];
+    if (!card) continue;
+
     const button = document.createElement("button");
     button.className = "gallery-card";
     button.type = "button";
@@ -3848,9 +5474,128 @@ function renderGrid(indexes) {
     tiltSurface.append(image);
     button.append(tiltSurface);
     fragment.append(button);
+  }
+  els.galleryGrid.insertBefore(fragment, before);
+}
+
+function beginGalleryIncrementalRender(state) {
+  if (typeof window.IntersectionObserver !== "function") {
+    scheduleGalleryCardBatch(state);
+    return;
+  }
+
+  const sentinel = document.createElement("div");
+  sentinel.className = "gallery-render-sentinel";
+  sentinel.setAttribute("aria-hidden", "true");
+  els.galleryGrid.append(sentinel);
+  galleryRenderSentinel = sentinel;
+  state.observerDriven = true;
+  galleryRenderObserver = new IntersectionObserver((entries) => {
+    if (
+      state.token !== galleryRenderToken
+      || !entries.some((entry) => entry.isIntersecting)
+      || !galleryRenderObserver
+      || galleryRenderSentinel !== sentinel
+    ) {
+      return;
+    }
+    galleryRenderObserver.unobserve(sentinel);
+    scheduleGalleryCardBatch(state);
+  }, {
+    root: els.galleryGrid,
+    rootMargin: `${GALLERY_RENDER_PREFETCH_MARGIN_PX}px 0px`,
   });
-  els.galleryGrid.append(fragment);
-  els.binderPageStatus.textContent = withWalletStatusLabel(`${indexes.length} cards`);
+  galleryRenderObserver.observe(sentinel);
+}
+
+function scheduleGalleryCardBatch(state) {
+  const run = (deadline = null) => {
+    galleryRenderIdleCallback = 0;
+    galleryRenderTimer = 0;
+    if (
+      state.token !== galleryRenderToken
+      || !galleryOpen
+      || isBinderMode
+      || els.galleryGrid.hidden
+    ) {
+      return;
+    }
+
+    const start = state.position;
+    const hardEnd = Math.min(state.indexes.length, start + GALLERY_RENDER_BATCH_SIZE);
+    let end = start;
+    while (end < hardEnd) {
+      if (
+        end > start + 11
+        && deadline
+        && !deadline.didTimeout
+        && deadline.timeRemaining() < 2
+      ) {
+        break;
+      }
+      end += 1;
+    }
+    appendGalleryCardRange(
+      state.indexes,
+      start,
+      end,
+      state.priorityImageCount,
+      state.observerDriven ? galleryRenderSentinel : null,
+    );
+    state.position = end;
+
+    if (state.position >= state.indexes.length) {
+      els.galleryGrid.removeAttribute("aria-busy");
+      galleryRenderObserver?.disconnect();
+      galleryRenderObserver = null;
+      galleryRenderSentinel?.remove();
+      galleryRenderSentinel = null;
+      return;
+    }
+    if (state.observerDriven) {
+      galleryRenderTimer = window.setTimeout(() => {
+        galleryRenderTimer = 0;
+        if (
+          state.token === galleryRenderToken
+          && galleryRenderObserver
+          && galleryRenderSentinel
+        ) {
+          galleryRenderObserver.observe(galleryRenderSentinel);
+        }
+      }, 0);
+      return;
+    }
+    queueGalleryCardBatch(state, run);
+  };
+  queueGalleryCardBatch(state, run);
+}
+
+function queueGalleryCardBatch(state, callback) {
+  if (typeof window.requestIdleCallback === "function") {
+    galleryRenderIdleCallback = window.requestIdleCallback(callback, {
+      timeout: GALLERY_RENDER_IDLE_TIMEOUT_MS,
+    });
+  } else {
+    galleryRenderTimer = window.setTimeout(
+      () => callback(),
+      GALLERY_RENDER_FALLBACK_DELAY_MS,
+    );
+  }
+}
+
+function cancelGalleryRender() {
+  galleryRenderToken += 1;
+  galleryRenderObserver?.disconnect();
+  galleryRenderObserver = null;
+  galleryRenderSentinel?.remove();
+  galleryRenderSentinel = null;
+  if (galleryRenderIdleCallback && typeof window.cancelIdleCallback === "function") {
+    window.cancelIdleCallback(galleryRenderIdleCallback);
+  }
+  if (galleryRenderTimer) window.clearTimeout(galleryRenderTimer);
+  galleryRenderIdleCallback = 0;
+  galleryRenderTimer = 0;
+  els.galleryGrid?.removeAttribute("aria-busy");
 }
 
 function onGalleryGridClick(event) {
@@ -4030,7 +5775,7 @@ function initBinderScene() {
     alpha: true,
     powerPreference: "high-performance",
   });
-  binderRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  binderRenderer.setPixelRatio(getRendererPixelRatio(getAppViewportWidth(), getAppViewportHeight()));
   binderRenderer.outputColorSpace = THREE.SRGBColorSpace;
   binderRenderer.toneMapping = THREE.ACESFilmicToneMapping;
   binderRenderer.toneMappingExposure = 0.96;
@@ -4051,13 +5796,1466 @@ function initBinderScene() {
   rim.position.set(-4.6, 2.1, 3.8);
   binderScene.add(rim);
 
+  binderPresentationRoot = new THREE.Group();
+  binderPresentationRoot.name = "binder-presentation";
+  binderScene.add(binderPresentationRoot);
+
+  binderActivePlacementRoot = new THREE.Group();
+  binderActivePlacementRoot.name = "binder-active-placement";
+  binderPresentationRoot.add(binderActivePlacementRoot);
+
   binderRoot = new THREE.Group();
   binderRoot.rotation.x = 0;
   binderRoot.position.y = 0.84;
-  binderScene.add(binderRoot);
+  binderActivePlacementRoot.add(binderRoot);
+
+  binderEvilTableSetRoot = createEvilBinderTableSet();
+  binderPresentationRoot.add(binderEvilTableSetRoot);
+
+  binderTableGroup = createBinderTable();
+  binderScene.add(binderTableGroup);
+  applyBinderTableViewProgress();
 
   warmBinderInteractionGeometry();
+  warmCachedBinderBackTextures();
   resizeBinderRenderer();
+}
+
+function createBinderTable() {
+  const table = new THREE.Group();
+  table.name = "binder-table";
+
+  const edgeMaterial = new THREE.MeshStandardMaterial({
+    color: 0x170e09,
+    roughness: 0.96,
+    metalness: 0,
+    transparent: true,
+    opacity: 0,
+    depthWrite: false,
+  });
+  const surfaceMaterial = new THREE.MeshStandardMaterial({
+    color: 0x29170e,
+    roughness: 0.88,
+    metalness: 0,
+    emissive: 0x2d180d,
+    emissiveIntensity: 0.18,
+    transparent: true,
+    opacity: 0,
+    depthWrite: false,
+  });
+  binderTableSurfaceMaterial = surfaceMaterial;
+  binderTableMaterials = [edgeMaterial, surfaceMaterial];
+
+  const core = new THREE.Mesh(
+    createRoundedCoreGeometry(
+      BINDER_TABLE_WIDTH,
+      BINDER_TABLE_HEIGHT,
+      BINDER_TABLE_DEPTH,
+      BINDER_TABLE_RADIUS,
+    ),
+    edgeMaterial,
+  );
+  core.renderOrder = -110;
+  table.add(core);
+
+  const surface = new THREE.Mesh(
+    createRoundedPlaneGeometry(
+      BINDER_TABLE_WIDTH - 0.08,
+      BINDER_TABLE_HEIGHT - 0.08,
+      BINDER_TABLE_RADIUS - 0.04,
+    ),
+    surfaceMaterial,
+  );
+  surface.position.z = BINDER_TABLE_DEPTH / 2 + 0.006;
+  surface.renderOrder = -100;
+  table.add(surface);
+
+  binderTableDisplayModelRoot = new THREE.Group();
+  binderTableDisplayModelRoot.name = "binder-table-display-model";
+  binderTableDisplayModelRoot.position.set(
+    BINDER_TABLE_DISPLAY_MODEL_X,
+    BINDER_TABLE_DISPLAY_MODEL_Y,
+    BINDER_TABLE_DEPTH / 2 + 0.012,
+  );
+  binderTableDisplayModelRoot.rotation.z = BINDER_TABLE_DISPLAY_MODEL_YAW;
+  binderTableDisplayModelRoot.visible = false;
+  binderTableDisplayModelShadowMaterial = new THREE.MeshBasicMaterial({
+    color: 0x101827,
+    transparent: true,
+    opacity: 0,
+    depthWrite: false,
+  });
+  const displayModelShadow = new THREE.Mesh(
+    new THREE.CircleGeometry(0.58, 28),
+    binderTableDisplayModelShadowMaterial,
+  );
+  displayModelShadow.name = "binder-table-display-model-shadow";
+  displayModelShadow.position.z = 0.003;
+  displayModelShadow.scale.y = 0.42;
+  displayModelShadow.renderOrder = -90;
+  binderTableDisplayModelRoot.add(displayModelShadow);
+  table.add(binderTableDisplayModelRoot);
+
+  binderTableAccessoryRoot = createBinderTableAccessories();
+  table.add(binderTableAccessoryRoot);
+
+  return table;
+}
+
+function createBinderTableAccessories() {
+  const root = new THREE.Group();
+  root.name = "binder-table-accessories";
+  root.visible = false;
+  binderTableDice = [];
+
+  const silverMaterial = new THREE.MeshPhysicalMaterial({
+    color: 0xc8cdd5,
+    roughness: 0.18,
+    metalness: 0.9,
+    clearcoat: 0.82,
+    clearcoatRoughness: 0.12,
+    alphaHash: true,
+    opacity: 0,
+    depthWrite: true,
+  });
+  binderTableCoinTopMaterial = new THREE.MeshBasicMaterial({
+    color: 0xffffff,
+    alphaHash: true,
+    opacity: 0,
+    depthWrite: true,
+    toneMapped: false,
+  });
+  const coinGlazeMaterial = new THREE.MeshPhysicalMaterial({
+    color: 0xdfe8f5,
+    roughness: 0.08,
+    metalness: 0,
+    clearcoat: 1,
+    clearcoatRoughness: 0.04,
+    transparent: true,
+    opacity: 0,
+    depthWrite: false,
+  });
+  coinGlazeMaterial.userData.tableAccessoryMaxOpacity = 0.14;
+  const dieMaterial = new THREE.MeshPhysicalMaterial({
+    color: 0xb91f27,
+    roughness: 0.3,
+    metalness: 0.04,
+    clearcoat: 0.68,
+    clearcoatRoughness: 0.2,
+    alphaHash: true,
+    opacity: 0,
+    depthWrite: true,
+  });
+  const pipMaterial = new THREE.MeshStandardMaterial({
+    color: 0xffffff,
+    roughness: 0.38,
+    metalness: 0,
+    emissive: 0x242424,
+    emissiveIntensity: 0.08,
+    alphaHash: true,
+    opacity: 0,
+    depthWrite: true,
+  });
+  binderTableAccessoryMaterials = [
+    silverMaterial,
+    binderTableCoinTopMaterial,
+    coinGlazeMaterial,
+    dieMaterial,
+    pipMaterial,
+  ];
+
+  const shadowMaterial = new THREE.MeshBasicMaterial({
+    color: 0x110907,
+    transparent: true,
+    opacity: 0,
+    depthWrite: false,
+  });
+  binderTableAccessoryShadowMaterials = [shadowMaterial];
+  const surfaceZ = BINDER_TABLE_DEPTH / 2 + 0.014;
+
+  const coin = new THREE.Group();
+  coin.name = "binder-table-swag-coin";
+  coin.position.set(
+    BINDER_TABLE_COIN_X,
+    BINDER_TABLE_COIN_Y,
+    surfaceZ + BINDER_TABLE_COIN_THICKNESS / 2,
+  );
+  coin.rotation.z = BINDER_TABLE_COIN_ROTATION;
+  const coinBody = new THREE.Mesh(
+    new THREE.CylinderGeometry(
+      BINDER_TABLE_COIN_RADIUS,
+      BINDER_TABLE_COIN_RADIUS,
+      BINDER_TABLE_COIN_THICKNESS,
+      64,
+      1,
+      false,
+    ),
+    silverMaterial,
+  );
+  coinBody.rotation.x = Math.PI / 2;
+  coinBody.renderOrder = -70;
+  coin.add(coinBody);
+  const coinFace = new THREE.Mesh(
+    new THREE.CircleGeometry(BINDER_TABLE_COIN_RADIUS - 0.018, 64),
+    binderTableCoinTopMaterial,
+  );
+  coinFace.name = "binder-table-swag-coin-face";
+  coinFace.position.z = BINDER_TABLE_COIN_THICKNESS / 2 + 0.008;
+  coinFace.renderOrder = -69;
+  coin.add(coinFace);
+  const coinGlaze = new THREE.Mesh(
+    new THREE.CircleGeometry(BINDER_TABLE_COIN_RADIUS - 0.021, 64),
+    coinGlazeMaterial,
+  );
+  coinGlaze.name = "binder-table-swag-coin-glaze";
+  coinGlaze.position.z = BINDER_TABLE_COIN_THICKNESS / 2 + 0.011;
+  coinGlaze.renderOrder = -68;
+  coin.add(coinGlaze);
+  const coinRim = new THREE.Mesh(
+    new THREE.TorusGeometry(
+      BINDER_TABLE_COIN_RADIUS - 0.025,
+      0.014,
+      8,
+      56,
+    ),
+    silverMaterial,
+  );
+  coinRim.position.z = BINDER_TABLE_COIN_THICKNESS / 2 + 0.008;
+  coinRim.renderOrder = -68;
+  coin.add(coinRim);
+  root.add(coin);
+  root.add(createBinderTableAccessoryShadow(
+    BINDER_TABLE_COIN_X,
+    BINDER_TABLE_COIN_Y,
+    BINDER_TABLE_COIN_RADIUS * 0.92,
+    0.5,
+    surfaceZ - 0.008,
+    shadowMaterial,
+  ));
+
+  const dieGeometry = createBinderTableDieGeometry(BINDER_TABLE_DIE_SIZE);
+  const pipGeometry = new THREE.SphereGeometry(
+    BINDER_TABLE_DIE_SIZE * 0.066,
+    10,
+    7,
+  );
+  const firstTopFace = getRandomBinderTableDieFace();
+  const secondTopFace = getRandomBinderTableDieFace(firstTopFace);
+  [firstTopFace, secondTopFace].forEach((topFace, index) => {
+    const [x, y] = BINDER_TABLE_DIE_POSITIONS[index];
+    const die = createBinderTableDie({
+      dieGeometry,
+      pipGeometry,
+      dieMaterial,
+      pipMaterial,
+      topFace,
+    });
+    die.position.x = x;
+    die.position.y = y;
+    const bounds = new THREE.Box3().setFromObject(die);
+    die.position.z = surfaceZ - bounds.min.z + 0.004;
+    die.userData.binderTableDieIndex = index;
+    die.userData.binderTableDieTopFace = topFace;
+    die.traverse((child) => {
+      if (child.isMesh) child.userData.binderTableDieIndex = index;
+    });
+    root.add(die);
+    const dieShadowMaterial = shadowMaterial.clone();
+    dieShadowMaterial.userData.tableAccessoryOpacityFactor = 1;
+    binderTableAccessoryShadowMaterials.push(dieShadowMaterial);
+    const dieShadow = createBinderTableAccessoryShadow(
+      x,
+      y,
+      BINDER_TABLE_DIE_SIZE * 0.52,
+      0.7,
+      surfaceZ - 0.008,
+      dieShadowMaterial,
+    );
+    root.add(dieShadow);
+    binderTableDice.push({
+      group: die,
+      shadow: dieShadow,
+      shadowMaterial: dieShadowMaterial,
+      baseZ: die.position.z,
+      animation: null,
+    });
+  });
+
+  return root;
+}
+
+function createBinderTableAccessoryShadow(
+  x,
+  y,
+  radius,
+  scaleY,
+  z,
+  material,
+) {
+  const shadow = new THREE.Mesh(new THREE.CircleGeometry(radius, 24), material);
+  shadow.position.set(x, y, z);
+  shadow.scale.y = scaleY;
+  shadow.renderOrder = -90;
+  return shadow;
+}
+
+function createBinderTableDieGeometry(size) {
+  const bevel = size * 0.05;
+  const coreSize = size - bevel * 2;
+  const geometry = new THREE.ExtrudeGeometry(
+    createRoundedShape(coreSize, coreSize, size * 0.08),
+    {
+      depth: coreSize,
+      steps: 1,
+      bevelEnabled: true,
+      bevelSegments: 3,
+      bevelSize: bevel,
+      bevelThickness: bevel,
+      curveSegments: 7,
+    },
+  );
+  geometry.translate(0, 0, -coreSize / 2);
+  geometry.computeVertexNormals();
+  return geometry;
+}
+
+function createBinderTableDie({
+  dieGeometry,
+  pipGeometry,
+  dieMaterial,
+  pipMaterial,
+  topFace,
+}) {
+  const die = new THREE.Group();
+  die.name = `binder-table-die-${topFace}`;
+  const body = new THREE.Mesh(dieGeometry, dieMaterial);
+  body.renderOrder = -68;
+  die.add(body);
+
+  const faces = [
+    { value: 1, normal: new THREE.Vector3(0, 1, 0) },
+    { value: 6, normal: new THREE.Vector3(0, -1, 0) },
+    { value: 2, normal: new THREE.Vector3(0, 0, 1) },
+    { value: 5, normal: new THREE.Vector3(0, 0, -1) },
+    { value: 3, normal: new THREE.Vector3(1, 0, 0) },
+    { value: 4, normal: new THREE.Vector3(-1, 0, 0) },
+  ];
+  for (const face of faces) {
+    addBinderTableDieFacePips(
+      die,
+      pipGeometry,
+      pipMaterial,
+      face.normal,
+      face.value,
+    );
+  }
+
+  const topFaceNormal = faces.find((face) => face.value === topFace).normal;
+  const tableNormal = new THREE.Vector3(0, 0, 1);
+  const alignFace = new THREE.Quaternion().setFromUnitVectors(
+    topFaceNormal,
+    tableNormal,
+  );
+  const randomSpin = new THREE.Quaternion().setFromAxisAngle(
+    tableNormal,
+    Math.random() * Math.PI * 2,
+  );
+  die.quaternion.copy(randomSpin).multiply(alignFace);
+  return die;
+}
+
+function addBinderTableDieFacePips(
+  die,
+  geometry,
+  material,
+  normal,
+  value,
+) {
+  const patterns = {
+    1: [[0, 0]],
+    2: [[-1, 1], [1, -1]],
+    3: [[-1, 1], [0, 0], [1, -1]],
+    4: [[-1, 1], [1, 1], [-1, -1], [1, -1]],
+    5: [[-1, 1], [1, 1], [0, 0], [-1, -1], [1, -1]],
+    6: [[-1, 1], [-1, 0], [-1, -1], [1, 1], [1, 0], [1, -1]],
+  };
+  const reference = Math.abs(normal.z) > 0.9
+    ? new THREE.Vector3(0, 1, 0)
+    : new THREE.Vector3(0, 0, 1);
+  const axisX = reference.clone().cross(normal).normalize();
+  const axisY = normal.clone().cross(axisX).normalize();
+  const faceOffset = normal.clone().multiplyScalar(
+    BINDER_TABLE_DIE_SIZE / 2 - 0.012,
+  );
+  const pipSpacing = BINDER_TABLE_DIE_SIZE * 0.23;
+
+  for (const [column, row] of patterns[value]) {
+    const pip = new THREE.Mesh(geometry, material);
+    pip.position.copy(faceOffset)
+      .addScaledVector(axisX, column * pipSpacing)
+      .addScaledVector(axisY, row * pipSpacing);
+    pip.renderOrder = -67;
+    die.add(pip);
+  }
+}
+
+function getRandomBinderTableDieFace(excludedFace = 0) {
+  let face = 1 + Math.floor(Math.random() * 6);
+  if (face === excludedFace) face = face % 6 + 1;
+  return face;
+}
+
+function getBinderTableDieLandingQuaternion(topFace) {
+  const faceNormals = {
+    1: new THREE.Vector3(0, 1, 0),
+    6: new THREE.Vector3(0, -1, 0),
+    2: new THREE.Vector3(0, 0, 1),
+    5: new THREE.Vector3(0, 0, -1),
+    3: new THREE.Vector3(1, 0, 0),
+    4: new THREE.Vector3(-1, 0, 0),
+  };
+  const tableNormal = new THREE.Vector3(0, 0, 1);
+  const alignFace = new THREE.Quaternion().setFromUnitVectors(
+    faceNormals[topFace] || faceNormals[1],
+    tableNormal,
+  );
+  const randomSpin = new THREE.Quaternion().setFromAxisAngle(
+    tableNormal,
+    Math.random() * Math.PI * 2,
+  );
+  return randomSpin.multiply(alignFace);
+}
+
+function getBinderTableDieHit(event) {
+  if (
+    !binderCamera
+    || !binderTableAccessoryRoot
+    || binderTableViewProgress < 0.82
+    || !isVisibleThroughParents(binderTableAccessoryRoot)
+  ) {
+    return null;
+  }
+
+  const meshes = [];
+  for (const entry of binderTableDice) {
+    entry.group.traverse((child) => {
+      if (child.isMesh && isVisibleThroughParents(child)) meshes.push(child);
+    });
+  }
+  if (!meshes.length) return null;
+
+  setBinderRaycasterFromEvent(event);
+  return binderRaycaster.intersectObjects(meshes, false)[0] || null;
+}
+
+function handleBinderTableDieTap(event) {
+  const hit = getBinderTableDieHit(event);
+  const index = hit?.object?.userData?.binderTableDieIndex;
+  if (!Number.isInteger(index)) return false;
+  beginBinderTableDieToss(index);
+  return true;
+}
+
+function beginBinderTableDieToss(index) {
+  const entry = binderTableDice[index];
+  if (!entry || entry.animation) return false;
+
+  const currentTopFace = entry.group.userData.binderTableDieTopFace || 0;
+  const nextTopFace = getRandomBinderTableDieFace(currentTopFace);
+  const spinAxis = new THREE.Vector3(
+    Math.random() * 1.6 - 0.8,
+    Math.random() * 1.6 - 0.8,
+    Math.random() * 1.2 - 0.6,
+  );
+  if (Math.abs(spinAxis.x) + Math.abs(spinAxis.y) < 0.35) {
+    spinAxis.x += spinAxis.x < 0 ? -0.65 : 0.65;
+  }
+  spinAxis.normalize();
+  entry.animation = {
+    startedAt: performance.now(),
+    startQuaternion: entry.group.quaternion.clone(),
+    targetQuaternion: getBinderTableDieLandingQuaternion(nextTopFace),
+    spinAxis,
+    spinTurns: 2.6 + Math.random() * 2.1,
+    topFace: nextTopFace,
+  };
+  markBinderInteractionActive(BINDER_TABLE_DIE_TOSS_DURATION_MS + 160);
+  startBinderRenderLoop();
+  return true;
+}
+
+function updateBinderTableDice(now = performance.now()) {
+  let active = false;
+  for (const entry of binderTableDice) {
+    const animation = entry.animation;
+    if (!animation) continue;
+    active = true;
+
+    const progress = clamp(
+      (now - animation.startedAt) / BINDER_TABLE_DIE_TOSS_DURATION_MS,
+      0,
+      1,
+    );
+    const height = (
+      4
+      * BINDER_TABLE_DIE_TOSS_HEIGHT
+      * progress
+      * (1 - progress)
+    );
+    entry.group.position.z = entry.baseZ + height;
+
+    const spinQuaternion = new THREE.Quaternion().setFromAxisAngle(
+      animation.spinAxis,
+      animation.spinTurns * Math.PI * 2 * progress,
+    );
+    const airborneQuaternion = animation.startQuaternion
+      .clone()
+      .multiply(spinQuaternion);
+    const landingProgress = easeInOutCubic(
+      clamp((progress - 0.62) / 0.38, 0, 1),
+    );
+    airborneQuaternion.slerp(animation.targetQuaternion, landingProgress);
+    entry.group.quaternion.copy(airborneQuaternion);
+
+    const heightProgress = height / BINDER_TABLE_DIE_TOSS_HEIGHT;
+    entry.shadowMaterial.userData.tableAccessoryOpacityFactor = (
+      1 - heightProgress * 0.76
+    );
+    entry.shadow.scale.x = 1 + heightProgress * 0.36;
+    entry.shadow.scale.y = 0.7 + heightProgress * 0.18;
+
+    if (progress < 1) continue;
+
+    entry.group.position.z = entry.baseZ;
+    entry.group.quaternion.copy(animation.targetQuaternion);
+    entry.group.userData.binderTableDieTopFace = animation.topFace;
+    entry.shadowMaterial.userData.tableAccessoryOpacityFactor = 1;
+    entry.shadow.scale.set(1, 0.7, 1);
+    entry.animation = null;
+  }
+  return active;
+}
+
+function ensureBinderTableAccessories() {
+  if (binderTableAccessoryPromise) return binderTableAccessoryPromise;
+  if (!binderTableAccessoryRoot || !binderTableCoinTopMaterial) {
+    return Promise.resolve(null);
+  }
+
+  binderTableAccessoryPromise = new Promise((resolve, reject) => {
+    textureLoader.load(
+      BINDER_TABLE_COIN_TEXTURE_URL,
+      resolve,
+      undefined,
+      reject,
+    );
+  })
+    .then((texture) => {
+      texture.colorSpace = THREE.SRGBColorSpace;
+      texture.minFilter = THREE.LinearMipmapLinearFilter;
+      texture.magFilter = THREE.LinearFilter;
+      texture.generateMipmaps = true;
+      texture.anisotropy = Math.min(
+        8,
+        binderRenderer?.capabilities?.getMaxAnisotropy?.() || 1,
+      );
+      texture.needsUpdate = true;
+      binderTableCoinTopMaterial.map = texture;
+      binderTableCoinTopMaterial.needsUpdate = true;
+      binderTableAccessoriesLoadedAt = performance.now();
+      applyBinderTableViewProgress();
+      markBinderInteractionActive(BINDER_TABLE_ACCESSORY_REVEAL_DURATION_MS + 120);
+      startBinderRenderLoop();
+      return binderTableAccessoryRoot;
+    })
+    .catch((error) => {
+      binderTableAccessoryPromise = null;
+      console.warn("Unable to load the binder table accessories", error);
+      return null;
+    });
+
+  return binderTableAccessoryPromise;
+}
+
+function updateBinderTableAccessoryVisibility(now = performance.now()) {
+  if (!binderTableAccessoryRoot || !binderTableAccessoriesLoadedAt) return false;
+  const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+  const revealProgress = reducedMotion
+    ? 1
+    : clamp(
+      (now - binderTableAccessoriesLoadedAt)
+        / BINDER_TABLE_ACCESSORY_REVEAL_DURATION_MS,
+      0,
+      1,
+    );
+  const opacity = (
+    clamp(binderTableViewProgress / 0.72, 0, 1)
+    * easeOutCubic(revealProgress)
+  );
+  for (const material of binderTableAccessoryMaterials) {
+    material.opacity = opacity
+      * (material.userData.tableAccessoryMaxOpacity ?? 1);
+  }
+  for (const material of binderTableAccessoryShadowMaterials) {
+    material.opacity = (
+      BINDER_TABLE_ACCESSORY_SHADOW_OPACITY
+      * opacity
+      * (material.userData.tableAccessoryOpacityFactor ?? 1)
+    );
+  }
+  binderTableAccessoryRoot.visible = opacity > 0.001;
+  return opacity > 0.001 && revealProgress < 1;
+}
+
+function ensureBinderTableSurfaceTextures() {
+  if (binderTableSurfaceTexturesPromise) return binderTableSurfaceTexturesPromise;
+  if (!binderTableSurfaceMaterial) return Promise.resolve(binderTableSurfaceTextures);
+
+  binderTableSurfaceTexturesPromise = Promise.all([
+    loadBinderTableSurfaceTexture(BINDER_TABLE_SURFACE_TEXTURE_URL),
+    loadBinderTableSurfaceTexture(BINDER_TABLE_SURFACE_LIGHT_TEXTURE_URL),
+  ])
+    .then(([darkTexture, lightTexture]) => {
+      binderTableSurfaceTextures.set("dark", darkTexture);
+      binderTableSurfaceTextures.set("light", lightTexture);
+      updateBinderTableSurfaceTheme();
+      return binderTableSurfaceTextures;
+    })
+    .catch((error) => {
+      binderTableSurfaceTexturesPromise = null;
+      console.warn("Unable to load the binder table surface textures", error);
+      return binderTableSurfaceTextures;
+    });
+
+  return binderTableSurfaceTexturesPromise;
+}
+
+function loadBinderTableSurfaceTexture(url) {
+  return new Promise((resolve, reject) => {
+    textureLoader.load(
+      url,
+      (texture) => {
+        texture.colorSpace = THREE.SRGBColorSpace;
+        texture.wrapS = THREE.MirroredRepeatWrapping;
+        texture.wrapT = THREE.MirroredRepeatWrapping;
+        texture.repeat.set(
+          BINDER_TABLE_SURFACE_REPEAT_X,
+          BINDER_TABLE_SURFACE_REPEAT_Y,
+        );
+        texture.minFilter = THREE.LinearMipmapLinearFilter;
+        texture.magFilter = THREE.LinearFilter;
+        texture.generateMipmaps = true;
+        texture.anisotropy = Math.min(
+          8,
+          binderRenderer?.capabilities?.getMaxAnisotropy?.() || 1,
+        );
+        texture.needsUpdate = true;
+        resolve(texture);
+      },
+      undefined,
+      reject,
+    );
+  });
+}
+
+function updateBinderTableSurfaceTheme(
+  isLight = els.body.classList.contains("is-light"),
+) {
+  if (!binderTableSurfaceMaterial) return;
+  const texture = binderTableSurfaceTextures.get(isLight ? "light" : "dark");
+  if (!texture || binderTableSurfaceMaterial.map === texture) return;
+
+  binderTableSurfaceMaterial.color.setHex(0xffffff);
+  binderTableSurfaceMaterial.map = texture;
+  binderTableSurfaceMaterial.emissiveMap = texture;
+  binderTableSurfaceMaterial.needsUpdate = true;
+  requestBinderRenderOnce();
+}
+
+function ensureBinderTableDisplayModel() {
+  if (binderTableDisplayModelPromise) return binderTableDisplayModelPromise;
+  if (!binderTableDisplayModelRoot) return Promise.resolve(null);
+
+  binderTableDisplayModelPromise = import(
+    "./vendor/GLTFLoader.js?v=three-r165-gltf-1"
+  )
+    .then(({ GLTFLoader }) => new Promise((resolve, reject) => {
+      new GLTFLoader().load(
+        BINDER_TABLE_DISPLAY_MODEL_URL,
+        resolve,
+        undefined,
+        reject,
+      );
+    }))
+    .then((gltf) => {
+      const model = gltf?.scene;
+      if (!model || !binderTableDisplayModelRoot) return null;
+
+      const material = new THREE.MeshPhysicalMaterial({
+        color: 0x8babe2,
+        roughness: 0.2,
+        metalness: 0,
+        clearcoat: 0.92,
+        clearcoatRoughness: 0.12,
+        ior: 1.46,
+        specularIntensity: 1,
+        specularColor: 0xeaf2ff,
+        emissive: 0x14213a,
+        emissiveIntensity: 0.16,
+        side: THREE.FrontSide,
+        transparent: true,
+        opacity: 0,
+        depthWrite: false,
+        dithering: true,
+      });
+      material.forceSinglePass = true;
+      model.traverse((child) => {
+        if (!child.isMesh) return;
+        if (!child.geometry.getAttribute("normal")) {
+          child.geometry.computeVertexNormals();
+        }
+        child.material = material;
+        child.frustumCulled = true;
+        child.renderOrder = -70;
+      });
+
+      const bounds = new THREE.Box3().setFromObject(model);
+      const size = bounds.getSize(new THREE.Vector3());
+      const scale = BINDER_TABLE_DISPLAY_MODEL_HEIGHT / Math.max(0.001, size.y);
+      model.scale.setScalar(scale);
+      bounds.setFromObject(model);
+      const center = bounds.getCenter(new THREE.Vector3());
+      model.position.set(-center.x, -bounds.min.y, -center.z);
+
+      const uprightRoot = new THREE.Group();
+      uprightRoot.name = "binder-table-display-model-upright";
+      uprightRoot.rotation.x = Math.PI / 2;
+      uprightRoot.add(model);
+      binderTableDisplayModelRoot.add(uprightRoot);
+      binderTableDisplayModelMaterial = material;
+      binderTableDisplayModelLoadedAt = performance.now();
+      applyBinderTableViewProgress();
+      markBinderInteractionActive(BINDER_TABLE_DISPLAY_MODEL_REVEAL_DURATION_MS + 120);
+      startBinderRenderLoop();
+      return binderTableDisplayModelRoot;
+    })
+    .catch((error) => {
+      binderTableDisplayModelPromise = null;
+      console.warn("Unable to load the binder table display model", error);
+      return null;
+    });
+
+  return binderTableDisplayModelPromise;
+}
+
+function updateBinderTableDisplayModelVisibility(now = performance.now()) {
+  const material = binderTableDisplayModelMaterial;
+  const root = binderTableDisplayModelRoot;
+  if (!material || !root || !binderTableDisplayModelLoadedAt) return false;
+
+  const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+  const revealProgress = reducedMotion
+    ? 1
+    : clamp(
+      (now - binderTableDisplayModelLoadedAt)
+        / BINDER_TABLE_DISPLAY_MODEL_REVEAL_DURATION_MS,
+      0,
+      1,
+    );
+  const revealOpacity = easeOutCubic(revealProgress);
+  const tableOpacity = clamp(binderTableViewProgress / 0.72, 0, 1);
+  const opacity = tableOpacity * revealOpacity;
+
+  material.opacity = BINDER_TABLE_DISPLAY_MODEL_MAX_OPACITY * opacity;
+  if (binderTableDisplayModelShadowMaterial) {
+    binderTableDisplayModelShadowMaterial.opacity = (
+      BINDER_TABLE_DISPLAY_MODEL_SHADOW_OPACITY * opacity
+    );
+  }
+  root.visible = opacity > 0.001;
+  return opacity > 0.001 && revealProgress < 1;
+}
+
+function createEvilBinderTableSet() {
+  const root = new THREE.Group();
+  root.name = "evil-binder-table-set";
+  binderEvilTableEntries = [];
+
+  const collectionOrder = getEvilBinderTableCollectionOrder();
+  if (ACTIVE_COLLECTION.introGroup !== "evil" || collectionOrder.length !== 3) {
+    root.visible = false;
+    return root;
+  }
+
+  for (const slot of [-1, 1]) {
+    const collectionId = collectionOrder[slot + 1];
+    const entry = createEvilBinderTableProxy(collectionId, slot);
+    binderEvilTableEntries.push(entry);
+    root.add(entry.group);
+  }
+  applyEvilBinderTableSetVisibility();
+  return root;
+}
+
+function getDefaultEvilBinderTableCollectionOrder(
+  activeCollectionId = ACTIVE_COLLECTION_ID,
+) {
+  const sideCollections = EVIL_BINDER_TABLE_SIDE_COLLECTIONS[activeCollectionId] || [];
+  return sideCollections.length === 2
+    ? [sideCollections[0], activeCollectionId, sideCollections[1]]
+    : [];
+}
+
+function normalizeEvilBinderTableCollectionOrder(
+  collectionOrder,
+  activeCollectionId = ACTIVE_COLLECTION_ID,
+) {
+  const expectedCollections = Object.keys(EVIL_BINDER_TABLE_SIDE_COLLECTIONS);
+  const proposedOrder = Array.isArray(collectionOrder) ? collectionOrder : [];
+  const uniqueCollections = new Set(proposedOrder);
+  const valid = proposedOrder.length === expectedCollections.length
+    && uniqueCollections.size === expectedCollections.length
+    && proposedOrder[1] === activeCollectionId
+    && expectedCollections.every((collectionId) => uniqueCollections.has(collectionId));
+  return valid
+    ? proposedOrder.slice()
+    : getDefaultEvilBinderTableCollectionOrder(activeCollectionId);
+}
+
+function getEvilBinderTableCollectionOrder() {
+  binderEvilTableCollectionOrder = normalizeEvilBinderTableCollectionOrder(
+    binderEvilTableCollectionOrder,
+  );
+  return binderEvilTableCollectionOrder;
+}
+
+function getSwappedEvilBinderTableCollectionOrder(collectionId) {
+  const nextOrder = getEvilBinderTableCollectionOrder().slice();
+  const selectedIndex = nextOrder.indexOf(collectionId);
+  if (selectedIndex < 0 || selectedIndex === 1) return nextOrder;
+  [nextOrder[1], nextOrder[selectedIndex]] = [
+    nextOrder[selectedIndex],
+    nextOrder[1],
+  ];
+  return nextOrder;
+}
+
+function createEvilBinderTableProxy(collectionId, slot) {
+  const group = new THREE.Group();
+  group.name = `evil-binder-proxy-${collectionId}`;
+  const baseX = slot * BINDER_EVIL_TABLE_SIDE_X;
+  const baseY = 0.84;
+  const baseZ = BINDER_EVIL_TABLE_SIDE_Z;
+  group.position.set(baseX, baseY, baseZ);
+  group.scale.setScalar(BINDER_EVIL_TABLE_SIDE_SCALE);
+
+  const shellState = createBinderCoverShellModel({
+    collectionId,
+    emblemActive: true,
+  });
+  const {
+    shell,
+    leftPivot,
+    leftCover,
+    frontCoverEmblem: emblem,
+    rightCover,
+    spine,
+    coverWidth,
+    coverHeight,
+  } = shellState;
+  const fadedMaterials = [];
+
+  const prepareCoverLayer = (mesh, {
+    depthWrite,
+    renderOrder,
+  }) => {
+    const material = mesh.material;
+    material.color.copy(BINDER_COVER_TABLE_COLOR);
+    material.emissive.copy(BINDER_COVER_TABLE_EMISSIVE);
+    material.emissiveIntensity = BINDER_COVER_TABLE_EMISSIVE_INTENSITY;
+    material.transparent = true;
+    material.opacity = 0;
+    material.depthWrite = false;
+    material.needsUpdate = true;
+    mesh.renderOrder = renderOrder;
+    fadedMaterials.push({
+      material,
+      baseOpacity: 1,
+      targetTransparent: true,
+      targetDepthWrite: depthWrite,
+    });
+  };
+
+  applyBinderShellClosureGeometry(shellState, -1);
+  shell.position.x = -BINDER_CLOSED_COVER_CENTER_X;
+  prepareCoverLayer(leftCover, {
+    depthWrite: false,
+    renderOrder: BINDER_CLOSING_COVER_RENDER_ORDER,
+  });
+  prepareCoverLayer(rightCover, {
+    depthWrite: true,
+    renderOrder: BINDER_TABLE_COVER_RENDER_ORDER,
+  });
+  prepareCoverLayer(spine, {
+    depthWrite: true,
+    renderOrder: BINDER_TABLE_COVER_RENDER_ORDER,
+  });
+  setBinderFrontCoverEmblemLayer(emblem, true);
+  setBinderFrontCoverEmblemOpacity(emblem, 0);
+
+  const hitMesh = new THREE.Mesh(
+    new THREE.PlaneGeometry(coverWidth, coverHeight),
+    new THREE.MeshBasicMaterial({
+      transparent: true,
+      opacity: 0,
+      depthWrite: false,
+      depthTest: false,
+      side: THREE.DoubleSide,
+    }),
+  );
+  hitMesh.rotation.y = Math.PI;
+  hitMesh.position.set(
+    leftCover.position.x,
+    0,
+    -BINDER_COVER_THICKNESS / 2 - 0.03,
+  );
+  hitMesh.userData.evilBinderTableCollectionId = collectionId;
+  hitMesh.userData.evilBinderTableSlot = slot;
+  leftPivot.add(hitMesh);
+  group.add(shell);
+
+  return {
+    collectionId,
+    slot,
+    group,
+    hitMesh,
+    emblem,
+    shellState,
+    fadedMaterials,
+    baseX,
+    baseY,
+    baseZ,
+  };
+}
+
+function getEvilBinderTableSetBaseOpacity() {
+  if (
+    ACTIVE_COLLECTION.introGroup !== "evil"
+    || binderTableViewProgress <= 0.001
+  ) {
+    return 0;
+  }
+
+  const closureProgress = clamp(
+    (
+      Math.abs(binderClosure) - BINDER_EVIL_TABLE_SIDE_FADE_START
+    ) / (
+      BINDER_EVIL_TABLE_SIDE_FADE_END - BINDER_EVIL_TABLE_SIDE_FADE_START
+    ),
+    0,
+    1,
+  );
+  return easeInOutCubic(closureProgress) * clamp(binderTableViewProgress, 0, 1);
+}
+
+function setEvilBinderTableEntryOpacity(entry, opacity) {
+  const nextOpacity = clamp(opacity, 0, 1);
+  entry.group.visible = nextOpacity > 0.001;
+  for (const {
+    material,
+    baseOpacity,
+    targetTransparent = false,
+    targetDepthWrite = true,
+  } of entry.fadedMaterials) {
+    material.opacity = baseOpacity * nextOpacity;
+    const fullyVisible = nextOpacity >= 0.999;
+    const transparent = fullyVisible ? targetTransparent : true;
+    const depthWrite = fullyVisible ? targetDepthWrite : false;
+    if (
+      material.transparent !== transparent
+      || material.depthWrite !== depthWrite
+    ) {
+      material.transparent = transparent;
+      material.depthWrite = depthWrite;
+      material.needsUpdate = true;
+    }
+  }
+  setBinderFrontCoverEmblemOpacity(entry.emblem, 0.92 * nextOpacity);
+}
+
+function applyEvilBinderTableSetVisibility() {
+  if (!binderEvilTableSetRoot || !binderEvilTableEntries.length) return;
+
+  const baseOpacity = getEvilBinderTableSetBaseOpacity();
+  binderEvilTableSetOpacity = baseOpacity;
+  for (const entry of binderEvilTableEntries) {
+    // Once the three-binder set is visible, keep every binder fully solid
+    // while they trade places. Position and lift communicate the swap.
+    setEvilBinderTableEntryOpacity(entry, baseOpacity);
+  }
+  binderEvilTableSetRoot.visible = binderEvilTableEntries.some(
+    (entry) => entry.group.visible,
+  );
+}
+
+function canStartEvilBinderTableSwap() {
+  return Boolean(
+    ACTIVE_COLLECTION.introGroup === "evil"
+    && binderTableViewTarget > 0.5
+    && binderTableViewProgress >= 0.985
+    && Math.abs(binderClosure) >= 0.985
+    && Math.abs(binderTargetClosure) >= 0.5
+    && !binderEvilTableSwapState
+    && !binderOuterFlipState
+    && !binderDrag
+    && !isBinderFocusView()
+  );
+}
+
+function beginEvilBinderTableSwap(collectionId) {
+  if (!canStartEvilBinderTableSwap()) return false;
+  const selectedEntry = binderEvilTableEntries.find(
+    (entry) => entry.collectionId === collectionId,
+  );
+  const destination = COLLECTION_CONFIGS[collectionId];
+  if (!selectedEntry || destination?.introGroup !== "evil") return false;
+
+  const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+  binderEvilTableSwapState = {
+    collectionId,
+    selectedEntry,
+    nextCollectionOrder: getSwappedEvilBinderTableCollectionOrder(collectionId),
+    startedAt: performance.now(),
+    duration: reducedMotion ? 260 : BINDER_EVIL_TABLE_SWAP_DURATION_MS,
+    progress: 0,
+    committing: false,
+    collectionPromise: Promise.all([
+      ensureCollectionCards(collectionId),
+      preloadCollectionBackTextures(collectionId),
+    ]),
+  };
+  binderLastOpenTap = null;
+  clearBinderIntroLinkCursor();
+  els.body.classList.add("binder-table-swapping");
+  markBinderInteractionActive(binderEvilTableSwapState.duration + 600);
+  updateBinderPageControls();
+  startBinderRenderLoop();
+  return true;
+}
+
+function updateEvilBinderTableSwap(now = performance.now()) {
+  const state = binderEvilTableSwapState;
+  if (!state || !binderActivePlacementRoot) return false;
+
+  const linearProgress = clamp(
+    (now - state.startedAt) / Math.max(1, state.duration),
+    0,
+    1,
+  );
+  const easedProgress = easeInOutCubic(linearProgress);
+  const arc = Math.sin(linearProgress * Math.PI);
+  const entry = state.selectedEntry;
+  state.progress = easedProgress;
+
+  binderActivePlacementRoot.position.set(
+    THREE.MathUtils.lerp(0, entry.baseX, easedProgress),
+    -entry.slot * BINDER_EVIL_TABLE_SWAP_PATH_BEND * arc,
+    BINDER_EVIL_TABLE_SWAP_ACTIVE_LIFT * arc,
+  );
+  binderActivePlacementRoot.scale.setScalar(
+    THREE.MathUtils.lerp(1, BINDER_EVIL_TABLE_SIDE_SCALE, easedProgress),
+  );
+  entry.group.position.set(
+    THREE.MathUtils.lerp(entry.baseX, 0, easedProgress),
+    entry.baseY + entry.slot * BINDER_EVIL_TABLE_SWAP_PATH_BEND * arc,
+    entry.baseZ + BINDER_EVIL_TABLE_SWAP_SELECTED_LIFT * arc,
+  );
+  entry.group.scale.setScalar(
+    THREE.MathUtils.lerp(BINDER_EVIL_TABLE_SIDE_SCALE, 1, easedProgress),
+  );
+  applyEvilBinderTableSetVisibility();
+
+  if (linearProgress >= 1 && !state.committing) {
+    state.committing = true;
+    completeEvilBinderTableSwap(state).catch((error) => {
+      console.error(error);
+      if (binderEvilTableSwapState !== state) return;
+      resetEvilBinderTableSwap();
+      updateBinderPageControls();
+      requestBinderRenderOnce();
+    });
+  }
+  return true;
+}
+
+function resetEvilBinderTableSwap() {
+  binderEvilTableSwapState = null;
+  els.body.classList.remove("binder-table-swapping");
+  if (binderActivePlacementRoot) {
+    binderActivePlacementRoot.position.set(0, 0, 0);
+    binderActivePlacementRoot.scale.setScalar(1);
+  }
+  for (const entry of binderEvilTableEntries) {
+    entry.group.position.set(entry.baseX, entry.baseY, entry.baseZ);
+    entry.group.scale.setScalar(BINDER_EVIL_TABLE_SIDE_SCALE);
+  }
+  applyEvilBinderTableSetVisibility();
+}
+
+async function completeEvilBinderTableSwap(state) {
+  await state.collectionPromise;
+  if (binderEvilTableSwapState !== state) return;
+  commitActiveEvilBinderCollection(state.collectionId, {
+    historyMode: "push",
+    tableCollectionOrder: state.nextCollectionOrder,
+  });
+}
+
+function commitActiveEvilBinderCollection(
+  collectionId,
+  {
+    historyMode = "push",
+    tableCollectionOrder = null,
+  } = {},
+) {
+  const destination = COLLECTION_CONFIGS[collectionId];
+  if (
+    !destination
+    || destination.introGroup !== "evil"
+    || !destination.cardsLoaded
+    || !Array.isArray(destination.globalIndexes)
+  ) {
+    throw new Error(`Unable to activate ${collectionId} binder`);
+  }
+
+  saveSessionViewState();
+  binderEvilTableSwapState = null;
+  els.body.classList.remove("binder-table-swapping");
+  if (binderActivePlacementRoot) {
+    binderActivePlacementRoot.position.set(0, 0, 0);
+    binderActivePlacementRoot.scale.setScalar(1);
+  }
+
+  if (binderEvilTableSetRoot) {
+    binderEvilTableSetRoot.removeFromParent();
+    disposeObject(binderEvilTableSetRoot);
+  }
+  binderEvilTableEntries = [];
+  binderEvilTableSetOpacity = 0;
+
+  binderEvilTableCollectionOrder = normalizeEvilBinderTableCollectionOrder(
+    tableCollectionOrder,
+    collectionId,
+  );
+  ACTIVE_COLLECTION_ID = collectionId;
+  ACTIVE_COLLECTION = destination;
+  ACTIVE_COLLECTION_INDEXES = destination.globalIndexes.slice();
+  ACTIVE_TRAIT_CATEGORIES = destination.traitCategories;
+  TRAIT_FILTERS_ENABLED = Boolean(destination.traitFiltersEnabled);
+  SESSION_VIEW_STATE_KEY = `cardnft:${ACTIVE_COLLECTION_ID}:sessionView:v1`;
+  document.documentElement.dataset.collectionId = collectionId;
+  const canonicalLink = document.querySelector('link[rel="canonical"]');
+  if (canonicalLink) canonicalLink.href = destination.path;
+
+  if (historyMode === "push") {
+    window.history.pushState(
+      {
+        ...(window.history.state || {}),
+        evilBinderCollectionId: collectionId,
+        evilBinderTableCollectionOrder: binderEvilTableCollectionOrder.slice(),
+      },
+      "",
+      new URL(destination.path, window.location.origin).href,
+    );
+  } else if (historyMode === "replace") {
+    window.history.replaceState(
+      {
+        ...(window.history.state || {}),
+        evilBinderCollectionId: collectionId,
+        evilBinderTableCollectionOrder: binderEvilTableCollectionOrder.slice(),
+      },
+      "",
+      new URL(destination.path, window.location.origin).href,
+    );
+  }
+
+  if (binderIntroNoteTexture) {
+    binderIntroNoteTexture.dispose();
+    binderIntroNoteTexture = null;
+  }
+  binderIntroNoteModeOpacity = 1;
+  binderIntroNoteModeTargetOpacity = 1;
+  binderIntroNoteFadeLastAt = 0;
+
+  isBinderMode = true;
+  resetGalleryFilters();
+  setTraitInfoOpen(false);
+  els.body.classList.toggle("trait-filters-disabled", !TRAIT_FILTERS_ENABLED);
+  populateTraitSortOptions();
+  updateGalleryViewModeButton();
+
+  binderOuterFlipState = null;
+  resetBinderOuterFlipTransform();
+  binderTargetTurn = 0;
+  binderTurn = 0;
+  binderTargetClosure = -1;
+  binderClosure = -1;
+  binderSinglePageSide = BINDER_SINGLE_PAGE_COVER_SIDE;
+  binderSinglePageSideTouched = true;
+  binderFocusPosition = -1;
+  binderIntroFocused = false;
+  binderIndexesKey = "";
+  binderTextureQueueKey = "";
+  els.body.classList.remove("binder-focused");
+  els.binderPanel.classList.remove("is-focused");
+
+  binderEvilTableSetRoot = createEvilBinderTableSet();
+  binderPresentationRoot.add(binderEvilTableSetRoot);
+  setBinderTableView(true, { immediate: true, updateControls: false });
+
+  const firstCardIndex = ACTIVE_COLLECTION_INDEXES[0] ?? 0;
+  setCard(firstCardIndex, { deferAssets: true });
+  renderGallery();
+  updateBinderPageControls();
+  renderBinderSceneOnce({ includePreload: false, immediateCamera: true });
+  queueSessionViewStateSave();
+}
+
+function initializeEvilBinderHistoryState() {
+  if (ACTIVE_COLLECTION.introGroup !== "evil") return;
+  const collectionOrder = getEvilBinderTableCollectionOrder();
+  const nextState = {
+    ...(window.history.state || {}),
+    evilBinderCollectionId: ACTIVE_COLLECTION_ID,
+    evilBinderTableCollectionOrder: collectionOrder.slice(),
+  };
+  window.history.replaceState(nextState, "", window.location.href);
+  window.addEventListener("popstate", handleEvilBinderHistoryNavigation);
+}
+
+function handleEvilBinderHistoryNavigation(event) {
+  const collectionId = event.state?.evilBinderCollectionId
+    || getEvilBinderCollectionIdForPath(window.location.pathname);
+  const tableCollectionOrder = normalizeEvilBinderTableCollectionOrder(
+    event.state?.evilBinderTableCollectionOrder,
+    collectionId,
+  );
+  if (
+    !collectionId
+    || COLLECTION_CONFIGS[collectionId]?.introGroup !== "evil"
+  ) {
+    return;
+  }
+
+  Promise.all([
+    ensureCollectionCards(collectionId),
+    preloadCollectionBackTextures(collectionId),
+  ])
+    .then(() => {
+      commitActiveEvilBinderCollection(collectionId, {
+        historyMode: "none",
+        tableCollectionOrder,
+      });
+    })
+    .catch(console.error);
+}
+
+function getEvilBinderCollectionIdForPath(pathname) {
+  const normalizedPath = pathname === "/"
+    ? "/"
+    : `${pathname.replace(/\/+$/, "")}/`;
+  return Object.values(COLLECTION_CONFIGS)
+    .find((collection) => (
+      collection.introGroup === "evil"
+      && collection.path === normalizedPath
+    ))
+    ?.id || "";
+}
+
+function isBinderTableViewActive() {
+  return binderTableViewTarget > 0.5
+    || binderTableViewProgress > 0.001
+    || Boolean(binderTableViewAnimation);
+}
+
+function toggleBinderTableView() {
+  if (isBinderFocusView() || binderEvilTableSwapState) return;
+  setBinderTableView(binderTableViewTarget < 0.5);
+}
+
+function setBinderTableView(active, {
+  immediate = false,
+  updateControls = true,
+  durationMs = BINDER_TABLE_VIEW_DURATION_MS,
+  easing = "in-out",
+} = {}) {
+  const nextTarget = active ? 1 : 0;
+  const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+  binderTableViewTarget = nextTarget;
+  els.body.classList.toggle("binder-table-view", Boolean(nextTarget));
+  if (active) {
+    void ensureBinderTableSurfaceTextures();
+    void ensureBinderTableDisplayModel();
+    void ensureBinderTableAccessories();
+  }
+
+  if (immediate || reducedMotion || !binderRenderer) {
+    binderTableViewProgress = nextTarget;
+    binderTableViewAnimation = null;
+    applyBinderTableViewProgress();
+    if (updateControls) updateBinderPageControls();
+    requestBinderRenderOnce();
+    return;
+  }
+
+  if (
+    binderTableViewAnimation
+    && Math.abs(binderTableViewAnimation.to - nextTarget) < 0.001
+  ) {
+    if (updateControls) updateBinderPageControls();
+    return;
+  }
+  if (
+    !binderTableViewAnimation
+    && Math.abs(binderTableViewProgress - nextTarget) < 0.001
+  ) {
+    if (updateControls) updateBinderPageControls();
+    return;
+  }
+
+  binderTableViewAnimation = {
+    from: binderTableViewProgress,
+    to: nextTarget,
+    startedAt: performance.now(),
+    easing,
+    duration: Math.max(
+      Math.min(260, durationMs),
+      durationMs * Math.abs(nextTarget - binderTableViewProgress),
+    ),
+  };
+  if (updateControls) updateBinderPageControls();
+  markBinderInteractionActive(durationMs + 120);
+  startBinderRenderLoop();
+}
+
+function updateBinderTableViewAnimation(now = performance.now()) {
+  const animation = binderTableViewAnimation;
+  if (!animation) return false;
+
+  const elapsed = Math.max(0, now - animation.startedAt);
+  const linearProgress = clamp(elapsed / Math.max(1, animation.duration), 0, 1);
+  const easedProgress = animation.easing === "out"
+    ? 1 - Math.pow(1 - linearProgress, 3)
+    : linearProgress < 0.5
+      ? 4 * linearProgress * linearProgress * linearProgress
+      : 1 - Math.pow(-2 * linearProgress + 2, 3) / 2;
+  binderTableViewProgress = THREE.MathUtils.lerp(
+    animation.from,
+    animation.to,
+    easedProgress,
+  );
+  if (linearProgress >= 1) {
+    binderTableViewProgress = animation.to;
+    binderTableViewAnimation = null;
+  }
+  applyBinderTableViewProgress();
+  return true;
+}
+
+function applyBinderTableViewProgress() {
+  if (!binderPresentationRoot || !binderTableGroup) return;
+
+  const progress = clamp(binderTableViewProgress, 0, 1);
+  const settle = progress;
+  const scale = THREE.MathUtils.lerp(1, BINDER_TABLE_VIEW_SCALE, settle);
+  binderPresentationRoot.position.set(
+    0,
+    THREE.MathUtils.lerp(0, BINDER_TABLE_VIEW_Y, settle),
+    THREE.MathUtils.lerp(0, BINDER_TABLE_VIEW_Z, settle),
+  );
+  binderPresentationRoot.rotation.set(
+    THREE.MathUtils.lerp(0, BINDER_TABLE_VIEW_TILT, settle),
+    0,
+    0,
+  );
+  binderPresentationRoot.scale.setScalar(scale);
+
+  binderTableGroup.visible = progress > 0.001;
+  binderTableGroup.position.set(
+    0,
+    THREE.MathUtils.lerp(BINDER_TABLE_Y + 0.38, BINDER_TABLE_Y, settle),
+    THREE.MathUtils.lerp(BINDER_TABLE_Z - 0.34, BINDER_TABLE_Z, settle),
+  );
+  binderTableGroup.rotation.set(
+    BINDER_TABLE_VIEW_TILT - THREE.MathUtils.degToRad(3) * (1 - settle),
+    0,
+    0,
+  );
+  const tableScale = THREE.MathUtils.lerp(0.965, 1, settle);
+  binderTableGroup.scale.setScalar(tableScale);
+  const tableOpacity = clamp(progress / 0.72, 0, 1);
+  const tableOpaque = progress >= 0.999 && binderTableViewTarget > 0.5;
+  for (let index = 0; index < binderTableMaterials.length; index += 1) {
+    const material = binderTableMaterials[index];
+    const transparent = !tableOpaque;
+    if (material.transparent !== transparent || material.depthWrite === transparent) {
+      material.transparent = transparent;
+      material.depthWrite = !transparent;
+      material.needsUpdate = true;
+    }
+    material.opacity = tableOpaque
+      ? 1
+      : tableOpacity * (index === 0 ? 0.94 : 0.985);
+  }
+  updateBinderTableDisplayModelVisibility();
+  updateBinderTableAccessoryVisibility();
+  applyEvilBinderTableSetVisibility();
+}
+
+function applyBinderTableCoverVisibility(progress) {
+  if (!binderShellState) return;
+
+  const visibility = clamp(progress, 0, 1);
+  for (const mesh of [
+    binderShellState.leftCover,
+    binderShellState.rightCover,
+    binderShellState.spine,
+  ]) {
+    const material = mesh?.material;
+    if (!material) continue;
+    material.color.lerpColors(
+      BINDER_COVER_BASE_COLOR,
+      BINDER_COVER_TABLE_COLOR,
+      visibility,
+    );
+    material.emissive.lerpColors(
+      BINDER_COVER_BASE_EMISSIVE,
+      BINDER_COVER_TABLE_EMISSIVE,
+      visibility,
+    );
+    material.emissiveIntensity = THREE.MathUtils.lerp(
+      BINDER_COVER_BASE_EMISSIVE_INTENSITY,
+      BINDER_COVER_TABLE_EMISSIVE_INTENSITY,
+      visibility,
+    );
+  }
+  const ringDepthScale = THREE.MathUtils.lerp(
+    1,
+    BINDER_TABLE_RING_DEPTH_SCALE,
+    visibility,
+  );
+  for (const ring of binderShellState.rings) {
+    ring.scale.set(BINDER_RING_SCALE_X, ringDepthScale, 1);
+  }
+  const tableSeamZ = binderShellState.coverZ + BINDER_COVER_THICKNESS / 2 + 0.013;
+  binderShellState.seam.position.z = THREE.MathUtils.lerp(
+    0.075,
+    tableSeamZ,
+    visibility,
+  );
+  binderShellState.seam.renderOrder = visibility > 0.001
+    ? BINDER_TABLE_COVER_RENDER_ORDER + 1
+    : 0;
 }
 
 function updateBinderItems(indexes) {
@@ -4109,6 +7307,12 @@ function updateBinderItems(indexes) {
   }
   binderTargetTurn = clamp(binderTargetTurn, 0, binderPageCount);
   binderTurn = clamp(binderTurn, 0, binderPageCount);
+  binderTargetClosure = clamp(binderTargetClosure, -1, 1);
+  binderClosure = clamp(binderClosure, -1, 1);
+  if (binderTargetClosure < 0) binderTargetTurn = 0;
+  if (binderTargetClosure > 0) binderTargetTurn = binderPageCount;
+  if (binderClosure < 0) binderTurn = 0;
+  if (binderClosure > 0) binderTurn = binderPageCount;
   els.binderLoading.hidden = true;
   loadBinderBackTexture(token);
   updateBinderPageControls();
@@ -4143,65 +7347,433 @@ function createBinderModel(indexes, placeholderTexture) {
 }
 
 function createBinderShell() {
-  const shell = new THREE.Group();
+  binderShellState = null;
   binderIntroNoteGroup = null;
   binderIntroNoteMesh = null;
   binderIntroLinkMeshes = [];
   binderIntroFocusMeshes = [];
-  const coverMaterial = createBinderCoverMaterial();
-  const ringMaterial = new THREE.MeshPhysicalMaterial({
-    color: 0x171615,
-    roughness: 0.28,
-    metalness: 0.68,
-    clearcoat: 0.34,
-    clearcoatRoughness: 0.22,
+  binderShellState = createBinderCoverShellModel({
+    collectionId: ACTIVE_COLLECTION_ID,
+    includeIntroNote: true,
   });
-  const coverWidth = BINDER_PAGE_WIDTH + BINDER_COVER_OVERHANG * 2;
+  updateBinderShellTransforms();
+  return binderShellState.shell;
+}
+
+function createBinderCoverShellModel({
+  collectionId = ACTIVE_COLLECTION_ID,
+  includeIntroNote = false,
+  emblemActive = false,
+} = {}) {
+  const shell = new THREE.Group();
+  const coverMaterial = createBinderCoverMaterial();
+  const ringMaterial = new THREE.MeshStandardMaterial({
+    color: 0x2a2927,
+    roughness: 0.82,
+    metalness: 0.12,
+    emissive: 0x020202,
+    emissiveIntensity: 0.08,
+    transparent: true,
+    depthWrite: false,
+  });
+  const spineHalfWidth = BINDER_COVER_SPINE_WIDTH / 2;
+  const coverWidth = BINDER_COVER_OUTER_X - spineHalfWidth;
   const coverHeight = BINDER_PAGE_HEIGHT + BINDER_COVER_VERTICAL_OVERHANG;
-  const spineHeight = coverHeight - 0.26;
-  const coverZ = -0.34;
-  const backCoverGeometry = createRoundedCoreGeometry(coverWidth, coverHeight, 0.14, BINDER_COVER_RADIUS);
-  const frontCoverGeometry = createRoundedCoreGeometry(coverWidth, coverHeight, 0.12, BINDER_COVER_RADIUS);
+  const spineHeight = coverHeight - 0.04;
+  const coverZ = BINDER_COVER_Z;
+  const leftCoverGeometry = createBinderCoverPanelGeometry(
+    coverWidth,
+    coverHeight,
+    BINDER_COVER_THICKNESS,
+    BINDER_COVER_RADIUS,
+    -1,
+  );
+  const rightCoverGeometry = createBinderCoverPanelGeometry(
+    coverWidth,
+    coverHeight,
+    BINDER_COVER_THICKNESS,
+    BINDER_COVER_RADIUS,
+    1,
+  );
 
-  const leftCover = new THREE.Mesh(backCoverGeometry, coverMaterial);
-  leftCover.position.set(-BINDER_PAGE_WIDTH / 2 - BINDER_COVER_OVERHANG * 0.42, 0, coverZ);
-  shell.add(leftCover);
-  const introNote = createBinderIntroNote(coverWidth, coverHeight);
-  introNote.position.set(leftCover.position.x, 0, coverZ + 0.14 / 2 + 0.008);
-  shell.add(introNote);
+  const leftPivot = new THREE.Group();
+  leftPivot.position.set(-spineHalfWidth, 0, coverZ);
+  const leftCover = new THREE.Mesh(leftCoverGeometry, coverMaterial);
+  leftCover.position.x = -coverWidth / 2;
+  leftPivot.add(leftCover);
+  const frontCoverEmblem = createBinderFrontCoverEmblem(
+    coverWidth,
+    coverHeight,
+    collectionId,
+    { active: emblemActive },
+  );
+  frontCoverEmblem.rotation.y = Math.PI;
+  frontCoverEmblem.position.set(
+    leftCover.position.x,
+    coverHeight * getBinderFrontCoverEmblemYRatio(collectionId),
+    -BINDER_COVER_THICKNESS / 2 - 0.012,
+  );
+  leftPivot.add(frontCoverEmblem);
+  if (includeIntroNote) {
+    const introNote = createBinderIntroNote(coverWidth, coverHeight);
+    introNote.position.set(
+      leftCover.position.x,
+      0,
+      BINDER_COVER_THICKNESS / 2 + 0.008,
+    );
+    leftPivot.add(introNote);
+  }
+  shell.add(leftPivot);
 
-  const rightCover = new THREE.Mesh(backCoverGeometry.clone(), coverMaterial.clone());
-  rightCover.position.set(BINDER_PAGE_WIDTH / 2 + BINDER_COVER_OVERHANG * 0.42, 0, coverZ);
-  shell.add(rightCover);
+  const rightPivot = new THREE.Group();
+  rightPivot.position.set(spineHalfWidth, 0, coverZ);
+  const rightCover = new THREE.Mesh(rightCoverGeometry, coverMaterial.clone());
+  rightCover.position.x = coverWidth / 2;
+  rightPivot.add(rightCover);
+  shell.add(rightPivot);
 
-  const spine = new THREE.Mesh(new THREE.BoxGeometry(0.42, spineHeight, 0.36, 1, 1, 2), coverMaterial.clone());
-  spine.position.set(0, 0, coverZ + 0.04);
+  const spineGeometry = new THREE.PlaneGeometry(
+    BINDER_COVER_SPINE_WIDTH,
+    spineHeight,
+    BINDER_COVER_SPINE_SEGMENTS,
+    1,
+  );
+  const spineMaterial = coverMaterial.clone();
+  spineMaterial.side = THREE.DoubleSide;
+  const spine = new THREE.Mesh(spineGeometry, spineMaterial);
   shell.add(spine);
 
-  const frontPivot = new THREE.Group();
-  frontPivot.position.set(0, 0, -0.12);
-  frontPivot.rotation.y = -2.78;
-  const frontCover = new THREE.Mesh(frontCoverGeometry, coverMaterial.clone());
-  frontCover.position.x = -coverWidth / 2;
-  frontPivot.add(frontCover);
-  shell.add(frontPivot);
-
   const seam = new THREE.Mesh(
-    new THREE.BoxGeometry(0.035, spineHeight * 0.94, 0.012),
-    new THREE.MeshBasicMaterial({ color: 0x050505, depthWrite: true, depthTest: true }),
+    new THREE.BoxGeometry(
+      0.035,
+      spineHeight * BINDER_SPINE_SEAM_HEIGHT_RATIO,
+      0.012,
+    ),
+    new THREE.MeshBasicMaterial({
+      color: 0x050505,
+      depthWrite: true,
+      depthTest: true,
+      transparent: true,
+    }),
   );
   seam.position.set(0, 0, 0.075);
   shell.add(seam);
 
+  const rings = [];
   for (const y of [-BINDER_PAGE_HEIGHT * 0.32, 0, BINDER_PAGE_HEIGHT * 0.32]) {
-    const ring = new THREE.Mesh(new THREE.TorusGeometry(0.24, 0.018, 12, 46), ringMaterial);
+    const ring = new THREE.Mesh(
+      new THREE.TorusGeometry(
+        0.24,
+        0.018,
+        12,
+        28,
+        BINDER_RING_VISIBLE_ARC,
+      ),
+      ringMaterial,
+    );
     ring.position.set(0, y, 0.065);
     ring.rotation.x = Math.PI / 2;
-    ring.scale.x = 0.52;
+    ring.scale.x = BINDER_RING_SCALE_X;
     shell.add(ring);
+    rings.push(ring);
   }
 
-  return shell;
+  return {
+    shell,
+    leftPivot,
+    leftCover,
+    frontCoverEmblem,
+    rightPivot,
+    rightCover,
+    spine,
+    spineGeometry,
+    seam,
+    rings,
+    ringMaterial,
+    coverZ,
+    spineHalfWidth,
+    coverWidth,
+    coverHeight,
+  };
+}
+
+function updateBinderShellTransforms() {
+  if (!binderShellState) return;
+
+  const { direction, progress } = applyBinderShellClosureGeometry(
+    binderShellState,
+    binderClosure,
+  );
+  const {
+    leftCover,
+    frontCoverEmblem,
+    rightCover,
+    spine,
+  } = binderShellState;
+
+  setBinderClosingShellLayer(leftCover, direction < 0 && progress > 0.001);
+  setBinderFrontCoverEmblemLayer(
+    frontCoverEmblem,
+    direction < 0 && progress >= BINDER_FRONT_COVER_EMBLEM_VISIBLE_PROGRESS,
+  );
+  setBinderClosingShellLayer(rightCover, direction > 0 && progress > 0.001);
+  setBinderClosingShellLayer(spine, false);
+  setBinderIntroCoverLayer(direction < 0 && progress > 0.001);
+  updateBinderRootHorizontalCentering(direction, progress);
+  applyEvilBinderTableSetVisibility();
+  updateBinderDefaultCameraFrame();
+}
+
+function applyBinderShellClosureGeometry(shellState, closure) {
+  const {
+    leftPivot,
+    rightPivot,
+    spine,
+    spineGeometry,
+    seam,
+    rings,
+    ringMaterial,
+    coverZ,
+    spineHalfWidth,
+  } = shellState;
+  const signedClosure = clamp(closure, -1, 1);
+  const direction = Math.sign(signedClosure);
+  const progress = easeInOut(Math.abs(signedClosure));
+  const angle = Math.PI * progress;
+  const hasArc = angle > 0.00001;
+  const currentArcLength = THREE.MathUtils.lerp(
+    BINDER_COVER_SPINE_WIDTH,
+    BINDER_COVER_SPINE_ARC_LENGTH,
+    progress,
+  );
+  const radius = hasArc ? currentArcLength / angle : 0;
+
+  leftPivot.position.set(-spineHalfWidth, 0, coverZ);
+  leftPivot.rotation.set(0, 0, 0);
+  rightPivot.position.set(spineHalfWidth, 0, coverZ);
+  rightPivot.rotation.set(0, 0, 0);
+
+  if (direction < 0 && hasArc) {
+    leftPivot.position.set(
+      spineHalfWidth - radius * Math.sin(angle),
+      0,
+      coverZ + radius * (1 - Math.cos(angle)),
+    );
+    leftPivot.rotation.y = angle;
+  } else if (direction > 0 && hasArc) {
+    rightPivot.position.set(
+      -spineHalfWidth + radius * Math.sin(angle),
+      0,
+      coverZ + radius * (1 - Math.cos(angle)),
+    );
+    rightPivot.rotation.y = -angle;
+  }
+
+  const positions = spineGeometry.getAttribute("position");
+  const columns = BINDER_COVER_SPINE_SEGMENTS + 1;
+  for (let index = 0; index < positions.count; index += 1) {
+    const u = (index % columns) / BINDER_COVER_SPINE_SEGMENTS;
+    let x = -spineHalfWidth + u * BINDER_COVER_SPINE_WIDTH;
+    let z = coverZ;
+    if (direction < 0 && hasArc) {
+      const arcProgress = 1 - u;
+      x = spineHalfWidth - radius * Math.sin(angle * arcProgress);
+      z = coverZ + radius * (1 - Math.cos(angle * arcProgress));
+    } else if (direction > 0 && hasArc) {
+      const arcProgress = u;
+      x = -spineHalfWidth + radius * Math.sin(angle * arcProgress);
+      z = coverZ + radius * (1 - Math.cos(angle * arcProgress));
+    }
+    positions.setX(index, x);
+    positions.setZ(index, z);
+  }
+  positions.needsUpdate = true;
+  spineGeometry.computeVertexNormals();
+  spine.visible = true;
+
+  const hardwareOpacity = 1 - easeInOut(clamp(progress * 1.35, 0, 1));
+  seam.material.opacity = hardwareOpacity;
+  seam.visible = hardwareOpacity > 0.01;
+  const ringOpacity = hardwareOpacity * hardwareOpacity;
+  ringMaterial.opacity = ringOpacity;
+  for (const ring of rings) ring.visible = ringOpacity > 0.01;
+  return { direction, progress };
+}
+
+function updateBinderRootHorizontalCentering(direction, progress) {
+  if (!binderRoot) return;
+
+  if (binderOuterFlipState) {
+    const visualSide = binderOuterFlipState.swapped
+      ? binderOuterFlipState.toSide
+      : binderOuterFlipState.fromSide;
+    const localCenterX = -visualSide * BINDER_CLOSED_COVER_CENTER_X;
+    const rotationY = binderRoot.rotation.y;
+    const projectedCenterX = Math.cos(rotationY) * localCenterX
+      + Math.sin(rotationY) * BINDER_CLOSED_COVER_CENTER_Z;
+    binderRoot.position.x = -projectedCenterX;
+    return;
+  }
+
+  binderRoot.position.x = direction
+    * BINDER_CLOSED_COVER_CENTER_X
+    * progress;
+}
+
+function setBinderClosingShellLayer(mesh, active, orderOffset = 0) {
+  if (!mesh?.material) return;
+  const tableLayer = !active && binderTableViewProgress > 0.001;
+  const transparent = active || tableLayer;
+  const depthWrite = !active;
+  mesh.renderOrder = active
+    ? BINDER_CLOSING_COVER_RENDER_ORDER + orderOffset
+    : tableLayer
+      ? BINDER_TABLE_COVER_RENDER_ORDER
+      : 0;
+  if (
+    mesh.material.transparent === transparent
+    && mesh.material.depthWrite === depthWrite
+  ) {
+    return;
+  }
+  mesh.material.transparent = transparent;
+  mesh.material.opacity = 1;
+  mesh.material.depthWrite = depthWrite;
+  mesh.material.needsUpdate = true;
+}
+
+function createBinderFrontCoverEmblem(
+  coverWidth,
+  coverHeight,
+  collectionId = ACTIVE_COLLECTION_ID,
+  { active = false } = {},
+) {
+  const emblemEnabled = (
+    COLLECTION_CONFIGS[collectionId]?.introGroup === "evil"
+  );
+  const emblemAspect = getBinderFrontCoverEmblemAspect(collectionId);
+  let emblemHeight = coverHeight * BINDER_FRONT_COVER_EMBLEM_HEIGHT_RATIO;
+  let emblemWidth = emblemHeight * emblemAspect;
+  const maxWidth = coverWidth * 0.76;
+  if (emblemWidth > maxWidth) {
+    emblemWidth = maxWidth;
+    emblemHeight = emblemWidth / emblemAspect;
+  }
+  const emblemScale = getBinderFrontCoverEmblemScale(collectionId);
+  emblemWidth *= emblemScale;
+  emblemHeight *= emblemScale;
+
+  const cachedTexture = emblemEnabled
+    ? binderFrontCoverEmblemTextures.get(collectionId) || null
+    : null;
+  const material = new THREE.MeshBasicMaterial({
+    map: cachedTexture,
+    transparent: true,
+    opacity: cachedTexture ? 0.92 : 0,
+    toneMapped: false,
+    side: THREE.FrontSide,
+    depthWrite: false,
+    depthTest: true,
+  });
+  const mesh = new THREE.Mesh(new THREE.PlaneGeometry(emblemWidth, emblemHeight), material);
+  mesh.visible = Boolean(emblemEnabled && active && cachedTexture);
+  mesh.userData.binderFrontCoverEmblemLoaded = Boolean(cachedTexture);
+  mesh.userData.binderFrontCoverEmblemActive = Boolean(
+    emblemEnabled && active
+  );
+  mesh.userData.binderFrontCoverEmblemOpacity = 0.92;
+  mesh.userData.binderFrontCoverEmblemCollectionId = collectionId;
+
+  if (emblemEnabled) {
+    getBinderFrontCoverEmblemTexture(collectionId)
+      .then((texture) => {
+        if (!mesh.parent) return;
+        material.map = texture;
+        material.opacity = mesh.userData.binderFrontCoverEmblemOpacity;
+        material.needsUpdate = true;
+        mesh.userData.binderFrontCoverEmblemLoaded = true;
+        mesh.visible = Boolean(mesh.userData.binderFrontCoverEmblemActive);
+        requestBinderRenderOnce();
+      })
+      .catch(console.error);
+  }
+
+  return mesh;
+}
+
+function getBinderFrontCoverEmblemAsset(collectionId = ACTIVE_COLLECTION_ID) {
+  return COLLECTION_CONFIGS[collectionId]?.coverEmblem
+    || BINDER_FRONT_COVER_EMBLEM_DEFAULT_ASSET;
+}
+
+function getBinderFrontCoverEmblemAspect(collectionId = ACTIVE_COLLECTION_ID) {
+  const aspect = Number(COLLECTION_CONFIGS[collectionId]?.coverEmblemAspect);
+  return Number.isFinite(aspect) && aspect > 0
+    ? aspect
+    : BINDER_FRONT_COVER_EMBLEM_DEFAULT_ASPECT;
+}
+
+function getBinderFrontCoverEmblemScale(collectionId = ACTIVE_COLLECTION_ID) {
+  const scale = Number(COLLECTION_CONFIGS[collectionId]?.coverEmblemScale);
+  return Number.isFinite(scale) && scale > 0 ? scale : 1;
+}
+
+function getBinderFrontCoverEmblemYRatio(collectionId = ACTIVE_COLLECTION_ID) {
+  const yRatio = Number(COLLECTION_CONFIGS[collectionId]?.coverEmblemYRatio);
+  return Number.isFinite(yRatio) ? yRatio : BINDER_FRONT_COVER_EMBLEM_Y_RATIO;
+}
+
+function getBinderFrontCoverEmblemTexture(collectionId = ACTIVE_COLLECTION_ID) {
+  const cachedTexture = binderFrontCoverEmblemTextures.get(collectionId);
+  if (cachedTexture) return Promise.resolve(cachedTexture);
+  const cachedPromise = binderFrontCoverEmblemTexturePromises.get(collectionId);
+  if (cachedPromise) return cachedPromise;
+
+  const url = new URL(getBinderFrontCoverEmblemAsset(collectionId), import.meta.url).href;
+  const texturePromise = loadTexture(url)
+    .then((texture) => {
+      binderFrontCoverEmblemTextures.set(collectionId, texture);
+      binderFrontCoverEmblemTexturePromises.delete(collectionId);
+      return texture;
+    })
+    .catch((error) => {
+      binderFrontCoverEmblemTexturePromises.delete(collectionId);
+      throw error;
+    });
+  binderFrontCoverEmblemTexturePromises.set(collectionId, texturePromise);
+  return texturePromise;
+}
+
+function setBinderFrontCoverEmblemLayer(mesh, active) {
+  if (!mesh) return;
+  mesh.userData.binderFrontCoverEmblemActive = active;
+  mesh.visible = Boolean(active && mesh.userData.binderFrontCoverEmblemLoaded);
+  mesh.renderOrder = active ? BINDER_CLOSING_COVER_RENDER_ORDER + 1 : 0;
+}
+
+function setBinderFrontCoverEmblemOpacity(mesh, opacity) {
+  if (!mesh?.material) return;
+  const nextOpacity = clamp(opacity, 0, 0.92);
+  mesh.userData.binderFrontCoverEmblemOpacity = nextOpacity;
+  mesh.material.opacity = nextOpacity;
+  mesh.visible = Boolean(
+    nextOpacity > 0.001
+    && mesh.userData.binderFrontCoverEmblemActive
+    && mesh.userData.binderFrontCoverEmblemLoaded
+  );
+}
+
+function setBinderIntroCoverLayer(active) {
+  if (!binderIntroNoteGroup) return;
+  binderIntroNoteGroup.traverse((child) => {
+    if (!child.isMesh) return;
+    if (!Number.isFinite(child.userData.binderIntroBaseRenderOrder)) {
+      child.userData.binderIntroBaseRenderOrder = child.renderOrder;
+    }
+    child.renderOrder = active
+      ? BINDER_CLOSING_COVER_RENDER_ORDER + 2 + child.userData.binderIntroBaseRenderOrder
+      : child.userData.binderIntroBaseRenderOrder;
+  });
 }
 
 function createBinderIntroNote(coverWidth, coverHeight) {
@@ -4216,7 +7788,7 @@ function createBinderIntroNote(coverWidth, coverHeight) {
       map: texture,
       transparent: true,
       toneMapped: false,
-      side: THREE.DoubleSide,
+      side: THREE.FrontSide,
       depthWrite: false,
       depthTest: true,
     }),
@@ -4262,6 +7834,8 @@ function createBinderIntroNote(coverWidth, coverHeight) {
 }
 
 function createBinderIntroSpriteMeshes(coverWidth, coverHeight) {
+  if (ACTIVE_COLLECTION.introGroup !== "evil") return [];
+
   const textureLoader = new THREE.TextureLoader();
   return BINDER_INTRO_SPRITES.flatMap((sprite) => {
     const size = coverHeight * sprite.sizeRatio;
@@ -4269,22 +7843,21 @@ function createBinderIntroSpriteMeshes(coverWidth, coverHeight) {
       transparent: true,
       opacity: 0,
       toneMapped: false,
-      side: THREE.DoubleSide,
+      side: THREE.FrontSide,
       depthWrite: false,
       depthTest: true,
     });
-    textureLoader.load(
-      sprite.url,
-      (texture) => {
-        configureDisplayTexture(texture);
+    const mesh = new THREE.Mesh(new THREE.PlaneGeometry(size, size), material);
+    getBinderIntroSpriteTexture(sprite.url)
+      .then((texture) => {
+        if (!mesh.parent) return;
         material.map = texture;
         material.opacity = 0.92;
         material.needsUpdate = true;
         requestBinderRenderOnce();
-      },
-    );
+      })
+      .catch(console.error);
 
-    const mesh = new THREE.Mesh(new THREE.PlaneGeometry(size, size), material);
     mesh.position.set(coverWidth * sprite.xRatio, coverHeight * sprite.yRatio, 0.006);
     mesh.renderOrder = 68;
     if (!sprite.focusTarget) return [mesh];
@@ -4360,14 +7933,30 @@ function createBinderPage(pageIndex, indexes, placeholderTexture, materials) {
       const hasBackCard = Number.isInteger(backCardIndex);
 
       if (hasFrontCard) {
-        const card = createBinderCard(placeholderTexture, frontCardIndex, 1, frontOffset);
+        const readyTexture = getReadyBinderTexture(CARDS[frontCardIndex]);
+        const card = createBinderCard(
+          readyTexture || placeholderTexture,
+          frontCardIndex,
+          1,
+          frontOffset,
+          { textureLoaded: Boolean(readyTexture) },
+        );
         cell.group.add(card);
+        cell.group.add(createBinderLoadingRing(card, 1, frontOffset));
         cardMeshes.push(card);
       }
 
       if (hasBackCard) {
-        const card = createBinderCard(placeholderTexture, backCardIndex, -1, backOffset);
+        const readyTexture = getReadyBinderTexture(CARDS[backCardIndex]);
+        const card = createBinderCard(
+          readyTexture || placeholderTexture,
+          backCardIndex,
+          -1,
+          backOffset,
+          { textureLoaded: Boolean(readyTexture) },
+        );
         cell.group.add(card);
+        cell.group.add(createBinderLoadingRing(card, -1, backOffset));
         cardMeshes.push(card);
       } else if (hasFrontCard) {
         const card = createBinderBackCard(placeholderTexture, frontCardIndex);
@@ -4502,6 +8091,54 @@ function getBinderCardGeometry() {
   return binderCardGeometry;
 }
 
+function getBinderLoadingRingGeometry() {
+  if (!binderLoadingRingGeometry) {
+    binderLoadingRingGeometry = new THREE.RingGeometry(
+      BINDER_LOADING_RING_RADIUS - BINDER_LOADING_RING_THICKNESS,
+      BINDER_LOADING_RING_RADIUS,
+      24,
+      1,
+      0,
+      Math.PI * 1.58,
+    );
+    binderLoadingRingGeometry.userData.sharedBinderGeometry = true;
+  }
+  return binderLoadingRingGeometry;
+}
+
+function getBinderLoadingRingMaterial() {
+  if (!binderLoadingRingMaterial) {
+    binderLoadingRingMaterial = new THREE.MeshBasicMaterial({
+      color: 0xd9d3c5,
+      transparent: true,
+      opacity: 0.76,
+      depthTest: false,
+      depthWrite: false,
+      toneMapped: false,
+      side: THREE.FrontSide,
+    });
+    binderLoadingRingMaterial.userData.sharedBinderMaterial = true;
+  }
+  return binderLoadingRingMaterial;
+}
+
+function createBinderLoadingRing(card, side, binderPosition) {
+  const ring = new THREE.Mesh(
+    getBinderLoadingRingGeometry(),
+    getBinderLoadingRingMaterial(),
+  );
+  ring.position.z = side * (BINDER_CARD_LIFT + 0.006);
+  if (side < 0) ring.rotation.y = Math.PI;
+  ring.renderOrder = 16;
+  ring.userData.binderLoadingRing = true;
+  ring.userData.binderCardMesh = card;
+  ring.userData.binderPosition = binderPosition;
+  ring.userData.binderSide = side;
+  card.userData.loadingRing = ring;
+  binderLoadingRings.push(ring);
+  return ring;
+}
+
 function getBinderColumnSheetGeometry() {
   if (!binderColumnSheetGeometry) {
     binderColumnSheetGeometry = new THREE.PlaneGeometry(BINDER_CELL_WIDTH, getBinderColumnSheetHeight(), 1, 1);
@@ -4551,6 +8188,7 @@ function warmBinderInteractionGeometry() {
     getBinderColumnGlossGeometry(),
     getBinderVerticalSeamGeometry(),
     getBinderHorizontalSeamGeometry(),
+    getBinderLoadingRingGeometry(),
   ];
 
   for (const geometry of geometries) {
@@ -4617,7 +8255,13 @@ function collectBinderSheetMeshes(group) {
   return sheetMeshes;
 }
 
-function createBinderCard(texture, cardIndex, side, binderPosition = -1) {
+function createBinderCard(
+  texture,
+  cardIndex,
+  side,
+  binderPosition = -1,
+  { textureLoaded = false } = {},
+) {
   const hasCard = Number.isInteger(cardIndex);
   const material = new THREE.MeshPhysicalMaterial({
     map: texture,
@@ -4627,12 +8271,16 @@ function createBinderCard(texture, cardIndex, side, binderPosition = -1) {
     clearcoat: 0.2,
     clearcoatRoughness: 0.52,
     transparent: true,
-    opacity: hasCard ? BINDER_CARD_PLACEHOLDER_OPACITY : 1,
+    opacity: hasCard && !textureLoaded ? BINDER_CARD_PLACEHOLDER_OPACITY : 1,
     depthTest: false,
     depthWrite: false,
     side: THREE.FrontSide,
   });
   const card = new THREE.Mesh(getBinderCardGeometry(), material);
+  if (hasCard) {
+    const aspectScale = getCardAspectFitScale(CARDS[cardIndex]);
+    card.scale.set(aspectScale.x, aspectScale.y, 1);
+  }
 
   card.position.z = side * BINDER_CARD_LIFT;
   if (side < 0) card.rotation.y = Math.PI;
@@ -4641,7 +8289,8 @@ function createBinderCard(texture, cardIndex, side, binderPosition = -1) {
     card.userData.cardIndex = cardIndex;
     card.userData.binderPosition = binderPosition;
     card.userData.binderCard = true;
-    card.userData.textureLoaded = false;
+    card.userData.textureLoaded = Boolean(textureLoaded);
+    card.userData.textureFadeComplete = Boolean(textureLoaded);
     binderCardMeshes.push(card);
     binderCardMeshByPosition.set(binderPosition, card);
   }
@@ -4649,16 +8298,103 @@ function createBinderCard(texture, cardIndex, side, binderPosition = -1) {
 }
 
 function createBinderBackCard(texture, sourceCardIndex = null) {
-  const card = createBinderCard(texture, null, -1);
+  const sourceCard = Number.isInteger(sourceCardIndex)
+    ? CARDS[sourceCardIndex]
+    : null;
+  const backTexture = getCachedBackTexture(sourceCard) || texture;
+  prepareTextureForImmediateDisplay(backTexture);
+  const card = createBinderCard(backTexture, null, -1);
   card.userData.binderBackCard = true;
   card.userData.binderBackCardIndex = sourceCardIndex;
   return card;
 }
 
+function getCardAspectFitScale(card) {
+  const width = Number(card?.width);
+  const height = Number(card?.height);
+  if (!(width > 0) || !(height > 0)) return { x: 1, y: 1 };
+  const activeAspect = CARD_HEIGHT / CARD_WIDTH;
+  const aspectRatio = (height / width) / activeAspect;
+  return aspectRatio >= 1
+    ? { x: 1 / aspectRatio, y: 1 }
+    : { x: 1, y: aspectRatio };
+}
+
+function applyCardAspectFitToGroup(group, card) {
+  if (!group) return;
+  const frontMesh = group.userData.frontMesh;
+  if (!frontMesh) return;
+  const aspectScale = getCardAspectFitScale(card);
+  if (!frontMesh.userData.cardAspectBaseScale) {
+    frontMesh.userData.cardAspectBaseScale = frontMesh.scale.clone();
+  }
+  const baseScale = frontMesh.userData.cardAspectBaseScale;
+  frontMesh.scale.set(
+    baseScale.x * aspectScale.x,
+    baseScale.y * aspectScale.y,
+    baseScale.z,
+  );
+  group.userData.cardAspectScale = aspectScale;
+}
+
 function loadVisibleBinderTextures(token) {
+  const targetPositions = getBinderPriorityTexturePositions();
+  prioritizeBinderTargetTextureWork(targetPositions);
+  for (const position of targetPositions) {
+    loadBinderTextureForPosition(position, token, {
+      renderOnApply: true,
+      priority: BINDER_TEXTURE_TARGET_PRIORITY,
+    });
+  }
   for (const position of getVisibleBinderPositions()) {
+    if (targetPositions.has(position)) continue;
     loadBinderTextureForPosition(position, token, { renderOnApply: true, priority: 0 });
   }
+}
+
+function getBinderPriorityTexturePositions() {
+  if (getBinderTargetClosedSide()) return new Set();
+  if (isBinderFocused()) return new Set(getFocusedBinderSharpPositions());
+  return getBinderSpreadPositionsForTurn(binderTargetTurn);
+}
+
+function hasUnloadedBinderPositions(positions) {
+  for (const position of positions) {
+    const cardIndex = binderVisibleIndexes[position];
+    if (!Number.isInteger(cardIndex)) continue;
+    const mesh = binderCardMeshByPosition.get(position);
+    if (!mesh?.userData.textureLoaded) return true;
+  }
+  return false;
+}
+
+function prioritizeBinderTargetTextureWork(targetPositions) {
+  if (!targetPositions.size || !hasUnloadedBinderPositions(targetPositions)) return;
+
+  for (let index = binderTextureQueue.length - 1; index >= 0; index -= 1) {
+    const task = binderTextureQueue[index];
+    if (targetPositions.has(task.position)) continue;
+    binderTextureQueue.splice(index, 1);
+    binderTextureQueuedPositions.delete(task.position);
+    const mesh = binderCardMeshByPosition.get(task.position);
+    if (mesh && !mesh.userData.textureLoaded) mesh.userData.textureLoading = false;
+  }
+
+  for (let index = binderTextureApplyQueue.length - 1; index >= 0; index -= 1) {
+    const entry = binderTextureApplyQueue[index];
+    if (targetPositions.has(entry.position)) continue;
+    binderTextureApplyQueue.splice(index, 1);
+    binderTextureApplyPositions.delete(entry.position);
+    const mesh = binderCardMeshByPosition.get(entry.position);
+    if (mesh && !mesh.userData.textureLoaded) mesh.userData.textureLoading = false;
+  }
+}
+
+function shouldYieldBinderTextureToTarget(position) {
+  const targetPositions = getBinderPriorityTexturePositions();
+  return targetPositions.size > 0
+    && !targetPositions.has(position)
+    && hasUnloadedBinderPositions(targetPositions);
 }
 
 function preloadBinderTextures(token) {
@@ -4706,6 +8442,19 @@ function loadBinderTextureForPosition(position, token, { renderOnApply = false, 
 
   const mesh = binderCardMeshByPosition.get(position);
   if (!mesh || mesh.userData.textureLoaded) return;
+  const assetKey = textureAssetPath(CARDS[cardIndex]);
+  const failure = binderTextureFailures.get(assetKey);
+  if (failure?.attempts >= BINDER_TEXTURE_MAX_RETRIES) {
+    mesh.userData.textureLoaded = true;
+    mesh.userData.textureLoading = false;
+    mesh.userData.textureLoadFailed = true;
+    return;
+  }
+  if (failure?.retryAfter > performance.now()) {
+    mesh.userData.textureLoading = false;
+    requestBinderMaintenance(Math.ceil(failure.retryAfter - performance.now()));
+    return;
+  }
   if (mesh.userData.textureLoading) {
     mesh.userData.renderOnApply = mesh.userData.renderOnApply || renderOnApply;
     if (renderOnApply) promoteBinderTextureTask(position, priority);
@@ -4720,6 +8469,7 @@ function loadBinderTextureForPosition(position, token, { renderOnApply = false, 
     position,
     token,
     priority,
+    assetKey,
     animated: isAnimatedCard(CARDS[cardIndex]),
     sequence: binderTextureTaskSequence += 1
   });
@@ -4736,7 +8486,7 @@ function promoteBinderTextureTask(position, priority) {
 }
 
 function pumpBinderTextureQueue() {
-  if (!binderTextureQueue.length) return;
+  if (!binderTextureQueue.length || document.hidden) return;
 
   const now = performance.now();
   const hasRunnableTask = binderTextureQueue.some((entry) => !shouldDeferBinderTextureEntry(entry, now));
@@ -4745,7 +8495,23 @@ function pumpBinderTextureQueue() {
     return;
   }
 
-  const concurrencyLimit = BINDER_TEXTURE_CONCURRENCY;
+  const urgentTaskQueued = binderTextureQueue.some((entry) => (
+    isUrgentBinderTexturePriority(entry.priority)
+    && !shouldDeferBinderTextureEntry(entry, now)
+  ));
+  const targetPositions = getBinderPriorityTexturePositions();
+  const staleLoadActive = Array.from(binderTextureActiveTasks.values()).some(
+    (task) => (
+      task.token !== binderBuildToken
+      || !targetPositions.has(task.position)
+    ),
+  );
+  const concurrencyLimit = BINDER_TEXTURE_CONCURRENCY
+    + (
+      urgentTaskQueued && staleLoadActive
+        ? BINDER_TEXTURE_URGENT_RESERVE
+        : 0
+    );
   while (binderTextureActiveLoads < concurrencyLimit && binderTextureQueue.length) {
     const taskIndex = binderTextureQueue.findIndex((entry) => (
       !shouldDeferBinderTextureEntry(entry, now)
@@ -4755,6 +8521,7 @@ function pumpBinderTextureQueue() {
     const [task] = binderTextureQueue.splice(taskIndex, 1);
     binderTextureQueuedPositions.delete(task.position);
     binderTextureActiveLoads += 1;
+    binderTextureActiveTasks.set(task.sequence, task);
     if (task.animated) binderTextureActiveAnimatedLoads += 1;
     loadQueuedBinderTexture(task);
   }
@@ -4769,16 +8536,35 @@ async function loadQueuedBinderTexture(task) {
 
     const texture = await getBinderTexture(CARDS[cardIndex]);
     if (task.token !== binderBuildToken) return;
+    binderTextureFailures.delete(task.assetKey);
     const currentMesh = binderCardMeshByPosition.get(task.position);
     if (currentMesh) {
       queueBinderTextureApply(task, texture);
     }
   } catch (error) {
     const currentMesh = binderCardMeshByPosition.get(task.position);
-    if (currentMesh) currentMesh.userData.textureLoading = false;
+    const previous = binderTextureFailures.get(task.assetKey) || { attempts: 0, retryAfter: 0 };
+    const attempts = previous.attempts + 1;
+    const retryDelay = Math.min(
+      BINDER_TEXTURE_RETRY_MAX_MS,
+      BINDER_TEXTURE_RETRY_BASE_MS * (2 ** (attempts - 1)),
+    );
+    binderTextureFailures.set(task.assetKey, {
+      attempts,
+      retryAfter: performance.now() + retryDelay,
+    });
+    if (currentMesh) {
+      currentMesh.userData.textureLoading = false;
+      if (attempts >= BINDER_TEXTURE_MAX_RETRIES) {
+        currentMesh.userData.textureLoaded = true;
+        currentMesh.userData.textureLoadFailed = true;
+      }
+    }
+    if (attempts < BINDER_TEXTURE_MAX_RETRIES) requestBinderMaintenance(retryDelay);
     console.error(error);
   } finally {
     binderTextureActiveLoads = Math.max(0, binderTextureActiveLoads - 1);
+    binderTextureActiveTasks.delete(task.sequence);
     if (task.animated) {
       binderTextureActiveAnimatedLoads = Math.max(0, binderTextureActiveAnimatedLoads - 1);
     }
@@ -4789,6 +8575,10 @@ async function loadQueuedBinderTexture(task) {
 function queueBinderTextureApply(task, texture) {
   const currentMesh = binderCardMeshByPosition.get(task.position);
   if (!currentMesh || currentMesh.userData.textureLoaded) return;
+  if (shouldYieldBinderTextureToTarget(task.position)) {
+    currentMesh.userData.textureLoading = false;
+    return;
+  }
 
   const existing = binderTextureApplyQueue.find((entry) => entry.position === task.position);
   if (existing) {
@@ -4813,14 +8603,21 @@ function queueBinderTextureApply(task, texture) {
 function shouldDeferBinderTextureWork(now = performance.now(), options = {}) {
   return binderCardViewTransitionActive
     || (!options.allowPreparingSpread && binderPreparingSpread)
-    || isBinderTurnMoving()
-    || isBinderCameraMoving()
-    || now < binderInteractionActiveUntil;
+    || (!options.allowTurn && isBinderTurnMoving())
+    || (!options.allowCamera && isBinderCameraMoving())
+    || (!options.allowInteraction && now < binderInteractionActiveUntil);
 }
 
-function shouldDeferBinderTextureEntry(entry, now = performance.now()) {
+function shouldDeferBinderTextureEntry(
+  entry,
+  now = performance.now(),
+) {
+  const urgent = isUrgentBinderTexturePriority(entry?.priority);
   return shouldDeferBinderTextureWork(now, {
-    allowPreparingSpread: isUrgentBinderTexturePriority(entry?.priority),
+    allowPreparingSpread: urgent,
+    allowTurn: urgent,
+    allowCamera: urgent,
+    allowInteraction: urgent,
   });
 }
 
@@ -4851,7 +8648,9 @@ function flushBinderTextureApplyQueue(now = performance.now()) {
     return;
   }
 
-  const hasRunnableEntry = binderTextureApplyQueue.some((entry) => !shouldDeferBinderTextureEntry(entry, now));
+  const hasRunnableEntry = binderTextureApplyQueue.some(
+    (entry) => !shouldDeferBinderTextureEntry(entry, now),
+  );
   if (!hasRunnableEntry) {
     requestBinderTextureApplyFlush(BINDER_TEXTURE_APPLY_DEFER_MS);
     return;
@@ -4859,7 +8658,9 @@ function flushBinderTextureApplyQueue(now = performance.now()) {
 
   let applied = 0;
   while (applied < BINDER_TEXTURE_APPLY_IDLE_BUDGET && binderTextureApplyQueue.length) {
-    const entryIndex = binderTextureApplyQueue.findIndex((candidate) => !shouldDeferBinderTextureEntry(candidate, now));
+    const entryIndex = binderTextureApplyQueue.findIndex(
+      (candidate) => !shouldDeferBinderTextureEntry(candidate, now),
+    );
     if (entryIndex === -1) break;
     const [entry] = binderTextureApplyQueue.splice(entryIndex, 1);
     binderTextureApplyPositions.delete(entry.position);
@@ -4890,7 +8691,6 @@ function applyQueuedBinderTexture(entry, now = performance.now()) {
   prepareTextureForImmediateDisplay(entry.texture);
   currentMesh.material.map = entry.texture;
   currentMesh.material.opacity = startOpacity;
-  currentMesh.material.needsUpdate = true;
   currentMesh.userData.textureLoaded = true;
   currentMesh.userData.textureLoading = false;
   currentMesh.userData.textureFadeStartedAt = now;
@@ -4929,17 +8729,23 @@ function loadBinderBackTexture(token) {
     const card = Number.isInteger(child.userData.binderBackCardIndex)
       ? CARDS[child.userData.binderBackCardIndex]
       : null;
+    const cachedTexture = getCachedBackTexture(card);
+    if (cachedTexture) {
+      applyBinderBackTexture(child, cachedTexture);
+      continue;
+    }
     getBackTexture(card).then((texture) => {
       if (token !== binderBuildToken || !child.parent) return;
-      if (shouldDeferBinderTextureWork()) {
-        requestBinderMaintenance(120);
-        return;
-      }
-      child.material.map = texture;
-      child.material.needsUpdate = true;
+      applyBinderBackTexture(child, texture);
       requestBinderRenderOnce();
     }).catch(console.error);
   }
+}
+
+function applyBinderBackTexture(mesh, texture) {
+  if (!mesh?.material || !texture) return;
+  prepareTextureForImmediateDisplay(texture);
+  mesh.material.map = texture;
 }
 
 function ensureBinderPageWindow({
@@ -4947,6 +8753,7 @@ function ensureBinderPageWindow({
   center = null,
   queueTextures = true,
   updateTransforms = true,
+  loadBackTextures = true,
 } = {}) {
   if (!binderRoot || !binderVisibleIndexes.length) return;
 
@@ -4990,7 +8797,7 @@ function ensureBinderPageWindow({
   binderPageWindowKey = desiredIndexes.join(",");
   binderTextureQueueKey = "";
   const token = binderBuildToken;
-  loadBinderBackTexture(token);
+  if (loadBackTextures) loadBinderBackTexture(token);
   if (updateTransforms) updateBinderPageTransforms();
   if (queueTextures) queueBinderTextureLoads(token, { force: true });
 }
@@ -5015,6 +8822,19 @@ function getBinderPageWindowIndexes(center = binderPageWindowCenter, radius = BI
   for (let pageIndex = pageCenter - radius; pageIndex <= pageCenter + radius; pageIndex += 1) {
     addPage(pageIndex);
   }
+
+  const addTurnCoverage = (turn) => {
+    const lowerTurn = Math.floor(clamp(turn, 0, binderPageCount));
+    for (
+      let pageIndex = lowerTurn - 1;
+      pageIndex <= lowerTurn + 1;
+      pageIndex += 1
+    ) {
+      addPage(pageIndex);
+    }
+  };
+  addTurnCoverage(binderTurn);
+  addTurnCoverage(binderTargetTurn);
 
   if (isBinderFocused()) {
     const focusPage = Math.floor(binderFocusPosition / BINDER_PAGE_SLOTS);
@@ -5123,6 +8943,10 @@ function isBinderPositionVisible(position) {
 
 function clearBinderRoot() {
   if (!binderRoot) return;
+  binderOuterFlipState = null;
+  resetBinderOuterFlipTransform();
+  resetEvilBinderTableSwap();
+  binderFullResolutionMeshes.clear();
   if (binderMaintenanceTimer) {
     window.clearTimeout(binderMaintenanceTimer);
     binderMaintenanceTimer = 0;
@@ -5132,6 +8956,8 @@ function clearBinderRoot() {
   binderPages = [];
   binderCardMeshes = [];
   binderCardMeshByPosition = new Map();
+  binderLoadingRings = [];
+  binderShellState = null;
   binderIntroNoteGroup = null;
   binderIntroNoteMesh = null;
   binderIntroLinkMeshes = [];
@@ -5146,8 +8972,13 @@ function clearBinderRoot() {
 
 function removeBinderPage(page) {
   if (!page) return;
+  for (const mesh of binderFullResolutionMeshes) {
+    if (page.group.getObjectById(mesh.id)) binderFullResolutionMeshes.delete(mesh);
+  }
   binderPages = binderPages.filter((entry) => entry !== page);
+  const removedLoadingRings = new Set();
   page.group.traverse((child) => {
+    if (child.userData.binderLoadingRing) removedLoadingRings.add(child);
     if (!child.isMesh || !child.userData.binderCard) return;
     const position = child.userData.binderPosition;
     if (Number.isInteger(position)) binderCardMeshByPosition.delete(position);
@@ -5156,6 +8987,9 @@ function removeBinderPage(page) {
     const pageIndex = Math.floor((mesh.userData.binderPosition ?? -1) / BINDER_PAGE_SLOTS);
     return pageIndex !== page.pageIndex;
   });
+  binderLoadingRings = binderLoadingRings.filter(
+    (ring) => !removedLoadingRings.has(ring),
+  );
   page.group.removeFromParent();
   disposeObject(page.group);
 }
@@ -5168,7 +9002,9 @@ function disposeObject(object) {
     }
     const materials = Array.isArray(child.material) ? child.material : [child.material];
     for (const material of materials) {
-      if (material) material.dispose();
+      if (material && !material.userData?.sharedBinderMaterial) {
+        material.dispose();
+      }
     }
   });
 }
@@ -5181,7 +9017,456 @@ function previousBinderPage() {
   turnBinderPage(-1);
 }
 
+function startBinderFirstPageHold(event) {
+  if (!canStartBinderFirstPageHold(event)) return;
+
+  cancelBinderFirstPageHold();
+  binderFirstPageHoldPointerId = event.pointerId;
+  binderFirstPageHoldStartX = event.clientX;
+  binderFirstPageHoldStartY = event.clientY;
+  binderFirstPageHoldConfirmed = false;
+  setBinderFirstPageHoldButtonState("loading");
+
+  try {
+    els.binderPreviousPageButton.setPointerCapture(event.pointerId);
+  } catch {
+    // Pointer capture is best-effort; release/cancel still clears the hold state.
+  }
+
+  // The CSS animationend event is the normal confirmation path. This timer
+  // is only a fallback for browsers that suppress pseudo-element animation
+  // events while a pointer remains captured.
+  binderFirstPageHoldTimer = window.setTimeout(
+    confirmBinderFirstPageHold,
+    BINDER_FIRST_PAGE_HOLD_MS + 120,
+  );
+}
+
+function confirmBinderFirstPageHoldFromAnimation(event) {
+  if (event.animationName !== "binder-first-page-hold-expand") return;
+  confirmBinderFirstPageHold();
+}
+
+function confirmBinderFirstPageHold() {
+  if (binderFirstPageHoldPointerId === null || binderFirstPageHoldConfirmed) return;
+  clearBinderFirstPageHoldTimer();
+  if (!isBinderFirstPageHoldContextValid()) {
+    cancelBinderFirstPageHold();
+    return;
+  }
+  binderFirstPageHoldConfirmed = true;
+  setBinderFirstPageHoldButtonState("confirmed");
+}
+
+function moveBinderFirstPageHold(event) {
+  if (binderFirstPageHoldPointerId !== event.pointerId || binderFirstPageHoldConfirmed) return;
+
+  const distance = Math.hypot(
+    event.clientX - binderFirstPageHoldStartX,
+    event.clientY - binderFirstPageHoldStartY,
+  );
+  if (distance > BINDER_FIRST_PAGE_HOLD_MOVE_LIMIT) {
+    cancelBinderFirstPageHold(event);
+  }
+}
+
+function finishBinderFirstPageHold(event) {
+  if (binderFirstPageHoldPointerId !== event.pointerId) return;
+
+  const confirmed = binderFirstPageHoldConfirmed;
+  cancelBinderFirstPageHold(event);
+  if (!confirmed) return;
+
+  event.preventDefault();
+  event.stopPropagation();
+  suppressNextBinderPreviousPageClick = true;
+  binderFirstPageHoldTriggeredAt = performance.now();
+  window.setTimeout(() => {
+    if (isRecentBinderFirstPageHold()) return;
+    suppressNextBinderPreviousPageClick = false;
+  }, BINDER_FIRST_PAGE_HOLD_SUPPRESS_MS);
+  closeBinderToFrontCoverFromHold();
+}
+
+function cancelPendingBinderFirstPageHold(event = null) {
+  if (binderFirstPageHoldConfirmed) return;
+  cancelBinderFirstPageHold(event);
+}
+
+function cancelBinderFirstPageHold(event = null) {
+  if (
+    binderFirstPageHoldPointerId !== null
+    && event?.pointerId != null
+    && event.pointerId !== binderFirstPageHoldPointerId
+  ) {
+    return;
+  }
+
+  clearBinderFirstPageHoldTimer();
+  try {
+    if (binderFirstPageHoldPointerId !== null) {
+      els.binderPreviousPageButton.releasePointerCapture(binderFirstPageHoldPointerId);
+    }
+  } catch {
+    // Pointer capture may already be released by the browser.
+  }
+  binderFirstPageHoldPointerId = null;
+  binderFirstPageHoldConfirmed = false;
+  setBinderFirstPageHoldButtonState("idle");
+}
+
+function clearBinderFirstPageHoldTimer() {
+  if (!binderFirstPageHoldTimer) return;
+  window.clearTimeout(binderFirstPageHoldTimer);
+  binderFirstPageHoldTimer = 0;
+}
+
+function setBinderFirstPageHoldButtonState(state) {
+  const loading = state === "loading";
+  const confirmed = state === "confirmed";
+  els.binderPreviousPageButton.classList.toggle("is-hold-loading", loading);
+  els.binderPreviousPageButton.classList.toggle("is-confirmed", confirmed);
+  els.binderPreviousPageButton.setAttribute("aria-busy", String(loading));
+}
+
+function canStartBinderFirstPageHold(event) {
+  if (event.button > 0 || event.isPrimary === false) return false;
+  if (els.binderPreviousPageButton.disabled || els.binderPreviousPageButton.hidden) return false;
+  return isBinderFirstPageHoldContextValid();
+}
+
+function isBinderFirstPageHoldContextValid() {
+  return Boolean(
+    galleryOpen
+      && isBinderMode
+      && !isBinderFocusView()
+      && !traitSearchOpen
+      && !binderOuterFlipState
+      && !binderPreparingSpread
+      && !getBinderTargetClosedSide()
+      && !els.binderPageControls.hidden
+      && binderPageCount >= 1,
+  );
+}
+
+function closeBinderToFrontCoverFromHold() {
+  if (!isBinderFirstPageHoldContextValid()) return false;
+
+  closeBinderPageStatusEdit({ update: false });
+  binderSpreadPreparationToken += 1;
+  binderPreparingSpread = false;
+  binderLastOpenTap = null;
+  binderBendDirection = -1;
+  binderSinglePageSide = BINDER_SINGLE_PAGE_COVER_SIDE;
+  binderSinglePageSideTouched = true;
+  // A hold-close is a stack action, not a normal page-by-page navigation.
+  // Collapse every turned page to the front stack in the same frame so the
+  // cover can never overtake slower pages and intersect them.
+  binderTargetTurn = 0;
+  binderTurn = 0;
+  binderTextureQueueKey = "";
+  ensureBinderPageWindow({
+    force: true,
+    center: 0,
+    queueTextures: false,
+    updateTransforms: false,
+  });
+  setBinderClosureTarget(-1);
+  queueBinderTextureLoads(binderBuildToken, {
+    force: true,
+    includePreload: false,
+  });
+  requestBinderMaintenance(90);
+  queueSessionViewStateSave();
+  return true;
+}
+
+function consumeSuppressedBinderPreviousPageClick() {
+  if (!suppressNextBinderPreviousPageClick) return false;
+  suppressNextBinderPreviousPageClick = false;
+  return isRecentBinderFirstPageHold();
+}
+
+function isRecentBinderFirstPageHold() {
+  return binderFirstPageHoldTriggeredAt > 0
+    && performance.now() - binderFirstPageHoldTriggeredAt < BINDER_FIRST_PAGE_HOLD_SUPPRESS_MS;
+}
+
+function getBinderTargetClosedSide() {
+  if (binderTargetClosure <= -0.5) return -1;
+  if (binderTargetClosure >= 0.5) return 1;
+  return 0;
+}
+
+function setBinderClosureTarget(side, { immediate = false, update = true } = {}) {
+  const nextClosure = clamp(Math.sign(Number(side) || 0), -1, 1);
+  const changed = nextClosure !== binderTargetClosure
+    || (immediate && nextClosure !== binderClosure);
+  binderTargetClosure = nextClosure;
+  if (nextClosure < 0) binderTargetTurn = 0;
+  if (nextClosure > 0) binderTargetTurn = binderPageCount;
+  if (immediate) {
+    binderClosure = nextClosure;
+    if (nextClosure < 0) binderTurn = 0;
+    if (nextClosure > 0) binderTurn = binderPageCount;
+  }
+  binderLastOpenTap = null;
+
+  if (update && changed) {
+    markBinderInteractionActive();
+    updateBinderDefaultCameraFrame();
+    updateBinderPageControls();
+    startBinderRenderLoop();
+    updateBinderAnimation();
+  }
+  return changed;
+}
+
+function handleBinderClosureNavigation(direction) {
+  if (binderOuterFlipState) return true;
+
+  const closedSide = getBinderTargetClosedSide();
+  if (closedSide) {
+    if (direction === -closedSide) {
+      setBinderClosureTarget(0);
+    } else if (direction === closedSide) {
+      beginBinderOuterFlip(direction);
+    }
+    return true;
+  }
+
+  const currentTurn = clamp(Math.round(binderTargetTurn), 0, binderPageCount);
+  if (currentTurn <= 0 && direction < 0) {
+    setBinderClosureTarget(-1);
+    return true;
+  }
+  if (currentTurn >= binderPageCount && direction > 0) {
+    setBinderClosureTarget(1);
+    return true;
+  }
+  return false;
+}
+
+function beginBinderOuterFlip(direction) {
+  const flipState = createBinderOuterFlipState(direction);
+  if (!flipState) return false;
+
+  startBinderOuterFlipSettle(flipState, 1, {
+    duration: BINDER_OUTER_FLIP_DURATION_MS,
+  });
+  return true;
+}
+
+function beginBinderOuterFlipDrag(direction) {
+  const flipState = createBinderOuterFlipState(direction, { dragging: true });
+  if (!flipState) return null;
+
+  applyBinderOuterFlipProgress(flipState, 0);
+  return flipState;
+}
+
+function createBinderOuterFlipState(direction, { dragging = false } = {}) {
+  const fromSide = getBinderTargetClosedSide();
+  const flipDirection = Math.sign(direction);
+  if (
+    binderOuterFlipState
+    || !fromSide
+    || flipDirection !== fromSide
+    || !binderRoot
+  ) {
+    return null;
+  }
+
+  binderSpreadPreparationToken += 1;
+  binderPreparingSpread = false;
+  binderLastOpenTap = null;
+  closeBinderPageStatusEdit({ update: false });
+  setBinderClosureTarget(fromSide, { immediate: true, update: false });
+  const flipState = {
+    fromSide,
+    toSide: -fromSide,
+    direction: flipDirection,
+    tableView: binderTableViewTarget > 0.5,
+    swapped: false,
+    dragging,
+    progress: 0,
+    settleFromProgress: 0,
+    settleTargetProgress: dragging ? 0 : 1,
+    settleStartedAt: performance.now(),
+    settleDuration: BINDER_OUTER_FLIP_DURATION_MS,
+  };
+  binderOuterFlipState = flipState;
+  markBinderInteractionActive(
+    dragging ? 420 : BINDER_OUTER_FLIP_DURATION_MS + 180,
+  );
+  updateBinderPageControls();
+  startBinderRenderLoop();
+  updateBinderAnimation();
+  return flipState;
+}
+
+function setBinderOuterFlipVisualSide(state, swapped) {
+  if (!state || state.swapped === swapped) return;
+
+  state.swapped = swapped;
+  const visualSide = swapped ? state.toSide : state.fromSide;
+  setBinderClosureTarget(visualSide, { immediate: true, update: false });
+  binderSinglePageSide = visualSide < 0
+    ? BINDER_SINGLE_PAGE_COVER_SIDE
+    : getBinderTotalPageSides() - 1;
+  binderSinglePageSideTouched = true;
+}
+
+function applyBinderOuterFlipProgress(state, progress) {
+  if (!state || !binderRoot) return;
+
+  state.progress = clamp(progress, 0, 1);
+  setBinderOuterFlipVisualSide(state, state.progress >= 0.5);
+
+  const physicalAngle = Math.PI * state.progress;
+  const rotationDirection = -state.direction;
+  binderRoot.rotation.y = rotationDirection * (
+    physicalAngle < Math.PI * 0.5
+      ? physicalAngle
+      : physicalAngle - Math.PI
+  );
+  const lift = Math.sin(state.progress * Math.PI);
+  const liftDistance = state.tableView
+    ? BINDER_TABLE_OUTER_FLIP_LIFT
+    : BINDER_OUTER_FLIP_LIFT;
+  binderRoot.rotation.x = lift * BINDER_OUTER_FLIP_TILT;
+  binderRoot.position.z = lift * liftDistance;
+  updateBinderDefaultCameraFrame();
+}
+
+function startBinderOuterFlipSettle(
+  state,
+  targetProgress,
+  { duration = null } = {},
+) {
+  if (!state || state !== binderOuterFlipState) return false;
+
+  state.dragging = false;
+  state.settleFromProgress = state.progress;
+  state.settleTargetProgress = clamp(targetProgress, 0, 1);
+  state.settleStartedAt = performance.now();
+  const remainingProgress = Math.abs(
+    state.settleTargetProgress - state.settleFromProgress,
+  );
+  state.settleDuration = Number.isFinite(duration)
+    ? Math.max(1, duration)
+    : Math.max(
+      BINDER_OUTER_FLIP_MIN_SETTLE_MS,
+      BINDER_OUTER_FLIP_DURATION_MS * remainingProgress,
+    );
+  markBinderInteractionActive(state.settleDuration + 180);
+  startBinderRenderLoop();
+  return true;
+}
+
+function settleDraggedBinderOuterFlip(state) {
+  if (!state || !state.dragging) return false;
+  const shouldComplete = state.progress >= BINDER_OUTER_FLIP_COMMIT_PROGRESS;
+  return startBinderOuterFlipSettle(state, shouldComplete ? 1 : 0);
+}
+
+function finishBinderOuterFlip(state) {
+  if (!state || state !== binderOuterFlipState) return;
+
+  const completed = state.settleTargetProgress >= 0.5;
+  setBinderOuterFlipVisualSide(state, completed);
+  const finalSide = completed ? state.toSide : state.fromSide;
+  setBinderClosureTarget(finalSide, { immediate: true, update: false });
+  binderSinglePageSide = finalSide < 0
+    ? BINDER_SINGLE_PAGE_COVER_SIDE
+    : getBinderTotalPageSides() - 1;
+  binderSinglePageSideTouched = true;
+  resetBinderOuterFlipTransform();
+  binderOuterFlipState = null;
+  ensureBinderPageWindow({
+    force: true,
+    center: finalSide < 0 ? 0 : binderPageCount - 1,
+    queueTextures: true,
+    updateTransforms: false,
+  });
+  updateBinderDefaultCameraFrame();
+  updateBinderPageControls();
+  queueSessionViewStateSave();
+}
+
+function updateBinderOuterFlip(now = performance.now()) {
+  const state = binderOuterFlipState;
+  if (!state || !binderRoot) return false;
+
+  if (state.dragging) {
+    applyBinderOuterFlipProgress(state, state.progress);
+    return true;
+  }
+
+  const settleProgress = clamp(
+    (now - state.settleStartedAt) / Math.max(1, state.settleDuration),
+    0,
+    1,
+  );
+  const progress = THREE.MathUtils.lerp(
+    state.settleFromProgress,
+    state.settleTargetProgress,
+    easeInOutCubic(settleProgress),
+  );
+  applyBinderOuterFlipProgress(state, progress);
+  if (settleProgress < 1) return true;
+
+  finishBinderOuterFlip(state);
+  return true;
+}
+
+function resetBinderOuterFlipTransform() {
+  if (!binderRoot) return;
+  binderRoot.rotation.x = 0;
+  binderRoot.rotation.y = 0;
+  binderRoot.position.x = 0;
+  binderRoot.position.z = 0;
+}
+
+function getBinderVirtualTurn(
+  turn = binderTargetTurn,
+  closure = binderTargetClosure,
+) {
+  if (closure < 0) return closure;
+  if (closure > 0) return binderPageCount + closure;
+  return clamp(turn, 0, binderPageCount);
+}
+
+function setBinderVirtualTurn(value, { immediate = false } = {}) {
+  const virtualTurn = clamp(value, -1, binderPageCount + 1);
+  if (virtualTurn < 0) {
+    binderTargetTurn = 0;
+    binderTargetClosure = virtualTurn;
+  } else if (virtualTurn > binderPageCount) {
+    binderTargetTurn = binderPageCount;
+    binderTargetClosure = virtualTurn - binderPageCount;
+  } else {
+    binderTargetTurn = virtualTurn;
+    binderTargetClosure = 0;
+  }
+  if (immediate) {
+    binderTurn = binderTargetTurn;
+    binderClosure = binderTargetClosure;
+  }
+}
+
+function snapBinderNavigationState() {
+  const snappedVirtualTurn = Math.round(getBinderVirtualTurn());
+  setBinderVirtualTurn(snappedVirtualTurn);
+  if (isBinderSinglePageView() && !getBinderTargetClosedSide()) {
+    binderSinglePageSide = deriveBinderSinglePageSideFromTurn(binderTargetTurn);
+  }
+  updateBinderDefaultCameraFrame();
+}
+
 function turnBinderSinglePage(direction) {
+  if (handleBinderClosureNavigation(direction)) return;
+
   const totalSides = getBinderTotalPageSides();
   const currentSide = getBinderSinglePageSide();
   const nextSide = clamp(currentSide + direction, BINDER_SINGLE_PAGE_COVER_SIDE, totalSides - 1);
@@ -5193,6 +9478,7 @@ function turnBinderSinglePage(direction) {
   binderSinglePageSideTouched = true;
   const nextTurn = getBinderTurnForSinglePageSide(nextSide);
   if (nextTurn !== binderTargetTurn) binderBendDirection = Math.sign(nextTurn - binderTargetTurn) || binderBendDirection;
+  binderTargetClosure = 0;
   binderTargetTurn = nextTurn;
   updateBinderPageControls();
   startBinderRenderLoop();
@@ -5211,6 +9497,7 @@ function turnBinderPage(direction) {
     turnBinderSinglePage(direction);
     return;
   }
+  if (handleBinderClosureNavigation(direction)) return;
 
   binderSpreadPreparationToken += 1;
   binderPreparingSpread = false;
@@ -5220,6 +9507,7 @@ function turnBinderPage(direction) {
     binderSinglePageSideTouched = true;
     binderBendDirection = Math.sign(nextTurn - binderTargetTurn);
   }
+  binderTargetClosure = 0;
   binderTargetTurn = nextTurn;
   updateBinderPageControls();
   startBinderRenderLoop();
@@ -5227,8 +9515,17 @@ function turnBinderPage(direction) {
 }
 
 async function shuffleBinderSpread() {
-  if (!galleryOpen || !isBinderMode || isBinderFocusView() || binderPageCount < 1) return;
+  if (
+    !galleryOpen
+    || !isBinderMode
+    || isBinderFocusView()
+    || binderOuterFlipState
+    || binderPageCount < 1
+  ) {
+    return;
+  }
 
+  setBinderClosureTarget(0);
   const currentPage = clamp(Math.round(binderTargetTurn), 0, binderPageCount);
   let nextTurn = currentPage;
   if (binderPageCount > 0) {
@@ -5546,6 +9843,7 @@ function getBinderPageWindowCenterForTurn(turn) {
 
 function moveBinderToSpread(turn, { startTurn = null } = {}) {
   const nextTurn = clamp(Math.round(turn), 0, binderPageCount);
+  binderTargetClosure = 0;
   if (nextTurn !== binderTargetTurn) {
     binderBendDirection = Math.sign(nextTurn - binderTargetTurn) || binderBendDirection;
   }
@@ -5568,6 +9866,7 @@ function getBinderPageStatusEditMode() {
   const canEditBase = galleryOpen
     && isBinderMode
     && !traitSearchOpen
+    && !getBinderTargetClosedSide()
     && !els.binderPageStatus.hidden
     && binderPageCount >= 1;
   if (!canEditBase) return null;
@@ -5666,6 +9965,7 @@ function submitBinderPageStatusEdit() {
   const nextTurn = getBinderTurnForSinglePageSide(targetSide);
   const currentTurn = clamp(Math.round(binderTargetTurn), 0, binderPageCount);
   closeBinderPageStatusEdit({ update: false });
+  binderTargetClosure = 0;
   binderSinglePageSide = targetSide;
   binderSinglePageSideTouched = true;
 
@@ -5702,6 +10002,27 @@ function getCurrentBinderPageStatusNumber() {
 }
 
 function updateBinderPageControls() {
+  const closedSide = getBinderTargetClosedSide();
+  const flippingOuterCover = Boolean(binderOuterFlipState);
+  const swappingTableBinder = Boolean(binderEvilTableSwapState);
+  els.binderPanel.classList.toggle("is-closed", closedSide !== 0);
+  els.binderPanel.classList.toggle("is-flipping-outer-cover", flippingOuterCover);
+  els.binderPanel.classList.toggle("is-swapping-table-binder", swappingTableBinder);
+  els.binderPanel.dataset.closedSide = closedSide < 0
+    ? "start"
+    : closedSide > 0
+      ? "end"
+      : "";
+  els.binderCanvas.setAttribute(
+    "aria-label",
+    swappingTableBinder
+      ? `3D card binder, switching to ${COLLECTION_CONFIGS[binderEvilTableSwapState.collectionId]?.label || "selected"} binder`
+      : flippingOuterCover
+      ? `3D card binder, flipping to ${binderOuterFlipState.toSide < 0 ? "front" : "back"} cover`
+      : closedSide
+      ? `3D card binder, ${closedSide < 0 ? "front" : "back"} cover`
+      : "3D card binder",
+  );
   const controlsHidden = traitSearchOpen || !galleryOpen || !isBinderMode || els.binderPanel.hidden || binderPageCount < 1;
   els.binderPageControls.hidden = controlsHidden;
   els.binderPageStatus.hidden = controlsHidden;
@@ -5718,6 +10039,14 @@ function updateBinderPageControls() {
   els.binderPageStatus.classList.toggle("is-page-jump-enabled", !binderPageStatusInput && canEditBinderPageStatus());
   els.binderPageControls.classList.toggle("is-focused", focused);
   els.binderPageControls.classList.toggle("is-intro-focused", introFocused);
+  els.binderTableViewButton.hidden = focused;
+  els.binderTableViewButton.disabled = flippingOuterCover || swappingTableBinder;
+  els.binderTableViewButton.setAttribute("aria-pressed", String(binderTableViewTarget > 0.5));
+  const tableViewLabel = binderTableViewTarget > 0.5
+    ? "Return binder to upright view"
+    : "Place binder on table";
+  els.binderTableViewButton.setAttribute("title", tableViewLabel);
+  els.binderTableViewButton.setAttribute("aria-label", tableViewLabel);
   els.binderZoomOutButton.hidden = !focused;
   els.binderOpenCardButton.hidden = !focused;
   els.binderFavoriteButton.hidden = !focused;
@@ -5728,8 +10057,21 @@ function updateBinderPageControls() {
   els.binderOpenCardButton.setAttribute("title", introFocused ? "No card to open" : "Open card view");
   els.binderOpenCardButton.setAttribute("aria-label", introFocused ? "No card to open" : "Open card view");
   els.binderShuffleButton.hidden = focused;
+  els.binderShuffleButton.disabled = flippingOuterCover || swappingTableBinder;
   updateBinderFavoriteButton();
   updateBinderPageStatus(focused);
+
+  if (flippingOuterCover || swappingTableBinder) {
+    els.binderPreviousPageButton.disabled = true;
+    els.binderNextPageButton.disabled = true;
+    const busyLabel = swappingTableBinder ? "Switching binder" : "Flipping binder";
+    els.binderPreviousPageButton.setAttribute("title", busyLabel);
+    els.binderPreviousPageButton.setAttribute("aria-label", busyLabel);
+    els.binderNextPageButton.setAttribute("title", busyLabel);
+    els.binderNextPageButton.setAttribute("aria-label", busyLabel);
+    queueSessionViewStateSave();
+    return;
+  }
 
   if (focused) {
     const hasCards = binderVisibleIndexes.length > 0;
@@ -5745,28 +10087,78 @@ function updateBinderPageControls() {
 
   if (isBinderSinglePageView()) {
     const currentSide = getBinderSinglePageSide();
-    els.binderPreviousPageButton.disabled = currentSide <= BINDER_SINGLE_PAGE_COVER_SIDE;
-    els.binderNextPageButton.disabled = currentSide >= getBinderTotalPageSides() - 1;
-    els.binderPreviousPageButton.setAttribute("title", "Previous binder page side");
-    els.binderPreviousPageButton.setAttribute("aria-label", "Previous binder page side");
-    els.binderNextPageButton.setAttribute("title", "Next binder page side");
-    els.binderNextPageButton.setAttribute("aria-label", "Next binder page side");
+    const atStart = currentSide <= BINDER_SINGLE_PAGE_COVER_SIDE;
+    const atEnd = currentSide >= getBinderTotalPageSides() - 1;
+    els.binderPreviousPageButton.disabled = false;
+    els.binderNextPageButton.disabled = false;
+    const previousLabel = closedSide < 0
+      ? "Flip to back cover"
+      : closedSide > 0
+        ? "Open binder"
+        : atStart
+          ? "Close binder"
+          : "Previous binder page side";
+    const nextLabel = closedSide > 0
+      ? "Flip to front cover"
+      : closedSide < 0
+        ? "Open binder"
+        : atEnd
+          ? "Close binder"
+          : "Next binder page side";
+    els.binderPreviousPageButton.setAttribute("title", previousLabel);
+    els.binderPreviousPageButton.setAttribute("aria-label", previousLabel);
+    els.binderNextPageButton.setAttribute("title", nextLabel);
+    els.binderNextPageButton.setAttribute("aria-label", nextLabel);
     queueSessionViewStateSave();
     return;
   }
 
   const currentPage = Math.round(binderTargetTurn);
-  els.binderPreviousPageButton.disabled = currentPage <= 0;
-  els.binderNextPageButton.disabled = currentPage >= binderPageCount;
-  els.binderPreviousPageButton.setAttribute("title", "Previous binder page");
-  els.binderPreviousPageButton.setAttribute("aria-label", "Previous binder page");
-  els.binderNextPageButton.setAttribute("title", "Next binder page");
-  els.binderNextPageButton.setAttribute("aria-label", "Next binder page");
+  const atStart = currentPage <= 0;
+  const atEnd = currentPage >= binderPageCount;
+  els.binderPreviousPageButton.disabled = false;
+  els.binderNextPageButton.disabled = false;
+  const previousLabel = closedSide < 0
+    ? "Flip to back cover"
+    : closedSide > 0
+      ? "Open binder"
+      : atStart
+        ? "Close binder"
+        : "Previous binder page";
+  const nextLabel = closedSide > 0
+    ? "Flip to front cover"
+    : closedSide < 0
+      ? "Open binder"
+      : atEnd
+        ? "Close binder"
+        : "Next binder page";
+  els.binderPreviousPageButton.setAttribute("title", previousLabel);
+  els.binderPreviousPageButton.setAttribute("aria-label", previousLabel);
+  els.binderNextPageButton.setAttribute("title", nextLabel);
+  els.binderNextPageButton.setAttribute("aria-label", nextLabel);
   queueSessionViewStateSave();
 }
 
 function updateBinderPageStatus(focused = isBinderFocusView()) {
   if (binderPageStatusInput) return;
+
+  if (!focused && binderEvilTableSwapState) {
+    els.binderPageStatus.textContent = withWalletStatusLabel("switching");
+    return;
+  }
+
+  if (!focused && binderOuterFlipState) {
+    els.binderPageStatus.textContent = withWalletStatusLabel("flipping");
+    return;
+  }
+
+  const closedSide = getBinderTargetClosedSide();
+  if (!focused && closedSide) {
+    els.binderPageStatus.textContent = withWalletStatusLabel(
+      closedSide < 0 ? "front" : "back",
+    );
+    return;
+  }
 
   if (focused) {
     const number = isBinderIntroFocused() ? 0 : binderFocusPosition + 1;
@@ -5815,16 +10207,138 @@ function scheduleFocusedBinderCardPrewarm() {
   cancelFocusedBinderCardPrewarm();
   if (!galleryOpen || !isBinderMode || !isBinderFocused()) return;
 
-  const cardIndex = getFocusedBinderCardIndex();
-  if (!Number.isInteger(cardIndex) || !CARDS[cardIndex]) return;
+  const focusPosition = binderFocusPosition;
+  const sharpPositions = getFocusedBinderSharpPositions(focusPosition);
+  if (!sharpPositions.length) return;
+  restoreBinderFullResolutionTexturesExcept(new Set(sharpPositions));
 
   const token = ++focusedBinderCardPrewarmToken;
   focusedBinderCardPrewarmTimer = window.setTimeout(() => {
     focusedBinderCardPrewarmTimer = 0;
     if (token !== focusedBinderCardPrewarmToken) return;
-    if (!galleryOpen || !isBinderMode || getFocusedBinderCardIndex() !== cardIndex) return;
-    prepareIndividualCardFor3D(CARDS[cardIndex]).catch(console.error);
+    if (!galleryOpen || !isBinderMode || binderFocusPosition !== focusPosition) return;
+    prewarmFocusedBinderSharpPositions(sharpPositions, focusPosition, token).catch(console.error);
   }, FOCUSED_BINDER_CARD_PREWARM_DELAY_MS);
+}
+
+function getFocusedBinderSharpPositions(position = binderFocusPosition) {
+  const focusedSpot = getBinderFocusedGridPosition(position);
+  if (!focusedSpot) return [];
+
+  const positions = [position];
+  for (const direction of [-1, 1]) {
+    const neighborPosition = getFocusedBinderHorizontalNeighborPosition(
+      focusedSpot,
+      direction,
+    );
+    if (neighborPosition >= 0 && !positions.includes(neighborPosition)) {
+      positions.push(neighborPosition);
+    }
+  }
+  return positions;
+}
+
+function getFocusedBinderHorizontalNeighborPosition(focusedSpot, direction) {
+  const horizontalDirection = Math.sign(direction);
+  if (!focusedSpot || !horizontalDirection) return -1;
+
+  let turn = focusedSpot.turn;
+  let spreadColumn = focusedSpot.spreadColumn + horizontalDirection;
+  const spreadColumnCount = BINDER_COLUMNS * 2;
+
+  // The six-column spread is continuous through the center spine. At its
+  // outer edges, continue into the neighboring spread so the sharp trio also
+  // survives a physical page boundary.
+  if (spreadColumn < 0 || spreadColumn >= spreadColumnCount) {
+    turn += horizontalDirection;
+    spreadColumn = horizontalDirection < 0 ? spreadColumnCount - 1 : 0;
+  }
+
+  return getBinderPositionForSpreadSpot({
+    turn,
+    row: focusedSpot.row,
+    spreadColumn,
+  });
+}
+
+async function prewarmFocusedBinderSharpPositions(positions, focusPosition, token) {
+  const entries = positions
+    .map((position) => ({ position, cardIndex: binderVisibleIndexes[position] }))
+    .filter(({ cardIndex }) => Number.isInteger(cardIndex) && CARDS[cardIndex]);
+  const focusedEntry = entries.find((entry) => entry.position === focusPosition);
+  const neighborEntries = entries.filter((entry) => entry !== focusedEntry);
+
+  const loadEntry = async (entry, focused = false) => {
+    const result = focused
+      ? await prepareIndividualCardFor3D(CARDS[entry.cardIndex])
+      : { frontTexture: await getPreparedCardTexture(CARDS[entry.cardIndex]) };
+    if (
+      token !== focusedBinderCardPrewarmToken
+      || binderFocusPosition !== focusPosition
+      || !positions.includes(entry.position)
+    ) {
+      return;
+    }
+    upgradeFocusedBinderTexture(entry.position, result?.frontTexture);
+  };
+
+  // Do not make the adjacent cards wait for the focused card's 3D/effect
+  // preparation. This is especially noticeable when a neighbor crosses the
+  // spine onto the other physical page.
+  await Promise.all([
+    focusedEntry ? loadEntry(focusedEntry, true) : Promise.resolve(),
+    ...neighborEntries.map((entry) => loadEntry(entry)),
+  ]);
+}
+
+function upgradeFocusedBinderTexture(position, texture) {
+  const mesh = binderCardMeshByPosition.get(position);
+  if (!mesh || !texture) return;
+  binderFullResolutionMeshes.add(mesh);
+  pinBinderFocusedCardTexture(mesh, texture);
+  requestBinderRenderOnce();
+}
+
+function restoreBinderMeshThumbnail(mesh) {
+  if (!mesh?.parent || !Number.isInteger(mesh.userData?.cardIndex)) {
+    binderFullResolutionMeshes.delete(mesh);
+    return;
+  }
+  const card = CARDS[mesh.userData.cardIndex];
+  const position = mesh.userData.binderPosition;
+  const readyTexture = getReadyBinderTexture(card);
+  binderFullResolutionMeshes.delete(mesh);
+  if (readyTexture) {
+    prepareTextureForImmediateDisplay(readyTexture);
+    mesh.material.map = readyTexture;
+    mesh.material.opacity = 1;
+    mesh.userData.textureLoaded = true;
+    mesh.userData.textureLoading = false;
+    mesh.userData.textureFadeComplete = true;
+    requestBinderRenderOnce();
+    return;
+  }
+
+  mesh.material.map = getBinderPlaceholderTexture();
+  mesh.userData.textureLoaded = false;
+  getBinderTexture(card).then((texture) => {
+    if (!mesh.parent || mesh.userData.binderPosition !== position) return;
+    mesh.material.map = texture;
+    mesh.userData.textureLoaded = true;
+    requestBinderRenderOnce();
+  }).catch(() => {});
+}
+
+function clearBinderFullResolutionTexture() {
+  for (const mesh of Array.from(binderFullResolutionMeshes)) {
+    restoreBinderMeshThumbnail(mesh);
+  }
+}
+
+function restoreBinderFullResolutionTexturesExcept(positions) {
+  for (const mesh of Array.from(binderFullResolutionMeshes)) {
+    if (!positions.has(mesh.userData?.binderPosition)) restoreBinderMeshThumbnail(mesh);
+  }
 }
 
 function cancelFocusedBinderCardPrewarm() {
@@ -5861,10 +10375,14 @@ function showBinderSinglePageSide(side, { immediate = false } = {}) {
 
   const nextSide = clamp(side, BINDER_SINGLE_PAGE_COVER_SIDE, getBinderTotalPageSides() - 1);
   const nextTurn = getBinderTurnForSinglePageSide(nextSide);
-  const changed = nextSide !== binderSinglePageSide || nextTurn !== clamp(Math.round(binderTargetTurn), 0, binderPageCount);
+  const changed = nextSide !== binderSinglePageSide
+    || nextTurn !== clamp(Math.round(binderTargetTurn), 0, binderPageCount)
+    || binderTargetClosure !== 0;
   binderSinglePageSide = nextSide;
   binderSinglePageSideTouched = true;
   if (nextTurn !== binderTargetTurn) binderBendDirection = Math.sign(nextTurn - binderTargetTurn) || binderBendDirection;
+  binderTargetClosure = 0;
+  if (immediate) binderClosure = 0;
   binderTargetTurn = nextTurn;
   if (immediate) binderTurn = nextTurn;
 
@@ -5941,15 +10459,33 @@ function getBinderTurnForSinglePageSide(side) {
 }
 
 function getBinderSinglePageCenterX(side = getBinderSinglePageSide()) {
-  if (side === BINDER_SINGLE_PAGE_COVER_SIDE) return -BINDER_PAGE_WIDTH / 2;
-  return side % 2 === 0 ? BINDER_PAGE_WIDTH / 2 : -BINDER_PAGE_WIDTH / 2;
+  if (binderOuterFlipState) return 0;
+
+  const rootOffsetX = binderRoot?.position.x || 0;
+  const closedSide = getBinderTargetClosedSide();
+  if (closedSide) {
+    return -closedSide * BINDER_CLOSED_COVER_CENTER_X + rootOffsetX;
+  }
+  if (side === BINDER_SINGLE_PAGE_COVER_SIDE) {
+    return -BINDER_PAGE_WIDTH / 2 + rootOffsetX;
+  }
+  return (side % 2 === 0 ? BINDER_PAGE_WIDTH / 2 : -BINDER_PAGE_WIDTH / 2)
+    + rootOffsetX;
 }
 
 function focusBinderPosition(position, { immediate = false, pinnedTexture = null } = {}) {
   if (!Number.isInteger(position) || position < 0 || position >= binderVisibleIndexes.length) return;
 
+  if (isBinderTableViewActive()) {
+    setBinderTableView(false, {
+      durationMs: BINDER_TABLE_TO_FOCUS_DURATION_MS,
+      easing: "out",
+    });
+  }
   markBinderInteractionActive();
   const nextTurn = getBinderTurnForPosition(position);
+  binderTargetClosure = 0;
+  if (immediate) binderClosure = 0;
   if (nextTurn !== binderTargetTurn) binderBendDirection = Math.sign(nextTurn - binderTargetTurn);
   binderIntroFocused = false;
   binderFocusPosition = position;
@@ -5975,6 +10511,12 @@ function focusBinderPosition(position, { immediate = false, pinnedTexture = null
 function focusBinderIntroNote({ immediate = false } = {}) {
   if (hasActiveBinderIntroSuppressor()) return false;
 
+  if (isBinderTableViewActive()) {
+    setBinderTableView(false, {
+      durationMs: BINDER_TABLE_TO_FOCUS_DURATION_MS,
+      easing: "out",
+    });
+  }
   markBinderInteractionActive();
   binderIntroFocused = true;
   binderFocusPosition = -1;
@@ -5982,6 +10524,8 @@ function focusBinderIntroNote({ immediate = false } = {}) {
   binderSinglePageSide = BINDER_SINGLE_PAGE_COVER_SIDE;
   binderSinglePageSideTouched = true;
   if (binderTargetTurn !== 0) binderBendDirection = Math.sign(-binderTargetTurn) || binderBendDirection;
+  binderTargetClosure = 0;
+  if (immediate) binderClosure = 0;
   binderTargetTurn = 0;
   binderTextureQueueKey = "";
   if (immediate) binderTurn = 0;
@@ -5997,6 +10541,7 @@ function focusBinderIntroNote({ immediate = false } = {}) {
 
 function clearBinderFocus(options = {}) {
   markBinderInteractionActive();
+  clearBinderFullResolutionTexture();
   const introFocused = isBinderIntroFocused();
   const focusedSide = isBinderFocused() ? getBinderSinglePageSideForPosition(binderFocusPosition) : null;
   binderIntroFocused = false;
@@ -6025,6 +10570,8 @@ function clearBinderFocus(options = {}) {
 function snapBinderToWholePage() {
   binderTargetTurn = clamp(Math.round(binderTargetTurn), 0, binderPageCount);
   binderTurn = binderTargetTurn;
+  binderTargetClosure = clamp(Math.round(binderTargetClosure), -1, 1);
+  binderClosure = binderTargetClosure;
   binderWheelFocusLockUntil = 0;
 }
 
@@ -6299,7 +10846,6 @@ function pinBinderFocusedCardTexture(mesh, texture) {
   prepareTextureForImmediateDisplay(texture);
   mesh.material.map = texture;
   mesh.material.opacity = Math.max(mesh.material.opacity ?? 0, targetOpacity);
-  mesh.material.needsUpdate = true;
   mesh.userData.textureLoaded = true;
   mesh.userData.textureLoading = false;
   mesh.userData.renderOnApply = false;
@@ -6315,6 +10861,7 @@ async function openFocusedBinderGalleryForCard(cardIndex, options = {}) {
   traitSearchOpen = false;
   setGalleryViewMode(true, { render: false });
   galleryOpen = true;
+  stopCardRenderLoop();
   els.body.classList.add("is-gallery");
   els.galleryToggleButton.setAttribute("aria-pressed", "true");
   els.galleryPanel.hidden = false;
@@ -6322,6 +10869,7 @@ async function openFocusedBinderGalleryForCard(cardIndex, options = {}) {
   updateTraitSearchState();
 
   const indexes = getVisibleIndexes();
+  cancelGalleryRender();
   els.galleryGrid.replaceChildren();
   els.galleryGrid.hidden = true;
   els.binderPanel.hidden = indexes.length === 0;
@@ -6498,11 +11046,14 @@ function getIndividualCardScreenRect() {
   cardGroup.updateMatrixWorld(true);
   const canvasRect = els.cardCanvas.getBoundingClientRect();
   const z = CARD_DEPTH / 2 + 0.006;
+  const aspectScale = getCardAspectFitScale(CARDS[currentIndex]);
+  const halfWidth = CARD_WIDTH * aspectScale.x / 2;
+  const halfHeight = CARD_HEIGHT * aspectScale.y / 2;
   const corners = [
-    new THREE.Vector3(-CARD_WIDTH / 2, -CARD_HEIGHT / 2, z),
-    new THREE.Vector3(CARD_WIDTH / 2, -CARD_HEIGHT / 2, z),
-    new THREE.Vector3(CARD_WIDTH / 2, CARD_HEIGHT / 2, z),
-    new THREE.Vector3(-CARD_WIDTH / 2, CARD_HEIGHT / 2, z),
+    new THREE.Vector3(-halfWidth, -halfHeight, z),
+    new THREE.Vector3(halfWidth, -halfHeight, z),
+    new THREE.Vector3(halfWidth, halfHeight, z),
+    new THREE.Vector3(-halfWidth, halfHeight, z),
   ].map((corner) => {
     const projected = corner.applyMatrix4(cardGroup.matrixWorld).project(cardCamera);
     return {
@@ -6600,92 +11151,129 @@ function getCardEffectOutsideDistance(x, y) {
 }
 
 function getCardEffectEdgeActivity(x, y) {
-  const fade = clamp(1 - getCardEffectOutsideDistance(x, y) / CARD_NFT_2_EFFECT_EDGE_FADE_DISTANCE, 0, 1);
-  return fade * fade * (3 - fade * 2);
+  const fade = clamp(
+    1 - getCardEffectOutsideDistance(x, y) / CARD_NFT_2_EFFECT_EDGE_FADE_DISTANCE,
+    0,
+    1,
+  );
+  return fade * fade * (3 - 2 * fade);
 }
 
-function setCardEffectPointerTarget(x, y, active, snapWhenInactive = false) {
+function setCardEffectPointerTarget(x, y, active) {
   const nextX = clamp(x, -CARD_NFT_2_EFFECT_POINTER_EXTENT, 1 + CARD_NFT_2_EFFECT_POINTER_EXTENT);
   const nextY = clamp(y, -CARD_NFT_2_EFFECT_POINTER_EXTENT, 1 + CARD_NFT_2_EFFECT_POINTER_EXTENT);
-  if (snapWhenInactive && cardEffectPointerTargetActive < 0.5) {
-    cardEffectPointerX = nextX;
-    cardEffectPointerY = nextY;
-  }
   cardEffectPointerTargetX = nextX;
   cardEffectPointerTargetY = nextY;
   cardEffectPointerTargetActive = clamp(active, 0, 1);
 }
 
-function updateCardEffectPointerFromEvent(event) {
-  if (!cardCamera || !els.cardCanvas || !cardFrontMesh || !cardBackMesh) return;
-
+function updateCardEffectRayFromClientPosition(clientX, clientY) {
+  if (
+    !Number.isFinite(clientX)
+    || !Number.isFinite(clientY)
+    || !cardCamera
+    || !els.cardCanvas
+    || !cardFrontMesh
+    || !cardBackMesh
+  ) return false;
   const rect = els.cardCanvas.getBoundingClientRect();
-  if (!rect.width || !rect.height) return;
+  if (!rect.width || !rect.height) return false;
 
   cardGroup?.updateMatrixWorld(true);
   cardCamera.updateMatrixWorld(true);
-  cardPointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
-  cardPointer.y = -(((event.clientY - rect.top) / rect.height) * 2 - 1);
+  cardPointer.x = ((clientX - rect.left) / rect.width) * 2 - 1;
+  cardPointer.y = -(((clientY - rect.top) / rect.height) * 2 - 1);
   cardRaycaster.setFromCamera(cardPointer, cardCamera);
+  return true;
+}
+
+function updateCardEffectPointerFromCurrentRay() {
   const hit = cardRaycaster.intersectObjects([cardFrontMesh, cardBackMesh], false)[0];
 
-  if (!hit?.uv) {
-    const planeUv = getCardEffectPlaneUvFromCurrentRay();
-    if (planeUv) {
-      const edgeActivity = getCardEffectEdgeActivity(planeUv.x, planeUv.y);
-      setCardEffectPointerTarget(planeUv.x, planeUv.y, edgeActivity, false);
-    } else if (!dragState) {
-      clearCardEffectPointer(event);
-    }
+  if (hit?.uv) {
+    const nextX = clamp(hit.uv.x, 0, 1);
+    const nextY = clamp(hit.uv.y, 0, 1);
+    setCardEffectPointerTarget(nextX, nextY, 1);
     return;
   }
 
-  const nextX = clamp(hit.uv.x, 0, 1);
-  const nextY = clamp(hit.uv.y, 0, 1);
-  setCardEffectPointerTarget(nextX, nextY, 1, true);
-}
-
-function clearCardEffectPointer(event) {
-  if (event?.clientX != null && cardCamera && els.cardCanvas && cardGroup) {
-    const rect = els.cardCanvas.getBoundingClientRect();
-    if (rect.width && rect.height) {
-      cardGroup.updateMatrixWorld(true);
-      cardCamera.updateMatrixWorld(true);
-      cardPointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
-      cardPointer.y = -(((event.clientY - rect.top) / rect.height) * 2 - 1);
-      cardRaycaster.setFromCamera(cardPointer, cardCamera);
-      const planeUv = getCardEffectPlaneUvFromCurrentRay();
-      if (planeUv) {
-        setCardEffectPointerTarget(planeUv.x, planeUv.y, 0, false);
-        return;
-      }
-    }
-  }
-
-  const directionX = cardEffectPointerX - 0.5;
-  const directionY = cardEffectPointerY - 0.5;
-  const length = Math.hypot(directionX, directionY);
-  if (length > 0.001) {
+  const planeUv = getCardEffectPlaneUvFromCurrentRay();
+  if (planeUv) {
     setCardEffectPointerTarget(
-      cardEffectPointerX + (directionX / length) * CARD_NFT_2_EFFECT_POINTER_EXTENT,
-      cardEffectPointerY + (directionY / length) * CARD_NFT_2_EFFECT_POINTER_EXTENT,
-      0,
-      false,
+      planeUv.x,
+      planeUv.y,
+      getCardEffectEdgeActivity(planeUv.x, planeUv.y),
     );
     return;
   }
 
+  clearCardEffectPointer();
+}
+
+function updateCardEffectRayFromEvent(event) {
+  if (!event) return false;
+  return updateCardEffectRayFromClientPosition(event.clientX, event.clientY);
+}
+
+function updateCardEffectPointerFromEvent(event) {
+  if (!event) return;
+  if (
+    event.pointerType !== "touch"
+    && Number.isFinite(event.clientX)
+    && Number.isFinite(event.clientY)
+  ) {
+    cardEffectPointerClientX = event.clientX;
+    cardEffectPointerClientY = event.clientY;
+  }
+  if (!updateCardEffectRayFromEvent(event)) return;
+  updateCardEffectPointerFromCurrentRay();
+}
+
+function refreshCardEffectPointerProjection() {
+  if (
+    cardEffectPointerTargetActive <= 0.002
+    && cardEffectPointerActive <= 0.002
+  ) return;
+  if (!updateCardEffectRayFromClientPosition(
+    cardEffectPointerClientX,
+    cardEffectPointerClientY,
+  )) return;
+  updateCardEffectPointerFromCurrentRay();
+}
+
+function clearCardEffectPointer() {
   setCardEffectPointerTarget(
-    CARD_NFT_2_EFFECT_OFFCARD_POINTER_X,
-    CARD_NFT_2_EFFECT_OFFCARD_POINTER_Y,
+    cardEffectPointerTargetX,
+    cardEffectPointerTargetY,
     0,
-    false,
   );
+}
+
+function onGlobalCardEffectPointerMove(event) {
+  if (
+    event.pointerType === "touch"
+    || galleryOpen
+    || isBinderMode
+    || !cardFrontMesh
+    || !cardBackMesh
+  ) return;
+  updateCardEffectPointerFromEvent(event);
 }
 
 function updateCardEffectPointer() {
   const activeAlpha = cardEffectPointerTargetActive > cardEffectPointerActive ? 0.2 : 0.1;
-  const positionAlpha = cardEffectPointerTargetActive > cardEffectPointerActive ? 0.24 : 0.18;
+  const rotationTracking = (
+    dragState
+    || Math.abs(currentRotationX - targetRotationX) > 0.001
+    || Math.abs(currentRotationY - targetRotationY) > 0.001
+    || Math.abs(individualCardHoverTiltVelocityX) > 0.0001
+    || Math.abs(individualCardHoverTiltVelocityY) > 0.0001
+  );
+  const positionAlpha = rotationTracking
+    ? 0.68
+    : cardEffectPointerTargetActive > cardEffectPointerActive
+      ? 0.24
+      : 0.18;
   cardEffectPointerX += (cardEffectPointerTargetX - cardEffectPointerX) * positionAlpha;
   cardEffectPointerY += (cardEffectPointerTargetY - cardEffectPointerY) * positionAlpha;
   cardEffectPointerActive += (cardEffectPointerTargetActive - cardEffectPointerActive) * activeAlpha;
@@ -6695,6 +11283,7 @@ function updateCardEffectPointer() {
 function onCardPointerDown(event) {
   if (cardSwapAnimating || cardShuffleSpinAnimating) return;
   updateCardEffectPointerFromEvent(event);
+  releaseIndividualCardHoverTilt();
   els.cardCanvas.setPointerCapture(event.pointerId);
 
   if (isTouchLikePointer(event)) {
@@ -6727,6 +11316,7 @@ function onCardPointerDown(event) {
 
 function onCardPointerMove(event) {
   updateCardEffectPointerFromEvent(event);
+  updateIndividualCardHoverTiltTarget(event);
 
   if (isTouchLikePointer(event)) {
     updateTouchPointer(cardTouchPointers, event);
@@ -6781,6 +11371,131 @@ function onCardPointerUp(event) {
   if (!isCardPanMode()) {
     targetRotationX = 0;
     targetRotationY = 0;
+  } else if (!isTouchLikePointer(event)) {
+    updateIndividualCardHoverTiltTarget(event);
+  }
+}
+
+function onCardPointerCaptureLost(event) {
+  if (isTouchLikePointer(event)) {
+    removeTouchPointer(cardTouchPointers, event);
+    if (cardPinchGesture && cardTouchPointers.size < 2) cardPinchGesture = null;
+  }
+  if (!dragState || dragState.pointerId !== event.pointerId) return;
+  dragState = null;
+  releaseIndividualCardHoverTilt();
+  if (!isCardPanMode()) {
+    targetRotationX = 0;
+    targetRotationY = 0;
+  }
+}
+
+function onCardPointerLeave(event) {
+  if (isTouchLikePointer(event)) {
+    clearCardEffectPointer();
+  } else {
+    updateCardEffectPointerFromEvent(event);
+  }
+  releaseIndividualCardHoverTilt();
+}
+
+function updateIndividualCardHoverTiltTarget(event) {
+  if (
+    !event
+    || event.pointerType === "touch"
+    || dragState
+    || galleryOpen
+    || isBinderMode
+    || !isCardPanMode()
+    || window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches
+  ) {
+    releaseIndividualCardHoverTilt();
+    return;
+  }
+
+  if (!setIndividualCardHoverTiltTargetFromCurrentRay()) {
+    releaseIndividualCardHoverTilt();
+  }
+}
+
+function setIndividualCardHoverTiltTargetFromCurrentRay() {
+  const uv = getCardEffectPlaneUvFromCurrentRay();
+  if (!uv || getCardEffectOutsideDistance(uv.x, uv.y) > 0) {
+    return false;
+  }
+
+  const horizontal = clamp((uv.x - 0.5) * 2, -1, 1);
+  const vertical = clamp((uv.y - 0.5) * 2, -1, 1);
+  individualCardHoverTiltTargetX = THREE.MathUtils.degToRad(
+    -vertical * INDIVIDUAL_CARD_HOVER_TILT_MAX_X_DEG,
+  );
+  individualCardHoverTiltTargetY = THREE.MathUtils.degToRad(
+    horizontal * INDIVIDUAL_CARD_HOVER_TILT_MAX_Y_DEG,
+  );
+  return true;
+}
+
+function refreshIndividualCardHoverTiltTarget() {
+  if (
+    dragState
+    || galleryOpen
+    || isBinderMode
+    || !isCardPanMode()
+    || window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches
+  ) return;
+  if (!updateCardEffectRayFromClientPosition(
+    cardEffectPointerClientX,
+    cardEffectPointerClientY,
+  )) return;
+  if (!setIndividualCardHoverTiltTargetFromCurrentRay()) {
+    releaseIndividualCardHoverTilt();
+  }
+}
+
+function releaseIndividualCardHoverTilt({ immediate = false } = {}) {
+  individualCardHoverTiltTargetX = 0;
+  individualCardHoverTiltTargetY = 0;
+  if (!immediate) return;
+  individualCardHoverTiltX = 0;
+  individualCardHoverTiltY = 0;
+  individualCardHoverTiltVelocityX = 0;
+  individualCardHoverTiltVelocityY = 0;
+}
+
+function updateIndividualCardHoverTilt() {
+  if (!isCardPanMode() || galleryOpen || isBinderMode || dragState) {
+    individualCardHoverTiltTargetX = 0;
+    individualCardHoverTiltTargetY = 0;
+  }
+
+  individualCardHoverTiltVelocityX = (
+    individualCardHoverTiltVelocityX
+    + (individualCardHoverTiltTargetX - individualCardHoverTiltX)
+      * INDIVIDUAL_CARD_HOVER_TILT_SPRING
+  ) * INDIVIDUAL_CARD_HOVER_TILT_DAMPING;
+  individualCardHoverTiltVelocityY = (
+    individualCardHoverTiltVelocityY
+    + (individualCardHoverTiltTargetY - individualCardHoverTiltY)
+      * INDIVIDUAL_CARD_HOVER_TILT_SPRING
+  ) * INDIVIDUAL_CARD_HOVER_TILT_DAMPING;
+  individualCardHoverTiltX += individualCardHoverTiltVelocityX;
+  individualCardHoverTiltY += individualCardHoverTiltVelocityY;
+
+  if (
+    individualCardHoverTiltTargetX === 0
+    && Math.abs(individualCardHoverTiltX) < 0.00005
+    && Math.abs(individualCardHoverTiltVelocityX) < 0.00005
+  ) {
+    individualCardHoverTiltX = 0;
+    individualCardHoverTiltVelocityX = 0;
+  }
+  if (
+    individualCardHoverTiltTargetY === 0
+    && Math.abs(individualCardHoverTiltY) < 0.00005
+    && Math.abs(individualCardHoverTiltVelocityY) < 0.00005
+  ) {
+    individualCardHoverTiltY = 0;
+    individualCardHoverTiltVelocityY = 0;
   }
 }
 
@@ -6895,11 +11610,17 @@ function updateCardPinchGesture() {
 function cancelBinderDragForPinch() {
   if (!binderDrag) return;
 
+  const draggedOuterFlip = binderOuterFlipState?.dragging
+    ? binderOuterFlipState
+    : null;
   binderDrag = null;
   binderLastOpenTap = null;
+  if (draggedOuterFlip) {
+    startBinderOuterFlipSettle(draggedOuterFlip, 0);
+    return;
+  }
   if (!isBinderFocusView()) {
-    binderTargetTurn = Math.round(binderTargetTurn);
-    if (isBinderSinglePageView()) binderSinglePageSide = deriveBinderSinglePageSideFromTurn(binderTargetTurn);
+    snapBinderNavigationState();
     updateBinderPageControls();
     startBinderRenderLoop();
   }
@@ -6935,8 +11656,95 @@ function resetTouchGestures() {
   binderPinchGesture = null;
 }
 
+function cancelInterruptedPointerInteractions() {
+  const cardPointerId = dragState?.pointerId;
+  const binderPointerId = binderDrag?.pointerId;
+  const draggedOuterFlip = binderOuterFlipState?.dragging
+    ? binderOuterFlipState
+    : null;
+  dragState = null;
+  targetRotationX = 0;
+  targetRotationY = 0;
+  binderDrag = null;
+  binderLastOpenTap = null;
+  resetTouchGestures();
+  cancelShuffleTouchUndo();
+  clearCardEffectPointer();
+  clearBinderIntroLinkCursor();
+  if (draggedOuterFlip) startBinderOuterFlipSettle(draggedOuterFlip, 0);
+
+  try {
+    if (cardPointerId != null && els.cardCanvas.hasPointerCapture(cardPointerId)) {
+      els.cardCanvas.releasePointerCapture(cardPointerId);
+    }
+  } catch {
+    // The browser may have already released capture while the window was losing focus.
+  }
+  try {
+    if (binderPointerId != null && els.binderCanvas.hasPointerCapture(binderPointerId)) {
+      els.binderCanvas.releasePointerCapture(binderPointerId);
+    }
+  } catch {
+    // The browser may have already released capture while the window was losing focus.
+  }
+
+  if (binderPointerId != null && !draggedOuterFlip && !isBinderFocusView()) {
+    snapBinderNavigationState();
+    updateBinderPageControls();
+    startBinderRenderLoop();
+  }
+}
+
+function getBinderDragNavigationMode(drag, pageDelta) {
+  if (!drag || Math.abs(pageDelta) < 0.002) return "";
+
+  const startVirtualTurn = drag.startVirtualTurn;
+  const startClosedSide = drag.startClosedSide;
+  if (
+    startClosedSide
+    && Math.sign(pageDelta) === startClosedSide
+  ) {
+    return "outer-flip";
+  }
+  if (
+    startVirtualTurn < 0
+    || (Math.abs(startVirtualTurn) < 0.001 && pageDelta < 0)
+  ) {
+    return "front-closure";
+  }
+  if (
+    startVirtualTurn > binderPageCount
+    || (
+      Math.abs(startVirtualTurn - binderPageCount) < 0.001
+      && pageDelta > 0
+    )
+  ) {
+    return "back-closure";
+  }
+  return "pages";
+}
+
+function getBinderDragVirtualTurn(drag, pageDelta) {
+  const rawVirtualTurn = drag.startVirtualTurn + pageDelta;
+  if (drag.navigationMode === "front-closure") {
+    return clamp(rawVirtualTurn, -1, 0);
+  }
+  if (drag.navigationMode === "back-closure") {
+    return clamp(rawVirtualTurn, binderPageCount, binderPageCount + 1);
+  }
+  return clamp(rawVirtualTurn, 0, binderPageCount);
+}
+
 function onBinderPointerDown(event) {
-  if (!galleryOpen || !isBinderMode || binderPageCount < 1) return;
+  if (
+    !galleryOpen
+    || !isBinderMode
+    || binderOuterFlipState
+    || binderEvilTableSwapState
+    || binderPageCount < 1
+  ) {
+    return;
+  }
 
   clearBinderIntroLinkCursor();
   binderSpreadPreparationToken += 1;
@@ -6944,7 +11752,11 @@ function onBinderPointerDown(event) {
   markBinderInteractionActive();
   initBinderScene();
   startBinderRenderLoop();
-  els.binderCanvas.setPointerCapture(event.pointerId);
+  try {
+    els.binderCanvas.setPointerCapture(event.pointerId);
+  } catch {
+    // Keep the drag usable if pointer capture is unavailable or was interrupted.
+  }
 
   if (isTouchLikePointer(event)) {
     trackTouchPointer(binderTouchPointers, event);
@@ -6967,7 +11779,11 @@ function onBinderPointerDown(event) {
     startY: event.clientY,
     lastX: event.clientX,
     startTurn: binderTargetTurn,
+    startVirtualTurn: getBinderVirtualTurn(),
+    startClosedSide: getBinderTargetClosedSide(),
     startSinglePageSide: isBinderSinglePageView() ? getBinderSinglePageSide() : null,
+    navigationMode: "",
+    outerFlipState: null,
     moved: false,
   };
   binderWheelFocusLockUntil = 0;
@@ -6999,17 +11815,43 @@ function onBinderPointerMove(event) {
   binderDrag.lastX = event.clientX;
   binderDrag.moved = binderDrag.moved || Math.hypot(deltaX, deltaY) > 7;
 
-  if (!isBinderFocusView() && !(isBinderSinglePageView() && isTouchLikePointer(event))) {
+  if (!isBinderFocusView()) {
     const pageDelta = -(deltaX / Math.max(rect.width, 1)) / 0.26;
-    binderTargetTurn = clamp(binderDrag.startTurn + pageDelta, 0, binderPageCount);
-    if (Math.abs(pageDelta) > 0.002) {
+    if (!binderDrag.navigationMode && binderDrag.moved) {
+      binderDrag.navigationMode = getBinderDragNavigationMode(
+        binderDrag,
+        pageDelta,
+      );
+    }
+
+    if (binderDrag.navigationMode === "outer-flip") {
+      if (!binderDrag.outerFlipState) {
+        binderDrag.outerFlipState = beginBinderOuterFlipDrag(
+          binderDrag.startClosedSide,
+        );
+      }
+      if (binderDrag.outerFlipState) {
+        const outerFlipProgress = clamp(
+          binderDrag.startClosedSide * pageDelta,
+          0,
+          1,
+        );
+        applyBinderOuterFlipProgress(
+          binderDrag.outerFlipState,
+          outerFlipProgress,
+        );
+      }
+    } else if (
+      binderDrag.navigationMode
+      && !(isBinderSinglePageView() && isTouchLikePointer(event))
+    ) {
+      const virtualTurn = getBinderDragVirtualTurn(binderDrag, pageDelta);
+      setBinderVirtualTurn(virtualTurn, { immediate: true });
       binderSinglePageSideTouched = true;
       binderBendDirection = Math.sign(pageDelta);
+      binderTurn = binderTargetTurn;
+      updateBinderPageControls();
     }
-    binderTurn = binderTargetTurn;
-    updateBinderPageTransforms();
-    updateBinderPageControls();
-    renderBinderSceneOnce({ immediateCamera: true });
   }
   event.preventDefault();
 }
@@ -7038,7 +11880,14 @@ function onBinderPointerUp(event) {
     els.binderCanvas.releasePointerCapture(event.pointerId);
   }
 
+  if (finishedDrag.outerFlipState) {
+    settleDraggedBinderOuterFlip(finishedDrag.outerFlipState);
+    return;
+  }
+
   if (wasClick) {
+    if (handleBinderTableDieTap(event)) return;
+    if (handleEvilBinderTableSideTap(event)) return;
     if (handleBinderIntroLinkTap(event)) return;
     if (handleBinderIntroNoteTap(event)) return;
     if (handleFocusedBinderCardTap(event)) return;
@@ -7048,8 +11897,7 @@ function onBinderPointerUp(event) {
     handleFocusedBinderSwipe(finishedDrag, event);
   } else if (!isBinderFocusView()) {
     if (handleBinderSinglePageSwipe(finishedDrag, event)) return;
-    binderTargetTurn = Math.round(binderTargetTurn);
-    if (isBinderSinglePageView()) binderSinglePageSide = deriveBinderSinglePageSideFromTurn(binderTargetTurn);
+    snapBinderNavigationState();
     updateBinderPageControls();
     startBinderRenderLoop();
   }
@@ -7062,15 +11910,35 @@ function onBinderPointerCancel(event) {
   }
   if (!binderDrag || binderDrag.pointerId !== event.pointerId) return;
   markBinderInteractionActive();
+  const draggedOuterFlip = binderDrag.outerFlipState;
   binderDrag = null;
-  if (!isBinderFocusView()) binderTargetTurn = Math.round(binderTargetTurn);
-  if (!isBinderFocusView() && isBinderSinglePageView()) binderSinglePageSide = deriveBinderSinglePageSideFromTurn(binderTargetTurn);
+  if (draggedOuterFlip) {
+    startBinderOuterFlipSettle(draggedOuterFlip, 0);
+    return;
+  }
+  if (!isBinderFocusView()) snapBinderNavigationState();
   updateBinderPageControls();
   startBinderRenderLoop();
 }
 
+function onBinderPointerCaptureLost(event) {
+  if (isTouchLikePointer(event)) {
+    removeTouchPointer(binderTouchPointers, event);
+    if (binderPinchGesture && binderTouchPointers.size < 2) binderPinchGesture = null;
+  }
+  if (!binderDrag || binderDrag.pointerId !== event.pointerId) return;
+  onBinderPointerCancel(event);
+}
+
 function handleBinderWheel(event) {
-  if (!galleryOpen || !isBinderMode || binderPageCount < 1) return;
+  if (
+    !galleryOpen
+    || !isBinderMode
+    || binderEvilTableSwapState
+    || binderPageCount < 1
+  ) {
+    return;
+  }
 
   event.preventDefault();
   markBinderInteractionActive();
@@ -7088,19 +11956,21 @@ function handleBinderZoomInput(wheelDelta, event) {
   if (now < binderWheelFocusLockUntil) return;
 
   if (isBinderFocusView()) {
+    resetBinderTableWheelOutDistance();
     if (isBinderIntroFocused()) {
       resetBinderFocusWheelInDistance();
       if (wheelDelta < 0 || binderCardViewTransitionActive || now < binderFocusZoomOutLockUntil) return;
-      binderWheelFocusLockUntil = now + 700;
+      binderWheelFocusLockUntil = now + VIEW_SWITCH_CONTINUOUS_STEP_DELAY_MS;
       clearBinderFocus();
       return;
     }
 
     if (wheelDelta < 0) {
+      if (binderCardViewTransitionActive) return;
       if (focusBinderWheelHitCard(event, now)) return;
 
       if (addBinderFocusWheelInDistance(-wheelDelta, now)) {
-        binderWheelFocusLockUntil = now + BINDER_CARD_VIEW_TRANSITION_MS + BINDER_TO_CARD_SCROLL_LOCK_BUFFER_MS;
+        binderWheelFocusLockUntil = now + VIEW_SWITCH_CONTINUOUS_STEP_DELAY_MS;
         resetViewSwitchWheelDistances();
         openFocusedBinderCard().catch(console.error);
       }
@@ -7111,16 +11981,29 @@ function handleBinderZoomInput(wheelDelta, event) {
     if (binderCardViewTransitionActive || now < binderFocusZoomOutLockUntil) {
       return;
     }
-    binderWheelFocusLockUntil = now + 700;
+    binderWheelFocusLockUntil = now + VIEW_SWITCH_CONTINUOUS_STEP_DELAY_MS;
     clearBinderFocus();
     return;
   }
 
   resetBinderFocusWheelInDistance();
-  if (wheelDelta >= 0) return;
+  if (wheelDelta > 0) {
+    if (
+      !isBinderTableViewActive()
+      && addBinderTableWheelOutDistance(wheelDelta, now)
+    ) {
+      binderWheelFocusLockUntil = now + VIEW_SWITCH_CONTINUOUS_STEP_DELAY_MS;
+      resetViewSwitchWheelDistances();
+      setBinderTableView(true);
+    }
+    return;
+  }
+
+  resetBinderTableWheelOutDistance();
+  if (wheelDelta === 0) return;
 
   if (getBinderIntroNoteHit(event)) {
-    binderWheelFocusLockUntil = now + 700;
+    binderWheelFocusLockUntil = now + VIEW_SWITCH_CONTINUOUS_STEP_DELAY_MS;
     focusBinderIntroNote();
     return;
   }
@@ -7128,7 +12011,7 @@ function handleBinderZoomInput(wheelDelta, event) {
   const hit = getBinderCardHit(event);
   if (!hit) return;
 
-  binderWheelFocusLockUntil = now + 700;
+  binderWheelFocusLockUntil = now + VIEW_SWITCH_CONTINUOUS_STEP_DELAY_MS;
   focusBinderPosition(hit.object.userData.binderPosition);
 }
 
@@ -7140,7 +12023,7 @@ function focusBinderWheelHitCard(event, now = performance.now()) {
   if (!Number.isInteger(position) || position === binderFocusPosition) return false;
 
   resetBinderFocusWheelInDistance();
-  binderWheelFocusLockUntil = now + 700;
+  binderWheelFocusLockUntil = now + VIEW_SWITCH_CONTINUOUS_STEP_DELAY_MS;
   binderLastOpenTap = null;
   focusBinderPosition(position);
   return true;
@@ -7182,19 +12065,11 @@ function handleBinderSinglePageSwipe(drag, event) {
   const currentSide = Number.isInteger(drag.startSinglePageSide)
     ? drag.startSinglePageSide
     : getBinderSinglePageSide();
-  const nextSide = clamp(
-    currentSide + (deltaX < 0 ? 1 : -1),
-    BINDER_SINGLE_PAGE_COVER_SIDE,
-    getBinderTotalPageSides() - 1,
-  );
-  if (nextSide === currentSide) {
-    updateBinderPageControls();
-    startBinderRenderLoop();
-    return true;
-  }
-
   binderLastOpenTap = null;
-  return showBinderSinglePageSide(nextSide);
+  binderSinglePageSide = currentSide;
+  binderSinglePageSideTouched = true;
+  turnBinderSinglePage(deltaX < 0 ? 1 : -1);
+  return true;
 }
 
 function selectBinderCard(event) {
@@ -7211,7 +12086,8 @@ function handleBinderIntroLinkTap(event) {
   const hit = getBinderIntroLinkHit(event);
   if (!hit) return false;
 
-  window.open(hit.object.userData.binderIntroLinkUrl || BINDER_INTRO_LINK_URL, "_blank", "noopener,noreferrer");
+  if (isBinderTableViewActive()) return focusBinderIntroNote();
+  navigateBinderIntroLink(hit.object.userData.binderIntroLinkUrl);
   return true;
 }
 
@@ -7222,7 +12098,7 @@ function handleBinderIntroNoteTap(event) {
 
   if (isBinderIntroFocused()) {
     if (linkHit) {
-      window.open(linkHit.object.userData.binderIntroLinkUrl || BINDER_INTRO_LINK_URL, "_blank", "noopener,noreferrer");
+      navigateBinderIntroLink(linkHit.object.userData.binderIntroLinkUrl);
     }
     return true;
   }
@@ -7230,12 +12106,23 @@ function handleBinderIntroNoteTap(event) {
   return focusBinderIntroNote();
 }
 
+function navigateBinderIntroLink(url) {
+  const destination = new URL(url || BINDER_INTRO_LINK_URL, window.location.href);
+  if (destination.origin === window.location.origin) {
+    window.location.assign(destination.href);
+    return;
+  }
+  window.open(destination.href, "_blank", "noopener,noreferrer");
+}
+
 function updateBinderIntroLinkCursor(event) {
   if (event.pointerType && event.pointerType !== "mouse") {
     clearBinderIntroLinkCursor();
     return;
   }
-  const hasPointerTarget = getBinderCardHit(event)
+  const hasPointerTarget = getBinderTableDieHit(event)
+    || getEvilBinderTableSideHit(event)
+    || getBinderCardHit(event)
     || getBinderIntroLinkHit(event)
     || (!isBinderIntroFocused() && getBinderIntroNoteHit(event));
   els.binderCanvas.style.cursor = hasPointerTarget ? "pointer" : "";
@@ -7245,8 +12132,33 @@ function clearBinderIntroLinkCursor() {
   if (els.binderCanvas) els.binderCanvas.style.cursor = "";
 }
 
+function handleEvilBinderTableSideTap(event) {
+  const hit = getEvilBinderTableSideHit(event);
+  const collectionId = hit?.object?.userData?.evilBinderTableCollectionId;
+  return collectionId ? beginEvilBinderTableSwap(collectionId) : false;
+}
+
+function getEvilBinderTableSideHit(event) {
+  if (
+    !binderCamera
+    || binderEvilTableSetOpacity < 0.55
+    || !canStartEvilBinderTableSwap()
+  ) {
+    return null;
+  }
+
+  const hitMeshes = binderEvilTableEntries
+    .map((entry) => entry.hitMesh)
+    .filter((mesh) => isVisibleThroughParents(mesh));
+  if (!hitMeshes.length) return null;
+
+  setBinderRaycasterFromEvent(event);
+  return binderRaycaster.intersectObjects(hitMeshes, false)[0] || null;
+}
+
 function getBinderIntroLinkHit(event) {
   if (!binderCamera || !binderIntroLinkMeshes.length) return null;
+  if (Math.abs(binderClosure) > 0.08 || Math.abs(binderTargetClosure) > 0.08) return null;
   if (Math.abs(binderTurn) > 0.08 || Math.abs(binderTargetTurn) > 0.08) return null;
 
   const meshes = binderIntroLinkMeshes.filter((mesh) => (
@@ -7262,6 +12174,7 @@ function getBinderIntroLinkHit(event) {
 function getBinderIntroNoteHit(event) {
   if (!binderCamera || !binderIntroNoteMesh || !isVisibleThroughParents(binderIntroNoteMesh)) return null;
   if (hasActiveBinderIntroSuppressor()) return null;
+  if (Math.abs(binderClosure) > 0.08 || Math.abs(binderTargetClosure) > 0.08) return null;
   if (Math.abs(binderTurn) > 0.08 || Math.abs(binderTargetTurn) > 0.08) return null;
 
   setBinderRaycasterFromEvent(event);
@@ -7343,6 +12256,64 @@ function rememberBinderOpenTap(event, position, time = performance.now()) {
   };
 }
 
+function handleBinderCanvasDoubleClick(event) {
+  if (openClosedTableBinderFromPointer(event)) return;
+  openFocusedBinderCardFromPointer(event);
+}
+
+function openClosedTableBinderFromPointer(event) {
+  const closedSide = getBinderTargetClosedSide();
+  if (
+    !closedSide
+    || !binderCamera
+    || !binderShellState
+    || binderTableViewTarget <= 0.5
+    || binderTableViewProgress < 0.985
+    || Math.abs(binderClosure) < 0.985
+    || binderOuterFlipState
+    || binderEvilTableSwapState
+    || binderDrag
+    || isBinderFocusView()
+  ) {
+    return false;
+  }
+
+  const activeCover = closedSide < 0
+    ? binderShellState.leftCover
+    : binderShellState.rightCover;
+  if (!activeCover || !isVisibleThroughParents(activeCover)) return false;
+
+  setBinderRaycasterFromEvent(event);
+  if (!binderRaycaster.intersectObject(activeCover, false).length) return false;
+
+  event.preventDefault();
+  event.stopPropagation();
+  closeBinderPageStatusEdit({ update: false });
+  binderSpreadPreparationToken += 1;
+  binderPreparingSpread = false;
+  binderLastOpenTap = null;
+  binderSinglePageSide = 0;
+  binderSinglePageSideTouched = true;
+  binderBendDirection = -closedSide;
+  binderTargetTurn = 0;
+  binderTurn = 0;
+  binderTextureQueueKey = "";
+  ensureBinderPageWindow({
+    force: true,
+    center: 0,
+    queueTextures: false,
+    updateTransforms: false,
+  });
+  setBinderClosureTarget(0);
+  queueBinderTextureLoads(binderBuildToken, {
+    force: true,
+    includePreload: false,
+  });
+  requestBinderMaintenance(90);
+  queueSessionViewStateSave();
+  return true;
+}
+
 function openFocusedBinderCardFromPointer(event) {
   if (!isBinderFocused() || binderCardViewTransitionActive) return;
 
@@ -7356,6 +12327,7 @@ function openFocusedBinderCardFromPointer(event) {
 
 function getBinderCardHit(event) {
   if (!binderCamera || !binderCardMeshes.length) return null;
+  if (Math.abs(binderClosure) > 0.08 || Math.abs(binderTargetClosure) > 0.08) return null;
 
   const cardMeshes = getBinderCardRaycastMeshes();
   if (!cardMeshes.length) return null;
@@ -7433,14 +12405,35 @@ function isBinderCardOnCurrentPages(mesh) {
   );
 }
 
+function startCardRenderLoop() {
+  if (
+    cardAnimationFrame
+    || galleryOpen
+    || document.hidden
+    || cardContextLost
+    || !cardRenderer
+  ) {
+    return;
+  }
+  cardAnimationFrame = requestAnimationFrame(animateCard);
+}
+
+function stopCardRenderLoop() {
+  if (!cardAnimationFrame) return;
+  cancelAnimationFrame(cardAnimationFrame);
+  cardAnimationFrame = 0;
+}
+
 function animateCard(now = performance.now()) {
-  requestAnimationFrame(animateCard);
+  cardAnimationFrame = 0;
+  if (galleryOpen || document.hidden || cardContextLost || !cardRenderer) return;
   resizeCardRenderer();
   updateSmoothZoom();
   currentRotationX += (targetRotationX - currentRotationX) * 0.14;
   currentRotationY += (targetRotationY - currentRotationY) * 0.14;
-  cardGroup.rotation.x = currentRotationX;
-  cardGroup.rotation.y = currentRotationY + cardShuffleSpinY;
+  updateIndividualCardHoverTilt();
+  cardGroup.rotation.x = currentRotationX + individualCardHoverTiltX;
+  cardGroup.rotation.y = currentRotationY + individualCardHoverTiltY + cardShuffleSpinY;
   cardGroup.scale.setScalar(getResponsiveIndividualCardScale());
   targetCardOffsetX = getTraitCardOffsetX();
   currentCardOffsetX += (targetCardOffsetX - currentCardOffsetX) * 0.16;
@@ -7455,6 +12448,8 @@ function animateCard(now = performance.now()) {
   applyCardSwapOpacity();
   const cardEffectTime = now * 0.001;
   updateCardGlossActivity();
+  refreshCardEffectPointerProjection();
+  refreshIndividualCardHoverTiltTarget();
   updateCardEffectPointer();
   updateCardEffectViewOpacity(now);
   updateCardGlossUniforms(cardGradientMesh, cardEffectTime);
@@ -7466,6 +12461,7 @@ function animateCard(now = performance.now()) {
     updateAnimatedTextureRecords(getIndividualAnimatedTextureRecords());
   }
   cardRenderer.render(cardScene, cardCamera);
+  cardAnimationFrame = requestAnimationFrame(animateCard);
 }
 
 function getTraitCardOffsetX() {
@@ -7502,7 +12498,31 @@ function updateCardPan() {
 }
 
 function isCardPanMode() {
-  return currentCameraZ <= CARD_PAN_MODE_Z || targetCameraZ <= CARD_PAN_MODE_Z;
+  return !isUnrotatedCardFullyVisibleInViewport();
+}
+
+function isUnrotatedCardFullyVisibleInViewport() {
+  if (!cardCamera || !els.cardCanvas) return true;
+  const view = getCardVisibleWorldSize();
+  const rect = els.cardCanvas.getBoundingClientRect();
+  if (!view.width || !view.height || !rect.width || !rect.height) return true;
+
+  const cardScale = getResponsiveIndividualCardScale();
+  const halfCardWidth = (CARD_WIDTH * cardScale) / 2;
+  const halfCardHeight = (CARD_HEIGHT * cardScale) / 2;
+  const halfViewWidth = view.width / 2;
+  const halfViewHeight = view.height / 2;
+  const toleranceX = (view.width / rect.width) * CARD_PAN_CLIP_TOLERANCE_PX;
+  const toleranceY = (view.height / rect.height) * CARD_PAN_CLIP_TOLERANCE_PX;
+  const centerX = currentCardOffsetX;
+  const centerY = INDIVIDUAL_CARD_WORLD_Y;
+
+  return (
+    centerX - halfCardWidth >= -halfViewWidth - toleranceX
+    && centerX + halfCardWidth <= halfViewWidth + toleranceX
+    && centerY - halfCardHeight >= -halfViewHeight - toleranceY
+    && centerY + halfCardHeight <= halfViewHeight + toleranceY
+  );
 }
 
 function resetCardPan(immediate = false) {
@@ -7518,6 +12538,7 @@ function resetIndividualCardZoom() {
   targetCameraZ = CARD_CAMERA_DEFAULT_Z;
   currentCameraZ = CARD_CAMERA_DEFAULT_Z;
   smoothZoomVelocity = 0;
+  releaseIndividualCardHoverTilt({ immediate: true });
   resetCardPan(true);
   if (cardCamera) {
     cardCamera.position.z = CARD_CAMERA_DEFAULT_Z;
@@ -7534,11 +12555,36 @@ function resetIndividualCardZoom() {
 function clampCardPan(x, y) {
   const view = getCardVisibleWorldSize();
   const cardScale = getResponsiveIndividualCardScale();
-  const maxX = Math.max(0, (CARD_WIDTH * cardScale) / 2 + CARD_PAN_VISIBLE_MARGIN - view.width / 2);
-  const maxY = Math.max(0, (CARD_HEIGHT * cardScale) / 2 + CARD_PAN_VISIBLE_MARGIN - view.height / 2);
+  const xRange = getCardPanAxisRange(
+    CARD_WIDTH * cardScale,
+    view.width,
+    currentCardOffsetX,
+  );
+  const yRange = getCardPanAxisRange(
+    CARD_HEIGHT * cardScale,
+    view.height,
+    INDIVIDUAL_CARD_WORLD_Y,
+  );
   return {
-    x: clamp(x, -maxX, maxX),
-    y: clamp(y, -maxY, maxY),
+    x: clamp(x, xRange.min, xRange.max),
+    y: clamp(y, yRange.min, yRange.max),
+  };
+}
+
+function getCardPanAxisRange(cardSize, viewSize, baseCenter) {
+  const overflow = cardSize - viewSize;
+  if (overflow > 0) {
+    const travel = overflow / 2 + CARD_PAN_VISIBLE_MARGIN;
+    return {
+      min: -travel - baseCenter,
+      max: travel - baseCenter,
+    };
+  }
+
+  const centerTravel = Math.max(0, (viewSize - cardSize) / 2);
+  return {
+    min: -centerTravel - baseCenter,
+    max: centerTravel - baseCenter,
   };
 }
 
@@ -7608,6 +12654,7 @@ function updateCardGlossActivity() {
 function updateCardGlossUniforms(mesh, time = performance.now() * 0.001) {
   const uniforms = mesh?.material?.uniforms;
   if (!uniforms) return;
+  updateCardEffectTextureUsage(mesh, time * 1000);
   uniforms.uCameraPosition.value.copy(cardCamera.position);
   uniforms.uTime.value = time;
   if (uniforms.uPointer) uniforms.uPointer.value.set(cardEffectPointerX, cardEffectPointerY);
@@ -7626,6 +12673,7 @@ function updateCardEffectUniformsForGroup(group, time = performance.now() * 0.00
   for (const mesh of effectMeshes) {
     const uniforms = mesh?.material?.uniforms;
     if (!uniforms) continue;
+    updateCardEffectTextureUsage(mesh, time * 1000);
     uniforms.uCameraPosition.value.copy(cardCamera.position);
     uniforms.uTime.value = time;
     if (uniforms.uPointer) uniforms.uPointer.value.set(cardEffectPointerX, cardEffectPointerY);
@@ -7677,8 +12725,10 @@ function setIndividualCardEffectOpacity(opacity) {
 }
 
 function getCardEffectUniformActivity(effectMode) {
-  if (effectMode > CARD_EFFECT_MODE_DEFAULT + 0.5) return 1;
-  return cardGlossActivity;
+  if (effectMode >= CARD_EFFECT_MODE_CARD_NFT_2_RARE_HOLO_V) {
+    return 1;
+  }
+  return cardGlossActivity * cardShuffleGlossOpacity;
 }
 
 function renderBinderScene() {
@@ -7686,16 +12736,19 @@ function renderBinderScene() {
 }
 
 function startBinderRenderLoop() {
-  if (!galleryOpen || !isBinderMode || els.binderPanel.hidden) return;
-
+  if (
+    !galleryOpen
+    || !isBinderMode
+    || els.binderPanel.hidden
+    || document.hidden
+    || binderContextLost
+  ) {
+    return;
+  }
+  if (binderAnimationFrame) return;
   if (binderRenderFrame) {
     cancelAnimationFrame(binderRenderFrame);
     binderRenderFrame = 0;
-  }
-
-  if (binderAnimationFrame) {
-    cancelAnimationFrame(binderAnimationFrame);
-    binderAnimationFrame = 0;
   }
   binderLastAnimationAt = 0;
   if (binderAnimationDelayTimer) {
@@ -7704,7 +12757,7 @@ function startBinderRenderLoop() {
   }
 
   const renderFrame = (frameTime) => {
-    if (!galleryOpen || !isBinderMode || els.binderPanel.hidden) {
+    if (!galleryOpen || !isBinderMode || els.binderPanel.hidden || binderContextLost) {
       binderAnimationFrame = 0;
       binderAnimationDelayTimer = 0;
       binderLastAnimationAt = 0;
@@ -7722,7 +12775,7 @@ function startBinderRenderLoop() {
       binderAnimationDelayTimer = window.setTimeout(() => {
         binderAnimationDelayTimer = 0;
         binderAnimationFrame = requestAnimationFrame(renderFrame);
-      }, BINDER_ANIMATED_IDLE_MS);
+      }, binderAnimationIdleDelayMs);
       return;
     }
     binderAnimationFrame = requestAnimationFrame(renderFrame);
@@ -7744,7 +12797,12 @@ function stopBinderRenderLoop() {
 }
 
 function isBinderTurnMoving() {
-  return Boolean(binderDrag) || Math.abs(binderTargetTurn - binderTurn) > 0.0015;
+  return Boolean(binderDrag)
+    || Boolean(binderOuterFlipState)
+    || Boolean(binderEvilTableSwapState)
+    || Boolean(binderTableViewAnimation)
+    || Math.abs(binderTargetTurn - binderTurn) > 0.0015
+    || Math.abs(binderTargetClosure - binderClosure) > BINDER_CLOSURE_SETTLE_EPSILON;
 }
 
 function requestBinderMaintenance(delay = 90) {
@@ -7752,6 +12810,7 @@ function requestBinderMaintenance(delay = 90) {
 
   binderMaintenanceTimer = window.setTimeout(() => {
     binderMaintenanceTimer = 0;
+    if (document.hidden) return;
     if (!galleryOpen || !isBinderMode || els.binderPanel.hidden) return;
     if (isBinderTurnMoving() || isBinderCameraMoving() || binderPreparingSpread) {
       requestBinderMaintenance(delay);
@@ -7785,49 +12844,106 @@ function getFrameDampedAlpha(baseAlpha, deltaMs) {
 function updateBinderAnimation(frameTime = performance.now()) {
   const wasIdleOnly = binderLastAnimationIdleOnly;
   binderLastAnimationIdleOnly = false;
-  if (!binderRenderer || !binderScene || !binderCamera || !galleryOpen || !isBinderMode) {
+  if (
+    binderContextLost
+    || !binderRenderer
+    || !binderScene
+    || !binderCamera
+    || !galleryOpen
+    || !isBinderMode
+  ) {
     return false;
   }
 
   const now = Number.isFinite(frameTime) ? frameTime : performance.now();
   const deltaMs = getBinderAnimationDeltaMs(now);
-  let turnActive = Boolean(binderDrag);
+  const tableViewActive = updateBinderTableViewAnimation(now);
+  const tableDisplayModelFadeActive = updateBinderTableDisplayModelVisibility(now);
+  const tableDiceActive = updateBinderTableDice(now);
+  const tableAccessoryFadeActive = updateBinderTableAccessoryVisibility(now);
+  const outerFlipActive = updateBinderOuterFlip(now);
+  let turnActive = Boolean(binderDrag) || outerFlipActive || tableDiceActive;
   if (!binderDrag) {
-    const delta = binderTargetTurn - binderTurn;
-    if (Math.abs(delta) > 0.0015) binderBendDirection = Math.sign(delta);
-    binderTurn += delta * getFrameDampedAlpha(BINDER_TURN_BASE_ALPHA, deltaMs);
-    turnActive = Math.abs(delta) >= 0.0015;
-    if (!turnActive) binderTurn = binderTargetTurn;
+    const turnDelta = binderTargetTurn - binderTurn;
+    if (Math.abs(turnDelta) > 0.0015) binderBendDirection = Math.sign(turnDelta);
+    binderTurn += turnDelta * getFrameDampedAlpha(BINDER_TURN_BASE_ALPHA, deltaMs);
+    const pageTurnActive = Math.abs(turnDelta) >= 0.0015;
+    if (!pageTurnActive) binderTurn = binderTargetTurn;
+
+    const closureDelta = binderTargetClosure - binderClosure;
+    binderClosure += closureDelta * getFrameDampedAlpha(BINDER_CLOSURE_BASE_ALPHA, deltaMs);
+    const closureActive = Math.abs(closureDelta) >= BINDER_CLOSURE_SETTLE_EPSILON;
+    if (!closureActive) binderClosure = binderTargetClosure;
+    turnActive = turnActive || pageTurnActive || closureActive;
   }
+  const evilTableSwapActive = updateEvilBinderTableSwap(now);
+  turnActive = turnActive || evilTableSwapActive;
 
   const interactionActive = now < binderInteractionActiveUntil;
   const introNoteFadeActive = updateBinderIntroNoteModeOpacity(now);
-  if (turnActive || interactionActive || !wasIdleOnly || introNoteFadeActive) {
+  if (turnActive && !outerFlipActive) {
+    ensureBinderPageWindow({
+      center: getDesiredBinderPageWindowCenter(),
+      queueTextures: false,
+      updateTransforms: false,
+      loadBackTextures: false,
+    });
+  }
+  if (turnActive || tableViewActive || !wasIdleOnly || introNoteFadeActive) {
     updateBinderPageTransforms();
   }
   updateBinderCameraFrame(false, deltaMs);
   const cameraMoving = isBinderCameraMoving();
   const animatedRecords = getBinderVisibleAnimatedTextureRecords();
-  const fadeActive = updateBinderCardLoadFades(now) || introNoteFadeActive;
-  if (!turnActive && !cameraMoving && animatedRecords.size && !interactionActive && !fadeActive) {
+  const fadeActive = (
+    updateBinderCardLoadFades(now)
+    || introNoteFadeActive
+    || tableDisplayModelFadeActive
+    || tableAccessoryFadeActive
+  );
+  const loadingRingState = updateBinderLoadingRings(now);
+  const loadingRingActive = (loadingRingState & 1) !== 0;
+  const loadingRingChanged = (loadingRingState & 2) !== 0;
+  const idleVisualActive = animatedRecords.size > 0 || loadingRingActive;
+  binderAnimationIdleDelayMs = loadingRingActive
+    ? BINDER_LOADING_RING_IDLE_MS
+    : BINDER_ANIMATED_IDLE_MS;
+  if (!turnActive && !tableViewActive && !cameraMoving && idleVisualActive && !fadeActive) {
     const animatedUpdated = updateAnimatedTextureRecords(animatedRecords);
-    if (animatedUpdated) {
+    if (animatedUpdated || loadingRingActive || loadingRingChanged) {
       binderRenderer.render(binderScene, binderCamera);
     }
     binderLastAnimationIdleOnly = true;
     return true;
   }
 
-  if (turnActive || cameraMoving || interactionActive) {
+  if ((turnActive || cameraMoving) && !outerFlipActive) {
     queueBinderTextureLoads(binderBuildToken, { includePreload: false });
   }
   const cameraActive = isBinderCameraMoving();
   const animatedUpdated = updateAnimatedTextureRecords(animatedRecords);
-  if (turnActive || cameraActive || animatedUpdated || interactionActive || fadeActive) {
+  if (
+    turnActive
+    || tableViewActive
+    || cameraActive
+    || animatedUpdated
+    || fadeActive
+    || loadingRingActive
+    || loadingRingChanged
+  ) {
     binderRenderer.render(binderScene, binderCamera);
   }
-  const keepAnimating = turnActive || cameraActive || interactionActive || animatedRecords.size > 0 || fadeActive;
-  binderLastAnimationIdleOnly = !turnActive && !cameraActive && !interactionActive && !fadeActive && animatedRecords.size > 0;
+  const keepAnimating = turnActive
+    || tableViewActive
+    || cameraActive
+    || animatedRecords.size > 0
+    || fadeActive
+    || loadingRingActive;
+  binderLastAnimationIdleOnly = !turnActive
+    && !tableViewActive
+    && !cameraActive
+    && !fadeActive
+    && idleVisualActive;
   if (!turnActive && !cameraActive && !interactionActive) {
     if (binderTextureApplyQueue.length) requestBinderTextureApplyFlush();
     pumpBinderTextureQueue();
@@ -7844,6 +12960,7 @@ function isBinderCameraMoving() {
 
 function updateBinderPageTransforms() {
   const turn = clamp(binderTurn, 0, binderPageCount);
+  updateBinderShellTransforms();
   updateBinderIntroNoteOpacity(turn);
   const lowerTurn = Math.floor(turn);
   const turnFraction = turn - lowerTurn;
@@ -7895,11 +13012,14 @@ function updateBinderPageTransforms() {
       })
       : restLayout.sheetVisibility;
     const pageVisibility = isActivePage ? 1 : restLayout.pageVisibility;
-    page.group.visible = isActivePage || pageVisibility > 0.001;
+    page.group.visible = !binderOuterFlipState
+      && !binderEvilTableSwapState
+      && (isActivePage || pageVisibility > 0.001);
     setBinderSheetOpacity(page, turnActivity, sheetVisibility * pageVisibility);
     setBinderPageOpacity(page, pageVisibility);
     applyBinderColumnBend(page, rawTurn);
   }
+  applyBinderTableCoverVisibility(binderTableViewProgress);
 }
 
 function getBinderRestPageLayout(pageIndex, restTurn) {
@@ -8125,6 +13245,38 @@ function updateBinderCardLoadFades(now = performance.now()) {
   return fadeActive;
 }
 
+function updateBinderLoadingRings(now = performance.now()) {
+  let state = 0;
+  const rotation = now * BINDER_LOADING_RING_SPEED;
+
+  for (const ring of binderLoadingRings) {
+    const card = ring.userData.binderCardMesh;
+    const position = ring.userData.binderPosition;
+    const pageIndex = Math.floor(position / BINDER_PAGE_SLOTS);
+    const page = binderPages.find((entry) => entry.pageIndex === pageIndex);
+    const shouldShow = Boolean(
+      ring.parent
+      && card?.parent
+      && !card.userData.textureLoaded
+      && !card.userData.textureLoadFailed
+      && page?.group.visible
+      && (page.cardOpacity ?? 1) > 0.02
+      && isBinderPositionVisible(position)
+    );
+
+    if (ring.visible !== shouldShow) {
+      ring.visible = shouldShow;
+      state |= 2;
+    }
+    if (!shouldShow) continue;
+
+    ring.rotation.z = ring.userData.binderSide < 0 ? -rotation : rotation;
+    state |= 1;
+  }
+
+  return state;
+}
+
 function updateBinderIntroNoteOpacity(turn) {
   if (!binderIntroNoteGroup || !binderIntroNoteMesh?.material) return;
 
@@ -8133,7 +13285,6 @@ function updateBinderIntroNoteOpacity(turn) {
   binderIntroNoteGroup.visible = opacity > 0.001;
   binderIntroNoteMesh.material.opacity = opacity;
   binderIntroNoteMesh.material.transparent = true;
-  binderIntroNoteMesh.material.needsUpdate = true;
   for (const mesh of binderIntroLinkMeshes) {
     mesh.visible = opacity > 0.08;
   }
@@ -8342,12 +13493,15 @@ function renderBinderSceneOnce({
   includePreload = !isBinderTurnMoving(),
   immediateCamera = false,
 } = {}) {
-  if (!binderRenderer || !binderScene || !binderCamera) return;
+  if (binderContextLost || !binderRenderer || !binderScene || !binderCamera) return;
+  applyBinderTableViewProgress();
   updateBinderPageTransforms();
   updateBinderCameraFrame(immediateCamera || !binderCameraReady);
   queueBinderTextureLoads(binderBuildToken, { includePreload });
   updateAnimatedTextureRecords(getBinderVisibleAnimatedTextureRecords());
+  const loadingRingState = updateBinderLoadingRings();
   binderRenderer.render(binderScene, binderCamera);
+  if ((loadingRingState & 1) !== 0) startBinderRenderLoop();
 }
 
 function requestBinderRenderOnce() {
@@ -8369,17 +13523,15 @@ function requestBinderRenderOnce() {
 }
 
 function requestResize() {
-  updateAppViewportVars();
-  if (resizeFrame) cancelAnimationFrame(resizeFrame);
+  if (resizeFrame) return;
   resizeFrame = requestAnimationFrame(() => {
     resizeFrame = 0;
+    updateAppViewportVars();
     resizeCardRenderer();
-  });
-  if (binderResizeFrame) cancelAnimationFrame(binderResizeFrame);
-  binderResizeFrame = requestAnimationFrame(() => {
-    binderResizeFrame = 0;
     resizeBinderRenderer();
-    renderBinderSceneOnce();
+    if (galleryOpen && isBinderMode && !els.binderPanel.hidden) {
+      renderBinderSceneOnce();
+    }
   });
 }
 
@@ -8387,10 +13539,14 @@ function resizeCardRenderer() {
   const rect = els.cardCanvas.getBoundingClientRect();
   const width = Math.max(1, Math.floor(rect.width));
   const height = Math.max(1, Math.floor(rect.height));
+  const pixelRatio = getRendererPixelRatio(width, height);
+  if (Math.abs(cardRenderer.getPixelRatio() - pixelRatio) > 0.001) {
+    cardRenderer.setPixelRatio(pixelRatio);
+  }
   cardLastWidth = width;
   cardLastHeight = height;
-  if (els.cardCanvas.width === Math.floor(width * cardRenderer.getPixelRatio())
-    && els.cardCanvas.height === Math.floor(height * cardRenderer.getPixelRatio())) {
+  if (els.cardCanvas.width === Math.floor(width * pixelRatio)
+    && els.cardCanvas.height === Math.floor(height * pixelRatio)) {
     return;
   }
   cardRenderer.setSize(width, height, false);
@@ -8406,6 +13562,12 @@ function resizeBinderRenderer() {
   const height = Math.round(rect.height);
   if (!width || !height) return;
 
+  const pixelRatio = getRendererPixelRatio(width, height);
+  if (Math.abs(binderRenderer.getPixelRatio() - pixelRatio) > 0.001) {
+    binderRenderer.setPixelRatio(pixelRatio);
+    binderLastWidth = 0;
+    binderLastHeight = 0;
+  }
   if (width !== binderLastWidth || height !== binderLastHeight) {
     binderRenderer.setSize(width, height, false);
     binderCamera.aspect = width / height;
@@ -8422,12 +13584,12 @@ function resizeBinderRenderer() {
 function createBinderCoverMaterial() {
   const map = createBinderCoverTexture();
   return new THREE.MeshStandardMaterial({
-    color: 0x11100d,
+    color: BINDER_COVER_BASE_COLOR,
     map,
     roughness: 0.9,
     metalness: 0.015,
-    emissive: 0x040302,
-    emissiveIntensity: 0.28,
+    emissive: BINDER_COVER_BASE_EMISSIVE,
+    emissiveIntensity: BINDER_COVER_BASE_EMISSIVE_INTENSITY,
   });
 }
 
@@ -8504,13 +13666,21 @@ function drawBinderIntroNoteSurface(ctx) {
   ctx.fillStyle = "rgba(156, 153, 146, 0.74)";
 
   const fontStack = SITE_FONT_STACK;
-  const baseFontSize = 33;
-  const linkText = "evil biscuit";
-  const binderName = ACTIVE_COLLECTION_ID === "cardnft2" ? "card nft 2" : "card nft";
-  const firstLinePrefix = `this is a 3d binder viewer for ${binderName} by  `;
   const maxTextWidth = width * 0.9;
   const textFillStyle = "rgba(156, 153, 146, 0.74)";
   const linkFillStyle = "rgba(176, 172, 164, 0.9)";
+  if (ACTIVE_COLLECTION.introGroup !== "evil") {
+    return drawCommunityBinderIntroLinks(ctx, {
+      fontStack,
+      textFillStyle,
+      linkFillStyle,
+    });
+  }
+
+  const baseFontSize = 33;
+  const linkText = "evil biscuit";
+  const binderName = ACTIVE_COLLECTION.label.toLowerCase();
+  const firstLinePrefix = `this is a 3d binder viewer for ${binderName} by  `;
   const textOffsetY = -54;
 
   const evilBiscuitLinkBounds = drawBinderIntroLinkedLine(ctx, {
@@ -8552,35 +13722,62 @@ function drawBinderIntroNoteSurface(ctx) {
 
   const linkBounds = [evilBiscuitLinkBounds];
   let focusBottomY = 390 + textOffsetY + 42 * 0.48;
-  if (ACTIVE_COLLECTION_ID === "cardnft1") {
-    const cardNft2LinkBounds = drawBinderIntroLinkedLine(ctx, {
-      prefix: "card nft 2 out now. ",
-      linkText: "click here",
-      suffix: " to view",
-      y: 510 + textOffsetY,
-      maxWidth: maxTextWidth,
-      fontSize: 32,
+  const otherCollections = Object.values(COLLECTION_CONFIGS)
+    .filter((collection) => (
+      collection.introGroup === "evil"
+      && collection.id !== ACTIVE_COLLECTION_ID
+    ));
+  const collectionLinksY = 505 + textOffsetY;
+  ctx.fillStyle = textFillStyle;
+  drawCenteredBinderIntroText(
+    ctx,
+    "/",
+    width / 2,
+    collectionLinksY,
+    maxTextWidth,
+    30,
+    fontStack,
+  );
+  otherCollections.forEach((collection, index) => {
+    const centerX = width * (index === 0 ? 0.36 : 0.64);
+    const collectionLinkBounds = drawBinderIntroLinkedLine(ctx, {
+      prefix: "",
+      linkText: collection.introLabel,
+      y: collectionLinksY,
+      centerX,
+      maxWidth: width * 0.38,
+      fontSize: 30,
       fontStack,
       textFillStyle,
       linkFillStyle,
-      url: BINDER_CARD_NFT_2_LINK_URL,
+      url: collection.path,
     });
-    linkBounds.push(cardNft2LinkBounds);
-    focusBottomY = 510 + textOffsetY + 32 * 0.48;
-  } else if (ACTIVE_COLLECTION_ID === "cardnft2") {
-    const cardNft1LinkBounds = drawBinderIntroLinkedLine(ctx, {
-      prefix: "to view the card nft 1 collection ",
-      linkText: "click here",
-      y: 510 + textOffsetY,
-      maxWidth: maxTextWidth,
-      fontSize: 32,
-      fontStack,
-      textFillStyle,
-      linkFillStyle,
-      url: BINDER_CARD_NFT_1_LINK_URL,
-    });
-    linkBounds.push(cardNft1LinkBounds);
-    focusBottomY = 510 + textOffsetY + 32 * 0.48;
+    linkBounds.push(collectionLinkBounds);
+    focusBottomY = collectionLinksY + 30 * 0.48;
+  });
+
+  const limitedCollection = COLLECTION_CONFIGS.limited;
+  const limitedLinkY = collectionLinksY + 64;
+  const limitedLinkBounds = drawBinderIntroLinkedLine(ctx, {
+    prefix: "",
+    linkText: "+",
+    y: limitedLinkY,
+    centerX: width / 2,
+    maxWidth: width * 0.16,
+    fontSize: 36,
+    fontStack,
+    textFillStyle,
+    linkFillStyle,
+    url: limitedCollection?.path || "/limited/",
+    underline: false,
+    hitMinWidth: 72,
+    hitMinHeight: 58,
+  });
+  linkBounds.push(limitedLinkBounds);
+  focusBottomY = Math.max(focusBottomY, limitedLinkY + 36 * 0.55);
+
+  if (!otherCollections.length) {
+    focusBottomY = Math.max(focusBottomY, 390 + textOffsetY + 42 * 0.48);
   }
 
   const focusTop = Math.max(0, (144 + textOffsetY - baseFontSize * 1.28) / height);
@@ -8596,9 +13793,74 @@ function drawBinderIntroNoteSurface(ctx) {
   };
 }
 
+function drawCommunityBinderIntroLinks(
+  ctx,
+  { fontStack, textFillStyle, linkFillStyle },
+) {
+  const { width, height } = ctx.canvas;
+  const linkedCollections = COMMUNITY_COVER_COLLECTION_ORDER
+    .map((collectionId) => COLLECTION_CONFIGS[collectionId])
+    .filter((collection) => collection.id !== ACTIVE_COLLECTION_ID);
+  const rowCount = Math.ceil(linkedCollections.length / 2);
+  const firstRowY = 92;
+  const lastRowY = 512;
+  const rowGap = rowCount > 1 ? (lastRowY - firstRowY) / (rowCount - 1) : 0;
+  const fontSize = 29;
+  const linkBounds = [];
+
+  ctx.fillStyle = textFillStyle;
+  linkedCollections.forEach((collection, index) => {
+    const column = index % 2;
+    const row = Math.floor(index / 2);
+    const bounds = drawBinderIntroLinkedLine(ctx, {
+      prefix: "",
+      linkText: collection.introLabel,
+      y: firstRowY + row * rowGap,
+      centerX: width * (column === 0 ? 0.28 : 0.72),
+      maxWidth: width * 0.41,
+      fontSize,
+      fontStack,
+      textFillStyle,
+      linkFillStyle,
+      url: collection.path,
+    });
+    linkBounds.push(bounds);
+  });
+
+  const focusTop = Math.max(0, (firstRowY - fontSize * 1.35) / height);
+  const focusBottom = Math.min(
+    1,
+    (firstRowY + Math.max(0, rowCount - 1) * rowGap + fontSize * 0.55) / height,
+  );
+  return {
+    linkBounds,
+    focusBounds: {
+      x: 0.03,
+      y: focusTop,
+      width: 0.94,
+      height: focusBottom - focusTop,
+    },
+  };
+}
+
 function drawBinderIntroLinkedLine(
   ctx,
-  { prefix, linkText, suffix = "", y, maxWidth, fontSize, fontStack, textFillStyle, linkFillStyle, url },
+  {
+    prefix,
+    linkText,
+    suffix = "",
+    y,
+    centerX = ctx.canvas.width / 2,
+    maxWidth,
+    fontSize,
+    fontStack,
+    textFillStyle,
+    linkFillStyle,
+    url,
+    underline = true,
+    hitMinWidth = 0,
+    hitMinHeight = 0,
+  },
 ) {
   let size = fontSize;
   while (size > 18) {
@@ -8611,7 +13873,7 @@ function drawBinderIntroLinkedLine(
   const prefixWidth = ctx.measureText(prefix).width;
   const linkWidth = ctx.measureText(linkText).width;
   const suffixWidth = ctx.measureText(suffix).width;
-  const lineStartX = (ctx.canvas.width - prefixWidth - linkWidth - suffixWidth) / 2;
+  const lineStartX = centerX - (prefixWidth + linkWidth + suffixWidth) / 2;
   ctx.textAlign = "left";
   ctx.fillStyle = textFillStyle;
   ctx.fillText(prefix, lineStartX, y);
@@ -8622,18 +13884,46 @@ function drawBinderIntroLinkedLine(
     ctx.fillText(suffix, lineStartX + prefixWidth + linkWidth, y);
   }
 
-  const underlineY = y + Math.max(8, size * 0.25);
-  ctx.globalAlpha = 0.55;
-  ctx.fillRect(lineStartX + prefixWidth, underlineY, linkWidth, Math.max(2, size * 0.06));
-  ctx.globalAlpha = 1;
+  if (underline) {
+    drawBinderIntroLinkUnderline(
+      ctx,
+      lineStartX + prefixWidth,
+      y + Math.max(8, size * 0.25),
+      linkWidth,
+      size,
+    );
+  }
+
+  const linkX = lineStartX + prefixWidth;
+  const linkHeight = size * 1.25;
+  const hitWidth = Math.max(linkWidth, hitMinWidth);
+  const hitHeight = Math.max(linkHeight, hitMinHeight);
+  const hitX = linkX + linkWidth / 2 - hitWidth / 2;
+  const hitY = y - size * 0.94 + linkHeight / 2 - hitHeight / 2;
 
   return {
-    x: (lineStartX + prefixWidth) / ctx.canvas.width,
-    y: (y - size * 0.94) / ctx.canvas.height,
-    width: linkWidth / ctx.canvas.width,
-    height: (size * 1.25) / ctx.canvas.height,
+    x: hitX / ctx.canvas.width,
+    y: hitY / ctx.canvas.height,
+    width: hitWidth / ctx.canvas.width,
+    height: hitHeight / ctx.canvas.height,
     url,
   };
+}
+
+function drawBinderIntroLinkUnderline(ctx, x, y, width, fontSize) {
+  const snappedX = Math.round(x);
+  const snappedRight = Math.round(x + width);
+  const snappedWidth = Math.max(1, snappedRight - snappedX);
+  const snappedY = Math.round(y);
+  const snappedHeight = Math.max(
+    BINDER_INTRO_LINK_UNDERLINE_MIN_HEIGHT,
+    Math.round(fontSize * BINDER_INTRO_LINK_UNDERLINE_HEIGHT_RATIO),
+  );
+
+  ctx.save();
+  ctx.globalAlpha *= BINDER_INTRO_LINK_UNDERLINE_ALPHA;
+  ctx.fillRect(snappedX, snappedY, snappedWidth, snappedHeight);
+  ctx.restore();
 }
 
 function drawCenteredBinderIntroText(ctx, text, x, y, maxWidth, fontSize, fontStack) {
@@ -8777,7 +14067,10 @@ function addIndividualWheelOutDistance(amount, now) {
   }
   individualWheelOutLastAt = now;
   individualWheelOutDistance += amount;
-  return individualWheelOutDistance >= INDIVIDUAL_TO_BINDER_WHEEL_THRESHOLD;
+  if (individualWheelOutDistance < INDIVIDUAL_TO_BINDER_WHEEL_THRESHOLD) return false;
+  individualWheelOutDistance = 0;
+  individualWheelOutLastAt = now;
+  return true;
 }
 
 function addBinderFocusWheelInDistance(amount, now) {
@@ -8786,12 +14079,32 @@ function addBinderFocusWheelInDistance(amount, now) {
   }
   binderFocusWheelInLastAt = now;
   binderFocusWheelInDistance += amount;
-  return binderFocusWheelInDistance >= BINDER_TO_INDIVIDUAL_WHEEL_THRESHOLD;
+  if (binderFocusWheelInDistance < BINDER_TO_INDIVIDUAL_WHEEL_THRESHOLD) return false;
+  binderFocusWheelInDistance = 0;
+  binderFocusWheelInLastAt = now;
+  return true;
+}
+
+function addBinderTableWheelOutDistance(amount, now) {
+  if (now - binderTableWheelOutLastAt > VIEW_SWITCH_WHEEL_IDLE_MS) {
+    binderTableWheelOutDistance = 0;
+  }
+  binderTableWheelOutLastAt = now;
+  binderTableWheelOutDistance += amount;
+  if (binderTableWheelOutDistance < BINDER_TO_TABLE_WHEEL_THRESHOLD) return false;
+  binderTableWheelOutDistance = 0;
+  binderTableWheelOutLastAt = now;
+  return true;
 }
 
 function resetIndividualWheelOutDistance() {
   individualWheelOutDistance = 0;
   individualWheelOutLastAt = 0;
+}
+
+function resetBinderTableWheelOutDistance() {
+  binderTableWheelOutDistance = 0;
+  binderTableWheelOutLastAt = 0;
 }
 
 function resetBinderFocusWheelInDistance() {
@@ -8801,6 +14114,7 @@ function resetBinderFocusWheelInDistance() {
 
 function resetViewSwitchWheelDistances() {
   resetIndividualWheelOutDistance();
+  resetBinderTableWheelOutDistance();
   resetBinderFocusWheelInDistance();
 }
 
@@ -8815,46 +14129,132 @@ function getCardTexture(card) {
 }
 
 function getBinderTexture(card) {
-  return getCachedNftTexture(card);
+  return getCachedBinderTexture(card);
 }
 
 function getCachedNftTexture(card) {
   const key = textureAssetPath(card);
   if (nftTextureCache.has(key)) {
-    const promise = nftTextureCache.get(key);
+    const entry = nftTextureCache.get(key);
     nftTextureCache.delete(key);
-    nftTextureCache.set(key, promise);
-    return promise;
+    nftTextureCache.set(key, entry);
+    return entry.promise;
   }
 
-  const promise = (
+  const entry = {
+    texture: null,
+    bytes: estimateFullCardTextureBytes(card),
+    promise: null,
+  };
+  entry.promise = (
     getAnimatedSpriteInfo(card)
       ? loadAnimatedTexture(card)
       : loadTexture(cardAssetUrl(card))
-  ).catch((error) => {
-    nftTextureCache.delete(key);
+  ).then((texture) => {
+    entry.texture = texture;
+    entry.bytes = getDecodedTextureBytes(texture, entry.bytes);
+    trimNftTextureCache();
+    return texture;
+  }).catch((error) => {
+    if (nftTextureCache.get(key) === entry) nftTextureCache.delete(key);
     throw error;
   });
-  nftTextureCache.set(key, promise);
+  nftTextureCache.set(key, entry);
   trimNftTextureCache();
-  return promise;
+  return entry.promise;
+}
+
+function getCachedBinderTexture(card) {
+  const key = textureAssetPath(card);
+  if (binderTextureCache.has(key)) {
+    const entry = binderTextureCache.get(key);
+    binderTextureCache.delete(key);
+    binderTextureCache.set(key, entry);
+    return entry.promise;
+  }
+
+  const entry = {
+    texture: null,
+    bytes: estimateBinderTextureBytes(card),
+    promise: null,
+  };
+  entry.promise = loadBinderDisplayTexture(card)
+    .then((texture) => {
+      entry.texture = texture;
+      entry.bytes = getDecodedTextureBytes(texture, entry.bytes);
+      trimBinderTextureCache();
+      return texture;
+    })
+    .catch((error) => {
+      if (binderTextureCache.get(key) === entry) binderTextureCache.delete(key);
+      throw error;
+    });
+  binderTextureCache.set(key, entry);
+  trimBinderTextureCache();
+  return entry.promise;
+}
+
+function getReadyBinderTexture(card) {
+  const key = textureAssetPath(card);
+  const entry = binderTextureCache.get(key);
+  if (!entry?.texture) return null;
+  binderTextureCache.delete(key);
+  binderTextureCache.set(key, entry);
+  return entry.texture;
 }
 
 function trimNftTextureCache() {
   const protectedKeys = getProtectedTextureKeys();
   let protectedScans = 0;
-  while (nftTextureCache.size > MAX_TEXTURE_CACHE_SIZE && protectedScans < nftTextureCache.size) {
+  while (
+    (
+      nftTextureCache.size > MAX_TEXTURE_CACHE_SIZE
+      || getTextureCacheBytes(nftTextureCache) > NFT_TEXTURE_CACHE_BUDGET_BYTES
+    )
+    && protectedScans < nftTextureCache.size
+  ) {
     const oldest = nftTextureCache.entries().next().value;
     if (!oldest) return;
-    const [key, promise] = oldest;
+    const [key, entry] = oldest;
     nftTextureCache.delete(key);
-    if (protectedKeys.has(key)) {
-      nftTextureCache.set(key, promise);
+    if (!entry.texture || protectedKeys.has(key) || isTextureAttachedToCardScene(entry.texture)) {
+      nftTextureCache.set(key, entry);
       protectedScans += 1;
       continue;
     }
     protectedScans = 0;
-    Promise.resolve(promise).then(disposeNftTexture).catch(() => {});
+    invalidatePreparedIndividualCardsForTexture(entry.texture);
+    disposeNftTexture(entry.texture);
+  }
+}
+
+function getRendererPixelRatio(width, height) {
+  const nativeRatio = Math.min(Number(window.devicePixelRatio) || 1, MAX_RENDERER_PIXEL_RATIO);
+  const pixelBudgetRatio = Math.sqrt(
+    MAX_RENDER_BUFFER_PIXELS / Math.max(1, Number(width) * Number(height)),
+  );
+  return clamp(Math.min(nativeRatio, pixelBudgetRatio), 1, MAX_RENDERER_PIXEL_RATIO);
+}
+
+function trimBinderTextureCache() {
+  const protectedKeys = getProtectedBinderTextureKeys();
+  let protectedScans = 0;
+  while (
+    getTextureCacheBytes(binderTextureCache) > BINDER_TEXTURE_CACHE_BUDGET_BYTES
+    && protectedScans < binderTextureCache.size
+  ) {
+    const oldest = binderTextureCache.entries().next().value;
+    if (!oldest) return;
+    const [key, entry] = oldest;
+    binderTextureCache.delete(key);
+    if (!entry.texture || protectedKeys.has(key)) {
+      binderTextureCache.set(key, entry);
+      protectedScans += 1;
+      continue;
+    }
+    protectedScans = 0;
+    detachBinderTexture(entry.texture);
+    disposeNftTexture(entry.texture);
   }
 }
 
@@ -8863,8 +14263,12 @@ function getProtectedTextureKeys() {
   if (Number.isInteger(currentIndex) && CARDS[currentIndex]) {
     keys.add(textureAssetPath(CARDS[currentIndex]));
   }
+  return keys;
+}
 
-  if (binderVisibleIndexes.length) {
+function getProtectedBinderTextureKeys() {
+  const keys = new Set(individualBinderSpreadPrewarmKeys);
+  if (galleryOpen && isBinderMode && binderVisibleIndexes.length) {
     for (const position of getBinderPreloadPositions()) {
       const cardIndex = binderVisibleIndexes[position];
       if (Number.isInteger(cardIndex) && CARDS[cardIndex]) {
@@ -8876,17 +14280,183 @@ function getProtectedTextureKeys() {
   return keys;
 }
 
+function getTextureCacheBytes(cache) {
+  let total = 0;
+  for (const entry of cache.values()) total += Number(entry?.bytes) || 0;
+  return total;
+}
+
+function getDecodedTextureBytes(texture, fallback = 0) {
+  const image = texture?.image || texture?.source?.data;
+  const width = Number(image?.naturalWidth || image?.videoWidth || image?.width);
+  const height = Number(image?.naturalHeight || image?.videoHeight || image?.height);
+  return width > 0 && height > 0 ? width * height * 4 : fallback;
+}
+
+function estimateFullCardTextureBytes(card) {
+  const sprite = getAnimatedSpriteInfo(card);
+  if (sprite) {
+    const frameWidth = Number(sprite.frameWidth || card?.width || 700);
+    const frameHeight = Number(sprite.frameHeight || card?.height || 980);
+    return frameWidth * frameHeight * Math.max(1, sprite.columns || 1) * Math.max(1, sprite.rows || 1) * 4;
+  }
+  return Math.max(1, Number(card?.width) || 700) * Math.max(1, Number(card?.height) || 980) * 4;
+}
+
+function estimateBinderTextureBytes(card) {
+  const sprite = getAnimatedSpriteInfo(card);
+  const sourceWidth = Number(sprite?.frameWidth || card?.width || 700);
+  const sourceHeight = Number(sprite?.frameHeight || card?.height || 980);
+  const frameWidth = Math.min(BINDER_TEXTURE_FRAME_WIDTH, sourceWidth);
+  const frameHeight = Math.max(1, Math.round(frameWidth * sourceHeight / Math.max(1, sourceWidth)));
+  return frameWidth
+    * frameHeight
+    * Math.max(1, sprite?.columns || 1)
+    * Math.max(1, sprite?.rows || 1)
+    * 4;
+}
+
+function isTextureAttachedToCardScene(texture) {
+  if (!texture) return false;
+  if (cardFrontMesh?.material?.map === texture || cardBackMesh?.material?.map === texture) return true;
+  for (const mesh of binderFullResolutionMeshes) {
+    if (mesh?.material?.map === texture) return true;
+  }
+  let attached = false;
+  cardSwapIncomingGroup?.traverse((object) => {
+    if (object?.material?.map === texture) attached = true;
+  });
+  return attached;
+}
+
+function invalidatePreparedIndividualCardsForTexture(texture) {
+  for (const [key, prepared] of preparedIndividualCardResults) {
+    if (
+      prepared?.frontTexture === texture
+      || prepared?.backTexture === texture
+      || prepared?.effectTextures?.foil === texture
+      || prepared?.effectTextures?.mask === texture
+    ) {
+      preparedIndividualCardResults.delete(key);
+      preparedIndividualCardPromises.delete(key);
+    }
+  }
+}
+
+function detachBinderTexture(texture) {
+  for (const mesh of binderCardMeshes) {
+    if (mesh?.material?.map !== texture) continue;
+    mesh.material.map = getBinderPlaceholderTexture();
+    mesh.userData.textureLoaded = false;
+    mesh.userData.textureLoading = false;
+    mesh.userData.textureFadeComplete = true;
+  }
+}
+
 function getBackTexture(card = null) {
-  const assetPath = cardBackAssetPath(card);
+  return getBackTextureForAssetPath(cardBackAssetPath(card));
+}
+
+function getBackTextureForAssetPath(assetPath) {
+  if (backTextures.has(assetPath)) {
+    return Promise.resolve(backTextures.get(assetPath));
+  }
   if (backTexturePromises.has(assetPath)) {
     return backTexturePromises.get(assetPath);
   }
 
-  const promise = loadTexture(new URL(assetPath, import.meta.url).href).catch((error) => {
-    backTexturePromises.delete(assetPath);
+  const promise = loadTexture(new URL(assetPath, import.meta.url).href)
+    .then((texture) => {
+      backTextures.set(assetPath, texture);
+      warmBackTextureForImmediateDisplay(texture);
+      return texture;
+    })
+    .catch((error) => {
+      backTexturePromises.delete(assetPath);
+      throw error;
+    });
+  backTexturePromises.set(assetPath, promise);
+  return promise;
+}
+
+function getCachedBackTexture(card = null) {
+  return backTextures.get(cardBackAssetPath(card)) || null;
+}
+
+function getCollectionBackAssetPaths(collectionId) {
+  const collection = COLLECTION_CONFIGS[collectionId];
+  if (!collection) return [];
+  const backImages = Array.isArray(collection.backImages)
+    ? collection.backImages.filter(Boolean)
+    : [];
+  if (backImages.length) return [...new Set(backImages)];
+  return collection.backImage ? [collection.backImage] : [];
+}
+
+function preloadCollectionBackTextures(collectionId) {
+  return Promise.allSettled(
+    getCollectionBackAssetPaths(collectionId).map(getBackTextureForAssetPath),
+  ).then((results) => {
+    for (const result of results) {
+      if (result.status === "rejected") console.error(result.reason);
+    }
+    return results;
+  });
+}
+
+function preloadAllConfiguredBackTextures() {
+  if (allBackTexturesPreloadPromise) return allBackTexturesPreloadPromise;
+
+  const assetPaths = new Set(getCollectionBackAssetPaths(ACTIVE_COLLECTION_ID));
+  for (const collectionId of Object.keys(COLLECTION_CONFIGS)) {
+    for (const assetPath of getCollectionBackAssetPaths(collectionId)) {
+      assetPaths.add(assetPath);
+    }
+  }
+  allBackTexturesPreloadPromise = Promise.allSettled(
+    [...assetPaths].map(getBackTextureForAssetPath),
+  ).then((results) => {
+    for (const result of results) {
+      if (result.status === "rejected") console.error(result.reason);
+    }
+    return results;
+  });
+  return allBackTexturesPreloadPromise;
+}
+
+function warmBackTextureForImmediateDisplay(texture) {
+  if (!texture) return;
+  prepareTextureForImmediateDisplay(texture);
+  for (const renderer of [cardRenderer, binderRenderer]) {
+    if (typeof renderer?.initTexture !== "function") continue;
+    try {
+      renderer.initTexture(texture);
+    } catch {
+      // Normal rendering will upload it if eager GPU initialization is unavailable.
+    }
+  }
+}
+
+function warmCachedBinderBackTextures() {
+  if (typeof binderRenderer?.initTexture !== "function") return;
+  for (const texture of backTextures.values()) {
+    try {
+      binderRenderer.initTexture(texture);
+    } catch {
+      // Continue warming any remaining backs; normal rendering is the fallback.
+    }
+  }
+}
+
+function getBinderIntroSpriteTexture(url) {
+  if (binderIntroSpriteTexturePromises.has(url)) {
+    return binderIntroSpriteTexturePromises.get(url);
+  }
+  const promise = loadTexture(url).catch((error) => {
+    binderIntroSpriteTexturePromises.delete(url);
     throw error;
   });
-  backTexturePromises.set(assetPath, promise);
+  binderIntroSpriteTexturePromises.set(url, promise);
   return promise;
 }
 
@@ -8935,6 +14505,61 @@ function configureDisplayTexture(texture, { colorSpace = THREE.SRGBColorSpace } 
   return texture;
 }
 
+async function loadBinderDisplayTexture(card) {
+  const sprite = getAnimatedSpriteInfo(card);
+  const sourceUrl = sprite
+    ? new URL(sprite.file, import.meta.url).href
+    : cardAssetUrl(card);
+  const image = await loadTextureImage(sourceUrl);
+  const columns = Math.max(1, Number(sprite?.columns) || 1);
+  const rows = Math.max(1, Number(sprite?.rows) || 1);
+  const sourceFrameWidth = Math.max(1, image.naturalWidth / columns);
+  const sourceFrameHeight = Math.max(1, image.naturalHeight / rows);
+  let frameWidth = Math.min(BINDER_TEXTURE_FRAME_WIDTH, Math.round(sourceFrameWidth));
+  let frameHeight = Math.max(1, Math.round(frameWidth * sourceFrameHeight / sourceFrameWidth));
+
+  const maxTextureSize = Math.max(1024, binderRenderer?.capabilities?.maxTextureSize || 4096);
+  const atlasScale = Math.min(
+    1,
+    maxTextureSize / Math.max(1, frameWidth * columns),
+    maxTextureSize / Math.max(1, frameHeight * rows),
+  );
+  frameWidth = Math.max(1, Math.floor(frameWidth * atlasScale));
+  frameHeight = Math.max(1, Math.floor(frameHeight * atlasScale));
+
+  const surface = document.createElement("canvas");
+  surface.width = frameWidth * columns;
+  surface.height = frameHeight * rows;
+  const context = surface.getContext("2d", { alpha: true });
+  context.imageSmoothingEnabled = true;
+  context.imageSmoothingQuality = "high";
+  context.drawImage(image, 0, 0, surface.width, surface.height);
+
+  const texture = configureDisplayTexture(new THREE.CanvasTexture(surface));
+  if (sprite) configureAnimatedTexture(texture, sprite);
+  return texture;
+}
+
+function loadTextureImage(url, { fetchPriority = "auto" } = {}) {
+  return new Promise((resolve, reject) => {
+    const image = new Image();
+    image.crossOrigin = "anonymous";
+    image.decoding = "async";
+    if ("fetchPriority" in image) image.fetchPriority = fetchPriority;
+    image.onload = () => resolve(image);
+    image.onerror = () => reject(new Error(`Unable to load texture ${url}`));
+    image.src = url;
+  });
+}
+
+async function loadHighPriorityTexture(url, options = {}) {
+  const image = await loadTextureImage(url, { fetchPriority: "high" });
+  if (typeof image.decode === "function") {
+    await image.decode().catch(() => {});
+  }
+  return configureDisplayTexture(new THREE.Texture(image), options);
+}
+
 function loadTexture(url, options = {}) {
   return new Promise((resolve, reject) => {
     textureLoader.load(url, (texture) => {
@@ -8952,52 +14577,67 @@ function loadCardNft2EffectTextures(cardNumber) {
 
 function getCardNft2EffectTexture(kind, cardNumber) {
   const normalizedNumber = Number(cardNumber);
-  if (!Number.isInteger(normalizedNumber) || !CARD_NFT_2_EFFECT_TEXTURE_CIDS[kind]) {
+  if (!Number.isInteger(normalizedNumber) || !["foil", "mask"].includes(kind)) {
     return Promise.reject(new Error("Invalid CardNFT2 effect texture"));
   }
 
   const key = `${kind}:${normalizedNumber}`;
   if (cardNft2EffectTextureCache.has(key)) {
-    const promise = cardNft2EffectTextureCache.get(key);
+    const entry = cardNft2EffectTextureCache.get(key);
     cardNft2EffectTextureCache.delete(key);
-    cardNft2EffectTextureCache.set(key, promise);
-    return promise;
+    cardNft2EffectTextureCache.set(key, entry);
+    return entry.promise;
   }
 
   const url = cardNft2EffectTextureUrl(kind, normalizedNumber);
   const options = kind === "mask" ? { colorSpace: THREE.NoColorSpace } : undefined;
-  const promise = loadTexture(url, options).catch((error) => {
-    cardNft2EffectTextureCache.delete(key);
+  const entry = {
+    texture: null,
+    bytes: 1000 * 1400 * 4,
+    promise: null,
+  };
+  entry.promise = loadHighPriorityTexture(url, options).then((texture) => {
+    entry.texture = texture;
+    entry.bytes = getDecodedTextureBytes(texture, entry.bytes);
+    trimCardNft2EffectTextureCache();
+    return texture;
+  }).catch((error) => {
+    if (cardNft2EffectTextureCache.get(key) === entry) cardNft2EffectTextureCache.delete(key);
     throw error;
   });
-  cardNft2EffectTextureCache.set(key, promise);
+  cardNft2EffectTextureCache.set(key, entry);
   trimCardNft2EffectTextureCache();
-  return promise;
+  return entry.promise;
 }
 
 function cardNft2EffectTextureUrl(kind, cardNumber) {
   const id = String(cardNumber).padStart(4, "0");
-  return `${CARD_NFT_2_EFFECT_TEXTURE_GATEWAY}/${CARD_NFT_2_EFFECT_TEXTURE_CIDS[kind]}/${id}.webp`;
+  const directory = kind === "foil" ? "foils" : "masks";
+  return `${CARD_NFT_2_EFFECT_TEXTURE_BASE_URL}/${directory}/${id}.webp`;
 }
 
 function trimCardNft2EffectTextureCache() {
   const protectedKeys = getProtectedCardEffectTextureKeys();
   let protectedScans = 0;
   while (
-    cardNft2EffectTextureCache.size > MAX_CARD_NFT_2_EFFECT_TEXTURE_CACHE_SIZE
+    (
+      cardNft2EffectTextureCache.size > MAX_CARD_NFT_2_EFFECT_TEXTURE_CACHE_SIZE
+      || getTextureCacheBytes(cardNft2EffectTextureCache) > CARD_EFFECT_TEXTURE_CACHE_BUDGET_BYTES
+    )
     && protectedScans < cardNft2EffectTextureCache.size
   ) {
     const oldest = cardNft2EffectTextureCache.entries().next().value;
     if (!oldest) return;
-    const [key, promise] = oldest;
+    const [key, entry] = oldest;
     cardNft2EffectTextureCache.delete(key);
-    if (protectedKeys.has(key)) {
-      cardNft2EffectTextureCache.set(key, promise);
+    if (!entry.texture || protectedKeys.has(key) || isEffectTextureAttached(entry.texture)) {
+      cardNft2EffectTextureCache.set(key, entry);
       protectedScans += 1;
       continue;
     }
     protectedScans = 0;
-    Promise.resolve(promise).then(disposeNftTexture).catch(() => {});
+    invalidatePreparedIndividualCardsForTexture(entry.texture);
+    disposeNftTexture(entry.texture);
   }
 }
 
@@ -9007,16 +14647,29 @@ function getProtectedCardEffectTextureKeys() {
     addCardEffectTextureCacheKeys(keys, CARDS[currentIndex]);
   }
 
-  if (binderVisibleIndexes.length) {
-    for (const position of getBinderPreloadPositions()) {
-      const cardIndex = binderVisibleIndexes[position];
-      if (Number.isInteger(cardIndex) && CARDS[cardIndex]) {
-        addCardEffectTextureCacheKeys(keys, CARDS[cardIndex]);
-      }
-    }
-  }
-
   return keys;
+}
+
+function isEffectTextureAttached(texture) {
+  if (!texture) return false;
+  const meshes = [
+    cardGradientMesh,
+    cardBackGradientMesh,
+    cardGlareMesh,
+    cardBackGlareMesh,
+  ];
+  let attached = meshes.some((mesh) => (
+    mesh?.material?.uniforms?.uFoilTexture?.value === texture
+    || mesh?.material?.uniforms?.uMaskTexture?.value === texture
+  ));
+  if (attached) return true;
+  cardSwapIncomingGroup?.traverse((object) => {
+    const uniforms = object?.material?.uniforms;
+    if (uniforms?.uFoilTexture?.value === texture || uniforms?.uMaskTexture?.value === texture) {
+      attached = true;
+    }
+  });
+  return attached;
 }
 
 function addCardEffectTextureCacheKeys(keys, card) {
@@ -9031,24 +14684,28 @@ function loadAnimatedTexture(card) {
   if (!sprite) return loadTexture(cardAssetUrl(card));
 
   return loadTexture(new URL(sprite.file, import.meta.url).href).then((texture) => {
-    texture.repeat.set(1 / sprite.columns, 1 / sprite.rows);
-    texture.offset.set(0, 1 - (1 / sprite.rows));
-    texture.needsUpdate = true;
-
-    const record = {
-      texture,
-      frames: sprite.frames,
-      columns: sprite.columns,
-      rows: sprite.rows,
-      frameDuration: sprite.frameDuration,
-      startedAt: performance.now(),
-      frameIndex: 0,
-      disposed: false,
-    };
-    texture.userData.animatedRecord = record;
-    animatedTextureRecords.add(record);
+    configureAnimatedTexture(texture, sprite);
     return texture;
   });
+}
+
+function configureAnimatedTexture(texture, sprite) {
+  texture.repeat.set(1 / sprite.columns, 1 / sprite.rows);
+  texture.offset.set(0, 1 - (1 / sprite.rows));
+  texture.needsUpdate = true;
+
+  const record = {
+    texture,
+    frames: sprite.frames,
+    columns: sprite.columns,
+    rows: sprite.rows,
+    frameDuration: sprite.frameDuration,
+    startedAt: performance.now(),
+    frameIndex: 0,
+    disposed: false,
+  };
+  texture.userData.animatedRecord = record;
+  animatedTextureRecords.add(record);
 }
 
 function getCardPlaceholderTexture() {
@@ -9153,7 +14810,7 @@ function createCardGradientPlane(normalDirection) {
       uUseEffectTextures: { value: 0 },
       uFoilTexture: { value: getCardPlaceholderTexture() },
       uMaskTexture: { value: getCardPlaceholderTexture() },
-      uPointer: { value: new THREE.Vector2(CARD_NFT_2_EFFECT_OFFCARD_POINTER_X, CARD_NFT_2_EFFECT_OFFCARD_POINTER_Y) },
+      uPointer: { value: new THREE.Vector2(CARD_NFT_2_EFFECT_DEFAULT_POINTER_X, CARD_NFT_2_EFFECT_DEFAULT_POINTER_Y) },
       uPointerActive: { value: 0 },
     },
     vertexShader: `
@@ -9202,11 +14859,33 @@ function createCardGradientPlane(normalDirection) {
         vec2 centered = vUv - 0.5;
 
         if (uEffectMode > 0.5) {
-          vec2 motionPointer = clamp(vec2(0.5 + reflected.x * 0.62, 0.5 - reflected.y * 0.56), 0.0, 1.0);
-          vec2 background = clamp(vec2(0.37 + motionPointer.x * 0.26, 0.33 + motionPointer.y * 0.34), 0.0, 1.0);
-          float motionFromCenter = clamp(length(motionPointer - 0.5) / 0.5, 0.0, 1.0);
-          float motionRadial = smoothstep(0.92, 0.0, distance(vUv, motionPointer));
-          float motionCore = smoothstep(0.2, 0.0, distance(vUv, motionPointer));
+          vec2 reflectedPointer = clamp(
+            vec2(0.5 + reflected.x * 0.78, 0.5 - reflected.y * 0.7),
+            0.0,
+            1.0
+          );
+          float hoverActivity = smoothstep(0.01, 0.82, uPointerActive);
+          vec2 pointerUv = clamp(uPointer, 0.0, 1.0);
+          vec2 effectPointer = mix(
+            reflectedPointer,
+            pointerUv,
+            0.5
+          );
+          vec2 spotlightPointer = mix(
+            effectPointer,
+            pointerUv,
+            hoverActivity
+          );
+          vec2 background = vec2(
+            mix(0.37, 0.63, effectPointer.x),
+            mix(0.33, 0.67, effectPointer.y)
+          );
+          float pointerFromCenter = clamp(length(effectPointer - 0.5) / 0.5, 0.0, 1.0);
+          float spotlightStrength = mix(0.68, 1.0, hoverActivity);
+          float motionRadial = smoothstep(0.92, 0.0, distance(vUv, spotlightPointer))
+            * spotlightStrength;
+          float motionCore = smoothstep(0.2, 0.0, distance(vUv, spotlightPointer))
+            * spotlightStrength;
           float grain = fract(sin(dot(vUv * vec2(811.3, 1247.1), vec2(12.9898, 78.233))) * 43758.5453);
           float fine = fract(sin(dot((vUv + background) * vec2(315.7, 924.6), vec2(37.719, 11.137))) * 24634.6345);
 
@@ -9215,63 +14894,116 @@ function createCardGradientPlane(normalDirection) {
             return;
           }
 
-          float maskValue = 1.0;
           float textureBlend = smoothstep(0.0, 1.0, uUseEffectTextures);
-          if (uUseEffectTextures > 0.5) {
+          float engravingAlpha = 0.0;
+          float foilLight = 0.0;
+          if (uUseEffectTextures > 0.001) {
             vec4 maskSample = texture2D(uMaskTexture, vUv);
-            float maskLight = dot(maskSample.rgb, vec3(0.299, 0.587, 0.114));
-            maskValue = mix(0.96, 1.08, maskLight);
+            engravingAlpha = maskSample.a;
+            foilLight = dot(
+              texture2D(uFoilTexture, vUv).rgb,
+              vec3(0.299, 0.587, 0.114)
+            );
           }
-          vec3 proceduralFoil = mix(
-            vec3(0.12, 0.14, 0.18),
-            vec3(0.88, 0.92, 0.9),
-            stripe((vUv.x - vUv.y) * 5.4 + background.x * 1.8, 0.16)
+          float engraving = pow(clamp(engravingAlpha, 0.0, 1.0), 0.82);
+          float textureReady = textureBlend;
+          vec3 sunPillar = rainbow(vUv.y * 6.8 - background.y * 7.0);
+          vec3 reverseSunPillar = rainbow(-vUv.y * 4.2 + background.y * 5.0 + background.x * 1.2);
+          float metalLine = stripe(
+            (vUv.x * 0.74 - vUv.y * 0.54) * 8.3
+              + background.x * 2.2
+              + background.y * 0.85,
+            0.095
           );
-          vec3 textureFoil = uUseEffectTextures > 0.5 ? texture2D(uFoilTexture, vUv).rgb : proceduralFoil;
-          vec3 foil = mix(proceduralFoil, max(textureFoil, proceduralFoil * 0.72), 0.36 * textureBlend);
-          vec3 sunPillar = rainbow(vUv.y * 6.8 + background.y * 7.0);
-          vec3 reverseSunPillar = rainbow(-vUv.y * 4.2 - background.y * 5.0 + background.x * 1.2);
-          float metalLine = stripe((vUv.x * 0.74 - vUv.y * 0.54) * 5.8 + background.x * 2.2 + background.y * 0.85, 0.075);
-          float metalBand = stripe((vUv.x * 0.74 - vUv.y * 0.54) * 2.35 + background.x * 1.15, 0.18);
-          float scan = stripe(vUv.y * 145.0 + background.y * 3.0, 0.18);
-          float barsA = stripe(vUv.x * 8.8 + background.y * 4.0, 0.08);
-          float barsB = stripe(vUv.x * 5.6 - background.y * 3.0 + background.x * 2.2, 0.11);
-          float radialDark = smoothstep(0.08, 0.92, distance(vUv, motionPointer));
+          float metalBand = stripe(
+            (vUv.x * 0.74 - vUv.y * 0.54) * 3.25 + background.x * 1.15,
+            0.2
+          );
+          float scan = stripe(vUv.y * 180.0 + background.y * 5.0, 0.24);
+          float barsA = stripe(vUv.x * 8.3 + background.y * 4.0, 0.09);
+          float barsB = stripe(vUv.x * 5.7 - background.y * 3.0 + background.x * 2.2, 0.12);
+          float radialDark = smoothstep(0.08, 0.92, distance(vUv, effectPointer));
           vec3 color = vec3(0.0);
           float alpha = 0.0;
 
           if (uEffectMode < 2.5) {
-            vec3 metal = mix(vec3(0.015, 0.028, 0.075), vec3(0.58, 0.68, 0.68), metalLine);
-            color = mix(metal, sunPillar, 0.46);
-            color = mix(color, reverseSunPillar, metalBand * 0.28);
-            color = color * mix(0.76, 1.18, grain) + foil * 0.12;
-            color = mix(color, vec3(0.93, 0.96, 1.0), motionCore * 0.16);
+            vec3 metal = mix(
+              vec3(0.015, 0.026, 0.07),
+              vec3(0.62, 0.7, 0.69),
+              metalLine
+            );
+            color = mix(metal, sunPillar, 0.5);
+            color = mix(color, reverseSunPillar, metalBand * 0.3);
+            color *= mix(0.72, 1.22, grain);
+            color = mix(color, vec3(0.96, 0.98, 1.0), motionCore * 0.2);
             color *= mix(0.78, 1.0, radialDark);
-            alpha = (0.135 + metalLine * 0.135 + metalBand * 0.055 + motionRadial * 0.045) * maskValue;
+            alpha = engraving
+              * (0.17 + metalLine * 0.17 + metalBand * 0.07 + motionRadial * 0.05)
+              * textureReady;
           } else if (uEffectMode < 3.5) {
-            vec3 holo = rainbow(((0.5 - background.x) * 2.6) + ((0.5 - background.y) * 3.5) + vUv.x * 1.2 + vUv.y * 3.4);
-            float scanMix = mix(0.42, 1.0, scan);
-            color = holo * scanMix;
-            color = mix(color, vec3(0.72), (barsA + barsB) * 0.16);
-            color = mix(color, vec3(0.98, 1.0, 1.0), motionCore * 0.18);
-            alpha = (0.16 + barsA * 0.07 + barsB * 0.055 + motionRadial * 0.075) * maskValue;
+            vec3 holo = rainbow(
+              ((0.5 - background.x) * 2.6)
+                + ((0.5 - background.y) * 3.5)
+                + vUv.x * 1.1
+                + vUv.y * 3.3
+            );
+            float scanMix = mix(0.52, 1.0, scan);
+            color = min(vec3(1.0), holo * scanMix * 1.12);
+            color = mix(color, vec3(0.74), clamp(barsA + barsB, 0.0, 1.0) * 0.19);
+            color = mix(color, vec3(0.98, 1.0, 1.0), motionCore * 0.2);
+            alpha = engraving
+              * (0.28 + barsA * 0.09 + barsB * 0.075 + motionRadial * 0.09)
+              * textureReady;
           } else if (uEffectMode < 4.5) {
-            vec3 support = mix(foil, sunPillar, 0.38);
-            support = mix(support, reverseSunPillar, metalLine * 0.22);
-            color = support * mix(0.72, 1.28, motionFromCenter * 0.55 + motionRadial * 0.35);
+            vec3 printedFoil = mix(
+              vec3(0.075, 0.085, 0.105),
+              vec3(0.94, 0.96, 0.91),
+              foilLight
+            );
+            vec3 support = mix(printedFoil, sunPillar, 0.42);
+            support = mix(support, reverseSunPillar, metalLine * 0.26);
+            color = support * mix(
+              0.68,
+              1.34,
+              pointerFromCenter * 0.55 + motionRadial * 0.35
+            );
             color = mix(color, vec3(1.0, 0.94, 0.98), motionCore * 0.22);
-            alpha = (0.12 + metalLine * 0.085 + motionRadial * 0.11 + motionFromCenter * 0.035) * maskValue;
+            alpha = engraving
+              * (0.36 + metalLine * 0.12 + motionRadial * 0.16 + pointerFromCenter * 0.08)
+              * textureReady;
           } else {
-            float sparkle = step(0.982, fine) * smoothstep(0.9, 0.0, distance(vUv, motionPointer));
+            float sparkle = step(0.982, fine) * motionRadial;
             float glitter = step(0.975, grain);
-            vec3 amazing = mix(vec3(0.08, 0.18, 0.12), rainbow((vUv.x - vUv.y) * 2.1 + background.x * 3.0), 0.58);
-            color = amazing + foil * 0.18 + (sparkle + glitter * 0.38) * vec3(1.0, 0.92, 0.65);
-            color = mix(color, sunPillar, metalBand * 0.18);
-            alpha = (0.13 + metalLine * 0.045 + motionRadial * 0.1 + sparkle * 0.28 + glitter * 0.04) * maskValue;
+            vec3 spectrum = rainbow(
+              (vUv.x - vUv.y) * 2.1
+                + (0.5 - background.x) * 3.0
+                + (0.5 - background.y) * 3.0
+            );
+            vec3 amazing = mix(vec3(0.08, 0.18, 0.12), spectrum, 0.62);
+            vec3 foilHighlight = mix(
+              vec3(0.06, 0.045, 0.07),
+              vec3(0.98, 0.9, 0.76),
+              foilLight
+            );
+            float maskedStrength = engraving
+              * (0.15 + motionRadial * 0.1 + sparkle * 0.3 + glitter * 0.045);
+            float foilStrength = foilLight * motionRadial * 0.075 * textureBlend;
+            float spectrumStrength = 0.045 + metalBand * 0.035;
+            float totalStrength = maskedStrength + foilStrength + spectrumStrength;
+            color = (
+              amazing * maskedStrength
+                + foilHighlight * foilStrength
+                + spectrum * spectrumStrength
+                + (sparkle + glitter * 0.32) * vec3(1.0, 0.92, 0.66) * maskedStrength
+            ) / max(totalStrength, 0.0001);
+            alpha = totalStrength * textureReady;
           }
 
           alpha *= mix(0.88, 1.08, grain);
-          gl_FragColor = vec4(color, clamp(alpha, 0.0, 0.34) * uActivity * uTransitionOpacity);
+          gl_FragColor = vec4(
+            clamp(color, 0.0, 1.25),
+            clamp(alpha, 0.0, 0.48) * uActivity * uTransitionOpacity
+          );
           return;
         }
 
@@ -9298,6 +15030,7 @@ function createCardGradientPlane(normalDirection) {
     createRoundedPlaneGeometry(CARD_WIDTH, CARD_HEIGHT, CARD_RADIUS),
     material,
   );
+  mesh.userData.cardEffectLayer = "shine";
   mesh.renderOrder = 27;
   return mesh;
 }
@@ -9319,7 +15052,7 @@ function createCardGlossPlane(normalDirection) {
       uUseEffectTextures: { value: 0 },
       uFoilTexture: { value: getCardPlaceholderTexture() },
       uMaskTexture: { value: getCardPlaceholderTexture() },
-      uPointer: { value: new THREE.Vector2(CARD_NFT_2_EFFECT_OFFCARD_POINTER_X, CARD_NFT_2_EFFECT_OFFCARD_POINTER_Y) },
+      uPointer: { value: new THREE.Vector2(CARD_NFT_2_EFFECT_DEFAULT_POINTER_X, CARD_NFT_2_EFFECT_DEFAULT_POINTER_Y) },
       uPointerActive: { value: 0 },
     },
     vertexShader: `
@@ -9364,59 +15097,90 @@ function createCardGlossPlane(normalDirection) {
         vec2 centered = vUv - 0.5;
 
         if (uEffectMode > 0.5) {
-          vec2 spotlightPointer = uPointer;
-          vec2 motionPointer = clamp(vec2(0.5 + reflected.x * 0.62, 0.5 - reflected.y * 0.56), 0.0, 1.0);
-          vec2 background = clamp(vec2(0.37 + motionPointer.x * 0.26, 0.33 + motionPointer.y * 0.34), 0.0, 1.0);
-          float radial = smoothstep(0.88, 0.0, distance(vUv, spotlightPointer));
-          float inner = smoothstep(0.22, 0.0, distance(vUv, spotlightPointer));
-          float spotlight = smoothstep(0.01, 0.85, uPointerActive) * 0.74;
-          float maskValue = 1.0;
-          if (uUseEffectTextures > 0.5) {
-            vec4 maskSample = texture2D(uMaskTexture, vUv);
-            float maskLight = dot(maskSample.rgb, vec3(0.299, 0.587, 0.114));
-            maskValue = mix(0.97, 1.06, maskLight);
+          vec2 reflectedPointer = clamp(
+            vec2(0.5 + reflected.x * 0.78, 0.5 - reflected.y * 0.7),
+            0.0,
+            1.0
+          );
+          float hoverActivity = smoothstep(0.01, 0.82, uPointerActive);
+          vec2 pointerUv = clamp(uPointer, 0.0, 1.0);
+          vec2 effectPointer = mix(
+            reflectedPointer,
+            pointerUv,
+            0.5
+          );
+          vec2 spotlightPointer = mix(
+            effectPointer,
+            pointerUv,
+            hoverActivity
+          );
+          vec2 background = vec2(
+            mix(0.37, 0.63, effectPointer.x),
+            mix(0.33, 0.67, effectPointer.y)
+          );
+          float spotlightStrength = mix(0.68, 1.0, hoverActivity);
+          float radial = smoothstep(0.92, 0.0, distance(vUv, spotlightPointer))
+            * spotlightStrength;
+          float inner = smoothstep(0.22, 0.0, distance(vUv, spotlightPointer))
+            * spotlightStrength;
+          float maskAlpha = 0.0;
+          if (uUseEffectTextures > 0.001) {
+            maskAlpha = texture2D(uMaskTexture, vUv).a;
           }
           float fineGrain = fract(sin(dot(vUv * vec2(811.3, 1247.1), vec2(12.9898, 78.233))) * 43758.5453);
-          vec3 baseColor = vec3(1.0);
-          vec3 spotColor = vec3(1.0);
-          float baseAlpha = 0.0;
-          float spotAlpha = 0.0;
+          vec3 color = vec3(1.0);
+          float alpha = 0.0;
 
           if (uEffectMode < 1.5) {
-            spotColor = mix(vec3(1.0), vec3(0.78, 0.82, 0.88), radial * 0.34);
-            spotAlpha = (inner * 0.2 + radial * 0.13) * 0.56 * spotlight;
+            vec3 edge = vec3(0.28, 0.3, 0.34);
+            vec3 middle = vec3(0.78, 0.82, 0.88);
+            color = mix(edge, middle, radial);
+            color = mix(color, vec3(1.0), inner * 0.72);
+            alpha = 0.045 + radial * 0.12 + inner * 0.08;
           } else if (uEffectMode < 2.5) {
             float sweep = stripe((vUv.x * 0.92 - vUv.y * 0.52) * 3.8 + background.x * 2.2 + background.y * 1.1, 0.1);
-            baseAlpha = (0.045 + sweep * 0.09) * 0.5 * maskValue;
-            spotAlpha = (radial * 0.14 + inner * 0.17) * 0.5 * spotlight * maskValue;
-            baseColor = mix(vec3(0.36, 0.38, 0.42), vec3(1.0), sweep * 0.34);
-            spotColor = mix(vec3(0.78, 0.84, 0.96), vec3(1.0), inner * 0.7);
+            vec3 edge = mix(vec3(0.08, 0.09, 0.12), vec3(0.54, 0.58, 0.62), sweep * 0.34);
+            color = mix(edge, vec3(0.78, 0.84, 0.96), radial);
+            color = mix(color, vec3(1.0), inner * 0.7);
+            alpha = 0.12 + sweep * 0.055 + radial * 0.11 + inner * 0.065;
           } else if (uEffectMode < 3.5) {
             float bars = stripe(vUv.x * 8.0 + background.y * 3.0, 0.1);
-            baseAlpha = (0.06 + bars * 0.055) * 0.8 * maskValue;
-            spotAlpha = (radial * 0.17 + inner * 0.19) * 0.8 * spotlight * maskValue;
-            baseColor = mix(vec3(0.68, 0.88, 0.95), vec3(1.0), bars * 0.22);
-            spotColor = mix(vec3(0.8, 0.9, 0.98), vec3(1.0), inner * 0.72);
+            vec3 edge = vec3(0.018, 0.022, 0.026);
+            vec3 middle = mix(vec3(0.58, 0.76, 0.8), vec3(0.9), bars * 0.24);
+            color = mix(edge, middle, radial);
+            color = mix(color, vec3(0.94, 1.0, 1.0), inner * 0.72);
+            alpha = 0.08 + bars * 0.025 + radial * 0.15 + inner * 0.08;
           } else if (uEffectMode < 4.5) {
-            baseAlpha = 0.052 * 0.74 * maskValue;
-            spotAlpha = (radial * 0.18 + inner * 0.16) * 0.74 * spotlight * maskValue;
-            baseColor = vec3(0.44, 0.42, 0.48);
-            spotColor = mix(vec3(0.78, 0.78, 0.86), vec3(1.0, 0.82, 0.94), inner * 0.68);
+            vec3 edge = vec3(0.12, 0.09, 0.13);
+            vec3 middle = vec3(0.44, 0.46, 0.52);
+            color = mix(edge, middle, radial);
+            color = mix(color, vec3(1.0, 0.84, 0.94), inner * 0.68);
+            alpha = 0.07 + radial * 0.08 + inner * 0.04;
           } else {
-            baseAlpha = 0.052 * 0.72 * maskValue;
-            spotAlpha = (radial * 0.14 + inner * 0.17) * 0.72 * spotlight * maskValue;
-            baseColor = vec3(0.5, 0.68, 0.54);
-            spotColor = mix(vec3(0.76, 0.88, 0.72), vec3(1.0, 0.95, 0.72), inner * 0.62);
+            vec3 edge = vec3(0.03, 0.055, 0.038);
+            vec3 middle = vec3(0.72, 0.68, 0.52);
+            color = mix(edge, middle, radial);
+            color = mix(color, vec3(1.0, 0.94, 0.72), inner * 0.76);
+            float engravedGlare = pow(clamp(maskAlpha, 0.0, 1.0), 0.82)
+              * (0.025 + radial * 0.065);
+            color = mix(color, vec3(0.94, 0.82, 0.7), engravedGlare * 1.8);
+            alpha = mix(0.82, 0.46, radial) - inner * 0.06 + engravedGlare;
           }
 
-          float grainAdjust = mix(0.9, 1.06, fineGrain);
-          baseAlpha *= grainAdjust;
-          spotAlpha *= grainAdjust;
-          float alpha = clamp(baseAlpha + spotAlpha, 0.0, 0.42);
-          vec3 color = alpha > 0.0001
-            ? ((baseColor * baseAlpha) + (spotColor * spotAlpha)) / max(baseAlpha + spotAlpha, 0.0001)
-            : vec3(0.0);
-          gl_FragColor = vec4(color, alpha * uActivity * uTransitionOpacity);
+          if (uEffectMode >= 1.5) {
+            alpha *= smoothstep(0.0, 1.0, uUseEffectTextures);
+          }
+          alpha *= mix(0.92, 1.05, fineGrain);
+          float maximumAlpha = uEffectMode >= 4.5 ? 0.9 : 0.38;
+          float composedAlpha = clamp(alpha, 0.0, maximumAlpha) * uActivity * uTransitionOpacity;
+          if (uEffectMode >= 3.5) {
+            // Three's multiply blend does not use source alpha. Encode the
+            // desired strength toward neutral white so hover and transitions
+            // remain smooth instead of applying a full dark pass at once.
+            gl_FragColor = vec4(mix(vec3(1.0), color, composedAlpha), 1.0);
+          } else {
+            gl_FragColor = vec4(color, composedAlpha);
+          }
           return;
         }
 
@@ -9446,6 +15210,7 @@ function createCardGlossPlane(normalDirection) {
     createRoundedPlaneGeometry(CARD_WIDTH, CARD_HEIGHT, CARD_RADIUS),
     material,
   );
+  mesh.userData.cardEffectLayer = "glare";
   mesh.renderOrder = 28;
   return mesh;
 }
@@ -9471,6 +15236,48 @@ function createRoundedCoreGeometry(width, height, depth, radius) {
   geometry.translate(0, 0, -depth / 2);
   geometry.computeVertexNormals();
   return geometry;
+}
+
+function createBinderCoverPanelGeometry(width, height, depth, radius, side) {
+  const geometry = new THREE.ExtrudeGeometry(
+    createBinderCoverPanelShape(width, height, radius, side),
+    {
+      depth,
+      bevelEnabled: false,
+      curveSegments: 18,
+    },
+  );
+  geometry.translate(0, 0, -depth / 2);
+  geometry.computeVertexNormals();
+  return geometry;
+}
+
+function createBinderCoverPanelShape(width, height, radius, side) {
+  const left = -width / 2;
+  const right = width / 2;
+  const bottom = -height / 2;
+  const top = height / 2;
+  const shape = new THREE.Shape();
+
+  if (side < 0) {
+    shape.moveTo(left + radius, bottom);
+    shape.lineTo(right, bottom);
+    shape.lineTo(right, top);
+    shape.lineTo(left + radius, top);
+    shape.quadraticCurveTo(left, top, left, top - radius);
+    shape.lineTo(left, bottom + radius);
+    shape.quadraticCurveTo(left, bottom, left + radius, bottom);
+    return shape;
+  }
+
+  shape.moveTo(left, bottom);
+  shape.lineTo(right - radius, bottom);
+  shape.quadraticCurveTo(right, bottom, right, bottom + radius);
+  shape.lineTo(right, top - radius);
+  shape.quadraticCurveTo(right, top, right - radius, top);
+  shape.lineTo(left, top);
+  shape.lineTo(left, bottom);
+  return shape;
 }
 
 function createRoundedShape(width, height, radius) {
@@ -9515,7 +15322,10 @@ function cardStillAssetUrl(card) {
 }
 
 function cardAssetPath(card) {
-  return CARD_NFT_ANIMATED[card?.file] || card?.file || "";
+  return card?.animation?.file
+    || CARD_NFT_ANIMATED[card?.file]
+    || card?.file
+    || "";
 }
 
 function textureAssetPath(card) {
@@ -9523,11 +15333,13 @@ function textureAssetPath(card) {
 }
 
 function isAnimatedCard(card) {
-  return Boolean(CARD_NFT_ANIMATED[card?.file]);
+  return Boolean(card?.animation?.file || CARD_NFT_ANIMATED[card?.file]);
 }
 
 function getAnimatedSpriteInfo(card) {
-  return CARD_NFT_ANIMATED_SPRITES[card?.file] || null;
+  return card?.animation?.sprite
+    || CARD_NFT_ANIMATED_SPRITES[card?.file]
+    || null;
 }
 
 function getIndividualAnimatedTextureRecords() {
@@ -9603,10 +15415,15 @@ function favoriteKey(index) {
   return card?.stableId || `${card?.collection || ACTIVE_COLLECTION_ID}:${card?.mint || card?.title || index}`;
 }
 
-function migrateLegacyFavorites(set) {
+function migrateLegacyFavorites(set, cards = CARDS) {
+  if (!set.size || !cards.length) return;
   let changed = false;
-  for (const card of CARDS) {
-    const legacyKeys = [card?.mint, card?.title].filter(Boolean);
+  for (const card of cards) {
+    const legacyKeys = [
+      card?.mint,
+      card?.collection && card?.mint ? `${card.collection}:${card.mint}` : null,
+      ...(card?.collection === ACTIVE_COLLECTION_ID ? [card?.title] : []),
+    ].filter(Boolean);
     const nextKey = card?.stableId;
     if (!nextKey) continue;
     for (const legacyKey of legacyKeys) {
@@ -9615,7 +15432,18 @@ function migrateLegacyFavorites(set) {
       changed = true;
     }
   }
-  if (changed) saveSet("cardnft:favorites:v1", set);
+  if (changed) saveSet(FAVORITES_STORAGE_KEY, set);
+}
+
+async function syncFavoritesFromStorage(event) {
+  if (event.key !== FAVORITES_STORAGE_KEY) return;
+  const nextFavorites = loadSet(FAVORITES_STORAGE_KEY);
+  favorites.clear();
+  for (const key of nextFavorites) favorites.add(key);
+  if (favoritesOnly) await ensureFavoriteCollectionCards();
+  updateFavoriteButtons();
+  updateBinderFavoriteButton();
+  if (galleryOpen) renderGallery();
 }
 
 function applyRestoredSessionViewState(state) {
@@ -9626,7 +15454,41 @@ function applyRestoredSessionViewState(state) {
   traitSearchOpen = TRAIT_FILTERS_ENABLED && Boolean(state.traitSearchOpen);
   traitSortCategory = TRAIT_FILTERS_ENABLED ? getValidTraitSortCategory(state.traitSortCategory) : "all";
   activeTraitFilter = TRAIT_FILTERS_ENABLED ? getValidSessionTraitFilter(state.activeTraitFilter) : null;
-  if (activeTraitFilter) traitSortCategory = activeTraitFilter.category;
+  if (activeTraitFilter?.collectionId === ACTIVE_COLLECTION_ID) {
+    traitSortCategory = activeTraitFilter.category;
+  }
+  restoreSessionWalletFilter(state);
+}
+
+function restoreSessionWalletFilter(state) {
+  const address = String(state?.walletFilterAddress || "").trim();
+  const stableIds = Array.isArray(state?.walletFilterCardStableIds)
+    ? state.walletFilterCardStableIds
+    : [];
+  if (!isPossibleSolanaAddress(address) || !stableIds.length) return;
+
+  const indexes = stableIds
+    .map((stableId) => CARD_STABLE_ID_TO_INDEX.get(String(stableId || "").trim()))
+    .filter((index) => Number.isInteger(index));
+  if (!indexes.length) return;
+
+  const matchedMints = new Map();
+  for (const pair of Array.isArray(state?.walletMatchedMints) ? state.walletMatchedMints : []) {
+    if (!Array.isArray(pair) || pair.length < 2) continue;
+    const index = CARD_STABLE_ID_TO_INDEX.get(String(pair[0] || "").trim());
+    const mint = String(pair[1] || "").trim();
+    if (!Number.isInteger(index) || CARD_NFT_MINT_TO_INDEX.get(mint) !== index) continue;
+    matchedMints.set(index, mint);
+  }
+
+  walletFilterAddress = address;
+  walletFilterCardIndexes = [...new Set(indexes)].sort(compareCardIndexes);
+  walletFilterCardIndexSet = new Set(walletFilterCardIndexes);
+  walletMatchedMintByCardIndex = matchedMints;
+  favoritesOnly = false;
+  activeTraitFilter = null;
+  traitSearchOpen = false;
+  traitSortCategory = "all";
 }
 
 function restoreSessionGalleryView(state) {
@@ -9653,9 +15515,9 @@ function restoreSessionGalleryView(state) {
     return;
   }
 
-  const focusedCardIndex = Number.isInteger(state.binderFocusedCardIndex)
-    ? state.binderFocusedCardIndex
-    : -1;
+  const focusedCardIndex = CARD_STABLE_ID_TO_INDEX.get(
+    String(state.binderFocusedCardStableId || "").trim(),
+  ) ?? -1;
   if (focusedCardIndex >= 0) {
     const focusPosition = binderVisibleIndexes.indexOf(focusedCardIndex);
     if (focusPosition !== -1) {
@@ -9669,7 +15531,16 @@ function restoreSessionGalleryView(state) {
     ? Math.round(Number(state.binderTargetTurn))
     : 0;
   binderTargetTurn = clamp(turn, 0, binderPageCount);
+  const restoredClosure = clamp(
+    Math.round(Number(state.binderTargetClosure) || 0),
+    -1,
+    1,
+  );
+  binderTargetClosure = restoredClosure;
+  if (restoredClosure < 0) binderTargetTurn = 0;
+  if (restoredClosure > 0) binderTargetTurn = binderPageCount;
   binderTurn = binderTargetTurn;
+  binderClosure = binderTargetClosure;
   binderSinglePageSideTouched = Boolean(state.binderSinglePageSideTouched);
   if (
     Number.isInteger(state.binderSinglePageSide)
@@ -9693,9 +15564,12 @@ function restoreSessionGalleryView(state) {
 
 function getRestoredSessionCardIndex(state) {
   const fallback = ACTIVE_COLLECTION_INDEXES[0] || 0;
-  if (!Number.isInteger(state?.currentIndex) || !CARDS.length) return fallback;
-  const index = clamp(state.currentIndex, 0, CARDS.length - 1);
-  return CARDS[index]?.collection === ACTIVE_COLLECTION_ID ? index : fallback;
+  if (!CARDS.length) return fallback;
+  const stableId = String(state?.currentCardStableId || "").trim();
+  const restoredIndex = CARD_STABLE_ID_TO_INDEX.get(stableId);
+  if (!Number.isInteger(restoredIndex)) return fallback;
+  if (ACTIVE_COLLECTION_INDEXES.includes(restoredIndex)) return restoredIndex;
+  return getVisibleIndexes().includes(restoredIndex) ? restoredIndex : fallback;
 }
 
 function getValidTraitSortCategory(category) {
@@ -9708,15 +15582,23 @@ function getValidTraitSortCategory(category) {
 
 function getValidSessionTraitFilter(filter) {
   if (!filter || typeof filter !== "object") return null;
-  const category = getValidTraitSortCategory(filter.category);
-  if (category === "all") return null;
+  const collectionId = COLLECTION_CONFIGS[filter.collectionId]?.id || ACTIVE_COLLECTION_ID;
+  const category = getTraitDisplayCategoryOptions(collectionId)
+    .find((option) => normalizeTraitValue(option.category) === normalizeTraitValue(filter.category))
+    ?.category;
+  if (!category) return null;
   const value = String(filter.value ?? "").trim();
   if (!value) return null;
   return {
+    collectionId,
     category,
     value,
     normalizedValue: normalizeTraitValue(value),
-    sourceCategories: getValidTraitFilterSourceCategories(filter.sourceCategories, category),
+    sourceCategories: getValidTraitFilterSourceCategories(
+      filter.sourceCategories,
+      category,
+      collectionId,
+    ),
   };
 }
 
@@ -9724,6 +15606,7 @@ function getSessionViewState() {
   const focusedCardIndex = getFocusedBinderCardIndex();
   return {
     currentIndex,
+    currentCardStableId: CARDS[currentIndex]?.stableId || null,
     galleryOpen,
     isBinderMode,
     favoritesOnly,
@@ -9731,16 +15614,30 @@ function getSessionViewState() {
     traitSortCategory,
     activeTraitFilter: activeTraitFilter
       ? {
+        collectionId: activeTraitFilter.collectionId,
         category: activeTraitFilter.category,
         value: activeTraitFilter.value,
         sourceCategories: activeTraitFilter.sourceCategories,
       }
       : null,
     binderTargetTurn: Math.round(binderTargetTurn),
+    binderTargetClosure: getBinderTargetClosedSide(),
     binderSinglePageSide: Number.isInteger(binderSinglePageSide) ? binderSinglePageSide : null,
     binderSinglePageSideTouched,
     binderFocusedCardIndex: Number.isInteger(focusedCardIndex) ? focusedCardIndex : null,
+    binderFocusedCardStableId: Number.isInteger(focusedCardIndex)
+      ? CARDS[focusedCardIndex]?.stableId || null
+      : null,
     binderIntroFocused: isBinderIntroFocused(),
+    walletFilterAddress: walletFilterCardIndexSet ? walletFilterAddress : "",
+    walletFilterCardStableIds: walletFilterCardIndexes
+      ? walletFilterCardIndexes
+        .map((index) => CARDS[index]?.stableId)
+        .filter(Boolean)
+      : [],
+    walletMatchedMints: [...walletMatchedMintByCardIndex]
+      .map(([index, mint]) => [CARDS[index]?.stableId, mint])
+      .filter(([stableId, mint]) => stableId && mint),
   };
 }
 
@@ -9750,6 +15647,64 @@ function queueSessionViewStateSave() {
     sessionViewSaveFrame = 0;
     saveSessionViewState();
   });
+}
+
+function consumeEvilBinderTableSwapArrival() {
+  const storage = getBrowserStorage("sessionStorage");
+  const rawValue = readStorageValue(
+    storage,
+    BINDER_EVIL_TABLE_SWAP_STORAGE_KEY,
+    "",
+  );
+  try {
+    storage?.removeItem(BINDER_EVIL_TABLE_SWAP_STORAGE_KEY);
+  } catch {
+    // A swap arrival remains optional when session storage is unavailable.
+  }
+  if (!rawValue || ACTIVE_COLLECTION.introGroup !== "evil") return null;
+
+  try {
+    const value = JSON.parse(rawValue);
+    const age = Date.now() - Number(value?.timestamp || 0);
+    if (
+      value?.collectionId !== ACTIVE_COLLECTION_ID
+      || age < 0
+      || age > BINDER_EVIL_TABLE_SWAP_ARRIVAL_MAX_AGE_MS
+    ) {
+      return null;
+    }
+    return value;
+  } catch {
+    return null;
+  }
+}
+
+function applyEvilBinderTableSwapViewDefaults() {
+  isBinderMode = true;
+  favoritesOnly = false;
+  traitSortCategory = "all";
+  activeTraitFilter = null;
+  traitSearchOpen = false;
+  walletFilterCardIndexes = null;
+  walletFilterCardIndexSet = null;
+  walletFilterAddress = "";
+  walletMatchedMintByCardIndex = new Map();
+}
+
+function restoreEvilBinderTableSwapArrival() {
+  resetBinderGalleryPosition();
+  binderTargetTurn = 0;
+  binderTurn = 0;
+  binderTargetClosure = -1;
+  binderClosure = -1;
+  binderSinglePageSide = BINDER_SINGLE_PAGE_COVER_SIDE;
+  binderSinglePageSideTouched = true;
+  setGalleryOpen(true);
+  setBinderTableView(true, { immediate: true });
+  ensureBinderPageWindow({ force: true });
+  updateBinderPageControls();
+  renderBinderSceneOnce({ immediateCamera: true });
+  queueSessionViewStateSave();
 }
 
 function loadSessionViewState() {
@@ -9772,12 +15727,19 @@ function saveSessionViewState() {
 function applyTheme(isLight) {
   els.themeToggle.checked = isLight;
   els.body.classList.toggle("is-light", isLight);
-  localStorage.setItem("cardnft:theme:v1", isLight ? "light" : "dark");
+  updateBinderTableSurfaceTheme(isLight);
+  writeStorageValue(
+    getBrowserStorage("localStorage"),
+    "cardnft:theme:v1",
+    isLight ? "light" : "dark",
+  );
 }
 
 function loadSet(key) {
   try {
-    const value = JSON.parse(localStorage.getItem(key) || "[]");
+    const value = JSON.parse(
+      readStorageValue(getBrowserStorage("localStorage"), key, "[]") || "[]",
+    );
     return new Set(Array.isArray(value) ? value : []);
   } catch {
     return new Set();
@@ -9785,7 +15747,36 @@ function loadSet(key) {
 }
 
 function saveSet(key, set) {
-  localStorage.setItem(key, JSON.stringify(Array.from(set)));
+  writeStorageValue(
+    getBrowserStorage("localStorage"),
+    key,
+    JSON.stringify(Array.from(set)),
+  );
+}
+
+function getBrowserStorage(name) {
+  try {
+    return window[name] || null;
+  } catch {
+    return null;
+  }
+}
+
+function readStorageValue(storage, key, fallback = null) {
+  try {
+    return storage?.getItem(key) ?? fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+function writeStorageValue(storage, key, value) {
+  try {
+    storage?.setItem(key, value);
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 function modulo(value, length) {

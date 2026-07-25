@@ -1,0 +1,33 @@
+{
+  "name": "moon",
+  "description": "Meinong",
+  "seller_fee_basis_points": 500,
+  "image": "https://turbo-gateway.com/9dfD9RZyB3rr3RIUuqj0J6EhE47w_Pkx731LtIfzElI?ext=gif",
+  "properties": {
+    "files": [
+      {
+        "uri": "https://turbo-gateway.com/9dfD9RZyB3rr3RIUuqj0J6EhE47w_Pkx731LtIfzElI?ext=gif",
+        "type": "image/gif"
+      }
+    ],
+    "creators": [
+      {
+        "address": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+        "share": 100,
+        "verified": true
+      }
+    ]
+  },
+  "attributes": [],
+  "collection_mints": [
+    "3yen3XPPaGDo6vAF6h19EoXeRLUpL7XhaBxqPwtknRmg",
+    "7nzV8414ztagg5e5WSUR5w9zzGKnm6UnLYdg4vqDymSL",
+    "7urwESwf9SbimBdzbg1bTZrugKERLHHnWDmKkR8kAYF1",
+    "Cdi5tg2i93NBKjbx7bN4iBZE7XAfkNu2TLbKErAprqhK",
+    "CswHeLXUQEHuvH88LzwBRqB2QPSYvjdfuRQGLGcK1ygB",
+    "FTRtBz1nFdb1rM3vAX4PHEoEroQjVTGpakXXnLLvVBUs",
+    "GQ92rV1ty1ibPZ8FNmDxDmeEF27EXZspHU946Kfe5X6g",
+    "Hyv7qGaDjuN9swsiF6nXsgbpjx2QUJssdAsXaT1hd121",
+    "J41suiR5XVy6DsQAN2pcisg3xLHewVtC6ukFNvcfahf1"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #369",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/369",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_enterthematrix"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_111"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Lancer Sliver"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "perc5"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_goldfangs"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "marle"
+    }
+  ],
+  "edition": 1981,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/369"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HJfCW9qDaRAYve5GXxt6YB7nfFFmieXvE8CoSsafZtWH"
+  ]
+}

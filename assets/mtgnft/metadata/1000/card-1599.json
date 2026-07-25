@@ -1,0 +1,58 @@
+{
+  "name": "MTG CARD #1598",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1598",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_forresttrain"
+    },
+    {
+      "trait_type": "behind",
+      "value": "chains"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_56"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Aquus Steed"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_redblur"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_smirk"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "boofleft"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "pufforange"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "chrono"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "ily"
+    }
+  ],
+  "edition": 257,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1598"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6tAkzyhjfcCWKZGKEgsQszQ6Q8asKkq7R3kaqiGthX5B"
+  ]
+}

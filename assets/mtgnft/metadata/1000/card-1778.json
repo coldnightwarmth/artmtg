@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1777",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1777",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "animespace"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_118"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Lighthouse Chronologist"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_mifella1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_smil"
+    },
+    {
+      "trait_type": "hat",
+      "value": "palacecamo"
+    },
+    {
+      "trait_type": "special top",
+      "value": "suddendeath"
+    }
+  ],
+  "edition": 1354,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1777"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HwrHBn482TqPLDvnx4EVFmEHeEbHCQnJo8xqixTVa36B"
+  ]
+}

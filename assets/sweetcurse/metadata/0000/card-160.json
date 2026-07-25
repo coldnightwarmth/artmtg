@@ -1,0 +1,78 @@
+{
+  "name": "Sweet Curse Card #160",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreigxffhuangpij6hsjp7qjqshwezxob3ihqtoyvvpzfyhfoyumsh2a",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Door"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Bunker"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Dr.monochrome Aerodactyl"
+    },
+    {
+      "trait_type": "Description",
+      "value": "2t_k Okarun"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Klaus"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Sip"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Beauty"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Fyp"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Dr.monochrome Kabutops"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Tupac"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Where am i"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "ash"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreigxffhuangpij6hsjp7qjqshwezxob3ihqtoyvvpzfyhfoyumsh2a",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeie3lq2ud6kkzsvkqrr3dux56brge46yd4tkyiskmcf7ssqxlldnni",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeie3lq2ud6kkzsvkqrr3dux56brge46yd4tkyiskmcf7ssqxlldnni",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeie3lq2ud6kkzsvkqrr3dux56brge46yd4tkyiskmcf7ssqxlldnni",
+  "collection_mints": [
+    "GRJ3mTzCDsxRmW7Tg8um8CEk7yTpBVr5AYc6CzJmoF2U"
+  ]
+}

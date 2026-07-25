@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1482",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1482",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_bluefacebaby"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Skeleton Key"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "solana"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_tongetooth"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "black"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "warrencoin"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "chaosmarine3"
+    }
+  ],
+  "edition": 1363,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1482"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8Gayw7NvvdiYPJXtnRMUCzjPwW63bZBH7GUPu7JgxhPw"
+  ]
+}

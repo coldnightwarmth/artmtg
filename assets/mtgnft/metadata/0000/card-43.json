@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #42",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/42",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "uni"
+    },
+    {
+      "trait_type": "behind",
+      "value": "terrariasword"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Skin Shedder"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "ogsblur"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "serious"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_yelling"
+    }
+  ],
+  "edition": 855,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/42"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GvhikFyE4yJYnGiBwFRpjKL1mUEpyWqvbb2NSgQ28byU"
+  ]
+}

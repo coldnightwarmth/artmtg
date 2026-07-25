@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #489",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/489",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_1stedition"
+    },
+    {
+      "trait_type": "behind",
+      "value": "terrariasword"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Berserk"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "perc5"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_glitched"
+    },
+    {
+      "trait_type": "top right",
+      "value": "crownfoil"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "chaos"
+    }
+  ],
+  "edition": 1681,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/489"
+      }
+    ]
+  },
+  "collection_mints": [
+    "58deGDVYZyCFDbi6Pvy14Vym3WmfMxB78b1ozaRSuy8i"
+  ]
+}

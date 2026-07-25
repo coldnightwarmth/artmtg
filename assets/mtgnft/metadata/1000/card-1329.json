@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1328",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1328",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_plane"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Duskwalker"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_yelling"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "sasuke"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mummy"
+    },
+    {
+      "trait_type": "special top",
+      "value": "tf2"
+    }
+  ],
+  "edition": 1321,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1328"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GWuAyGqQ7WsjaLuMhG9kGotFb5R93eD2B8CHUSzB2CPD"
+  ]
+}

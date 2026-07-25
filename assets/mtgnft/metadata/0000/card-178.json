@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #177",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/177",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_spooky"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_174"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Lion's Eye Diamond"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "greenlady"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "missingtooth"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "bud"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "pokeballright"
+    }
+  ],
+  "edition": 1239,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/177"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Fsn332b84VC66hYvNYa25yRFwNDbqgELRHm2x8bhWqXm"
+  ]
+}

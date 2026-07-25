@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #543",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/543",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_hiz"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_114"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Pathway Arrows"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_serious"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_cartoonjoker"
+    }
+  ],
+  "edition": 2030,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/543"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HSXKdsithrRxLT1NP1W295j4Q4RiAQnvxN1Qe1KUPEEc"
+  ]
+}

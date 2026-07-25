@@ -1,0 +1,78 @@
+{
+  "name": "Sweet Curse Card #220",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreicg4aryivnixirhu44c3j423b4wgbfx3kc32yanuahtsjpi6r5w3y",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Trap"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Fasist.eth2"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Dr.monochrome Alakazam"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Whiscash"
+    },
+    {
+      "trait_type": "Score",
+      "value": "Lululin"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Millenium items"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Discoball"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Jsrf2"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Walkman8"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Amiral malkor"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Wine"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "curse"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreicg4aryivnixirhu44c3j423b4wgbfx3kc32yanuahtsjpi6r5w3y",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibxaaoj5rhyg4wk25a4255rilw7coxexzfjdzn3dpxk4gxo2dpyx4",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibxaaoj5rhyg4wk25a4255rilw7coxexzfjdzn3dpxk4gxo2dpyx4",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibxaaoj5rhyg4wk25a4255rilw7coxexzfjdzn3dpxk4gxo2dpyx4",
+  "collection_mints": [
+    "J5cfnpvRueNgPLE7TA1tbHERnGduxr4tzMSpEnUKem4"
+  ]
+}

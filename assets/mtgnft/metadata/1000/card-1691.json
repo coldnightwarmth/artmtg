@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1690",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1690",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_tabs1"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_172"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Jaya's Immolating Inferno"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_drifellateeth"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "draw"
+    }
+  ],
+  "edition": 2148,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1690"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4uCJpv5jntHEgys3FtCDyq6GZUm9hAWHc9siNP552Kf6"
+  ]
+}

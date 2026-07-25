@@ -1,0 +1,78 @@
+{
+  "name": "Sweet Curse Card #242",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreih45ujzsycovr4uww6ptqe7ocghocaql4espokcppz74cca24bl5u",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Bio"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Macro - human"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Mulan.fu2"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Yurei.raw2"
+    },
+    {
+      "trait_type": "Signature",
+      "value": "Erz"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Sip"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Sonizard"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "2 girls 1 joint"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Walkman8"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Amiral malkor"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Circus"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "kintsugi"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreih45ujzsycovr4uww6ptqe7ocghocaql4espokcppz74cca24bl5u",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidrcbitmbphpklpaevlmkbg5v5yarhktoxvtegn3gehyayztse26a",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidrcbitmbphpklpaevlmkbg5v5yarhktoxvtegn3gehyayztse26a",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidrcbitmbphpklpaevlmkbg5v5yarhktoxvtegn3gehyayztse26a",
+  "collection_mints": [
+    "EgVT9wTvR1LsV6PRTFcxAhwqXQJnCs29qHm6BoQYGzeU"
+  ]
+}

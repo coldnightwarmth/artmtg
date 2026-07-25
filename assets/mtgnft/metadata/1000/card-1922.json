@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #1921",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1921",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_spawner"
+    },
+    {
+      "trait_type": "behind",
+      "value": "fire"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Addle"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "mifella1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_chromed"
+    },
+    {
+      "trait_type": "hat",
+      "value": "supreme"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "reachright"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "misalute"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "stickyfingers"
+    }
+  ],
+  "edition": 1389,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1921"
+      }
+    ]
+  },
+  "collection_mints": [
+    "A6eiHfzUxTRexh8irYQ6y9yxtSSUceL2ydECTAP4U3Rr"
+  ]
+}

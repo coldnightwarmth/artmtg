@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1047",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1047",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_drifella2"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_170"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Electrickery"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_perc5"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_tiger"
+    },
+    {
+      "trait_type": "hat",
+      "value": "palaceblue"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_monke"
+    }
+  ],
+  "edition": 873,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1047"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8wbdgnnNtJ6oDeUhUQwBV2uvdMmyU9hUNfaYGFhLwoAD"
+  ]
+}

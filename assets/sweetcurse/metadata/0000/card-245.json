@@ -1,0 +1,86 @@
+{
+  "name": "Sweet Curse Card #245",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreiaeergr3qgqb5mfi3ei6n46oy4vyka4rv3ak227pikthx2wi5b2m4",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "A.R.T."
+    },
+    {
+      "trait_type": "Background",
+      "value": "Melencolia I"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "2turnt_kurt Suicune"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Slim shady"
+    },
+    {
+      "trait_type": "Name",
+      "value": "30-30"
+    },
+    {
+      "trait_type": "Base",
+      "value": "fck"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Beauty"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Suchicat"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Jacksachs"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Hot ice"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Zizou"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Real mfer"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Pov lifestyle"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "overgrowth"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreiaeergr3qgqb5mfi3ei6n46oy4vyka4rv3ak227pikthx2wi5b2m4",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeige5umdnyrl2v3winkjtniw66wmqrgppv2fbzugfkn3vedjfmsdne",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeige5umdnyrl2v3winkjtniw66wmqrgppv2fbzugfkn3vedjfmsdne",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeige5umdnyrl2v3winkjtniw66wmqrgppv2fbzugfkn3vedjfmsdne",
+  "collection_mints": [
+    "3JdZfMbje6XvRiWCAGdgdU1KzCP9tjLYqbcdmvFSa58v"
+  ]
+}

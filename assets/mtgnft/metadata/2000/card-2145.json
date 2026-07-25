@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #2144",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2144",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_711"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Mesa Chicken"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_aaaaaaaaa"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "boofleft"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "sanic"
+    },
+    {
+      "trait_type": "special top",
+      "value": "drain"
+    }
+  ],
+  "edition": 382,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2144"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HtLyqA7BpzvLcE6WKT9w8v6PZUKkz3P7QVQ2ScSEfexq"
+  ]
+}

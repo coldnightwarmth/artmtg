@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1898",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1898",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_balloonparty"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Orcish Vandal"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_yarinvert"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_chomp"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "playin"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "leftpeek"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "n64"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_luna"
+    }
+  ],
+  "edition": 867,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1898"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GLLMpezHefE2RwNQQ7wo8ZG56884HJx8hrXVepSoDw52"
+  ]
+}

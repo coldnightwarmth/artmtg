@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1052",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1052",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_killthejudge"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_165"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Squirrel Farm"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_teef"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_uwuright"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_cod4"
+    }
+  ],
+  "edition": 688,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1052"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Gd8LrL5GVEg1qfSWCBDpvCZSPPn4dZcxw9MMzihYEd1E"
+  ]
+}

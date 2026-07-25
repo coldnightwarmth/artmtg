@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #19",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/19",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_cloudheaven"
+    },
+    {
+      "trait_type": "behind",
+      "value": "sprayed"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_154"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Imaginary Pet"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_smoke"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "kidgohan"
+    }
+  ],
+  "edition": 293,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/19"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9GoLkp736dYoJkktvB9Crhhokor6UeC4SGVNiWV5E1BK"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1170",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1170",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_burningmonk"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_183"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Daring Sleuth"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "droopy"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "gayfish"
+    }
+  ],
+  "edition": 2209,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1170"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CvuRhiAnQXe5DjicwUtY1Jp9qDwHfu5ypwa7AhD2jwji"
+  ]
+}

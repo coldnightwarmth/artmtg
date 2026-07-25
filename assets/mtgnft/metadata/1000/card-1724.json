@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #1723",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1723",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_artistshouse"
+    },
+    {
+      "trait_type": "behind",
+      "value": "Untitled_Artwork-2"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Fight with Fire"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_mifella3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "kaneki"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "thumbsup"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "pinkoil"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_issac"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "unit01"
+    }
+  ],
+  "edition": 1225,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1723"
+      }
+    ]
+  },
+  "collection_mints": [
+    "2ByoTS1CsBgd32amnK1RNh6ds8x77wa6pYWEVvvrQjKk"
+  ]
+}

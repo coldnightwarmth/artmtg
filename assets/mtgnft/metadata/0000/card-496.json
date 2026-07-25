@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #495",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/495",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "killerinstint"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Skittering Skirge"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_smeerk"
+    },
+    {
+      "trait_type": "hat",
+      "value": "halopurple"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_mewtwo"
+    }
+  ],
+  "edition": 2177,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/495"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Pvz9m6J1hpXMNrx3HWy1VRZPcSatXTAKnFmN794M5x5"
+  ]
+}

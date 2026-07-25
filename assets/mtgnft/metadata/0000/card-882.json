@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #881",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/881",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_wolfen"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Bitter Revelation"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_glitched"
+    },
+    {
+      "trait_type": "hat",
+      "value": "workingondying"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "ciggie"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "pipetobaccoleft"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_kenny"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "failure"
+    }
+  ],
+  "edition": 1467,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/881"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DaDT1kfCUWDYpCwRvHUFZPPakjbVB72PvCNzDLg7Qf4Y"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1266",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1266",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_forresttrain"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_91"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Benalish Trapper"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "mifella2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_teeeef"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "ssj2goku"
+    }
+  ],
+  "edition": 1452,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1266"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4jLfEuUmiczKnHELLh5MenGKQwVpRyBGCDZkrwmsxL1x"
+  ]
+}

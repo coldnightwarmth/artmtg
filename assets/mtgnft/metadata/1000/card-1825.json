@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1824",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1824",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_village"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_129"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Doomed Traveler"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "mifella2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "upset"
+    },
+    {
+      "trait_type": "hat",
+      "value": "supreme"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_mummy"
+    },
+    {
+      "trait_type": "special top",
+      "value": "issacantibirth"
+    }
+  ],
+  "edition": 964,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1824"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4wkvvCDsRSGou2gi6D5Z1bL45KyE1aBu1NnTa1LEGH2i"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1245",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1245",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "1stedition"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Drana's Emissary"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_smirk"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "killakween"
+    }
+  ],
+  "edition": 763,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1245"
+      }
+    ]
+  },
+  "collection_mints": [
+    "68C8gmmLTrgJUQFdsxR438m3XwtJEt8Sig7NPEbtA8iZ"
+  ]
+}

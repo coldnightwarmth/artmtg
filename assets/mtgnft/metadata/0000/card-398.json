@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #397",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/397",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_brucewayne"
+    },
+    {
+      "trait_type": "behind",
+      "value": "swirledtv"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Cadaverous Knight"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sidechompers"
+    },
+    {
+      "trait_type": "hat",
+      "value": "guccibiglogo"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "nerdmakeup"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "css"
+    }
+  ],
+  "edition": 743,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/397"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6nhvFLGftguHVAYsj9KmUoyYoF4QXdiAYxfXD9YGxT9F"
+  ]
+}

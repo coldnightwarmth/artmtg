@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1651",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1651",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_jrpg"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Homura, Human Ascendant_Homura's Essence"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_perc5"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "drool"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "bong"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_goronelder"
+    },
+    {
+      "trait_type": "special top",
+      "value": "issacantibirth"
+    }
+  ],
+  "edition": 845,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1651"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HrfuwpgX9XnH19sY5h9Fde8L7GTBLaoA3EaPq82huz3y"
+  ]
+}

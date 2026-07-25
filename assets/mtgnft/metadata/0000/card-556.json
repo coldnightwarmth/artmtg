@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #555",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/555",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_cockpit"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_75"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Hunting Kavu"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_teeeef"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "scatteredholo"
+    }
+  ],
+  "edition": 322,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/555"
+      }
+    ]
+  },
+  "collection_mints": [
+    "F9dHdYCfpXGqctSQaTdbW8xMQS6w8C9Lix3vns7pAtzj"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #879",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/879",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_party"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Remote Isle"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_powdermouth"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "gamecube"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_spectr"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_MIHtpose"
+    }
+  ],
+  "edition": 2069,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/879"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8LCVkQLKhf1UmJh2a3WmVfdjJjYFeyvS5C7wmkVgAXyk"
+  ]
+}

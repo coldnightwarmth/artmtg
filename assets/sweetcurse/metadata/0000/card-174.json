@@ -1,0 +1,82 @@
+{
+  "name": "Sweet Curse Card #174",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreibom7yejnkwpzffxiqf32xfxcefbnojl3whkxux2wyy4jesrdi5ge",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Bio"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Micro - Leaf"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Dr.monochrome Gyarados"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Benangbaja Mlue2"
+    },
+    {
+      "trait_type": "Score",
+      "value": "Recalled"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Hmong"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Zabiwa"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Butter"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Donphan"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Ciara"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Goth mommy"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Stranger than ai"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "overgrowth"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "on"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreibom7yejnkwpzffxiqf32xfxcefbnojl3whkxux2wyy4jesrdi5ge",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeianvopdwekyoiqx7zer73u35owrrqnpmgc7tln6pbdipbtvja73oy",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeianvopdwekyoiqx7zer73u35owrrqnpmgc7tln6pbdipbtvja73oy",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeianvopdwekyoiqx7zer73u35owrrqnpmgc7tln6pbdipbtvja73oy",
+  "collection_mints": [
+    "7gf9wKVsiwmL2kwaDp1CpsBPP1wDaCobQLPCapipmanM"
+  ]
+}

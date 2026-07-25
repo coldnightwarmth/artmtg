@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #33",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/33",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_mysterybox"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Saberclaw Golem"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_grr"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "bong"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "dmhand"
+    }
+  ],
+  "edition": 1230,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/33"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9VxTbe6XQasrV4gmYNS3F2sZon8EpSx2PoU4oKH5kHB6"
+  ]
+}

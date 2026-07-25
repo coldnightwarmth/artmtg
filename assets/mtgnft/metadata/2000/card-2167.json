@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #2166",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2166",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_abstract3"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Carnival Hellsteed"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "yay"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "spillpillz"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "asspizzaalien"
+    }
+  ],
+  "edition": 380,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2166"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7jPSi83XJkBrKcxgtePCw2Z1k9E2tndksc3LmEu2x2oc"
+  ]
+}

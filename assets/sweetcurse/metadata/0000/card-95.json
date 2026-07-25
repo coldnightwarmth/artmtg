@@ -1,0 +1,90 @@
+{
+  "name": "Sweet Curse Card #95",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreig5no3qfmlznafkjzxz3wodbtbdf3obgiu6h2poyqedkv6bpxqutm",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "A.R.T."
+    },
+    {
+      "trait_type": "Background",
+      "value": "Utagawa Kuniyoshi"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Joancornella3"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Pachimon"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Fascist.eth"
+    },
+    {
+      "trait_type": "Signature",
+      "value": "Erz"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Lumas"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Churrozard"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Spongizard"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "2t_k Pot of greed"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Narutos"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "bru"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Without me"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Petit pays"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "circuit"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreig5no3qfmlznafkjzxz3wodbtbdf3obgiu6h2poyqedkv6bpxqutm",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidcvmzdozhalnkm3stfxczm4dho7mlcykn5ncqvfbjg2erzw6au4q",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidcvmzdozhalnkm3stfxczm4dho7mlcykn5ncqvfbjg2erzw6au4q",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidcvmzdozhalnkm3stfxczm4dho7mlcykn5ncqvfbjg2erzw6au4q",
+  "collection_mints": [
+    "C2qp6WtGEsk7Pve9EfpJ2aSAseFhY4mVytQq5fM9Yy68"
+  ]
+}

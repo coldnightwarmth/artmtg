@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1668",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1668",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "ac130"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Relic Runner"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_tounge"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "osrsimp"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "joeyy"
+    }
+  ],
+  "edition": 1531,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1668"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Eu4G2eeYEYHCv4pDx2A2VnX877TC7yPaKJMA7frA9uTS"
+  ]
+}

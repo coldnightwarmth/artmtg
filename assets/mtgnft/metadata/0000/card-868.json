@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #867",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/867",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_guntomyhead"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_136"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Library of Leng"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "mask"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "theGodfellaZ"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_kidgohan"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "lilith"
+    }
+  ],
+  "edition": 1776,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/867"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CgSAeumgpnQRAKRYFDAjSuBYnm8HeLk7tEiLznDwLyJP"
+  ]
+}

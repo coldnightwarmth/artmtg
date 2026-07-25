@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #5",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/5",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_711"
+    },
+    {
+      "trait_type": "behind",
+      "value": "daorcs"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Equestrian Skill"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_widedark"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "bible"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_luigi"
+    }
+  ],
+  "edition": 2221,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/5"
+      }
+    ]
+  },
+  "collection_mints": [
+    "2yD8eqQC9vQy8FcFav6U1c4UfJQAQbstzgcUUoL4quxf"
+  ]
+}

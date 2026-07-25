@@ -1,0 +1,86 @@
+{
+  "name": "Sweet Curse Card #286",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreiawsdkzlchfdlkmosl2dw2av47mwskwzygjg2s3dnqahz4bgkc44u",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Bio"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Micro- Human"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Link DS"
+    },
+    {
+      "trait_type": "Description",
+      "value": "DustyRay4"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Purple rain"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Firetag"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Jsrf2"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Biga"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Donphan"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Novus ordo"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "YouruncleStar"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Most Promising"
+    },
+    {
+      "trait_type": "Erzart",
+      "value": "Arianart"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "kintsugi"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "on"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreiawsdkzlchfdlkmosl2dw2av47mwskwzygjg2s3dnqahz4bgkc44u",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihphmj4rou7qhmzn2ypd2nxwymhkoyf475n7bubcefbau3xf2phq4",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihphmj4rou7qhmzn2ypd2nxwymhkoyf475n7bubcefbau3xf2phq4",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihphmj4rou7qhmzn2ypd2nxwymhkoyf475n7bubcefbau3xf2phq4",
+  "collection_mints": [
+    "H9kCCgZ6u5FBhhYeU4shLZBdYp6dyzSpSNGExMaqXNCk"
+  ]
+}

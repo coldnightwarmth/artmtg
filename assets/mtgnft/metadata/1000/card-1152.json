@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1151",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1151",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_killerinstint"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Heir of Falkenrath"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_widesmirk"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_ps3"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "asspizzapatch"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "chao"
+    }
+  ],
+  "edition": 1771,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1151"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7wzAbYW31uFbnDMEEvkUkYCSCY7XNhrynxcEBVabTx9u"
+  ]
+}

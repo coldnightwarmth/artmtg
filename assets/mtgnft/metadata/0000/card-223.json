@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #222",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/222",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_killthejudge"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_17"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Frenetic Efreet"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_toxic"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "gamecube"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "ditto"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "csgokillfeed"
+    },
+    {
+      "trait_type": "special top",
+      "value": "chronotrigger"
+    }
+  ],
+  "edition": 295,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/222"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3QW1KarEise5JLuqFnkELymDe1jv7JtGWp4tG4QLFf5D"
+  ]
+}

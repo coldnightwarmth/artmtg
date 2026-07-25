@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1700",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1700",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_csgostitch"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Plated Seastrider"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_moneypls"
+    },
+    {
+      "trait_type": "hat",
+      "value": "snes"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_josephjoestar"
+    }
+  ],
+  "edition": 1637,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1700"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7YASdmdQx2Uos9vmAnqiikpV6dTcQcgwG1qZHuRosgnt"
+  ]
+}

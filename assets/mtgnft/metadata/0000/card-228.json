@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #227",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/227",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_clown"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ravenous Giant"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_melty"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "dmhand"
+    }
+  ],
+  "edition": 1725,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/227"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4DsTtCN7oqkKoS61rUoMTuK2qKHhmd6xcMtPn4aSKZvj"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #893",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/893",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_castleblur"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Smoke Shroud"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_serious"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "toothygrin"
+    },
+    {
+      "trait_type": "hat",
+      "value": "palacecamo"
+    }
+  ],
+  "edition": 2006,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/893"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GF1M1zyzY3F6cJu8trEXYdSw37ZSJnsXckCZi6C7qAZe"
+  ]
+}

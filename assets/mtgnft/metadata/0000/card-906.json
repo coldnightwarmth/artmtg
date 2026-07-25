@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #905",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/905",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_dmttunnels"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Keening Apparition"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "teef"
+    },
+    {
+      "trait_type": "hat",
+      "value": "mtg"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "gunhandleft"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "theonering"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "kirby"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "megaman"
+    }
+  ],
+  "edition": 1061,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/905"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8sX4D8hVfnzExmA37PtMLrXNQAHzfXZAUveFHMPN1rUM"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #2170",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2170",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_burnchurches"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_69"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Birthing Boughs"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_inflate"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "beretta"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "csshoota"
+    }
+  ],
+  "edition": 992,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2170"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HwxvQvq2h8puBwr7Ye8sjhvxdq3DHGgb89E3sUX4vswy"
+  ]
+}

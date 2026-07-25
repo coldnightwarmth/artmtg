@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #106",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/106",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_abstract2"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_78"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Surrak Dragonclaw"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_perc5"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_babeblur"
+    }
+  ],
+  "edition": 558,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/106"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DTGq1XCoMDPKcK46oJLkBLjPDMHs8ivxa3B3MznLMbTV"
+  ]
+}

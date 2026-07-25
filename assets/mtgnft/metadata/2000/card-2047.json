@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #2046",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2046",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_hellcastle"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Uktabi Kong"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "tounge"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "pokeballleft"
+    }
+  ],
+  "edition": 636,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2046"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DFZjn9iSrVrYYpPjowRjcEhZrAN7NgrfBcWT1TXygeEo"
+  ]
+}

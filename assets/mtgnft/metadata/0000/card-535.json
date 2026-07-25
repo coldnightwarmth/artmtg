@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #534",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/534",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_cacti"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Blind Fury"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_yarinvert"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_ahhhhhh"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "gunleft"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_jay"
+    }
+  ],
+  "edition": 962,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/534"
+      }
+    ]
+  },
+  "collection_mints": [
+    "2uvp5hqv5PbwfnF6Q2grzJhiFTTs5kP2QqkSDK9FA72P"
+  ]
+}

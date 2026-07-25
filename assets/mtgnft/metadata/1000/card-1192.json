@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1191",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1191",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "chrischanmewtwo"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_187"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Talruum Minotaur"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_orc"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "ciggie"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "dualdeag"
+    }
+  ],
+  "edition": 1485,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1191"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HDhBFBRcLYMWMriQjLEdG9dvp5VQfGGkaUSzXi9LcNPX"
+  ]
+}

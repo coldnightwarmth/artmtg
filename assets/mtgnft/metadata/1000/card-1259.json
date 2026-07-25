@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1258",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1258",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_eboynoise"
+    },
+    {
+      "trait_type": "behind",
+      "value": "chaosbehind"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Siren's Call"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_grandma"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "gunhandleft"
+    }
+  ],
+  "edition": 983,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1258"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5MRAaaWyLHf1qfKbrpGzoTRMk2yEcueTUorzVMCKwASD"
+  ]
+}

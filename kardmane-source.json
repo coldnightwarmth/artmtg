@@ -1,0 +1,1215 @@
+{
+  "fetchedAt": "2026-07-24T08:52:30.604Z",
+  "source": "https://graphql.tensor.trade/graphql",
+  "tensorPage": "https://www.tensor.trade/trade/kardmane",
+  "collectionSlug": "232ea192-8926-475c-b498-0648b63586e5",
+  "collectionDisplaySlug": "kardmane",
+  "membershipPolicy": "Every live mint returned by Tensor; exact duplicate editions share one binder card",
+  "assetRevision": "kardmane-1",
+  "animationRevision": null,
+  "liveMintCount": 33,
+  "tensorFetchedMintCount": 33,
+  "tensorReportedMintCount": 33,
+  "excludedMintCount": 0,
+  "exclusionRules": {
+    "mintIds": []
+  },
+  "cardCount": 33,
+  "groupedDuplicateMintCount": 0,
+  "metadataFetchFailureCount": 0,
+  "liveMintIdsSha256": "7bdc97400543eec9f681a94022a079843db934b9705fede9ffdd1638c35f832d",
+  "tensorLiveMintIdsSha256": "7bdc97400543eec9f681a94022a079843db934b9705fede9ffdd1638c35f832d",
+  "instrument": {
+    "id": "232ea192-8926-475c-b498-0648b63586e5",
+    "slug": "232ea192-8926-475c-b498-0648b63586e5",
+    "slugDisplay": "kardmane",
+    "name": "Kardmane",
+    "symbol": "KARDMANE",
+    "imageUri": "https://prod-tensor-creators-s3.s3.us-east-1.amazonaws.com/image/b786efdd-b9b4-47b3-a2a0-e76bec370905",
+    "description": "Kardmane by kardladystudio",
+    "tokenStandard": "NON_FUNGIBLE",
+    "tokenProgram": "MPL_CORE",
+    "compressed": false,
+    "statsV2": {
+      "numMints": 33
+    }
+  },
+  "conversion": {
+    "format": "webp",
+    "width": 600,
+    "height": 870,
+    "quality": 75,
+    "effort": 4,
+    "fit": "contain",
+    "background": "#111111",
+    "imageProxy": "https://prod-image-cdn.tensor.trade/images/600x600/freeze=true"
+  },
+  "animationConversion": null,
+  "sharedBack": {
+    "source": "generated solid color",
+    "color": "#242424",
+    "file": "assets/kardmane/backs/kardmane-back.webp",
+    "width": 600,
+    "height": 870
+  },
+  "liveAssets": [
+    {
+      "onchainId": "97G2QLqn1hoRzZsC8ZFZUUPtm8Vo5CzMmxgjVtPF4LBh",
+      "owner": "5yP9XgBbVUhNfyB4KSFWATjmFs8UXFB7ik4o96ctKgEc",
+      "name": "Kardmane 1",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiad3zcmcdmtw36e2myctdyhn25sm7zpqnd7xtzq6hwhrumhne2wl4",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/0",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiad3zcmcdmtw36e2myctdyhn25sm7zpqnd7xtzq6hwhrumhne2wl4"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "2KrSHahbbu1fiHKwRjSexPNA3NLxeq8Gu7fZ6zSt41Fu",
+      "owner": "7k1t3T7ET7LP8WeYPzgSeyotnjD2Q2VUWnenx9RA2C2e",
+      "name": "Kardmane 2",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigeftj3tqd3c2ef536ivutloo4sf44q7plmbe6oxcdlxfugj74rke",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/1",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigeftj3tqd3c2ef536ivutloo4sf44q7plmbe6oxcdlxfugj74rke"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "GPoUJSUa8PyJdi9TvhnpW3ear1RjvwKoBPLxfRXuTp7c",
+      "owner": "EcQtfgzwCvBjmU9u1aoMvpy8iytyiRDqTKyPG1vwrj5H",
+      "name": "Kardmane 3",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihdaheoo72ll6zpnppofrhownpl6qph72tslgekrvcfabxwuwzd5m",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/2",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihdaheoo72ll6zpnppofrhownpl6qph72tslgekrvcfabxwuwzd5m"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "7mvV97Eh5dYwAJE8Wj6wkLJ7BFvTEYriDWXkuKwp8HC5",
+      "owner": "Ao8v5HLrLDaBwKVmrXt1DaugTYKnVYnK4b3QfwJjPcAh",
+      "name": "Kardmane 4",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifygxjfszp7etwncxxf6n3wfyaswld53bvvxpja6mmwzczrcrtufe",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/3",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifygxjfszp7etwncxxf6n3wfyaswld53bvvxpja6mmwzczrcrtufe"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "7VijQwzzhXoKy5F1kg9vA5JuECgSZW85e9sGTuUvSvho",
+      "owner": "BU51Sj7PVw3R3XxvPQFAi5AzSG3zERjLKM73BJhYSwCo",
+      "name": "Kardmane 5",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifzbpivptoz4vt7pztfdxywtgtxgi6p2ny3surmtfdffbwczxjl3y",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/4",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifzbpivptoz4vt7pztfdxywtgtxgi6p2ny3surmtfdffbwczxjl3y"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "EaeozH8hWRdjJhYspKG3pahhf3J7VeeeBDVipdMwvvPj",
+      "owner": "BU51Sj7PVw3R3XxvPQFAi5AzSG3zERjLKM73BJhYSwCo",
+      "name": "Kardmane 6",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeico4zvpg6jcxtfomehvlanaz5kzklcnhydo2o5urplcqcvl67imsi",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/5",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeico4zvpg6jcxtfomehvlanaz5kzklcnhydo2o5urplcqcvl67imsi"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "CuG2SAvVJSNBBMJMZ3QHQ3RVhxbVt7LpLLvqGjvveRun",
+      "owner": "BU51Sj7PVw3R3XxvPQFAi5AzSG3zERjLKM73BJhYSwCo",
+      "name": "Kardmane 7",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihqav34h2ntjgjmupzedjlgyqbubltwnwedsggxjerhcwpclnjrb4",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/6",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihqav34h2ntjgjmupzedjlgyqbubltwnwedsggxjerhcwpclnjrb4"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "EM2Sv7aanDN39au5WAHgedHxR4kW8ZAXPb5TRvD9ZenW",
+      "owner": "9Kjy4WL6Vs274CdWL84JKtFGmdtQLXyaYgqaspCGfnw2",
+      "name": "Kardmane 8",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifoapfhgg3ykk3i5x6unifziifkoj3csglognwqpqn4hvd27bsvhe",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/7",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifoapfhgg3ykk3i5x6unifziifkoj3csglognwqpqn4hvd27bsvhe"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "FVv8XfRTVJ3Ka5Qi8i3cJfPpN9eiJkQDgg6EQZFKuE31",
+      "owner": "9Kjy4WL6Vs274CdWL84JKtFGmdtQLXyaYgqaspCGfnw2",
+      "name": "Kardmane 9",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiahazr3iju7quooldsj6t4lx4zxvnx6ahwbsp6fm3v6qyizt6it74",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/8",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiahazr3iju7quooldsj6t4lx4zxvnx6ahwbsp6fm3v6qyizt6it74"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "FbLc9wYKo3r1r2y5NxCii8brH6A6zFQk8h83Y2y63Y5S",
+      "owner": "HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh",
+      "name": "Kardmane 10",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeieysjujltnebr22lkbvobiplxpamqpbdurvvagavkja4gils4if5q",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/9",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeieysjujltnebr22lkbvobiplxpamqpbdurvvagavkja4gils4if5q"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "HjzinKdwyXL34mEVpVcM8MiDUhbqvDiUxWKDADj2XPqH",
+      "owner": "BU51Sj7PVw3R3XxvPQFAi5AzSG3zERjLKM73BJhYSwCo",
+      "name": "Kardmane 11",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibzshj34grq2gkukxks7u3tvbmdqt2qgoi46tju4eqoo2trm54hiu",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/10",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibzshj34grq2gkukxks7u3tvbmdqt2qgoi46tju4eqoo2trm54hiu"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "ETKWFJBXZQoWA8Q1Z4gJ5sm9cVr93grAKiFay5KWBKz8",
+      "owner": "BU51Sj7PVw3R3XxvPQFAi5AzSG3zERjLKM73BJhYSwCo",
+      "name": "Kardmane 12",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihw7xk6m6w645hjc6b33zblgvu5osrufiiqtix3dqypgrbnznuyq4",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/11",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihw7xk6m6w645hjc6b33zblgvu5osrufiiqtix3dqypgrbnznuyq4"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "EmL2c8TdGJdsXqdZHyD3wnveRHUVRBfA61ikcouya1xa",
+      "owner": "6Q1szvphXUYcPtQyhAnuYfqnSBzBMwZ8JryjfFXKtMY7",
+      "name": "Kardmane 13",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibq56ge3zhdvsqzpt76urqhcxd6r5vlbcublmh45snzl5lempr4de",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/12",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibq56ge3zhdvsqzpt76urqhcxd6r5vlbcublmh45snzl5lempr4de"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "4Mp8VBvaEg2hF1mpuwQGei8WUHbarstmB6PeZjYwEZxT",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "Kardmane 14",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidwlnfkcdztxlffvrbwyvzyhdre4bamvbn37wklxbud7snpj3yjjy",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/13",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidwlnfkcdztxlffvrbwyvzyhdre4bamvbn37wklxbud7snpj3yjjy"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "HgYr8QSW6fhPzSZKAHr7D7QpJQ2Xg9G3Ev3FRueYWh1z",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "Kardmane 15",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidqurjctn24lzh26e4ltx4oxol7sx45dc322rk6mn6saaqa53kcje",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/14",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidqurjctn24lzh26e4ltx4oxol7sx45dc322rk6mn6saaqa53kcje"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "11ZZXxVt1Y2JNmKmDxn2hPbjphn1xqGfE87RRZYmkMH",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "Kardmane 16",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeig5epzcqosqerh26zjdy5ox6335d5bqnkxg34op4l5ik4r5ijanfq",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/15",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeig5epzcqosqerh26zjdy5ox6335d5bqnkxg34op4l5ik4r5ijanfq"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "7EzrhV9MxG2xBkcqrCZscKXBQco7fNsrCVp4q7AB7ZhF",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "Kardmane 17",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibq2dwi5hbsgjs3qmslb3v6dzk4pa5y5rg2n2vxvvmrwcs7tafyn4",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/16",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibq2dwi5hbsgjs3qmslb3v6dzk4pa5y5rg2n2vxvvmrwcs7tafyn4"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "AMXob9UXL25zPuM33pFh1sB3GmxLcVJrwCZDeEpF2NnA",
+      "owner": "7LZLttU9R2ECMLrwRuYFoaK9TYSmFU9missEr4PhJkwo",
+      "name": "Kardmane 18",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifbkfjj7enawifdqbdci5ku2itzxfumvyy4c2xlk4bo77t4lf7slm",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/17",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifbkfjj7enawifdqbdci5ku2itzxfumvyy4c2xlk4bo77t4lf7slm"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "2rrjta32DpJgwYGq8eyscQhtMSukfsHPZarLExqLTLvG",
+      "owner": "DDTvgrHj3nXorbKfbG6KJx8MJF43g2hSTK1LEV4QdCXx",
+      "name": "Kardmane 19",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeih7dc4a23ogdbkjeykdv2m75la3q5qylvacamx3kidawdagezjwwu",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/18",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeih7dc4a23ogdbkjeykdv2m75la3q5qylvacamx3kidawdagezjwwu"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "yAz9P64EkrsAbTBxvTC8RKMuAdd8MYm7LzXXwLnaTqW",
+      "owner": "CTGCnKnPWssjXWksqRdqcYpkwdhSZfdhUPy7W4MQgdoM",
+      "name": "Kardmane 20",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeia2inowtzjkni6s3ekxptcneoenyaejfypr7evcxg64w44p5cikgi",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/19",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeia2inowtzjkni6s3ekxptcneoenyaejfypr7evcxg64w44p5cikgi"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "12vyiYd6yCe83k6qZPVW1cfTt7ScuFaG5WoaX7zZ7Bzo",
+      "owner": "CTGCnKnPWssjXWksqRdqcYpkwdhSZfdhUPy7W4MQgdoM",
+      "name": "Kardmane 21",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiabhjaytvnyuxonf3aqdug52247ix7d35jmxgkocmi64gwlewm4pu",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/20",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiabhjaytvnyuxonf3aqdug52247ix7d35jmxgkocmi64gwlewm4pu"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "LCn1C2p7fmbZLkKLME3T3v5N69Kd7wQHNb5N2gy9MeQ",
+      "owner": "CmmS44i8KCDnGME2N1EV5QjVUS11hT8pfLDGYZqEwqBW",
+      "name": "Kardmane 22",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiamy6nz7ezeu2k5q3l3krewk7zek7g2n4n2htpbvtua7x3qvl2see",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/21",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiamy6nz7ezeu2k5q3l3krewk7zek7g2n4n2htpbvtua7x3qvl2see"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "6TaSdjkrTFYW6ogLRxfTum5ePxEHmubYy8tmuBghu4Yv",
+      "owner": "93ijEyrE7DYdCvnQDsVZkirSfVdEz2ijTY1Kfk9gfeCs",
+      "name": "Kardmane 23",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeid357rc2z3gyhltx47rz3mn5oesmjnncuf7hjz2pmx5fp5hrb3jgu",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/22",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeid357rc2z3gyhltx47rz3mn5oesmjnncuf7hjz2pmx5fp5hrb3jgu"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "A3DFhjDF6kLrsxBLvQZkFFeyZPH96b2eD5dApCbsc6Gj",
+      "owner": "Am74swiBScPpaqN7hXNzQWs1QEun15KhRoryTV8wZTzb",
+      "name": "Kardmane 24",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicrjdjonopxw32iyke5ihs7rvnx5w3eetzzbcxwgnojbccptysl6e",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/23",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicrjdjonopxw32iyke5ihs7rvnx5w3eetzzbcxwgnojbccptysl6e"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "Fnfyv6CaGUUbKz2Zyg1phF1XCmh23Zk4PLthxAQkseCk",
+      "owner": "Am74swiBScPpaqN7hXNzQWs1QEun15KhRoryTV8wZTzb",
+      "name": "Kardmane 25",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeib34h7hvnpyjrxt5epc4icvnrvtmwysxnl5f4run3kblx7svbizhq",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/24",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeib34h7hvnpyjrxt5epc4icvnrvtmwysxnl5f4run3kblx7svbizhq"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "E4bnj9rhxY4u7jah126WGapQMxoRsznYKzYe7Zib6aqb",
+      "owner": "CTGCnKnPWssjXWksqRdqcYpkwdhSZfdhUPy7W4MQgdoM",
+      "name": "Kardmane 26",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifo7cr6rpysc26rfw67her3lgzid32fb6yw56l4yqdln564qrdjdu",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/25",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifo7cr6rpysc26rfw67her3lgzid32fb6yw56l4yqdln564qrdjdu"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "94xvkhzxUbMaxN85x3rdDfDR4hTAM2t2d7RELeE1p5oy",
+      "owner": "EcQtfgzwCvBjmU9u1aoMvpy8iytyiRDqTKyPG1vwrj5H",
+      "name": "Kardmane 27",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifzwgbjx7cvr7nwigsxvcublt6gzozeokljtsualw3vbbbokndhde",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/26",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifzwgbjx7cvr7nwigsxvcublt6gzozeokljtsualw3vbbbokndhde"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "AqtR1JQ82NxypuQqJAt23iyj1oGTJQuL9qZQ96jpX5HK",
+      "owner": "CPBhZspdoh6PTyvo2NSDke1rACbkDCRSjuC2pUPxiiVr",
+      "name": "Kardmane 28",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibvfdwi62z66rjgslxmyzid2lbuttjzt73dkpt622ex67u7xbphyi",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/27",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibvfdwi62z66rjgslxmyzid2lbuttjzt73dkpt622ex67u7xbphyi"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "8wJQpTziy6LovvDRgpiutRHhHBDmdTjpS288gZGfH3vn",
+      "owner": "4v6BJnQaadAWseG63m9TkHFAAg4y6bRi8BDxVp4Rwsev",
+      "name": "Kardmane 29",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeieqdfzbqdb24pxzqfdigmmwwktomfwvayf2k6lmbirbhaxjl4g3su",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/28",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeieqdfzbqdb24pxzqfdigmmwwktomfwvayf2k6lmbirbhaxjl4g3su"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "GfwuEd51p7RwvzWfNEfAk2ZRiiaqRjexyMNQXfgYRfCX",
+      "owner": "CPBhZspdoh6PTyvo2NSDke1rACbkDCRSjuC2pUPxiiVr",
+      "name": "Kardmane 30",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifis6i26ceq4h2kqyb4uzjyw4womxp432ikv2462h4fydq5nfjjoq",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/29",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifis6i26ceq4h2kqyb4uzjyw4womxp432ikv2462h4fydq5nfjjoq"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "HMns4H9MCB9YBt34qVs617E9aBNUz9Gi695aBYjv1HyX",
+      "owner": "4v6BJnQaadAWseG63m9TkHFAAg4y6bRi8BDxVp4Rwsev",
+      "name": "Kardmane 31",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiawblijjwlgigakdhnepez7khohdmgpioje5r2xgz2aprbmfhivqi",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/30",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiawblijjwlgigakdhnepez7khohdmgpioje5r2xgz2aprbmfhivqi"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "66iTcRenZdjRDm79QLLieqai6U5E4vABZLEC1TYGiRmb",
+      "owner": "CPBhZspdoh6PTyvo2NSDke1rACbkDCRSjuC2pUPxiiVr",
+      "name": "Kardmane 32",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeie44mq5746gfkcigoc3lsp22fpeiybydupr2q2sxp77h2q3wb6o5m",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/31",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeie44mq5746gfkcigoc3lsp22fpeiybydupr2q2sxp77h2q3wb6o5m"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "4vDogtHVR8DW413fkwFyWYW3NGxr1FvuQtiqf829gg57",
+      "owner": "DfDLFx1WBuGKoTxenFwopBNcvZxv4P2adeFnpabh6tPS",
+      "name": "Kardmane 33",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiayedc6eyxvi4fzs6fzqps3vgushbw6iunurgirf2nvkkyi7mqsgy",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/32",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiayedc6eyxvi4fzs6fzqps3vgushbw6iunurgirf2nvkkyi7mqsgy"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    }
+  ],
+  "excludedAssets": [],
+  "cards": [
+    {
+      "number": 1,
+      "assetNumber": 1,
+      "stableId": "kardmane:group-84a24819c96ee3a179d693a6",
+      "groupKeyHash": "84a24819c96ee3a179d693a6e1e476b221c78ce4069906343629279632564e34",
+      "title": "Kardmane 1",
+      "mints": [
+        "97G2QLqn1hoRzZsC8ZFZUUPtm8Vo5CzMmxgjVtPF4LBh"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/0",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiad3zcmcdmtw36e2myctdyhn25sm7zpqnd7xtzq6hwhrumhne2wl4",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "669b65967b66f0205f22a0292f6a83a8d98c1005e2da506d9945ecbc06c277dd",
+      "metadataFile": "assets/kardmane/metadata/0000/card-1.json",
+      "cardFile": "assets/kardmane/cards/0000/card-1.webp",
+      "animation": null
+    },
+    {
+      "number": 2,
+      "assetNumber": 2,
+      "stableId": "kardmane:group-c3516d8f33d6cf48ceb2f1ed",
+      "groupKeyHash": "c3516d8f33d6cf48ceb2f1edfa9b936c764561ca5ca632b5bf765ea9c9a88b77",
+      "title": "Kardmane 2",
+      "mints": [
+        "2KrSHahbbu1fiHKwRjSexPNA3NLxeq8Gu7fZ6zSt41Fu"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/1",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigeftj3tqd3c2ef536ivutloo4sf44q7plmbe6oxcdlxfugj74rke",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "48fea18f9e1f369ae271c30a9295756dd241cad43efe72d8cb43ff16c9ed2cce",
+      "metadataFile": "assets/kardmane/metadata/0000/card-2.json",
+      "cardFile": "assets/kardmane/cards/0000/card-2.webp",
+      "animation": null
+    },
+    {
+      "number": 3,
+      "assetNumber": 3,
+      "stableId": "kardmane:group-9d528c11fa4a51f6f67b30ab",
+      "groupKeyHash": "9d528c11fa4a51f6f67b30ab7a8a0f4658c9910022b2fe19c6a134e83b04818b",
+      "title": "Kardmane 3",
+      "mints": [
+        "GPoUJSUa8PyJdi9TvhnpW3ear1RjvwKoBPLxfRXuTp7c"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/2",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihdaheoo72ll6zpnppofrhownpl6qph72tslgekrvcfabxwuwzd5m",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "47a47b2420a49dc764bce60a75ed4f1176f772e9a22030f9331bdc27f07308fe",
+      "metadataFile": "assets/kardmane/metadata/0000/card-3.json",
+      "cardFile": "assets/kardmane/cards/0000/card-3.webp",
+      "animation": null
+    },
+    {
+      "number": 4,
+      "assetNumber": 4,
+      "stableId": "kardmane:group-de54c51441bbf4591a25242a",
+      "groupKeyHash": "de54c51441bbf4591a25242af2365dbf847397fd26ba76003d8743d5e79ab4f6",
+      "title": "Kardmane 4",
+      "mints": [
+        "7mvV97Eh5dYwAJE8Wj6wkLJ7BFvTEYriDWXkuKwp8HC5"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/3",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifygxjfszp7etwncxxf6n3wfyaswld53bvvxpja6mmwzczrcrtufe",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "0760e4eafbc510e17363415f0eb97ba22579805d99565158dabebaef85c791d8",
+      "metadataFile": "assets/kardmane/metadata/0000/card-4.json",
+      "cardFile": "assets/kardmane/cards/0000/card-4.webp",
+      "animation": null
+    },
+    {
+      "number": 5,
+      "assetNumber": 5,
+      "stableId": "kardmane:group-8c7165e64005d99cd4ca4a8e",
+      "groupKeyHash": "8c7165e64005d99cd4ca4a8eae5d1c5ca6d1bf2f302b9af97bd2c17d935bfcbc",
+      "title": "Kardmane 5",
+      "mints": [
+        "7VijQwzzhXoKy5F1kg9vA5JuECgSZW85e9sGTuUvSvho"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/4",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifzbpivptoz4vt7pztfdxywtgtxgi6p2ny3surmtfdffbwczxjl3y",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "2d3538e7546cf0cc7686980f7550942f0ae38c90d1df4acf45d89e1bbcfad35d",
+      "metadataFile": "assets/kardmane/metadata/0000/card-5.json",
+      "cardFile": "assets/kardmane/cards/0000/card-5.webp",
+      "animation": null
+    },
+    {
+      "number": 6,
+      "assetNumber": 6,
+      "stableId": "kardmane:group-758d20170767b497eb0a5c88",
+      "groupKeyHash": "758d20170767b497eb0a5c8826057fab4e38e8261bd4cf2ba5bffb664bf0933e",
+      "title": "Kardmane 6",
+      "mints": [
+        "EaeozH8hWRdjJhYspKG3pahhf3J7VeeeBDVipdMwvvPj"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/5",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeico4zvpg6jcxtfomehvlanaz5kzklcnhydo2o5urplcqcvl67imsi",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "c6e6ad6ac71818c64d65343a87df4b014334796c75057c9956f7cdd8f95c6e85",
+      "metadataFile": "assets/kardmane/metadata/0000/card-6.json",
+      "cardFile": "assets/kardmane/cards/0000/card-6.webp",
+      "animation": null
+    },
+    {
+      "number": 7,
+      "assetNumber": 7,
+      "stableId": "kardmane:group-79b681567f18d0b17c3ff97a",
+      "groupKeyHash": "79b681567f18d0b17c3ff97a6af034f96b64c1cf9d997789420b15d776b7fbfb",
+      "title": "Kardmane 7",
+      "mints": [
+        "CuG2SAvVJSNBBMJMZ3QHQ3RVhxbVt7LpLLvqGjvveRun"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/6",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihqav34h2ntjgjmupzedjlgyqbubltwnwedsggxjerhcwpclnjrb4",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "75b91d1ccc300a05b6e8903d0303180d455c26439457f810d20f9da0f5ce769e",
+      "metadataFile": "assets/kardmane/metadata/0000/card-7.json",
+      "cardFile": "assets/kardmane/cards/0000/card-7.webp",
+      "animation": null
+    },
+    {
+      "number": 8,
+      "assetNumber": 8,
+      "stableId": "kardmane:group-4033cbbc536e022367abbc55",
+      "groupKeyHash": "4033cbbc536e022367abbc551bb8da29fb365a7ba54c238e6f7b0368a35f00dc",
+      "title": "Kardmane 8",
+      "mints": [
+        "EM2Sv7aanDN39au5WAHgedHxR4kW8ZAXPb5TRvD9ZenW"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/7",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifoapfhgg3ykk3i5x6unifziifkoj3csglognwqpqn4hvd27bsvhe",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "a1bf1f5c0b8c2e236a63ed4d18ea440ae1d7ec509505b45c6ccecf3b355ce8b2",
+      "metadataFile": "assets/kardmane/metadata/0000/card-8.json",
+      "cardFile": "assets/kardmane/cards/0000/card-8.webp",
+      "animation": null
+    },
+    {
+      "number": 9,
+      "assetNumber": 9,
+      "stableId": "kardmane:group-a1faa6abf50893e43ce24daf",
+      "groupKeyHash": "a1faa6abf50893e43ce24daf742cb3d73fefa49ff1a6fdee957f539bbcd3d98c",
+      "title": "Kardmane 9",
+      "mints": [
+        "FVv8XfRTVJ3Ka5Qi8i3cJfPpN9eiJkQDgg6EQZFKuE31"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/8",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiahazr3iju7quooldsj6t4lx4zxvnx6ahwbsp6fm3v6qyizt6it74",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "7056fc1e7c9a679e3ec545ff1919c5c1eb2e928155b48440850100152cb1d369",
+      "metadataFile": "assets/kardmane/metadata/0000/card-9.json",
+      "cardFile": "assets/kardmane/cards/0000/card-9.webp",
+      "animation": null
+    },
+    {
+      "number": 10,
+      "assetNumber": 10,
+      "stableId": "kardmane:group-b0d31026264e5a24327881e1",
+      "groupKeyHash": "b0d31026264e5a24327881e1b29a7797374430d119e4ef9786dea435b282382f",
+      "title": "Kardmane 10",
+      "mints": [
+        "FbLc9wYKo3r1r2y5NxCii8brH6A6zFQk8h83Y2y63Y5S"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/9",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeieysjujltnebr22lkbvobiplxpamqpbdurvvagavkja4gils4if5q",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "372ebe41d73df29e3a05e3244a5e9a6b63c55ffdfdcc89bad91d98f64206bc15",
+      "metadataFile": "assets/kardmane/metadata/0000/card-10.json",
+      "cardFile": "assets/kardmane/cards/0000/card-10.webp",
+      "animation": null
+    },
+    {
+      "number": 11,
+      "assetNumber": 11,
+      "stableId": "kardmane:group-e29234980cc7a964f94b0907",
+      "groupKeyHash": "e29234980cc7a964f94b090707c52e12ae019013d14ad5cdc6c3a0b33df896dc",
+      "title": "Kardmane 11",
+      "mints": [
+        "HjzinKdwyXL34mEVpVcM8MiDUhbqvDiUxWKDADj2XPqH"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/10",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibzshj34grq2gkukxks7u3tvbmdqt2qgoi46tju4eqoo2trm54hiu",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "2c31aaaf64125df84e0e567c7c40f157d84769311617bfb83254323a2baba08f",
+      "metadataFile": "assets/kardmane/metadata/0000/card-11.json",
+      "cardFile": "assets/kardmane/cards/0000/card-11.webp",
+      "animation": null
+    },
+    {
+      "number": 12,
+      "assetNumber": 12,
+      "stableId": "kardmane:group-c5497aecd5a0ccb31c8efcbf",
+      "groupKeyHash": "c5497aecd5a0ccb31c8efcbfbd61a7c4cb58e43ce888ee81db1b9292b9c4d849",
+      "title": "Kardmane 12",
+      "mints": [
+        "ETKWFJBXZQoWA8Q1Z4gJ5sm9cVr93grAKiFay5KWBKz8"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/11",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihw7xk6m6w645hjc6b33zblgvu5osrufiiqtix3dqypgrbnznuyq4",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "9e2d6e3c26f4034e192a2dc3614c72e82a5d91c7a0118e0148369bd6c6bb2b52",
+      "metadataFile": "assets/kardmane/metadata/0000/card-12.json",
+      "cardFile": "assets/kardmane/cards/0000/card-12.webp",
+      "animation": null
+    },
+    {
+      "number": 13,
+      "assetNumber": 13,
+      "stableId": "kardmane:group-62195554c5cced395fd73631",
+      "groupKeyHash": "62195554c5cced395fd7363131b3e6286713ba88614e837b205910861c292ae7",
+      "title": "Kardmane 13",
+      "mints": [
+        "EmL2c8TdGJdsXqdZHyD3wnveRHUVRBfA61ikcouya1xa"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/12",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibq56ge3zhdvsqzpt76urqhcxd6r5vlbcublmh45snzl5lempr4de",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "d53bc1ca7e38fb0c7558e6b66bebcc5d858261ed693599640c381bd9b96e4486",
+      "metadataFile": "assets/kardmane/metadata/0000/card-13.json",
+      "cardFile": "assets/kardmane/cards/0000/card-13.webp",
+      "animation": null
+    },
+    {
+      "number": 14,
+      "assetNumber": 14,
+      "stableId": "kardmane:group-0e931eea4bda253d66d2d640",
+      "groupKeyHash": "0e931eea4bda253d66d2d640d91e69272cf41e55f68b18810ccce67c4a2f2d33",
+      "title": "Kardmane 14",
+      "mints": [
+        "4Mp8VBvaEg2hF1mpuwQGei8WUHbarstmB6PeZjYwEZxT"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/13",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidwlnfkcdztxlffvrbwyvzyhdre4bamvbn37wklxbud7snpj3yjjy",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "f374ff217ee2c0d290ce170ebd45a6aca920dc3c2a592ac6bf3da397cd2f7b0a",
+      "metadataFile": "assets/kardmane/metadata/0000/card-14.json",
+      "cardFile": "assets/kardmane/cards/0000/card-14.webp",
+      "animation": null
+    },
+    {
+      "number": 15,
+      "assetNumber": 15,
+      "stableId": "kardmane:group-f5e598fc038c57f30be4495c",
+      "groupKeyHash": "f5e598fc038c57f30be4495c4e7e73899b2d93799bbf83624b67c74d7a7d75d1",
+      "title": "Kardmane 15",
+      "mints": [
+        "HgYr8QSW6fhPzSZKAHr7D7QpJQ2Xg9G3Ev3FRueYWh1z"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/14",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidqurjctn24lzh26e4ltx4oxol7sx45dc322rk6mn6saaqa53kcje",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "8177ac781c9f70610b098fe0079d69bf38b00b8e62c1598cc79cd5dcc27a1731",
+      "metadataFile": "assets/kardmane/metadata/0000/card-15.json",
+      "cardFile": "assets/kardmane/cards/0000/card-15.webp",
+      "animation": null
+    },
+    {
+      "number": 16,
+      "assetNumber": 16,
+      "stableId": "kardmane:group-f499b8b65e56d04da5a50bbc",
+      "groupKeyHash": "f499b8b65e56d04da5a50bbc781e90664a52a1935205dedabce104d79ed84e43",
+      "title": "Kardmane 16",
+      "mints": [
+        "11ZZXxVt1Y2JNmKmDxn2hPbjphn1xqGfE87RRZYmkMH"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/15",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeig5epzcqosqerh26zjdy5ox6335d5bqnkxg34op4l5ik4r5ijanfq",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "1db18e605c831a22597d657acc2ec3aef3788fe901420c2478484aa4253a3404",
+      "metadataFile": "assets/kardmane/metadata/0000/card-16.json",
+      "cardFile": "assets/kardmane/cards/0000/card-16.webp",
+      "animation": null
+    },
+    {
+      "number": 17,
+      "assetNumber": 17,
+      "stableId": "kardmane:group-58386bec25913d5bf8356069",
+      "groupKeyHash": "58386bec25913d5bf83560694f115159050f1e1952e4fecbf322ac3b0eb673cd",
+      "title": "Kardmane 17",
+      "mints": [
+        "7EzrhV9MxG2xBkcqrCZscKXBQco7fNsrCVp4q7AB7ZhF"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/16",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibq2dwi5hbsgjs3qmslb3v6dzk4pa5y5rg2n2vxvvmrwcs7tafyn4",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "ca3473ac75943a26b76d360589e04c32cdc5ced7ff2b3e174f4de6dc899cd22b",
+      "metadataFile": "assets/kardmane/metadata/0000/card-17.json",
+      "cardFile": "assets/kardmane/cards/0000/card-17.webp",
+      "animation": null
+    },
+    {
+      "number": 18,
+      "assetNumber": 18,
+      "stableId": "kardmane:group-7ef53d598dad7d5d2180c246",
+      "groupKeyHash": "7ef53d598dad7d5d2180c2461cf084a488cad28bcc5dbe7039c2ccb80aa31a11",
+      "title": "Kardmane 18",
+      "mints": [
+        "AMXob9UXL25zPuM33pFh1sB3GmxLcVJrwCZDeEpF2NnA"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/17",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifbkfjj7enawifdqbdci5ku2itzxfumvyy4c2xlk4bo77t4lf7slm",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "b70118d1ff351ac0adef6a81bb7fdbb64237ff9ebf6739fa69fa5a4b02d0a54c",
+      "metadataFile": "assets/kardmane/metadata/0000/card-18.json",
+      "cardFile": "assets/kardmane/cards/0000/card-18.webp",
+      "animation": null
+    },
+    {
+      "number": 19,
+      "assetNumber": 19,
+      "stableId": "kardmane:group-29289f54dfb37cc68e8bc52b",
+      "groupKeyHash": "29289f54dfb37cc68e8bc52bf64efea666a8b95a4bdcccbb2b272d4a4ece8091",
+      "title": "Kardmane 19",
+      "mints": [
+        "2rrjta32DpJgwYGq8eyscQhtMSukfsHPZarLExqLTLvG"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/18",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeih7dc4a23ogdbkjeykdv2m75la3q5qylvacamx3kidawdagezjwwu",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "333f2f323b0a0e990d3bfb06867767d84913cf0db21903dbe7072334d4a326c3",
+      "metadataFile": "assets/kardmane/metadata/0000/card-19.json",
+      "cardFile": "assets/kardmane/cards/0000/card-19.webp",
+      "animation": null
+    },
+    {
+      "number": 20,
+      "assetNumber": 20,
+      "stableId": "kardmane:group-745304900837081a78dfe8b1",
+      "groupKeyHash": "745304900837081a78dfe8b13bcb191a4a416281429c17b2c935e64bf773fe04",
+      "title": "Kardmane 20",
+      "mints": [
+        "yAz9P64EkrsAbTBxvTC8RKMuAdd8MYm7LzXXwLnaTqW"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/19",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeia2inowtzjkni6s3ekxptcneoenyaejfypr7evcxg64w44p5cikgi",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "26c264d39105c9a1663f55bd5dc690cd667bd623999f27d456862042873eb4d6",
+      "metadataFile": "assets/kardmane/metadata/0000/card-20.json",
+      "cardFile": "assets/kardmane/cards/0000/card-20.webp",
+      "animation": null
+    },
+    {
+      "number": 21,
+      "assetNumber": 21,
+      "stableId": "kardmane:group-f24e49963866acadceee15a9",
+      "groupKeyHash": "f24e49963866acadceee15a9ec869916f743babdf062a11edf83d37c947c88e2",
+      "title": "Kardmane 21",
+      "mints": [
+        "12vyiYd6yCe83k6qZPVW1cfTt7ScuFaG5WoaX7zZ7Bzo"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/20",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiabhjaytvnyuxonf3aqdug52247ix7d35jmxgkocmi64gwlewm4pu",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "00333fb6e93666a243d7a8a39a25c753c6e879cff06cb304aae5e9f493e650be",
+      "metadataFile": "assets/kardmane/metadata/0000/card-21.json",
+      "cardFile": "assets/kardmane/cards/0000/card-21.webp",
+      "animation": null
+    },
+    {
+      "number": 22,
+      "assetNumber": 22,
+      "stableId": "kardmane:group-a3c0bfd6d00c35084cd1d036",
+      "groupKeyHash": "a3c0bfd6d00c35084cd1d036b68bca0a9fedac4f048518ea1d18777bf02ae716",
+      "title": "Kardmane 22",
+      "mints": [
+        "LCn1C2p7fmbZLkKLME3T3v5N69Kd7wQHNb5N2gy9MeQ"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/21",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiamy6nz7ezeu2k5q3l3krewk7zek7g2n4n2htpbvtua7x3qvl2see",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "d82e6360e5a801c50203c4598413c12f7b892e879231aa95b1d0ba1362aad838",
+      "metadataFile": "assets/kardmane/metadata/0000/card-22.json",
+      "cardFile": "assets/kardmane/cards/0000/card-22.webp",
+      "animation": null
+    },
+    {
+      "number": 23,
+      "assetNumber": 23,
+      "stableId": "kardmane:group-89264f7d27a9b96158b302a9",
+      "groupKeyHash": "89264f7d27a9b96158b302a96b1bfad046da9993b679569c6cc64c2bba8af6c1",
+      "title": "Kardmane 23",
+      "mints": [
+        "6TaSdjkrTFYW6ogLRxfTum5ePxEHmubYy8tmuBghu4Yv"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/22",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeid357rc2z3gyhltx47rz3mn5oesmjnncuf7hjz2pmx5fp5hrb3jgu",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "a06c099e98551d96bae870142ee4e38101d6c31228fb8d8ddc7b0c82b9626674",
+      "metadataFile": "assets/kardmane/metadata/0000/card-23.json",
+      "cardFile": "assets/kardmane/cards/0000/card-23.webp",
+      "animation": null
+    },
+    {
+      "number": 24,
+      "assetNumber": 24,
+      "stableId": "kardmane:group-c559fc520369119ff4254ccd",
+      "groupKeyHash": "c559fc520369119ff4254ccde6759bf65ca0153edfa448adab83f571916f2389",
+      "title": "Kardmane 24",
+      "mints": [
+        "A3DFhjDF6kLrsxBLvQZkFFeyZPH96b2eD5dApCbsc6Gj"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/23",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicrjdjonopxw32iyke5ihs7rvnx5w3eetzzbcxwgnojbccptysl6e",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "3ced2f3daf03066e24ae12bcc68a7d16ad384c40caab358e17d2a0b4aea881dc",
+      "metadataFile": "assets/kardmane/metadata/0000/card-24.json",
+      "cardFile": "assets/kardmane/cards/0000/card-24.webp",
+      "animation": null
+    },
+    {
+      "number": 25,
+      "assetNumber": 25,
+      "stableId": "kardmane:group-c10fae8bd2d02eb970ef53e2",
+      "groupKeyHash": "c10fae8bd2d02eb970ef53e22dca86080c34c791d84a2cb3d2eb66388862ef10",
+      "title": "Kardmane 25",
+      "mints": [
+        "Fnfyv6CaGUUbKz2Zyg1phF1XCmh23Zk4PLthxAQkseCk"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/24",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeib34h7hvnpyjrxt5epc4icvnrvtmwysxnl5f4run3kblx7svbizhq",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "e2b214aa97fc6db64af2a0a0e46fcd3cbffc857701d31a6fe3de9945fcc711dd",
+      "metadataFile": "assets/kardmane/metadata/0000/card-25.json",
+      "cardFile": "assets/kardmane/cards/0000/card-25.webp",
+      "animation": null
+    },
+    {
+      "number": 26,
+      "assetNumber": 26,
+      "stableId": "kardmane:group-bdeafb58694729e261770037",
+      "groupKeyHash": "bdeafb58694729e2617700373f8070025beef362502beac79f5e82616ebc700c",
+      "title": "Kardmane 26",
+      "mints": [
+        "E4bnj9rhxY4u7jah126WGapQMxoRsznYKzYe7Zib6aqb"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/25",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifo7cr6rpysc26rfw67her3lgzid32fb6yw56l4yqdln564qrdjdu",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "3fe08b796fe8328dd450d8617357a618fe1443c9e1406c9ff6b9daef4536f728",
+      "metadataFile": "assets/kardmane/metadata/0000/card-26.json",
+      "cardFile": "assets/kardmane/cards/0000/card-26.webp",
+      "animation": null
+    },
+    {
+      "number": 27,
+      "assetNumber": 27,
+      "stableId": "kardmane:group-cecf2c1bb185fcc86ee78b7a",
+      "groupKeyHash": "cecf2c1bb185fcc86ee78b7a536f8a94f3108e88c9784b39588ff88092d9d0f4",
+      "title": "Kardmane 27",
+      "mints": [
+        "94xvkhzxUbMaxN85x3rdDfDR4hTAM2t2d7RELeE1p5oy"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/26",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifzwgbjx7cvr7nwigsxvcublt6gzozeokljtsualw3vbbbokndhde",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "222dec4ad43931b36232600915bea6c79d0eb4b6811019785cc94228d83068df",
+      "metadataFile": "assets/kardmane/metadata/0000/card-27.json",
+      "cardFile": "assets/kardmane/cards/0000/card-27.webp",
+      "animation": null
+    },
+    {
+      "number": 28,
+      "assetNumber": 28,
+      "stableId": "kardmane:group-4fa341df4ad8287c63f7383a",
+      "groupKeyHash": "4fa341df4ad8287c63f7383abb3dd0ad55fde9b028a83d26e8dccfbf632d3832",
+      "title": "Kardmane 28",
+      "mints": [
+        "AqtR1JQ82NxypuQqJAt23iyj1oGTJQuL9qZQ96jpX5HK"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/27",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibvfdwi62z66rjgslxmyzid2lbuttjzt73dkpt622ex67u7xbphyi",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "1493c6ccbfda2df1a5263afadc5aa7a5bcbce3899bf72eb9963afeee55ed8fc0",
+      "metadataFile": "assets/kardmane/metadata/0000/card-28.json",
+      "cardFile": "assets/kardmane/cards/0000/card-28.webp",
+      "animation": null
+    },
+    {
+      "number": 29,
+      "assetNumber": 29,
+      "stableId": "kardmane:group-ea804d3b11082f7d019dfcc8",
+      "groupKeyHash": "ea804d3b11082f7d019dfcc84e730c3c6fd4f1213a2ff3e2b4957a548aff9e4d",
+      "title": "Kardmane 29",
+      "mints": [
+        "8wJQpTziy6LovvDRgpiutRHhHBDmdTjpS288gZGfH3vn"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/28",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeieqdfzbqdb24pxzqfdigmmwwktomfwvayf2k6lmbirbhaxjl4g3su",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "6fa38aeeb935eebfecebd4a4575e4819cec2f159f8e08d48a4915bbbeec162bf",
+      "metadataFile": "assets/kardmane/metadata/0000/card-29.json",
+      "cardFile": "assets/kardmane/cards/0000/card-29.webp",
+      "animation": null
+    },
+    {
+      "number": 30,
+      "assetNumber": 30,
+      "stableId": "kardmane:group-39ba16fbb5456f72526abf6e",
+      "groupKeyHash": "39ba16fbb5456f72526abf6ebeab977272ae9825d6c67c9e579a8d102ce34119",
+      "title": "Kardmane 30",
+      "mints": [
+        "GfwuEd51p7RwvzWfNEfAk2ZRiiaqRjexyMNQXfgYRfCX"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/29",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifis6i26ceq4h2kqyb4uzjyw4womxp432ikv2462h4fydq5nfjjoq",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "c368538bab9bd20a41a164a8d848a9cfbede84884601dc0dc42e3fb85f9dd2b4",
+      "metadataFile": "assets/kardmane/metadata/0000/card-30.json",
+      "cardFile": "assets/kardmane/cards/0000/card-30.webp",
+      "animation": null
+    },
+    {
+      "number": 31,
+      "assetNumber": 31,
+      "stableId": "kardmane:group-adcb52cf6fed7607d3083e04",
+      "groupKeyHash": "adcb52cf6fed7607d3083e048eb1e9a150e776c7b1f5dcb8546cf839e837b694",
+      "title": "Kardmane 31",
+      "mints": [
+        "HMns4H9MCB9YBt34qVs617E9aBNUz9Gi695aBYjv1HyX"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/30",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiawblijjwlgigakdhnepez7khohdmgpioje5r2xgz2aprbmfhivqi",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "bc5f0e284f124c31c9d61be3c3a2005ccd23690443f2adb1ce4b096f692166ac",
+      "metadataFile": "assets/kardmane/metadata/0000/card-31.json",
+      "cardFile": "assets/kardmane/cards/0000/card-31.webp",
+      "animation": null
+    },
+    {
+      "number": 32,
+      "assetNumber": 32,
+      "stableId": "kardmane:group-f52ac12799e1a4936328d472",
+      "groupKeyHash": "f52ac12799e1a4936328d4725c3735e6c50ef0a59d410a998a9cc615e68d5160",
+      "title": "Kardmane 32",
+      "mints": [
+        "66iTcRenZdjRDm79QLLieqai6U5E4vABZLEC1TYGiRmb"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/31",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeie44mq5746gfkcigoc3lsp22fpeiybydupr2q2sxp77h2q3wb6o5m",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "16bc7e7ce74422beb6fbd750e1872e1a0186161b3ceefcc85c0d3e52aafbedcb",
+      "metadataFile": "assets/kardmane/metadata/0000/card-32.json",
+      "cardFile": "assets/kardmane/cards/0000/card-32.webp",
+      "animation": null
+    },
+    {
+      "number": 33,
+      "assetNumber": 33,
+      "stableId": "kardmane:group-8d6e7985d628eb97cdb01553",
+      "groupKeyHash": "8d6e7985d628eb97cdb015533e7d5ab8d795b7b7463f6001504d29ae89ec74bf",
+      "title": "Kardmane 33",
+      "mints": [
+        "4vDogtHVR8DW413fkwFyWYW3NGxr1FvuQtiqf829gg57"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidsqgvllihv6mqysi6kyysaxdsdwz6hoic7ssbp6nhj73iklsc6be/32",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiayedc6eyxvi4fzs6fzqps3vgushbw6iunurgirf2nvkkyi7mqsgy",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "30547806fcaf3db424cc0754e541f782adc344b9ae9f2c94a65d1149cbe1e20f",
+      "metadataFile": "assets/kardmane/metadata/0000/card-33.json",
+      "cardFile": "assets/kardmane/cards/0000/card-33.webp",
+      "animation": null
+    }
+  ]
+}

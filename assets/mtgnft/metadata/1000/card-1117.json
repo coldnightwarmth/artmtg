@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1116",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1116",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "ac130"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Saddled Rimestag"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "animu3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_frown"
+    },
+    {
+      "trait_type": "special top",
+      "value": "supersmashbros"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "swolearm"
+    }
+  ],
+  "edition": 2193,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1116"
+      }
+    ]
+  },
+  "collection_mints": [
+    "B7VtrgquRhNnPDY5jYBvT7tFcy2onEANJxXWF458XB2w"
+  ]
+}

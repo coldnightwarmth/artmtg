@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #217",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/217",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_adhd"
+    },
+    {
+      "trait_type": "behind",
+      "value": "blueflames"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ghoulcaller's Accomplice"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_bluestrain"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_cartoonjoker"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_chrono"
+    }
+  ],
+  "edition": 768,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/217"
+      }
+    ]
+  },
+  "collection_mints": [
+    "FJc2LQ5tEcrAuxfmVdRRSV79iHoZ4zYXqnFwkG2Mtry4"
+  ]
+}

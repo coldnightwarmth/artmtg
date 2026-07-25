@@ -1,0 +1,82 @@
+{
+  "name": "Sweet Curse Card #182",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreibue45nrubnorhoazwqxhjva32hu2j7l2sddm3q54qib24d7druai",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Door"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Dark souls"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Squirtle gang"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Celtic guardian"
+    },
+    {
+      "trait_type": "Score",
+      "value": "Atomic mass"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Roundup"
+    },
+    {
+      "trait_type": "Signature",
+      "value": "Erz"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Sky"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Maskaro"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "RMascaro Cakes"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Winamp3"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Ice cold"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "kintsugi"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreibue45nrubnorhoazwqxhjva32hu2j7l2sddm3q54qib24d7druai",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiecwppa76tcoiidealofylnco3kgcc5yxjs63ec6nofduo44lnzwe",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiecwppa76tcoiidealofylnco3kgcc5yxjs63ec6nofduo44lnzwe",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiecwppa76tcoiidealofylnco3kgcc5yxjs63ec6nofduo44lnzwe",
+  "collection_mints": [
+    "D4S4PNK6YTRPHQC5xEZVmVHZpbMFicxGPHq6E1VnnUbs"
+  ]
+}

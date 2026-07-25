@@ -1,0 +1,58 @@
+{
+  "name": "MTG CARD #1356",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1356",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_egirlnoise2"
+    },
+    {
+      "trait_type": "behind",
+      "value": "fire"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_21"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Siren's Call"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_drool"
+    },
+    {
+      "trait_type": "hat",
+      "value": "gucciprint"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_n64"
+    },
+    {
+      "trait_type": "special top",
+      "value": "drain"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "asspizza2022"
+    }
+  ],
+  "edition": 192,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1356"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3NmuCcmmsyddiv9yfdnuV4a8Qx8ac1focF2V9SE6wyEs"
+  ]
+}

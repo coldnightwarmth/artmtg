@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1024",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1024",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_alien"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Searing Spear Askari"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_redblur"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "evil1"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "beretta"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "digi"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "gucci"
+    }
+  ],
+  "edition": 89,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1024"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6X1oWBbtJ9bA75DvoaKNxYeveFnHb1BYGaSsdnjsfRbM"
+  ]
+}

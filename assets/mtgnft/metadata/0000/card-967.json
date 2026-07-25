@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #966",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/966",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_3dnetmask"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Flaying Tendrils"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_daurk"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "beretta"
+    }
+  ],
+  "edition": 102,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/966"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7tTp5XGhS9Bn1rDBwPysjXCRugYm7N5x1hoSmSRcm66L"
+  ]
+}

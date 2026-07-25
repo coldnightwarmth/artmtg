@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #632",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/632",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "whereyouwork"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Blazing Specter"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "x"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_daurk"
+    },
+    {
+      "trait_type": "special top",
+      "value": "Untitled_Artwork-20"
+    }
+  ],
+  "edition": 1318,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/632"
+      }
+    ]
+  },
+  "collection_mints": [
+    "66zjWZNwFh1wQLFcJDe9jugCjuZffH9FJhqQMu5TQao8"
+  ]
+}

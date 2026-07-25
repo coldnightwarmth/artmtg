@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1618",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1618",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_charazard"
+    },
+    {
+      "trait_type": "behind",
+      "value": "lanceoflonginus"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Winding Wurm"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_cheeky"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "gucci"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "goronelder"
+    }
+  ],
+  "edition": 1820,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1618"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CArFjie8khzHPRHJKEBbayxSoHAh9C2MYwQta8N4jorr"
+  ]
+}

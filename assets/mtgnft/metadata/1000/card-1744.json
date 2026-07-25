@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1743",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1743",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_weeniehead"
+    },
+    {
+      "trait_type": "behind",
+      "value": "bustersword"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Minotaur Aggressor"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_mifella1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_bigyawn"
+    },
+    {
+      "trait_type": "hat",
+      "value": "palacecamo"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "playin"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "osrs"
+    }
+  ],
+  "edition": 635,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1743"
+      }
+    ]
+  },
+  "collection_mints": [
+    "B9n29N7eZjNqozF6NXSqp7vARomBxKERNXjj2BXYN17C"
+  ]
+}

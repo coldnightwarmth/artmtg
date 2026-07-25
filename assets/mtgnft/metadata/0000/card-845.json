@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #844",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/844",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "killthejudge"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Rogue's Passage"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "unf"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "red"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "hoohdisplay"
+    }
+  ],
+  "edition": 573,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/844"
+      }
+    ]
+  },
+  "collection_mints": [
+    "51wYxWdAyL6KysgzgqhZb9ZMd2TuNVKEmygubUJL2DMx"
+  ]
+}

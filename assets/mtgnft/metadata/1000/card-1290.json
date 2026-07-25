@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1289",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1289",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_snowcapped"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_185"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Pain_Suffering"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_animu3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_evil1"
+    },
+    {
+      "trait_type": "hat",
+      "value": "edhardy"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_shipped"
+    }
+  ],
+  "edition": 1328,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1289"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HR7AQcHzKhvUvh2gQx5Rb2k7EBAn4ytbH9Z6hjBJRtAb"
+  ]
+}

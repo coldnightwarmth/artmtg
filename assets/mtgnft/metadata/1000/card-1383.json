@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1382",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1382",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_heaven"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_61"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Seeker of the Way"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_jimmy"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "buutoy"
+    }
+  ],
+  "edition": 877,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1382"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6GKgoqL5TD3R9Xg1m2UkBPcECxGGBJeEb4uJBQe2Zwte"
+  ]
+}

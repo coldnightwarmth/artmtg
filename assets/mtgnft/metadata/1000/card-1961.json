@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #1960",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1960",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_crumpled"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Shoulder to Shoulder"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_animu3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "yelling"
+    }
+  ],
+  "edition": 338,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1960"
+      }
+    ]
+  },
+  "collection_mints": [
+    "QFaZbUxM3Zdpmd8sPYF1mdB1VZzNPY5UZrVa6H65DYB"
+  ]
+}

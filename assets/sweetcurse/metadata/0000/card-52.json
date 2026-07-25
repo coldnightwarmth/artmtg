@@ -1,0 +1,82 @@
+{
+  "name": "Sweet Curse Card #52",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreicbchmosuqar4sj67o5mafvccesjymezqby3q626wuf3mvva6dot4",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Noise"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Trees"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Cristo Redentor lightning"
+    },
+    {
+      "trait_type": "Description",
+      "value": "State cattle"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Mega gengar ex 350hp"
+    },
+    {
+      "trait_type": "Signature",
+      "value": "Erz8"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Gossip"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Enterprise98"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Jacksachs3"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Daily Mosnters2"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Barney"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Blinding lights2"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "deepfried"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreicbchmosuqar4sj67o5mafvccesjymezqby3q626wuf3mvva6dot4",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibprbjuoy4mapq2ngbn37kspa3kwspm3rj6nebbbi3qufhdz27474",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibprbjuoy4mapq2ngbn37kspa3kwspm3rj6nebbbi3qufhdz27474",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibprbjuoy4mapq2ngbn37kspa3kwspm3rj6nebbbi3qufhdz27474",
+  "collection_mints": [
+    "73DA9r538wqKyCDw6mtG31Cx289PdSrGeVhGYqQi4RnT"
+  ]
+}

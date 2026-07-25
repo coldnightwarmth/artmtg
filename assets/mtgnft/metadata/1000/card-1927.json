@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1926",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1926",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_gothdeath"
+    },
+    {
+      "trait_type": "behind",
+      "value": "chaosbehind"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Horned Cheetah"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_blush2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_daurk"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "pinksonicgirlidc"
+    },
+    {
+      "trait_type": "special top",
+      "value": "warhammer40k"
+    }
+  ],
+  "edition": 770,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1926"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GQm87VgGRFYFxduJ1WYeMUwR51Jc13JZNxK6zLMuTZ5d"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #59",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/59",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_heaven"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Tectonic Reformation"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_kidbuumouth"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "black"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_grinch5s"
+    }
+  ],
+  "edition": 1877,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/59"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4GH1oHTRnzY1Ckbj95AR6PkjdHD9sPEUkGQfutCANic8"
+  ]
+}

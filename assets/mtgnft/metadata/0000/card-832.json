@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #831",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/831",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_changeofheart"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Mikokoro, Center of the Sea"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_troll"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "redpill"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "gucciflops"
+    }
+  ],
+  "edition": 1126,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/831"
+      }
+    ]
+  },
+  "collection_mints": [
+    "EJuRuyRoq4mJMxHf6H6tjzsxdrgyp2gTab64sj8T77eZ"
+  ]
+}

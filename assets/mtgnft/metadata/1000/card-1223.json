@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1222",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1222",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_pkmnbugluv"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_150"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Man-o'-War"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "digiogs"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_grandma"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "crawlright"
+    }
+  ],
+  "edition": 1010,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1222"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9zk1nV7kgyhHJWR3TG7iWzEMkGxDVFY6qd2LVBo7yjdD"
+  ]
+}

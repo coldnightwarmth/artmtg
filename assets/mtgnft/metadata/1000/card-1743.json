@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1742",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1742",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_attic"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Cockatrice"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_x"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_heheheh"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "axe"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "joeyy"
+    }
+  ],
+  "edition": 442,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1742"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8GN3qL5f7ba8saJWY6UWDa8CwQC25kyCjs1vQCPzy7c2"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #618",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/618",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_collider"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_108"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Hurloon Wrangler"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_rubbermouf"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "theGodfellaZ"
+    }
+  ],
+  "edition": 355,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/618"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8nz65DRQVqaj1EHkjdF8EZ4Dkc5eksTinv8BKe7uEwMx"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #2037",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2037",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_cycleoflife"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Crosis, the Purger"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_upset"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "blue"
+    },
+    {
+      "trait_type": "hat",
+      "value": "preppybear"
+    },
+    {
+      "trait_type": "top right",
+      "value": "lucario"
+    }
+  ],
+  "edition": 271,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2037"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8pxuB2ieC8iVXvJwP94xJcuoxC1MwkC7sLnqEo84KezJ"
+  ]
+}

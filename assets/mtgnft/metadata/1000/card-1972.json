@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1971",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1971",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_dratini"
+    },
+    {
+      "trait_type": "behind",
+      "value": "miketyson"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_45"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Memorial to Unity"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_mifella1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_goofy"
+    }
+  ],
+  "edition": 1116,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1971"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6Mg8aRFdFUaVVV35JP8ndq1nAtq2pVyypmdQDjXejtbZ"
+  ]
+}

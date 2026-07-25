@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #345",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/345",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "egirlnoise2"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Fork"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_blush2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "frown"
+    },
+    {
+      "trait_type": "hat",
+      "value": "workingondying"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "whatsinyocuppiiiimp"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "masterballleft"
+    },
+    {
+      "trait_type": "special top",
+      "value": "loz"
+    }
+  ],
+  "edition": 1185,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/345"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6LkP3ydzqm1d4UkXfrVvfoS2wt529oZHq1wh7K2KzReF"
+  ]
+}

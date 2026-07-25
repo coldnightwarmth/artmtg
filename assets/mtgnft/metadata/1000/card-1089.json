@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1088",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1088",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_everythingwillbeyours"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_68"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Khalni Heart Expedition"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_teeef"
+    }
+  ],
+  "edition": 865,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1088"
+      }
+    ]
+  },
+  "collection_mints": [
+    "C3VetTRthBsbertz5AdTjD7EEHn8MfvTP58HZynYLFhY"
+  ]
+}

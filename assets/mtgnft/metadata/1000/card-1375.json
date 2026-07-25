@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1374",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1374",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_collider"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_91"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Avenging Arrow"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_toothygrin"
+    }
+  ],
+  "edition": 1704,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1374"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7hQDLZsmTpSkdt3nTs1CCJiikWCJa9gyxYDdb4sLQ5Eh"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1912",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1912",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_abstract1"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_105"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Fireball"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_serious"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_yelling"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "adam"
+    }
+  ],
+  "edition": 2080,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1912"
+      }
+    ]
+  },
+  "collection_mints": [
+    "J9sAFmdzu2SCSvdZr76BeeHgCRqfwoHCEivehS9fV4DV"
+  ]
+}

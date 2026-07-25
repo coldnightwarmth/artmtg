@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #490",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/490",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_711"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_9"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Poultrygeist"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_greenlady"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_chompers"
+    }
+  ],
+  "edition": 685,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/490"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3cwhr1TFR3wjacCDrMfAZE7z9twdtcVTguera4dWwLRe"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #640",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/640",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_crumpled"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Marwyn, the Nurturer"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_myspacecore"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "digipals"
+    }
+  ],
+  "edition": 207,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/640"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CxB9Z4kJA7zCKmBrcoU3Wxes4S3VWNRH1NkfQpve3trn"
+  ]
+}

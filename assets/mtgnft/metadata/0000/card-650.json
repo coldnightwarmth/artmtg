@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #649",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/649",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_tumblraf2"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Knight of Old Benalia"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_mifella3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_kanye"
+    }
+  ],
+  "edition": 1124,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/649"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7hCxZ7nV88xsePVB3s5re3WYK6jwD6vnyYwkALZW17xE"
+  ]
+}

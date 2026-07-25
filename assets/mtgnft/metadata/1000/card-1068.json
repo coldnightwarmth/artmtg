@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1067",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1067",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_nextlife"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Darigaaz, the Igniter"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_greenlady"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "prada"
+    },
+    {
+      "trait_type": "hat",
+      "value": "mtg"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "gunhandright"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "stabbed"
+    }
+  ],
+  "edition": 1766,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1067"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5vbYhC6AcMTmJCipyRGjM5Qqbynqv22a68PdbnsUuJhN"
+  ]
+}

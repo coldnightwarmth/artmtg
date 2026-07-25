@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1329",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1329",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_nam"
+    },
+    {
+      "trait_type": "behind",
+      "value": "coins"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Hallar, the Firefletcher"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_ahhhhhh"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "MiLighterr"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "megaman"
+    }
+  ],
+  "edition": 664,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1329"
+      }
+    ]
+  },
+  "collection_mints": [
+    "22CTsiq6Yz1iBVedZEzfXrmKfh6YVR3mSXiqJWM3PQ2X"
+  ]
+}

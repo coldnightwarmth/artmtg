@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #914",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/914",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "cacacombs"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_182"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Songstitcher"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_joint"
+    }
+  ],
+  "edition": 52,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/914"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BmvtgPyKqvc7KxvPJCqANYGvGzUXNVUNdvkd6faVKLf"
+  ]
+}

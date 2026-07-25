@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1972",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1972",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "csgostitch"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Mana Maze"
+    },
+    {
+      "trait_type": "holo",
+      "value": "stars"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_nar"
+    },
+    {
+      "trait_type": "special top",
+      "value": "hellohater"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "joycons"
+    }
+  ],
+  "edition": 40,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1972"
+      }
+    ]
+  },
+  "collection_mints": [
+    "G7dqnnLEWAZZExodmWajqzPaPJWF7s1qvnHUy3kdFrUJ"
+  ]
+}

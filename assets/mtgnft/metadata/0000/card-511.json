@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #510",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/510",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_spooky"
+    },
+    {
+      "trait_type": "behind",
+      "value": "bubbles"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Sylvan Awakening"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "inflate"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_whatsinyocup"
+    }
+  ],
+  "edition": 921,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/510"
+      }
+    ]
+  },
+  "collection_mints": [
+    "EeyoeK4FzXJhMaxFKioZvnSysm1F2iNjBH8tp5yHQEZU"
+  ]
+}

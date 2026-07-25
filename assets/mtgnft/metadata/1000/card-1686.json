@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #1685",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1685",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_eboynoise"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Mystic of the Hidden Way"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_teeef"
+    }
+  ],
+  "edition": 431,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1685"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9rRGEj1s51BxZ9TdLj7YgvSEwFxi1J6ZN214Cova4dPB"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1365",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1365",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_forrest"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_116"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Volcanic Upheaval"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_blush2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_drool"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "laser"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_dadjotaro"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "bowserlock"
+    }
+  ],
+  "edition": 1040,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1365"
+      }
+    ]
+  },
+  "collection_mints": [
+    "VgR5me5b1nEk9bAE6w975GrYrmA7H3UBA7YRjn3X4NP"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1522",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1522",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_711"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Magmaw"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_smil"
+    },
+    {
+      "trait_type": "special top",
+      "value": "hellohater"
+    }
+  ],
+  "edition": 2184,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1522"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CRiLT7dhBaXsBaJSM8kXgXyhJJrMpd14tNNEWDu8ZfqZ"
+  ]
+}

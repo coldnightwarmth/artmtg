@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #747",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/747",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_boom"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Barrin's Spite"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_joker"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "powderblue5s"
+    },
+    {
+      "trait_type": "special top",
+      "value": "issacafterbirth"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "breaktop"
+    }
+  ],
+  "edition": 2055,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/747"
+      }
+    ]
+  },
+  "collection_mints": [
+    "B5J6cWNdMgRpHxz7rFNJPUBzbq9YUt5qpL2Eb3XwPs8R"
+  ]
+}

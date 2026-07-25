@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #2206",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2206",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_tokyo"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_198"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Plow Through Reito"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_glitched2"
+    }
+  ],
+  "edition": 502,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2206"
+      }
+    ]
+  },
+  "collection_mints": [
+    "2qpXY4qAjX5fUEBsiccyPxa57ByMxr4FfLTpfvrbp47w"
+  ]
+}

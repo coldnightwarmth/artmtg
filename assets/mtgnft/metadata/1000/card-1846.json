@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1845",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1845",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_batman"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_107"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ashes of the Fallen"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_yarinvert"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sidechompers"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "gunright"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "poker"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "golbat"
+    }
+  ],
+  "edition": 1094,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1845"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DrymWUCdrdPe1xTexfLzMyYwK9Y8KbgvpXwsLSSh1hN9"
+  ]
+}

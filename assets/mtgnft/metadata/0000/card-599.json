@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #598",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/598",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_colage"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_20"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ravenous Vampire"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_mifella3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_chomp"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_ghostsoy"
+    },
+    {
+      "trait_type": "special top",
+      "value": "loz"
+    }
+  ],
+  "edition": 1073,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/598"
+      }
+    ]
+  },
+  "collection_mints": [
+    "kfCqZvwYzYKqQpXaxxwE5qNEGyR3jG5Jr8aS56Qw3j8"
+  ]
+}

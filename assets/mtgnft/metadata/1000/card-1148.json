@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1147",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1147",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_mysterybox"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_64"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Spinal Embrace"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_babe"
+    },
+    {
+      "trait_type": "special top",
+      "value": "Untitled_Artwork-20"
+    }
+  ],
+  "edition": 2037,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1147"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8iq4iCT7EuTJALyE2C8K1998gkKjdVsznayexQi3gABG"
+  ]
+}

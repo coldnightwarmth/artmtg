@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1136",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1136",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_heaven"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Angelheart Vial"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_sidechompers"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "laser"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "ATfield"
+    }
+  ],
+  "edition": 958,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1136"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HejaJQAe9CXgcHafJJEU5N3ecKv27YaEQU74BMicJZdL"
+  ]
+}

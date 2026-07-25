@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1713",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1713",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_cacacombs"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Shamble Back"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "swagtoshinakamoto"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_mifella2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_teef"
+    }
+  ],
+  "edition": 1012,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1713"
+      }
+    ]
+  },
+  "collection_mints": [
+    "AAMUJTW7VhcMv1iHwqUYcCnRv3JMzDLkLSth5Y9RQW4L"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1426",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1426",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "dmttunnels"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Scourge of Geier Reach"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_kanye"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "sonic"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "megaman"
+    }
+  ],
+  "edition": 230,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1426"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8ET8Za3QmkAUb2jpxH29v4JGfir89CEJ4QvTW7mCdsZb"
+  ]
+}

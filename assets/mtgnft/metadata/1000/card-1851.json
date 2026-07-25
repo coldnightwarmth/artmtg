@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1850",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1850",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_mirror"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_102"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Painsmith"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_smil"
+    }
+  ],
+  "edition": 1325,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1850"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5snQqNaBG15j6qqGWd7nywAMjaR3NSjo1DiDMQENmCXU"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #50",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/50",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_forresttrain"
+    },
+    {
+      "trait_type": "behind",
+      "value": "matrixcode"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Yavimaya Kavu"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "moneypls"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "Untitled_Artwork-29"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "ps1"
+    }
+  ],
+  "edition": 2095,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/50"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BVBzcNBAj2p8Pv1G4GTNPaWMtmvEDCyhkH5F56DkZyo4"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #1305",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1305",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_drifella2"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Corrupt"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_neverbrush"
+    }
+  ],
+  "edition": 1076,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1305"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8Qf4S4Pn3EzQjAYse2QXvEvVK3HexR5MEyYS5nWbZN6y"
+  ]
+}

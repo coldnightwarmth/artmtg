@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #1415",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1415",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_chaotic"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Vodalian Serpent"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_jokersmirk"
+    },
+    {
+      "trait_type": "hat",
+      "value": "halopurple"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "gent"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_Untitled_Artwork-61"
+    },
+    {
+      "trait_type": "special top",
+      "value": "mw2"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "milscratched"
+    }
+  ],
+  "edition": 1465,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1415"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7VHG4Pm2nGk1r5h7Hu5pSF2ebTTe2ayXF48M2Js1hUNj"
+  ]
+}

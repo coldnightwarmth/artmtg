@@ -1,0 +1,30 @@
+{
+  "name": "Poliworld Card #2",
+  "description": "Poliworld Card #2 (2026)\n\nPermanent marker and pencil on base set Poliwhirl card\n2.5 x 3.5 inches\nOriginal artwork, signed on reverse\n\n@egfreid",
+  "attributes": [
+    {
+      "trait_type": "artist",
+      "value": "egfreid"
+    }
+  ],
+  "seller_fee_basis_points": 500,
+  "image": "https://turbo-gateway.com/QzuAu6qhQi_m1uIxTJ7OkDMPPWkRM20njJX6-2X6dn0?ext=png",
+  "properties": {
+    "files": [
+      {
+        "uri": "https://turbo-gateway.com/QzuAu6qhQi_m1uIxTJ7OkDMPPWkRM20njJX6-2X6dn0?ext=png",
+        "type": "image/png"
+      }
+    ],
+    "creators": [
+      {
+        "address": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+        "share": 100,
+        "verified": true
+      }
+    ]
+  },
+  "collection_mints": [
+    "7Q26pjnAPNoFQbvNG1UrcmJ1ZpmAUNxU5YHwUtwUkc3"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1802",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1802",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "nomansland"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_116"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Wind-Scarred Crag"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_aaaaaaaaa"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "unit01"
+    }
+  ],
+  "edition": 1331,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1802"
+      }
+    ]
+  },
+  "collection_mints": [
+    "2xjwgTaxWTaXa6ZntY6MZwbKqAVtsKS61dUzbEUreJVh"
+  ]
+}

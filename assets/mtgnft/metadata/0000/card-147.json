@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #146",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/146",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_whatitradeoff"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Pithing Needle"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "chains"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "teef"
+    }
+  ],
+  "edition": 1739,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/146"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HwE448Hbe7o11KHkew2jfPfcyhLT5ndHmnxH2M8m6kzj"
+  ]
+}

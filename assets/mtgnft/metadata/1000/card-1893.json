@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1892",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1892",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_gothdust"
+    },
+    {
+      "trait_type": "cards",
+      "value": "War-Name Aspirant"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_perc5shine"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_melty"
+    },
+    {
+      "trait_type": "special top",
+      "value": "pokemontcg"
+    }
+  ],
+  "edition": 718,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1892"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6Ag5oz1YorkMzpacJubKdtY4kvHn8VFzDdpGFVpFwFzj"
+  ]
+}

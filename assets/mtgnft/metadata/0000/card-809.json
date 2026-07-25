@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #808",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/808",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_brands"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_80"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Auriok Replica"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "x"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_goofy"
+    },
+    {
+      "trait_type": "special top",
+      "value": "fullhealth"
+    }
+  ],
+  "edition": 2102,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/808"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4xx6SuzpVQFRrCiiDMmxJscf7dpR2qoGA3H3Lc87mN8V"
+  ]
+}

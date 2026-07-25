@@ -1,0 +1,82 @@
+{
+  "name": "Sweet Curse Card #154",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreid7cwchqzhncqiie3m3aqgfgidnem5dab42viivfepsxgnsxr3t2e",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Door"
+    },
+    {
+      "trait_type": "Background",
+      "value": "HAL"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Sugarspike2"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Jesus2"
+    },
+    {
+      "trait_type": "Score",
+      "value": "Me rizzin"
+    },
+    {
+      "trait_type": "Name",
+      "value": "MAD"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Wave fckd"
+    },
+    {
+      "trait_type": "Full art",
+      "value": "Medabot"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Fountain"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Windows_2006"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Youruncle"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Petit pays"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "curse"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreid7cwchqzhncqiie3m3aqgfgidnem5dab42viivfepsxgnsxr3t2e",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeieruvngb7xx62lhzwxnfca7ydvexsl34i7rfso7362ariyuxfxwje",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeieruvngb7xx62lhzwxnfca7ydvexsl34i7rfso7362ariyuxfxwje",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeieruvngb7xx62lhzwxnfca7ydvexsl34i7rfso7362ariyuxfxwje",
+  "collection_mints": [
+    "6MTEYoXrdv4WkMPeRWtkNhyJaFyJjL9EWmQ7Loaj3hHn"
+  ]
+}

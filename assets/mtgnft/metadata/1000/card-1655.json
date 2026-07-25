@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1654",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1654",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_collider"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Meddle"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "swagtoshinakamoto"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "perc5"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "teef"
+    }
+  ],
+  "edition": 1283,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1654"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3yeVdsuD23ZJX3173H4jjpAekcgBr8d5ihERUnYiDBut"
+  ]
+}

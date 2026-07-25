@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1725",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1725",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_cacacombs"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Windcaller Aven"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_mifella3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "babe"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "scraped"
+    }
+  ],
+  "edition": 1670,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1725"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DMb2gkYoK34xmj2hRrix9vygeRm655E1rFN5DgSedVED"
+  ]
+}

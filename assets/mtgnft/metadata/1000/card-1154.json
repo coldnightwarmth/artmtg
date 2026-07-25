@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1153",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1153",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_peachscastle"
+    },
+    {
+      "trait_type": "behind",
+      "value": "matrixcode"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Blurred Mongoose"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_jokersmirk"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "leftpeek"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "kidgoku2"
+    }
+  ],
+  "edition": 868,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1153"
+      }
+    ]
+  },
+  "collection_mints": [
+    "2xg7LeWsZa5L4yEyqwxfmW2RjxD5cWqWgCEkTcLwtxFN"
+  ]
+}

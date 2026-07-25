@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1089",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1089",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "dxmdreams"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Elder Cathar"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_perc5"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_69"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_cod4"
+    },
+    {
+      "trait_type": "special top",
+      "value": "tf2"
+    }
+  ],
+  "edition": 1377,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1089"
+      }
+    ]
+  },
+  "collection_mints": [
+    "72M8Rgp7xHZ655PURdeMqJ2Y6bYZLnGfzmAeiBEiCwkf"
+  ]
+}

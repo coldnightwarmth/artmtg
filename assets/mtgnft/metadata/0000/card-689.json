@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #688",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/688",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "spookydance"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_158"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Topsy Turvy"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_ahhhhhh"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_zombie"
+    }
+  ],
+  "edition": 266,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/688"
+      }
+    ]
+  },
+  "collection_mints": [
+    "F62eicfvkKgQgCbCnrK4bnJyJThfqnSNZraFrVL2siAT"
+  ]
+}

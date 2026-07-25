@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #389",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/389",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_balloonparty"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_45"
+    },
+    {
+      "trait_type": "cards",
+      "value": "The Hive"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_snorlax"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_jay"
+    },
+    {
+      "trait_type": "special top",
+      "value": "perc30top"
+    }
+  ],
+  "edition": 700,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/389"
+      }
+    ]
+  },
+  "collection_mints": [
+    "82WNsKNaUNSruG9MN9FvQhqzT3p7rkJujSKcpbhKhRbN"
+  ]
+}

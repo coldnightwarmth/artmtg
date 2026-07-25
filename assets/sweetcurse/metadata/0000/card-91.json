@@ -1,0 +1,98 @@
+{
+  "name": "Sweet Curse Card #91",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreideookrmi6bm2znzeo557v2xcfuqjurzkfvwatwyl53yguudtaf4m",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Noise"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Death"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "HelloK"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Yugiho"
+    },
+    {
+      "trait_type": "Score",
+      "value": "Lululin"
+    },
+    {
+      "trait_type": "Signature",
+      "value": "Erz4"
+    },
+    {
+      "trait_type": "Base",
+      "value": "lego"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Beauty"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Jsrf"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Gachu"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "trmpsht"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "RMascaro Cakes"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Tupac"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Creepin'"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Boyfriend"
+    },
+    {
+      "trait_type": "Erzart",
+      "value": "Fight"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "pixel"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreideookrmi6bm2znzeo557v2xcfuqjurzkfvwatwyl53yguudtaf4m",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicdieoureac7cjy4qmkauqgps4zwfjp6vluqdw4ec72iisjudxnt4",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicdieoureac7cjy4qmkauqgps4zwfjp6vluqdw4ec72iisjudxnt4",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicdieoureac7cjy4qmkauqgps4zwfjp6vluqdw4ec72iisjudxnt4",
+  "collection_mints": [
+    "3WGPidQ7dyxtksFjjwxjKQyByRqsk8NskvxZZe9P5KG7"
+  ]
+}

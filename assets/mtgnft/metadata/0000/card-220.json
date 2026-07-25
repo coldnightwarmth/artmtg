@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #219",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/219",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_animespace"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_183"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Cryptborn Horror"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_moneypls"
+    },
+    {
+      "trait_type": "hat",
+      "value": "gucciprint"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_perscribed"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "redmiata"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "swagcod"
+    }
+  ],
+  "edition": 307,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/219"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9RUHhE567mex3HDDYBHTgJmXJ8GnVHwazYyM3LUAU7Ho"
+  ]
+}

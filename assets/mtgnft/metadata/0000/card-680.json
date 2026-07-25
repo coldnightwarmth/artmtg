@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #679",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/679",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_peachscastle"
+    },
+    {
+      "trait_type": "behind",
+      "value": "chaosbehind"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Garruk, the Veil-Cursed"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_widedark"
+    },
+    {
+      "trait_type": "hat",
+      "value": "supreme"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "reachleft"
+    }
+  ],
+  "edition": 1553,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/679"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5xxC6KeZscyD41126BVxjrVboKWduVrMkefJtqQLCf79"
+  ]
+}

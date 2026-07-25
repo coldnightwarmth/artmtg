@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1620",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1620",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_abstract1"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_198"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Shieldmate's Blessing"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "missingtooth"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "kimbo"
+    },
+    {
+      "trait_type": "special top",
+      "value": "tf2"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "cassette"
+    }
+  ],
+  "edition": 1109,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1620"
+      }
+    ]
+  },
+  "collection_mints": [
+    "H65vyiTuo85Rojk6sf1vV4Er6qtZjEfQRFMgkNaGQrJS"
+  ]
+}

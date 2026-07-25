@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #720",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/720",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_heaven"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Femeref Healer"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_serious"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_tounge"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "powderblue5s"
+    },
+    {
+      "trait_type": "special top",
+      "value": "thps4"
+    }
+  ],
+  "edition": 788,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/720"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Ftc1MCvkowWERj7UU3EpS1ycXGSZJBAEZJh8g1r9NQve"
+  ]
+}

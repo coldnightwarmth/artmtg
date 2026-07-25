@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #468",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/468",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_abstract5"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Vicious Offering"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_saskue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_snorlax"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_tals"
+    }
+  ],
+  "edition": 1051,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/468"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Hy7SUKq6yRihpip4NxsvV1zGXrtRuL34du3fon2pSMCC"
+  ]
+}

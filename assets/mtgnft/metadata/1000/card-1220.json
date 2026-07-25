@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1219",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1219",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_cartelbust2"
+    },
+    {
+      "trait_type": "behind",
+      "value": "scrabble"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Drake-Skull Cameo"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_smile"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "vapeleft"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "hooh"
+    }
+  ],
+  "edition": 1536,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1219"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CHc19EoBMkht56yTCvAt9PhtdXrS7T4nvaEzbzQ8oEz6"
+  ]
+}

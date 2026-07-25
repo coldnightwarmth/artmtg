@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #1933",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1933",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_tabs2"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Void Winnower"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_paulwall"
+    }
+  ],
+  "edition": 2196,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1933"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6m9oPzH6ipLUo8nbHLTRXwC4aJRH7hgKLhtNM9hWNeM5"
+  ]
+}

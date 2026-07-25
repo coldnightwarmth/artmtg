@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #1457",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1457",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_afgankush"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_65"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Stensia Masquerade"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_wavey"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_bigyawn"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "leftpeek"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "titan"
+    },
+    {
+      "trait_type": "special top",
+      "value": "fullhealth"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "bowserlock"
+    }
+  ],
+  "edition": 2155,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1457"
+      }
+    ]
+  },
+  "collection_mints": [
+    "H6jHuzUFsg3kNA3YYnWC53sSNjFEvBtbiCaMLxaEKLqL"
+  ]
+}

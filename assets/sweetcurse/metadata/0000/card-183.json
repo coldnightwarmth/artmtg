@@ -1,0 +1,82 @@
+{
+  "name": "Sweet Curse Card #183",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreidzvv644cg4xrdsxn2bbjnlk3ytaazrsfq3etxdjvag2anizrfkfm",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Bio"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Micro - Peacock"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Dammit gengar"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Benangbaja Mlue2"
+    },
+    {
+      "trait_type": "Name",
+      "value": "30-30"
+    },
+    {
+      "trait_type": "Signature",
+      "value": "Sweet Curse"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Dammit2"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Discoball"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Daily Monsters1"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Zizou"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Winamp2"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Stnd4"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "chrome"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreidzvv644cg4xrdsxn2bbjnlk3ytaazrsfq3etxdjvag2anizrfkfm",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiej7xj7zh2onzbwcb5rh2req7mvazocfjhgkflziamo7nafi6voa4",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiej7xj7zh2onzbwcb5rh2req7mvazocfjhgkflziamo7nafi6voa4",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiej7xj7zh2onzbwcb5rh2req7mvazocfjhgkflziamo7nafi6voa4",
+  "collection_mints": [
+    "6eokN7RLQxnSLURZfJxLNKyCmR9qRrUpQMhk43U9Xw76"
+  ]
+}

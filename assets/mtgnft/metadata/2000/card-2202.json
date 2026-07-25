@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #2201",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2201",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_mysterybox"
+    },
+    {
+      "trait_type": "cards",
+      "value": "New Prahv Guildmage"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_yarinvert"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "cursed"
+    },
+    {
+      "trait_type": "special top",
+      "value": "perc30top"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "tripplebox"
+    }
+  ],
+  "edition": 1278,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2201"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BEmJydgHEjkxgbcCqactyRprF1SEqVkg1r2k8c2W7r5B"
+  ]
+}

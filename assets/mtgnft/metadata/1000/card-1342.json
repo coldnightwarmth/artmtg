@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1341",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1341",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_cockpit"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Dragon"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_bluestrain"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "troll"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "boofright"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "thps"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "breaktop"
+    }
+  ],
+  "edition": 1935,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1341"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HBkkxbBnA2tnZTGpNTAk2E4d2VXP7oWTdwyeZV7gCuU6"
+  ]
+}

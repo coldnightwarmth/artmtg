@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #1430",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1430",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_egirlnoise2"
+    },
+    {
+      "trait_type": "behind",
+      "value": "unknownball"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_116"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Jalum Grifter"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_kittygrin"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "gunright"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "bong"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_cloudff7"
+    }
+  ],
+  "edition": 1024,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1430"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BNt9eqqkUzVXgNQYCW4is2FLukkfqSJS8uV8JbEvghkf"
+  ]
+}

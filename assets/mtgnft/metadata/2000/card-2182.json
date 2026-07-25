@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #2181",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2181",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "black"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Gloomhunter"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_goldgrillz"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "issac1"
+    }
+  ],
+  "edition": 1987,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2181"
+      }
+    ]
+  },
+  "collection_mints": [
+    "49sCzeGbxD3U1BAT64Vmjg8cnfZs4UMgheFy1kBm7U4W"
+  ]
+}

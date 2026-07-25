@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1675",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1675",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_dxmtrip"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ulamog's Nullifier"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_69"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "boofright"
+    }
+  ],
+  "edition": 861,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1675"
+      }
+    ]
+  },
+  "collection_mints": [
+    "FodugHpjgtBMhAXLLqXV1gRGn449FHBbTig5yYGjaox5"
+  ]
+}

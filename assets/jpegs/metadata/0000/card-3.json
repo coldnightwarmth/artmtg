@@ -1,0 +1,35 @@
+{
+  "name": "Blood",
+  "description": "Parker Ito",
+  "seller_fee_basis_points": 500,
+  "image": "https://turbo-gateway.com/AvmtyySk79kVtZ3cM95aIKFoe4JmfxYMcaCypFfMJZA?ext=jpeg",
+  "properties": {
+    "files": [
+      {
+        "uri": "https://turbo-gateway.com/AvmtyySk79kVtZ3cM95aIKFoe4JmfxYMcaCypFfMJZA?ext=jpeg",
+        "type": "image/jpeg"
+      }
+    ],
+    "creators": [
+      {
+        "address": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+        "share": 100,
+        "verified": true
+      }
+    ]
+  },
+  "attributes": [],
+  "collection_mints": [
+    "3juSpjEb8W3LJhrsriK8Roacx9he4dBE8Kvk7r9KAEUE",
+    "3mQznbjj3Cpk3f2hP3Fh9U1FuHmeDrDPiRgerr1o539M",
+    "4W89JyQS82frg5vNSX7diXq4MuELBWixs4zwmMv1pBkr",
+    "5ARAgzmRXAH1hk8zizeRpDYwmpifYu3ATcCGbhtXhRpN",
+    "5k4Y77EfxDBkV7tsuNk39epkS8hg4ozYELUGvJdgJWtJ",
+    "5S5XsjjQ6zMdytMhCZDtm4hNtKnwtQYKvFC5SQQ8NE2a",
+    "9XzqXepF9eTy7R26B6of57BZdeEZq4p9aGmTmwfAjSC9",
+    "CCX5ZzdYFm7LCHNoGN8gCoLA8iLvNHYGqT611z7yNTgE",
+    "Cd7oLqnwmxKbcJxPUq2fQZ17RM2NufEg63UbBfZBpJ5q",
+    "F9KzcELmfu5XZNM69Fz1iTW15fGPexLAafW5Fdff7b3x",
+    "GuQBD7YpoY6oANsVfWSBCdeNZsfHLxjQMsZErsMtP4g3"
+  ]
+}

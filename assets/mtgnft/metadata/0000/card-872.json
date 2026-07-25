@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #871",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/871",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_littletests"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Rottenheart Ghoul"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_greenlady"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_kidbuumouth"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "blue"
+    },
+    {
+      "trait_type": "special top",
+      "value": "majorasmoon"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "tripplebox"
+    }
+  ],
+  "edition": 1287,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/871"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6E6zkp6G9fWzfeBFCTuxYLdA6ThRqJHqRrGy2hJ4MeBP"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1633",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1633",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_cockpit"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Cystbearer"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_serious"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "tongetooth"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "fingerright"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "poker"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "boosterbox"
+    },
+    {
+      "trait_type": "special top",
+      "value": "issacantibirth"
+    }
+  ],
+  "edition": 1713,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1633"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4DqmmwRZphVQM6RUvfPxd6exz9ZwWRG5We3C52BtDJyx"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1874",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1874",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_gothdeath"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_129"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Phantasmal Form"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_beez"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_grandma"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_jordan1hi"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "sniped"
+    }
+  ],
+  "edition": 852,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1874"
+      }
+    ]
+  },
+  "collection_mints": [
+    "2mu3PZHPNzGYSJ1J4744AbchwFiL3RXAeUkDAvAdr2H5"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #212",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/212",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_3dnetmask"
+    },
+    {
+      "trait_type": "behind",
+      "value": "miketyson"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_10"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Silver-Inlaid Dagger"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "wavey"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_glitched2"
+    }
+  ],
+  "edition": 1255,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/212"
+      }
+    ]
+  },
+  "collection_mints": [
+    "ATznt63p4n9FR9b2C4RTQp4ACzy383fsmjqUYkPKVyrw"
+  ]
+}

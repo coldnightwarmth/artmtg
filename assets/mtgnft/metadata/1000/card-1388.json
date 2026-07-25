@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #1387",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1387",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_attic"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_124"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Izzet Guildgate"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_relaxed"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "fingerright"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "braindamage"
+    },
+    {
+      "trait_type": "top right",
+      "value": "ibpholo"
+    },
+    {
+      "trait_type": "special top",
+      "value": "warhammer40k"
+    }
+  ],
+  "edition": 1103,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1387"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HmEWKGVBByyPFvu6KwuE6evp5VS2G1g5nADStLg9Cbu"
+  ]
+}

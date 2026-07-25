@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #623",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/623",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_deathnote"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Root Out"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_cheeky"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "laser"
+    },
+    {
+      "trait_type": "hat",
+      "value": "snes"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "fingerright"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_whatsinyocup"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "megaman"
+    }
+  ],
+  "edition": 93,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/623"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HEZPggFofZCdsL3YfBjhtZzThBZ78QDc9k6x2zFqeXo2"
+  ]
+}

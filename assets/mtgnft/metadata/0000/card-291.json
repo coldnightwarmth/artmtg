@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #290",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/290",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_cartmanpope"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Hazerider Drake"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_frown"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "dreamland"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "issac2"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "speed"
+    }
+  ],
+  "edition": 88,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/290"
+      }
+    ]
+  },
+  "collection_mints": [
+    "B3X1eXVjHbZMqfb3kgbgaxo8QUvrAt3xDAjqRp2uMDUQ"
+  ]
+}

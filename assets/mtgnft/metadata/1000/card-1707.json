@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1706",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1706",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_damnbitchyoulivelikethis"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Grave Titan"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "bluestrain"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "goldfangs"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "stickyfingers"
+    }
+  ],
+  "edition": 1954,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1706"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5GhACaFpPyqGn9WPvEECxGBG57iKhHnaQg6VUo8QFGuE"
+  ]
+}

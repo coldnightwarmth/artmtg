@@ -1,0 +1,86 @@
+{
+  "name": "Sweet Curse Card #215",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreihh3l5wlsc6xzxmdxbygmhyys6ydyrdw5lfkbvb4lxavic7c5mohy",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Bio"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Micro"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Dammit gengar"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Gengars 3D"
+    },
+    {
+      "trait_type": "Score",
+      "value": "???????????????????"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Wt"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Sky"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Fountain"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Churrozard"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Koblindeadman"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Gang"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Pachimon kentauros"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Wine"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "ash"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreihh3l5wlsc6xzxmdxbygmhyys6ydyrdw5lfkbvb4lxavic7c5mohy",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibyliymvvklmfxogrvgxnb5uwo5k44iwrr4tjwz7yq2677oqz7n54",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibyliymvvklmfxogrvgxnb5uwo5k44iwrr4tjwz7yq2677oqz7n54",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibyliymvvklmfxogrvgxnb5uwo5k44iwrr4tjwz7yq2677oqz7n54",
+  "collection_mints": [
+    "CPkvRYbiHmT2fC9bCzMGDjajnMDejixFtKG3icvemZ6R"
+  ]
+}

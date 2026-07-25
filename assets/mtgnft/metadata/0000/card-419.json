@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #418",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/418",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_party"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Weirding Wood"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "mifellasmirk"
+    },
+    {
+      "trait_type": "top left",
+      "value": "hellraisersholo"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "eboynoise"
+    }
+  ],
+  "edition": 95,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/418"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5WT9TMDezxG1Xaif1pzwMSvdhc9FrdeRr1wbYTHZyMbz"
+  ]
+}

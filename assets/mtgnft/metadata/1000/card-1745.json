@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1744",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1744",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_chrischanmewtwo"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Black Vise"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_troll"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "pookie"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_korby"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "stickyfingers"
+    }
+  ],
+  "edition": 985,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1744"
+      }
+    ]
+  },
+  "collection_mints": [
+    "88gxr75d8VvaA7F9xGQZWDpwnC7VtGB8bje3QcQtWJ2B"
+  ]
+}

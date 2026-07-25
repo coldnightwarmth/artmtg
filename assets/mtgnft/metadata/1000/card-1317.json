@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1316",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1316",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "balloonparty"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Kheru Bloodsucker"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_arggg"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "red"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_mariostaticball"
+    },
+    {
+      "trait_type": "top right",
+      "value": "followyourdreams"
+    }
+  ],
+  "edition": 339,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1316"
+      }
+    ]
+  },
+  "collection_mints": [
+    "38B3tatdcjRqcTBZpKLZr7vMNSv375aXxMLgk6bCPrYu"
+  ]
+}

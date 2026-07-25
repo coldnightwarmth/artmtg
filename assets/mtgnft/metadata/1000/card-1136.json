@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #1135",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1135",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_nam"
+    },
+    {
+      "trait_type": "behind",
+      "value": "wave"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Frontier Bivouac"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "babbitshadow"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_perc5"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "smirk"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "thumbsup"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "whatsinyocuppiiimp"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_nessleft"
+    }
+  ],
+  "edition": 1972,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1135"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4eA8SJK5PriLGRWujDcz9oeb2E1Xr9H2cPKpsUsG63af"
+  ]
+}

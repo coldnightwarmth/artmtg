@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1515",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1515",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_asspizza"
+    },
+    {
+      "trait_type": "behind",
+      "value": "daorcs"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_165"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Sakashima the Impostor"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_animu3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_kidbuumouth"
+    }
+  ],
+  "edition": 22,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1515"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GViwZxpiWHfhxev3WB3o6rFfb158DGUVydinRq7TcM4V"
+  ]
+}

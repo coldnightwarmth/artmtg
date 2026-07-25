@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #391",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/391",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_gmod"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_161"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Silent Skimmer"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_kaneki"
+    },
+    {
+      "trait_type": "hat",
+      "value": "northface"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "theGodfellaZ"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_issac"
+    }
+  ],
+  "edition": 1416,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/391"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3UpkTB5mEejgx46AQFR6kbSV5k8yne8unYwXsefzjFoF"
+  ]
+}

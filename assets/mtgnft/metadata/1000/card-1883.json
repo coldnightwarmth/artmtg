@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #1882",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1882",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_batman"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Crackling Doom"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_perc5shine"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "larvatar"
+    }
+  ],
+  "edition": 1343,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1882"
+      }
+    ]
+  },
+  "collection_mints": [
+    "AJZExju6WN3rtzuR6vJPViRtN9xPhb6NY6bcU7XCjBE"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #57",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/57",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_spawner"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Spawn of Rix Maadi"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "droopy"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "draw"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "crawlright"
+    }
+  ],
+  "edition": 1050,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/57"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3KHivCN8TFnnm6V1qYEjL7UMd5BDzuSkgtaStCTdbqWQ"
+  ]
+}

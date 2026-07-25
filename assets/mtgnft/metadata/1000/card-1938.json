@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1937",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1937",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_balloonparty"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_60"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Demonlord Belzenlok"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_mifella2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "babe"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "thumbsup"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_thelost"
+    }
+  ],
+  "edition": 915,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1937"
+      }
+    ]
+  },
+  "collection_mints": [
+    "94ZL2ZBsntoYnwHE8GVoshGR1EmzqmFPfEbgQbuMsynA"
+  ]
+}

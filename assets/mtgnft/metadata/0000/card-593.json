@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #592",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/592",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "balloonparty"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Soulshriek"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_kidbuumouth"
+    }
+  ],
+  "edition": 1035,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/592"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CEkwTge14WrK9uT7EDkpSgoHW78Ae9DqTrAoTRmNtNEa"
+  ]
+}

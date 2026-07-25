@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #210",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/210",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_dragonite"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Wild-Field Scarecrow"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_bluestrain"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_droopy"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "fuckomatic"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "orasstats"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "pkmnsilver"
+    }
+  ],
+  "edition": 352,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/210"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9gv9CcwrQaxt4Ao4j1CbRnYkSbtfShfumHJH1daDA9S2"
+  ]
+}

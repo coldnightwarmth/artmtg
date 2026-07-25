@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #95",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/95",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_tumblraf2"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_87"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Disciple of Griselbrand"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_evil1"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_korby"
+    },
+    {
+      "trait_type": "special top",
+      "value": "osrs"
+    }
+  ],
+  "edition": 513,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/95"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HEKbqUu2tujbaoirUmq4PWhKa9jdzxLDhCjWHH4G3TiK"
+  ]
+}

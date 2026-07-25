@@ -1,0 +1,27 @@
+{
+  "name": "Still Keeps Me Alive",
+  "description": "Vidal Herrera",
+  "seller_fee_basis_points": 500,
+  "image": "https://turbo-gateway.com/50zPdPDw1QlvCRn0hWuKHSAgBl_Dae5zQYclraluG_4?ext=jpeg",
+  "properties": {
+    "files": [
+      {
+        "uri": "https://turbo-gateway.com/50zPdPDw1QlvCRn0hWuKHSAgBl_Dae5zQYclraluG_4?ext=jpeg",
+        "type": "image/jpeg"
+      }
+    ],
+    "creators": [
+      {
+        "address": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+        "share": 100,
+        "verified": true
+      }
+    ]
+  },
+  "attributes": [],
+  "collection_mints": [
+    "99zscCRdXFM3LNJk63NHqaxMNedy2Hv7jMvaNjFTThxH",
+    "9YLrsKu5sfr15JtiU3ATcsQCnrNZufWr8Ga7RCKSbAMc",
+    "HuXWvTH2aeg7HRXouV9JsdyHxzaddLLPnpF7uHUFbHpU"
+  ]
+}

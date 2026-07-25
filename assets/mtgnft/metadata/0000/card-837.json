@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #836",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/836",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_boom"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ironfang"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_mifella2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_joint"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "shootah"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "wat"
+    }
+  ],
+  "edition": 2083,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/836"
+      }
+    ]
+  },
+  "collection_mints": [
+    "76WdrW8Z92eogmBEUgXkM5yQgqC5Wiy58vA88N8KB1tH"
+  ]
+}

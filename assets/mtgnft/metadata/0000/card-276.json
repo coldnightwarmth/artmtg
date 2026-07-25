@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #275",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/275",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_alien"
+    },
+    {
+      "trait_type": "behind",
+      "value": "bustersword"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Pursuit of Flight"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_yarinvert"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_relaxed"
+    },
+    {
+      "trait_type": "hat",
+      "value": "palaceblue"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "vaperight"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "dior"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "bowserlock"
+    }
+  ],
+  "edition": 656,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/275"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8pcLYUyyNF9BWZdecGajynBhzLc6BmtVjAbaqovCTXSX"
+  ]
+}

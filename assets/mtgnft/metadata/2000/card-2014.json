@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #2013",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2013",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "toonblueeyes"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_54"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Sporogenesis"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_mifella3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_widedark"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "1thousandnuts"
+    }
+  ],
+  "edition": 1979,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2013"
+      }
+    ]
+  },
+  "collection_mints": [
+    "ApDthxFxnwjPm6k3GHZKBFCuD3H2iFd5fNkVby53aduy"
+  ]
+}

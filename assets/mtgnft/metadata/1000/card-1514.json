@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1513",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1513",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_plane"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Faerie Impostor"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_69"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "berryladys"
+    },
+    {
+      "trait_type": "special top",
+      "value": "tf2"
+    }
+  ],
+  "edition": 1392,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1513"
+      }
+    ]
+  },
+  "collection_mints": [
+    "vpitjvxRfyCL4K8VLVRJQNdju3NneDqFXyo3MhZWyjQ"
+  ]
+}

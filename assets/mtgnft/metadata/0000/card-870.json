@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #869",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/869",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_server"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ritual of Steel"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_kidbuumouth"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "boofright"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "fingerleft"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "jot"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "orasstats"
+    }
+  ],
+  "edition": 527,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/869"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Dt6DeMGBuoNXBw4pVAKsA59JoHXDh1mTbRs3YXu3hUpf"
+  ]
+}

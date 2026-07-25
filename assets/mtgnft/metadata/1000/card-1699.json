@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1698",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1698",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_animespace"
+    },
+    {
+      "trait_type": "behind",
+      "value": "bustersword"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Lavastep Raider"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_toofers"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mista"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_theemperor"
+    }
+  ],
+  "edition": 765,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1698"
+      }
+    ]
+  },
+  "collection_mints": [
+    "E84vh1cvtN2fbCo5WTsQCHwJSEdvcVkVasFGaRiyUvGU"
+  ]
+}

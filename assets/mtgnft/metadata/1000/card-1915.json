@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1914",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1914",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_blurryaminegirl"
+    },
+    {
+      "trait_type": "behind",
+      "value": "scrabble"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Necrogen Censer"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_chomp"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "blastoise"
+    }
+  ],
+  "edition": 1195,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1914"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CcYNotz8iMvZ7tWgd2MUzb4UQUZ4iKGLeuqXce3hy2VT"
+  ]
+}

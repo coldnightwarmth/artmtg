@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #137",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/137",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_gmod"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Verix Bladewing"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "droopy"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "nissa"
+    },
+    {
+      "trait_type": "special top",
+      "value": "majorasmoon"
+    }
+  ],
+  "edition": 918,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/137"
+      }
+    ]
+  },
+  "collection_mints": [
+    "2BFWv9tdEzBTH3i1CagMTDH5eeXFYsmfVksFU8Ch2N1M"
+  ]
+}

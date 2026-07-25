@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #71",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/71",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "egirls"
+    },
+    {
+      "trait_type": "behind",
+      "value": "scanlines3"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Pious Evangel"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "babbitshadow"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_perc5shine"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_aaaaaaaaa"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_soy"
+    }
+  ],
+  "edition": 456,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/71"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HzUJZSrb3WZ1YBe1FuimrQzxKTd1UTTgvmyBNtRCrwG9"
+  ]
+}

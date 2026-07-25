@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #2106",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2106",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_enterthematrix"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_123"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ebony Charm"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "perc5shine"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_kidbuumouth"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "boofright"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "dxm"
+    }
+  ],
+  "edition": 201,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2106"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CLcLBkGt7WXYiEtGB5LaHGbvqEfUTa8YUsKs54jeicnZ"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #539",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/539",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_toonblueeyes"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Invasive Surgery"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_kanye"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "ciggie"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "Untitled_Artwork-49"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "breaktop"
+    }
+  ],
+  "edition": 1433,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/539"
+      }
+    ]
+  },
+  "collection_mints": [
+    "G146x67wpBM1orZDq9rEkLUMRiH4vFjiJbU7iQ9cLwrc"
+  ]
+}

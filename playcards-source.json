@@ -1,0 +1,1180 @@
+{
+  "fetchedAt": "2026-07-24T08:52:28.554Z",
+  "source": "https://graphql.tensor.trade/graphql",
+  "tensorPage": "https://www.tensor.trade/trade/884d3590-b68b-40b6-8fbf-fb2c311c1edd",
+  "collectionSlug": "884d3590-b68b-40b6-8fbf-fb2c311c1edd",
+  "collectionDisplaySlug": "884d3590-b68b-40b6-8fbf-fb2c311c1edd",
+  "membershipPolicy": "Every live mint returned by Tensor; exact duplicate editions share one binder card",
+  "assetRevision": "playcards-1",
+  "animationRevision": null,
+  "liveMintCount": 32,
+  "tensorFetchedMintCount": 32,
+  "tensorReportedMintCount": 32,
+  "excludedMintCount": 0,
+  "exclusionRules": {
+    "mintIds": []
+  },
+  "cardCount": 32,
+  "groupedDuplicateMintCount": 0,
+  "metadataFetchFailureCount": 0,
+  "liveMintIdsSha256": "af38f09870ba4f863b9770947230915981e2f0e52ff0634017a28fc74b72218f",
+  "tensorLiveMintIdsSha256": "af38f09870ba4f863b9770947230915981e2f0e52ff0634017a28fc74b72218f",
+  "instrument": {
+    "id": "884d3590-b68b-40b6-8fbf-fb2c311c1edd",
+    "slug": "884d3590-b68b-40b6-8fbf-fb2c311c1edd",
+    "slugDisplay": null,
+    "name": "play cards alpha",
+    "symbol": "playca",
+    "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/0",
+    "description": null,
+    "tokenStandard": "NON_FUNGIBLE",
+    "tokenProgram": "MPL_CORE",
+    "compressed": false,
+    "statsV2": {
+      "numMints": 32
+    }
+  },
+  "conversion": {
+    "format": "webp",
+    "width": 600,
+    "height": 840,
+    "quality": 75,
+    "effort": 4,
+    "fit": "contain",
+    "background": "#111111",
+    "imageProxy": "https://prod-image-cdn.tensor.trade/images/600x600/freeze=true"
+  },
+  "animationConversion": null,
+  "sharedBack": {
+    "source": "attached purple play cards back",
+    "color": null,
+    "file": "assets/playcards/backs/playcards-back.webp",
+    "width": 715,
+    "height": 1011
+  },
+  "liveAssets": [
+    {
+      "onchainId": "9g6sbXJdHwwT4wX9SeXArqixCfNzSNRezYikL5Gd5dTx",
+      "owner": "97qxpvG3zmhbq9ie91bDgN81xqUq7ij5HrVWG5RN9MRv",
+      "name": "play card alpha test print 0",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/21",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/21.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/21"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "76T7jZvXV7Lj4ZPcU1qnm4wLjXNP7qkqKdRQDB1ZwK4J",
+      "owner": "2hL345EvjWgeWuaoT3z5M6qzmkTRwCcEM9LGnYUKLPm1",
+      "name": "play card alpha test print 1",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/29",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/29.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/29"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "FkQiDh1gyQBVT7RcqnBxpB6rJCVqxLzNLgjGcGWtPzDT",
+      "owner": "5D33sJMhw5NLtYwUTDpxbUoCKFEeaREYdzC795HzFh3S",
+      "name": "play card alpha test print 2",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/25",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/25.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/25"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "EUSPFEMUzw7WCRHQkY5zZZqLJR1ZrGw1GcNYSr7kSXS7",
+      "owner": "Fkkx8VfxPwk8JePwk3a6UCMf7C6zwLUu9LuVGgfhVsJn",
+      "name": "play card alpha test print 3",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/27",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/27.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/27"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "Bt2mfzUnVCfDxRmD9DnNyVCCP4qtquE9jt47t5PYDWsN",
+      "owner": "EG3GK9CPohimC5fHKRcEazDVerTP7Cy7opLR4VbfibpF",
+      "name": "play card alpha test print 4",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/22",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/22.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/22"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "GmxrwrxDF5SbkNRgwmAQ8aYJB7Ax127y5jqdNvXE9KVw",
+      "owner": "HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh",
+      "name": "play card alpha test print 5",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/3",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/3.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/3"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "85ELYR54KGcDL95Yfsvk6PPTFmJ9xoWSxMEojAcptfcy",
+      "owner": "5D33sJMhw5NLtYwUTDpxbUoCKFEeaREYdzC795HzFh3S",
+      "name": "play card alpha test print 6",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/1",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/1.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/1"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "DPp2RdtxTpDp4t8YysrJJdV9bEe5E7R83TMe4ywof2HD",
+      "owner": "a3Eqw3RerKp6V61RAK9KEWZkpWrYXUSUst3nkAfxXAU",
+      "name": "play card alpha test print 7",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/13",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/13.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/13"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "5hdShXNoVYxnbMp4BkwyhWTZqy3Jx5XS82MuRU6h4K2H",
+      "owner": "5D33sJMhw5NLtYwUTDpxbUoCKFEeaREYdzC795HzFh3S",
+      "name": "play card alpha test print 8",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/31",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/31.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/31"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "58teM1EKJsfiJoqU32ryKdGjtcvq3TpaDYC4VZkEmQXV",
+      "owner": "97qxpvG3zmhbq9ie91bDgN81xqUq7ij5HrVWG5RN9MRv",
+      "name": "play card alpha test print 9",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/24",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/24.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/24"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "5SuJ9v6qxPBRRps921Bw4qnZC95z4YcJZVEhRkpEdoFP",
+      "owner": "5D33sJMhw5NLtYwUTDpxbUoCKFEeaREYdzC795HzFh3S",
+      "name": "play card alpha test print 10",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/7",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/7.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/7"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "DsSSAwuKgmYQKMbG2NE1eAFiZgnRbGwKFyjeRL55tSzy",
+      "owner": "5D33sJMhw5NLtYwUTDpxbUoCKFEeaREYdzC795HzFh3S",
+      "name": "play card alpha test print 11",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/0",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/0.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/0"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "2eph5Gr4FHDc26HhfL7NM13ivWpeJt1zkuggER1CtQsa",
+      "owner": "5D33sJMhw5NLtYwUTDpxbUoCKFEeaREYdzC795HzFh3S",
+      "name": "play card alpha test print 12",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/11",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/11.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/11"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "4CHqbEjRij6nCLaN8YLe4fwD86AbFuSmH3taHtMrENUF",
+      "owner": "HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh",
+      "name": "play card alpha test print 13",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/15",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/15.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/15"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "DeB9uHqM6vx6hR4xjLZmXke6wWdGan2vHTG38b9v1RE7",
+      "owner": "4AzHtmkz6vr73HVrdMvp3uhBucPTwMHdGveh47aDpcn7",
+      "name": "play card alpha test print 14",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/12",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/12.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/12"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "EuauZmkM1iA6wTiCRkb8aaDn1Q4SmiZZ7kJvKet6wn6f",
+      "owner": "HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh",
+      "name": "play card alpha test print 15",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/26",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/26.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/26"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "3vAFneV16RMtYsawKkseZrjnUm86qCZdVRjsuu7wUKWV",
+      "owner": "Fkkx8VfxPwk8JePwk3a6UCMf7C6zwLUu9LuVGgfhVsJn",
+      "name": "play card alpha test print 16",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/18",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/18.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/18"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "3qojU5xy4yyvK5EoA8xG86s6qL1aZfQirxhuiW2dciRA",
+      "owner": "HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh",
+      "name": "play card alpha test print 17",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/16",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/16.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/16"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "65xCZrEkbANgDDVkV33NsXXs6hxS9FCrmETgtGpJ1dSd",
+      "owner": "BvUvpLf1Gur5wypNomSkmmS8e1GAXAbzvhNZYdUm3n5i",
+      "name": "play card alpha test print 18",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/30",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/30.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/30"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "4Ck8jsBrUchEnyakC6WuxSxSfzTfJVvC5SwEPUPRkq43",
+      "owner": "5D33sJMhw5NLtYwUTDpxbUoCKFEeaREYdzC795HzFh3S",
+      "name": "play card alpha test print 19",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/2",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/2.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/2"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "2MfVfRh1Jd2tJSoHi7jNLnj2z2p6UcT2dnkhAsLUdzXs",
+      "owner": "a3Eqw3RerKp6V61RAK9KEWZkpWrYXUSUst3nkAfxXAU",
+      "name": "play card alpha test print 20",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/9",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/9.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/9"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "E742f3NACjrbYmrARAZwbosFAnigv8kB4paon3i5ULXM",
+      "owner": "9b4s7zuWXnmUEUebmhFyzM4JgswR1kVDoJrpBA6JjLqt",
+      "name": "play card alpha test print 21",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/10",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/10.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/10"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "6Hpag58GJC5m8pE37m4u34LESFLuejrYsM5jg7RGHXhB",
+      "owner": "5D33sJMhw5NLtYwUTDpxbUoCKFEeaREYdzC795HzFh3S",
+      "name": "play card alpha test print 22",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/19",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/19.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/19"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "DPtrNPRd2SG8WYvUhioAkgtp45qYU9vsUdE7wXBrQUwh",
+      "owner": "HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh",
+      "name": "play card alpha test print 23",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/17",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/17.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/17"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "ESyEVuTuF4sAZGWaf3R7cE1sp6fjyV39qTao2RDcMbxT",
+      "owner": "8M5B6GNvURKMvArwknDaMF94qEcd3Z7jmhaa8mM3TvYA",
+      "name": "play card alpha test print 24",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/6",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/6.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/6"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "2xxNDk8ngd1r58Sh9sybx3QsLSG3GuMPbaorbvm41SUr",
+      "owner": "2hL345EvjWgeWuaoT3z5M6qzmkTRwCcEM9LGnYUKLPm1",
+      "name": "play card alpha test print 25",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/28",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/28.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/28"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "6gvzzKGEhcriyGE1y4fP8hTFq93f419BM9kMoir3Ka5k",
+      "owner": "GUvxCJfW7vF8kZht6FGJao9mXTjp6tJVukGn4EvYqJN9",
+      "name": "play card alpha test print 26",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/8",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/8.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/8"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "DmTQDVATfQxCv6Vz6CUftkcfEzfKTVNR5wXM2QNB8r5B",
+      "owner": "HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh",
+      "name": "play card alpha test print 27",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/14",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/14.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/14"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "3kfnuftbj3eQV749xoAVkhDH9Y6GbeQSUgwK79KrwhN9",
+      "owner": "GUvxCJfW7vF8kZht6FGJao9mXTjp6tJVukGn4EvYqJN9",
+      "name": "play card alpha test print 28",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/20",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/20.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/20"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "5rqvbTTzCP1U4R9WL4TwRJA7oPudqEgPZZx1q4dD3xpx",
+      "owner": "BvUvpLf1Gur5wypNomSkmmS8e1GAXAbzvhNZYdUm3n5i",
+      "name": "play card alpha test print 29",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/23",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/23.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/23"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "4JMdFVuStPYikSX1kBEcjvEzA1z2suHRP2sgo9TdqSgx",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "play card alpha test print 30",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/5",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/5.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/5"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "6hVJUQEsg3QeBzi37FnecyWNAQRdDphE7UqvxLGhUZCz",
+      "owner": "5D33sJMhw5NLtYwUTDpxbUoCKFEeaREYdzC795HzFh3S",
+      "name": "play card alpha test print 31",
+      "imageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/4",
+      "animationUri": "",
+      "metadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/4.json",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/4"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    }
+  ],
+  "excludedAssets": [],
+  "cards": [
+    {
+      "number": 1,
+      "assetNumber": 1,
+      "stableId": "playcards:group-081948f7005caef4cd8287ec",
+      "groupKeyHash": "081948f7005caef4cd8287ece3cb7d9a359f28e20928ebb57874dc165e142054",
+      "title": "play card alpha test print 0",
+      "mints": [
+        "9g6sbXJdHwwT4wX9SeXArqixCfNzSNRezYikL5Gd5dTx"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/21.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/21",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "1f9ab3655cae9172ca6c4f70630db19c32274d6299c5269b1ec9c9e98b2d4237",
+      "metadataFile": "assets/playcards/metadata/0000/card-1.json",
+      "cardFile": "assets/playcards/cards/0000/card-1.webp",
+      "animation": null
+    },
+    {
+      "number": 2,
+      "assetNumber": 2,
+      "stableId": "playcards:group-d3ea8f08ac925f4e5e399cc7",
+      "groupKeyHash": "d3ea8f08ac925f4e5e399cc7d36ecfdaf421fcdc1d011ce4aac9683680dc27f6",
+      "title": "play card alpha test print 1",
+      "mints": [
+        "76T7jZvXV7Lj4ZPcU1qnm4wLjXNP7qkqKdRQDB1ZwK4J"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/29.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/29",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "15db4714c669e81b646d7efd2d3769e9f976b94a4354e575c8e982665a1499ab",
+      "metadataFile": "assets/playcards/metadata/0000/card-2.json",
+      "cardFile": "assets/playcards/cards/0000/card-2.webp",
+      "animation": null
+    },
+    {
+      "number": 3,
+      "assetNumber": 3,
+      "stableId": "playcards:group-8395f60467ad2bef9098de6d",
+      "groupKeyHash": "8395f60467ad2bef9098de6d567a82e4cd268a8e873c053d23a81efcbe51ba11",
+      "title": "play card alpha test print 2",
+      "mints": [
+        "FkQiDh1gyQBVT7RcqnBxpB6rJCVqxLzNLgjGcGWtPzDT"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/25.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/25",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "332b43570e528abc2793ac92e1455e36d6573620b44336cc3ddacf1984dd5ce7",
+      "metadataFile": "assets/playcards/metadata/0000/card-3.json",
+      "cardFile": "assets/playcards/cards/0000/card-3.webp",
+      "animation": null
+    },
+    {
+      "number": 4,
+      "assetNumber": 4,
+      "stableId": "playcards:group-104a1a4d5c86ba6ba415e80f",
+      "groupKeyHash": "104a1a4d5c86ba6ba415e80f29fddb8fa62893c9d40f2ff34965843613b734c2",
+      "title": "play card alpha test print 3",
+      "mints": [
+        "EUSPFEMUzw7WCRHQkY5zZZqLJR1ZrGw1GcNYSr7kSXS7"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/27.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/27",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "4e1eabf0d2a13229c30719bd8a865f2bd0181c4e8ddfe2e25faf1c72099d3c80",
+      "metadataFile": "assets/playcards/metadata/0000/card-4.json",
+      "cardFile": "assets/playcards/cards/0000/card-4.webp",
+      "animation": null
+    },
+    {
+      "number": 5,
+      "assetNumber": 5,
+      "stableId": "playcards:group-6f156ff2944b5dc70dccda10",
+      "groupKeyHash": "6f156ff2944b5dc70dccda108381c3a2317497cce979239a4bb7698333671912",
+      "title": "play card alpha test print 4",
+      "mints": [
+        "Bt2mfzUnVCfDxRmD9DnNyVCCP4qtquE9jt47t5PYDWsN"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/22.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/22",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "e8d90c298179b972e43c8399d00edd711c2a8f891ea7d5570956b2e0946a9484",
+      "metadataFile": "assets/playcards/metadata/0000/card-5.json",
+      "cardFile": "assets/playcards/cards/0000/card-5.webp",
+      "animation": null
+    },
+    {
+      "number": 6,
+      "assetNumber": 6,
+      "stableId": "playcards:group-fc5bb3289cf46ccb4ced8cda",
+      "groupKeyHash": "fc5bb3289cf46ccb4ced8cda81b780166db8c4a60585356c5acb559663d260cf",
+      "title": "play card alpha test print 5",
+      "mints": [
+        "GmxrwrxDF5SbkNRgwmAQ8aYJB7Ax127y5jqdNvXE9KVw"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/3.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/3",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "c0f1b2c32b9b30ff87a89e69ca1d28d84467ceb7797db62cb5c3b5fafbbe6bac",
+      "metadataFile": "assets/playcards/metadata/0000/card-6.json",
+      "cardFile": "assets/playcards/cards/0000/card-6.webp",
+      "animation": null
+    },
+    {
+      "number": 7,
+      "assetNumber": 7,
+      "stableId": "playcards:group-de1f65931fcd6bfd0a76db18",
+      "groupKeyHash": "de1f65931fcd6bfd0a76db18495466532dfcd5138ff737ba302156199b2d6c2a",
+      "title": "play card alpha test print 6",
+      "mints": [
+        "85ELYR54KGcDL95Yfsvk6PPTFmJ9xoWSxMEojAcptfcy"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/1.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/1",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "acf1bee5eac61d8394fedb57adc2114e6bd983df0a8c65997cc05e493214df63",
+      "metadataFile": "assets/playcards/metadata/0000/card-7.json",
+      "cardFile": "assets/playcards/cards/0000/card-7.webp",
+      "animation": null
+    },
+    {
+      "number": 8,
+      "assetNumber": 8,
+      "stableId": "playcards:group-7dcaa30d142c0d2c113951ea",
+      "groupKeyHash": "7dcaa30d142c0d2c113951ea2e17b079d82157d6f8ba28db70564f3a883c6c05",
+      "title": "play card alpha test print 7",
+      "mints": [
+        "DPp2RdtxTpDp4t8YysrJJdV9bEe5E7R83TMe4ywof2HD"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/13.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/13",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "826eb0cd35138fad73ab6c7e9f644614f5bf56947c3fb38a4ec86b14b2f174a7",
+      "metadataFile": "assets/playcards/metadata/0000/card-8.json",
+      "cardFile": "assets/playcards/cards/0000/card-8.webp",
+      "animation": null
+    },
+    {
+      "number": 9,
+      "assetNumber": 9,
+      "stableId": "playcards:group-5b4e9e52b822e4ccfc75428d",
+      "groupKeyHash": "5b4e9e52b822e4ccfc75428deb5b2224a1fd128fa8e1ec3f761b2a52739a509d",
+      "title": "play card alpha test print 8",
+      "mints": [
+        "5hdShXNoVYxnbMp4BkwyhWTZqy3Jx5XS82MuRU6h4K2H"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/31.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/31",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "4d00500bdf401056897c05b78eef76e44fadd2bfb804b3d9b08310eb145e021a",
+      "metadataFile": "assets/playcards/metadata/0000/card-9.json",
+      "cardFile": "assets/playcards/cards/0000/card-9.webp",
+      "animation": null
+    },
+    {
+      "number": 10,
+      "assetNumber": 10,
+      "stableId": "playcards:group-0e45923c74140c9be489f554",
+      "groupKeyHash": "0e45923c74140c9be489f5549af5e9ce23968fd21d02074be93d96dc2f20b41e",
+      "title": "play card alpha test print 9",
+      "mints": [
+        "58teM1EKJsfiJoqU32ryKdGjtcvq3TpaDYC4VZkEmQXV"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/24.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/24",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "81b4e5b7e45b736e0fc9a8bc43eae78493016435689af750652cfddeb65a1a0f",
+      "metadataFile": "assets/playcards/metadata/0000/card-10.json",
+      "cardFile": "assets/playcards/cards/0000/card-10.webp",
+      "animation": null
+    },
+    {
+      "number": 11,
+      "assetNumber": 11,
+      "stableId": "playcards:group-8fbd6b5172206213abc4c5b9",
+      "groupKeyHash": "8fbd6b5172206213abc4c5b96eb2dcd62d528c028317423e6996167964ee36ef",
+      "title": "play card alpha test print 10",
+      "mints": [
+        "5SuJ9v6qxPBRRps921Bw4qnZC95z4YcJZVEhRkpEdoFP"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/7.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/7",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "1668822f3ce32b6b2a1722a54b486e13f4d503325ad4fb27248796dd1f9b372b",
+      "metadataFile": "assets/playcards/metadata/0000/card-11.json",
+      "cardFile": "assets/playcards/cards/0000/card-11.webp",
+      "animation": null
+    },
+    {
+      "number": 12,
+      "assetNumber": 12,
+      "stableId": "playcards:group-c47b3c2062d40204c19d30c0",
+      "groupKeyHash": "c47b3c2062d40204c19d30c073d8ddad7fd9bf43935724fb4474551409e65609",
+      "title": "play card alpha test print 11",
+      "mints": [
+        "DsSSAwuKgmYQKMbG2NE1eAFiZgnRbGwKFyjeRL55tSzy"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/0.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/0",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "7b7b599d742f538c9dd6cacbc7a4d56302d2b722078d3c7236fcacd872cf77c0",
+      "metadataFile": "assets/playcards/metadata/0000/card-12.json",
+      "cardFile": "assets/playcards/cards/0000/card-12.webp",
+      "animation": null
+    },
+    {
+      "number": 13,
+      "assetNumber": 13,
+      "stableId": "playcards:group-b38cb41417e19b7512c8fe37",
+      "groupKeyHash": "b38cb41417e19b7512c8fe37496157d0d066fed60d73eb502a4299362b0aa5b4",
+      "title": "play card alpha test print 12",
+      "mints": [
+        "2eph5Gr4FHDc26HhfL7NM13ivWpeJt1zkuggER1CtQsa"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/11.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/11",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "6c18681517193291df45f1dd3c8747882ea0c2b80e34e7f894880533828c603b",
+      "metadataFile": "assets/playcards/metadata/0000/card-13.json",
+      "cardFile": "assets/playcards/cards/0000/card-13.webp",
+      "animation": null
+    },
+    {
+      "number": 14,
+      "assetNumber": 14,
+      "stableId": "playcards:group-8e8bf13c3b190e4ca4d07101",
+      "groupKeyHash": "8e8bf13c3b190e4ca4d071019bb00295ead2955c82a39a9ce2b90b648377ccc7",
+      "title": "play card alpha test print 13",
+      "mints": [
+        "4CHqbEjRij6nCLaN8YLe4fwD86AbFuSmH3taHtMrENUF"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/15.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/15",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "6030b0ec3d58faddd2a5cfaab1b5e690bf342f4597e55cf002872518955b5bd0",
+      "metadataFile": "assets/playcards/metadata/0000/card-14.json",
+      "cardFile": "assets/playcards/cards/0000/card-14.webp",
+      "animation": null
+    },
+    {
+      "number": 15,
+      "assetNumber": 15,
+      "stableId": "playcards:group-1147331bdf17055fe615361a",
+      "groupKeyHash": "1147331bdf17055fe615361a37b21926823d1ae80f47ee197db9ad5d6db84361",
+      "title": "play card alpha test print 14",
+      "mints": [
+        "DeB9uHqM6vx6hR4xjLZmXke6wWdGan2vHTG38b9v1RE7"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/12.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/12",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "8ddb0601fe051f89fa9d136358456ea282b34e4ac4807e21c74f5d882f76767c",
+      "metadataFile": "assets/playcards/metadata/0000/card-15.json",
+      "cardFile": "assets/playcards/cards/0000/card-15.webp",
+      "animation": null
+    },
+    {
+      "number": 16,
+      "assetNumber": 16,
+      "stableId": "playcards:group-e1cf4fee34d6ffbfac812c32",
+      "groupKeyHash": "e1cf4fee34d6ffbfac812c32647137e1866a057fd84f4a39bd73092b0b42694f",
+      "title": "play card alpha test print 15",
+      "mints": [
+        "EuauZmkM1iA6wTiCRkb8aaDn1Q4SmiZZ7kJvKet6wn6f"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/26.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/26",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "57292ebb455416b2a3cff67f810f34d7cc48721355c91c377eb9cbd4149fb13f",
+      "metadataFile": "assets/playcards/metadata/0000/card-16.json",
+      "cardFile": "assets/playcards/cards/0000/card-16.webp",
+      "animation": null
+    },
+    {
+      "number": 17,
+      "assetNumber": 17,
+      "stableId": "playcards:group-4d58b04d3fd768d812b5ce87",
+      "groupKeyHash": "4d58b04d3fd768d812b5ce87ea82104cfaa92745632f84ab1fe8983d95d13ec0",
+      "title": "play card alpha test print 16",
+      "mints": [
+        "3vAFneV16RMtYsawKkseZrjnUm86qCZdVRjsuu7wUKWV"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/18.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/18",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "503e0355e6c6a925ec574ce8bd614c27a8e174c32c1f7cc4a7e1c7ba900347d3",
+      "metadataFile": "assets/playcards/metadata/0000/card-17.json",
+      "cardFile": "assets/playcards/cards/0000/card-17.webp",
+      "animation": null
+    },
+    {
+      "number": 18,
+      "assetNumber": 18,
+      "stableId": "playcards:group-8d8c5718b3b1dbc698886d13",
+      "groupKeyHash": "8d8c5718b3b1dbc698886d13e60e3eecdefb66d54f3fca22a64e8f44b0136ff1",
+      "title": "play card alpha test print 17",
+      "mints": [
+        "3qojU5xy4yyvK5EoA8xG86s6qL1aZfQirxhuiW2dciRA"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/16.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/16",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "136920f5c62c51a833f8937dc7f490407a77b306733dfea551ec834afd6694f4",
+      "metadataFile": "assets/playcards/metadata/0000/card-18.json",
+      "cardFile": "assets/playcards/cards/0000/card-18.webp",
+      "animation": null
+    },
+    {
+      "number": 19,
+      "assetNumber": 19,
+      "stableId": "playcards:group-aa20541a07fa56f40869dc21",
+      "groupKeyHash": "aa20541a07fa56f40869dc217fdb47d5613d92bb2ec89e515a4df8b49f435be5",
+      "title": "play card alpha test print 18",
+      "mints": [
+        "65xCZrEkbANgDDVkV33NsXXs6hxS9FCrmETgtGpJ1dSd"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/30.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/30",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "4528ef69de04c3a5ced7867125426217112e36c1d7d2f0b7a52f48820707a277",
+      "metadataFile": "assets/playcards/metadata/0000/card-19.json",
+      "cardFile": "assets/playcards/cards/0000/card-19.webp",
+      "animation": null
+    },
+    {
+      "number": 20,
+      "assetNumber": 20,
+      "stableId": "playcards:group-2857db1c3dbbdc8a5f3ebeb8",
+      "groupKeyHash": "2857db1c3dbbdc8a5f3ebeb83f10cd91d2d31d2b8b0d24edf125435e737d669a",
+      "title": "play card alpha test print 19",
+      "mints": [
+        "4Ck8jsBrUchEnyakC6WuxSxSfzTfJVvC5SwEPUPRkq43"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/2.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/2",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "245d4e3e4f31a6c7d4854388fd9ac8b35e7ae547530f9fd73fd155bbd7aa7838",
+      "metadataFile": "assets/playcards/metadata/0000/card-20.json",
+      "cardFile": "assets/playcards/cards/0000/card-20.webp",
+      "animation": null
+    },
+    {
+      "number": 21,
+      "assetNumber": 21,
+      "stableId": "playcards:group-03ae3dd02ed2fce54d8ae9e0",
+      "groupKeyHash": "03ae3dd02ed2fce54d8ae9e03dc9387cbb2d28db2710e2f92361af8b4f00c505",
+      "title": "play card alpha test print 20",
+      "mints": [
+        "2MfVfRh1Jd2tJSoHi7jNLnj2z2p6UcT2dnkhAsLUdzXs"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/9.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/9",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "fb1216127add17cc94897ca5df3fa08eaaa8e62230cc55a10ffe9698193c4338",
+      "metadataFile": "assets/playcards/metadata/0000/card-21.json",
+      "cardFile": "assets/playcards/cards/0000/card-21.webp",
+      "animation": null
+    },
+    {
+      "number": 22,
+      "assetNumber": 22,
+      "stableId": "playcards:group-612198fc0964a344b50a1b76",
+      "groupKeyHash": "612198fc0964a344b50a1b7604a12d28311318d6614af155871723d6cc8277bb",
+      "title": "play card alpha test print 21",
+      "mints": [
+        "E742f3NACjrbYmrARAZwbosFAnigv8kB4paon3i5ULXM"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/10.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/10",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "69c665f02bc19f3075cd3cbb6d96aca6f2b1d52b4dfd3c8969b696b1db2147d9",
+      "metadataFile": "assets/playcards/metadata/0000/card-22.json",
+      "cardFile": "assets/playcards/cards/0000/card-22.webp",
+      "animation": null
+    },
+    {
+      "number": 23,
+      "assetNumber": 23,
+      "stableId": "playcards:group-b7249c0f82983c2d547421a2",
+      "groupKeyHash": "b7249c0f82983c2d547421a29ad07475d20076e24d14027b5e0a6e4bf74308dc",
+      "title": "play card alpha test print 22",
+      "mints": [
+        "6Hpag58GJC5m8pE37m4u34LESFLuejrYsM5jg7RGHXhB"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/19.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/19",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "1f2776f89568a63770b77b9897df6c51a7fb1c5ab8ef46d85763bffa2b43308b",
+      "metadataFile": "assets/playcards/metadata/0000/card-23.json",
+      "cardFile": "assets/playcards/cards/0000/card-23.webp",
+      "animation": null
+    },
+    {
+      "number": 24,
+      "assetNumber": 24,
+      "stableId": "playcards:group-02ff6291bf8006eec2d5fb46",
+      "groupKeyHash": "02ff6291bf8006eec2d5fb46ce00ce9c72d1ad407caaf4594e62165acd882320",
+      "title": "play card alpha test print 23",
+      "mints": [
+        "DPtrNPRd2SG8WYvUhioAkgtp45qYU9vsUdE7wXBrQUwh"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/17.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/17",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "3056dbebb0b077ee343ef48d6772b5c397b6889c0462ca0111aa16c0d350dfc1",
+      "metadataFile": "assets/playcards/metadata/0000/card-24.json",
+      "cardFile": "assets/playcards/cards/0000/card-24.webp",
+      "animation": null
+    },
+    {
+      "number": 25,
+      "assetNumber": 25,
+      "stableId": "playcards:group-fd8108b2f94e5004aa8370ae",
+      "groupKeyHash": "fd8108b2f94e5004aa8370ae074ca9a99a104e948b744682442acf149c29bdba",
+      "title": "play card alpha test print 24",
+      "mints": [
+        "ESyEVuTuF4sAZGWaf3R7cE1sp6fjyV39qTao2RDcMbxT"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/6.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/6",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "80810aacb80f28d0ab6b4258330bb89ca7c91d4da3d2ed6be9f0474eb7dfb83c",
+      "metadataFile": "assets/playcards/metadata/0000/card-25.json",
+      "cardFile": "assets/playcards/cards/0000/card-25.webp",
+      "animation": null
+    },
+    {
+      "number": 26,
+      "assetNumber": 26,
+      "stableId": "playcards:group-3f3822a28d1d4065ded4396b",
+      "groupKeyHash": "3f3822a28d1d4065ded4396be35e1820060fe7e6c67986791faa41958476b440",
+      "title": "play card alpha test print 25",
+      "mints": [
+        "2xxNDk8ngd1r58Sh9sybx3QsLSG3GuMPbaorbvm41SUr"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/28.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/28",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "dceecf4e5b17c655573e9696fa8fdaa5ad87d120d24561e0477b07eba9676728",
+      "metadataFile": "assets/playcards/metadata/0000/card-26.json",
+      "cardFile": "assets/playcards/cards/0000/card-26.webp",
+      "animation": null
+    },
+    {
+      "number": 27,
+      "assetNumber": 27,
+      "stableId": "playcards:group-a243752bd7512ba7f8b39c73",
+      "groupKeyHash": "a243752bd7512ba7f8b39c73d798214d1c8f0147ed5031971a8d856d52625aea",
+      "title": "play card alpha test print 26",
+      "mints": [
+        "6gvzzKGEhcriyGE1y4fP8hTFq93f419BM9kMoir3Ka5k"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/8.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/8",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "8309326b91b5ac3a20a1b0b43ede4ff8e63f96004d7541ff5baa2cf707fec768",
+      "metadataFile": "assets/playcards/metadata/0000/card-27.json",
+      "cardFile": "assets/playcards/cards/0000/card-27.webp",
+      "animation": null
+    },
+    {
+      "number": 28,
+      "assetNumber": 28,
+      "stableId": "playcards:group-665a92eade37ffdf8f297d85",
+      "groupKeyHash": "665a92eade37ffdf8f297d850a2e2218e4cda0fc5b53d6c33a070a2ef8430b7f",
+      "title": "play card alpha test print 27",
+      "mints": [
+        "DmTQDVATfQxCv6Vz6CUftkcfEzfKTVNR5wXM2QNB8r5B"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/14.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/14",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "d1cb4fdcd528048e531df81173c7cd2d82e8c6c2f97aa602ef75310381e22f14",
+      "metadataFile": "assets/playcards/metadata/0000/card-28.json",
+      "cardFile": "assets/playcards/cards/0000/card-28.webp",
+      "animation": null
+    },
+    {
+      "number": 29,
+      "assetNumber": 29,
+      "stableId": "playcards:group-a49a1fda2abb90cefc712b09",
+      "groupKeyHash": "a49a1fda2abb90cefc712b09cf9346620c8722fc25aeb7106702dc7619dc7d55",
+      "title": "play card alpha test print 28",
+      "mints": [
+        "3kfnuftbj3eQV749xoAVkhDH9Y6GbeQSUgwK79KrwhN9"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/20.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/20",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "a4f6a76b98554f3e0e3ce2e305b902fada05a3c164e01c9c9c91d6fab4cd6b71",
+      "metadataFile": "assets/playcards/metadata/0000/card-29.json",
+      "cardFile": "assets/playcards/cards/0000/card-29.webp",
+      "animation": null
+    },
+    {
+      "number": 30,
+      "assetNumber": 30,
+      "stableId": "playcards:group-0bf8f74cd49e07c4c56e37ab",
+      "groupKeyHash": "0bf8f74cd49e07c4c56e37ab3c8cd73cca918143bdfe785bd00e0e5367e32c50",
+      "title": "play card alpha test print 29",
+      "mints": [
+        "5rqvbTTzCP1U4R9WL4TwRJA7oPudqEgPZZx1q4dD3xpx"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/23.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/23",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "80c7afac93e2246a931535a1370201a028a08f9ad41b76fa99fb1aabed74d626",
+      "metadataFile": "assets/playcards/metadata/0000/card-30.json",
+      "cardFile": "assets/playcards/cards/0000/card-30.webp",
+      "animation": null
+    },
+    {
+      "number": 31,
+      "assetNumber": 31,
+      "stableId": "playcards:group-6eeb3a5fe61a47a52b3bfc61",
+      "groupKeyHash": "6eeb3a5fe61a47a52b3bfc614e5dc166e02611a3ca816e0a29cd653272b550c3",
+      "title": "play card alpha test print 30",
+      "mints": [
+        "4JMdFVuStPYikSX1kBEcjvEzA1z2suHRP2sgo9TdqSgx"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/5.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/5",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "56874774e13da6afe9bfba4b4b18d3c4500ac596174e85b4bb62f8a21dfd79db",
+      "metadataFile": "assets/playcards/metadata/0000/card-31.json",
+      "cardFile": "assets/playcards/cards/0000/card-31.webp",
+      "animation": null
+    },
+    {
+      "number": 32,
+      "assetNumber": 32,
+      "stableId": "playcards:group-49f117dc0be48af491b952c6",
+      "groupKeyHash": "49f117dc0be48af491b952c6d6e6fb8f410787203473f748587da6aed5aaeb85",
+      "title": "play card alpha test print 31",
+      "mints": [
+        "6hVJUQEsg3QeBzi37FnecyWNAQRdDphE7UqvxLGhUZCz"
+      ],
+      "sourceMetadataUri": "https://gateway.pinit.io/ipfs/QmU7cZHqpXC8MARL4vJk5x2y1YLevWkXSs2KWwCJDv6H2J/4.json",
+      "sourceImageUri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/4",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "c86751f118aeb075e8956de2b3f39ba9f0916ed9ff67616c908e79ed236dddeb",
+      "metadataFile": "assets/playcards/metadata/0000/card-32.json",
+      "cardFile": "assets/playcards/cards/0000/card-32.webp",
+      "animation": null
+    }
+  ]
+}

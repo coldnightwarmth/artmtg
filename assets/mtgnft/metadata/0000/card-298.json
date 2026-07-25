@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #297",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/297",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_forresttrain"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Game Trail"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_perc5shine"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_goofy"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "wokkyblur"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "rikka"
+    }
+  ],
+  "edition": 270,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/297"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7ad55ZnHpt7CiegnZcvb2VzjjMb73uYgTn5iBF9PHBUN"
+  ]
+}

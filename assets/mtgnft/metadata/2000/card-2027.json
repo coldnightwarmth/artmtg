@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #2026",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2026",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_peaceischeap"
+    },
+    {
+      "trait_type": "behind",
+      "value": "coins"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Monastery Swiftspear"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "spongebob"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "css"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "chaosemeralds"
+    }
+  ],
+  "edition": 1524,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2026"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4DKNXt7UpBgPFitb1udqttiqEJzjm39xBDacwBi75QQP"
+  ]
+}

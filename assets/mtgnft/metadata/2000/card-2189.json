@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #2188",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2188",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_spooky"
+    },
+    {
+      "trait_type": "behind",
+      "value": "mastersword"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_99"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Weakness"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_kaneki"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_frogsword"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_ditto"
+    }
+  ],
+  "edition": 1993,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2188"
+      }
+    ]
+  },
+  "collection_mints": [
+    "EcSeVm9U8NApvV2aNm5No5pyyAGkx2rK4JHGcwzp35qz"
+  ]
+}

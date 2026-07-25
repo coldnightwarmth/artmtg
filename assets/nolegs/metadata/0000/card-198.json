@@ -1,0 +1,19 @@
+{
+  "name": "CARD #203",
+  "description": "1 of 1 CARDS",
+  "image": "https://ipfs.io/ipfs/Qmb3NQhzrbzxBLwFKks1REqKNYgnruXGC65yhwiGEaT5AR",
+  "attributes": [],
+  "tags": [],
+  "properties": {
+    "category": "image",
+    "files": [
+      {
+        "uri": "https://ipfs.io/ipfs/Qmb3NQhzrbzxBLwFKks1REqKNYgnruXGC65yhwiGEaT5AR",
+        "type": "image/jpeg"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CSpcVQipbFEESs8DcAofnYzgf9jV2zfsVujWX4zFzcyu"
+  ]
+}

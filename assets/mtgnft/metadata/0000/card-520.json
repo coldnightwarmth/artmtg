@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #519",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/519",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_boom"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Sedge Troll"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_easysmile"
+    }
+  ],
+  "edition": 1164,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/519"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DRnRXu94RwSd58LFqUwRTpXABhjkdsPXffySrQyMxqYe"
+  ]
+}

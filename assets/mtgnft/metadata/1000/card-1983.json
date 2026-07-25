@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #1982",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1982",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_abstract2"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Salvage Drone"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_animu2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "smeerk"
+    }
+  ],
+  "edition": 982,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1982"
+      }
+    ]
+  },
+  "collection_mints": [
+    "A2Jcqa2icDDaiw4Fhx7DW7ZYr7jzTyKjy2q7rCihU4NQ"
+  ]
+}

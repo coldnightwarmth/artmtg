@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #899",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/899",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_csgostitch"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_99"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Sokenzan Renegade"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_smil"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_glocked"
+    },
+    {
+      "trait_type": "top right",
+      "value": "followyourdreams"
+    }
+  ],
+  "edition": 536,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/899"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GGxtBwPAuyCb7Z7iWW9RGmJr2iivhU2hYrEFAmMwNi65"
+  ]
+}

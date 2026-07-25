@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #814",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/814",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_drifella2"
+    },
+    {
+      "trait_type": "behind",
+      "value": "scrabble"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Scouting Trek"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_perc5shine"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_biggrin"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "poker"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "digiright"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "issac1"
+    }
+  ],
+  "edition": 1735,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/814"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6217v7DhKt7iZN4MFiUMwdcDewFgzEob22Hwpm9RQhxx"
+  ]
+}

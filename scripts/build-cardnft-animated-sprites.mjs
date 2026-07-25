@@ -104,7 +104,12 @@ async function writeAtlas({
       pages: 1,
       limitInputPixels: false,
     })
-      .resize({ width: FRAME_WIDTH, height: FRAME_HEIGHT, fit: "fill" })
+      .resize({
+        width: FRAME_WIDTH,
+        height: FRAME_HEIGHT,
+        fit: "contain",
+        background: { r: 0, g: 0, b: 0, alpha: 0 },
+      })
       .ensureAlpha()
       .raw()
       .toBuffer({ resolveWithObject: true });

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1077",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1077",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_akat"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Harvester Troll"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_mifella1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_spicymouth"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "red"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_chrono"
+    }
+  ],
+  "edition": 802,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1077"
+      }
+    ]
+  },
+  "collection_mints": [
+    "AH37kGUWQQYggkB6bXDb2UegmCLCcimRXG5FxMiprKV2"
+  ]
+}

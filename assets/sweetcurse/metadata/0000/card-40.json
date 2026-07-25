@@ -1,0 +1,86 @@
+{
+  "name": "Sweet Curse Card #40",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifcbsyznzct2xbolukslj4ud4tcbadcqkfmcrs5szjevheclqvfoq",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Bio"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Micro - Onigchi"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Uki_hajime"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Coinbox"
+    },
+    {
+      "trait_type": "Score",
+      "value": "42"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Oudmourte"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Cola"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Maskaro"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Bipedal?"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "RMascaro Cakes"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Flamp"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Btomic"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Whole Blood"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "trahison"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "on"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifcbsyznzct2xbolukslj4ud4tcbadcqkfmcrs5szjevheclqvfoq",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihm4l2vlfoeviwrts6bs7stqggq6czpqr7kytu4xxvtettl4eyi7e",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihm4l2vlfoeviwrts6bs7stqggq6czpqr7kytu4xxvtettl4eyi7e",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihm4l2vlfoeviwrts6bs7stqggq6czpqr7kytu4xxvtettl4eyi7e",
+  "collection_mints": [
+    "63Lpg63Wqk8xDh12Tu66kyywqm4whxaXubbwNENVNgM4"
+  ]
+}

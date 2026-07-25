@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #890",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/890",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_party"
+    },
+    {
+      "trait_type": "behind",
+      "value": "fire"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_154"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Runed Servitor"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_biggrin"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "fingerright"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_gbcright"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "seph"
+    }
+  ],
+  "edition": 1873,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/890"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4eCBLoAwr7xp3MDP1HY8BLfFCXnHH9TRn69hLesxN8gQ"
+  ]
+}

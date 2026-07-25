@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1976",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1976",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_afgankush"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Dramatic Rescue"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_joint"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "beretta"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "c4trigger"
+    }
+  ],
+  "edition": 739,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1976"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HQ3VAPocRMVTmV1cf8R11BRGHftYDUuknUiccBkWZ95n"
+  ]
+}

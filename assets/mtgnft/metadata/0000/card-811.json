@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #810",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/810",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "dxmdreams"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Outmaneuver"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_tiger"
+    },
+    {
+      "trait_type": "hat",
+      "value": "toymachine"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "csgokillfeed"
+    }
+  ],
+  "edition": 611,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/810"
+      }
+    ]
+  },
+  "collection_mints": [
+    "832DEoETCZbwexDDtGDAEbNWq68RKAdEQPTSzkR2VPyw"
+  ]
+}

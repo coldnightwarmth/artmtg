@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #269",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/269",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "brucewayne"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_96"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Infectious Curse"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_animu2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_frown"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "kidgoku2"
+    }
+  ],
+  "edition": 1770,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/269"
+      }
+    ]
+  },
+  "collection_mints": [
+    "C42NFKiRcGkgVpfKiJUKj6fm9Ady8CJgBzFbaCRXSiHV"
+  ]
+}

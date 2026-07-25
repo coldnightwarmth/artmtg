@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1681",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1681",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_tumblraf1"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Shivan Harvest"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "solana"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_coupleasmokes"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_goronelder"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "perscribed"
+    }
+  ],
+  "edition": 1662,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1681"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Fka4yqYzjz9gmUhh9oeqc3BjSvSxpS9kxXi8Ausyxj58"
+  ]
+}

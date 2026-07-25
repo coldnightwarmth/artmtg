@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1590",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1590",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_charazard"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Glimmering Angel"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "yelling"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_waifus"
+    }
+  ],
+  "edition": 1439,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1590"
+      }
+    ]
+  },
+  "collection_mints": [
+    "xYrU2AUqJFFsUuUt6paAAfVwqyMnPgn2xQ6ZG3fyL2r"
+  ]
+}

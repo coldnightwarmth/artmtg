@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #551",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/551",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_abstract4"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Tainted Specter"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_sidechompers"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "red"
+    },
+    {
+      "trait_type": "special top",
+      "value": "issacantibirth"
+    }
+  ],
+  "edition": 1736,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/551"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8mj84rpQVph4cWfGRApCBvVxtCxq3Qt9YyQtyPoMsN4U"
+  ]
+}

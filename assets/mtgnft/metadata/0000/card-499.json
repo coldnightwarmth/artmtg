@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #498",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/498",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "heavygrain"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_198"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Bloodstained Mire"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "forcedtowatch"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_goofy"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_marle"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_theworld"
+    }
+  ],
+  "edition": 552,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/498"
+      }
+    ]
+  },
+  "collection_mints": [
+    "FFZTLoicfxnZ7ArKxVhAC8jSBzZKqXg4vC6YoVmuDDKL"
+  ]
+}

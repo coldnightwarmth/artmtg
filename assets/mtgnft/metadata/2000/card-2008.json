@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #2007",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2007",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_batman"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_81"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Soulherder"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_joint"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "red"
+    }
+  ],
+  "edition": 364,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2007"
+      }
+    ]
+  },
+  "collection_mints": [
+    "MDnwgVVk9UT6Fpp5fkQ5jYPBvHrAWyiNXAULrRjufAD"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1759",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1759",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_attic"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_53"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Dissipate"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_perc5"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "unf"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "warrencoin"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "blessed2"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "gucci"
+    }
+  ],
+  "edition": 616,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1759"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GjMfNTjX449sny3zYdWTSYcgyALZhRb1HPq7rb7JG2Yq"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1561",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1561",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "village"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_68"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Archon of the Triumvirate"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_perc5shine"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "braces"
+    },
+    {
+      "trait_type": "top left",
+      "value": "naviholo"
+    }
+  ],
+  "edition": 2106,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1561"
+      }
+    ]
+  },
+  "collection_mints": [
+    "JoDqJbSfCi8DtXmyombTv5QFs1mCaHHdjYZQACpBN2A"
+  ]
+}

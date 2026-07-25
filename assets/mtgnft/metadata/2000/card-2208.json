@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #2207",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2207",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_tabs1"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_126"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Hurloon Wrangler"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_bluestrain"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_glitched"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "ads"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "shipped"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "signmypetition"
+    }
+  ],
+  "edition": 1694,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2207"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5RnTiTMERN5zaQXWTrzmYMo5fTKL78KA1hWvWrCVNUL3"
+  ]
+}

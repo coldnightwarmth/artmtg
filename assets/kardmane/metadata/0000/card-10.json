@@ -1,0 +1,19 @@
+{
+  "name": "Kardmane 10",
+  "symbol": "KARDMANE",
+  "description": "Kardmane by kardladystudio",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeieysjujltnebr22lkbvobiplxpamqpbdurvvagavkja4gils4if5q",
+  "attributes": [],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeieysjujltnebr22lkbvobiplxpamqpbdurvvagavkja4gils4if5q",
+        "type": "image/png"
+      }
+    ],
+    "category": "image"
+  },
+  "collection_mints": [
+    "FbLc9wYKo3r1r2y5NxCii8brH6A6zFQk8h83Y2y63Y5S"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #344",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/344",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_ac130"
+    },
+    {
+      "trait_type": "behind",
+      "value": "matrixcode"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_32"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Manriki-Gusari"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "perc5"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_comicjoker"
+    },
+    {
+      "trait_type": "hat",
+      "value": "mtg"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "playin"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "interventionfallcamo"
+    }
+  ],
+  "edition": 1146,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/344"
+      }
+    ]
+  },
+  "collection_mints": [
+    "A6YPWv7SrKiHB2CMZTbxjdkZESEETBwb5XfsfJmB1vJG"
+  ]
+}

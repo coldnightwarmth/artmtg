@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #459",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/459",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_lcartin"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Rusted Relic"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_scarred"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "point"
+    }
+  ],
+  "edition": 1115,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/459"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GA2VkzCWXWEdKrqZZjEgGrVcNkuxfA5osA6Gnv1yJhQQ"
+  ]
+}

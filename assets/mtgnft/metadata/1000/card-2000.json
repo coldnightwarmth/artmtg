@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #1999",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1999",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_nomeds"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Spell Pierce"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "animu2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "chomp"
+    }
+  ],
+  "edition": 1828,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1999"
+      }
+    ]
+  },
+  "collection_mints": [
+    "22Xzhdu7EYpEfpoJDtxqepUf8MqF5PyJj6zAQwuVY4vo"
+  ]
+}

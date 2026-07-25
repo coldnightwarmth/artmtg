@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #1945",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1945",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_heaven"
+    },
+    {
+      "trait_type": "behind",
+      "value": "bubbles"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Secretkeeper"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_teeef"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_kidgoku"
+    },
+    {
+      "trait_type": "top left",
+      "value": "angemon"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "adam"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "ATfield"
+    }
+  ],
+  "edition": 1372,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1945"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9j1h4JN86br9Lct3uMjLKdzuDuZycGBmssaaNWyPCyec"
+  ]
+}

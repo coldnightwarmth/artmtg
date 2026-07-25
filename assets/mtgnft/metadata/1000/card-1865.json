@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1864",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1864",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_silenthill"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Conqueror's Pledge"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_smeerk"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_falcoshine"
+    }
+  ],
+  "edition": 399,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1864"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5TaiSgPp53cfms4CTZyP4V8a4TwQNRi146ym4qACzju6"
+  ]
+}

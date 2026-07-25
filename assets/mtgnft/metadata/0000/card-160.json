@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #159",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/159",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_usa"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Teferi, Hero of Dominaria"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_mifella1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_scarred"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "leftpeek"
+    }
+  ],
+  "edition": 1970,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/159"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GaUsfEV8w3XsYfK4a3gWzCznxRCmanMu76PsNqjgPzgj"
+  ]
+}

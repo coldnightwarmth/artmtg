@@ -1,0 +1,82 @@
+{
+  "name": "Sweet Curse Card #130",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreifwszbtm5a5i5bycvx6wxqgokfq2xysrxqfkcf4tu2or4t4cpfava",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Noise"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Old tv"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Sonic Adventure Remaster"
+    },
+    {
+      "trait_type": "Description",
+      "value": "DustyRay2"
+    },
+    {
+      "trait_type": "Score",
+      "value": "116"
+    },
+    {
+      "trait_type": "Name",
+      "value": "MAD"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Firetag"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Jsrf2"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Daily Monsters1"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "2t_k Pot of greed"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Braxton"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "un pickled"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "saignee"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreifwszbtm5a5i5bycvx6wxqgokfq2xysrxqfkcf4tu2or4t4cpfava",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidc4r4kknaf32lqhmr4ddqqksqjbk2um5wx47d2spnlegiwdwybym",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidc4r4kknaf32lqhmr4ddqqksqjbk2um5wx47d2spnlegiwdwybym",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidc4r4kknaf32lqhmr4ddqqksqjbk2um5wx47d2spnlegiwdwybym",
+  "collection_mints": [
+    "5VoDEFvssxiwBiQ6tJZi9CzNkZLmTPvus4FfAyi45wMZ"
+  ]
+}

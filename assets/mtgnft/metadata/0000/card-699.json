@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #698",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/698",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "eboynoise"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Perfected Form"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_orc"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "ucantseeme"
+    }
+  ],
+  "edition": 1265,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/698"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5Ji2fAhvkAWfzjYoWMmNeTW2PftmWrKV7y8WsHUJwWn1"
+  ]
+}

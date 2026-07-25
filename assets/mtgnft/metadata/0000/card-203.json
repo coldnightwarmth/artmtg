@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #202",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/202",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_livingroom"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_43"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Dissipate"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_frown"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "rpg"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "bowserblick"
+    }
+  ],
+  "edition": 1323,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/202"
+      }
+    ]
+  },
+  "collection_mints": [
+    "JAxpVZY8QEHguFBhzeLFewcMu6bcpNqWnVkqeDH4fENV"
+  ]
+}

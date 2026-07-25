@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1730",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1730",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_bloodygoth"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Westvale Abbey"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "bombbaby"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_easysmile"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_foxshine"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "asukaxbox"
+    },
+    {
+      "trait_type": "top right",
+      "value": "MIHright"
+    }
+  ],
+  "edition": 2026,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1730"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4eH5JkZgqBzn8JqqwmYMAQKgjYpNkcEVkyVaxM6vno6s"
+  ]
+}

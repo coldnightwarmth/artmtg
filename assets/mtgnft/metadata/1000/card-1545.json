@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1544",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1544",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_littletests"
+    },
+    {
+      "trait_type": "behind",
+      "value": "scanlines4"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_20"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ezuri, Renegade Leader"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_smeerk"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "liquid2018"
+    }
+  ],
+  "edition": 1951,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1544"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5yeqmRq6GmpYtgc6nwXfgFBqR4M5AMtvUzpHWSm2b2Kq"
+  ]
+}

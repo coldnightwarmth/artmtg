@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #29",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/29",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_dratini"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Gnat Miser"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_blush2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_toothygrin"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "gunleft"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "superstar"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "ATfield"
+    }
+  ],
+  "edition": 2142,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/29"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GA2swNrx5meVDs2pBrEQqTrpRGFWxDYXBeKjkNH28UrK"
+  ]
+}

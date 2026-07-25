@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #474",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/474",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_charazard"
+    },
+    {
+      "trait_type": "behind",
+      "value": "fire"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Open the Armory"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_mifella2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "tongetooth"
+    },
+    {
+      "trait_type": "hat",
+      "value": "halopurple"
+    },
+    {
+      "trait_type": "top left",
+      "value": "angemon"
+    },
+    {
+      "trait_type": "top right",
+      "value": "virtusproholo"
+    }
+  ],
+  "edition": 634,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/474"
+      }
+    ]
+  },
+  "collection_mints": [
+    "APLwzxF6wRwYPjmYrs9wHj7HQDLdXpw7EWNt2MQR69ua"
+  ]
+}

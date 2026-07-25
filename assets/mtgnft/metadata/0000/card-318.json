@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #317",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/317",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_book"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_41"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Kessig Wolf"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_bigyawn"
+    },
+    {
+      "trait_type": "hat",
+      "value": "snes"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "marker"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "wat"
+    }
+  ],
+  "edition": 1091,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/317"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Hdby4Mki8oCGgXkmWzNRizaxefwYphDrTfWVTse4a6jb"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1275",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1275",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_1stedition"
+    },
+    {
+      "trait_type": "behind",
+      "value": "sprayed"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Liliana's Indignation"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_larvatar"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "gunhandleft"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_kidgohan"
+    },
+    {
+      "trait_type": "special top",
+      "value": "warhammer40k"
+    }
+  ],
+  "edition": 1276,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1275"
+      }
+    ]
+  },
+  "collection_mints": [
+    "58tGV7LDGxhhRDSgpGrAyRxJBRYf5ZhcLthhdXAtc8Fo"
+  ]
+}

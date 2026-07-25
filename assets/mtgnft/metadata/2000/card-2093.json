@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #2092",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2092",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "grayscale_toonblueeyes"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Yawgmoth's Edict"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_toxic"
+    }
+  ],
+  "edition": 1512,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2092"
+      }
+    ]
+  },
+  "collection_mints": [
+    "LgSWdvtPF1WeupehLYdFZarHv8Gw4qoJ9Sp3J9HJmUk"
+  ]
+}

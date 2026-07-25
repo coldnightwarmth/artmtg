@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #503",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/503",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_dindin"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Psychic Miasma"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_bluestrain"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_missingtooth"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "boosterbox"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "lightning"
+    }
+  ],
+  "edition": 97,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/503"
+      }
+    ]
+  },
+  "collection_mints": [
+    "626dproJ811mGPMsnP2KV31fL4267F7TR7FvPh2ybPJa"
+  ]
+}

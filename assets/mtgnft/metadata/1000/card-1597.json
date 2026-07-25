@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1596",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1596",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_killerinstint"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Locust Swarm"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "orc"
+    },
+    {
+      "trait_type": "special top",
+      "value": "nsmb2"
+    }
+  ],
+  "edition": 1975,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1596"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GP6hTAA2FxhpmGbrFZmJbKLg7FSifMLfJ9PugzNkaGtL"
+  ]
+}

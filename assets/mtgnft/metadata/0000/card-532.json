@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #531",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/531",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_plane"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_23"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Essence Flux"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_69"
+    }
+  ],
+  "edition": 1493,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/531"
+      }
+    ]
+  },
+  "collection_mints": [
+    "ELZSLiipQCXwvtUUhKunZFLaVXQUuyVEd1TmWLdWtHuF"
+  ]
+}

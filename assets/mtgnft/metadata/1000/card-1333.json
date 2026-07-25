@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1332",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1332",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_dindin"
+    },
+    {
+      "trait_type": "behind",
+      "value": "Untitled_Artwork-2"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Corpse Cur"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_perc5shine"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_kaneki"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "bud"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_shipped"
+    }
+  ],
+  "edition": 1911,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1332"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6i2R3Jy98BWZmyDbsFPG29GHCUsu1KHY5GCURk6Hwhz8"
+  ]
+}

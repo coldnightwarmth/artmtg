@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #325",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/325",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_coffeehouseart"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Cycle of Life"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_blush2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_bloodsmirk"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "chaos"
+    }
+  ],
+  "edition": 43,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/325"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HeCr3BGDerZxgjKc5ydAFVXL1Fd94dyNMTT9mf7dLT4e"
+  ]
+}

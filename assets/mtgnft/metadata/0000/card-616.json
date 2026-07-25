@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #615",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/615",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "asspizzagun"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Stitched Drake"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "facesuit1"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_saskue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "joker"
+    }
+  ],
+  "edition": 1215,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/615"
+      }
+    ]
+  },
+  "collection_mints": [
+    "B8sbFqoCGbr6E4tKS7n2aNuyV3zwzbkyFqB8ekYe7gyY"
+  ]
+}

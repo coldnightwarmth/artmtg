@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #2018",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2018",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_imnotcomingbackforawhile"
+    },
+    {
+      "trait_type": "behind",
+      "value": "terrariasword"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Howlpack Resurgence"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_yarinvert"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_goober"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "gothbaby"
+    },
+    {
+      "trait_type": "special top",
+      "value": "hellohater"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "chao"
+    }
+  ],
+  "edition": 177,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2018"
+      }
+    ]
+  },
+  "collection_mints": [
+    "12B29joKBNmHqpa3MW5G84Sy3H3xNCUR6wLabZeMcYfg"
+  ]
+}

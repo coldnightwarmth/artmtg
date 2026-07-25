@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #541",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/541",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "cockpit"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Windrider Patrol"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_mifella1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "smil"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_greymon"
+    },
+    {
+      "trait_type": "top right",
+      "value": "heavensdoor"
+    }
+  ],
+  "edition": 1578,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/541"
+      }
+    ]
+  },
+  "collection_mints": [
+    "51tZRADisGQTjuANwRSY6xsGokKsdRkkA9gS1YZTZv5X"
+  ]
+}

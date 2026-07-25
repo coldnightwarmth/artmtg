@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #311",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/311",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_alien"
+    },
+    {
+      "trait_type": "behind",
+      "value": "scanlines2"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_18"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Grow from the Ashes"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_inflate"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "gunleft"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "gothstompers"
+    }
+  ],
+  "edition": 2101,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/311"
+      }
+    ]
+  },
+  "collection_mints": [
+    "C9mDxphrv6zugRpfVUYrbs9SyAZhYW7gLHK8LdtBiryo"
+  ]
+}

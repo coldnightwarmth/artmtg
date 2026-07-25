@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1371",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1371",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_artistfacereveal"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Herald of Anafenza"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "animu3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_tiger"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "reachleft"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_savecrypto"
+    }
+  ],
+  "edition": 152,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1371"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CdLB4hqRoGFKDhgnZ3NDc3DwwwoesZBJjFXzsBfjjdVj"
+  ]
+}

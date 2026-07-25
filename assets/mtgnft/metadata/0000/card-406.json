@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #405",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/405",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_roses"
+    },
+    {
+      "trait_type": "behind",
+      "value": "dmagiciancicle"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Grisly Salvage"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "perc5shine"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_heheheh"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "bred4s"
+    }
+  ],
+  "edition": 423,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/405"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4pVGTmdiFWHpfk5HSakGBkvkdLEtKdmcruchjJPwHMg4"
+  ]
+}

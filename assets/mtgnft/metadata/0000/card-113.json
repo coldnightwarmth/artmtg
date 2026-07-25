@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #112",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/112",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_cockpit"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Selhoff Occultist"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_yelling"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "laser"
+    },
+    {
+      "trait_type": "hat",
+      "value": "gucciprint"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "slimeleft"
+    }
+  ],
+  "edition": 289,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/112"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3NdkbePcAHBwGUSogCZCnhoKdweg7LdtKG66WCuRkJjB"
+  ]
+}

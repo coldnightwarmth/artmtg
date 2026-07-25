@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #2008",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2008",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_babe"
+    },
+    {
+      "trait_type": "behind",
+      "value": "scrabble"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Barrin's Codex"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_drool"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "poker"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "rigileft"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "breaktop"
+    }
+  ],
+  "edition": 313,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2008"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9yfuEm48Fg3wsUSpnsnfaV1G5VwH36Nf6HamUTk1Zwhe"
+  ]
+}

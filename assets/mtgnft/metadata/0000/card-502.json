@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #501",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/501",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "heavenintheclouds"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Nightbird's Clutches"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_perc5shine"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_goober"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "stabbed"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_savecrypto"
+    }
+  ],
+  "edition": 1963,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/501"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5n6WqiZhrgtRpFiu4uCxNRnzsYfsyTsgp1oqcNRr1RM1"
+  ]
+}

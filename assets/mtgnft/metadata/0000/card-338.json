@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #337",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/337",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_heaven"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Nissa's Renewal"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_teeeef"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "fingerleft"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_joskue"
+    }
+  ],
+  "edition": 494,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/337"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7LcS5kehVFxShTqzvJ7AXSNA1Z8Yvx1Hd7rm7NDiG6Qy"
+  ]
+}

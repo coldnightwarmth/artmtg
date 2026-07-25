@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #304",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/304",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_cacacombs"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Chitinous Cloak"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_drool"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_golbat"
+    }
+  ],
+  "edition": 798,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/304"
+      }
+    ]
+  },
+  "collection_mints": [
+    "JBUgD1nXGyqEL1gknixBJdpLeKrV6jLhBJYWPrkdJyXE"
+  ]
+}

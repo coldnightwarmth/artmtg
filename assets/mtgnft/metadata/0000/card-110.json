@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #109",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/109",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_tabs1"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_148"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Lord of the Pit"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "smirk"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_marle"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_asukalangley"
+    },
+    {
+      "trait_type": "top right",
+      "value": "buu"
+    }
+  ],
+  "edition": 1517,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/109"
+      }
+    ]
+  },
+  "collection_mints": [
+    "AXj4oHfxELZQVY8KSEFcu93EhHtVddueu5nZjPtHPq1z"
+  ]
+}

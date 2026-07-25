@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1012",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1012",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_dragonite"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Claws of Gix"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "blood"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "x"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_kittygrin"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_kidgohan"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "chompright"
+    }
+  ],
+  "edition": 2211,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1012"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5dMVHm86aeNrnV3gTvZKW1kToehuz1HBuhrtQEuJZe4V"
+  ]
+}

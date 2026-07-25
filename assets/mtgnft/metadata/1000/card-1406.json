@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1405",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1405",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_dratini"
+    },
+    {
+      "trait_type": "behind",
+      "value": "terrariasword"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Webweaver Changeling"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_x"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_breath"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "green"
+    }
+  ],
+  "edition": 2201,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1405"
+      }
+    ]
+  },
+  "collection_mints": [
+    "AUNcVwukQVHvh9JfN8G4xqgmWq3iogTJf4Y2WhQd96t7"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #560",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/560",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "cacti"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Castle"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_rubbermouf"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "vaperight"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_chrono"
+    }
+  ],
+  "edition": 371,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/560"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3sr1qFwhyBaMtFUfoJzADNXsCvZBmm6m4WSZWktksjCF"
+  ]
+}

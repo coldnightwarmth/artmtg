@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1107",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1107",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_littletests"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Spire Barrage"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_perc5shine"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_kinkd"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "reachleft"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "slimeright"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "gayfish"
+    }
+  ],
+  "edition": 1277,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1107"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BzGCtfem5ja88H9U6f85kSuHNxBPQA9RPfrRqirj4Fdv"
+  ]
+}

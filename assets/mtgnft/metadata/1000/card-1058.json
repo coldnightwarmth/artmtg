@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1057",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1057",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "charazard"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Beastcaller Savant"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_melty"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "thumbsup"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "markedup"
+    }
+  ],
+  "edition": 1120,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1057"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DvCD9cTwGUfmSMyBdEwTmua8DZhMvZDBNKVXX4hz5oQS"
+  ]
+}

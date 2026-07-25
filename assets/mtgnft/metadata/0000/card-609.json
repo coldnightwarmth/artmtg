@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #608",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/608",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_egirls"
+    },
+    {
+      "trait_type": "behind",
+      "value": "scanlines2"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Needle Spires"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_spongebob"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "black"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_hooh"
+    },
+    {
+      "trait_type": "special top",
+      "value": "nge"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "issac1"
+    }
+  ],
+  "edition": 157,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/608"
+      }
+    ]
+  },
+  "collection_mints": [
+    "FySjWmiPQRGiPxxH3K2RAHFmvTrEETLR5bPGdbwWwjod"
+  ]
+}

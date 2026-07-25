@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #1122",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1122",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_cockpit"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Cathodion"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "coupleasmokes"
+    }
+  ],
+  "edition": 876,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1122"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5hAeBaAWqpBMJYtUhcpwWnewDgAyMoGvYx6o1pLwKxf8"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1751",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1751",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_nomeds"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Cheatyface"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_goofy"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_blueyes"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "smush"
+    }
+  ],
+  "edition": 589,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1751"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9kukPZDRi6kyJnSGuExZc5b8kxLQHEP8Bg7rL3hcSK4F"
+  ]
+}

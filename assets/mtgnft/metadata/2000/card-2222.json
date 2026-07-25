@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #2221",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2221",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_nomeds"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Contamination"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "mifella2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_cheeky"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "rightpeek"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_buutoy"
+    }
+  ],
+  "edition": 171,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2221"
+      }
+    ]
+  },
+  "collection_mints": [
+    "89JvukFm1cE3TZGjZ66RyK7hTN88phwzTgJqKu8m8arz"
+  ]
+}

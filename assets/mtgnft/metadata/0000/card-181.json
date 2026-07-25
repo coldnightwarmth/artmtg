@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #180",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/180",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_deathnote"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Fists of Flame"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "glockchain"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "relaxed"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "sonic"
+    }
+  ],
+  "edition": 1825,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/180"
+      }
+    ]
+  },
+  "collection_mints": [
+    "FfWmc3Zp85uchQFsE67KNUZ2uGd3G7o3nY2MmGQxa5dp"
+  ]
+}

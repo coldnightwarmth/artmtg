@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1336",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1336",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_adhd"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Avacynian Missionaries"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "greenlady"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_confused"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_theworld"
+    },
+    {
+      "trait_type": "special top",
+      "value": "issacantibirth"
+    }
+  ],
+  "edition": 403,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1336"
+      }
+    ]
+  },
+  "collection_mints": [
+    "F75WKoCzcMcgfjX4NM1CsHKc2jthFA2mdXnHpxeH4t5q"
+  ]
+}

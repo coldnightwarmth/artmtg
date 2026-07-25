@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #1512",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1512",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_animespace"
+    },
+    {
+      "trait_type": "behind",
+      "value": "bustersword"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Kozilek's Sentinel"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_fangs"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "reachright"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "wokky"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "rikka"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "pumpswag"
+    }
+  ],
+  "edition": 1837,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1512"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CgwFQmf5ix3CtcDVM5rBH5mY8DcdgpAZGoUKD1kwJnaQ"
+  ]
+}

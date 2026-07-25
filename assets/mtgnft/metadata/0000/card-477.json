@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #476",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/476",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_colage"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Reign of Terror"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "solana"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_cartoonjoker"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "slimeleft"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "1thousandnuts"
+    }
+  ],
+  "edition": 1525,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/476"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9Jja9kscnakjzseQWdSMhn7h36AB1fmZdGwJhL5vK2KE"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "card",
+  "description": "gremlins2official",
+  "seller_fee_basis_points": 500,
+  "image": "https://turbo-gateway.com/dfoGbRHJ6bF0oK4sHqSpHFXvOLI74NeyXS7hVhgRd0M?ext=png",
+  "properties": {
+    "files": [
+      {
+        "uri": "https://turbo-gateway.com/dfoGbRHJ6bF0oK4sHqSpHFXvOLI74NeyXS7hVhgRd0M?ext=png",
+        "type": "image/png"
+      }
+    ],
+    "creators": [
+      {
+        "address": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+        "share": 100,
+        "verified": true
+      }
+    ]
+  },
+  "attributes": [],
+  "collection_mints": [
+    "5iKgcv4cHJ5fzDHiNVXkhKEVyjvPkkYrwNEFoBUBRekW",
+    "6BZABT3zmFbKd6ro9zxqG1PYKVDi5x8VwivM7gRVNQNn",
+    "ByXAyPem3U59QSt7quNnv62xHGt3Dke9PWYzcxe2oBLP",
+    "Ez9mxe5UVHJTZn5ZbBV6EtLeYwWxF2UpU4cNGpYu3uhx",
+    "FixaXc3EkKUnYDFfDLTaq58BQ3JbphyzRbzWehE6SRLd",
+    "sX9uVEoGGaMQ45GDGd73diqK8Hj9MR3UyusA6E7eCnD"
+  ]
+}

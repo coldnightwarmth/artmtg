@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #903",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/903",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_burningmonk"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_112"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Artisan of Kozilek"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_perc5"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_mifellasmirk"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "kuromi2"
+    }
+  ],
+  "edition": 885,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/903"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GSFiPjNUnZMjYhVFfbwVZ1y7qjYp83r3QTgSLDpL8oQy"
+  ]
+}

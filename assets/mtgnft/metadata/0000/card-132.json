@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #131",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/131",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_sciencelab"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Guard Duty"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_upset"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "fingerleft"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mariot"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "scribble"
+    }
+  ],
+  "edition": 1690,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/131"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GTAeer3LLuduCwkXYCy3Js2a86KRvXDgtewZW9wof7KL"
+  ]
+}

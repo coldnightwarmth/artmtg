@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1031",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1031",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_burningmonk"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Kazarov, Sengir Pureblood"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_troll"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "swagkey"
+    },
+    {
+      "trait_type": "top left",
+      "value": "postal3"
+    }
+  ],
+  "edition": 2091,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1031"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3XndB6XkBCn7DcnEvudBG6Hw5fP3cxindBto321z6M8r"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1588",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1588",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_redmoonsky"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_51"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Coralhelm Guide"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_mifella1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_upset"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "theGodfellaZ"
+    },
+    {
+      "trait_type": "special top",
+      "value": "lugiatop"
+    }
+  ],
+  "edition": 1666,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1588"
+      }
+    ]
+  },
+  "collection_mints": [
+    "AnJj7EYpgjeBeFbH2aeKhT8qcdMdTvBDu9jWNNift1YF"
+  ]
+}

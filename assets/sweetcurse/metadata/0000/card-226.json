@@ -1,0 +1,82 @@
+{
+  "name": "Sweet Curse Card #226",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreidbwxt6hwbeps7fcr5fsunk4yewd6tg4whmoknqrjqdkclb6hh3fa",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Noise"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Old tv"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Kimimaro"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Yugiho"
+    },
+    {
+      "trait_type": "Score",
+      "value": "Dolphin"
+    },
+    {
+      "trait_type": "Name",
+      "value": "xxx"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Sky"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Churrozard"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Jizachew"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Splash"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "The blitz"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Where am i"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "saignee"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreidbwxt6hwbeps7fcr5fsunk4yewd6tg4whmoknqrjqdkclb6hh3fa",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifya532f54dx6cqnjao2d3vwvaitbjuesvfebfotiqng5rffcl5ey",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifya532f54dx6cqnjao2d3vwvaitbjuesvfebfotiqng5rffcl5ey",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifya532f54dx6cqnjao2d3vwvaitbjuesvfebfotiqng5rffcl5ey",
+  "collection_mints": [
+    "4erL3TmMDi1yWq43fYU6hwHsb6M692wzYfpDFmiEDz7R"
+  ]
+}

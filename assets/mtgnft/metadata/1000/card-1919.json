@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #1918",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1918",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_server"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Kozilek's Translator"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_widedark"
+    }
+  ],
+  "edition": 214,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1918"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4qe9bhNSrXrDK8Bmg7nCBX3xQG7DYQKTuBdmuDt3rHrn"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #544",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/544",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_bladerunner"
+    },
+    {
+      "trait_type": "behind",
+      "value": "Untitled_Artwork-2"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Twisted Reflection"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_animu2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_grr"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "stabbed"
+    },
+    {
+      "trait_type": "special top",
+      "value": "mariopaint1"
+    }
+  ],
+  "edition": 590,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/544"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7sTGDEATqF8F1RpuMgps7w4kZqEatjAiSmkoj7wMdGk7"
+  ]
+}

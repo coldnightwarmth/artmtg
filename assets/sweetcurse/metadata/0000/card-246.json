@@ -1,0 +1,90 @@
+{
+  "name": "Sweet Curse Card #246",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreiawyrgcxesrt47b32mz5aykwzx5rn56o3cbqjr5ago5tq7nerj2rq",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Noise"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Kraden"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Kimimaro"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Siamese brothers"
+    },
+    {
+      "trait_type": "Score",
+      "value": "Recalled"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Tokyo drift"
+    },
+    {
+      "trait_type": "Signature",
+      "value": "Erz4"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Firetag"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Fypi"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Splash"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Maslow"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Christion cross"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "bbl at home"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Bep"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "rust"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreiawyrgcxesrt47b32mz5aykwzx5rn56o3cbqjr5ago5tq7nerj2rq",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeif4kywaouv6cipm6dfhmvchkt2dyx7m5kecn6foltzf5w2wm2uqra",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeif4kywaouv6cipm6dfhmvchkt2dyx7m5kecn6foltzf5w2wm2uqra",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeif4kywaouv6cipm6dfhmvchkt2dyx7m5kecn6foltzf5w2wm2uqra",
+  "collection_mints": [
+    "5mrm69Azv2nrsg13sEHcdCpuQJ8fCdZPuE331uHCJCEm"
+  ]
+}

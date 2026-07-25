@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #582",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/582",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "akat"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_15"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Clutch of Currents"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_greenlady"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_joker"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "liquid2018"
+    }
+  ],
+  "edition": 1841,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/582"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DJn8ABKu579W9zRMKEJS1ctLpHsBfFnd6Tp2rfp2uZig"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #4",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/4",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_egirlnoise"
+    },
+    {
+      "trait_type": "behind",
+      "value": "bubbles"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_98"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Mist Intruder"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_widedark"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "axe"
+    },
+    {
+      "trait_type": "special top",
+      "value": "drain"
+    }
+  ],
+  "edition": 217,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/4"
+      }
+    ]
+  },
+  "collection_mints": [
+    "FWrmBn4ffzAdMr7HZKtF95SyJj5qRtvmK4qmNvDG6BTZ"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1720",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1720",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_abstract1"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_37"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Bloodstone Cameo"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_smeerk"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "goronelder"
+    }
+  ],
+  "edition": 1486,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1720"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6c1FwgixvZihKWfbVL768gytH7YPVU6MxugjpGMEkVJn"
+  ]
+}

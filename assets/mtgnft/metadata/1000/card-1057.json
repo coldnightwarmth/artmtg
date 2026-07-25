@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1056",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1056",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "grayscale_uni"
+    },
+    {
+      "trait_type": "behind",
+      "value": "godsword"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_163"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Holy Strength"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_mifella2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_kidbuumouth"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_rikka"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "markedup"
+    }
+  ],
+  "edition": 1895,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1056"
+      }
+    ]
+  },
+  "collection_mints": [
+    "FHa7k3sdECt6wfw5E29CfQuSEpGztSpRa1oaxSAiwo7"
+  ]
+}

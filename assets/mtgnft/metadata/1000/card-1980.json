@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1979",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1979",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_silenthill"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_28"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Oracle of Mul Daya"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_teeeef"
+    },
+    {
+      "trait_type": "hat",
+      "value": "gripthefitted"
+    }
+  ],
+  "edition": 294,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1979"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BHKqqNK63Qm72sHBtiNS6wSqaE2VfJ29bGeW9F3U21Rz"
+  ]
+}

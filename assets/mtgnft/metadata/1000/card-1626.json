@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1625",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1625",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_nam"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_3"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Sicken"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_goldgrillz"
+    }
+  ],
+  "edition": 1900,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1625"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9Lp9rNMa1mj6psUUreY1qC1nni8CFnPByghrETjKFdYv"
+  ]
+}

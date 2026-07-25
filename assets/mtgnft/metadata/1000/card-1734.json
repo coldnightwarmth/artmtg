@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1733",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1733",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_paradise"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_140"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Springbloom Druid"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_comicjoker"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "shootah"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "csshoota"
+    }
+  ],
+  "edition": 2198,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1733"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4DWNFAPEEViLBpfaVCzzibR1s8pvqLu5v5qXoVr6FTMp"
+  ]
+}

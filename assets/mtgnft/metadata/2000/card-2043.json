@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #2042",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2042",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "peachscastle"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Prized Amalgam"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "teeef"
+    },
+    {
+      "trait_type": "hat",
+      "value": "fucklife730"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "gent"
+    },
+    {
+      "trait_type": "top right",
+      "value": "followyourdreams"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "asspizza2022"
+    }
+  ],
+  "edition": 594,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2042"
+      }
+    ]
+  },
+  "collection_mints": [
+    "AqEaTQngabuoZ3Qos5wPVrs2Jb4ZhJPRJWzYE7tXKwC2"
+  ]
+}

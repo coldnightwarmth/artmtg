@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #179",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/179",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_cartelbust1"
+    },
+    {
+      "trait_type": "behind",
+      "value": "terrariasword"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_185"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Virulent Swipe"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_nar"
+    },
+    {
+      "trait_type": "hat",
+      "value": "fucklife730"
+    }
+  ],
+  "edition": 1482,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/179"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DoHQKQbFpH58mappWBVoSBbvQS5HtmMqkBVMt9qeaxHw"
+  ]
+}

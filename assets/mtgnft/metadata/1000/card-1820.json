@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1819",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1819",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "cartelbust1"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Butcher's Cleaver"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_tiger"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_waifus"
+    },
+    {
+      "trait_type": "special top",
+      "value": "nsmb2"
+    }
+  ],
+  "edition": 1899,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1819"
+      }
+    ]
+  },
+  "collection_mints": [
+    "AFKWppBE9XQTUDKrk8dmBij7LqzYEVQwB7hBAyp1XrXv"
+  ]
+}

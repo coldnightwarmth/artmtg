@@ -1,0 +1,82 @@
+{
+  "name": "Sweet Curse Card #15",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreifko3gui4tfajdob3pcpaakxead3s7kf7cb34cekedgg7rua3xori",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Door"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Rooms by the sea"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Dammit gengar2"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Mailart5"
+    },
+    {
+      "trait_type": "Score",
+      "value": "???????????????????"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Stained glass"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "R. Mascaro3"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "2t_k Pot of greed"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Windows_2006"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "50cent"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Pov lifestyle"
+    },
+    {
+      "trait_type": "Erzart",
+      "value": "GANGERRE"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "ash"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreifko3gui4tfajdob3pcpaakxead3s7kf7cb34cekedgg7rua3xori",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeib4e6r6wy4nck7amcfuk6s2hjvtrdcmlcskixijxuuijbzwchqvr4",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeib4e6r6wy4nck7amcfuk6s2hjvtrdcmlcskixijxuuijbzwchqvr4",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeib4e6r6wy4nck7amcfuk6s2hjvtrdcmlcskixijxuuijbzwchqvr4",
+  "collection_mints": [
+    "2xf35gkXjLN6WXNhJuf8ixdhxx1n84LYfoBdUDRU4kvr"
+  ]
+}

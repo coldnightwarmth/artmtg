@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #710",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/710",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "hellcastle"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Lavastep Raider"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "chains"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_mifella1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_animy1"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_legobuu"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_uwuleft"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "ATfield"
+    }
+  ],
+  "edition": 1969,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/710"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8VFcUtM3HomzRLQEZgo96u68svtTzFxoKcPCNqzaoURk"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #742",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/742",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_dragonite"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_130"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Azorius Guildgate"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_animu3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_ahhhhhh"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_magic"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "misalute"
+    }
+  ],
+  "edition": 156,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/742"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3WX3vgwVcA7BLNL6323m7pKsTkTPSy5yw9hyZeNbyEeA"
+  ]
+}

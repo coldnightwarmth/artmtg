@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #754",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/754",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "spawner"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_4"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Aura Mutation"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_grandma"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_screm"
+    },
+    {
+      "trait_type": "special top",
+      "value": "majorasmoon"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "dualdeag"
+    }
+  ],
+  "edition": 1213,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/754"
+      }
+    ]
+  },
+  "collection_mints": [
+    "ENx3tfDGLJLQmFfxZQoShGGZf9DupoKSDsinocbGhBQM"
+  ]
+}

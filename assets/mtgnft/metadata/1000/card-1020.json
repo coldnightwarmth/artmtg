@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1019",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1019",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_peaceischeap"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_93"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Meandering River"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "solana"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_animy1"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_rocksaltright"
+    },
+    {
+      "trait_type": "top right",
+      "value": "kuromitopright"
+    }
+  ],
+  "edition": 279,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1019"
+      }
+    ]
+  },
+  "collection_mints": [
+    "ALZWY7reG459JYRyjuyiggBuH4qVZjTZBKGoJ3TCeTCz"
+  ]
+}

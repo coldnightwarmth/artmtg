@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #83",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/83",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_enterthematrix"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ogre Jailbreaker"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_mifella1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_relaxed"
+    },
+    {
+      "trait_type": "hat",
+      "value": "snes"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "rpg"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_scout"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "swagcod"
+    }
+  ],
+  "edition": 908,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/83"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Cjh8dhMKXfpzMgpTsF3YqCr8jt29wwHSyDtB7jRT2kXm"
+  ]
+}

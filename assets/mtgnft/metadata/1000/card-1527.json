@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1526",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1526",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_asspizzagun"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_141"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Twiddle"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "devilbaby"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_goldgrillz"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "bowserblick"
+    }
+  ],
+  "edition": 1286,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1526"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HWmD5RAEkEizhifjT6XXUa6C81aijSAzAvYJsV2RnMCi"
+  ]
+}

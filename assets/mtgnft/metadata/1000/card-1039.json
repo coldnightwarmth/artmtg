@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1038",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1038",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "asspizza"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Goblin Patrol"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_greenlady"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_daurk"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "zaworldo"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "swag"
+    }
+  ],
+  "edition": 549,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1038"
+      }
+    ]
+  },
+  "collection_mints": [
+    "A4GcaCYUqcyCNiEnLCbdsTXwoj5JKQ4WHuQrCP2jeqsi"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #714",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/714",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_sciencelab"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_90"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Mox Opal"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "greenlady"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_moneypls"
+    },
+    {
+      "trait_type": "top right",
+      "value": "ibpholo"
+    },
+    {
+      "trait_type": "special top",
+      "value": "nge"
+    }
+  ],
+  "edition": 2078,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/714"
+      }
+    ]
+  },
+  "collection_mints": [
+    "2q2bKmwEGMsKVA2FHY4k2z9b4CDUxYdtuZv5tGjW6zCq"
+  ]
+}

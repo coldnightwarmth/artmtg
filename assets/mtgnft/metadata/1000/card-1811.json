@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1810",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1810",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_domeearth"
+    },
+    {
+      "trait_type": "behind",
+      "value": "dmagiciancicle"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Chicken Egg"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_blush2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_grr"
+    }
+  ],
+  "edition": 1783,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1810"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4Fo4CssdEJMu3n37pjSxTvxPx7aw5D7SCUpVis9cYvE2"
+  ]
+}

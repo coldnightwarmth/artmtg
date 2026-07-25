@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #117",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/117",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_chrischanmewtwo"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_57"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Healing Grace"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_teef"
+    }
+  ],
+  "edition": 1555,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/117"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8HTLMduc56RtsxuW6CJ3kLHq3bVbKvaRLD6WZqQ65gEz"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #124",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/124",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "guntomyhead"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_182"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Two-Headed Giant of Foriys"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "swagtoshinakamoto"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_drools"
+    }
+  ],
+  "edition": 1001,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/124"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4pA4ep8B5fJ69fhc6BrQ9vXrj2zZamzFgKYRqFMcAKqe"
+  ]
+}

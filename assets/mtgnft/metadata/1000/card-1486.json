@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1485",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1485",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_animeDS"
+    },
+    {
+      "trait_type": "behind",
+      "value": "wave"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Skittering Invasion"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_ahhhhhh"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "shipped"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "megaman"
+    }
+  ],
+  "edition": 105,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1485"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3bnadzoRE2ujb6htMDiCpri7DGqoVUQbJMDzQNm6Hp76"
+  ]
+}

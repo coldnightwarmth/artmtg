@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1549",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1549",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "gothdust"
+    },
+    {
+      "trait_type": "behind",
+      "value": "blueflames"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Soulherder"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "facesuit1"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "mifella2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_paulwall"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "vaperight"
+    }
+  ],
+  "edition": 1034,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1549"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4ogFx9YdYH1Lw1vXSvRh98JDRtpUio5EEt9tjBRTH6SF"
+  ]
+}

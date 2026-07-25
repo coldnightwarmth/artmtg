@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #2155",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2155",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_peachscastle"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Mana Flare"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_drool"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "gunhandright"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "ucantseeme"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "ps2"
+    }
+  ],
+  "edition": 2180,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2155"
+      }
+    ]
+  },
+  "collection_mints": [
+    "JDUYUCS67BDQyofAggK7cgUCt6TagcRzvnhUzcD8NFUB"
+  ]
+}

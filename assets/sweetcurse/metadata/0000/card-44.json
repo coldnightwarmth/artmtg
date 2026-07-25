@@ -1,0 +1,78 @@
+{
+  "name": "Sweet Curse Card #44",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreigw6dhovj54pf5rohcbz5mdidrxrg7uwdg7tuxxdmdzd2mubmp7dq",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "A.R.T."
+    },
+    {
+      "trait_type": "Background",
+      "value": "Der wanderer über dem nebelmeer"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Uki_hajime"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Maquinamon"
+    },
+    {
+      "trait_type": "Name",
+      "value": "30-30"
+    },
+    {
+      "trait_type": "Base",
+      "value": "fck"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "PP Girls"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Bike Mage"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Winamp2"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Whole Blood"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "un pickled"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "love"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreigw6dhovj54pf5rohcbz5mdidrxrg7uwdg7tuxxdmdzd2mubmp7dq",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigx6wh744g2kimel3ljc4oz5wpdsdhvfv6knvqz6lc7oc6okbgvtm",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigx6wh744g2kimel3ljc4oz5wpdsdhvfv6knvqz6lc7oc6okbgvtm",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigx6wh744g2kimel3ljc4oz5wpdsdhvfv6knvqz6lc7oc6okbgvtm",
+  "collection_mints": [
+    "GE1vrf3BzoJ9bwMYphK5vvBxrRfb4XAKyGEqRmrMYWN5"
+  ]
+}

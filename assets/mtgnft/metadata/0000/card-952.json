@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #951",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/951",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_abstract1"
+    },
+    {
+      "trait_type": "behind",
+      "value": "swirledtv"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Flameblade Angel"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "inflate"
+    }
+  ],
+  "edition": 1853,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/951"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6kM9aZacdrgvzAfRRwLAkDjzVSB4kiJ8R5RC9oWhW6TK"
+  ]
+}

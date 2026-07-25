@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #2079",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2079",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_cockpit"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_150"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Rotwidow Pack"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_confused"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "black"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "gunright"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "stabbed"
+    },
+    {
+      "trait_type": "top right",
+      "value": "kuromitopright"
+    }
+  ],
+  "edition": 1551,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2079"
+      }
+    ]
+  },
+  "collection_mints": [
+    "H4vRcpEEXVsjSNFWxgBycvv22dCzLc2XxqgFUU4GsMvd"
+  ]
+}

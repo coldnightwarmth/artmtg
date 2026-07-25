@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #430",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/430",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_lcartin"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_27"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Rampaging Baloths"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "cursed"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "green"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "thps"
+    }
+  ],
+  "edition": 547,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/430"
+      }
+    ]
+  },
+  "collection_mints": [
+    "716wu6FeKonRT4tuSA7GmGytWi9TjXtRsqfyr7K7CQsh"
+  ]
+}

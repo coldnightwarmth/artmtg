@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1261",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1261",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_paradise"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Drain Life"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_animu3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_unf"
+    },
+    {
+      "trait_type": "hat",
+      "value": "edhardy"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "gunhandright"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "luna"
+    },
+    {
+      "trait_type": "special top",
+      "value": "drain"
+    }
+  ],
+  "edition": 1874,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1261"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9Ay6dChnCjrH3F5RWVnhsqKyWynDg4gJgR6xKAub5LBF"
+  ]
+}

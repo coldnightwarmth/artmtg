@@ -1,0 +1,58 @@
+{
+  "name": "MTG CARD #462",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/462",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_rapture"
+    },
+    {
+      "trait_type": "behind",
+      "value": "daorcs"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_191"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Pack Guardian"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_biggrin"
+    },
+    {
+      "trait_type": "hat",
+      "value": "asspizzajackolantern"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "gunhandleft"
+    },
+    {
+      "trait_type": "special top",
+      "value": "nsmb"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "littlebigplanet"
+    }
+  ],
+  "edition": 2,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/462"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6LujfVWrybudA5W1xWW9h8YoxNHjXHsfaT7QrVhTecMw"
+  ]
+}

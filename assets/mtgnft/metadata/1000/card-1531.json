@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1530",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1530",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_pkmnbugluv"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_151"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Fallow Earth"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_tounge"
+    }
+  ],
+  "edition": 6,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1530"
+      }
+    ]
+  },
+  "collection_mints": [
+    "sZrN9GFr5ZXJQQ8WAaCHC4jGCHnmizhF89enxGFPBNX"
+  ]
+}

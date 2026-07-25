@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #521",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/521",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_killerinstint"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_183"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Zanikev Locust"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_jimmy"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_beefella"
+    }
+  ],
+  "edition": 385,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/521"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9e7c652F6m89RcJTWJunH2xnLXtGR7TesAQCajSqfVqB"
+  ]
+}

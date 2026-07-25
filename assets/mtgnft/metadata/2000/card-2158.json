@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #2157",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2157",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_tokyo"
+    },
+    {
+      "trait_type": "behind",
+      "value": "gutsdragonslayer"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Palisade Giant"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_smile"
+    },
+    {
+      "trait_type": "hat",
+      "value": "sexy"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "reachright"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "vapeleft"
+    }
+  ],
+  "edition": 1284,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2157"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BcUkEPYXkTDPqUzGZJzU7fwpZzDE7LP2LGHtBYabGNLC"
+  ]
+}

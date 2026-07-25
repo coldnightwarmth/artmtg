@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1603",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1603",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_gnometown"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Rampant Elephant"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_moneypls"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_mariostaticball"
+    }
+  ],
+  "edition": 25,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1603"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7tDrfgHa4YQuE78xfc4tewqT17c9VvFJGHrQAhyZR1np"
+  ]
+}

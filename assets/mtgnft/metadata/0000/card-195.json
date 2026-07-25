@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #194",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/194",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_tokyo"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_183"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Blacker Lotus"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_kinkd"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "n64box"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "nessright"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "godemoeror"
+    }
+  ],
+  "edition": 1004,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/194"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9FnxM6DEgTempULwWNeJS1ZhebnKx3K1LnGe7uDf9dgh"
+  ]
+}

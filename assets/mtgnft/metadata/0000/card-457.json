@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #456",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/456",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_artistfacereveal"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Chimeric Mass"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_wavey"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_mask"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_digiright"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "bestgirlmisato"
+    },
+    {
+      "trait_type": "top left",
+      "value": "postal3"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "misalute"
+    }
+  ],
+  "edition": 1918,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/456"
+      }
+    ]
+  },
+  "collection_mints": [
+    "2bMqXQcQZJrrs8ZEHRGEx6WC3r1875EEm9d6EdJ3LeWf"
+  ]
+}

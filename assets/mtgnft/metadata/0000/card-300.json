@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #299",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/299",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_mysterybox"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_190"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Grunn, the Lonely King"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "yarinvert"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "neverbrush"
+    },
+    {
+      "trait_type": "hat",
+      "value": "guccibiglogo"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "shootah"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "dogglock"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "scribble"
+    }
+  ],
+  "edition": 651,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/299"
+      }
+    ]
+  },
+  "collection_mints": [
+    "77PZwt2eAfFUdQdJ4enYTQDP3LF7ud5dMPoHAQYBdQ2h"
+  ]
+}

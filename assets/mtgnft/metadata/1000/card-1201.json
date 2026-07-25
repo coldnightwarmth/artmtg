@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1200",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1200",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_ac130"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Voldaren Duelist"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "grr"
+    },
+    {
+      "trait_type": "special top",
+      "value": "nsmb"
+    }
+  ],
+  "edition": 1025,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1200"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BCfWQXAyyXKsMwm3RdJjYt6ooGi518viKK3CGZdj7g8B"
+  ]
+}

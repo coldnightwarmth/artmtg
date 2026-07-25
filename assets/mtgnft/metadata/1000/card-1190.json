@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1189",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1189",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_abstract3"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_25"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Tamiyo's Journal [922]"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_mifella3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_grr"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "laser"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_kidgohan"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "foxpose"
+    }
+  ],
+  "edition": 1043,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1189"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4eEqTj7kTmuZXnrHLWTwrNrDSYUSKK5xgL6e9WwRJZy6"
+  ]
+}

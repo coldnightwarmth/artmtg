@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1257",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1257",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_egirlnoise2"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Slayer's Plate"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_widesmirk"
+    },
+    {
+      "trait_type": "hat",
+      "value": "asspizzajackolantern"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "dadjotaro"
+    }
+  ],
+  "edition": 1301,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1257"
+      }
+    ]
+  },
+  "collection_mints": [
+    "73x5aZ3Pk5R4Spv9KxShu97udt468Y3JvciKq2h1L9fh"
+  ]
+}

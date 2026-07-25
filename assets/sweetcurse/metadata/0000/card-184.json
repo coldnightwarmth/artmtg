@@ -1,0 +1,74 @@
+{
+  "name": "Sweet Curse Card #184",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreib4grrkq56axytpa6e2vqoj7kx63gargbr35ri3pcn52l2kk34q5a",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Bio"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Micro - Onigchi"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Joancornella dead"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Gengars 3D"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Payme"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Zabiwa"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Imakuni"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Windows_2005"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Flamp"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Real mfer"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "circuit"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreib4grrkq56axytpa6e2vqoj7kx63gargbr35ri3pcn52l2kk34q5a",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifvpzkasaloeosyyhbx5z5vhr2spd2cv3xpneiclsqo2hydcm65di",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifvpzkasaloeosyyhbx5z5vhr2spd2cv3xpneiclsqo2hydcm65di",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifvpzkasaloeosyyhbx5z5vhr2spd2cv3xpneiclsqo2hydcm65di",
+  "collection_mints": [
+    "5x7dnaLXxS8dc8ThgYUsQkbAQPNha1naYcGpXUhx5obr"
+  ]
+}

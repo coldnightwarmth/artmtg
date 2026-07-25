@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #155",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/155",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_cycleoflife"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Welkin Tern"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_kanye"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "failure"
+    }
+  ],
+  "edition": 462,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/155"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DQoAYZnDcxcUSzrGwCg6kGxkXYwvWQUT2cKnLJQLG1Ht"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "name": "Sweet Curse Card #263",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreiaimoosnel4fn56gvm35taw2vasifevd3morpxz3ofgqtfsh2xvam",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Trap"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Friends"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Dammit gengar"
+    },
+    {
+      "trait_type": "Description",
+      "value": "DustyRay"
+    },
+    {
+      "trait_type": "Score",
+      "value": "Milk score"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Gay"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Lumas"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Churrozard"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Fypi"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "2t_k Porygon"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Tupac"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Without me"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "rust"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreiaimoosnel4fn56gvm35taw2vasifevd3morpxz3ofgqtfsh2xvam",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiauod362ux5ivpniyfvwqplfezyopmk6z7sexwccutipjra6bs36i",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiauod362ux5ivpniyfvwqplfezyopmk6z7sexwccutipjra6bs36i",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiauod362ux5ivpniyfvwqplfezyopmk6z7sexwccutipjra6bs36i",
+  "collection_mints": [
+    "3rJhu8mQaVUkiXB6UiHeTqdn9ffeUfV5LKE7bKUZVre9"
+  ]
+}

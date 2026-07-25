@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #2173",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2173",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_everythingwillbeyours"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Myr Reservoir"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "redblur"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_mask"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "black"
+    }
+  ],
+  "edition": 1647,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2173"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8AodXkfCn69fMVawBSyRa3wjPQnCh39QdYQGTLMLh4tH"
+  ]
+}

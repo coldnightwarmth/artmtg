@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #973",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/973",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "collider"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Thran Turbine"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "drifellateeth"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "asspizza2022"
+    }
+  ],
+  "edition": 1937,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/973"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7M1vtYozTWn8ECkQRG3m1qfCP81peNf4BtZue86NbMeb"
+  ]
+}

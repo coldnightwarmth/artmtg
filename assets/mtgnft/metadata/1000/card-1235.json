@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1234",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1234",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_colage"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Trusted Advisor"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_69"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_homerun"
+    }
+  ],
+  "edition": 553,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1234"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3TasZBqSHQvwC2TWEY4wNg1pVVAK5cTN1dNE1hGZRxFK"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #2043",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2043",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_heaven"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Goblin Chainwhirler"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "tounge"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "draw"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "cod4"
+    }
+  ],
+  "edition": 1973,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2043"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9caggFrwVQP6eb9m4Tj5h1YbrM1TBnrcXNuAZQa8CBv7"
+  ]
+}

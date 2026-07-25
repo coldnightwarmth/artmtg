@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1673",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1673",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_heaven"
+    },
+    {
+      "trait_type": "behind",
+      "value": "majoramoonbehind"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ravenous Skirge"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_animy1"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "rpg"
+    }
+  ],
+  "edition": 1838,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1673"
+      }
+    ]
+  },
+  "collection_mints": [
+    "AZ77K9EnAD4US5KgmT72aiP7JRYA3JTDA3qnU4k97gqn"
+  ]
+}

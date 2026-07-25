@@ -1,0 +1,86 @@
+{
+  "name": "Sweet Curse Card #65",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihfnnsehddqw2dlb3djioxyzdz3u7kpewkghpsmoxkorja7tgzabq",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Trap"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Bro i think i'm in love again :/"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Molsew"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Yurei.raw6"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Gay"
+    },
+    {
+      "trait_type": "Signature",
+      "value": "Erz8"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Gossip"
+    },
+    {
+      "trait_type": "Full art",
+      "value": "Baywatch"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Ronaldo"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "St. Anthony"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "2t_k Pot of greed"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Barney"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "In your eyes"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "loyaute"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihfnnsehddqw2dlb3djioxyzdz3u7kpewkghpsmoxkorja7tgzabq",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigse4asrabagrpnmfbz4ru6lygvhc5hk5fc7263jc3rxdgjpkhevm",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigse4asrabagrpnmfbz4ru6lygvhc5hk5fc7263jc3rxdgjpkhevm",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigse4asrabagrpnmfbz4ru6lygvhc5hk5fc7263jc3rxdgjpkhevm",
+  "collection_mints": [
+    "iWkX666BhxconLP1gpnzuje3pk5MMXBk8gAddURbTTc"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #675",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/675",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_asspizzagun"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Venomous Changeling"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_kaneki"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "blue"
+    }
+  ],
+  "edition": 661,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/675"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9uo8zL79VbiFYUYZ3vDnh7bRUd1YFE5S3dL5xXwPwV51"
+  ]
+}

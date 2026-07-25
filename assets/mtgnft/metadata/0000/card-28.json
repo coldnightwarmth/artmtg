@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #27",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/27",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_egirls"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ghost Quarter"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_wavey"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_smoke"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "ghostsoy"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "osrs"
+    }
+  ],
+  "edition": 480,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/27"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CwuHk7A7w9oSxRAhL1CFx7fUszvWid8KFwEtUTCimpuJ"
+  ]
+}

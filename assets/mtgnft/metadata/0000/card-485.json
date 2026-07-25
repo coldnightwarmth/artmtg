@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #484",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/484",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_clown"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Shiv's Embrace"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "bluestrain"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_babeblur"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "fingerright"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "poker"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_chaosmarine3"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "cena"
+    }
+  ],
+  "edition": 1621,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/484"
+      }
+    ]
+  },
+  "collection_mints": [
+    "32uZimds6BkvTjn5kUTaWpzq4s4MvvQ74b7V36D2URUf"
+  ]
+}

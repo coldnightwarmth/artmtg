@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #970",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/970",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_jrpg"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Weave Fate"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_animu2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "teef"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "shootah"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_buutoy"
+    }
+  ],
+  "edition": 708,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/970"
+      }
+    ]
+  },
+  "collection_mints": [
+    "66vWUcUtzWimCNNR86xYzNpYQ8dgkYEdgQpwXpPbS88k"
+  ]
+}

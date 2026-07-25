@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #788",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/788",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_nomeds"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Expedition Envoy"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_grandma"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "fingerleft"
+    }
+  ],
+  "edition": 1750,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/788"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Dy5qLcYYNWyAx7s1TJUMuHQCKK7WzAS5p9BsxBiUebCb"
+  ]
+}

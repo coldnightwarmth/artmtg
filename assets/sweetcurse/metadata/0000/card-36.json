@@ -1,0 +1,86 @@
+{
+  "name": "Sweet Curse Card #36",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreiaw4klkdlnegth24et4twl45mwej7fj3fbdanyfxzsxs73uilf6ym",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Trap"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Lucky"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Mulan.fu2"
+    },
+    {
+      "trait_type": "Description",
+      "value": "rebd"
+    },
+    {
+      "trait_type": "Score",
+      "value": "SCP-999"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Fascist.eth"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Millenium items"
+    },
+    {
+      "trait_type": "Full art",
+      "value": "Dexter"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Fountain"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Daily Monsters3"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Winamp2"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "The real world"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Beer"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "ash"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreiaw4klkdlnegth24et4twl45mwej7fj3fbdanyfxzsxs73uilf6ym",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifdikuc5o2m27cjxiaz3axrxkhfbbse6qptbctaake72i2lzmbsoi",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifdikuc5o2m27cjxiaz3axrxkhfbbse6qptbctaake72i2lzmbsoi",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifdikuc5o2m27cjxiaz3axrxkhfbbse6qptbctaake72i2lzmbsoi",
+  "collection_mints": [
+    "AKvwzWcBjDJA7rZaASWrf69EviT1nB558nfc6TfWqNDZ"
+  ]
+}

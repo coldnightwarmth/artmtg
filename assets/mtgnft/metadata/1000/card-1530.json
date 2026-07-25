@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1529",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1529",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "afgankush"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Argothian Elder"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_cursed"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_cloudff7"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "birdo"
+    },
+    {
+      "trait_type": "top left",
+      "value": "superstar"
+    }
+  ],
+  "edition": 886,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1529"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4e58ovkSddCfKbxWGwS3bTMFMWKWb8wQQCswuRd2uggz"
+  ]
+}

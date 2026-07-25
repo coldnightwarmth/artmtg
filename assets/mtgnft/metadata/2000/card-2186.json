@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #2185",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2185",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_3dnetmask"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Mystic Gate"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "smeerk"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "chaosmarine2"
+    }
+  ],
+  "edition": 1180,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2185"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3RKHSLv193DiFE4xhXgTHypWM4kNs29yRBFtsrKArirZ"
+  ]
+}

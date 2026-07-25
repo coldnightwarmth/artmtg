@@ -1,0 +1,82 @@
+{
+  "name": "Sweet Curse Card #266",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreiegawkcthopcr4esl2uomrqik52mnlfvvgbhldxspzluxgh274hg4",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Trap"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Fascist.eth again"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Uki_hajime"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Skull"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Σύφιλη"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Lumas"
+    },
+    {
+      "trait_type": "Full art",
+      "value": "Starmie v"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Maskaro"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Jsrf3"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Jacksachs3"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Ciara"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "un pickled"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "crystal"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreiegawkcthopcr4esl2uomrqik52mnlfvvgbhldxspzluxgh274hg4",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiazw4xaxv3zgbirpaokxnzsagtkyp45a6l75eqfmcoh3jzu73t4jy",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiazw4xaxv3zgbirpaokxnzsagtkyp45a6l75eqfmcoh3jzu73t4jy",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiazw4xaxv3zgbirpaokxnzsagtkyp45a6l75eqfmcoh3jzu73t4jy",
+  "collection_mints": [
+    "GDQNkpdfiLrSfh7T6a5m4XTNi8jRoSCkdnBaUm9Kq6y7"
+  ]
+}

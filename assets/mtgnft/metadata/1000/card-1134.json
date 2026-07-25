@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1133",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1133",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "forresttrain"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Dryad Militant"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_redblur"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_paulwall"
+    },
+    {
+      "trait_type": "hat",
+      "value": "sexy"
+    }
+  ],
+  "edition": 1616,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1133"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6JNwV19j8eGHHmEXfJmTZb78KUo75FgJ4SqAkcRENR4z"
+  ]
+}

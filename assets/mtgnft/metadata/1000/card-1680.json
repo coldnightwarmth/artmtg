@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1679",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1679",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_yourbedroom"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Student of Warfare"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "bluestrain"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "69"
+    },
+    {
+      "trait_type": "hat",
+      "value": "gibus"
+    }
+  ],
+  "edition": 1615,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1679"
+      }
+    ]
+  },
+  "collection_mints": [
+    "FqapvbpsbiK7sBKcQUD7XhudojjcBV7b92SEgpMfFYTV"
+  ]
+}

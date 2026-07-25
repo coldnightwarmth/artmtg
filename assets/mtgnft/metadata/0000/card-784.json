@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #783",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/783",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_server"
+    },
+    {
+      "trait_type": "behind",
+      "value": "scanlines4"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Shinen of Flight's Wings"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_wavey"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "orc"
+    },
+    {
+      "trait_type": "special top",
+      "value": "digimon"
+    }
+  ],
+  "edition": 1596,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/783"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BmxU6dW8s7Zy8djxocrdpLUuEzij7xyvrZU1p1pdfPq4"
+  ]
+}

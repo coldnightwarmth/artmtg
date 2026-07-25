@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1070",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1070",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_burnchurches"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_54"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Lumbering Falls"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_jimmy"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_morphoius"
+    },
+    {
+      "trait_type": "top left",
+      "value": "superstar"
+    }
+  ],
+  "edition": 1037,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1070"
+      }
+    ]
+  },
+  "collection_mints": [
+    "EHgFCxDJbsm4MC54g5Y2hEUTnzS5pavkCAQCa4iQ8V4c"
+  ]
+}

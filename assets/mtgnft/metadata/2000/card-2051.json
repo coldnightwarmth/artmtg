@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #2050",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2050",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_toonblueeyes"
+    },
+    {
+      "trait_type": "behind",
+      "value": "terrariasword"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Pillage"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_smil"
+    }
+  ],
+  "edition": 518,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2050"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HCDvkpbbfS9XxMtytJaSkiyksMbk4dv1N37WNXkMNovd"
+  ]
+}

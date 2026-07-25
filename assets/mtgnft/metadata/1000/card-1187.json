@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1186",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1186",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_paradise"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Fortitude"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_evil1"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "vaperight"
+    }
+  ],
+  "edition": 1966,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1186"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7mw9wrjQKdTjjMzXb3XF9FbjbCnrgZYsbLpK8YtmyyNJ"
+  ]
+}

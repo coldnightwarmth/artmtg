@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #2068",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2068",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_burningmonk"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Excavating Anurid"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_animu2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "smeerk"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "fingerright"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "swagcod"
+    }
+  ],
+  "edition": 1348,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2068"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DmQJiVthDsV3qeBJVme4fNS8Be5Gj8QSTrj2o5vwKpdF"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #328",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/328",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_clown"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_160"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Null Chamber"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "sachiel"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_goofy"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "reachright"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "redpill"
+    }
+  ],
+  "edition": 432,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/328"
+      }
+    ]
+  },
+  "collection_mints": [
+    "D8kk3YMLndTwskmTqZRKaChj41KxtNHbm9LsmC1WodAk"
+  ]
+}

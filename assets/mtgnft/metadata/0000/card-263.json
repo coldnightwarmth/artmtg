@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #262",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/262",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_coffeehouseart"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Infuse with the Elements"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_daurk"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_issac"
+    }
+  ],
+  "edition": 252,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/262"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Hc6rSgdUghASLggtLrieyWhvBMg1VSDqmvxnhxfxKUNi"
+  ]
+}

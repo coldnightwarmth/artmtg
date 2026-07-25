@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #569",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/569",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_castleblur"
+    },
+    {
+      "trait_type": "behind",
+      "value": "bubbles"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Jolt"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_evil1"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "berryladys"
+    }
+  ],
+  "edition": 1190,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/569"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Fca2nGCrM7gqvBi2AaStEZTa9pYJ4sw7xWU499n8UF8y"
+  ]
+}

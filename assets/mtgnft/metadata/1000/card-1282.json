@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1281",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1281",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_brucewayne"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Bear Umbra"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_mifella3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_kinkd"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "dreamland"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "kirbyball"
+    }
+  ],
+  "edition": 5,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1281"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CLAKsbnfx7TPpQbGpb1fSXH5NDjHG7NCXw4nkJk8Sxbx"
+  ]
+}

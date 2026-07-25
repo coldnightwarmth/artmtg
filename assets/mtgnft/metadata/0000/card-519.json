@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #518",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/518",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_bladerunner"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_117"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Aerial Predation"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "facesuit1"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_serious"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_grandma"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "scout"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "breaktop"
+    }
+  ],
+  "edition": 2131,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/518"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9EBZs3gNLJqqRRHqLL6htV4MeV4R52dovRk1tpLy2BKA"
+  ]
+}

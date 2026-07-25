@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1399",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1399",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_whatitradeoff"
+    },
+    {
+      "trait_type": "cards",
+      "value": "To the Slaughter"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_grr"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "cloudleft"
+    }
+  ],
+  "edition": 1748,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1399"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6pVh7rAYmuFRzA5iWTCtzUSHAHzoi3kS8Rykqp6C1usX"
+  ]
+}

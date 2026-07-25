@@ -1,0 +1,78 @@
+{
+  "name": "Sweet Curse Card #258",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreicqrmtog4c2rk62a3khtnmxcc7mijkvpcfdrvo3idcqsfizavvxaq",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "A.R.T."
+    },
+    {
+      "trait_type": "Background",
+      "value": "Susanoo"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Squirtle gang"
+    },
+    {
+      "trait_type": "Description",
+      "value": "micah_alhadeff"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Mega gengar ex 350hp"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Firetag"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "R-E Black Charizard"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Daily Monsters3"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Jacksachs3"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Btomic"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Not normal"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "oil"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreicqrmtog4c2rk62a3khtnmxcc7mijkvpcfdrvo3idcqsfizavvxaq",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeictfwbvlxfilre5alyj4ytrfosq7wbba6r72wlow2y7p2adytmrdi",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeictfwbvlxfilre5alyj4ytrfosq7wbba6r72wlow2y7p2adytmrdi",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeictfwbvlxfilre5alyj4ytrfosq7wbba6r72wlow2y7p2adytmrdi",
+  "collection_mints": [
+    "BMubhJVdogR985PgBoZnw5frdQBNPAetjoPF8vxAAbb2"
+  ]
+}

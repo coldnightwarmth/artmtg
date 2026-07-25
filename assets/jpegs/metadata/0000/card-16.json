@@ -1,0 +1,35 @@
+{
+  "name": "Mifella",
+  "description": "Mifella",
+  "seller_fee_basis_points": 500,
+  "image": "https://turbo-gateway.com/YB_EUR_vSXtewqrD-4TCpN-QOHQg2WqtBRpdAL0UYLg?ext=jpeg",
+  "properties": {
+    "files": [
+      {
+        "uri": "https://turbo-gateway.com/YB_EUR_vSXtewqrD-4TCpN-QOHQg2WqtBRpdAL0UYLg?ext=jpeg",
+        "type": "image/jpeg"
+      }
+    ],
+    "creators": [
+      {
+        "address": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+        "share": 100,
+        "verified": true
+      }
+    ]
+  },
+  "attributes": [],
+  "collection_mints": [
+    "33nmCNUXU527G2R1zeKpWV7MpLSm1tMpkbMf4uSAHMyX",
+    "3Xn8FDMppYr3Yz1enrx1KPfLziNKn9jmaAF8HC4NzHdr",
+    "52tHTpAPQuvdRufGxPKGBbcfLWbiWyoPyujLsCHgy7Wn",
+    "53213e1n1KucvJugzbAtPE1qnRkCwN23LrTdExfNuYir",
+    "7ZAVHJbwsHKZMK6dyw4FkjuxKYk1pvrvbcEVDL3cQjgq",
+    "8bqumYDMrYM6ZZ4wMnhHySe4tLzpf1aNVMiVLv8QWHjt",
+    "8dUxTcyayDaMcYKZbjpwXLsqwsKNyD9cVWgz1yPwC3Ui",
+    "ADpyksRX49njTBEbsgk3pw4Pqt6uWApsUBS7PJSTvy91",
+    "F8d9N1BaiNSEfPMhYSZaByJJmd48VaMF3kPXadzRjT1D",
+    "Gxa1qWAVX9fbgHixWt5EEjyzbbSyFZLQDUW5QzxwicKm",
+    "HML11aA6cBXidWhCVsaC5J1JLNCNWqZh56wgFikT4ey3"
+  ]
+}

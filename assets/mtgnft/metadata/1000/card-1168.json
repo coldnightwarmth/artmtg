@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1167",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1167",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "silenthill"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Cheap Ass"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_relaxed"
+    },
+    {
+      "trait_type": "hat",
+      "value": "gibus"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_blueyes"
+    },
+    {
+      "trait_type": "special top",
+      "value": "issacafterbirth"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "bowserlock"
+    }
+  ],
+  "edition": 435,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1167"
+      }
+    ]
+  },
+  "collection_mints": [
+    "EUdc7DmpKf292zWgTiWPb1Zxo9n1A9t1q8qT3uaH73fw"
+  ]
+}

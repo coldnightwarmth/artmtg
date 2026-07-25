@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #622",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/622",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_mansion"
+    },
+    {
+      "trait_type": "behind",
+      "value": "miketyson"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Scuttling Sliver"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_mifella1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_frown"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "rpg"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "freshjays"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "ps3"
+    }
+  ],
+  "edition": 176,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/622"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Cm2KXZiDC47epjFRpFVN9PxGBFgacLzFip4iq9qTUJgK"
+  ]
+}

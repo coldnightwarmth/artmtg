@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #994",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/994",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "burningmonk"
+    },
+    {
+      "trait_type": "cards",
+      "value": "When Fluffy Bunnies Attack"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_troll"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mewtwo"
+    },
+    {
+      "trait_type": "top left",
+      "value": "celebi"
+    }
+  ],
+  "edition": 1449,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/994"
+      }
+    ]
+  },
+  "collection_mints": [
+    "C5YnqZsJ3TWt2QEHfQLmoE2kqpdnrPeAH2g6QQ2zdn5h"
+  ]
+}

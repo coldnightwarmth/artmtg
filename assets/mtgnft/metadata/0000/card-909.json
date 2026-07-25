@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #908",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/908",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_yourbedroom"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_87"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Auriok Sunchaser"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "blush2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_goldfangs"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "dg5s"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_mariot"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "joycons"
+    }
+  ],
+  "edition": 1664,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/908"
+      }
+    ]
+  },
+  "collection_mints": [
+    "H9BQVWEw51PUwXREvfb5MfVXfSGiJeHZMEwjYhbUTEK9"
+  ]
+}

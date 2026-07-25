@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #2057",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2057",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_killerinstint"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_109"
+    },
+    {
+      "trait_type": "cards",
+      "value": "The Flame of Keld"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_heheheh"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "bible"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "ciggie"
+    }
+  ],
+  "edition": 1489,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2057"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8bySf5nhypT7aGX9JZnqp96St5EUBq45rhYDtQaLgGf7"
+  ]
+}

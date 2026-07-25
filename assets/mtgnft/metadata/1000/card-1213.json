@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1212",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1212",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_secondlifeangel"
+    },
+    {
+      "trait_type": "behind",
+      "value": "sprayed"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Sunspring Expedition"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sidechompers"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "gunhandright"
+    }
+  ],
+  "edition": 912,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1212"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6YhGxzsmefJCL8UrzUfu1owntEicahoyAzH4HCvUWFc5"
+  ]
+}

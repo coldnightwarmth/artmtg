@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1168",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1168",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_tumblraf1"
+    },
+    {
+      "trait_type": "behind",
+      "value": "sprayed"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Phantom General"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "relaxed"
+    },
+    {
+      "trait_type": "hat",
+      "value": "gripthefitted"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "thumbsup"
+    },
+    {
+      "trait_type": "top left",
+      "value": "trippleboxblack"
+    }
+  ],
+  "edition": 1445,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1168"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Apmb5XC4MTbcCZBWdfYk6GjYnNE9djymGmMAS9Cj7s7V"
+  ]
+}

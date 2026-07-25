@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #571",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/571",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "babe"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ruin in Their Wake"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_mifella2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_grr"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "gunright"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "Untitled_Artwork-49"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "chaosmarine2"
+    }
+  ],
+  "edition": 1630,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/571"
+      }
+    ]
+  },
+  "collection_mints": [
+    "H5QBZy9kd9o1nrJhPeiradeW8RvbVQoYCjMdbF3ZBEHf"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1894",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1894",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_batman"
+    },
+    {
+      "trait_type": "behind",
+      "value": "blueflames"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Kruin Outlaw"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "saskue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_prada"
+    }
+  ],
+  "edition": 941,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1894"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DFyEPiSvtRrqPDwg8uEp4aMxbcRYTrbmnDEzkK4FTF16"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #434",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/434",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_dxmtrip"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Prismatic Lace"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_mifella2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_frown"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "theGodfellaZ"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "chaosemeralds"
+    }
+  ],
+  "edition": 1519,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/434"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8gV537YKoF4KsbXH5xyfqMWSX7q8SgTeSQovJUSq8bwf"
+  ]
+}

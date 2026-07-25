@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1094",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1094",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "dratini"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_146"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Bala Ged Thief"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_animu3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "goofy"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "pisstestleft"
+    }
+  ],
+  "edition": 1444,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1094"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HQpUNGff3Ut8eLVwAden24ugrYHTycYrjY1tRxJJcLLG"
+  ]
+}

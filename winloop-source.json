@@ -1,0 +1,516 @@
+{
+  "fetchedAt": "2026-07-24T10:17:17.419Z",
+  "source": "https://graphql.tensor.trade/graphql",
+  "tensorPage": "https://www.tensor.trade/trade/winloophimiyamaker",
+  "collectionSlug": "670aec14-c20d-438d-bdcd-3360e6dca49c",
+  "collectionDisplaySlug": "winloophimiyamaker",
+  "membershipPolicy": "Every live mint returned by Tensor; exact duplicate editions share one binder card",
+  "assetRevision": "winloop-1",
+  "animationRevision": null,
+  "liveMintCount": 13,
+  "tensorFetchedMintCount": 13,
+  "tensorReportedMintCount": 13,
+  "excludedMintCount": 0,
+  "exclusionRules": {
+    "mintIds": []
+  },
+  "cardCount": 13,
+  "groupedDuplicateMintCount": 0,
+  "metadataFetchFailureCount": 0,
+  "liveMintIdsSha256": "8d7f7c645e0185a6d4fdf374e876a0af04f2a4727996ad423403db6fa51c70ec",
+  "tensorLiveMintIdsSha256": "8d7f7c645e0185a6d4fdf374e876a0af04f2a4727996ad423403db6fa51c70ec",
+  "instrument": {
+    "id": "670aec14-c20d-438d-bdcd-3360e6dca49c",
+    "slug": "670aec14-c20d-438d-bdcd-3360e6dca49c",
+    "slugDisplay": "winloophimiyamaker",
+    "name": "Win Loop, hi Miya Maker",
+    "symbol": "WLMM",
+    "imageUri": "https://prod-tensor-creators-s3.s3.us-east-1.amazonaws.com/image/76ffa9d9-4f4e-49e9-8cb7-0a4fe2e8a4bf",
+    "description": "Card #[N] of 33. Win Loop, hi Miya Maker — a 33-card journey by Dragonfluss aka Kardy. A glitch in the system that kept winning. A muse caught in fragments: layered collage, bright chaos, digital underground. Miyazaki canvases inside a circuit. Each card holds its own myth. Together they form the only collection that exists. All prior work, gone. This is what remained.",
+    "tokenStandard": "NON_FUNGIBLE",
+    "tokenProgram": "MPL_CORE",
+    "compressed": false,
+    "statsV2": {
+      "numMints": 13
+    }
+  },
+  "conversion": {
+    "format": "webp",
+    "width": 600,
+    "height": 840,
+    "quality": 75,
+    "effort": 4,
+    "fit": "contain",
+    "background": "#111111",
+    "removeExteriorWhite": false,
+    "imageProxy": "https://prod-image-cdn.tensor.trade/images/600x600/freeze=true"
+  },
+  "animationConversion": null,
+  "sharedBack": {
+    "source": "english yugioh card back",
+    "color": null,
+    "file": "assets/winloop/backs/winloop-back.webp",
+    "width": 699,
+    "height": 1017
+  },
+  "liveAssets": [
+    {
+      "onchainId": "Eanzu8PR1M6UYXg6L8JRHMZhUNTNuDU7h4Xz1VjzbiML",
+      "owner": "131BWPEiqA58e6Pntcpq3Tq2NyUqcCn6y3xU96E6vwpN",
+      "name": "Win Loop 1",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifprjm6pcbcnlq5oevf7lpzji2nvobwftfifxnxst5ppnurqwbyny",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/0",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifprjm6pcbcnlq5oevf7lpzji2nvobwftfifxnxst5ppnurqwbyny"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "3zEkBN1UEdJjfYBFUzCrTnX35Cf31LxDnvv2vdKkZ3Kn",
+      "owner": "AaZUSxycQCgLHQbAN4QwJf7Dqtun6JE9gSPTSjdZVXXq",
+      "name": "Win Loop 2",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeificznw3c4gdshvsywvaugu7rxumcz4ivtg6srp5rl5xrc74aekem",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/1",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeificznw3c4gdshvsywvaugu7rxumcz4ivtg6srp5rl5xrc74aekem"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "4qb92fS8CDmEFaoBR8vByGkbQ2bRzmMskckVajWimuPV",
+      "owner": "AaZUSxycQCgLHQbAN4QwJf7Dqtun6JE9gSPTSjdZVXXq",
+      "name": "Win Loop 3",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeift3z7l3deqzoerfygy5vyxgyyboz2tg6pswryt2gyagg2bscroce",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/2",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeift3z7l3deqzoerfygy5vyxgyyboz2tg6pswryt2gyagg2bscroce"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "4Jf8fNfbehVzhZtom8uj3Usy9i92EK9ghWt7MDRzVDxP",
+      "owner": "HRFZmnqSKQKWjdtVXcWQZZ28P96gonjwiSvCmLaarCmF",
+      "name": "Win Loop 4",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicn7jw6ve5dwy7eac5qgpymjt3kmywsctyybpacggz3kqmgmdxzlm",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/4",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicn7jw6ve5dwy7eac5qgpymjt3kmywsctyybpacggz3kqmgmdxzlm"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "8yfaiRREBnP9B1Ca1b86K52J5Gbcc3wrVzppA51RosZM",
+      "owner": "7wgciH3DD1KQX5LM8WYF7A7afBECpa4JbTAevgqaxDu8",
+      "name": "Win Loop 5",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeieymrvxl4vh4v7hobee3bktwvc4ipsm7crjms2of3hmxkldf4gt6a",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/5",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeieymrvxl4vh4v7hobee3bktwvc4ipsm7crjms2of3hmxkldf4gt6a"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "8Mq6d69M3UdJNVJX6Ubg8Kg5bHrG5cHZhAgxWP3HS3wL",
+      "owner": "9zuxvipuf99qxumchkS9dPueYxkarWAGKmGBPQsUXMv7",
+      "name": "Win Loop 6",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigrlneqm3vjuhak647s3h7dntf477i7zhy4bpw3q6ap4o37zjjh3e",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/6",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigrlneqm3vjuhak647s3h7dntf477i7zhy4bpw3q6ap4o37zjjh3e"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "JDb929LX1dQkGe3qvYgQDZm2jPpxTYgJK4VFttiKQE81",
+      "owner": "72a3GnUYDhHgvuyrKifEfuMzBrJMAZurqpjcwvkiBd6a",
+      "name": "Win Loop 7",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigo7apqmfyurb266eu443xnbfwhai2io4hmnpowwgdyabrmeui5ta",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/7",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigo7apqmfyurb266eu443xnbfwhai2io4hmnpowwgdyabrmeui5ta"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "Eg4n1FqHhH7x46KGrak15EbE3zdYdGdZGEqwMJjuqpmP",
+      "owner": "CgvGG2n65oSqfw9k7f79dAW7F14Kvp3j9gYqd7gD6FaR",
+      "name": "Win Loop 8",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigh7lvnduwoc4ehzco4oxc3wslqmcw2knlcwfl4fxf67x4vdxatcy",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/8",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigh7lvnduwoc4ehzco4oxc3wslqmcw2knlcwfl4fxf67x4vdxatcy"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "3NtiYxz2jonseXPqBTEpCr3bdu6Apr5KXUyvV1946sLQ",
+      "owner": "9zuxvipuf99qxumchkS9dPueYxkarWAGKmGBPQsUXMv7",
+      "name": "Win Loop 9",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiby4ewmmzzgnlrapgafji7fh3dkhod726x26w4t3vpkjnvt5vexmi",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/9",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiby4ewmmzzgnlrapgafji7fh3dkhod726x26w4t3vpkjnvt5vexmi"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "Db6ERsUMwG8bCte7MepeqXH9Gvs3xAESyAXhENRNrN2h",
+      "owner": "HQScEpuF3UNxkVRFhNzeu8uj7rozfVt9c5vWgVhEJu6Q",
+      "name": "Win Loop 10",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifyxzqztofydah32d4wsigfjcp26kntitkozvonuzcng6h7sm2bfe",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/10",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifyxzqztofydah32d4wsigfjcp26kntitkozvonuzcng6h7sm2bfe"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "7oEYh8qhF9xTi9yqfYMydgyRjX1pVv4c56UrQdedHoKr",
+      "owner": "HQScEpuF3UNxkVRFhNzeu8uj7rozfVt9c5vWgVhEJu6Q",
+      "name": "Win Loop 11",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicd3aoxgsnhl4gijgcpgvn7yifa4266ybh3ulgbbba74qewislcoa",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/11",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicd3aoxgsnhl4gijgcpgvn7yifa4266ybh3ulgbbba74qewislcoa"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "2AWdsRJudFwSwMTGbNU81bfgyDpW2mMFa1Qbwy9FTHY3",
+      "owner": "6K6LsyHddm8HiSFfKqMA6TtEqpx2ECWovqeafYk8H5ne",
+      "name": "Win Loop 12",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihhkjntfklgkkqfmgstk5tokjtdabn52qh4vnurakw2a5mncawj64",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/12",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihhkjntfklgkkqfmgstk5tokjtdabn52qh4vnurakw2a5mncawj64"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "9amzWVASizNd1UFTMtGegTowE2FaxjYZ7Bis9xHdhnPe",
+      "owner": "HRFZmnqSKQKWjdtVXcWQZZ28P96gonjwiSvCmLaarCmF",
+      "name": "Win Loop 33",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicjnmzdgusfz3zsx4bp246h7kko75u7hqqgmf5qmgj3rhnoahqolm",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/3",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicjnmzdgusfz3zsx4bp246h7kko75u7hqqgmf5qmgj3rhnoahqolm"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    }
+  ],
+  "excludedAssets": [],
+  "cards": [
+    {
+      "number": 1,
+      "assetNumber": 1,
+      "stableId": "winloop:group-ec99e26644388d53f14be635",
+      "groupKeyHash": "ec99e26644388d53f14be635d87d33564fe328d7b8f3d3a557e00afbcbe29bb1",
+      "title": "Win Loop 1",
+      "mints": [
+        "Eanzu8PR1M6UYXg6L8JRHMZhUNTNuDU7h4Xz1VjzbiML"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/0",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifprjm6pcbcnlq5oevf7lpzji2nvobwftfifxnxst5ppnurqwbyny",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "99c81b5536640bc316445c11118f60ea34cc0c7daf3e2ae48a358920ffff25d0",
+      "metadataFile": "assets/winloop/metadata/0000/card-1.json",
+      "cardFile": "assets/winloop/cards/0000/card-1.webp",
+      "animation": null
+    },
+    {
+      "number": 2,
+      "assetNumber": 2,
+      "stableId": "winloop:group-90f31a68cb642be0676863a2",
+      "groupKeyHash": "90f31a68cb642be0676863a2133c479c8f394a80752df86b36e0a4c2af3680bd",
+      "title": "Win Loop 2",
+      "mints": [
+        "3zEkBN1UEdJjfYBFUzCrTnX35Cf31LxDnvv2vdKkZ3Kn"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/1",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeificznw3c4gdshvsywvaugu7rxumcz4ivtg6srp5rl5xrc74aekem",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "728b35523f0b4b50ee48c70e38d8193732c15fe39b54dee75ae8f772dc1f3897",
+      "metadataFile": "assets/winloop/metadata/0000/card-2.json",
+      "cardFile": "assets/winloop/cards/0000/card-2.webp",
+      "animation": null
+    },
+    {
+      "number": 3,
+      "assetNumber": 3,
+      "stableId": "winloop:group-ed4b12a06ea4152e7d7dcb84",
+      "groupKeyHash": "ed4b12a06ea4152e7d7dcb849c6d7c450125c0d9f4cd2c026fb9941a8cb6233c",
+      "title": "Win Loop 3",
+      "mints": [
+        "4qb92fS8CDmEFaoBR8vByGkbQ2bRzmMskckVajWimuPV"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/2",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeift3z7l3deqzoerfygy5vyxgyyboz2tg6pswryt2gyagg2bscroce",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "5d7b7280bae8194c3580a6e668ed6470496493f98ef57aa77cdcd8e1fb5a96da",
+      "metadataFile": "assets/winloop/metadata/0000/card-3.json",
+      "cardFile": "assets/winloop/cards/0000/card-3.webp",
+      "animation": null
+    },
+    {
+      "number": 4,
+      "assetNumber": 4,
+      "stableId": "winloop:group-46efc4e06bba53014f39bb4e",
+      "groupKeyHash": "46efc4e06bba53014f39bb4e41dd56d09eaee84d922c34a00679ca127fa84017",
+      "title": "Win Loop 4",
+      "mints": [
+        "4Jf8fNfbehVzhZtom8uj3Usy9i92EK9ghWt7MDRzVDxP"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/4",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicn7jw6ve5dwy7eac5qgpymjt3kmywsctyybpacggz3kqmgmdxzlm",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "60d00d560ac884d81bef078da6e6fa39892b1050c832f3d8d70f41e2e9fe6537",
+      "metadataFile": "assets/winloop/metadata/0000/card-4.json",
+      "cardFile": "assets/winloop/cards/0000/card-4.webp",
+      "animation": null
+    },
+    {
+      "number": 5,
+      "assetNumber": 5,
+      "stableId": "winloop:group-200e0890ff2f531127a8bab1",
+      "groupKeyHash": "200e0890ff2f531127a8bab1a9a594444b81a8a622f4bf2da6cf9dfcc8a82aa2",
+      "title": "Win Loop 5",
+      "mints": [
+        "8yfaiRREBnP9B1Ca1b86K52J5Gbcc3wrVzppA51RosZM"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/5",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeieymrvxl4vh4v7hobee3bktwvc4ipsm7crjms2of3hmxkldf4gt6a",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "24a1780d10d06e17f445e4f3007dbd288dda6009f0fd724148886c8298a5fee6",
+      "metadataFile": "assets/winloop/metadata/0000/card-5.json",
+      "cardFile": "assets/winloop/cards/0000/card-5.webp",
+      "animation": null
+    },
+    {
+      "number": 6,
+      "assetNumber": 6,
+      "stableId": "winloop:group-f575e0425c2d924451a88f0f",
+      "groupKeyHash": "f575e0425c2d924451a88f0f990161179ffbb96c8cd97d61badcd44e6b5f1381",
+      "title": "Win Loop 6",
+      "mints": [
+        "8Mq6d69M3UdJNVJX6Ubg8Kg5bHrG5cHZhAgxWP3HS3wL"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/6",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigrlneqm3vjuhak647s3h7dntf477i7zhy4bpw3q6ap4o37zjjh3e",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "996d19272e490200cc4dbda1d5da56a0431d0596728fcfd4e267572e9b9b965e",
+      "metadataFile": "assets/winloop/metadata/0000/card-6.json",
+      "cardFile": "assets/winloop/cards/0000/card-6.webp",
+      "animation": null
+    },
+    {
+      "number": 7,
+      "assetNumber": 7,
+      "stableId": "winloop:group-47d774eae94b55c4b4c60dbd",
+      "groupKeyHash": "47d774eae94b55c4b4c60dbdc50204b0ed3a1029435d3c3deadbcef90636a08f",
+      "title": "Win Loop 7",
+      "mints": [
+        "JDb929LX1dQkGe3qvYgQDZm2jPpxTYgJK4VFttiKQE81"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/7",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigo7apqmfyurb266eu443xnbfwhai2io4hmnpowwgdyabrmeui5ta",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "1c8d42967e3b4ba3ddcdd7d1804b8d3987581019db36449c9e01778c965c5f75",
+      "metadataFile": "assets/winloop/metadata/0000/card-7.json",
+      "cardFile": "assets/winloop/cards/0000/card-7.webp",
+      "animation": null
+    },
+    {
+      "number": 8,
+      "assetNumber": 8,
+      "stableId": "winloop:group-48f900876079a155946b588a",
+      "groupKeyHash": "48f900876079a155946b588a31ecc433494768b16e5566783f7b2ff490f30880",
+      "title": "Win Loop 8",
+      "mints": [
+        "Eg4n1FqHhH7x46KGrak15EbE3zdYdGdZGEqwMJjuqpmP"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/8",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigh7lvnduwoc4ehzco4oxc3wslqmcw2knlcwfl4fxf67x4vdxatcy",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "7bd6f8d8d139804cf81854e8fbc05b2903ea84638a7c6181b0bfdad2f73a011e",
+      "metadataFile": "assets/winloop/metadata/0000/card-8.json",
+      "cardFile": "assets/winloop/cards/0000/card-8.webp",
+      "animation": null
+    },
+    {
+      "number": 9,
+      "assetNumber": 9,
+      "stableId": "winloop:group-212287f41310299a32680fd7",
+      "groupKeyHash": "212287f41310299a32680fd7eb91483aae8c31da0e655b377b61b452b811dff0",
+      "title": "Win Loop 9",
+      "mints": [
+        "3NtiYxz2jonseXPqBTEpCr3bdu6Apr5KXUyvV1946sLQ"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/9",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiby4ewmmzzgnlrapgafji7fh3dkhod726x26w4t3vpkjnvt5vexmi",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "c39bdc92e2e1a132c3433efb77584db20188b426a2fa85238fda5e3a0d430b88",
+      "metadataFile": "assets/winloop/metadata/0000/card-9.json",
+      "cardFile": "assets/winloop/cards/0000/card-9.webp",
+      "animation": null
+    },
+    {
+      "number": 10,
+      "assetNumber": 10,
+      "stableId": "winloop:group-ce3acdf2101a5a2d9235300d",
+      "groupKeyHash": "ce3acdf2101a5a2d9235300d019d856084a415b792563e541d04c19b3e6e51f5",
+      "title": "Win Loop 10",
+      "mints": [
+        "Db6ERsUMwG8bCte7MepeqXH9Gvs3xAESyAXhENRNrN2h"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/10",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifyxzqztofydah32d4wsigfjcp26kntitkozvonuzcng6h7sm2bfe",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "d9d1cf84b2f6bcbe19581e4c1d2376508c5339297ae7f792cd65245c667c402c",
+      "metadataFile": "assets/winloop/metadata/0000/card-10.json",
+      "cardFile": "assets/winloop/cards/0000/card-10.webp",
+      "animation": null
+    },
+    {
+      "number": 11,
+      "assetNumber": 11,
+      "stableId": "winloop:group-bb2bef8e4ab6dc897df0ec8d",
+      "groupKeyHash": "bb2bef8e4ab6dc897df0ec8dafb9770e0cfff9da416a5f2bf688b21ad8629987",
+      "title": "Win Loop 11",
+      "mints": [
+        "7oEYh8qhF9xTi9yqfYMydgyRjX1pVv4c56UrQdedHoKr"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/11",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicd3aoxgsnhl4gijgcpgvn7yifa4266ybh3ulgbbba74qewislcoa",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "f5641bd0d5618b7f32bd8e198c121b894ea4075f96aec35423ae511028c26776",
+      "metadataFile": "assets/winloop/metadata/0000/card-11.json",
+      "cardFile": "assets/winloop/cards/0000/card-11.webp",
+      "animation": null
+    },
+    {
+      "number": 12,
+      "assetNumber": 12,
+      "stableId": "winloop:group-a9d4110e49e98f9b14c8af8d",
+      "groupKeyHash": "a9d4110e49e98f9b14c8af8dc1454b475cb5ba262134b2ef96256661ffe0a335",
+      "title": "Win Loop 12",
+      "mints": [
+        "2AWdsRJudFwSwMTGbNU81bfgyDpW2mMFa1Qbwy9FTHY3"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/12",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihhkjntfklgkkqfmgstk5tokjtdabn52qh4vnurakw2a5mncawj64",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "7cbae522b82ac9f7ef2b7c61ef8e2cf447ce98d29e784fd8f5830397a8646fbf",
+      "metadataFile": "assets/winloop/metadata/0000/card-12.json",
+      "cardFile": "assets/winloop/cards/0000/card-12.webp",
+      "animation": null
+    },
+    {
+      "number": 13,
+      "assetNumber": 13,
+      "stableId": "winloop:group-7fc9e6905928ccd66ac1b889",
+      "groupKeyHash": "7fc9e6905928ccd66ac1b889fe61b7a34b24c32e18ee5aded7d8fae220f700fc",
+      "title": "Win Loop 33",
+      "mints": [
+        "9amzWVASizNd1UFTMtGegTowE2FaxjYZ7Bis9xHdhnPe"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicfxlz5zw2lgsotzjgb6gf2j7w3ashsl54kbcjw5oh4cm5ix5kuou/3",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicjnmzdgusfz3zsx4bp246h7kko75u7hqqgmf5qmgj3rhnoahqolm",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "4d304e429305ee1f863484754c6aabea26ab7e6962e39a57e8811ff35893b5bd",
+      "metadataFile": "assets/winloop/metadata/0000/card-13.json",
+      "cardFile": "assets/winloop/cards/0000/card-13.webp",
+      "animation": null
+    }
+  ]
+}

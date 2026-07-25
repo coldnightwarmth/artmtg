@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #2003",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2003",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_dratini"
+    },
+    {
+      "trait_type": "behind",
+      "value": "coins"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_156"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Windgrace Acolyte"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_teef"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "kurb"
+    }
+  ],
+  "edition": 37,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2003"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4xsCfQb3d5WXhhNWFeBTHLfHB18JStpbcYuaibPXm2rk"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #874",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/874",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_eboynoise"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Nimble Mongoose"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_sidechompers"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "ucantseeme"
+    }
+  ],
+  "edition": 532,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/874"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5Eu16FJ7B9UQyuKvtWc6KBdAtZ5sC4m4w9JpSNm5v5pa"
+  ]
+}

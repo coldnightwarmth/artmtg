@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1378",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1378",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "burningmonk"
+    },
+    {
+      "trait_type": "behind",
+      "value": "scrabble"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_136"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Pawn of Ulamog"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_larvatar"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "poker"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_agumon"
+    }
+  ],
+  "edition": 1881,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1378"
+      }
+    ]
+  },
+  "collection_mints": [
+    "97earx1WD9YodjmmSwydWEmvhpdfdw6H7BforYAZyym"
+  ]
+}

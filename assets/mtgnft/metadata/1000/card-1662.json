@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1661",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1661",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_dragonite"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_73"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Eternal Dominion"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_wavey"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_drools"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "blue"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "godemoeror"
+    }
+  ],
+  "edition": 922,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1661"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CG8s4RcKCcmxC3j6BS9PZh62gECzFjeRLnbDaE9HB3Ui"
+  ]
+}

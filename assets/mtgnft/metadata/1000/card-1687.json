@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1686",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1686",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_nomansland"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Peregrine Drake"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_blush2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_widedark"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "vaperight"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "whatsinyocuppiiimp"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_spiltpillzz"
+    },
+    {
+      "trait_type": "special top",
+      "value": "warhammer40k"
+    }
+  ],
+  "edition": 2000,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1686"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GDHsuTWYz9NodyATGT1QBzGeMCkBCk7jT6v9ujh1XTYL"
+  ]
+}

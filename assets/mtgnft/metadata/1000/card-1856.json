@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1855",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1855",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_mansion"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_70"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Sporogenesis"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "kaneki"
+    },
+    {
+      "trait_type": "special top",
+      "value": "cometobrazil"
+    }
+  ],
+  "edition": 386,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1855"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7RFG8mmTfNcGCh9HV4xbRzA3d7gN7xbkiF1ygJoMEdEz"
+  ]
+}

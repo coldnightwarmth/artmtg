@@ -1,0 +1,90 @@
+{
+  "name": "Sweet Curse Card #120",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreiebftj4b5mxn3zmcfrtpt42vuk2wvryfjauacwhcwsqs3pbobyb3a",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "A.R.T."
+    },
+    {
+      "trait_type": "Background",
+      "value": "Susanoo"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Gangsta paradise"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Yurei.raw6"
+    },
+    {
+      "trait_type": "Score",
+      "value": "404"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Gengar vmax"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Gossip"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Spidzard"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "please"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "2t_k Pot of greed"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Jacksachs2"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Hot ice"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Needs"
+    },
+    {
+      "trait_type": "Erzart",
+      "value": "911"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "oil"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreiebftj4b5mxn3zmcfrtpt42vuk2wvryfjauacwhcwsqs3pbobyb3a",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigigvg4r5xvbzeapvgpdavu7dvfctvmymncboocqumctmf2nhg3j4",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigigvg4r5xvbzeapvgpdavu7dvfctvmymncboocqumctmf2nhg3j4",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigigvg4r5xvbzeapvgpdavu7dvfctvmymncboocqumctmf2nhg3j4",
+  "collection_mints": [
+    "Foo3ikKA9xFm5Z8T35r4VTDJCMmuCdYmNgCs72Yi1XAQ"
+  ]
+}

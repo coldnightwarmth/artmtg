@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1069",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1069",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_bladerunner"
+    },
+    {
+      "trait_type": "behind",
+      "value": "scrabble"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Broodhunter Wurm"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_animu3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_yelling"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "point"
+    },
+    {
+      "trait_type": "special top",
+      "value": "jjba"
+    }
+  ],
+  "edition": 566,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1069"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8x63x1wZozQ17vyxS3cA9ywTdPXH3e2gzt3kYLiTKSe3"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1783",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1783",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_dmttunnels"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_170"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Secret Plans"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_mifella3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_scarred"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "issac1"
+    }
+  ],
+  "edition": 667,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1783"
+      }
+    ]
+  },
+  "collection_mints": [
+    "81rxL9E31MaRwb5jwdb418rE9mwxuwWBsXqjRLch9b29"
+  ]
+}

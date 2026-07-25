@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #664",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/664",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_book"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Slum Reaper"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "tiger"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "boofleft"
+    }
+  ],
+  "edition": 1052,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/664"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3vE5AnFBdm1mmWWbXPFTdUpAVvW5DxdCRYs3vkJrKHNd"
+  ]
+}

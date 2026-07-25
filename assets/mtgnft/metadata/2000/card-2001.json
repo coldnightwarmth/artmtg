@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #2000",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2000",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_blackops1"
+    },
+    {
+      "trait_type": "behind",
+      "value": "lightningbehind"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Oran-Rief Survivalist"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_frown"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "blue"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "gunhandleft"
+    }
+  ],
+  "edition": 965,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2000"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Fmmj4peog7r8kFBzny6hJYkuwZf6u7zNKQpGJf8gaxhx"
+  ]
+}

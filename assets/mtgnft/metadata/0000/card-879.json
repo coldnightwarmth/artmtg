@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #878",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/878",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_cartelbust1"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Azra Smokeshaper"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "emo"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "liquid2018"
+    },
+    {
+      "trait_type": "special top",
+      "value": "loz"
+    }
+  ],
+  "edition": 2076,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/878"
+      }
+    ]
+  },
+  "collection_mints": [
+    "EkgUwi8mnwg4pBLVRyyEYvyp3Y6d2TD8Su3s9ww1kXkH"
+  ]
+}

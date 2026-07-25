@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1753",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1753",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_nextlife"
+    },
+    {
+      "trait_type": "behind",
+      "value": "matrixcode"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Echo of Eons"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_redblur"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "tounge"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "rpg"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "wokkyblur"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "stickyfingers"
+    }
+  ],
+  "edition": 2093,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1753"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7Ko4NNApJjUukRCp5zLc8aPvnZMUrqWrB7zpDUxwyBuA"
+  ]
+}

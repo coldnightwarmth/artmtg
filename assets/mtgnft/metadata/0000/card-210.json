@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #209",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/209",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "silenthill"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Monastery Swiftspear"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "solanaglow"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_glitched"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_nessleft"
+    }
+  ],
+  "edition": 995,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/209"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4bAWQCj5sQswfPVuwkBWB4vWh8EPgawQ3Z4hkQmBVQUH"
+  ]
+}

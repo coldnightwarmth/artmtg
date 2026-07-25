@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #149",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/149",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_crumpled"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Rite of Replication"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_fangs"
+    }
+  ],
+  "edition": 433,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/149"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BiMeCdH4FCGNv8YUpgFP3AV8tCibo66YxtEE4JShVzpm"
+  ]
+}

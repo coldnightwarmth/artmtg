@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #190",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/190",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_office"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Hewed Stone Retainers"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "yarinvert"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "babe"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "rpg"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mrdriller"
+    }
+  ],
+  "edition": 637,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/190"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GnnrvYq9g6BRnbxB52MgVSxkKrmkfoRwZmmx2nhK43Aj"
+  ]
+}

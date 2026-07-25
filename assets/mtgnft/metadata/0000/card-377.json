@@ -1,0 +1,58 @@
+{
+  "name": "MTG CARD #376",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/376",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_server"
+    },
+    {
+      "trait_type": "behind",
+      "value": "lightningbehind"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_139"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Daring Archaeologist"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "devilbaby"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "yarinvert"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "glitched2"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_digi"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_suiclady"
+    },
+    {
+      "trait_type": "special top",
+      "value": "jjba"
+    }
+  ],
+  "edition": 2214,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/376"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6ZCCrFbqhcDQ8XBMPWJ1GPLPE4N81e7UcKQCCdjXrSNv"
+  ]
+}

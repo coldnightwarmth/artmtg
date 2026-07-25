@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1242",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1242",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_enterthematrix"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_97"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Howlpack Resurgence"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_widedark"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "blue"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_issac"
+    },
+    {
+      "trait_type": "special top",
+      "value": "hellohater"
+    }
+  ],
+  "edition": 851,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1242"
+      }
+    ]
+  },
+  "collection_mints": [
+    "D2BXYqvmtkwYYQXVcGjiusrJfUA68RT4vGQkUeJjJx2a"
+  ]
+}

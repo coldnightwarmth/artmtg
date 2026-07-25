@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #423",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/423",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_heavenintheclouds"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Dub"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_serious"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_spongebob"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "ciggie"
+    },
+    {
+      "trait_type": "special top",
+      "value": "nsmbu"
+    }
+  ],
+  "edition": 1947,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/423"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DgeU5o4dMvxfDMgZLfStt3zojCAXQjimxyAVmBmHwoB1"
+  ]
+}

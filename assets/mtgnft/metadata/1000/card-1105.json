@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1104",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1104",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "tabs1"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Araba Mothrider"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_myspacecore"
+    },
+    {
+      "trait_type": "hat",
+      "value": "asspizzajackolantern"
+    },
+    {
+      "trait_type": "special top",
+      "value": "hellohater"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "milscratched"
+    }
+  ],
+  "edition": 2218,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1104"
+      }
+    ]
+  },
+  "collection_mints": [
+    "hjXEeQE2DTMaRqutzueTvDpor75e9cPLkk5b6wGGfq7"
+  ]
+}

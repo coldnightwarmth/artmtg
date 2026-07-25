@@ -1,0 +1,25 @@
+{
+  "name": "Spirit Bond",
+  "description": "Collema",
+  "seller_fee_basis_points": 500,
+  "image": "https://turbo-gateway.com/stTFbq4NSm24STlqn9uWCLa7kwAxLunxbifBIsMRaZs?ext=png",
+  "properties": {
+    "files": [
+      {
+        "uri": "https://turbo-gateway.com/stTFbq4NSm24STlqn9uWCLa7kwAxLunxbifBIsMRaZs?ext=png",
+        "type": "image/png"
+      }
+    ],
+    "creators": [
+      {
+        "address": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+        "share": 100,
+        "verified": true
+      }
+    ]
+  },
+  "attributes": [],
+  "collection_mints": [
+    "2QvEx1c8B76sWD3igpNkBG2h3S8yqt3efrRy1jikCAvd"
+  ]
+}

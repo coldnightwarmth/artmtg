@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #45",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/45",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_xanax"
+    },
+    {
+      "trait_type": "behind",
+      "value": "scanlines3"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_20"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Tribal Flames"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "mifella1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_myspacecore"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "bong"
+    }
+  ],
+  "edition": 1333,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/45"
+      }
+    ]
+  },
+  "collection_mints": [
+    "99NH2SvNYFhCcUQLRyVTxhvhxYDoGZrSaq2D6fLXyRSq"
+  ]
+}

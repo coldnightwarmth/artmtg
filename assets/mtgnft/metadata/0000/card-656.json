@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #655",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/655",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_dindin"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Unerring Sling"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "kushh"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_chomp"
+    },
+    {
+      "trait_type": "hat",
+      "value": "northface"
+    }
+  ],
+  "edition": 174,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/655"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4rYvbXVVCeuu4gFQR8HD8H6g67gTJQasW5gHLdP7w7bk"
+  ]
+}

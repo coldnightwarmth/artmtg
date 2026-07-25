@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #143",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/143",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_drifella2"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Retreat to Valakut"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_drool"
+    }
+  ],
+  "edition": 263,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/143"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9rA5KHdKV55DSZ5q7JtRTsD5wxT44nMA3gKheVUZCA1H"
+  ]
+}

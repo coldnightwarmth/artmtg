@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #123",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/123",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_egirlnoise"
+    },
+    {
+      "trait_type": "behind",
+      "value": "ddr"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Spectral Rider"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_cursed"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "marker"
+    }
+  ],
+  "edition": 1365,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/123"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Bcv12ir3Y64tyvSWcp2EpKerMFhR3yU4dHAE42rRzCs5"
+  ]
+}

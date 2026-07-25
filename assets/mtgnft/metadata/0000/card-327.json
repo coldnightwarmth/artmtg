@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #326",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/326",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_tabs1"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Zhalfirin Void"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_blush2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_kanye"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "spiltpillzz"
+    },
+    {
+      "trait_type": "special top",
+      "value": "Untitled_Artwork-20"
+    }
+  ],
+  "edition": 1244,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/326"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Ejo1Y3RgQshL4zHxRaH32P1687Ztn5GKUyFv3seopFwL"
+  ]
+}

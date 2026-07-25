@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #935",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/935",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_blurryaminegirl"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Drain Power"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_redblur"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_confused"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "jordan1hi"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "nge soundtrack"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "acid"
+    }
+  ],
+  "edition": 1184,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/935"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DTYteuXYnysX3AyZvsGpwKw7YygNTo2PPGQ9YCb9XXUb"
+  ]
+}

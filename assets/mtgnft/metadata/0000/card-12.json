@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #11",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/11",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_burningtower"
+    },
+    {
+      "trait_type": "behind",
+      "value": "bustersword"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Sluiceway Scorpion"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_redblur"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_myspacecore"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "zyn"
+    }
+  ],
+  "edition": 1542,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/11"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6WVbLYZyufj9sDC6gKig5vQJPSzFYcCW5HzefBJxoE7L"
+  ]
+}

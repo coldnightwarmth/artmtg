@@ -1,0 +1,32 @@
+{
+  "name": "judgement",
+  "description": "manta_timing",
+  "seller_fee_basis_points": 500,
+  "image": "https://turbo-gateway.com/jHF8hkJnomab8Fu27SAbSVAQVAdpzWxEyUcMkXMXUas?ext=png",
+  "properties": {
+    "files": [
+      {
+        "uri": "https://turbo-gateway.com/jHF8hkJnomab8Fu27SAbSVAQVAdpzWxEyUcMkXMXUas?ext=png",
+        "type": "image/png"
+      }
+    ],
+    "creators": [
+      {
+        "address": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+        "share": 100,
+        "verified": true
+      }
+    ]
+  },
+  "attributes": [],
+  "collection_mints": [
+    "29ciFLhB7EE48cSH9zCGpFov2E3fdfELszm7fmo4GafY",
+    "2RWarbSLvKQtCcWQnSijHbpsRh1mj6Z7V4HS782zJ2U8",
+    "3geSp59t8e6YQttbak5WLFBuK18XnCJ3HqFUTwqm7TiX",
+    "6yYhbHMPzLhT4rtwyLnVAukQReiuuAWGM2wXqELayK4B",
+    "CGDu4QUFhEN78qaNEat5tbRvdcLtgNyzK1J2DhQ2U5RR",
+    "CiNEmeBwAAvpHHQHkKsrpeSHYwFdnoJ63xKV5AqG6A9Z",
+    "FYHMRAbq9rxwyNv4q52kf9CpUcFPLu5Nh51ZmN6eif4a",
+    "tNDXsg3o2sinhn24CNwyZgkvXZmmb7WQBnQFCV6BhPW"
+  ]
+}

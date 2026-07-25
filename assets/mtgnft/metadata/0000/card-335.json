@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #334",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/334",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_afgankush"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_111"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Brain in a Jar"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_moneypls"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mariot"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "pufforangee"
+    }
+  ],
+  "edition": 413,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/334"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4EEJSSiW3QQnoC2UWW1v9SWVS9feqoFPHhPTwXkKRH6A"
+  ]
+}

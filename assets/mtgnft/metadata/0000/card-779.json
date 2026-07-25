@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #778",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/778",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "middleschoolbinder"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Chaotic Strike"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "mifella3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "yay"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "spyro"
+    },
+    {
+      "trait_type": "special top",
+      "value": "nsmbu"
+    }
+  ],
+  "edition": 929,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/778"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5NMjYNJVpcp3tHGd85Mokxv9yRdLwcY8zncqTHvFj87M"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #452",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/452",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_cloudheaven"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Feast of Blood"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_saskue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "babe"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_powderblue5s"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "issac1"
+    }
+  ],
+  "edition": 2112,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/452"
+      }
+    ]
+  },
+  "collection_mints": [
+    "76NSaC29S2qU2kXwrYyYF8Nv2iKbNGYbUL2dMLbN3c3E"
+  ]
+}

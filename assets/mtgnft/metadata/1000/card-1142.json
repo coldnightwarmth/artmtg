@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1141",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1141",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_burningtower"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Grand Warlord Radha"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_animu2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_comicjoker"
+    },
+    {
+      "trait_type": "hat",
+      "value": "guccibiglogo"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "ditto"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_kms"
+    },
+    {
+      "trait_type": "special top",
+      "value": "nsmb"
+    }
+  ],
+  "edition": 2157,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1141"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DgYAVU8HtPBQF3aTA1s1ojBgSXYyxbLmuDjwXyzbJVir"
+  ]
+}

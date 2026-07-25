@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1363",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1363",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_snowcapped"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_189"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Vessel of Nascency"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "neverbrush"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "gunleft"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "whatsinyocup"
+    },
+    {
+      "trait_type": "special top",
+      "value": "halfhealth"
+    }
+  ],
+  "edition": 1247,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1363"
+      }
+    ]
+  },
+  "collection_mints": [
+    "E4mceRa2a7WCQmZ8r2bkboAhZhQukFSom53ueR7Tc2Qz"
+  ]
+}

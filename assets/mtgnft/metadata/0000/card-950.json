@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #949",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/949",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_dxmdreams"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_57"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Chitinous Cloak"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "cheeky"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_vegita"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_theworld"
+    }
+  ],
+  "edition": 140,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/949"
+      }
+    ]
+  },
+  "collection_mints": [
+    "E6gpWT2n5yu6redsvG7VnaHcDK2WfwsESUFNFHJNSzn"
+  ]
+}

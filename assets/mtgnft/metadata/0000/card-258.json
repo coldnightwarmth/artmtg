@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #257",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/257",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_peachscastle"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_59"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Geist of Saint Traft"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_mifella2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "unf"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "kidbuu"
+    }
+  ],
+  "edition": 2200,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/257"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6YgPEduXzcpAdmBRHPtZHhD8VJenikiZh3S1xahTvwBn"
+  ]
+}

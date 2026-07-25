@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #567",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/567",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_egirlnoise2"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Multani, Yavimaya's Avatar"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_troll"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "spiltpillzz"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "solanamaxi"
+    }
+  ],
+  "edition": 1281,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/567"
+      }
+    ]
+  },
+  "collection_mints": [
+    "ABj27mygcwFq2hB3o5mvychEo6aD2QysJWJofb5Y71QU"
+  ]
+}

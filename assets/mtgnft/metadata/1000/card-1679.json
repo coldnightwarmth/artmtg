@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #1678",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1678",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_heavygrain"
+    },
+    {
+      "trait_type": "behind",
+      "value": "sonicring"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Rune-Tail, Kitsune Ascendant_Rune-Tail's Essence"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "chains"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_sidechompers"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "red"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "hellokittylove"
+    },
+    {
+      "trait_type": "top right",
+      "value": "ibpholo"
+    }
+  ],
+  "edition": 1640,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1678"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GXhVwqGvF8JrthvDfge5gDHaX1kTvbxz5f3fgCq9zpXj"
+  ]
+}

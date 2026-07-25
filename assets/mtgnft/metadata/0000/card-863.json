@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #862",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/862",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_dxmtrip"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Masumaro, First to Live"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_x"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "frown"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "black"
+    }
+  ],
+  "edition": 2007,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/862"
+      }
+    ]
+  },
+  "collection_mints": [
+    "F8n2TXko5QxQDKJiPXBDCPkmJ6koPLDAksADgaC5Joj1"
+  ]
+}

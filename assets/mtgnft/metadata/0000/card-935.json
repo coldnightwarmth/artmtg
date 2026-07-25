@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #934",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/934",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_heaven"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_77"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Charging Troll"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_redblur"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_glitched"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "gunleft"
+    },
+    {
+      "trait_type": "special top",
+      "value": "supersmashbros"
+    }
+  ],
+  "edition": 1957,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/934"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8QHqPyFPHD3HU9JbC6cb6PJabH78bu9idU4jDtKa6dDR"
+  ]
+}

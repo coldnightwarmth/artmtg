@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #1835",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1835",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_paradise"
+    },
+    {
+      "trait_type": "behind",
+      "value": "godsword"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_9"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Fraction Jackson"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_mifella1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_kanye"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "bluepill"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "fingerleft"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_kuromi2"
+    }
+  ],
+  "edition": 1058,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1835"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5w9gQJQKmpBdTU7zzMef94S9JgJViHK9q5i2SXaXP8gL"
+  ]
+}

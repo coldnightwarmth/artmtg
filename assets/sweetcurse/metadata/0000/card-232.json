@@ -1,0 +1,90 @@
+{
+  "name": "Sweet Curse Card #232",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifruu4yppexxdmgom7arcgczblg6skb34df2cxq2mm2m6ruee24vy",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Trap"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Piratebay"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Happy tree friends"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Siamese brothers"
+    },
+    {
+      "trait_type": "Score",
+      "value": "Tupac chicken"
+    },
+    {
+      "trait_type": "Name",
+      "value": "je-jontch-ka"
+    },
+    {
+      "trait_type": "Signature",
+      "value": "Erz7"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Wave fckd"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Windows_2002"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Sugarspike"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Dr.monochrome Kabutops"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Pachimon laden"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Flamp"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Mana"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "loyaute"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifruu4yppexxdmgom7arcgczblg6skb34df2cxq2mm2m6ruee24vy",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiaqewwibj4ayfyydaktnyzxjcy3jm4ts4kmwl72iea7wfcpvf74dy",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiaqewwibj4ayfyydaktnyzxjcy3jm4ts4kmwl72iea7wfcpvf74dy",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiaqewwibj4ayfyydaktnyzxjcy3jm4ts4kmwl72iea7wfcpvf74dy",
+  "collection_mints": [
+    "AgXayqVKYp4pRvqbL8CupAYZyfpYZyNHv3F3kAw4ASz6"
+  ]
+}

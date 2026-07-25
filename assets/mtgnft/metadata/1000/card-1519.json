@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1518",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1518",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_black"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_94"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Stronghold Confessor"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "evil1"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "pyrotf2"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "success"
+    }
+  ],
+  "edition": 1923,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1518"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HTzmNPiejrmqAGbJBYXbMT61NmthiRxMRynksccU7HG"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "AGM-158 JASSM Salesman",
+  "description": "Garth Miró",
+  "seller_fee_basis_points": 500,
+  "image": "https://turbo-gateway.com/fiXJ41GFzeHF0YUVLlTRNEKx-NKeqLh4Qqb4aLg0RTc?ext=jpeg",
+  "properties": {
+    "files": [
+      {
+        "uri": "https://turbo-gateway.com/fiXJ41GFzeHF0YUVLlTRNEKx-NKeqLh4Qqb4aLg0RTc?ext=jpeg",
+        "type": "image/jpeg"
+      }
+    ],
+    "creators": [
+      {
+        "address": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+        "share": 100,
+        "verified": true
+      }
+    ]
+  },
+  "attributes": [],
+  "collection_mints": [
+    "13CHZSoZujwd6yiwrdBxovHqyChgS4DYDPuGYVK2SAka",
+    "2pHnEnw9dF6JFg6xYZmfQB97opkevoYPkmHXit7BSYdT",
+    "47k8xtWmCTVTBC5anV7t54QETHaEvmSTxH2bacxEAYmP",
+    "4SCScDpbMYh98zekwFvPGjybhszoVpz6RQYFXnmF1wgL",
+    "55idb6PuQ7wMXeY5Kwsi7pu65jysdG7hVtDz3hi4d5Tk",
+    "6Fo3uf3RXPhpaCk1eXjJ6mpYhp7e3PPdLoCiBeuEJxq2",
+    "9Ziv74jkFko4W7inedBvGrjoy4USnD2RmJ34fTj13mVb",
+    "AeajP3s9fgzmpsvx1S5GQZhmbL9JBAdKu262ABnBmDyK",
+    "AKYhAwjQmiRmY111AfF3iFc4Tn7oYtR9vgyeyLmpS4Ba",
+    "DQDxwoBrNP5AZyHqfMWL1DjC1GTNUgrv94eihSwZxoyJ",
+    "FkmXEi6Dq4EKZMhgwVYS45E7xmmEiss3uzugsSFJSkDJ"
+  ]
+}

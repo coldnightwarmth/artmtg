@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1334",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1334",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_silenthill"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_47"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Nirkana Revenant"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_bigyawn"
+    },
+    {
+      "trait_type": "special top",
+      "value": "issacafterbirth"
+    }
+  ],
+  "edition": 2213,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1334"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BJyTDk9VswGquapPFw3g49VaXKAi8ZdMk3h5JkA1uoqJ"
+  ]
+}

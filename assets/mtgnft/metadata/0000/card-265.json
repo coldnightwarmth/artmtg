@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #264",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/264",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_coffeehouseart"
+    },
+    {
+      "trait_type": "behind",
+      "value": "matrixcode"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Infernal Kirin"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "widesmirk"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "warrencoin"
+    },
+    {
+      "trait_type": "top right",
+      "value": "swagcoin"
+    },
+    {
+      "trait_type": "special top",
+      "value": "thps4"
+    }
+  ],
+  "edition": 1801,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/264"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GiYHTCkB735S1nYuvnmdPBur1auK6Y1McF6RFZ2CpuJ7"
+  ]
+}

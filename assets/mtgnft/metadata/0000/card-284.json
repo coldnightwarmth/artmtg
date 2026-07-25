@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #283",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/283",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_silenthill"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Tomb of Urami"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_serious"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "arggg"
+    }
+  ],
+  "edition": 285,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/283"
+      }
+    ]
+  },
+  "collection_mints": [
+    "EsDnDqYimUEb8t381whmLP71XpiDQsCKaprjomon62Yz"
+  ]
+}

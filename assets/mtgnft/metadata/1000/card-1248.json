@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1247",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1247",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "bloodygoth"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Moniker Mage"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_kittygrin"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mtndewdogs"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "pron"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "acid"
+    }
+  ],
+  "edition": 1130,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1247"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DtpRTta6XoTx57S7XaoAuiTpKn3BKxk6w8Qj4TAcsK2m"
+  ]
+}

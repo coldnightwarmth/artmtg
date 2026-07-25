@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1539",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1539",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "cartelbust1"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Startled Awake"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_bluestrain"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_upset"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "laser"
+    },
+    {
+      "trait_type": "hat",
+      "value": "halopurple"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "gent"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "breaktop"
+    }
+  ],
+  "edition": 942,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1539"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5gCfZAZL14w8aypcC3r8Vj4Po9qi5e8jjMw9ZrWr1MxE"
+  ]
+}

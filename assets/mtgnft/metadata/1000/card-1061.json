@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1060",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1060",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_animespace"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ironroot Treefolk"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_powdermouth"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "rightpeek"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "rigileft"
+    },
+    {
+      "trait_type": "special top",
+      "value": "halfhealth"
+    }
+  ],
+  "edition": 1679,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1060"
+      }
+    ]
+  },
+  "collection_mints": [
+    "2HY2oqWUTzGLqpi52PUyAtrfAfrHzAt3EoRdL1VH9iPx"
+  ]
+}

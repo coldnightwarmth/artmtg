@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #1125",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1125",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_pkmnbugluv"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Spore Frog"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_bnw"
+    }
+  ],
+  "edition": 1861,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1125"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Q4RsqtazyWLfdpmRwkWZt54F4UTsERekstKuuknV2QF"
+  ]
+}

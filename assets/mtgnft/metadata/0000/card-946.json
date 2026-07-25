@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #945",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/945",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_abstract5"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Skirk Prospector"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_evil1"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "rockhole"
+    }
+  ],
+  "edition": 683,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/945"
+      }
+    ]
+  },
+  "collection_mints": [
+    "EZkMMknhfV7193nNdBcWgtLtZCXM4nFcQPKcN8htZ4ZY"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1745",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1745",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_heavenintheclouds"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_68"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Viashino Warrior"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_perc5shine"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "paulwall"
+    }
+  ],
+  "edition": 1675,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1745"
+      }
+    ]
+  },
+  "collection_mints": [
+    "E5g5uidy77zJ8CqC4GRdsVzQ8ZWAQRBVBVpkPFxSYZSN"
+  ]
+}

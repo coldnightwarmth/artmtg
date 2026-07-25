@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #661",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/661",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_abstract3"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Gloomwidow"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_animu3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_bloodsmirk"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "black"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "gunleft"
+    }
+  ],
+  "edition": 1307,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/661"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5Rh8PpQKoqepnLK8BEks98o7wHNpKGiYsY3huvzZcMQH"
+  ]
+}

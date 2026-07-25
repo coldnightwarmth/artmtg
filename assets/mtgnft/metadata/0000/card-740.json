@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #739",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/739",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_blackops1"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Graphic Violence"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_mifella1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_scarred"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_sans"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "trinity"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "gayfish"
+    }
+  ],
+  "edition": 624,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/739"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9efW5sNwdnTMVqgvVM4efoxgUrx5xX1pLDSiZEZmNtHB"
+  ]
+}

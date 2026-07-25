@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #2136",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2136",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_collider"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Voltaic Key"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_silenceofthelambs"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "green"
+    },
+    {
+      "trait_type": "hat",
+      "value": "toymachine"
+    },
+    {
+      "trait_type": "special top",
+      "value": "perc30top"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "asspizza2022"
+    }
+  ],
+  "edition": 4,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2136"
+      }
+    ]
+  },
+  "collection_mints": [
+    "96cUgKRYHCKVwBPU7oLbDXeKnJoN6LuonzXVjw5pvk4r"
+  ]
+}

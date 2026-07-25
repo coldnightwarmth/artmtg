@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #1165",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1165",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_tokyo"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Rite of Belzenlok"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "cursed"
+    }
+  ],
+  "edition": 1717,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1165"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8XkGCe3XQy5hr1YuQCtzMa2uGEJTracJDaAttewqod2C"
+  ]
+}

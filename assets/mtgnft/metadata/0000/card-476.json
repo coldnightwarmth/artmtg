@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #475",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/475",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_nextlife"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_36"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Stormscape Master"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "smoke"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "cassette"
+    }
+  ],
+  "edition": 1549,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/475"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Bb6YYXKSEDw2L6KvaascfqYEY2WSwpGs7FUis7H3c2Mb"
+  ]
+}

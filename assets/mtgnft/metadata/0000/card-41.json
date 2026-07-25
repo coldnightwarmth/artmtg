@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #40",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/40",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "babe"
+    },
+    {
+      "trait_type": "behind",
+      "value": "swirledtv"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Vulshok Heartstoker"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_moneypls"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "bluepill"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "ciggie"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "marle"
+    },
+    {
+      "trait_type": "top left",
+      "value": "misty"
+    }
+  ],
+  "edition": 189,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/40"
+      }
+    ]
+  },
+  "collection_mints": [
+    "x28RmmkApTXGbCLiV2AFD7wGRzpDNguA1ngzijmZBje"
+  ]
+}

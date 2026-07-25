@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1066",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1066",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "butterfreelove"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Elvish Archers"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "killaqueenbomb"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_greenlady"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_animy1"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_osrsdeath"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "howl"
+    }
+  ],
+  "edition": 1144,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1066"
+      }
+    ]
+  },
+  "collection_mints": [
+    "769oTBcBKM7Sfx9VsYXDQ2bAkDFeJLsp4pwkBBRJBgeE"
+  ]
+}

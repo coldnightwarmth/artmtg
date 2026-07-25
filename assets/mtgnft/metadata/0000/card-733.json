@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #732",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/732",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "peachscastle"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Aven Sentry"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_mifella3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "scarred"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "leftpeek"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "nge soundtrack"
+    }
+  ],
+  "edition": 914,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/732"
+      }
+    ]
+  },
+  "collection_mints": [
+    "B6JSQMQ2JFru2s83QRmCBk8BawgVdibTuY7kcaPcR1JE"
+  ]
+}

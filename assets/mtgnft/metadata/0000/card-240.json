@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #239",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/239",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "spawner"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Infernal Spawn of Infernal Spawn of Evil"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_mifella2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_neverbrush"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "perscribed"
+    },
+    {
+      "trait_type": "special top",
+      "value": "perc30top"
+    }
+  ],
+  "edition": 1105,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/239"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5TuQEWRp5Dyjzzu1FiHr4mcxKXZ92tL8ZCzU7cYQJzN2"
+  ]
+}

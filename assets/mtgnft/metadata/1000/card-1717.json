@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1716",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1716",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_gothdust"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ulrich's Kindred"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "wavey"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "yay"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "monke"
+    }
+  ],
+  "edition": 17,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1716"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8rSvaLzGBoZn54Ks28eVrtA3YHuZ5b5t7puFWdXmQyx"
+  ]
+}

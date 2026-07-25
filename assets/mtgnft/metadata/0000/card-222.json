@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #221",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/221",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_whatisthis"
+    },
+    {
+      "trait_type": "behind",
+      "value": "transmutate"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_155"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Feral Lightning"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "saskue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_widedark"
+    }
+  ],
+  "edition": 2013,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/221"
+      }
+    ]
+  },
+  "collection_mints": [
+    "68RQnRQrvRzZ4XFVLu1rgWR8iAmjoodYVf99PM3NCPiV"
+  ]
+}

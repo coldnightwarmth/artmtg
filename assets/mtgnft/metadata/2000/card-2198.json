@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #2197",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2197",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_abstract3"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Benthic Infiltrator"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_venom"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "green"
+    }
+  ],
+  "edition": 1730,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2197"
+      }
+    ]
+  },
+  "collection_mints": [
+    "hqk81SBRxiweRDPC2QraANr7zWRf6ZgjhaZxVN5htAf"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1983",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1983",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_littletests"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Glacial Revelation"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "mifella3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_daurk"
+    },
+    {
+      "trait_type": "hat",
+      "value": "gucciprint"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "gent"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "wokkyblur"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "cloud"
+    }
+  ],
+  "edition": 871,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1983"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4cipncy3Ks7WkZoEhxQhQWPe9obszDcZ4mo65LZGz9kB"
+  ]
+}

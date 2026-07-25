@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #2015",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2015",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_spooky"
+    },
+    {
+      "trait_type": "behind",
+      "value": "traits"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_102"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Opulent Palace"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_perc5shine"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "kidbuumouth"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "blue"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "redpill"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "falcob"
+    }
+  ],
+  "edition": 2129,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2015"
+      }
+    ]
+  },
+  "collection_mints": [
+    "p6W4L2NVnU5V5n6D2WKe7NLew1eimy5mwUdabW3jr3z"
+  ]
+}

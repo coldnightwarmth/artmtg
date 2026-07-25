@@ -1,0 +1,58 @@
+{
+  "name": "MTG CARD #1161",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1161",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "cartelbust1"
+    },
+    {
+      "trait_type": "behind",
+      "value": "sprayed"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Dread Drone"
+    },
+    {
+      "trait_type": "holo",
+      "value": "holoyellow"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_yarinvert"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_yelling"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "black"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "theGodfellaZ"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "ciggie"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_cs1point6"
+    }
+  ],
+  "edition": 401,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1161"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7k2Vs7huBhEKP1nCVwTFAcbAGJVjDZ3WkosP812CAuQ1"
+  ]
+}

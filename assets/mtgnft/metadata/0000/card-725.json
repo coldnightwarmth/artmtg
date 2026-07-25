@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #724",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/724",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_charazard"
+    },
+    {
+      "trait_type": "behind",
+      "value": "Untitled_Artwork-2"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_193"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Soulshriek"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "joker"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_powderblue5s"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "solanamaxi"
+    }
+  ],
+  "edition": 2012,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/724"
+      }
+    ]
+  },
+  "collection_mints": [
+    "J1wj9CNo8ED3kv924S7A769N6c8DKGcxK4T2hWdewNVe"
+  ]
+}

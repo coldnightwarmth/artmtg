@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1837",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1837",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_nomeds"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Seasoned Marshal"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "paulwall"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_theworld"
+    }
+  ],
+  "edition": 1518,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1837"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5dhGTaVmWNe11W38z1qzjxZszKmgvDassSN1omMqiR23"
+  ]
+}

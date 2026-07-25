@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #2099",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2099",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_coffeehouseart"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Free-for-All"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_kidbuumouth"
+    }
+  ],
+  "edition": 1297,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2099"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Fq3foPxtUcaViBtyjA8FEvsUTYStrNdqUhsdS7ReFavo"
+  ]
+}

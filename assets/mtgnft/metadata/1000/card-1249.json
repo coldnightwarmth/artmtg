@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1248",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1248",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "hiz"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_34"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Amaranthine Wall"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_serious"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_nar"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "playin"
+    }
+  ],
+  "edition": 934,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1248"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GAyPvDsoiaCzdiR94i5Y94FWZwM1e2g5Z9M7buonWWXa"
+  ]
+}

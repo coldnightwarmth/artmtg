@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1034",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1034",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_brucewayne"
+    },
+    {
+      "trait_type": "behind",
+      "value": "sprayed"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Retreat to Hagra"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "tounge"
+    },
+    {
+      "trait_type": "hat",
+      "value": "snes"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "draw"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "chaosemeralds"
+    }
+  ],
+  "edition": 1537,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1034"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7ryDZekapNkouV2U3udDomjPJyHeFbH8vZWGEGPoPzsc"
+  ]
+}

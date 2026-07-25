@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1271",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1271",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_animeDS"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_172"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Shichifukujin Dragon"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "biggrin"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_agumon"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mtn94"
+    }
+  ],
+  "edition": 1084,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1271"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7gbMjrhiEZNtAeot5LotPiJfpJU1czYEVPj5drbKXcTg"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1103",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1103",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_server"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_132"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Scorching Lava"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_animu3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_toofers"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "grinch5s"
+    }
+  ],
+  "edition": 2082,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1103"
+      }
+    ]
+  },
+  "collection_mints": [
+    "A6i7ivK3R2N6z2dJp45HcvSgnijxdv4roiAVrJEw1iAM"
+  ]
+}

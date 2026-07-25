@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #32",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/32",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_animeangel"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Cystbearer"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_perc5"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_easysmile"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "reachright"
+    }
+  ],
+  "edition": 1221,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/32"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9EiDobRSYx5zekss96Asyd9cq8Y4RRvmHgAN8Kzu5TC"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1887",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1887",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "ac130"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_75"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Myr Battlesphere"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_redblur"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_bigyawn"
+    },
+    {
+      "trait_type": "hat",
+      "value": "supreme"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_blueyes"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "swag"
+    }
+  ],
+  "edition": 1990,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1887"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CNsSyjaDr1cFsHtvFwuUJs4ZRPpVKqamJhUA9cFBUsGG"
+  ]
+}

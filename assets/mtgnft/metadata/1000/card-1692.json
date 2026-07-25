@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1691",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1691",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_blackops1"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_94"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Faerie Seer"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_serious"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_comicjoker"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "gunhandright"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "theworld"
+    }
+  ],
+  "edition": 424,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1691"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3tcEy6WuUAwKjFHv9dawx4M7wJDsJMLbKzRx3p1a3Pth"
+  ]
+}

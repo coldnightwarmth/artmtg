@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #2033",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2033",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_pkmnbugluv"
+    },
+    {
+      "trait_type": "behind",
+      "value": "Untitled_Artwork-1"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Paranoid Parish-Blade"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "beez"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_goldgrillz"
+    }
+  ],
+  "edition": 597,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2033"
+      }
+    ]
+  },
+  "collection_mints": [
+    "52Tfktm7EoE9ogREKjJDQLoG7261LEmYbapA8987v6Yw"
+  ]
+}

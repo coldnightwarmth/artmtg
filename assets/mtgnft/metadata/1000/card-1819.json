@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1818",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1818",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_711"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_122"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Opal Gargoyle"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_perc5"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_tiger"
+    },
+    {
+      "trait_type": "top left",
+      "value": "Untitled_Artwork-67"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "ds"
+    }
+  ],
+  "edition": 51,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1818"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7X1hao9Aoy8ZV5UuqKLXVzubaW1oJmxXgebKXoocfXAT"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #487",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/487",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "1stedition"
+    },
+    {
+      "trait_type": "behind",
+      "value": "scanlines2"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Midsummer Revel"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_comicjoker"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_kms"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "css"
+    }
+  ],
+  "edition": 1700,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/487"
+      }
+    ]
+  },
+  "collection_mints": [
+    "ExZCpNvvg9qRVBwS6hHrfCqLsK7j9KbcHHUVLmLB4Hwn"
+  ]
+}

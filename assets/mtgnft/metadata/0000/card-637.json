@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #636",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/636",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "brands"
+    },
+    {
+      "trait_type": "cards",
+      "value": "The Mirari Conjecture"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_jokersmirk"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "beretta"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "marker"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "joeyy"
+    }
+  ],
+  "edition": 138,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/636"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8mCj5xqR7yoNqhGQ5z1RPjAYzL1Zy7rdjUCKmXePDYZt"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #676",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/676",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_growth"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Death Frenzy"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_mifella3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "confused"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "gunhandleft"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "dadjotaro"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_gabumon"
+    }
+  ],
+  "edition": 86,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/676"
+      }
+    ]
+  },
+  "collection_mints": [
+    "AzQfn8kW8cSR3aGP9xhugK8KAWwHtz6TDpXTzh9N15Vg"
+  ]
+}

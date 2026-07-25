@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #1146",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1146",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_nomansland"
+    },
+    {
+      "trait_type": "behind",
+      "value": "chains"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Devour in Flames"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_perc5"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_daurk"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "bud"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_jay"
+    },
+    {
+      "trait_type": "special top",
+      "value": "pokemontcg"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "dualdeag"
+    }
+  ],
+  "edition": 1209,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1146"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DGoPF63vb3trD4b6YDmyCLTzf1iCse3XNSkecwwbPPML"
+  ]
+}

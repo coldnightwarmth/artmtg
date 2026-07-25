@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #2108",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2108",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_gmod"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Sacred Foundry"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_arggg"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "wat"
+    }
+  ],
+  "edition": 991,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2108"
+      }
+    ]
+  },
+  "collection_mints": [
+    "J7YLK4NJa3dg3xLzWXXj6nMYCLNkaKxkFgUnXtTaxtay"
+  ]
+}

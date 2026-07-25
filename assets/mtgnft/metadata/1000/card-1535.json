@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1534",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1534",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_egirls"
+    },
+    {
+      "trait_type": "behind",
+      "value": "terrariasword"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Femeref Scouts"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_wavey"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "toothygrin"
+    },
+    {
+      "trait_type": "special top",
+      "value": "nsmb"
+    }
+  ],
+  "edition": 759,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1534"
+      }
+    ]
+  },
+  "collection_mints": [
+    "2fMQmdaEzsHZ3DWJXZzZBsdQy8ry6b3RcreWAz8XSAnH"
+  ]
+}

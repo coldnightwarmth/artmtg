@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1401",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1401",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_tumblraf1"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Quest for the Gemblades"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "Beefellaz"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_yelling"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "ssbm"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "ily"
+    }
+  ],
+  "edition": 1347,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1401"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BKA95aeu4UcUDtq4x3TzjPHvxgJpfdQzYog25DqDEFPu"
+  ]
+}

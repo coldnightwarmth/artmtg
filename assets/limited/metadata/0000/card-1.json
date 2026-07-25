@@ -1,0 +1,25 @@
+{
+  "name": "drifella card 1",
+  "description": "ink, graphite, paper on yugioh card",
+  "seller_fee_basis_points": 500,
+  "image": "https://arweave.net/pTPkaZJNj6cOKfy3gwF2Ch3bhB3K8--rzkbRRGuA01k?ext=PNG",
+  "properties": {
+    "files": [
+      {
+        "uri": "https://arweave.net/pTPkaZJNj6cOKfy3gwF2Ch3bhB3K8--rzkbRRGuA01k?ext=PNG",
+        "type": "image/png"
+      }
+    ],
+    "creators": [
+      {
+        "address": "2hL345EvjWgeWuaoT3z5M6qzmkTRwCcEM9LGnYUKLPm1",
+        "share": 100,
+        "verified": true
+      }
+    ]
+  },
+  "attributes": [],
+  "collection_mints": [
+    "BWM9X8buLSaXzMYmWhP8oxT9DaCgp7Wy3xxDYTskwZSS"
+  ]
+}

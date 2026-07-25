@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #722",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/722",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_sciencelab"
+    },
+    {
+      "trait_type": "behind",
+      "value": "chains"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_152"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Nightbird's Clutches"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "babeblur"
+    },
+    {
+      "trait_type": "hat",
+      "value": "palaceblue"
+    }
+  ],
+  "edition": 881,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/722"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CGMQX7v53NhEpoj3wSTEd8K9W1hRgrF8phN41fHnof2h"
+  ]
+}

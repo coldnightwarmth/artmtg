@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1456",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1456",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "everythingwillbeyours"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Sanctum Custodian"
+    },
+    {
+      "trait_type": "holo",
+      "value": "holodots"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_smile"
+    }
+  ],
+  "edition": 272,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1456"
+      }
+    ]
+  },
+  "collection_mints": [
+    "B1gCYzhZXwUvPVVuY5vm2o1Kf86KWmvWZgJwNv4Emd91"
+  ]
+}

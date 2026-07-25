@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1736",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1736",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_animeDS"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_71"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Skin Shedder"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_mifella3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_glitched"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_marle"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_schoolgirl"
+    }
+  ],
+  "edition": 1264,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1736"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5Eng9sAKM4A4ygfbtD6hA8etJckTaTSChxjkz1y9suWP"
+  ]
+}

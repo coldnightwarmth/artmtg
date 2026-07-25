@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1129",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1129",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_brands"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Windrider Eel"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_snorlax"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_jontron"
+    }
+  ],
+  "edition": 419,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1129"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Ab3AXeXstB4H5jubhn5hs6zzSnin2zGaKEG9irhMczn6"
+  ]
+}

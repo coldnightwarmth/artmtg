@@ -1,0 +1,35 @@
+{
+  "name": "Rainbow Dark Dragonair",
+  "description": "Evil Biscuit",
+  "seller_fee_basis_points": 500,
+  "image": "https://turbo-gateway.com/UrlGODtI89aQoXzqNxh2I-FPqn-8-lmI4-7ATkBZz2M?ext=png",
+  "properties": {
+    "files": [
+      {
+        "uri": "https://turbo-gateway.com/UrlGODtI89aQoXzqNxh2I-FPqn-8-lmI4-7ATkBZz2M?ext=png",
+        "type": "image/png"
+      }
+    ],
+    "creators": [
+      {
+        "address": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+        "share": 100,
+        "verified": true
+      }
+    ]
+  },
+  "attributes": [],
+  "collection_mints": [
+    "2CEPgwtADwpoAvMBCce1auxssQt8zxPmepWadKmgHNBd",
+    "2sCxrzZgnmN2ZSr9MhBa8a9NbVxRt7GisfQV9fEfE7Db",
+    "3HszeY3JtXHch1McthdrwdPAvhPzErd98gHXSuQx5KfY",
+    "6mr9PEeeCvr7hGYNK7mwto2ywukUc2CeeKU4AFh8tYLm",
+    "6N9xgAGjo5LRRsqms6JqPtemf5DihtZygN1aysnpobA6",
+    "9j8YSHn2aP1ea2CCdCqxtPoUibMTf6Udyi3mDXYtD7kK",
+    "9UBU2iW3PNUX8tXhcQFWRHU3Y3TNhBTrLJxj3eG3Ndc4",
+    "CwnwFjx8yK1G4XY2FxzWuhNqRFGoLtiYQx3XYcE9xhxw",
+    "F9p1kKrwETgGzStiDRPzMuY8YyREUbF7DjgFwva345hM",
+    "FW4eMSGmAqL9j4XBUm7VNaVh4XWYex5ftLdmG13eVSp6",
+    "H531q7xSdJAC4DxgpHjGhoTcuByf6AeNzF13tkDBpZkb"
+  ]
+}

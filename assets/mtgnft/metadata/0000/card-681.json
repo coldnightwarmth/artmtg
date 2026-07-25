@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #680",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/680",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_heavygrain"
+    },
+    {
+      "trait_type": "behind",
+      "value": "terrariasword"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Bayou"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_blush2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_kidbuumouth"
+    },
+    {
+      "trait_type": "hat",
+      "value": "preppybear"
+    }
+  ],
+  "edition": 64,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/680"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3d7GgYQmUUbsko8GMKwzSPyJH4vXzVtPpDZ2BhddEPfi"
+  ]
+}

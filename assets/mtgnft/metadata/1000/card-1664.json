@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1663",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1663",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_kingbiden"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Veiled Apparition"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_perc5shine"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "nyahblur"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "blue"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_uwuright"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_knukel"
+    }
+  ],
+  "edition": 1933,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1663"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6LaKZaMxhW2XZQNKTwshG6pf8YpcPW7UUXsYDvo7SJT4"
+  ]
+}

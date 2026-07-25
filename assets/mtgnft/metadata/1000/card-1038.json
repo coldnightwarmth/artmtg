@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1037",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1037",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_asspizzagun"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Malakir Familiar"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_sidechompers"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "gunhandright"
+    },
+    {
+      "trait_type": "special top",
+      "value": "warhammer40k"
+    }
+  ],
+  "edition": 1711,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1037"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3rH9a7z4SjbeGrX4uf4Hz8NUYstQi4GxQtsCjNXPxrP2"
+  ]
+}

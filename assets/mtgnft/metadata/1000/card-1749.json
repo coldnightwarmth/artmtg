@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1748",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1748",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "grayscale_kingbiden"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Curse of the Nightly Hunt"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "babe"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "bluepill"
+    },
+    {
+      "trait_type": "special top",
+      "value": "solananetwork"
+    }
+  ],
+  "edition": 1646,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1748"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8X9RjBiQzLEXQT9bhoJ2yvKxpkyUq9cfKnoVYzTx4FWJ"
+  ]
+}

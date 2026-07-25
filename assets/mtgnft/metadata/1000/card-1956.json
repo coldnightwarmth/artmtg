@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1955",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1955",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_carbomb"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Tunnel Ignus"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "tounge"
+    },
+    {
+      "trait_type": "special top",
+      "value": "mw2"
+    }
+  ],
+  "edition": 38,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1955"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7Biwdg9ZSTjfmAJJWnkRrkhZbVPVzqMVv83Ki2VzgWy3"
+  ]
+}

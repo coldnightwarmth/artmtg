@@ -1,0 +1,82 @@
+{
+  "name": "Sweet Curse Card #170",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreigg2lgageezu4uzyh7z72nianeklr3p5carmdi72ao7wvsnagh5h4",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Bio"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Macro - leaf"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Mulan.fu2"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Mailart2"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Oudmourte"
+    },
+    {
+      "trait_type": "Signature",
+      "value": "Erz4"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Gold"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Jsrf"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Music tech"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "YouruncleStar"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "The blitz"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Stranger than ai"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "deepfried"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "on"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreigg2lgageezu4uzyh7z72nianeklr3p5carmdi72ao7wvsnagh5h4",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifarouph6fkaono753k6hrbnsam6m6wfxidyuyyvzwo6j7zgl6rzy",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifarouph6fkaono753k6hrbnsam6m6wfxidyuyyvzwo6j7zgl6rzy",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifarouph6fkaono753k6hrbnsam6m6wfxidyuyyvzwo6j7zgl6rzy",
+  "collection_mints": [
+    "F26oiyRk8jWWx3YBwkGTigzigUV9GnQv9xzpUsmAp6dK"
+  ]
+}

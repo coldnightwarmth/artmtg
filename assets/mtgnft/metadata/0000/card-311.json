@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #310",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/310",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_babe"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Halimar Tidecaller"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "saskue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_kidbuumouth"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_blessed2"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "signmypetition"
+    }
+  ],
+  "edition": 155,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/310"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8QeuJ9t8zxpa46Nes5orGMYho8zikjEcFXJp2osoETPY"
+  ]
+}

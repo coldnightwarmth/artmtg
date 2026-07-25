@@ -1,0 +1,19 @@
+{
+  "name": "CARD #264",
+  "description": "1 of 1 CARDS",
+  "image": "https://ipfs.io/ipfs/QmbrTJg4zyRo9ZhpixnDx3BvKMSsWvMyxRHyd8SeBcFAPA",
+  "attributes": [],
+  "tags": [],
+  "properties": {
+    "category": "image",
+    "files": [
+      {
+        "uri": "https://ipfs.io/ipfs/QmbrTJg4zyRo9ZhpixnDx3BvKMSsWvMyxRHyd8SeBcFAPA",
+        "type": "image/jpeg"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6f8mpcN56MzyFvuxBK7ivpK5CgcVGmqfKeCd9qTgqn6C"
+  ]
+}

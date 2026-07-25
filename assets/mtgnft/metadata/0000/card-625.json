@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #624",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/624",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_attic"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_121"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Kin-Tree Invocation"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_serious"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "bloodsmirk"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "gunright"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "boofleft"
+    }
+  ],
+  "edition": 1015,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/624"
+      }
+    ]
+  },
+  "collection_mints": [
+    "AdwNgJ2ADov5N9GWhWWgJ8eo5H3eVsVdNWx42C3iPCKN"
+  ]
+}

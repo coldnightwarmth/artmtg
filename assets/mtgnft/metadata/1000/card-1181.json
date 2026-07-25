@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #1180",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1180",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_mirror"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_65"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Clambassadors"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_missingtooth"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "gunhandright"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "luigi"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "rocksaltright"
+    },
+    {
+      "trait_type": "special top",
+      "value": "tf2"
+    }
+  ],
+  "edition": 1532,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1180"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HRFRvg1LzQC6FLL7dZ6y1hgkhEzXrJi2qrq1ZhoES8YX"
+  ]
+}

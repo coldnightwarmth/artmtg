@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #144",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/144",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_boom"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Primordial Wurm"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "nyahblur"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "bible"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "boosterbox"
+    }
+  ],
+  "edition": 893,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/144"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Av8frQbCkcpf59zAvAqwCwGbWfJzNqYc3EfXsQmD8pX4"
+  ]
+}

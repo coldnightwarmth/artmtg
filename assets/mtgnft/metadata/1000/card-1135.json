@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1134",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1134",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_plane"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Breath of Darigaaz"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "saskue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_smil"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_frank"
+    }
+  ],
+  "edition": 132,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1134"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Bg6g5yNsPi6nsypRA2gn5AwkLAfwiLMjAeVD6TeFB5BL"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #279",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/279",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_snowcapped"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Grisly Salvage"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_joint"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "ATfield"
+    }
+  ],
+  "edition": 602,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/279"
+      }
+    ]
+  },
+  "collection_mints": [
+    "C7oKPDoWxTB1XV5FaqfjagxWe7PBrvq5jM3gJ4szp6UL"
+  ]
+}

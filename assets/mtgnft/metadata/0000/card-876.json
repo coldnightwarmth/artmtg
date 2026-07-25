@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #875",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/875",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_egirlnoise2"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_100"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Goblin King"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_greenlady"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_smile"
+    }
+  ],
+  "edition": 1560,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/875"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9TxNDeF9c3Y9g7DuN4YqN6TkNn32UUH2LTKudFAGbNqE"
+  ]
+}

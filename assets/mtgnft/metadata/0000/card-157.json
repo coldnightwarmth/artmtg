@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #156",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/156",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_gothdeath"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Gallows Warden"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_smoke"
+    },
+    {
+      "trait_type": "hat",
+      "value": "sexy"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "kirb"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "tripplebox"
+    }
+  ],
+  "edition": 1310,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/156"
+      }
+    ]
+  },
+  "collection_mints": [
+    "TWifmHdcnUDGPDaR2RapftvsBapDLXivbNEuuoQtRC8"
+  ]
+}

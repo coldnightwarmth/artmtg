@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #612",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/612",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_egirls"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Skeletal Grimace"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "braces"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "black"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "reachleft"
+    }
+  ],
+  "edition": 445,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/612"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8khrG5TdaZYqscdbagzAd6remxHPcubKvcXfFnqecN8S"
+  ]
+}

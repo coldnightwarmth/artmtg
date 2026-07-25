@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1782",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1782",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_castleblur"
+    },
+    {
+      "trait_type": "behind",
+      "value": "terrariasword"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Orim's Touch"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_toothygrin"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "bible"
+    },
+    {
+      "trait_type": "special top",
+      "value": "cometobrazil"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "pokemondigimon"
+    }
+  ],
+  "edition": 167,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1782"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BLkpPcZVKe8ztL9XAHgU6WULxzi2d6N5eMRV2yTGEScD"
+  ]
+}

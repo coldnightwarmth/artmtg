@@ -1,0 +1,94 @@
+{
+  "name": "Sweet Curse Card #41",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreie5srbqtxr6cejd4bd3uqs56felqnlr64pbea7dqzjirmautaenqm",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Bio"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Macro r"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Mulan.fu2"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Mailart4"
+    },
+    {
+      "trait_type": "Score",
+      "value": "Switchhh"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Σύφιλη"
+    },
+    {
+      "trait_type": "Signature",
+      "value": "Erz4"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Millenium items"
+    },
+    {
+      "trait_type": "Full art",
+      "value": "Otter"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "R. Mascaro"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Jacksachs2"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Winamp4"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Where am i"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Stranger than ai"
+    },
+    {
+      "trait_type": "Erzart",
+      "value": "Arianart"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "chrome"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreie5srbqtxr6cejd4bd3uqs56felqnlr64pbea7dqzjirmautaenqm",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigqrpc6uzc374c3mxp4vgh22qfb3u4c7pykkgkak4wr5h3bmflszi",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigqrpc6uzc374c3mxp4vgh22qfb3u4c7pykkgkak4wr5h3bmflszi",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigqrpc6uzc374c3mxp4vgh22qfb3u4c7pykkgkak4wr5h3bmflszi",
+  "collection_mints": [
+    "df8woxgXFx7equYks76TUdrC36Q3DF5QkEj4K9AsRmL"
+  ]
+}

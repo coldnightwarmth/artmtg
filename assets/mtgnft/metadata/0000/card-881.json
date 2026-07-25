@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #880",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/880",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_snowcapped"
+    },
+    {
+      "trait_type": "behind",
+      "value": "coins"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_141"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Watery Grave"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "prada"
+    },
+    {
+      "trait_type": "special top",
+      "value": "nsmbu"
+    }
+  ],
+  "edition": 165,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/880"
+      }
+    ]
+  },
+  "collection_mints": [
+    "921bZizbTddXY2ECyjfC6z9WMjZBsWYasU7Pxhh7NtAG"
+  ]
+}

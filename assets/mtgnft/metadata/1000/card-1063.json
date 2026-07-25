@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1062",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1062",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_growth"
+    },
+    {
+      "trait_type": "behind",
+      "value": "majoramoonbehind"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Krumar Bond-Kin"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_animu2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_grr"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "pyrotf2"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "nge soundtrack"
+    }
+  ],
+  "edition": 988,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1062"
+      }
+    ]
+  },
+  "collection_mints": [
+    "FmQhG6ZSK3yjAVzwRBuxqaRsoZ7RcPXo6mvqfi2LeB4b"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1849",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1849",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_forrest"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Guild Feud"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_tongetooth"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "falcoshine"
+    },
+    {
+      "trait_type": "top right",
+      "value": "ibpholo"
+    }
+  ],
+  "edition": 891,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1849"
+      }
+    ]
+  },
+  "collection_mints": [
+    "F3d49M3XYsb2S1ogJemJi5UvR8zGV2w8fcsMFfY4t1hS"
+  ]
+}

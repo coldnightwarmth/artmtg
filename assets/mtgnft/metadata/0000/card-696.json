@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #695",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/695",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_brands"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Phantasmal Terrain"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "beez"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_heheheh"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "maniq"
+    }
+  ],
+  "edition": 487,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/695"
+      }
+    ]
+  },
+  "collection_mints": [
+    "FzEuow7rA2U7VXyhqV6CDgQdwD8qEcTurDF95EG1gwMa"
+  ]
+}

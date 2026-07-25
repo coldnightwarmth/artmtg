@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #322",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/322",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_peachscastle"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Pure Intentions"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_mifella1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_cheeky"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "gent"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_shipped"
+    }
+  ],
+  "edition": 3,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/322"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HGsVUhCAa3e3aafAkArbKEkbSwq2mrzsq5P4sVtnSSpx"
+  ]
+}

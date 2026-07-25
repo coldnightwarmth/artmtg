@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #915",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/915",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_portaltohell"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_141"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Containment Membrane"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_bluestrain"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_cartoonjoker"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "rocksaltleft"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "shinjitea"
+    }
+  ],
+  "edition": 1590,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/915"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CoyzKmB9XJoXxa4iKtns9cfihanZfM5Ptw5LDcD1ZA66"
+  ]
+}

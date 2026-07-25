@@ -1,0 +1,62 @@
+{
+  "name": "MTG CARD #1702",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1702",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "butterfreelove"
+    },
+    {
+      "trait_type": "behind",
+      "value": "gutsdragonslayer"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_189"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Meandering River"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "chompers"
+    },
+    {
+      "trait_type": "hat",
+      "value": "northface"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "fingerleft"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "lucky"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_uwuleft"
+    },
+    {
+      "trait_type": "special top",
+      "value": "halfhealth"
+    }
+  ],
+  "edition": 79,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1702"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BBUziS64PtaDUS6it4SpCroPiF8XT9Dn7JM9PsixwsjX"
+  ]
+}

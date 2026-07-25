@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #927",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/927",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_bladerunner"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Evil Twin"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_smil"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_chaosmarine3"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "clrighthand0"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "loud"
+    }
+  ],
+  "edition": 421,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/927"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GMDczXpbEc8WBMDyidBzzkkD9MQwod8arDZ91yqwDRJi"
+  ]
+}

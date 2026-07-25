@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #409",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/409",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_pulls"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Umara Entangler"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_x"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "myspacecore"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "gunright"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_birdo"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "endofeva"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "egirlnoise"
+    }
+  ],
+  "edition": 1254,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/409"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4c7SuxV6D7G4HLe32tKSXkwmJTr5jh2eKDEKWwH6uJwx"
+  ]
+}

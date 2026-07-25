@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #2094",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2094",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_hellcastle"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Copper Tablet"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_mifella1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "rubbermouf"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "scraped"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "point"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_chaosmarine2"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_dadjotaro"
+    }
+  ],
+  "edition": 467,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2094"
+      }
+    ]
+  },
+  "collection_mints": [
+    "2T8aPBU6Jb3gFb6eSVVEHNYjeLUNhTaj81UAdAUDoSCG"
+  ]
+}

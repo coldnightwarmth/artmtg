@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1373",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1373",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_portaltohell"
+    },
+    {
+      "trait_type": "behind",
+      "value": "lightningbehind"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Damping Sphere"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_tongetooth"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "chompright"
+    }
+  ],
+  "edition": 404,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1373"
+      }
+    ]
+  },
+  "collection_mints": [
+    "2JC8uaGWLKjxceTanpR7by966NQzzFTdSEswAnmr4fMP"
+  ]
+}

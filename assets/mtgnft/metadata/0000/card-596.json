@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #595",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/595",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_heaven"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_38"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Fungal Plots"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "devilbaby"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "yarinvert"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_spongebob"
+    }
+  ],
+  "edition": 1624,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/595"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6cEqxQLHYe7ABtS9iUN8eTzf2JAaWAzr6uzXnNDrzx9K"
+  ]
+}

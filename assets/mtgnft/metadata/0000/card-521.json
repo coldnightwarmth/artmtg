@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #520",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/520",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_whatisthis"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Cliffhaven Vampire"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_blush2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_heheheh"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "marionair"
+    }
+  ],
+  "edition": 479,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/520"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HYartt4Q9tW7KxERqkXDn7izzezryTSeBgVUmyMcsmMP"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1330",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1330",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_coffeehouseart"
+    },
+    {
+      "trait_type": "behind",
+      "value": "traits"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_166"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Force Away"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_inflate"
+    }
+  ],
+  "edition": 895,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1330"
+      }
+    ]
+  },
+  "collection_mints": [
+    "A6eFRj4uizsMfd2BFMSyuFQJr2mp9Dait9QnqBhMwPT5"
+  ]
+}

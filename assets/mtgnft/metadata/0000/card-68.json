@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #67",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/67",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_uni"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Distortion Strike"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_yarinvert"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_smirk"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_blessed"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "success"
+    }
+  ],
+  "edition": 1597,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/67"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Hid7yc1oE3KoDSBXTK119CR7yBnBCBmakc44NRPKKC8Q"
+  ]
+}

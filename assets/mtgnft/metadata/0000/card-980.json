@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #979",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/979",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_chrischanmewtwo"
+    },
+    {
+      "trait_type": "behind",
+      "value": "swirledtv"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_154"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Rain of Filth"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "devilbaby"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_x"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_spongebob"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_morphoius"
+    }
+  ],
+  "edition": 1478,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/979"
+      }
+    ]
+  },
+  "collection_mints": [
+    "FpkbiLoNx3qfwZ92z5VUhcubxDTMAxA7296hDiS9YoMJ"
+  ]
+}

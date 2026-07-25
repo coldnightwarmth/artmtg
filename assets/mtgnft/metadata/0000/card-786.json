@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #785",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/785",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_blackops1"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Act of Treason"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_goofy"
+    },
+    {
+      "trait_type": "special top",
+      "value": "howiswag"
+    }
+  ],
+  "edition": 607,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/785"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4c9PiDe5hnrLw71yBkqQWoSyp1rsFv1nML6z6QWjM9St"
+  ]
+}

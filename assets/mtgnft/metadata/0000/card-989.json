@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #988",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/988",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_rapture"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_119"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Metrognome"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "frown"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "gunright"
+    }
+  ],
+  "edition": 39,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/988"
+      }
+    ]
+  },
+  "collection_mints": [
+    "2DF8EdRabLri6KnawUb83nXie7biKjNTDMZb3JijPHCQ"
+  ]
+}

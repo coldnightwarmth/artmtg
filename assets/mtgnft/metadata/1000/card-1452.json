@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1451",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1451",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "enterthematrix"
+    },
+    {
+      "trait_type": "behind",
+      "value": "wave"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_91"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Molimo, Maro-Sorcerer"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_neverbrush"
+    }
+  ],
+  "edition": 1552,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1451"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DcC74mst8uhHw8Ffnx8cxM4xEeFLSQKc13pJwVJdATi5"
+  ]
+}

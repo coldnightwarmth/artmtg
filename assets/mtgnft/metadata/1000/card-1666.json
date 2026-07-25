@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1665",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1665",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_babe"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_7"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ichor Rats"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_prada"
+    }
+  ],
+  "edition": 1558,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1665"
+      }
+    ]
+  },
+  "collection_mints": [
+    "KZZikFL72Gg7m2HuxKqucv72Kpn6jwZfLasFwy1ATMR"
+  ]
+}

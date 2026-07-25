@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1218",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1218",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_3dnetmask"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Beastmaster Ascension"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "babe"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "redpill"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_theworld"
+    },
+    {
+      "trait_type": "special top",
+      "value": "issacantibirth"
+    }
+  ],
+  "edition": 82,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1218"
+      }
+    ]
+  },
+  "collection_mints": [
+    "ApwKk43Jkfitf79rK9Z1vS7Q6amZLd2y8mma6uZKUdhB"
+  ]
+}

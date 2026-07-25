@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1494",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1494",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_yourbathroom"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Flameblade Angel"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_greenlady"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "toothygrin"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "hooh"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "blueyes"
+    }
+  ],
+  "edition": 1080,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1494"
+      }
+    ]
+  },
+  "collection_mints": [
+    "EZ6EJ4NjDdpFoi7uHnpuM6EnPDqhkhp82msRDK2V9LQX"
+  ]
+}

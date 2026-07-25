@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #652",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/652",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_abstract3"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Unnatural Endurance"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_redblur"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_chomp"
+    },
+    {
+      "trait_type": "hat",
+      "value": "snes"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "csssniper"
+    }
+  ],
+  "edition": 584,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/652"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3mjYvrzrikGkepT9YxXYGJPvhmtUFkAMh5U2S4gRN1oB"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "name": "Sweet Curse Card #92",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreih3tvbn3kqycz77szoytfooajbs7j6wcdk4glzjcwt4t4xlhkdsqy",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Bio"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Micro- Human"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Dr.monochrome Jolteon"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Raw scan"
+    },
+    {
+      "trait_type": "Score",
+      "value": "Atomic mass"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Wt"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Lumas"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Spidzard"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Koblindeadman"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Pachimon kentauros"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Focus"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "ash"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreih3tvbn3kqycz77szoytfooajbs7j6wcdk4glzjcwt4t4xlhkdsqy",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeic2mx5x3vahc4zx5awx5gy4zhqwaikvbqfcoavqsclsofo6r3cxzu",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeic2mx5x3vahc4zx5awx5gy4zhqwaikvbqfcoavqsclsofo6r3cxzu",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeic2mx5x3vahc4zx5awx5gy4zhqwaikvbqfcoavqsclsofo6r3cxzu",
+  "collection_mints": [
+    "CJkkg2uc125uNz61uMgndqE9DQPD1qWLrxAYpBuUKiBV"
+  ]
+}

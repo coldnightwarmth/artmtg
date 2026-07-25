@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #749",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/749",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "paradise"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Bold Defense"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_troll"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "redpill"
+    },
+    {
+      "trait_type": "top left",
+      "value": "superstar"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "ily"
+    }
+  ],
+  "edition": 2178,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/749"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8tFrpAnPWXn6ZF5oFbN2aDqEhZsCu72SS9FR2QeiChYb"
+  ]
+}

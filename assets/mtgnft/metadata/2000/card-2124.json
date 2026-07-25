@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #2123",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2123",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_uni"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_81"
+    },
+    {
+      "trait_type": "cards",
+      "value": "The Antiquities War"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_smil"
+    },
+    {
+      "trait_type": "hat",
+      "value": "sexy"
+    },
+    {
+      "trait_type": "top right",
+      "value": "virtusproholo"
+    }
+  ],
+  "edition": 146,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2123"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6xCD5ij19vZ4PXjWr6scsawLZewpPD4EvwgwgukNaKDM"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "CARD 22",
+  "symbol": "cards",
+  "description": "1 of 1 CARDS",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicu3kbrbawx72fufmzuoyx3n5cz7itk6uyemdicj4pdvhnl4yzlji",
+  "attributes": [],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeicu3kbrbawx72fufmzuoyx3n5cz7itk6uyemdicj4pdvhnl4yzlji",
+        "type": "image/jpeg"
+      }
+    ],
+    "category": "image"
+  },
+  "collection_mints": [
+    "474cj9cwXTV7j7LYxZYueEFzvWdgVMabAza1F948yVT6"
+  ]
+}

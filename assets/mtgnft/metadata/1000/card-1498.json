@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1497",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1497",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_uni"
+    },
+    {
+      "trait_type": "behind",
+      "value": "gutsdragonslayer"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_105"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Oran-Rief Invoker"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_cheeky"
+    },
+    {
+      "trait_type": "special top",
+      "value": "nsmb"
+    }
+  ],
+  "edition": 674,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1497"
+      }
+    ]
+  },
+  "collection_mints": [
+    "2iwXbfa6h9RtnbC2qDJhxsGFrJTBzFx5cYPK1c91iEAL"
+  ]
+}

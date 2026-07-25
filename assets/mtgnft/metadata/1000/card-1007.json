@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1006",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1006",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_ethereal"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Salvage Drone"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_glitched"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "poker"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "gamecube"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "eboynoise"
+    }
+  ],
+  "edition": 205,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1006"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5c1ZmUswmJPSYyEiPvAMb4FyvkScqmRBtagqiH8pwRW2"
+  ]
+}

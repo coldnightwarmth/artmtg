@@ -1,0 +1,78 @@
+{
+  "name": "Sweet Curse Card #9",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreigp32s2ymklwhnuwqmubngbhxg2wbgadks5qfmhpdo72ckb3mrwq4",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Door"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Friends"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Cristo redentor cup"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Yurei.raw2"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Dragons aquatiques"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Fifa righttobuy"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Beauty"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "RMascaro Cakes"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Tai"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Maslow"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "In your eyes"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "vapor"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreigp32s2ymklwhnuwqmubngbhxg2wbgadks5qfmhpdo72ckb3mrwq4",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidulnak2gvxthjk4ddafhgksaexsoznohwfftaiajdypz4lad5fue",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidulnak2gvxthjk4ddafhgksaexsoznohwfftaiajdypz4lad5fue",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidulnak2gvxthjk4ddafhgksaexsoznohwfftaiajdypz4lad5fue",
+  "collection_mints": [
+    "8FW5ry9w7ju5AqvCZVrJJLp5hsiZNr9LYeGNs3GhxpEb"
+  ]
+}

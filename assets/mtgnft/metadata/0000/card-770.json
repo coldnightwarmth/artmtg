@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #769",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/769",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_littletests"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Exhume"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_blush2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_nar"
+    },
+    {
+      "trait_type": "special top",
+      "value": "mariopaint2"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "endofeva"
+    }
+  ],
+  "edition": 577,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/769"
+      }
+    ]
+  },
+  "collection_mints": [
+    "FAM5tQKg4157ZDnocmCVdb9mB2g45V8FwjJtgFx1G7PK"
+  ]
+}

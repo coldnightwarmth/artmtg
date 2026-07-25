@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #939",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/939",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_lcartin"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Nirkana Revenant"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_toxic"
+    },
+    {
+      "trait_type": "special top",
+      "value": "warhammer40k"
+    }
+  ],
+  "edition": 121,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/939"
+      }
+    ]
+  },
+  "collection_mints": [
+    "V2XMAui4yNRzSWsyaaUgHdzwqnwTat4BGHMYcky3BWp"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #360",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/360",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_gothdust"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_78"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Favorable Destiny"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_neverbrush"
+    }
+  ],
+  "edition": 2179,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/360"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6vmXzsnfjHn7Qs8WvJRF3gK9V1XE4Etxcj6yf3o6Gw32"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #2073",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2073",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_portaltohell"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_194"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Urborg Drake"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_chompers"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "gunhandleft"
+    }
+  ],
+  "edition": 2103,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2073"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7zD5dq2sfPs969Mj1kLvSv52Xe3f9TXPfuiFEzu1VYrQ"
+  ]
+}

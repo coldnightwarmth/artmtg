@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #294",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/294",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_artistshouse"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ruin in Their Wake"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_mifella2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_bloodsmirk"
+    },
+    {
+      "trait_type": "hat",
+      "value": "palaceblue"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "rpg"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_blessed"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "ATfield"
+    }
+  ],
+  "edition": 365,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/294"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8LRWLVWxou7RvnEVhMo4qiTkgWfrGkGSzabYmo7wNWq3"
+  ]
+}

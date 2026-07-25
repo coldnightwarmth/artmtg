@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #193",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/193",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_csgostitch"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Soramaro, First to Dream"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_cheeky"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "bong"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "gothstompers"
+    }
+  ],
+  "edition": 1756,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/193"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7EWrSGf5cRBjoCwpTkNzAJ9DRdLZd8RcV2WcdM9rQsDz"
+  ]
+}

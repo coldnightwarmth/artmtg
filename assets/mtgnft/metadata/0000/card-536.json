@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #535",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/535",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_toonblueeyes"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Putrid Goblin"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_redblur"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_larvatar"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "blue"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "boofright"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_cloudleft"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "littlebigplanet"
+    }
+  ],
+  "edition": 1490,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/535"
+      }
+    ]
+  },
+  "collection_mints": [
+    "64P11uNcDnY7bU8zpA76sDC3ADiydVMgwFuP53UsCDNN"
+  ]
+}

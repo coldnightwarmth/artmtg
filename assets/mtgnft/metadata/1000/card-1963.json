@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1962",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1962",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_whatitradeoff"
+    },
+    {
+      "trait_type": "behind",
+      "value": "majoramoonbehind"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Retribution of the Ancients"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_evil1"
+    }
+  ],
+  "edition": 1231,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1962"
+      }
+    ]
+  },
+  "collection_mints": [
+    "D3hVRt1fwVrgytzLqXwv3oeWPfNdp2w5T95FNP8zceJx"
+  ]
+}

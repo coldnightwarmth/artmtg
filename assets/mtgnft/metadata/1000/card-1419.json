@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #1418",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1418",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "ac130"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_135"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Rakshasa's Secret"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_mifella2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_smoke"
+    },
+    {
+      "trait_type": "hat",
+      "value": "gibus"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "gunleft"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_kirbyball"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "dualdeag"
+    }
+  ],
+  "edition": 1196,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1418"
+      }
+    ]
+  },
+  "collection_mints": [
+    "EXNWfa6zz3rnS3gCUBGaNgfF72pywdzgCjfL64q4gryP"
+  ]
+}

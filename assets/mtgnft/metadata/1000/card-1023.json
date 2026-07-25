@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1022",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1022",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_usa"
+    },
+    {
+      "trait_type": "behind",
+      "value": "transmutate"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_192"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Juggernaut"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_tiger"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "clrighthand0"
+    }
+  ],
+  "edition": 704,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1022"
+      }
+    ]
+  },
+  "collection_mints": [
+    "H1NRAj1PhgNTYUHwEMFAm1QyNmTZm229qjTLigAoM53v"
+  ]
+}

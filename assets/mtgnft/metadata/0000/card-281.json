@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #280",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/280",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_egirlnoise"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_156"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Quest for Ancient Secrets"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_perc5shine"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "glitched"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "bowserlock"
+    }
+  ],
+  "edition": 1894,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/280"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5AMwZJfwvqA9nvFnLAgfSLYZmhz93VHkbRoj7qV2JRwm"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #838",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/838",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_deathnote"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Garruk, the Veil-Cursed"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "mifella2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_chomp"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "cfalcon"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_luigi"
+    }
+  ],
+  "edition": 1822,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/838"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DycqWggCjzNCNrSdgMZ9fMMx8fLZruerbpECwZFcSNNv"
+  ]
+}

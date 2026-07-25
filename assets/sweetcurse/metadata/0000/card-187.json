@@ -1,0 +1,78 @@
+{
+  "name": "Sweet Curse Card #187",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreiet6mbcy5m7u6ife34uchjzh2dvp6miybhbif7kfcgfb5efm2xzim",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "A.R.T."
+    },
+    {
+      "trait_type": "Background",
+      "value": "Pizzart2"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Mulan.fu4"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Mailart"
+    },
+    {
+      "trait_type": "Name",
+      "value": "zml"
+    },
+    {
+      "trait_type": "Signature",
+      "value": "Erz8"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Sip"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Gachu"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Mega Watchman"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Flamp"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Stranger than ai"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "ascii"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreiet6mbcy5m7u6ife34uchjzh2dvp6miybhbif7kfcgfb5efm2xzim",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiekondhemvukbrobvexk2nyrcfw4d5ijjjf2o6s55f323w5kwerre",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiekondhemvukbrobvexk2nyrcfw4d5ijjjf2o6s55f323w5kwerre",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiekondhemvukbrobvexk2nyrcfw4d5ijjjf2o6s55f323w5kwerre",
+  "collection_mints": [
+    "8BTKeSEUyPvnZYmnL2bE9WdkgLRnxJ5BwGge5mALbRXL"
+  ]
+}

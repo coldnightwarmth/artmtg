@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #718",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/718",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_paradise"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Kemba, Kha Regent"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "yay"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "crawlleft"
+    }
+  ],
+  "edition": 1545,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/718"
+      }
+    ]
+  },
+  "collection_mints": [
+    "2hF28vdPd33ufVDvHiPo1GbrYN4qKHpmXoURiSGUpJsK"
+  ]
+}

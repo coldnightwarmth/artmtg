@@ -1,0 +1,86 @@
+{
+  "name": "Sweet Curse Card #141",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreie7zxy7fouqhjfekdqdpk44ucwpgds2bospclqsf464stc5xkrery",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Bio"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Macro - human"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "NintenDS"
+    },
+    {
+      "trait_type": "Description",
+      "value": "DustyRay2"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Roundup"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Zabiwa"
+    },
+    {
+      "trait_type": "Full art",
+      "value": "Sasuke"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Fypi"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Music tech"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "The real world"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Christion cross"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Pov lifestyle"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Whole Blood"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "kintsugi"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreie7zxy7fouqhjfekdqdpk44ucwpgds2bospclqsf464stc5xkrery",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigdqhdlrxxejtsv2csvg2iptr74t7x3dsupn7r4rbf4n6o547ceoe",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigdqhdlrxxejtsv2csvg2iptr74t7x3dsupn7r4rbf4n6o547ceoe",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigdqhdlrxxejtsv2csvg2iptr74t7x3dsupn7r4rbf4n6o547ceoe",
+  "collection_mints": [
+    "AiPbbX6tTftnvax6raa49DEGLJ85TH5KbwDF9TcEKU5y"
+  ]
+}

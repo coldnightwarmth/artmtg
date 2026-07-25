@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #586",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/586",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "pulls"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_158"
+    },
+    {
+      "trait_type": "cards",
+      "value": "New Prahv Guildmage"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_heheheh"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "navi"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_beefella"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "success"
+    }
+  ],
+  "edition": 1737,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/586"
+      }
+    ]
+  },
+  "collection_mints": [
+    "FSf1WLUJcMAaFmKMfGJubUhdXDFABLnC5qH6d8fKuASS"
+  ]
+}

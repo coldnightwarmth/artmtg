@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1393",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1393",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_pkmnbugluv"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Grave Betrayal"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_redblur"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_nyahblur"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_csshoota"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "swagcod"
+    }
+  ],
+  "edition": 1016,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1393"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6L3eXtHKGvVir5PwQCS9qCR5HGFY7o96D2362HaNi4eF"
+  ]
+}

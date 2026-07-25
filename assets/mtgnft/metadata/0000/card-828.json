@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #827",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/827",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_secondlifeangel"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_24"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Lumberknot"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_animu2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_nar"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "tripplebox"
+    }
+  ],
+  "edition": 948,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/827"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Dk1xtaE77S386MBfp6Lk5cYYxce7Y5Y41nb9QWs9nzcZ"
+  ]
+}

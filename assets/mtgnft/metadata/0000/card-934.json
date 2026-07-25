@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #933",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/933",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_expiredfilm"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Chronic Flooding"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_smil"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "boofright"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_bestgirlmisato"
+    }
+  ],
+  "edition": 1805,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/933"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5hd4bD1ZrBVhUUgt2spsUyJzrdN4JiCELsjMCETaX2HT"
+  ]
+}

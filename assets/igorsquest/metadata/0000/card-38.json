@@ -1,0 +1,39 @@
+{
+  "name": "Igors Quest #572",
+  "description": "Collect over 40 unique monsters, freaks and ghouls in Igors Quest: Shadylands!",
+  "symbol": "IGORSQUEST",
+  "image": "https://we-assets.pinit.io/75t7GEYpY7uThhjQrhrg13YnUbtY6Gy5CNG1UxoisyNQ/7f2d4a0b-58cb-4c8a-a1b3-1fba7a857ecb/pack-0-nft-1026.png",
+  "attributes": [
+    {
+      "trait_type": "Big Background",
+      "value": "Scratch"
+    },
+    {
+      "trait_type": "Card",
+      "value": "Le vendor"
+    },
+    {
+      "trait_type": "Background",
+      "value": "The Worm"
+    },
+    {
+      "trait_type": "CharactersComplete",
+      "value": "The Mage"
+    },
+    {
+      "trait_type": "Rarity Rank",
+      "value": "108"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://we-assets.pinit.io/75t7GEYpY7uThhjQrhrg13YnUbtY6Gy5CNG1UxoisyNQ/7f2d4a0b-58cb-4c8a-a1b3-1fba7a857ecb/pack-0-nft-1026.png",
+        "type": "image/png"
+      }
+    ]
+  },
+  "collection_mints": [
+    "49sz3GYHxPxTv5axJeNVhFBp7vvPitXnzHaNBYzcRLmL"
+  ]
+}

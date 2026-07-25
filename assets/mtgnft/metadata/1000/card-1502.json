@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1501",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1501",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_mansion"
+    },
+    {
+      "trait_type": "behind",
+      "value": "Untitled_Artwork-1"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Fortitude"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_larvatar"
+    },
+    {
+      "trait_type": "special top",
+      "value": "suddendeath"
+    }
+  ],
+  "edition": 557,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1501"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8fqR4eZJE26GqrujWjqazL4TMKTx7dP28mWjCiDNixKb"
+  ]
+}

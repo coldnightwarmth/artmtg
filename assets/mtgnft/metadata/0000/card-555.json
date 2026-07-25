@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #554",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/554",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_peaceischeap"
+    },
+    {
+      "trait_type": "behind",
+      "value": "Untitled_Artwork-1"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Serra Angel_3"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_grandma"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "bible"
+    }
+  ],
+  "edition": 2160,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/554"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CS5cnUAABRfEaG12thdPCBwCcMturkqAu3Wqup6DzXvX"
+  ]
+}

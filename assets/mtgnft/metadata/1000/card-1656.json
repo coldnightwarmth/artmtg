@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1655",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1655",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_batman"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Bull Hippo"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_droopy"
+    },
+    {
+      "trait_type": "special top",
+      "value": "issacantibirth"
+    }
+  ],
+  "edition": 1889,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1655"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BaiVwCYKs2JerYMHEeZc2CRdxnznuwpDQRKQmp5UmRnx"
+  ]
+}

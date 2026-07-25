@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1721",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1721",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_asspizzagun"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Cerulean Wyvern"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_redblur"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "babeblur"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "red"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_issac"
+    }
+  ],
+  "edition": 1410,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1721"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3h7Asp9GrSSyvu2tGRWvkP7Zcd3sSifCofJmH7TwTixB"
+  ]
+}

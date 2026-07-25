@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #2130",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2130",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "portaltohell"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Femeref Knight"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_serious"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_coupleasmokes"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "magic"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "pkmngold"
+    }
+  ],
+  "edition": 1431,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2130"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BsFRcyMWDpic2WPW9GQVqk75MEbDm4JTmNxU1RrZpwP9"
+  ]
+}

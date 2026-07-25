@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1842",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1842",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_toonblueeyes"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Munitions Expert"
+    },
+    {
+      "trait_type": "holo",
+      "value": "holodots"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_mifella1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_scarred"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "black"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_digiman"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "nergel"
+    }
+  ],
+  "edition": 1719,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1842"
+      }
+    ]
+  },
+  "collection_mints": [
+    "ALEwRiMs5redUF6X94g5tjQeUou6Nvp1wSAzVRvAUStb"
+  ]
+}

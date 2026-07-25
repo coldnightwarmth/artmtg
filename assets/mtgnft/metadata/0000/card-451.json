@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #450",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/450",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_whereyouwork"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_127"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Golgari Charm"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_mifella2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_prada"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "bible"
+    }
+  ],
+  "edition": 1273,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/450"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DyBu8vFiFfTHVcYCSBGUhKfof91Fy9qeMMeipRLNJ9nh"
+  ]
+}

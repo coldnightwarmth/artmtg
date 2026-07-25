@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #910",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/910",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_nam"
+    },
+    {
+      "trait_type": "behind",
+      "value": "chains"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Akoum Stonewaker"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_animu2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_chompers"
+    },
+    {
+      "trait_type": "top right",
+      "value": "virtusproholo"
+    }
+  ],
+  "edition": 2186,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/910"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CsWViXmLrsusoswHJJejerodfHhBTynojBq7JgpseF2N"
+  ]
+}

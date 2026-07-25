@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1938",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1938",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_akat"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Watcher in the Web"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_widesmirk"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_morphoius"
+    }
+  ],
+  "edition": 353,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1938"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BrULWhAAD41KQGHcRWTwoiboivmo4qMLh7u1A3Qs4DCa"
+  ]
+}

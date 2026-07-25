@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1097",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1097",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_csgostitch"
+    },
+    {
+      "trait_type": "behind",
+      "value": "fire"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_174"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Swords to Plowshares"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_perc5"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_kittygrin"
+    },
+    {
+      "trait_type": "special top",
+      "value": "digimon"
+    }
+  ],
+  "edition": 1715,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1097"
+      }
+    ]
+  },
+  "collection_mints": [
+    "EJE6TekGnq9KADn3B6PusMCfG9k4gbruLJuxTgix84bX"
+  ]
+}

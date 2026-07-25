@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #1055",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1055",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_riot"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Shiv's Embrace"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_perc5shine"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "yelling"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "theGodfellaZ"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "stabbed"
+    },
+    {
+      "trait_type": "special top",
+      "value": "warhammer40k"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "angemonprotek"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "speed"
+    }
+  ],
+  "edition": 880,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1055"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GZN7YGkKbi6BErrokECozj5w4FjstFk5Cd7BdfSiJBYZ"
+  ]
+}

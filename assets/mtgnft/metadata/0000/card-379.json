@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #378",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/378",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_killthejudge"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Yavimaya Sapherd"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "snout"
+    }
+  ],
+  "edition": 1473,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/378"
+      }
+    ]
+  },
+  "collection_mints": [
+    "47YV5mkuNfD3UGUX1i2r6JCmPy1ZUY9eoaQ3muWL5vM7"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #697",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/697",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_dxmdreams"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Elder Pine of Jukai"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_teef"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "ps2"
+    }
+  ],
+  "edition": 1136,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/697"
+      }
+    ]
+  },
+  "collection_mints": [
+    "C2QY683CR31dzHMb4NUWxzQemGyU2e2XkbfzfJqRydE9"
+  ]
+}

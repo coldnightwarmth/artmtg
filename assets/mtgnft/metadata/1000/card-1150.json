@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1149",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1149",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_bluefacebaby"
+    },
+    {
+      "trait_type": "behind",
+      "value": "bubbles"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_165"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Viashino Grappler"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "perc5"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_venom"
+    }
+  ],
+  "edition": 243,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1149"
+      }
+    ]
+  },
+  "collection_mints": [
+    "E6uLscoJabULNMd8xRSLqNy1y5znJPuTfJSLqcaJmGvZ"
+  ]
+}

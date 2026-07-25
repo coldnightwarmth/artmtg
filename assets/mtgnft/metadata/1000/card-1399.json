@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1398",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1398",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_dxmtrip"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_61"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Hurricane"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_nar"
+    },
+    {
+      "trait_type": "special top",
+      "value": "cometobrazil"
+    }
+  ],
+  "edition": 1327,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1398"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5TJS8LavsASLT5dCAf4nvEEWVDR8A4MmpsK8HL2KBBMM"
+  ]
+}

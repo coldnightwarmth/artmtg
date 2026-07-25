@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #342",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/342",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_csgostitch"
+    },
+    {
+      "trait_type": "behind",
+      "value": "blueflames"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Isperia's Skywatch"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_drool"
+    }
+  ],
+  "edition": 1423,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/342"
+      }
+    ]
+  },
+  "collection_mints": [
+    "FPZzk1qnf7YR6XFyHPkx6dH7QNfLKY11zxpiTar3W9zE"
+  ]
+}

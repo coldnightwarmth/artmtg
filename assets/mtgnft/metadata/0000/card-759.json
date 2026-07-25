@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #758",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/758",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_toonblueeyes"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_36"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Remodel"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_greenlady"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_glitched2"
+    }
+  ],
+  "edition": 1334,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/758"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3Yo9hhkdTxV4vWpCroWrtmqjswCpb5BuVkb5LqxV72KY"
+  ]
+}

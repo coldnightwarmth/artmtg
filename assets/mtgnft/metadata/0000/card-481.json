@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #480",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/480",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_redmoonsky"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Igneous Elemental"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_mifella2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_toonblueeyes"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "golbat"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "loud"
+    }
+  ],
+  "edition": 1697,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/480"
+      }
+    ]
+  },
+  "collection_mints": [
+    "G99PGdmWVhokQJ6CAwi2ZCWoAyEXvcFu5iqnSR8kPmGr"
+  ]
+}

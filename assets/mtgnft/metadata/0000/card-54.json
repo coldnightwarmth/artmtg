@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #53",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/53",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_dmtheaven"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ach! Hans, Run!"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_frown"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "whatsinyocuppiiimp"
+    },
+    {
+      "trait_type": "special top",
+      "value": "osrs"
+    }
+  ],
+  "edition": 1246,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/53"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Dzy1VjAvmtF5sC5oJMBauXa8Rp3nA8Tussj3ezq6BoMX"
+  ]
+}

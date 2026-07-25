@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #79",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/79",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_nomansland"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Mad Prophet"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_redblur"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_drifellateeth"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "poker"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "vulpixpika"
+    }
+  ],
+  "edition": 1830,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/79"
+      }
+    ]
+  },
+  "collection_mints": [
+    "2abuRQ9Abo8jNYLqAjPQEp4it4KE4J6dNTb5STMGYTxY"
+  ]
+}

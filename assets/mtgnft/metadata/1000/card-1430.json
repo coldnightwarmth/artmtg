@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1429",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1429",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "heaven"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_113"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Rock Hydra"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_babeblur"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "nge soundtrack"
+    }
+  ],
+  "edition": 1653,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1429"
+      }
+    ]
+  },
+  "collection_mints": [
+    "EDq2fG7jNuUnLyPHT7jVih3P6Qb9icbRYTfzovN8FJCD"
+  ]
+}

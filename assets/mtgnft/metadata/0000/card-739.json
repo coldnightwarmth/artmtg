@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #738",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/738",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_cartelbust1"
+    },
+    {
+      "trait_type": "behind",
+      "value": "coins"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_138"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Stensia Masquerade"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "ogsblur"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "mifella1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_unf"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_greymon"
+    },
+    {
+      "trait_type": "special top",
+      "value": "majorasmoon"
+    }
+  ],
+  "edition": 328,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/738"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9dF49PsRGgqt7ohHLdgvFWGaKpZwgEJoxgFDWufTmfmb"
+  ]
+}

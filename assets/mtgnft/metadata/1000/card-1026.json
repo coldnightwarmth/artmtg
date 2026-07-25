@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1025",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1025",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_spawner"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Magmaw"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "solanaglow"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_cursed"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "vig"
+    }
+  ],
+  "edition": 874,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1025"
+      }
+    ]
+  },
+  "collection_mints": [
+    "H5gnXCN9sKj9mifG5jZN44WZWnMGE4YWPbamyae8UrAV"
+  ]
+}

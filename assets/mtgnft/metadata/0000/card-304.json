@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #303",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/303",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_hellcastle"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Alms of the Vein"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_paulwall"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "darkmagician"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "Untitled_Artwork-61"
+    }
+  ],
+  "edition": 1534,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/303"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BB1MkC93qdgZrR8sycpeLUANWwjMMhua1RYZhHLmhvsE"
+  ]
+}

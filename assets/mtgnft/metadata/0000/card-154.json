@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #153",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/153",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_graveyard"
+    },
+    {
+      "trait_type": "behind",
+      "value": "blueflames"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ezuri's Archers"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_smil"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_cloudff7"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "milscratched"
+    }
+  ],
+  "edition": 1655,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/153"
+      }
+    ]
+  },
+  "collection_mints": [
+    "F1FT9iDCPL7eDxKtJB3LXkbwJuTJKXJhN52cAW9fbwXQ"
+  ]
+}

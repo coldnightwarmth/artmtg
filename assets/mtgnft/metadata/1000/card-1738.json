@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1737",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1737",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "heavenintheclouds"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_101"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Spreading Seas"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_droopy"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "bible"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "kirby"
+    }
+  ],
+  "edition": 2161,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1737"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6YuFy8y3ucpKCBjsE5iB7yFLywAaPgV1jf9nYozrFZyN"
+  ]
+}

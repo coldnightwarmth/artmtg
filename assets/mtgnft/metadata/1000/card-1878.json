@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1877",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1877",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_butterfreelove"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_38"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Stampeding Serow"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "kittygrin"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "lucky"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "swolearm"
+    }
+  ],
+  "edition": 1353,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1877"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7JhZ3gtCgqMirCcSwvbZwdrstnGjfR4cxz55HXtteoiH"
+  ]
+}

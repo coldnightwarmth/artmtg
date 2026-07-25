@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #80",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/80",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "portaltohell"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_179"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Sabertooth Nishoba"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_teeeef"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "fuckyou"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "perscribed"
+    },
+    {
+      "trait_type": "top right",
+      "value": "kuromitopright"
+    }
+  ],
+  "edition": 173,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/80"
+      }
+    ]
+  },
+  "collection_mints": [
+    "F3onUfX2rQ6MyepwygqDnHyV8R591cjGfonuHSZiCVa3"
+  ]
+}

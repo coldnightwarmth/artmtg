@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #9",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/9",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "grayscale_imnotcomingbackforawhile"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Scuttling Sliver"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "bluestrain"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_larvatar"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_chrono"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "bestgirlmisato"
+    }
+  ],
+  "edition": 324,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/9"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Aup4bhvn3MPhvJ2cAAyc6wjEDFzQkK3NeeAWnWbkAoph"
+  ]
+}

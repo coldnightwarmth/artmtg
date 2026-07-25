@@ -1,0 +1,78 @@
+{
+  "name": "Sweet Curse Card #171",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreifi5xnqqv6cc3r2yqsehcpbnpto4m2wsbkkibhfo6wn4cjtp5mb2y",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Noise"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Kraden"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Sonic Adventure Remaster"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Michelahan_"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Covid myth"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Dammit3"
+    },
+    {
+      "trait_type": "Full art",
+      "value": "Silohasart"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "R. Mascaro2"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "trmpsht"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Flamp"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Bep"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "kintsugi"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreifi5xnqqv6cc3r2yqsehcpbnpto4m2wsbkkibhfo6wn4cjtp5mb2y",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiaz2dot2bn5ims7dx63oreu7bu4xo4jrszmtdvemhoclli7ugkzze",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiaz2dot2bn5ims7dx63oreu7bu4xo4jrszmtdvemhoclli7ugkzze",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiaz2dot2bn5ims7dx63oreu7bu4xo4jrszmtdvemhoclli7ugkzze",
+  "collection_mints": [
+    "FqATib4mLxwUqayJwobAwVgvCFaFoaBD1RwELp34io9c"
+  ]
+}

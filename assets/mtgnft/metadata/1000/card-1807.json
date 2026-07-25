@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1806",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1806",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_ac130"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Gone Missing"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_animu3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_easysmile"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "kenny"
+    }
+  ],
+  "edition": 2054,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1806"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5fsFM2j6iqQBWPUNBKgYT7N95R8QLd6fLxpq85wLkbmi"
+  ]
+}

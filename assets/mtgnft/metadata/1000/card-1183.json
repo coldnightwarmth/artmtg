@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1182",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1182",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_egirls"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Rites of Reaping"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_wavey"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_babe"
+    },
+    {
+      "trait_type": "top left",
+      "value": "alienhominid"
+    }
+  ],
+  "edition": 1907,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1182"
+      }
+    ]
+  },
+  "collection_mints": [
+    "AJuFuiXFHrhVFx6mtjShmZhg1pshVwoocqD5ojsYrmcP"
+  ]
+}

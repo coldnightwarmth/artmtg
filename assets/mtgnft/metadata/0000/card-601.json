@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #600",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/600",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_gnometown"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_158"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Vile Redeemer"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_orc"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "cloudleft"
+    }
+  ],
+  "edition": 1387,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/600"
+      }
+    ]
+  },
+  "collection_mints": [
+    "64Tmqhf97uGdwfzW989jSF6kkTJwEoRFPLjHXjk8xP3T"
+  ]
+}

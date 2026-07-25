@@ -1,0 +1,26 @@
+{
+  "name": "360 Robert",
+  "description": "360 Robert, Being Present at the Formal Arrangement of One Principal Crowned Vegetable and Two Smaller Red Attendants of Notable Enthusiasm\n\nAn entry from The Garden, Being a Record of Its Conduct, Its Surprises, and Its Occasional Tendency Toward the Radiant and the Improbable",
+  "seller_fee_basis_points": 500,
+  "image": "https://turbo-gateway.com/1p66TOKdrcW2F4ykh7CEilkMYqoV_wiv_dyiIYzj_as?ext=png",
+  "properties": {
+    "files": [
+      {
+        "uri": "https://turbo-gateway.com/1p66TOKdrcW2F4ykh7CEilkMYqoV_wiv_dyiIYzj_as?ext=png",
+        "type": "image/png"
+      }
+    ],
+    "creators": [
+      {
+        "address": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+        "share": 100,
+        "verified": true
+      }
+    ]
+  },
+  "attributes": [],
+  "collection_mints": [
+    "Cpwe6TNwDYGE8gbm9QQPCcK4K1GpWHKVc81ojPAJDAm3",
+    "ErT2XrkpKkkSkmQcFKUN8HriDLDEcHvzGX75PeefDeL8"
+  ]
+}

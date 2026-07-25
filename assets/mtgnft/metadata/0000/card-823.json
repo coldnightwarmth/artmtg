@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #822",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/822",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_everythingwillbeyours"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Hazerider Drake"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_easysmile"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "laser"
+    }
+  ],
+  "edition": 1586,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/822"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BawEVU8k8JTPR91shxDZarcKAZcGyZxrNyzKiX3L9S8Q"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #272",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/272",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_heaven"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Gaea's Protector"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "solana"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_melty"
+    },
+    {
+      "trait_type": "hat",
+      "value": "workingondying"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "dualdeag"
+    }
+  ],
+  "edition": 1101,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/272"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4b9FBNhZ8HpTW8oZRJfwBz7XDbiPx5njkoguBfuhmEQZ"
+  ]
+}

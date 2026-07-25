@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1502",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1502",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "whatitradeoff"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Magma Rift"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "yarinvert"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "upset"
+    },
+    {
+      "trait_type": "hat",
+      "value": "fucklife730"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "hooh"
+    }
+  ],
+  "edition": 1879,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1502"
+      }
+    ]
+  },
+  "collection_mints": [
+    "56omPq9dep7AB5QjfXgnPAkK8rb5SANuGjm1B8cFRWtE"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1566",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1566",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_plane"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Arid Mesa"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_smile"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_savecrypto"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "littlebigplanet"
+    }
+  ],
+  "edition": 1809,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1566"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4x612xjfC1BdEkYM8Ts1Pk9pZS9W3ZEfi36uHxRrunoP"
+  ]
+}

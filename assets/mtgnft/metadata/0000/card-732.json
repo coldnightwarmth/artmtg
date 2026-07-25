@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #731",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/731",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "clown"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Skinrender"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_mifella1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "ahhhhhh"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "issac2"
+    }
+  ],
+  "edition": 1232,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/731"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HMgCncH1NzR6Ef9XPKmEuwjHypdC5y3f2JpAHAX8kFmg"
+  ]
+}

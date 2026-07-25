@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1660",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1660",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_forresttrain"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Genesis Wave"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_bluestrain"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_scarred"
+    },
+    {
+      "trait_type": "special top",
+      "value": "perc30top"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "asspizza2022"
+    }
+  ],
+  "edition": 406,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1660"
+      }
+    ]
+  },
+  "collection_mints": [
+    "G6uyMyB27Q27onRhm9Gh3WLVNQiTKtz5z38bkjrsRHUJ"
+  ]
+}

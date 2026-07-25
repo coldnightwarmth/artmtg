@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #1369",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1369",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_bluefacebaby"
+    },
+    {
+      "trait_type": "behind",
+      "value": "unknownball"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Reflector Mage"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_bloodsmirk"
+    },
+    {
+      "trait_type": "hat",
+      "value": "palaceblue"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "kuromi1"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_hoovy"
+    },
+    {
+      "trait_type": "special top",
+      "value": "warhammer40k"
+    }
+  ],
+  "edition": 894,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1369"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5k6FWsLk3HcZpRWyqWZS8ApeYktoiXLE1WLSEUmQKBGP"
+  ]
+}

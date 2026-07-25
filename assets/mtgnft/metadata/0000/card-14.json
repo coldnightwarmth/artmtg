@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #13",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/13",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_egirlnoise"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_94"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Divination"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_mifella3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_kanye"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_pyrotf2"
+    }
+  ],
+  "edition": 627,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/13"
+      }
+    ]
+  },
+  "collection_mints": [
+    "EFc1E9xE3HG4B6XesuzMb1KCAdfm9t81BZK28Pkvmun8"
+  ]
+}

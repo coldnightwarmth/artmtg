@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #224",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/224",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_lcartin"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_105"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Mikaeus, the Lunarch"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_toonblueeyes"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "Untitled_Artwork-29"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_kirbyball"
+    }
+  ],
+  "edition": 2084,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/224"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4Mt1WFD1MZ4AwVQRX8JmAzZqZUZVX6NinyvirWS17DyM"
+  ]
+}

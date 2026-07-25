@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #278",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/278",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_ethereal"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Animate Dead"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_69"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "draw"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "MiLighterr"
+    }
+  ],
+  "edition": 303,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/278"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5tmQKiz85bJG7ScXR3a8sr7kfivbsGYYzYQUeXYWRYk3"
+  ]
+}

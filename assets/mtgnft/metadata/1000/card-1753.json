@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1752",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1752",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_whereyouwork"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_120"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ulvenwald Primordials"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_upset"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "green"
+    },
+    {
+      "trait_type": "hat",
+      "value": "workingondying"
+    }
+  ],
+  "edition": 994,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1752"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CYAP6T74w3Qdw5WfnFgBoM1W8wVD7uPc8pKnUPN5PEwB"
+  ]
+}

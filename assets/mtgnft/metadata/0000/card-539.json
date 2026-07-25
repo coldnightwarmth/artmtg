@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #538",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/538",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_artistshouse"
+    },
+    {
+      "trait_type": "behind",
+      "value": "diamondsword"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_98"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Curse of the Nightly Hunt"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_x"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "kinkd"
+    }
+  ],
+  "edition": 298,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/538"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HWUPt1Sed3Z8DPVYLUNqa4HbCup76ZTVo3ug9GQtVTci"
+  ]
+}

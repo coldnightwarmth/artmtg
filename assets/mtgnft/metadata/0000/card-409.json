@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #408",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/408",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "redmoonsky"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Pointy Finger of Doom"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_ahhhhhh"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "reachleft"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_darkmagician"
+    },
+    {
+      "trait_type": "special top",
+      "value": "drain"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "stickyfingers"
+    }
+  ],
+  "edition": 797,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/408"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8ZH7Mz8ew5DgXNK5rcfYiqLgKbsJsNYqviQmNdeza2R6"
+  ]
+}

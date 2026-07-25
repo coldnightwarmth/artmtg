@@ -1,0 +1,86 @@
+{
+  "name": "Sweet Curse Card #17",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigz5ej65fgki6ar55dyyatltdlmgx2bk2v7gbou2gtywrvev4aff4",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "A.R.T."
+    },
+    {
+      "trait_type": "Background",
+      "value": "The nightmare"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Benangbaja"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Celtic guardian"
+    },
+    {
+      "trait_type": "Name",
+      "value": "acliclas"
+    },
+    {
+      "trait_type": "Base",
+      "value": "me"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "R. Mascaro3"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Enterprise98"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Walkman8"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Town red"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "YouruncleStar"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Blinding lights"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Where am i"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "loyaute"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigz5ej65fgki6ar55dyyatltdlmgx2bk2v7gbou2gtywrvev4aff4",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihhi3fg7vodtav52o3dzpzelrmtvqkduvczkk3avg7c77uxxvw5su",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihhi3fg7vodtav52o3dzpzelrmtvqkduvczkk3avg7c77uxxvw5su",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihhi3fg7vodtav52o3dzpzelrmtvqkduvczkk3avg7c77uxxvw5su",
+  "collection_mints": [
+    "3bLJk9ExjTtTcfPK4yw4gJ4TmTaQeiQ4kHQFxbfvCRLf"
+  ]
+}

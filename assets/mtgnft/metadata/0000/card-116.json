@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #115",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/115",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_everythingwillbeyours"
+    },
+    {
+      "trait_type": "behind",
+      "value": "bubbles"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_153"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Stalking Vampire"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_mifella1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_goofy"
+    }
+  ],
+  "edition": 459,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/115"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5fcPVu9g9HAckHNqiDmHNhhnKF3RGBi4ECAo7GoKhu3V"
+  ]
+}

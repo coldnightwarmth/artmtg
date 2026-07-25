@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #2168",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2168",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_asspizza"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Mystical Tutor"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_mifella3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "glitched2"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "laser"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "ciggie"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "kyogredisplay"
+    }
+  ],
+  "edition": 1274,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2168"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9X7Y21RsqMG6fxcUPskmUPY5UK1r95C5zASHEGVG2tjb"
+  ]
+}

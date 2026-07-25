@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1208",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1208",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_gothdust"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Knight of Malice"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_rubbermouf"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "stabbed"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "jpncards"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "nessright"
+    },
+    {
+      "trait_type": "top left",
+      "value": "trippleboxblack"
+    }
+  ],
+  "edition": 20,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1208"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5FLcN1yPnzkpGqwqoe4ysAhkmvMcfDoEMGuVpyf9331Y"
+  ]
+}

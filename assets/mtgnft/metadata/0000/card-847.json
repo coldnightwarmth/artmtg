@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #846",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/846",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_egirlnoise"
+    },
+    {
+      "trait_type": "behind",
+      "value": "dmagiciancicle"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Clam Session"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "tactikyle"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_serious"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "smile"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "cloud"
+    }
+  ],
+  "edition": 2169,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/846"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Coaz3uBxaQFDPoyHZzKST7kdyATEkFnRbRwHfDeUtW1x"
+  ]
+}

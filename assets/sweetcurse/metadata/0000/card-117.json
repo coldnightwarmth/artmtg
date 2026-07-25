@@ -1,0 +1,90 @@
+{
+  "name": "Sweet Curse Card #117",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreigv77r5qzegaj4pomcrc4frzjzj3672bpz77tegyvhyfcewfm3lnq",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Noise"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Kraden"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Terriermon"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Yurei.raw2"
+    },
+    {
+      "trait_type": "Score",
+      "value": "116"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Pendjabi"
+    },
+    {
+      "trait_type": "Signature",
+      "value": "Erz7"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Sip"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "R-E Black Charizard"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Gachu"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Music tech"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Tupac"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Narutos"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "In your eyes"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "pixelsort"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreigv77r5qzegaj4pomcrc4frzjzj3672bpz77tegyvhyfcewfm3lnq",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeic7pbrueyod6eqi6yf4uurht4hmy2zetfhfx6otedwbvuuldcx6de",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeic7pbrueyod6eqi6yf4uurht4hmy2zetfhfx6otedwbvuuldcx6de",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeic7pbrueyod6eqi6yf4uurht4hmy2zetfhfx6otedwbvuuldcx6de",
+  "collection_mints": [
+    "5BKUbXizDwNJcHe6UmzUC6VreGdZGp2ADytgus5wfhqQ"
+  ]
+}

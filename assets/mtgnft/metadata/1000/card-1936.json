@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1935",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1935",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_41"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Confront the Unknown"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_paulwall"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "waifus"
+    }
+  ],
+  "edition": 1138,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1935"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GGgugAijToksEsfpN2P6FUz96fN2t3vnuSGUBjU5ZL5P"
+  ]
+}

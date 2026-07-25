@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1486",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1486",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_abstract3"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_38"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Tsabo's Web"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_aaaaaaaaa"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "wokky"
+    }
+  ],
+  "edition": 268,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1486"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DSh4gppf9YuRDCZY8wHBBAnmxSR4xASznFwYiKtwQZ7G"
+  ]
+}

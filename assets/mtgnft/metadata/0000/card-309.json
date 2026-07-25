@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #308",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/308",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_party"
+    },
+    {
+      "trait_type": "behind",
+      "value": "lightningbehind"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Return from Extinction"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "babe"
+    }
+  ],
+  "edition": 783,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/308"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9wB4E8CRr4HEuGKuU62VEvwWqZuvCPatm7tcnEVUSU1u"
+  ]
+}

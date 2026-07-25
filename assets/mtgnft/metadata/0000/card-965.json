@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #964",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/964",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_burningtower"
+    },
+    {
+      "trait_type": "cards",
+      "value": "March from the Tomb"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_mifella2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_toxic"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "leftpeek"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "pufforange"
+    },
+    {
+      "trait_type": "top left",
+      "value": "alienhominid"
+    }
+  ],
+  "edition": 150,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/964"
+      }
+    ]
+  },
+  "collection_mints": [
+    "FqDJLxSCfc12Pqep7efbYbEdyyDu9L2Fp51FQGb2AMNF"
+  ]
+}

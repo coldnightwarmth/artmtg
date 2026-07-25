@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1669",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1669",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_babe"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Zephid"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_x"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_nar"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "whatsinyocuppiiimp"
+    }
+  ],
+  "edition": 2164,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1669"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8nwVo6Zzt956fHcdZ3JVDAYuUSGP26QEM5BAfPxxSUF5"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #2012",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2012",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_heavygrain"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Wing Puncture"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "cheeky"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "swag"
+    }
+  ],
+  "edition": 1128,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2012"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9AwR5mjGXndCk1Nw4GfKXprtkgSmtYcwChhMu7S8YvBo"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #200",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/200",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_bluefacebaby"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Kaho, Minamo Historian"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_upset"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "foxboss"
+    }
+  ],
+  "edition": 1200,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/200"
+      }
+    ]
+  },
+  "collection_mints": [
+    "2TiatetQu2jVRa2xdEmFB3vLiWkmgSXSJ7QTHrXkmXct"
+  ]
+}

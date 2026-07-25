@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #402",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/402",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_abstract4"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Charge Across the Araba"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_biggrin"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "whatsinyocuppiiiimp"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_uwuleft"
+    }
+  ],
+  "edition": 2139,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/402"
+      }
+    ]
+  },
+  "collection_mints": [
+    "25VGC3RJv41JU3d3Y6nMUetWB9epDQ2ntebENYunPYL8"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "name": "Sweet Curse Card #63",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreifkga6qf5hgwhveoellku26jixc6afnfwprssxaedzkgapposwifi",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Bio"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Itachi bird"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Cristo redentor cup"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Yurei.raw6"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Baddrizzzz"
+    },
+    {
+      "trait_type": "Signature",
+      "value": "Erz"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Stained glass"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Fypi"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Jacksachs3"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Sweet hat"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "bbl at home"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "rust"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreifkga6qf5hgwhveoellku26jixc6afnfwprssxaedzkgapposwifi",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeic5e2ziusaqxt3hcbj3wg5ht6c6hb627hxf5td6yo7rbsubdgipgu",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeic5e2ziusaqxt3hcbj3wg5ht6c6hb627hxf5td6yo7rbsubdgipgu",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeic5e2ziusaqxt3hcbj3wg5ht6c6hb627hxf5td6yo7rbsubdgipgu",
+  "collection_mints": [
+    "4yG5Gz7SdPqRQeatX37W9FgjWEZc2DTpaQ64B8TkkjRr"
+  ]
+}

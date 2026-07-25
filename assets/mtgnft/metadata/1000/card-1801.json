@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #1800",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1800",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_brucewayne"
+    },
+    {
+      "trait_type": "behind",
+      "value": "ddr"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_182"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Bogardan Dragonheart"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "blush2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "inversion_69"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_sans"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "ibp"
+    },
+    {
+      "trait_type": "special top",
+      "value": "thps4"
+    }
+  ],
+  "edition": 1605,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1800"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Mbq5MKPoV76YdtRtcftmut6aNzvx54DqPXuSJYwqfa9"
+  ]
+}

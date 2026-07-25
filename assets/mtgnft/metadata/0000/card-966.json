@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #965",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/965",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_gothdust"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_47"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Thornhide Wolves"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "saskue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_drifellateeth"
+    }
+  ],
+  "edition": 657,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/965"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CJN7Jdfof85mtbtCqttWnXX4nREAHN5vkfCkeEysFAGZ"
+  ]
+}

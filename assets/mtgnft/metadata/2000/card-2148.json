@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #2147",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2147",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_growth"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_49"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Laboratory Maniac"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_larvatar"
+    },
+    {
+      "trait_type": "hat",
+      "value": "halogreen"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "rocksaltleft"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "blessup"
+    },
+    {
+      "trait_type": "special top",
+      "value": "nge"
+    }
+  ],
+  "edition": 329,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2147"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CGaH2Njfm6otH6fyS1grhs5w5JvJKVcd5GfcTvHQeBuh"
+  ]
+}

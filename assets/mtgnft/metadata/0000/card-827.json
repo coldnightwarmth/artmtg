@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #826",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/826",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_redmoonsky"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Icehide Golem"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_tiger"
+    },
+    {
+      "trait_type": "hat",
+      "value": "toymachine"
+    }
+  ],
+  "edition": 436,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/826"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4BExwQ1u5XLKE6xdt6CoAimoHY4CRQpnuHtad38RNtGd"
+  ]
+}

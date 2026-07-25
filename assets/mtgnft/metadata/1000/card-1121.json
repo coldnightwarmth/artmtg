@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #1120",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1120",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "bladerunner"
+    },
+    {
+      "trait_type": "behind",
+      "value": "scanlines4"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Deprive"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "gangofchains"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "mifella3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "fangs"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "falcodair"
+    },
+    {
+      "trait_type": "special top",
+      "value": "loz"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "lightning"
+    }
+  ],
+  "edition": 1818,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1120"
+      }
+    ]
+  },
+  "collection_mints": [
+    "2Nqj3nju5JV8NN5VofsbnCN2viTSDd9WM6Fg8MFCwVkG"
+  ]
+}

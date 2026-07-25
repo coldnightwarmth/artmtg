@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #351",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/351",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_silenthill"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Dust Bowl"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_yelling"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "reachright"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "bluestar"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_greymon"
+    }
+  ],
+  "edition": 304,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/351"
+      }
+    ]
+  },
+  "collection_mints": [
+    "FmpPPyAwVzyx5R7R14FW4JUtZaxaVQjnYknwPfioytCB"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "name": "Sweet Curse Card #96",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreidwezzsgbe5tw4hfsgdotydnzsbuyntsmkgax72g4qs765gknimpq",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Trap"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Lucky"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Dammit gengar"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Siamese brothers"
+    },
+    {
+      "trait_type": "Score",
+      "value": "100"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Wt"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Zabiwa"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "R. Mascaro2"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "trmpsht"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "bru"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Hot ice"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Wine"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "crystal"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreidwezzsgbe5tw4hfsgdotydnzsbuyntsmkgax72g4qs765gknimpq",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiafokng2e5eozg7rzwb2t6krflq3qtrfouozn5ybqarwi6lcqjjdu",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiafokng2e5eozg7rzwb2t6krflq3qtrfouozn5ybqarwi6lcqjjdu",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiafokng2e5eozg7rzwb2t6krflq3qtrfouozn5ybqarwi6lcqjjdu",
+  "collection_mints": [
+    "3S53yUxUVUpvbiMmZ42L9wyXF5Vc67eDfEvSCaBrMrQo"
+  ]
+}

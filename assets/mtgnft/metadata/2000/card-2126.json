@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #2125",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2125",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_spawner"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Kangee, Aerie Keeper"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "widedark"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "1thousandnuts"
+    }
+  ],
+  "edition": 923,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2125"
+      }
+    ]
+  },
+  "collection_mints": [
+    "EU4RgTei6Qq9ND8Tw1sbkT4AfzXjNSq5j4c2LCUfkYrD"
+  ]
+}

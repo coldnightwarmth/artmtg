@@ -1,0 +1,86 @@
+{
+  "name": "Sweet Curse Card #33",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihd3l7p4nynvr4b3i4hff4bvawyeyfpgi4swjfz46v2c4wpfabm5a",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "A.R.T."
+    },
+    {
+      "trait_type": "Background",
+      "value": "Planete Sauvage"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Cristo redentor cup"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Psytoh3"
+    },
+    {
+      "trait_type": "Score",
+      "value": "Me rizzin"
+    },
+    {
+      "trait_type": "Name",
+      "value": "je-jontch-ka"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Gold"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "KND"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Hong Kong Phooey Px"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Bipedal?"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Dr.monochrome Kabutops"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "The blitz"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Whole Blood"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "loyaute"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihd3l7p4nynvr4b3i4hff4bvawyeyfpgi4swjfz46v2c4wpfabm5a",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiexycq2hwo5pd5izmmct7duiaux32xxpuzvuo34rj7fndq2gdzcey",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiexycq2hwo5pd5izmmct7duiaux32xxpuzvuo34rj7fndq2gdzcey",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiexycq2hwo5pd5izmmct7duiaux32xxpuzvuo34rj7fndq2gdzcey",
+  "collection_mints": [
+    "HZM3f7AAJsK4BATcQhDZTHJPR7LpXfCV2esrUtYNnB58"
+  ]
+}

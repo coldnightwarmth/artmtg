@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1540",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1540",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_ps1hell"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Sea Serpent"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_animu2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_sidechompers"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "navi"
+    }
+  ],
+  "edition": 823,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1540"
+      }
+    ]
+  },
+  "collection_mints": [
+    "gTLcf4dBWe8mMGLLw1sdoP7KzqeJYZTWUjkd7HUNEGk"
+  ]
+}

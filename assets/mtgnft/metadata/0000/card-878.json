@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #877",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/877",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_hiz"
+    },
+    {
+      "trait_type": "behind",
+      "value": "bustersword"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Tuktuk Grunts"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_joker"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "broly"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "godemoeror"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "ngetree"
+    }
+  ],
+  "edition": 208,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/877"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6XpiMa7Z53eiFuwbZt94i5fhJsZrTiw8GT8NvraYnvUd"
+  ]
+}

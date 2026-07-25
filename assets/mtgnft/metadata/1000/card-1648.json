@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1647",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1647",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_711"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_115"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Vassal Soul"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "glockchain"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_serious"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "daurk"
+    }
+  ],
+  "edition": 1943,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1647"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Fq4kvr5YWiMP3h8nRhi8p8c1yLfBuBNe3HJNfk8mkqsr"
+  ]
+}

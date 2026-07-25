@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #52",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/52",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_paradise"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Mire's Malice"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_redblur"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "nar"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "laser"
+    }
+  ],
+  "edition": 2124,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/52"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HsUx7P4N31C4G889zJc1G4ipamam14Fa1kwkh4LgGhbo"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1803",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1803",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_hiz"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_182"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Exploration"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "animu2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "yay"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "hoohdisplay"
+    }
+  ],
+  "edition": 884,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1803"
+      }
+    ]
+  },
+  "collection_mints": [
+    "73wzPeMB4TCiD48sAa4Qbiv5AZS1FeGQoQtojYu1Yfck"
+  ]
+}

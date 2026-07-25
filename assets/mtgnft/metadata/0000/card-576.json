@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #575",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/575",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_sciencelab"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_106"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Fiery Intervention"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_saskue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_toxic"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "josephjoestar"
+    },
+    {
+      "trait_type": "special top",
+      "value": "majorasmoon"
+    }
+  ],
+  "edition": 1845,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/575"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8HXx5eG44VaNyvZDC1pdchG9j6dP3C6w64pWY56oZSP1"
+  ]
+}

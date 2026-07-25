@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1188",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1188",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_hiz"
+    },
+    {
+      "trait_type": "behind",
+      "value": "Untitled_Artwork-2"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Aria of Flame"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "sachiel"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_greenlady"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_arggg"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_sanic"
+    }
+  ],
+  "edition": 864,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1188"
+      }
+    ]
+  },
+  "collection_mints": [
+    "79pXyUpc6BFvL7BTmsTyGncXFcTPdPkk1nCyQh5MTfJ1"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1546",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1546",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_deathnote"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_169"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Rampant Elephant"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_teeef"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "red"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "bible"
+    }
+  ],
+  "edition": 1710,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1546"
+      }
+    ]
+  },
+  "collection_mints": [
+    "25ZeFcJs9NZEgw3gtM9DFyKDb3nM2QHzL7x5T5NykV1G"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1987",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1987",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_whereyouwork"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Shivan Harvest"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_biggrin"
+    },
+    {
+      "trait_type": "hat",
+      "value": "goofyhat"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_joskue"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "catsickle"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "solanamaxi"
+    }
+  ],
+  "edition": 280,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1987"
+      }
+    ]
+  },
+  "collection_mints": [
+    "TtAzBgg4331QAsaHQb5wrPoSQv3Piof9EVaAyAMyFsQ"
+  ]
+}

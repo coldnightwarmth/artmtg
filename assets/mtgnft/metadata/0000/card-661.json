@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #660",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/660",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_dragonite"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Warmonger's Chariot"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_bnw"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "rightpeek"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_kakyoindoll"
+    },
+    {
+      "trait_type": "special top",
+      "value": "nge"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "lilith"
+    }
+  ],
+  "edition": 775,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/660"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5LQqzxYgm4SJPRKnGdwPenRAP4idtw97MJaXjM8S6XqB"
+  ]
+}

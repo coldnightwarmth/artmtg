@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #1756",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1756",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_collider"
+    },
+    {
+      "trait_type": "behind",
+      "value": "scrabble"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Kheru Dreadmaw"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "greenlady"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "creepypasta"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "beretta"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_ditto"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_monke2"
+    },
+    {
+      "trait_type": "special top",
+      "value": "issacafterbirth"
+    }
+  ],
+  "edition": 1088,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1756"
+      }
+    ]
+  },
+  "collection_mints": [
+    "47sTkbYxg5rhkHCkhcdnMAHAtE6cUvtMoTcJu13Qi2ha"
+  ]
+}

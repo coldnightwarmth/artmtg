@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #285",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/285",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_peachscastle"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Steel Hellkite"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "kanye"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "Untitled_Artwork-61"
+    }
+  ],
+  "edition": 727,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/285"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BaRsXSkyuomKHNwDUPrByT2gU9YSXizv2KBdLjv4qN2o"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #577",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/577",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "eboynoise"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Igneous Elemental"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "forcedtowatch"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "creepypasta"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "shootah"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "charazard"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_perscribed"
+    }
+  ],
+  "edition": 1885,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/577"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8sPwP9DVzBRgD3Vor7z6CiBnMg2ZRaAXjwZwqpHfR6PN"
+  ]
+}

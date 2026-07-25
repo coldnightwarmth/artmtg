@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #61",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/61",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_rapture"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ogre's Cleaver"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_blush2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "drool"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "laser"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "ps2"
+    }
+  ],
+  "edition": 373,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/61"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4AoKZVsTfG1E6zjYXm7STGSxy8uMLxWd6nAZTzbxytmN"
+  ]
+}

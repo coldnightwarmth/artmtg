@@ -1,0 +1,19 @@
+{
+  "name": "CARD #79",
+  "description": "1 of 1 CARDS",
+  "image": "https://ipfs.io/ipfs/QmWqBEGg9kGsQHpfPsDW3MKBFc8kEsDKetgNLhyzZXwXBe",
+  "attributes": [],
+  "tags": [],
+  "properties": {
+    "category": "image",
+    "files": [
+      {
+        "uri": "https://ipfs.io/ipfs/QmWqBEGg9kGsQHpfPsDW3MKBFc8kEsDKetgNLhyzZXwXBe",
+        "type": "image/jpeg"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5VPKKrDJx9FcTeRF5PRSzHYSoEoNpRpRFq9miLJBABQn"
+  ]
+}

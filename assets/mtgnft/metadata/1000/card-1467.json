@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1466",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1466",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_killerinstint"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_79"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Delirium"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "bluestrain"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_nyahblur"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "marker"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "nerdmakeup"
+    }
+  ],
+  "edition": 2070,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1466"
+      }
+    ]
+  },
+  "collection_mints": [
+    "48BRHyha68tcq3Gqs6CvNHf1SCs2NjmN8X1hMG38tcuF"
+  ]
+}

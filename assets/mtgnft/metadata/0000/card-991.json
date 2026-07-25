@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #990",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/990",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_forrest"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Village Elder"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "kinkd"
+    },
+    {
+      "trait_type": "hat",
+      "value": "palacecamo"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "hoohdisplay"
+    }
+  ],
+  "edition": 492,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/990"
+      }
+    ]
+  },
+  "collection_mints": [
+    "EnjC9GkPZKb2VDEM17YXx7agEQAboeCL6Jd5VEuBo4xc"
+  ]
+}

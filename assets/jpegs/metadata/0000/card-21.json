@@ -1,0 +1,25 @@
+{
+  "name": "Ritual Calculus",
+  "description": "Collema",
+  "seller_fee_basis_points": 500,
+  "image": "https://turbo-gateway.com/iicQ6mb7XHAEsJj-539DoZGHd6XS_pRDriy8L4ImeU0?ext=png",
+  "properties": {
+    "files": [
+      {
+        "uri": "https://turbo-gateway.com/iicQ6mb7XHAEsJj-539DoZGHd6XS_pRDriy8L4ImeU0?ext=png",
+        "type": "image/png"
+      }
+    ],
+    "creators": [
+      {
+        "address": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+        "share": 100,
+        "verified": true
+      }
+    ]
+  },
+  "attributes": [],
+  "collection_mints": [
+    "J4i6VvAJB98JGkaFEp9DeuBC95pSmf7SUAagrG9rW3SS"
+  ]
+}

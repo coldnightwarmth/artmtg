@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #805",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/805",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_abstract1"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_3"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Planar Portal"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_x"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_babeblur"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_tree"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "foxpose"
+    }
+  ],
+  "edition": 1089,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/805"
+      }
+    ]
+  },
+  "collection_mints": [
+    "C8sywQXcPAwK5Sqr6Q5EZiZcqyfH2SENAm1wTf2L2KSq"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1173",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1173",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_village"
+    },
+    {
+      "trait_type": "behind",
+      "value": "911"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Jagged Lightning"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "nar"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "black"
+    },
+    {
+      "trait_type": "hat",
+      "value": "edhardy"
+    }
+  ],
+  "edition": 58,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1173"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7WkEoFBP7hDwpkLptP5GhwN5NMEoMaRrtBagabC5diBG"
+  ]
+}

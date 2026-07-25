@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1217",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1217",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_rapture"
+    },
+    {
+      "trait_type": "behind",
+      "value": "blueflames"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Greater Good"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_serious"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_goober"
+    }
+  ],
+  "edition": 202,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1217"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3eoYxjqFcHuKBSbLY4oA5nupY8522P1w9htnw5EjSUaN"
+  ]
+}

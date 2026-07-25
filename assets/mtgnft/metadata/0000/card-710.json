@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #709",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/709",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_wolfen"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_172"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Tomb of the Spirit Dragon"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_mifella1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_toofers"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "scatteredholo"
+    }
+  ],
+  "edition": 663,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/709"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GfkYEGA1yM1YgYYH5M6eaXiMibgiYmYdrtvTRqdzJvEe"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #840",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/840",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_shrine"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_199"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Breath of Darigaaz"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_creepypasta"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "osrs"
+    }
+  ],
+  "edition": 2066,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/840"
+      }
+    ]
+  },
+  "collection_mints": [
+    "55uLP3yyxfGB3XLBdaVXSjTUpFVsSjSSRpjaNA4dJeej"
+  ]
+}

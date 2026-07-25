@@ -1,0 +1,58 @@
+{
+  "name": "MTG CARD #486",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/486",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_snorlax"
+    },
+    {
+      "trait_type": "behind",
+      "value": "swirledtv"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_19"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ashmouth Blade"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "babbitshadow"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_goldfangs"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "ucantseeme"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "powderedsugar"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "joycons"
+    }
+  ],
+  "edition": 1676,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/486"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3Wy98KyeopUVdsomBwgNBw1m3f5Fzi2irh9erj8kh8dL"
+  ]
+}

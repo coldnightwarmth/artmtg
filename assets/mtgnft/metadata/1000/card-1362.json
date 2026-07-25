@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1361",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1361",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_artistshouse"
+    },
+    {
+      "trait_type": "behind",
+      "value": "lanceoflonginus"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_145"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Rest in Peace"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "facesuit2"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "droopy"
+    }
+  ],
+  "edition": 2220,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1361"
+      }
+    ]
+  },
+  "collection_mints": [
+    "FEFPnfwcA5Mk3NRYbhX2MVcFHuKxw12RVus32dJy2SjD"
+  ]
+}

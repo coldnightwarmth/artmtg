@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #2126",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2126",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_server"
+    },
+    {
+      "trait_type": "behind",
+      "value": "scrabble"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Strength of Arms"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_bnw"
+    }
+  ],
+  "edition": 1905,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2126"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9iEnQ14toLutwGAtfEmTuTYrbrbcQ8Rg1AnoCQ7YZp1D"
+  ]
+}

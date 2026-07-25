@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1977",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1977",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_eboynoise"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Benalish Honor Guard"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_x"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_orc"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "scraped"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "hoovy"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "zombie"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "nge soundtrack"
+    }
+  ],
+  "edition": 860,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1977"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GgMf7Eo5D4iiR2BBuctJKZAb34K9rsLkwkd9kLybr1g4"
+  ]
+}

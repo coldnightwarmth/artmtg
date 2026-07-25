@@ -1,0 +1,19 @@
+{
+  "name": "CARD #163",
+  "description": "1 of 1 CARDS",
+  "image": "https://ipfs.io/ipfs/QmSXF7fTf4Ldg89eqh8xzFcMbU1iQrtz4LwiwLE5mM4Tbq",
+  "attributes": [],
+  "tags": [],
+  "properties": {
+    "category": "image",
+    "files": [
+      {
+        "uri": "https://ipfs.io/ipfs/QmSXF7fTf4Ldg89eqh8xzFcMbU1iQrtz4LwiwLE5mM4Tbq",
+        "type": "image/jpeg"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6k55ZEt6H3DVUZjM1hRSXqHzYCgw7UJZXvpej4p34vzv"
+  ]
+}

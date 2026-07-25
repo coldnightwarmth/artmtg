@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #164",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/164",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_bladerunner"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Unworthy Dead"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_blush2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_bloodsmirk"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_asukalangley"
+    },
+    {
+      "trait_type": "special top",
+      "value": "issacafterbirth"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "css"
+    }
+  ],
+  "edition": 902,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/164"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BGJQvB38QU9CpVejoYWneKHmLbvkAzBBgLapT9LN5mUd"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "name": "Sweet Curse Card #195",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreicsfugoenrn6s3ybqk56ztwarwebtme3fn7lrxdynee77lg42ejmm",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "A.R.T."
+    },
+    {
+      "trait_type": "Background",
+      "value": "Апофеоз войны"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Galerians"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Not a ferrari"
+    },
+    {
+      "trait_type": "Name",
+      "value": "MAD"
+    },
+    {
+      "trait_type": "Signature",
+      "value": "Sweet Curse"
+    },
+    {
+      "trait_type": "Base",
+      "value": "ama_plaka"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "R. Mascaro2"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Spongizard"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Koblindeadman"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "bru"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "I know what you want"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "pixel"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "on"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreicsfugoenrn6s3ybqk56ztwarwebtme3fn7lrxdynee77lg42ejmm",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihfebyp54zf5joa7pwfd4atgau32npsde5ajdmgodrlujib5566ou",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihfebyp54zf5joa7pwfd4atgau32npsde5ajdmgodrlujib5566ou",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihfebyp54zf5joa7pwfd4atgau32npsde5ajdmgodrlujib5566ou",
+  "collection_mints": [
+    "7DFnMGL4mb5TdAFU5ME6kNnkUBTyxxc7mnrza1UNpapV"
+  ]
+}

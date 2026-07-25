@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1204",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1204",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_batman"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Seachrome Coast"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_saskue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_snout"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_uwuright"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "joycons"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "eboynoise"
+    }
+  ],
+  "edition": 151,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1204"
+      }
+    ]
+  },
+  "collection_mints": [
+    "ELHoVFj6S4Rw4KBE5CEfnqKbJZWc2Rh31qJ96t9NSNjf"
+  ]
+}

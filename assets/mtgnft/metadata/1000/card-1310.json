@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1309",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1309",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_abstract4"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Eldrazi Mimic"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_ahhhhhh"
+    },
+    {
+      "trait_type": "top left",
+      "value": "ngedvd"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "failure"
+    }
+  ],
+  "edition": 1651,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1309"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9vcj4KZzjfNUb5wkw42Qp2qyXNMMsj7K9dyBn7a1wH6e"
+  ]
+}

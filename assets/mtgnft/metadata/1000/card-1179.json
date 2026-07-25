@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1178",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1178",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_whatitradeoff"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Archmage Ascension"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_babeblur"
+    },
+    {
+      "trait_type": "special top",
+      "value": "jjba"
+    }
+  ],
+  "edition": 2034,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1178"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7UmfPicSUD3X8Z9hdVvrY8wLpVZS1ZPRdzcFGSRZznoD"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1636",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1636",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_mysterybox"
+    },
+    {
+      "trait_type": "behind",
+      "value": "911"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Grow from the Ashes"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_blush2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_grandma"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_blessed"
+    }
+  ],
+  "edition": 159,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1636"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BkTm8f1WU8yppcjb8vfbKs6P2pi5ULLdV2Txa83n7su5"
+  ]
+}

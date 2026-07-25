@@ -1,0 +1,19 @@
+{
+  "name": "CARD #201",
+  "description": "DM @boywithnolegs on X to claim",
+  "image": "https://ipfs.io/ipfs/QmdHaU5Caegjgs4fDSgdhrzWRyBsZoYG55F5vn3DBbFGLp",
+  "attributes": [],
+  "tags": [],
+  "properties": {
+    "category": "image",
+    "files": [
+      {
+        "uri": "https://ipfs.io/ipfs/QmdHaU5Caegjgs4fDSgdhrzWRyBsZoYG55F5vn3DBbFGLp",
+        "type": "image/jpeg"
+      }
+    ]
+  },
+  "collection_mints": [
+    "FHgSaDiBpxDE7b7gyorXgMqhZt1EAdZGkTeoQUHxWmMp"
+  ]
+}

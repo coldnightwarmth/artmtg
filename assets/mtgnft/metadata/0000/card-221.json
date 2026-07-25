@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #220",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/220",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_uni"
+    },
+    {
+      "trait_type": "behind",
+      "value": "sprayed"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Telepathy"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "perc5shine"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_smil"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_perscribed"
+    },
+    {
+      "trait_type": "special top",
+      "value": "hellohater"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "scanlines1"
+    }
+  ],
+  "edition": 1329,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/220"
+      }
+    ]
+  },
+  "collection_mints": [
+    "ZebGGjP2sE5zv1WPUroTd9XVCZVZRcr33uAEwGbBsxB"
+  ]
+}

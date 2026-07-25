@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1086",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1086",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_mirror"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Moriok Reaver"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_breath"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "draw"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_legobuu"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_grinch5s"
+    }
+  ],
+  "edition": 652,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1086"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BmNKbaa2yexUTLBbEy3qBim534yawTcD5pr7AjMWv1SN"
+  ]
+}

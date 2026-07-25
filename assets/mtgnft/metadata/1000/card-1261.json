@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #1260",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1260",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_dragonite"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Eyeless Watcher"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_toothygrin"
+    }
+  ],
+  "edition": 429,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1260"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4f2j3LEk3j9HiZ4L9B1QwgfmABzRRnYH95Eon2XiK7E4"
+  ]
+}

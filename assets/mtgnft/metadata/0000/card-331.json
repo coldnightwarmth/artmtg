@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #330",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/330",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_batman"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_32"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Gideon's Reproach"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_emo"
+    },
+    {
+      "trait_type": "top left",
+      "value": "ramielleft"
+    }
+  ],
+  "edition": 457,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/330"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8DG8qd3i2RJRG5pSYDSgnbajqgzUHQ9JN7pFxDBa4mUZ"
+  ]
+}

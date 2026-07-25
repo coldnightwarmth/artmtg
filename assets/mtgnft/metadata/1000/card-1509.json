@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1508",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1508",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_guntomyhead"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Demonic Vigor"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "perc5shine"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_snout"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "poker"
+    }
+  ],
+  "edition": 642,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1508"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GSjAmMjfn3BWcDtQAtdHWHYfXBUMj8p113b94LVEYpGN"
+  ]
+}

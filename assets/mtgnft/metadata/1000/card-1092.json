@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1091",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1091",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "carbomb"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Tumble Magnet"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_animu2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_toofers"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "goronelder"
+    }
+  ],
+  "edition": 679,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1091"
+      }
+    ]
+  },
+  "collection_mints": [
+    "FAtZ7idNHQ4EAvBYaVXquvZBkwmpwGKUWtdEnxYhxXjH"
+  ]
+}

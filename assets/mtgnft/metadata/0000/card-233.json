@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #232",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/232",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_asspizzagun"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Destructive Urge"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "goldfangs"
+    },
+    {
+      "trait_type": "special top",
+      "value": "issacantibirth"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "asspizza2022"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "pinkhearts"
+    }
+  ],
+  "edition": 1798,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/232"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GXKCFXmDUEAU1ULN8QqvpmCDmXCa3uVt7gcBwj5qsJHp"
+  ]
+}

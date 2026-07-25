@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1143",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1143",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "everythingwillbeyours"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Vodalian Hypnotist"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "forcedtowatch"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_jokersmirk"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "leftpeek"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "waifus"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_tals"
+    }
+  ],
+  "edition": 1349,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1143"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BxmmR2pcF4EYFLmf2QGju6UYmteYpfFPRDLKqJ8JmhJE"
+  ]
+}

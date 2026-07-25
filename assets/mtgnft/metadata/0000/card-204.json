@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #203",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/203",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "carbomb"
+    },
+    {
+      "trait_type": "behind",
+      "value": "majoramoonbehind"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Shivan Harvest"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_drifellateeth"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "Untitled_Artwork-29"
+    },
+    {
+      "trait_type": "special top",
+      "value": "loz"
+    }
+  ],
+  "edition": 1143,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/203"
+      }
+    ]
+  },
+  "collection_mints": [
+    "FU4pToc4pNjbEz2LW5UpRoqGTpmmMT9LrMMLWqNy6jwr"
+  ]
+}

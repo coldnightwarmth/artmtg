@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1412",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1412",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_uni"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_60"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Skaab Goliath"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "mask"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "green"
+    }
+  ],
+  "edition": 2033,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1412"
+      }
+    ]
+  },
+  "collection_mints": [
+    "FUZTW2ePKCQgTSdPmnwKbk9maBmy6gQ8E2CbuuVSj2pp"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "name": "MTG CARD #395",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/395",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_roses"
+    },
+    {
+      "trait_type": "behind",
+      "value": "scanlines5"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Melesse Spirit"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_serious"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_rubbermouf"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "vaperight"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "gunleft"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "wokky"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "chompleft"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mtndewdogs"
+    }
+  ],
+  "edition": 490,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/395"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BLfMSLJWJeakXddSTH8caXPCtW2Ru21qKa9VNiJsrNLg"
+  ]
+}

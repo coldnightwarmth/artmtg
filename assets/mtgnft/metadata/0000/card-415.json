@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #414",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/414",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_nam"
+    },
+    {
+      "trait_type": "behind",
+      "value": "sprayed"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_36"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Vodalian Serpent"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "glitched2"
+    }
+  ],
+  "edition": 1727,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/414"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GeDhkNw4qPxZRw6mgWjRfeSnz2CXLkxw48w4uKTAPY7K"
+  ]
+}

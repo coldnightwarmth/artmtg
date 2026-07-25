@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #961",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/961",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_imnotcomingbackforawhile"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Eternity Vessel"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_jimmy"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_digi"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_greymon"
+    }
+  ],
+  "edition": 669,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/961"
+      }
+    ]
+  },
+  "collection_mints": [
+    "43YnKSadSKpRbVpexYSL4a844JA2ThkWLTtPfnF9XBkT"
+  ]
+}

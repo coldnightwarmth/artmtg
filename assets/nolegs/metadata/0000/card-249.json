@@ -1,0 +1,19 @@
+{
+  "name": "CARD #259",
+  "description": "1 of 1 CARDS",
+  "image": "https://ipfs.io/ipfs/QmewetPvE5VDdhuLigo8d6KqDhNCC4W5ZGWSd1gCGtmngr",
+  "attributes": [],
+  "tags": [],
+  "properties": {
+    "category": "image",
+    "files": [
+      {
+        "uri": "https://ipfs.io/ipfs/QmewetPvE5VDdhuLigo8d6KqDhNCC4W5ZGWSd1gCGtmngr",
+        "type": "image/jpeg"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6CewWPyWG2bLZaYYRH1Ed9SJqH1QoAd9yeWdyx2z3x8z"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1287",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1287",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_butterfreelove"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_64"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Nature's Chant"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "digiogsblur"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "evil1"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "blue"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "boosterbox"
+    }
+  ],
+  "edition": 1470,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1287"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6LBgy6z2vvrCwhMeREV6x9cJ7TC1qZ5tVjFMjQ3gY1CN"
+  ]
+}

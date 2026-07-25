@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #356",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/356",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_egirls"
+    },
+    {
+      "trait_type": "behind",
+      "value": "scanlines3"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Vulshok Heartstoker"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_chomp"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "fingerleft"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "bluestar"
+    },
+    {
+      "trait_type": "special top",
+      "value": "digimon"
+    }
+  ],
+  "edition": 869,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/356"
+      }
+    ]
+  },
+  "collection_mints": [
+    "781YGwQS9XveCwPy5W1x8mdQreBARQqGKnXo3e5q3edd"
+  ]
+}

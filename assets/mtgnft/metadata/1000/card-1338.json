@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1337",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1337",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_nam"
+    },
+    {
+      "trait_type": "behind",
+      "value": "lightningbehind"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Corrupted Harvester"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "wavey"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_drools"
+    },
+    {
+      "trait_type": "hat",
+      "value": "palacecamo"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "pkmnruby"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "1thousandnuts"
+    }
+  ],
+  "edition": 1424,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1337"
+      }
+    ]
+  },
+  "collection_mints": [
+    "AjqKyV1z3TCMhYfK5t2qvW6crKefoxeTt4DDxrGGSoxA"
+  ]
+}

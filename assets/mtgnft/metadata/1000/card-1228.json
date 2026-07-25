@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1227",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1227",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_tokyo"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_31"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Silent Attendant"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "blush2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_comicjoker"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "red"
+    }
+  ],
+  "edition": 209,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1227"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3dfhDStoRTgjRNR13r4v8gTNuCfm6z2jqSfkFh7N14nL"
+  ]
+}

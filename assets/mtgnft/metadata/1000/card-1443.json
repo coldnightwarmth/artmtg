@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1442",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1442",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_cartelbust1"
+    },
+    {
+      "trait_type": "behind",
+      "value": "Untitled_Artwork-1"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Hurloon Wrangler"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_perc5shine"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_smile"
+    },
+    {
+      "trait_type": "hat",
+      "value": "preppybear"
+    },
+    {
+      "trait_type": "top left",
+      "value": "Untitled_Artwork-67"
+    }
+  ],
+  "edition": 901,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1442"
+      }
+    ]
+  },
+  "collection_mints": [
+    "dLpPVAq96CtWe8TBdtre3EPQPi5gHCVFpF6VYKV8Pav"
+  ]
+}

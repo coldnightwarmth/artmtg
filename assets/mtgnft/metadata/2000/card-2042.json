@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #2041",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2041",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_mansion"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Bloodline Keeper"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_redblur"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "paulwall"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "bluepill"
+    }
+  ],
+  "edition": 813,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2041"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8SyUBojAwWjJLYF3qBPMce2i8qMVmipM9DSCsPD4qe18"
+  ]
+}

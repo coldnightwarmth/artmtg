@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #2115",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2115",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "carbomb"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Death Cultist"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "solana"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_bnw"
+    }
+  ],
+  "edition": 278,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2115"
+      }
+    ]
+  },
+  "collection_mints": [
+    "A1iVfWP4SZ3b19xf3unwrkHd1VmmTao7bwwgipaH4G9m"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1138",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1138",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_book"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Armor of Thorns"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_drools"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "laser"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "marker"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "liquid2018"
+    }
+  ],
+  "edition": 1159,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1138"
+      }
+    ]
+  },
+  "collection_mints": [
+    "iSVfRGZUZmYbqRc3vJmcJ8aqDaMgZxRAZ5QqR2Za5tG"
+  ]
+}

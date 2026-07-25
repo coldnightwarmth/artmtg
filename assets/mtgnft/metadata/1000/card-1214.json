@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1213",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1213",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_cloudheaven"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_138"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Tooth Collector"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_mifella3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_melty"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "playin"
+    },
+    {
+      "trait_type": "special top",
+      "value": "suddendeath"
+    }
+  ],
+  "edition": 1447,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1213"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Aabjkudc4tDMHsiBBCdhjBT5MKG5TxXkeN3FKydgA3zH"
+  ]
+}

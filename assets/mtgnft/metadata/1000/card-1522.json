@@ -1,0 +1,58 @@
+{
+  "name": "MTG CARD #1521",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1521",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_changeofheart"
+    },
+    {
+      "trait_type": "behind",
+      "value": "bustersword"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_177"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ezuri, Renegade Leader"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "bombbaby"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_silenceofthelambs"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "digipals"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_csssniper"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "subright"
+    }
+  ],
+  "edition": 461,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1521"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6jCLf9RpHBB9RqfgepAt2RWQfpSqmai3kADcNkMyBeij"
+  ]
+}

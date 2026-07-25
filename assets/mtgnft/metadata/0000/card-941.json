@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #940",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/940",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_csgostitch"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_22"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Hogaak, Arisen Necropolis"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "chains"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_teeeef"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "confessional"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "swolearm"
+    }
+  ],
+  "edition": 563,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/940"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Gw1VbKz712Qtwhdf92smDGv6Yo4u2AQyCfQk7Q2mBx4"
+  ]
+}

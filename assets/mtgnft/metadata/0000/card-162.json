@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #161",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/161",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_kingbiden"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Kormus Bell"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_bluestrain"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_missingtooth"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_dadjotaro"
+    },
+    {
+      "trait_type": "special top",
+      "value": "lugiatop"
+    }
+  ],
+  "edition": 1813,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/161"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4YNpiGed25eSVeiWNAjfAgZccCMXMD1rxUqFpavNnBeA"
+  ]
+}

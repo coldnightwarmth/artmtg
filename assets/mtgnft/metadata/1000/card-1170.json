@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1169",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1169",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "egirls"
+    },
+    {
+      "trait_type": "behind",
+      "value": "daorcs"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Atalya, Samite Master"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_nyahblur"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "gunright"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "redmiata"
+    }
+  ],
+  "edition": 1513,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1169"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HVnAbNTRcKHWcFxukYPrErHJ2CBZavMyokeChms71QDz"
+  ]
+}

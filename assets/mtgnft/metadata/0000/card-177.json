@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #176",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/176",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_gnometown"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Raging Spirit"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "x"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_ahhhhhh"
+    }
+  ],
+  "edition": 1291,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/176"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5PFAxv9v44wvGmPjDDMqaJWk7QceNnjqMxciTfn9YYaJ"
+  ]
+}

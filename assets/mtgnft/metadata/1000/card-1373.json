@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1372",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1372",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_sciencelab"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Cryptolith Rite"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_evil1"
+    },
+    {
+      "trait_type": "special top",
+      "value": "halfhealth"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "shinjitea"
+    }
+  ],
+  "edition": 1436,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1372"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8zTertb3wJXoWS8nq5M9e1iVnfnBtszVGQS2K4EkCUJV"
+  ]
+}

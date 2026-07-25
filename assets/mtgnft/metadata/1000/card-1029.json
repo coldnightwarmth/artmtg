@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1028",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1028",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_office"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_161"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ulamog's Despoiler"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_saskue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_chow"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "black"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "gunhandleft"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_mariot"
+    }
+  ],
+  "edition": 931,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1028"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Bjrxhpzdf5xdnwQuk2ooS7vLxvErgkbDJ5qPLLQGKLFB"
+  ]
+}

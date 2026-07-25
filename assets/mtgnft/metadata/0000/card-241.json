@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #240",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/240",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_crumpled"
+    },
+    {
+      "trait_type": "behind",
+      "value": "daorcs"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_137"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Trigon of Infestation"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_widedark"
+    }
+  ],
+  "edition": 595,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/240"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DG4ikGtDAt5Ejoo1xKymBX9JvjxFcPecCAxFkL4cMgMk"
+  ]
+}

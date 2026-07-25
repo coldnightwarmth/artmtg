@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1729",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1729",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_peaceischeap"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Brood Monitor"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_evil1"
+    },
+    {
+      "trait_type": "hat",
+      "value": "toymachine"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_dadjotaro"
+    },
+    {
+      "trait_type": "special top",
+      "value": "supersmashbros"
+    }
+  ],
+  "edition": 258,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1729"
+      }
+    ]
+  },
+  "collection_mints": [
+    "C4SQSVtC9NR5xADEi72wf3BWiD2UhjzZGnNaUeGLefS"
+  ]
+}

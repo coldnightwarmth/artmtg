@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #298",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/298",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_pkmnbugluv"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_47"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Moon Heron"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "greenlady"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_mifellasmirk"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "shootah"
+    },
+    {
+      "trait_type": "special top",
+      "value": "jjba"
+    }
+  ],
+  "edition": 1976,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/298"
+      }
+    ]
+  },
+  "collection_mints": [
+    "E6nsjUDmco4cZhnmKXzeVZhL6yhHdgqVPXbeJ5wkqGZW"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1406",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1406",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_artistshouse"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Bazaar Krovod"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_69"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "boofright"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "vapeleft"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "rei"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "clrighthand0"
+    }
+  ],
+  "edition": 682,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1406"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6xgaFrzRSkbwp6jamCqp8qf3aJ4EBf6t8qideAirjWkz"
+  ]
+}

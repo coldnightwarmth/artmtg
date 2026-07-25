@@ -1,0 +1,90 @@
+{
+  "name": "Sweet Curse Card #236",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreidlruaiqpv2wquv2kna2gjefgsa2gxhvcyfwntyrdvlyzc5p6pz2q",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Door"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Sht tought it was a door"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Cristo redentor cup"
+    },
+    {
+      "trait_type": "Description",
+      "value": "rebd"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Lets go g"
+    },
+    {
+      "trait_type": "Signature",
+      "value": "Erz"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Tar"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Jizachew"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "2t_k Pot of greed"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Jesus"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Sweet hat"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Tonight"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "in my dm"
+    },
+    {
+      "trait_type": "Erzart",
+      "value": "Let me add something on this card"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "saignee"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreidlruaiqpv2wquv2kna2gjefgsa2gxhvcyfwntyrdvlyzc5p6pz2q",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidhzcrv5xjpw4sfuwfly3jglq5hetlonmoseloobjocfumqxg67xq",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidhzcrv5xjpw4sfuwfly3jglq5hetlonmoseloobjocfumqxg67xq",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidhzcrv5xjpw4sfuwfly3jglq5hetlonmoseloobjocfumqxg67xq",
+  "collection_mints": [
+    "29VTmawgJqC4iBGy9Vzfuch8u41pftMrFBAG2Ka8mYcQ"
+  ]
+}

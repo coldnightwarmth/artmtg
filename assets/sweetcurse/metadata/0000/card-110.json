@@ -1,0 +1,78 @@
+{
+  "name": "Sweet Curse Card #110",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreibrujntxjbh5z7oxxadhym7kkbgqfctzrhbgvpacb45czrvsiepsa",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Trap"
+    },
+    {
+      "trait_type": "Background",
+      "value": "10 Bucks"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "MI geekin"
+    },
+    {
+      "trait_type": "Description",
+      "value": "LeighWhurr2"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Tokio hotel"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Dammit"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Windows_2002"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Jacksachs3"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Pachimon kentauros"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Riverside roads"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Most Promising"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "love"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreibrujntxjbh5z7oxxadhym7kkbgqfctzrhbgvpacb45czrvsiepsa",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiejq3cnlnla7rkaefmdu7lrzururyx7lsickyekpmvoqiodg5hfim",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiejq3cnlnla7rkaefmdu7lrzururyx7lsickyekpmvoqiodg5hfim",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiejq3cnlnla7rkaefmdu7lrzururyx7lsickyekpmvoqiodg5hfim",
+  "collection_mints": [
+    "7or2gHkF4jRWmKRmcuWgsYn72XXBsWsAmJKZ1EcMMSyD"
+  ]
+}

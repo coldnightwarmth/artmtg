@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1290",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1290",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_hellcastle"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Malevolent Whispers"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "solanaglow"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_mask"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "pinksonicgirlidc"
+    },
+    {
+      "trait_type": "special top",
+      "value": "supersmashbros"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "ps2"
+    }
+  ],
+  "edition": 712,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1290"
+      }
+    ]
+  },
+  "collection_mints": [
+    "t28JsY1fyKAw2AR8jAQR6jEWtkGrwRULsTWjPZgXGJ4"
+  ]
+}

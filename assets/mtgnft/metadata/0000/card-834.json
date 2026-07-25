@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #833",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/833",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_everythingwillbeyours"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_38"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Shanna, Sisay's Legacy"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_bloodsmirk"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "point"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "pkmngold"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "angemonprotek"
+    }
+  ],
+  "edition": 970,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/833"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3YHU8XbuQ6HqasBuQarbqEVYzxyg6bYRQuo1g1HhUieJ"
+  ]
+}

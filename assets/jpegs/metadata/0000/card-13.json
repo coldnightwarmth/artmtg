@@ -1,0 +1,30 @@
+{
+  "name": "Lucky Card",
+  "description": "Garth Miró",
+  "seller_fee_basis_points": 500,
+  "image": "https://turbo-gateway.com/tDqEyNRYd0CuNKAuVT-O5nQiiuJypd0LRDi40bZdVsM?ext=jpeg",
+  "properties": {
+    "files": [
+      {
+        "uri": "https://turbo-gateway.com/tDqEyNRYd0CuNKAuVT-O5nQiiuJypd0LRDi40bZdVsM?ext=jpeg",
+        "type": "image/jpeg"
+      }
+    ],
+    "creators": [
+      {
+        "address": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+        "share": 100,
+        "verified": true
+      }
+    ]
+  },
+  "attributes": [],
+  "collection_mints": [
+    "3edPDq96FYM2FM9SzqQAjCtLLDRdEmMxoheZioU9Qv2c",
+    "5TzFSXP82VNTy1L9CZCuQBZgNha9Jw6w9qHFqxB63neE",
+    "7w8XrH1hmh1r87zNET27HDrCLzUadGXyqPQTpU17ofF5",
+    "Bz22hm36Quyzy47cpiBAFrryBs1jYKjnrxSNHruzgsz5",
+    "EmGkL7bCEiRybqcZERBywTLZ9ABhPGPmoZ46RsJfW7gf",
+    "HcCndrEkK7tMACr8tPNzWGw8m8RXCeTdkPmTp2RqE6T8"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #2004",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2004",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_heavygrain"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_13"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Amaranthine Wall"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_drifellateeth"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "redpill"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_mariot"
+    },
+    {
+      "trait_type": "special top",
+      "value": "mariopaint1"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "joycons"
+    }
+  ],
+  "edition": 666,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2004"
+      }
+    ]
+  },
+  "collection_mints": [
+    "H21kgc2xxVuPZsRHirZZk5hrs58Gn2t3xKBovkq2YnYZ"
+  ]
+}

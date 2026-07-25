@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1836",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1836",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_dratini"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Kalastria Nightwatch"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_redblur"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_nyahblur"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "rpg"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "theonering"
+    }
+  ],
+  "edition": 1607,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1836"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BS6nMXbdQrRMi76ShMZXH1c3kKGxPTBJVQVnBG5kCWfa"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "name": "Sweet Curse Card #132",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeih263gk35ogjqb4s7ftfiliystbdhh5kwumdfazm7flzik6jg3idi",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Noise"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Kraden"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Joancornella kim"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Super mega big chill"
+    },
+    {
+      "trait_type": "Name",
+      "value": "GayIV"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Tar"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Maskaro"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Nichu"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Windows_2003"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Phelps"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Baby girl"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "pixelsort"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeih263gk35ogjqb4s7ftfiliystbdhh5kwumdfazm7flzik6jg3idi",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiahlhdgrfnyltkcyiwvhqkqavsm7ytnhqfbkymi3szfffysv3svle",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiahlhdgrfnyltkcyiwvhqkqavsm7ytnhqfbkymi3szfffysv3svle",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiahlhdgrfnyltkcyiwvhqkqavsm7ytnhqfbkymi3szfffysv3svle",
+  "collection_mints": [
+    "8vEGcCrFZoWHubt2ZjYGZa3rzaWNu3YvhPSo1QtggHPs"
+  ]
+}

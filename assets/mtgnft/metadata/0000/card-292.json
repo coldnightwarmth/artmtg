@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #291",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/291",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_heavygrain"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Azorius Charm"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_greenlady"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_daurk"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_trinity"
+    }
+  ],
+  "edition": 47,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/291"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BQ8aXs3gV75ggXs8hwpUeZfo9PkwEReSk88sYSM7Uo5e"
+  ]
+}

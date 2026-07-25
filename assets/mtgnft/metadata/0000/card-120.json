@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #119",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/119",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_jrpg"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_109"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Cauldron Dance"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_joint"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "wat"
+    }
+  ],
+  "edition": 1302,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/119"
+      }
+    ]
+  },
+  "collection_mints": [
+    "EpwLH6nFUXznywXaTFRmcRtrwfrma39AMkvEGMhzCq5V"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1543",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1543",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_attic"
+    },
+    {
+      "trait_type": "behind",
+      "value": "lightningbehind"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ferrovore"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_scarred"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "savecrypto"
+    }
+  ],
+  "edition": 172,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1543"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BmJZgVsz36BqF8RSUHJuCPBUH2bKoksAeE811vdcmk3g"
+  ]
+}

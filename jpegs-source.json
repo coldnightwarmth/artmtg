@@ -1,0 +1,3457 @@
+{
+  "fetchedAt": "2026-07-24T08:51:04.957Z",
+  "source": "https://graphql.tensor.trade/graphql",
+  "tensorPage": "https://www.tensor.trade/trade/paul_of_buttons",
+  "collectionSlug": "a3c76257-af97-435c-813e-da16844c15ae",
+  "collectionDisplaySlug": "paul_of_buttons",
+  "membershipPolicy": "Every live mint returned by Tensor except configured mint exclusions; exact duplicate editions share one binder card",
+  "assetRevision": "jpegs-1",
+  "animationRevision": "jpegs-animation-1",
+  "liveMintCount": 151,
+  "tensorFetchedMintCount": 152,
+  "tensorReportedMintCount": 152,
+  "excludedMintCount": 1,
+  "exclusionRules": {
+    "mintIds": [
+      "AouSgHVvKXBjdyCWyKtCChL6iPBTCdERad8f5xCVMq2w"
+    ]
+  },
+  "cardCount": 25,
+  "groupedDuplicateMintCount": 126,
+  "metadataFetchFailureCount": 0,
+  "liveMintIdsSha256": "d261565f1f060973b6fdb51361809bd9ff63729ccd49f724ee77265fd911796f",
+  "tensorLiveMintIdsSha256": "f514965ab2ed9e471d9f9242c6841c95009dede6ea64464cd2ecbdae1bfae32c",
+  "instrument": {
+    "id": "a3c76257-af97-435c-813e-da16844c15ae",
+    "slug": "a3c76257-af97-435c-813e-da16844c15ae",
+    "slugDisplay": "paul_of_buttons",
+    "name": "judgement",
+    "symbol": null,
+    "imageUri": "https://turbo-gateway.com/jHF8hkJnomab8Fu27SAbSVAQVAdpzWxEyUcMkXMXUas?ext=png",
+    "description": "manta_timing",
+    "tokenStandard": "NON_FUNGIBLE_EDITION",
+    "tokenProgram": "SPL_TOKEN",
+    "compressed": false,
+    "statsV2": {
+      "numMints": 152
+    }
+  },
+  "conversion": {
+    "format": "webp",
+    "width": 600,
+    "height": 840,
+    "quality": 75,
+    "effort": 4,
+    "fit": "contain",
+    "background": "#111111",
+    "imageProxy": "https://prod-image-cdn.tensor.trade/images/600x600/freeze=true"
+  },
+  "animationConversion": {
+    "format": "animated webp",
+    "width": 600,
+    "height": 840,
+    "quality": 75,
+    "effort": 4,
+    "fit": "contain",
+    "background": "#111111",
+    "spriteWidth": 340,
+    "spriteQuality": 76
+  },
+  "sharedBack": {
+    "source": "generated solid color",
+    "color": "#242424",
+    "file": "assets/jpegs/backs/jpegs-back.webp",
+    "width": 600,
+    "height": 840
+  },
+  "liveAssets": [
+    {
+      "onchainId": "Cpwe6TNwDYGE8gbm9QQPCcK4K1GpWHKVc81ojPAJDAm3",
+      "owner": "35JjexQB5SUa35a8Rb1FiVzWVD8rQKBnpPFp7jNmvL6N",
+      "name": "360 Robert",
+      "imageUri": "https://turbo-gateway.com/1p66TOKdrcW2F4ykh7CEilkMYqoV_wiv_dyiIYzj_as?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/z9V_j0ONfM3h6VbtB20rm2QWFDdl5Wbn8dYWiNzRfRU",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/1p66TOKdrcW2F4ykh7CEilkMYqoV_wiv_dyiIYzj_as?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "ErT2XrkpKkkSkmQcFKUN8HriDLDEcHvzGX75PeefDeL8",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "360 Robert",
+      "imageUri": "https://turbo-gateway.com/1p66TOKdrcW2F4ykh7CEilkMYqoV_wiv_dyiIYzj_as?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/z9V_j0ONfM3h6VbtB20rm2QWFDdl5Wbn8dYWiNzRfRU",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/1p66TOKdrcW2F4ykh7CEilkMYqoV_wiv_dyiIYzj_as?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "13CHZSoZujwd6yiwrdBxovHqyChgS4DYDPuGYVK2SAka",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "AGM-158 JASSM Salesman",
+      "imageUri": "https://turbo-gateway.com/fiXJ41GFzeHF0YUVLlTRNEKx-NKeqLh4Qqb4aLg0RTc?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/w-jPynk4iNSwNTIiIgg-nLU87Cm5RpO0yQSZR-_FrsI",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/fiXJ41GFzeHF0YUVLlTRNEKx-NKeqLh4Qqb4aLg0RTc?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "2pHnEnw9dF6JFg6xYZmfQB97opkevoYPkmHXit7BSYdT",
+      "owner": "97qxpvG3zmhbq9ie91bDgN81xqUq7ij5HrVWG5RN9MRv",
+      "name": "AGM-158 JASSM Salesman",
+      "imageUri": "https://turbo-gateway.com/fiXJ41GFzeHF0YUVLlTRNEKx-NKeqLh4Qqb4aLg0RTc?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/w-jPynk4iNSwNTIiIgg-nLU87Cm5RpO0yQSZR-_FrsI",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/fiXJ41GFzeHF0YUVLlTRNEKx-NKeqLh4Qqb4aLg0RTc?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "47k8xtWmCTVTBC5anV7t54QETHaEvmSTxH2bacxEAYmP",
+      "owner": "CYLyL9MZsyrsrrsgkFjnGFYPtLsrKfa2sn6apqKcyLd6",
+      "name": "AGM-158 JASSM Salesman",
+      "imageUri": "https://turbo-gateway.com/fiXJ41GFzeHF0YUVLlTRNEKx-NKeqLh4Qqb4aLg0RTc?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/w-jPynk4iNSwNTIiIgg-nLU87Cm5RpO0yQSZR-_FrsI",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/fiXJ41GFzeHF0YUVLlTRNEKx-NKeqLh4Qqb4aLg0RTc?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "4SCScDpbMYh98zekwFvPGjybhszoVpz6RQYFXnmF1wgL",
+      "owner": "HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh",
+      "name": "AGM-158 JASSM Salesman",
+      "imageUri": "https://turbo-gateway.com/fiXJ41GFzeHF0YUVLlTRNEKx-NKeqLh4Qqb4aLg0RTc?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/w-jPynk4iNSwNTIiIgg-nLU87Cm5RpO0yQSZR-_FrsI",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/fiXJ41GFzeHF0YUVLlTRNEKx-NKeqLh4Qqb4aLg0RTc?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "55idb6PuQ7wMXeY5Kwsi7pu65jysdG7hVtDz3hi4d5Tk",
+      "owner": "7cvobj5KmjqxsN4coHxyCu9bHZLJWnjCzqcRNzC9pMf9",
+      "name": "AGM-158 JASSM Salesman",
+      "imageUri": "https://turbo-gateway.com/fiXJ41GFzeHF0YUVLlTRNEKx-NKeqLh4Qqb4aLg0RTc?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/w-jPynk4iNSwNTIiIgg-nLU87Cm5RpO0yQSZR-_FrsI",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/fiXJ41GFzeHF0YUVLlTRNEKx-NKeqLh4Qqb4aLg0RTc?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "6Fo3uf3RXPhpaCk1eXjJ6mpYhp7e3PPdLoCiBeuEJxq2",
+      "owner": "42RsbnRWtzzw6QL6jmqn3xhau77ptkjrynWuJwdirHHX",
+      "name": "AGM-158 JASSM Salesman",
+      "imageUri": "https://turbo-gateway.com/fiXJ41GFzeHF0YUVLlTRNEKx-NKeqLh4Qqb4aLg0RTc?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/w-jPynk4iNSwNTIiIgg-nLU87Cm5RpO0yQSZR-_FrsI",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/fiXJ41GFzeHF0YUVLlTRNEKx-NKeqLh4Qqb4aLg0RTc?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "9Ziv74jkFko4W7inedBvGrjoy4USnD2RmJ34fTj13mVb",
+      "owner": "93H9cFFq3t77XgSsgTf14BVYAhPV4i4iNGXieK4DNyiy",
+      "name": "AGM-158 JASSM Salesman",
+      "imageUri": "https://turbo-gateway.com/fiXJ41GFzeHF0YUVLlTRNEKx-NKeqLh4Qqb4aLg0RTc?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/w-jPynk4iNSwNTIiIgg-nLU87Cm5RpO0yQSZR-_FrsI",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/fiXJ41GFzeHF0YUVLlTRNEKx-NKeqLh4Qqb4aLg0RTc?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "AeajP3s9fgzmpsvx1S5GQZhmbL9JBAdKu262ABnBmDyK",
+      "owner": "9Kjy4WL6Vs274CdWL84JKtFGmdtQLXyaYgqaspCGfnw2",
+      "name": "AGM-158 JASSM Salesman",
+      "imageUri": "https://turbo-gateway.com/fiXJ41GFzeHF0YUVLlTRNEKx-NKeqLh4Qqb4aLg0RTc?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/w-jPynk4iNSwNTIiIgg-nLU87Cm5RpO0yQSZR-_FrsI",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/fiXJ41GFzeHF0YUVLlTRNEKx-NKeqLh4Qqb4aLg0RTc?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "AKYhAwjQmiRmY111AfF3iFc4Tn7oYtR9vgyeyLmpS4Ba",
+      "owner": "HJparYWsZpirhC8QshssENHyXs8ZNh9ngYed4Zo3VJ8r",
+      "name": "AGM-158 JASSM Salesman",
+      "imageUri": "https://turbo-gateway.com/fiXJ41GFzeHF0YUVLlTRNEKx-NKeqLh4Qqb4aLg0RTc?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/w-jPynk4iNSwNTIiIgg-nLU87Cm5RpO0yQSZR-_FrsI",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/fiXJ41GFzeHF0YUVLlTRNEKx-NKeqLh4Qqb4aLg0RTc?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "DQDxwoBrNP5AZyHqfMWL1DjC1GTNUgrv94eihSwZxoyJ",
+      "owner": "35JjexQB5SUa35a8Rb1FiVzWVD8rQKBnpPFp7jNmvL6N",
+      "name": "AGM-158 JASSM Salesman",
+      "imageUri": "https://turbo-gateway.com/fiXJ41GFzeHF0YUVLlTRNEKx-NKeqLh4Qqb4aLg0RTc?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/w-jPynk4iNSwNTIiIgg-nLU87Cm5RpO0yQSZR-_FrsI",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/fiXJ41GFzeHF0YUVLlTRNEKx-NKeqLh4Qqb4aLg0RTc?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "FkmXEi6Dq4EKZMhgwVYS45E7xmmEiss3uzugsSFJSkDJ",
+      "owner": "45nPDQWpfRsGxxr5CvgsdBBy8X3FvXydpYoVxNpCqcNP",
+      "name": "AGM-158 JASSM Salesman",
+      "imageUri": "https://turbo-gateway.com/fiXJ41GFzeHF0YUVLlTRNEKx-NKeqLh4Qqb4aLg0RTc?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/w-jPynk4iNSwNTIiIgg-nLU87Cm5RpO0yQSZR-_FrsI",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/fiXJ41GFzeHF0YUVLlTRNEKx-NKeqLh4Qqb4aLg0RTc?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "3juSpjEb8W3LJhrsriK8Roacx9he4dBE8Kvk7r9KAEUE",
+      "owner": "45nPDQWpfRsGxxr5CvgsdBBy8X3FvXydpYoVxNpCqcNP",
+      "name": "Blood",
+      "imageUri": "https://turbo-gateway.com/AvmtyySk79kVtZ3cM95aIKFoe4JmfxYMcaCypFfMJZA?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/jrtQHMlHFTH4QyWZEf1o7SNhlTzlme1FNiqoUoZuOCw",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/AvmtyySk79kVtZ3cM95aIKFoe4JmfxYMcaCypFfMJZA?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "3mQznbjj3Cpk3f2hP3Fh9U1FuHmeDrDPiRgerr1o539M",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "Blood",
+      "imageUri": "https://turbo-gateway.com/AvmtyySk79kVtZ3cM95aIKFoe4JmfxYMcaCypFfMJZA?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/jrtQHMlHFTH4QyWZEf1o7SNhlTzlme1FNiqoUoZuOCw",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/AvmtyySk79kVtZ3cM95aIKFoe4JmfxYMcaCypFfMJZA?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "4W89JyQS82frg5vNSX7diXq4MuELBWixs4zwmMv1pBkr",
+      "owner": "HRFZmnqSKQKWjdtVXcWQZZ28P96gonjwiSvCmLaarCmF",
+      "name": "Blood",
+      "imageUri": "https://turbo-gateway.com/AvmtyySk79kVtZ3cM95aIKFoe4JmfxYMcaCypFfMJZA?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/jrtQHMlHFTH4QyWZEf1o7SNhlTzlme1FNiqoUoZuOCw",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/AvmtyySk79kVtZ3cM95aIKFoe4JmfxYMcaCypFfMJZA?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "5ARAgzmRXAH1hk8zizeRpDYwmpifYu3ATcCGbhtXhRpN",
+      "owner": "2hL345EvjWgeWuaoT3z5M6qzmkTRwCcEM9LGnYUKLPm1",
+      "name": "Blood",
+      "imageUri": "https://turbo-gateway.com/AvmtyySk79kVtZ3cM95aIKFoe4JmfxYMcaCypFfMJZA?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/jrtQHMlHFTH4QyWZEf1o7SNhlTzlme1FNiqoUoZuOCw",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/AvmtyySk79kVtZ3cM95aIKFoe4JmfxYMcaCypFfMJZA?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "5k4Y77EfxDBkV7tsuNk39epkS8hg4ozYELUGvJdgJWtJ",
+      "owner": "75dz9RiqHPEFh19oPBXwjNwCT3jRp3KMS1zHXYvJzZzp",
+      "name": "Blood",
+      "imageUri": "https://turbo-gateway.com/AvmtyySk79kVtZ3cM95aIKFoe4JmfxYMcaCypFfMJZA?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/jrtQHMlHFTH4QyWZEf1o7SNhlTzlme1FNiqoUoZuOCw",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/AvmtyySk79kVtZ3cM95aIKFoe4JmfxYMcaCypFfMJZA?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "5S5XsjjQ6zMdytMhCZDtm4hNtKnwtQYKvFC5SQQ8NE2a",
+      "owner": "BvUvpLf1Gur5wypNomSkmmS8e1GAXAbzvhNZYdUm3n5i",
+      "name": "Blood",
+      "imageUri": "https://turbo-gateway.com/AvmtyySk79kVtZ3cM95aIKFoe4JmfxYMcaCypFfMJZA?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/jrtQHMlHFTH4QyWZEf1o7SNhlTzlme1FNiqoUoZuOCw",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/AvmtyySk79kVtZ3cM95aIKFoe4JmfxYMcaCypFfMJZA?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "9XzqXepF9eTy7R26B6of57BZdeEZq4p9aGmTmwfAjSC9",
+      "owner": "9Kjy4WL6Vs274CdWL84JKtFGmdtQLXyaYgqaspCGfnw2",
+      "name": "Blood",
+      "imageUri": "https://turbo-gateway.com/AvmtyySk79kVtZ3cM95aIKFoe4JmfxYMcaCypFfMJZA?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/jrtQHMlHFTH4QyWZEf1o7SNhlTzlme1FNiqoUoZuOCw",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/AvmtyySk79kVtZ3cM95aIKFoe4JmfxYMcaCypFfMJZA?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "CCX5ZzdYFm7LCHNoGN8gCoLA8iLvNHYGqT611z7yNTgE",
+      "owner": "5tTja2SxxLDXDn2bxS2UqnFmWJXoTKCGFwQwQmguogsZ",
+      "name": "Blood",
+      "imageUri": "https://turbo-gateway.com/AvmtyySk79kVtZ3cM95aIKFoe4JmfxYMcaCypFfMJZA?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/jrtQHMlHFTH4QyWZEf1o7SNhlTzlme1FNiqoUoZuOCw",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/AvmtyySk79kVtZ3cM95aIKFoe4JmfxYMcaCypFfMJZA?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "Cd7oLqnwmxKbcJxPUq2fQZ17RM2NufEg63UbBfZBpJ5q",
+      "owner": "7cvobj5KmjqxsN4coHxyCu9bHZLJWnjCzqcRNzC9pMf9",
+      "name": "Blood",
+      "imageUri": "https://turbo-gateway.com/AvmtyySk79kVtZ3cM95aIKFoe4JmfxYMcaCypFfMJZA?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/jrtQHMlHFTH4QyWZEf1o7SNhlTzlme1FNiqoUoZuOCw",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/AvmtyySk79kVtZ3cM95aIKFoe4JmfxYMcaCypFfMJZA?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "F9KzcELmfu5XZNM69Fz1iTW15fGPexLAafW5Fdff7b3x",
+      "owner": "HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh",
+      "name": "Blood",
+      "imageUri": "https://turbo-gateway.com/AvmtyySk79kVtZ3cM95aIKFoe4JmfxYMcaCypFfMJZA?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/jrtQHMlHFTH4QyWZEf1o7SNhlTzlme1FNiqoUoZuOCw",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/AvmtyySk79kVtZ3cM95aIKFoe4JmfxYMcaCypFfMJZA?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "GuQBD7YpoY6oANsVfWSBCdeNZsfHLxjQMsZErsMtP4g3",
+      "owner": "9GhmmohQK7W1NM4b1m2unzfm2P7n2iA6PfNzYyGLgzf7",
+      "name": "Blood",
+      "imageUri": "https://turbo-gateway.com/AvmtyySk79kVtZ3cM95aIKFoe4JmfxYMcaCypFfMJZA?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/jrtQHMlHFTH4QyWZEf1o7SNhlTzlme1FNiqoUoZuOCw",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/AvmtyySk79kVtZ3cM95aIKFoe4JmfxYMcaCypFfMJZA?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "4Vzpkr3tyq8yxHtcST5XiMxRdqiYopcMzgQiBTyY2kif",
+      "owner": "35JjexQB5SUa35a8Rb1FiVzWVD8rQKBnpPFp7jNmvL6N",
+      "name": "Call It When It Terrifies You",
+      "imageUri": "https://turbo-gateway.com/QBJEYx28nT7-EqukR6I_U2AcIPSSeyWjlmHQv8yTxNU?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/bny3OEVliY9vbBlEdOvq9jI0btm70PEhfKEofiZZy98",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/QBJEYx28nT7-EqukR6I_U2AcIPSSeyWjlmHQv8yTxNU?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "523JydeCrTuLubEEEwuXHQELnvynt7pgeUuyLdviKh4s",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "Call It When It Terrifies You",
+      "imageUri": "https://turbo-gateway.com/QBJEYx28nT7-EqukR6I_U2AcIPSSeyWjlmHQv8yTxNU?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/bny3OEVliY9vbBlEdOvq9jI0btm70PEhfKEofiZZy98",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/QBJEYx28nT7-EqukR6I_U2AcIPSSeyWjlmHQv8yTxNU?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "4jTJ2wDj4AKZmF78bBNJbNZWySTLXvjuwQoMziL7Gzd4",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "card",
+      "imageUri": "https://turbo-gateway.com/cQgQN87tqxS_y-a_X774jaybT7eFT9bhUhMxs5bSCf4?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/wrY7hNLP53y982G4PN6Pu4PaEy7ETpLxJk45sn6Ay9Y",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/cQgQN87tqxS_y-a_X774jaybT7eFT9bhUhMxs5bSCf4?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "ALDdU5gsFFW8bahzgZBe2Heca7jwtYWQh6psenAiNo2u",
+      "owner": "CYLyL9MZsyrsrrsgkFjnGFYPtLsrKfa2sn6apqKcyLd6",
+      "name": "card",
+      "imageUri": "https://turbo-gateway.com/cQgQN87tqxS_y-a_X774jaybT7eFT9bhUhMxs5bSCf4?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/wrY7hNLP53y982G4PN6Pu4PaEy7ETpLxJk45sn6Ay9Y",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/cQgQN87tqxS_y-a_X774jaybT7eFT9bhUhMxs5bSCf4?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "DqrkVW9oMyMgWZwZwJS8EJsyFemfdx4anQz9z14nJgQi",
+      "owner": "35JjexQB5SUa35a8Rb1FiVzWVD8rQKBnpPFp7jNmvL6N",
+      "name": "card",
+      "imageUri": "https://turbo-gateway.com/cQgQN87tqxS_y-a_X774jaybT7eFT9bhUhMxs5bSCf4?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/wrY7hNLP53y982G4PN6Pu4PaEy7ETpLxJk45sn6Ay9Y",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/cQgQN87tqxS_y-a_X774jaybT7eFT9bhUhMxs5bSCf4?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "E2vtBS4kyJuYj6dKnXGywkuFkbJuqVuoKGXKNCVYTkf3",
+      "owner": "7cvobj5KmjqxsN4coHxyCu9bHZLJWnjCzqcRNzC9pMf9",
+      "name": "card",
+      "imageUri": "https://turbo-gateway.com/cQgQN87tqxS_y-a_X774jaybT7eFT9bhUhMxs5bSCf4?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/wrY7hNLP53y982G4PN6Pu4PaEy7ETpLxJk45sn6Ay9Y",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/cQgQN87tqxS_y-a_X774jaybT7eFT9bhUhMxs5bSCf4?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "5iKgcv4cHJ5fzDHiNVXkhKEVyjvPkkYrwNEFoBUBRekW",
+      "owner": "CAcqSn3qQxxzmRaVFXo122qywQShjzKz1gwBmyin2AE9",
+      "name": "card",
+      "imageUri": "https://turbo-gateway.com/dfoGbRHJ6bF0oK4sHqSpHFXvOLI74NeyXS7hVhgRd0M?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/daEXg6PyysO_zYKgOV4Y3jwrdc6ZSQHbndzscOJdaIc",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/dfoGbRHJ6bF0oK4sHqSpHFXvOLI74NeyXS7hVhgRd0M?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "6BZABT3zmFbKd6ro9zxqG1PYKVDi5x8VwivM7gRVNQNn",
+      "owner": "7cvobj5KmjqxsN4coHxyCu9bHZLJWnjCzqcRNzC9pMf9",
+      "name": "card",
+      "imageUri": "https://turbo-gateway.com/dfoGbRHJ6bF0oK4sHqSpHFXvOLI74NeyXS7hVhgRd0M?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/daEXg6PyysO_zYKgOV4Y3jwrdc6ZSQHbndzscOJdaIc",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/dfoGbRHJ6bF0oK4sHqSpHFXvOLI74NeyXS7hVhgRd0M?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "ByXAyPem3U59QSt7quNnv62xHGt3Dke9PWYzcxe2oBLP",
+      "owner": "8HHm7TWm5UnWk7ugu2x6nXUo2Tcr7vRiS3N5Vbc8u887",
+      "name": "card",
+      "imageUri": "https://turbo-gateway.com/dfoGbRHJ6bF0oK4sHqSpHFXvOLI74NeyXS7hVhgRd0M?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/daEXg6PyysO_zYKgOV4Y3jwrdc6ZSQHbndzscOJdaIc",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/dfoGbRHJ6bF0oK4sHqSpHFXvOLI74NeyXS7hVhgRd0M?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "Ez9mxe5UVHJTZn5ZbBV6EtLeYwWxF2UpU4cNGpYu3uhx",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "card",
+      "imageUri": "https://turbo-gateway.com/dfoGbRHJ6bF0oK4sHqSpHFXvOLI74NeyXS7hVhgRd0M?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/daEXg6PyysO_zYKgOV4Y3jwrdc6ZSQHbndzscOJdaIc",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/dfoGbRHJ6bF0oK4sHqSpHFXvOLI74NeyXS7hVhgRd0M?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "FixaXc3EkKUnYDFfDLTaq58BQ3JbphyzRbzWehE6SRLd",
+      "owner": "HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh",
+      "name": "card",
+      "imageUri": "https://turbo-gateway.com/dfoGbRHJ6bF0oK4sHqSpHFXvOLI74NeyXS7hVhgRd0M?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/daEXg6PyysO_zYKgOV4Y3jwrdc6ZSQHbndzscOJdaIc",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/dfoGbRHJ6bF0oK4sHqSpHFXvOLI74NeyXS7hVhgRd0M?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "sX9uVEoGGaMQ45GDGd73diqK8Hj9MR3UyusA6E7eCnD",
+      "owner": "35JjexQB5SUa35a8Rb1FiVzWVD8rQKBnpPFp7jNmvL6N",
+      "name": "card",
+      "imageUri": "https://turbo-gateway.com/dfoGbRHJ6bF0oK4sHqSpHFXvOLI74NeyXS7hVhgRd0M?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/daEXg6PyysO_zYKgOV4Y3jwrdc6ZSQHbndzscOJdaIc",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/dfoGbRHJ6bF0oK4sHqSpHFXvOLI74NeyXS7hVhgRd0M?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "6oam3qrqDQ7smSVv3brsf4brxg3GA5ihiha6qPKzJ5gG",
+      "owner": "7cvobj5KmjqxsN4coHxyCu9bHZLJWnjCzqcRNzC9pMf9",
+      "name": "card",
+      "imageUri": "https://turbo-gateway.com/OSnWPwLZqTqTB76n2ljhXjCcX3SNWfi6-8ataKRmeuo?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/VrjGp5VoxbVr2dNNFNe1dDcRBACTVFM0NoorSEgHUY4",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/OSnWPwLZqTqTB76n2ljhXjCcX3SNWfi6-8ataKRmeuo?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "9o2zon4G2TPLqjyXZkWaPFE9m5DdH3moxqijr4VEuU8z",
+      "owner": "35JjexQB5SUa35a8Rb1FiVzWVD8rQKBnpPFp7jNmvL6N",
+      "name": "card",
+      "imageUri": "https://turbo-gateway.com/OSnWPwLZqTqTB76n2ljhXjCcX3SNWfi6-8ataKRmeuo?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/VrjGp5VoxbVr2dNNFNe1dDcRBACTVFM0NoorSEgHUY4",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/OSnWPwLZqTqTB76n2ljhXjCcX3SNWfi6-8ataKRmeuo?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "DftaEANsut1hsnMuoKG9TtvbD7yUTQ6qwavJ1sbLV87S",
+      "owner": "97qxpvG3zmhbq9ie91bDgN81xqUq7ij5HrVWG5RN9MRv",
+      "name": "card",
+      "imageUri": "https://turbo-gateway.com/OSnWPwLZqTqTB76n2ljhXjCcX3SNWfi6-8ataKRmeuo?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/VrjGp5VoxbVr2dNNFNe1dDcRBACTVFM0NoorSEgHUY4",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/OSnWPwLZqTqTB76n2ljhXjCcX3SNWfi6-8ataKRmeuo?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "SWJTZ1PW5jq34gLrwfLihcAnvmtjqAqAkEuh52k6bSx",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "card",
+      "imageUri": "https://turbo-gateway.com/OSnWPwLZqTqTB76n2ljhXjCcX3SNWfi6-8ataKRmeuo?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/VrjGp5VoxbVr2dNNFNe1dDcRBACTVFM0NoorSEgHUY4",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/OSnWPwLZqTqTB76n2ljhXjCcX3SNWfi6-8ataKRmeuo?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "6WJpY7mPqNUz7Tp7EkaoQLSQHBXdxmhdMZZbf4gKozkm",
+      "owner": "35JjexQB5SUa35a8Rb1FiVzWVD8rQKBnpPFp7jNmvL6N",
+      "name": "card",
+      "imageUri": "https://turbo-gateway.com/G30ew55awdmON5qMz8imbtzNZG6RonisAJQbdTzeprA?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/t6eTiSxSnsH5TD6v07CSxoN6GuDzkIFqzuo4tPbyRlw",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/G30ew55awdmON5qMz8imbtzNZG6RonisAJQbdTzeprA?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "8kXgp9zngHJq4WXgEvvGTB8zd3gsowcSP2VZzrH4DudN",
+      "owner": "CYLyL9MZsyrsrrsgkFjnGFYPtLsrKfa2sn6apqKcyLd6",
+      "name": "card",
+      "imageUri": "https://turbo-gateway.com/G30ew55awdmON5qMz8imbtzNZG6RonisAJQbdTzeprA?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/t6eTiSxSnsH5TD6v07CSxoN6GuDzkIFqzuo4tPbyRlw",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/G30ew55awdmON5qMz8imbtzNZG6RonisAJQbdTzeprA?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "ChCsqXZm8UWcptKRHYu737Uaia4sW8kgnkBcJaHoS9pU",
+      "owner": "7cvobj5KmjqxsN4coHxyCu9bHZLJWnjCzqcRNzC9pMf9",
+      "name": "card",
+      "imageUri": "https://turbo-gateway.com/G30ew55awdmON5qMz8imbtzNZG6RonisAJQbdTzeprA?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/t6eTiSxSnsH5TD6v07CSxoN6GuDzkIFqzuo4tPbyRlw",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/G30ew55awdmON5qMz8imbtzNZG6RonisAJQbdTzeprA?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "D5FMd3dEuSe4xpZ23PFXThg5Rp8qqxa8oAUDGU9y2GdV",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "card",
+      "imageUri": "https://turbo-gateway.com/G30ew55awdmON5qMz8imbtzNZG6RonisAJQbdTzeprA?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/t6eTiSxSnsH5TD6v07CSxoN6GuDzkIFqzuo4tPbyRlw",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/G30ew55awdmON5qMz8imbtzNZG6RonisAJQbdTzeprA?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "6obtDbrmhvH7N9Rnz62jaqHyrHJnSh8cSf4LNKvxzWtz",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "Claire Most Unfair",
+      "imageUri": "https://turbo-gateway.com/Cop_PxkZMsrnlynfc4VhcidNeMpd-eOvm_gBFOn3xX4?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/SeOYdVosxTonfVtoLTaJydT6ocqXqOX08j9H-chBsHI",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/Cop_PxkZMsrnlynfc4VhcidNeMpd-eOvm_gBFOn3xX4?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "AwvQiVVQDGtXydckPi1KSmogAiaM2MtXsm3feLM9pjog",
+      "owner": "35JjexQB5SUa35a8Rb1FiVzWVD8rQKBnpPFp7jNmvL6N",
+      "name": "Claire Most Unfair",
+      "imageUri": "https://turbo-gateway.com/Cop_PxkZMsrnlynfc4VhcidNeMpd-eOvm_gBFOn3xX4?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/SeOYdVosxTonfVtoLTaJydT6ocqXqOX08j9H-chBsHI",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/Cop_PxkZMsrnlynfc4VhcidNeMpd-eOvm_gBFOn3xX4?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "129ZEExDTeodEMfsyR5CJX9mZJxoaXgNhuuCm4PRsUrY",
+      "owner": "35JjexQB5SUa35a8Rb1FiVzWVD8rQKBnpPFp7jNmvL6N",
+      "name": "Drone Party #01: Shahed 136",
+      "imageUri": "https://turbo-gateway.com/YSvswbaSzEd6HpoWK50z-skdaAtYmAQmYNFuvqGRCeA?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/WU8k8WsxiwN2qWDvb4Jr5bdUhBc6WWmYa0fNMbSPjOI",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/YSvswbaSzEd6HpoWK50z-skdaAtYmAQmYNFuvqGRCeA?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "43SqjaVTKugNqwWhRKaifikjGp5nWPF26qWZetcfQqXP",
+      "owner": "CAcqSn3qQxxzmRaVFXo122qywQShjzKz1gwBmyin2AE9",
+      "name": "Drone Party #01: Shahed 136",
+      "imageUri": "https://turbo-gateway.com/YSvswbaSzEd6HpoWK50z-skdaAtYmAQmYNFuvqGRCeA?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/WU8k8WsxiwN2qWDvb4Jr5bdUhBc6WWmYa0fNMbSPjOI",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/YSvswbaSzEd6HpoWK50z-skdaAtYmAQmYNFuvqGRCeA?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "5hbS4tizNuEdM2HB4fUvSeDxdBgJr5VvX1S5utkRMwnX",
+      "owner": "97qxpvG3zmhbq9ie91bDgN81xqUq7ij5HrVWG5RN9MRv",
+      "name": "Drone Party #01: Shahed 136",
+      "imageUri": "https://turbo-gateway.com/YSvswbaSzEd6HpoWK50z-skdaAtYmAQmYNFuvqGRCeA?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/WU8k8WsxiwN2qWDvb4Jr5bdUhBc6WWmYa0fNMbSPjOI",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/YSvswbaSzEd6HpoWK50z-skdaAtYmAQmYNFuvqGRCeA?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "6uXJFuHN7dvXXzeXjLykW86M3SSWc8ihGWZWmT1bFCG2",
+      "owner": "CYLyL9MZsyrsrrsgkFjnGFYPtLsrKfa2sn6apqKcyLd6",
+      "name": "Drone Party #01: Shahed 136",
+      "imageUri": "https://turbo-gateway.com/YSvswbaSzEd6HpoWK50z-skdaAtYmAQmYNFuvqGRCeA?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/WU8k8WsxiwN2qWDvb4Jr5bdUhBc6WWmYa0fNMbSPjOI",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/YSvswbaSzEd6HpoWK50z-skdaAtYmAQmYNFuvqGRCeA?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "APzewPEHvDva45ztzxhxxFLmKun75FFXt7C7cuUbzCQF",
+      "owner": "8HHm7TWm5UnWk7ugu2x6nXUo2Tcr7vRiS3N5Vbc8u887",
+      "name": "Drone Party #01: Shahed 136",
+      "imageUri": "https://turbo-gateway.com/YSvswbaSzEd6HpoWK50z-skdaAtYmAQmYNFuvqGRCeA?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/WU8k8WsxiwN2qWDvb4Jr5bdUhBc6WWmYa0fNMbSPjOI",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/YSvswbaSzEd6HpoWK50z-skdaAtYmAQmYNFuvqGRCeA?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "Bov3uYvqvaLnSmM1a6ekynChW3QobX4xHeUinwPUh8aD",
+      "owner": "9GhmmohQK7W1NM4b1m2unzfm2P7n2iA6PfNzYyGLgzf7",
+      "name": "Drone Party #01: Shahed 136",
+      "imageUri": "https://turbo-gateway.com/YSvswbaSzEd6HpoWK50z-skdaAtYmAQmYNFuvqGRCeA?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/WU8k8WsxiwN2qWDvb4Jr5bdUhBc6WWmYa0fNMbSPjOI",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/YSvswbaSzEd6HpoWK50z-skdaAtYmAQmYNFuvqGRCeA?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "BR4PuHVQaY35aNEAAvGSp9ABHjiaKHk3GJToHQisEb37",
+      "owner": "HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh",
+      "name": "Drone Party #01: Shahed 136",
+      "imageUri": "https://turbo-gateway.com/YSvswbaSzEd6HpoWK50z-skdaAtYmAQmYNFuvqGRCeA?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/WU8k8WsxiwN2qWDvb4Jr5bdUhBc6WWmYa0fNMbSPjOI",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/YSvswbaSzEd6HpoWK50z-skdaAtYmAQmYNFuvqGRCeA?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "CrjuamJtF26CpgdpmqMhYBuKqsWALAGTgBZP3gCziqD2",
+      "owner": "7cvobj5KmjqxsN4coHxyCu9bHZLJWnjCzqcRNzC9pMf9",
+      "name": "Drone Party #01: Shahed 136",
+      "imageUri": "https://turbo-gateway.com/YSvswbaSzEd6HpoWK50z-skdaAtYmAQmYNFuvqGRCeA?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/WU8k8WsxiwN2qWDvb4Jr5bdUhBc6WWmYa0fNMbSPjOI",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/YSvswbaSzEd6HpoWK50z-skdaAtYmAQmYNFuvqGRCeA?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "ERNg6MdSJnPQXxo9jiGvQ8Rrk9sJLhndQbudQoPKcTWG",
+      "owner": "56HKmPYpmvpRTMJp6M2KVNNStjyvWgJybQyWPaZ47Efu",
+      "name": "Drone Party #01: Shahed 136",
+      "imageUri": "https://turbo-gateway.com/YSvswbaSzEd6HpoWK50z-skdaAtYmAQmYNFuvqGRCeA?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/WU8k8WsxiwN2qWDvb4Jr5bdUhBc6WWmYa0fNMbSPjOI",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/YSvswbaSzEd6HpoWK50z-skdaAtYmAQmYNFuvqGRCeA?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "EuDFM9Nc9YjdwzRV9HuBoxiybDgjuKTxwmCmTJroEXsB",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "Drone Party #01: Shahed 136",
+      "imageUri": "https://turbo-gateway.com/YSvswbaSzEd6HpoWK50z-skdaAtYmAQmYNFuvqGRCeA?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/WU8k8WsxiwN2qWDvb4Jr5bdUhBc6WWmYa0fNMbSPjOI",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/YSvswbaSzEd6HpoWK50z-skdaAtYmAQmYNFuvqGRCeA?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "GFQYqhUrjh3MMAkS8ibC9nGj15TLCwcTnhBaYJCEeUpi",
+      "owner": "42RsbnRWtzzw6QL6jmqn3xhau77ptkjrynWuJwdirHHX",
+      "name": "Drone Party #01: Shahed 136",
+      "imageUri": "https://turbo-gateway.com/YSvswbaSzEd6HpoWK50z-skdaAtYmAQmYNFuvqGRCeA?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/WU8k8WsxiwN2qWDvb4Jr5bdUhBc6WWmYa0fNMbSPjOI",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/YSvswbaSzEd6HpoWK50z-skdaAtYmAQmYNFuvqGRCeA?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "29ciFLhB7EE48cSH9zCGpFov2E3fdfELszm7fmo4GafY",
+      "owner": "AWmNR6t5g5zipT2NMkSPRBXxB9Th8LsZcJX71yNyzsgE",
+      "name": "judgement",
+      "imageUri": "https://turbo-gateway.com/jHF8hkJnomab8Fu27SAbSVAQVAdpzWxEyUcMkXMXUas?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/uFfG2MFkS0AFbnQUvtVWyyz-8U82cA-af43ThclggjQ",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/jHF8hkJnomab8Fu27SAbSVAQVAdpzWxEyUcMkXMXUas?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "2RWarbSLvKQtCcWQnSijHbpsRh1mj6Z7V4HS782zJ2U8",
+      "owner": "HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh",
+      "name": "judgement",
+      "imageUri": "https://turbo-gateway.com/jHF8hkJnomab8Fu27SAbSVAQVAdpzWxEyUcMkXMXUas?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/uFfG2MFkS0AFbnQUvtVWyyz-8U82cA-af43ThclggjQ",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/jHF8hkJnomab8Fu27SAbSVAQVAdpzWxEyUcMkXMXUas?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "3geSp59t8e6YQttbak5WLFBuK18XnCJ3HqFUTwqm7TiX",
+      "owner": "97qxpvG3zmhbq9ie91bDgN81xqUq7ij5HrVWG5RN9MRv",
+      "name": "judgement",
+      "imageUri": "https://turbo-gateway.com/jHF8hkJnomab8Fu27SAbSVAQVAdpzWxEyUcMkXMXUas?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/uFfG2MFkS0AFbnQUvtVWyyz-8U82cA-af43ThclggjQ",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/jHF8hkJnomab8Fu27SAbSVAQVAdpzWxEyUcMkXMXUas?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "6yYhbHMPzLhT4rtwyLnVAukQReiuuAWGM2wXqELayK4B",
+      "owner": "CYLyL9MZsyrsrrsgkFjnGFYPtLsrKfa2sn6apqKcyLd6",
+      "name": "judgement",
+      "imageUri": "https://turbo-gateway.com/jHF8hkJnomab8Fu27SAbSVAQVAdpzWxEyUcMkXMXUas?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/uFfG2MFkS0AFbnQUvtVWyyz-8U82cA-af43ThclggjQ",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/jHF8hkJnomab8Fu27SAbSVAQVAdpzWxEyUcMkXMXUas?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "CGDu4QUFhEN78qaNEat5tbRvdcLtgNyzK1J2DhQ2U5RR",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "judgement",
+      "imageUri": "https://turbo-gateway.com/jHF8hkJnomab8Fu27SAbSVAQVAdpzWxEyUcMkXMXUas?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/uFfG2MFkS0AFbnQUvtVWyyz-8U82cA-af43ThclggjQ",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/jHF8hkJnomab8Fu27SAbSVAQVAdpzWxEyUcMkXMXUas?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "CiNEmeBwAAvpHHQHkKsrpeSHYwFdnoJ63xKV5AqG6A9Z",
+      "owner": "HRFZmnqSKQKWjdtVXcWQZZ28P96gonjwiSvCmLaarCmF",
+      "name": "judgement",
+      "imageUri": "https://turbo-gateway.com/jHF8hkJnomab8Fu27SAbSVAQVAdpzWxEyUcMkXMXUas?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/uFfG2MFkS0AFbnQUvtVWyyz-8U82cA-af43ThclggjQ",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/jHF8hkJnomab8Fu27SAbSVAQVAdpzWxEyUcMkXMXUas?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "FYHMRAbq9rxwyNv4q52kf9CpUcFPLu5Nh51ZmN6eif4a",
+      "owner": "7cvobj5KmjqxsN4coHxyCu9bHZLJWnjCzqcRNzC9pMf9",
+      "name": "judgement",
+      "imageUri": "https://turbo-gateway.com/jHF8hkJnomab8Fu27SAbSVAQVAdpzWxEyUcMkXMXUas?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/uFfG2MFkS0AFbnQUvtVWyyz-8U82cA-af43ThclggjQ",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/jHF8hkJnomab8Fu27SAbSVAQVAdpzWxEyUcMkXMXUas?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "tNDXsg3o2sinhn24CNwyZgkvXZmmb7WQBnQFCV6BhPW",
+      "owner": "35JjexQB5SUa35a8Rb1FiVzWVD8rQKBnpPFp7jNmvL6N",
+      "name": "judgement",
+      "imageUri": "https://turbo-gateway.com/jHF8hkJnomab8Fu27SAbSVAQVAdpzWxEyUcMkXMXUas?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/uFfG2MFkS0AFbnQUvtVWyyz-8U82cA-af43ThclggjQ",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/jHF8hkJnomab8Fu27SAbSVAQVAdpzWxEyUcMkXMXUas?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "3edPDq96FYM2FM9SzqQAjCtLLDRdEmMxoheZioU9Qv2c",
+      "owner": "CAcqSn3qQxxzmRaVFXo122qywQShjzKz1gwBmyin2AE9",
+      "name": "Lucky Card",
+      "imageUri": "https://turbo-gateway.com/tDqEyNRYd0CuNKAuVT-O5nQiiuJypd0LRDi40bZdVsM?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/fiveRBYxzVnZRVoug-iN9_ZSW_uys4HGuwXz2HV60Dw",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/tDqEyNRYd0CuNKAuVT-O5nQiiuJypd0LRDi40bZdVsM?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "5TzFSXP82VNTy1L9CZCuQBZgNha9Jw6w9qHFqxB63neE",
+      "owner": "9KSXvBcqs6ginViTZhAFgqq9sRgXBTxAucJhTTCJW45M",
+      "name": "Lucky Card",
+      "imageUri": "https://turbo-gateway.com/tDqEyNRYd0CuNKAuVT-O5nQiiuJypd0LRDi40bZdVsM?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/fiveRBYxzVnZRVoug-iN9_ZSW_uys4HGuwXz2HV60Dw",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/tDqEyNRYd0CuNKAuVT-O5nQiiuJypd0LRDi40bZdVsM?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "7w8XrH1hmh1r87zNET27HDrCLzUadGXyqPQTpU17ofF5",
+      "owner": "35JjexQB5SUa35a8Rb1FiVzWVD8rQKBnpPFp7jNmvL6N",
+      "name": "Lucky Card",
+      "imageUri": "https://turbo-gateway.com/tDqEyNRYd0CuNKAuVT-O5nQiiuJypd0LRDi40bZdVsM?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/fiveRBYxzVnZRVoug-iN9_ZSW_uys4HGuwXz2HV60Dw",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/tDqEyNRYd0CuNKAuVT-O5nQiiuJypd0LRDi40bZdVsM?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "Bz22hm36Quyzy47cpiBAFrryBs1jYKjnrxSNHruzgsz5",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "Lucky Card",
+      "imageUri": "https://turbo-gateway.com/tDqEyNRYd0CuNKAuVT-O5nQiiuJypd0LRDi40bZdVsM?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/fiveRBYxzVnZRVoug-iN9_ZSW_uys4HGuwXz2HV60Dw",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/tDqEyNRYd0CuNKAuVT-O5nQiiuJypd0LRDi40bZdVsM?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "EmGkL7bCEiRybqcZERBywTLZ9ABhPGPmoZ46RsJfW7gf",
+      "owner": "7cvobj5KmjqxsN4coHxyCu9bHZLJWnjCzqcRNzC9pMf9",
+      "name": "Lucky Card",
+      "imageUri": "https://turbo-gateway.com/tDqEyNRYd0CuNKAuVT-O5nQiiuJypd0LRDi40bZdVsM?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/fiveRBYxzVnZRVoug-iN9_ZSW_uys4HGuwXz2HV60Dw",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/tDqEyNRYd0CuNKAuVT-O5nQiiuJypd0LRDi40bZdVsM?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "HcCndrEkK7tMACr8tPNzWGw8m8RXCeTdkPmTp2RqE6T8",
+      "owner": "xWBi1Zf1wEgnmwzGGdZQ64dqD32QT93odaNQvpKNMni",
+      "name": "Lucky Card",
+      "imageUri": "https://turbo-gateway.com/tDqEyNRYd0CuNKAuVT-O5nQiiuJypd0LRDi40bZdVsM?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/fiveRBYxzVnZRVoug-iN9_ZSW_uys4HGuwXz2HV60Dw",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/tDqEyNRYd0CuNKAuVT-O5nQiiuJypd0LRDi40bZdVsM?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "14jjJGScjfs7oWYHufEtqX1qAmZomu4TAXNudoRXToQP",
+      "owner": "14VeBxDiEPps8PG2G3vaTonMgSszXPAPBQGeoR33k8Nb",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/H_SdILSX3cxOnxDqV0SJn3K3-aeOjgb8d6AaIG9Br-8?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/vtx0dXK1l8kk898bLUrPbjxBEbu1JRcypzmERCALD0E",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/H_SdILSX3cxOnxDqV0SJn3K3-aeOjgb8d6AaIG9Br-8?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "2JgFsZvN2tiTsV3HPNCokSNm7GYZHXY9dxdr3m61fHxe",
+      "owner": "7cvobj5KmjqxsN4coHxyCu9bHZLJWnjCzqcRNzC9pMf9",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/H_SdILSX3cxOnxDqV0SJn3K3-aeOjgb8d6AaIG9Br-8?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/vtx0dXK1l8kk898bLUrPbjxBEbu1JRcypzmERCALD0E",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/H_SdILSX3cxOnxDqV0SJn3K3-aeOjgb8d6AaIG9Br-8?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "3k22HBa9hDzdwt95Y7wp8DGY2FY15AoJvXmhRr3uDwzV",
+      "owner": "45nPDQWpfRsGxxr5CvgsdBBy8X3FvXydpYoVxNpCqcNP",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/H_SdILSX3cxOnxDqV0SJn3K3-aeOjgb8d6AaIG9Br-8?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/vtx0dXK1l8kk898bLUrPbjxBEbu1JRcypzmERCALD0E",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/H_SdILSX3cxOnxDqV0SJn3K3-aeOjgb8d6AaIG9Br-8?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "3QqLxe8GkT4QhZ467YWbHT9MRfEi9smoSGUN1aBNafDf",
+      "owner": "HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/H_SdILSX3cxOnxDqV0SJn3K3-aeOjgb8d6AaIG9Br-8?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/vtx0dXK1l8kk898bLUrPbjxBEbu1JRcypzmERCALD0E",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/H_SdILSX3cxOnxDqV0SJn3K3-aeOjgb8d6AaIG9Br-8?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "7G7rWb8pQ4hkJrC61LgBMv23yZmQP77iZEdr7qiP1wpA",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/H_SdILSX3cxOnxDqV0SJn3K3-aeOjgb8d6AaIG9Br-8?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/vtx0dXK1l8kk898bLUrPbjxBEbu1JRcypzmERCALD0E",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/H_SdILSX3cxOnxDqV0SJn3K3-aeOjgb8d6AaIG9Br-8?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "7YvZ2p9DzPvxGDTMLe1gZAZX6Lt32ULsyPHNN31VVakW",
+      "owner": "HRFZmnqSKQKWjdtVXcWQZZ28P96gonjwiSvCmLaarCmF",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/H_SdILSX3cxOnxDqV0SJn3K3-aeOjgb8d6AaIG9Br-8?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/vtx0dXK1l8kk898bLUrPbjxBEbu1JRcypzmERCALD0E",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/H_SdILSX3cxOnxDqV0SJn3K3-aeOjgb8d6AaIG9Br-8?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "9xUtanxMvZpeTyA3hd9zEfjPay5CJRDJNdQ9xxVDtR8",
+      "owner": "BvUvpLf1Gur5wypNomSkmmS8e1GAXAbzvhNZYdUm3n5i",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/H_SdILSX3cxOnxDqV0SJn3K3-aeOjgb8d6AaIG9Br-8?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/vtx0dXK1l8kk898bLUrPbjxBEbu1JRcypzmERCALD0E",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/H_SdILSX3cxOnxDqV0SJn3K3-aeOjgb8d6AaIG9Br-8?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "BZ1d7MwhEeVnh7NTZwx58eCDkqcUvn16iJtcvLrxpkLf",
+      "owner": "9KSXvBcqs6ginViTZhAFgqq9sRgXBTxAucJhTTCJW45M",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/H_SdILSX3cxOnxDqV0SJn3K3-aeOjgb8d6AaIG9Br-8?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/vtx0dXK1l8kk898bLUrPbjxBEbu1JRcypzmERCALD0E",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/H_SdILSX3cxOnxDqV0SJn3K3-aeOjgb8d6AaIG9Br-8?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "Cmg19mXTVagPndRJQxRvTtyYJTe3PrQNvDnRMAVpD5Xg",
+      "owner": "35JjexQB5SUa35a8Rb1FiVzWVD8rQKBnpPFp7jNmvL6N",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/H_SdILSX3cxOnxDqV0SJn3K3-aeOjgb8d6AaIG9Br-8?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/vtx0dXK1l8kk898bLUrPbjxBEbu1JRcypzmERCALD0E",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/H_SdILSX3cxOnxDqV0SJn3K3-aeOjgb8d6AaIG9Br-8?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "YLHrPUcnXGq7J9Td6f4yzFqYXmXYNQv57oJmmoMUqSG",
+      "owner": "8HHm7TWm5UnWk7ugu2x6nXUo2Tcr7vRiS3N5Vbc8u887",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/H_SdILSX3cxOnxDqV0SJn3K3-aeOjgb8d6AaIG9Br-8?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/vtx0dXK1l8kk898bLUrPbjxBEbu1JRcypzmERCALD0E",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/H_SdILSX3cxOnxDqV0SJn3K3-aeOjgb8d6AaIG9Br-8?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "2kae95ecybVV5iSeiWy1R9ZnwdXMDojLMzXkyUC4SXQV",
+      "owner": "35JjexQB5SUa35a8Rb1FiVzWVD8rQKBnpPFp7jNmvL6N",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/xroJCaDwHxBv8cwnBWO1T5QsnAUcuZExq5a1x1vl_Kw?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/b_T9bqYX9Bgmy2Fo8rUShfu_23jb4cHDAF0YgUkUshQ",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/xroJCaDwHxBv8cwnBWO1T5QsnAUcuZExq5a1x1vl_Kw?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "6MwrjcGLCHMWaxqhjxEAgeFGkaD9w6aupoinqCtic3kt",
+      "owner": "2ENontbMEDUiac8DDmzK3fQCfRa9RZAPqgyDoD4U7hy2",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/xroJCaDwHxBv8cwnBWO1T5QsnAUcuZExq5a1x1vl_Kw?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/b_T9bqYX9Bgmy2Fo8rUShfu_23jb4cHDAF0YgUkUshQ",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/xroJCaDwHxBv8cwnBWO1T5QsnAUcuZExq5a1x1vl_Kw?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "AB5dK5vJ3cmDC9BW7EXRoC5fs6bf1yQmM2dmsNmuKdjL",
+      "owner": "9KSXvBcqs6ginViTZhAFgqq9sRgXBTxAucJhTTCJW45M",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/xroJCaDwHxBv8cwnBWO1T5QsnAUcuZExq5a1x1vl_Kw?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/b_T9bqYX9Bgmy2Fo8rUShfu_23jb4cHDAF0YgUkUshQ",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/xroJCaDwHxBv8cwnBWO1T5QsnAUcuZExq5a1x1vl_Kw?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "B19GQFGmqxMpmABhdqjpuW6ThczWDipdKRRAAfVBhKHU",
+      "owner": "7cvobj5KmjqxsN4coHxyCu9bHZLJWnjCzqcRNzC9pMf9",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/xroJCaDwHxBv8cwnBWO1T5QsnAUcuZExq5a1x1vl_Kw?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/b_T9bqYX9Bgmy2Fo8rUShfu_23jb4cHDAF0YgUkUshQ",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/xroJCaDwHxBv8cwnBWO1T5QsnAUcuZExq5a1x1vl_Kw?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "CUERhMBi4r28LTWBsLtsXJ2MY81WpjgtjthcRfGsx6m",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/xroJCaDwHxBv8cwnBWO1T5QsnAUcuZExq5a1x1vl_Kw?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/b_T9bqYX9Bgmy2Fo8rUShfu_23jb4cHDAF0YgUkUshQ",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/xroJCaDwHxBv8cwnBWO1T5QsnAUcuZExq5a1x1vl_Kw?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "EnSqqGEyM7EpCBaxEvWHDS6oZrU48cipyvTrZfYhfFWw",
+      "owner": "7XmpB88VmLjs7T3JLj1nCmBqjHATA4puhjssB3cgtSg1",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/xroJCaDwHxBv8cwnBWO1T5QsnAUcuZExq5a1x1vl_Kw?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/b_T9bqYX9Bgmy2Fo8rUShfu_23jb4cHDAF0YgUkUshQ",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/xroJCaDwHxBv8cwnBWO1T5QsnAUcuZExq5a1x1vl_Kw?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "ErTcaGL86NNQMHYfKKTyJjTqcNuEboSXH6XvKUa9H2UE",
+      "owner": "14VeBxDiEPps8PG2G3vaTonMgSszXPAPBQGeoR33k8Nb",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/xroJCaDwHxBv8cwnBWO1T5QsnAUcuZExq5a1x1vl_Kw?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/b_T9bqYX9Bgmy2Fo8rUShfu_23jb4cHDAF0YgUkUshQ",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/xroJCaDwHxBv8cwnBWO1T5QsnAUcuZExq5a1x1vl_Kw?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "33nmCNUXU527G2R1zeKpWV7MpLSm1tMpkbMf4uSAHMyX",
+      "owner": "8ohXs4oHpPbAmrg5rKasHwgMWqzGTUyECTvqdEhKC3Fg",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/YB_EUR_vSXtewqrD-4TCpN-QOHQg2WqtBRpdAL0UYLg?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/LkjwQ_482gTNltfuVkwMCkZZ9xQjYhuhYweDMuB0TYU",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/YB_EUR_vSXtewqrD-4TCpN-QOHQg2WqtBRpdAL0UYLg?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "3Xn8FDMppYr3Yz1enrx1KPfLziNKn9jmaAF8HC4NzHdr",
+      "owner": "xWBi1Zf1wEgnmwzGGdZQ64dqD32QT93odaNQvpKNMni",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/YB_EUR_vSXtewqrD-4TCpN-QOHQg2WqtBRpdAL0UYLg?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/LkjwQ_482gTNltfuVkwMCkZZ9xQjYhuhYweDMuB0TYU",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/YB_EUR_vSXtewqrD-4TCpN-QOHQg2WqtBRpdAL0UYLg?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "52tHTpAPQuvdRufGxPKGBbcfLWbiWyoPyujLsCHgy7Wn",
+      "owner": "7cvobj5KmjqxsN4coHxyCu9bHZLJWnjCzqcRNzC9pMf9",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/YB_EUR_vSXtewqrD-4TCpN-QOHQg2WqtBRpdAL0UYLg?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/LkjwQ_482gTNltfuVkwMCkZZ9xQjYhuhYweDMuB0TYU",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/YB_EUR_vSXtewqrD-4TCpN-QOHQg2WqtBRpdAL0UYLg?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "53213e1n1KucvJugzbAtPE1qnRkCwN23LrTdExfNuYir",
+      "owner": "8ReKPbDsx28Q5rPgdLUXAsAmim4bUAsftpKPdw12TQtV",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/YB_EUR_vSXtewqrD-4TCpN-QOHQg2WqtBRpdAL0UYLg?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/LkjwQ_482gTNltfuVkwMCkZZ9xQjYhuhYweDMuB0TYU",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/YB_EUR_vSXtewqrD-4TCpN-QOHQg2WqtBRpdAL0UYLg?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "7ZAVHJbwsHKZMK6dyw4FkjuxKYk1pvrvbcEVDL3cQjgq",
+      "owner": "7XmpB88VmLjs7T3JLj1nCmBqjHATA4puhjssB3cgtSg1",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/YB_EUR_vSXtewqrD-4TCpN-QOHQg2WqtBRpdAL0UYLg?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/LkjwQ_482gTNltfuVkwMCkZZ9xQjYhuhYweDMuB0TYU",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/YB_EUR_vSXtewqrD-4TCpN-QOHQg2WqtBRpdAL0UYLg?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "8bqumYDMrYM6ZZ4wMnhHySe4tLzpf1aNVMiVLv8QWHjt",
+      "owner": "14VeBxDiEPps8PG2G3vaTonMgSszXPAPBQGeoR33k8Nb",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/YB_EUR_vSXtewqrD-4TCpN-QOHQg2WqtBRpdAL0UYLg?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/LkjwQ_482gTNltfuVkwMCkZZ9xQjYhuhYweDMuB0TYU",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/YB_EUR_vSXtewqrD-4TCpN-QOHQg2WqtBRpdAL0UYLg?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "8dUxTcyayDaMcYKZbjpwXLsqwsKNyD9cVWgz1yPwC3Ui",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/YB_EUR_vSXtewqrD-4TCpN-QOHQg2WqtBRpdAL0UYLg?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/LkjwQ_482gTNltfuVkwMCkZZ9xQjYhuhYweDMuB0TYU",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/YB_EUR_vSXtewqrD-4TCpN-QOHQg2WqtBRpdAL0UYLg?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "ADpyksRX49njTBEbsgk3pw4Pqt6uWApsUBS7PJSTvy91",
+      "owner": "2XSfmmMqAaNaYhYbd9zMo2fcneUCQCC6Vj16gxoLxB12",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/YB_EUR_vSXtewqrD-4TCpN-QOHQg2WqtBRpdAL0UYLg?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/LkjwQ_482gTNltfuVkwMCkZZ9xQjYhuhYweDMuB0TYU",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/YB_EUR_vSXtewqrD-4TCpN-QOHQg2WqtBRpdAL0UYLg?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "F8d9N1BaiNSEfPMhYSZaByJJmd48VaMF3kPXadzRjT1D",
+      "owner": "CAcqSn3qQxxzmRaVFXo122qywQShjzKz1gwBmyin2AE9",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/YB_EUR_vSXtewqrD-4TCpN-QOHQg2WqtBRpdAL0UYLg?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/LkjwQ_482gTNltfuVkwMCkZZ9xQjYhuhYweDMuB0TYU",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/YB_EUR_vSXtewqrD-4TCpN-QOHQg2WqtBRpdAL0UYLg?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "Gxa1qWAVX9fbgHixWt5EEjyzbbSyFZLQDUW5QzxwicKm",
+      "owner": "35JjexQB5SUa35a8Rb1FiVzWVD8rQKBnpPFp7jNmvL6N",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/YB_EUR_vSXtewqrD-4TCpN-QOHQg2WqtBRpdAL0UYLg?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/LkjwQ_482gTNltfuVkwMCkZZ9xQjYhuhYweDMuB0TYU",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/YB_EUR_vSXtewqrD-4TCpN-QOHQg2WqtBRpdAL0UYLg?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "HML11aA6cBXidWhCVsaC5J1JLNCNWqZh56wgFikT4ey3",
+      "owner": "9KSXvBcqs6ginViTZhAFgqq9sRgXBTxAucJhTTCJW45M",
+      "name": "Mifella",
+      "imageUri": "https://turbo-gateway.com/YB_EUR_vSXtewqrD-4TCpN-QOHQg2WqtBRpdAL0UYLg?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/LkjwQ_482gTNltfuVkwMCkZZ9xQjYhuhYweDMuB0TYU",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/YB_EUR_vSXtewqrD-4TCpN-QOHQg2WqtBRpdAL0UYLg?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "3yen3XPPaGDo6vAF6h19EoXeRLUpL7XhaBxqPwtknRmg",
+      "owner": "HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh",
+      "name": "moon",
+      "imageUri": "https://turbo-gateway.com/9dfD9RZyB3rr3RIUuqj0J6EhE47w_Pkx731LtIfzElI?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/KXRPyCkeg4tNu8xglhRgCTu2NtDSQ9SYa3aitRaIh-Q",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/9dfD9RZyB3rr3RIUuqj0J6EhE47w_Pkx731LtIfzElI?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "7nzV8414ztagg5e5WSUR5w9zzGKnm6UnLYdg4vqDymSL",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "moon",
+      "imageUri": "https://turbo-gateway.com/9dfD9RZyB3rr3RIUuqj0J6EhE47w_Pkx731LtIfzElI?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/KXRPyCkeg4tNu8xglhRgCTu2NtDSQ9SYa3aitRaIh-Q",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/9dfD9RZyB3rr3RIUuqj0J6EhE47w_Pkx731LtIfzElI?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "7urwESwf9SbimBdzbg1bTZrugKERLHHnWDmKkR8kAYF1",
+      "owner": "7cvobj5KmjqxsN4coHxyCu9bHZLJWnjCzqcRNzC9pMf9",
+      "name": "moon",
+      "imageUri": "https://turbo-gateway.com/9dfD9RZyB3rr3RIUuqj0J6EhE47w_Pkx731LtIfzElI?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/KXRPyCkeg4tNu8xglhRgCTu2NtDSQ9SYa3aitRaIh-Q",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/9dfD9RZyB3rr3RIUuqj0J6EhE47w_Pkx731LtIfzElI?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "Cdi5tg2i93NBKjbx7bN4iBZE7XAfkNu2TLbKErAprqhK",
+      "owner": "42RsbnRWtzzw6QL6jmqn3xhau77ptkjrynWuJwdirHHX",
+      "name": "moon",
+      "imageUri": "https://turbo-gateway.com/9dfD9RZyB3rr3RIUuqj0J6EhE47w_Pkx731LtIfzElI?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/KXRPyCkeg4tNu8xglhRgCTu2NtDSQ9SYa3aitRaIh-Q",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/9dfD9RZyB3rr3RIUuqj0J6EhE47w_Pkx731LtIfzElI?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "CswHeLXUQEHuvH88LzwBRqB2QPSYvjdfuRQGLGcK1ygB",
+      "owner": "35JjexQB5SUa35a8Rb1FiVzWVD8rQKBnpPFp7jNmvL6N",
+      "name": "moon",
+      "imageUri": "https://turbo-gateway.com/9dfD9RZyB3rr3RIUuqj0J6EhE47w_Pkx731LtIfzElI?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/KXRPyCkeg4tNu8xglhRgCTu2NtDSQ9SYa3aitRaIh-Q",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/9dfD9RZyB3rr3RIUuqj0J6EhE47w_Pkx731LtIfzElI?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "FTRtBz1nFdb1rM3vAX4PHEoEroQjVTGpakXXnLLvVBUs",
+      "owner": "9KSXvBcqs6ginViTZhAFgqq9sRgXBTxAucJhTTCJW45M",
+      "name": "moon",
+      "imageUri": "https://turbo-gateway.com/9dfD9RZyB3rr3RIUuqj0J6EhE47w_Pkx731LtIfzElI?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/KXRPyCkeg4tNu8xglhRgCTu2NtDSQ9SYa3aitRaIh-Q",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/9dfD9RZyB3rr3RIUuqj0J6EhE47w_Pkx731LtIfzElI?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "GQ92rV1ty1ibPZ8FNmDxDmeEF27EXZspHU946Kfe5X6g",
+      "owner": "CYLyL9MZsyrsrrsgkFjnGFYPtLsrKfa2sn6apqKcyLd6",
+      "name": "moon",
+      "imageUri": "https://turbo-gateway.com/9dfD9RZyB3rr3RIUuqj0J6EhE47w_Pkx731LtIfzElI?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/KXRPyCkeg4tNu8xglhRgCTu2NtDSQ9SYa3aitRaIh-Q",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/9dfD9RZyB3rr3RIUuqj0J6EhE47w_Pkx731LtIfzElI?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "Hyv7qGaDjuN9swsiF6nXsgbpjx2QUJssdAsXaT1hd121",
+      "owner": "BvUvpLf1Gur5wypNomSkmmS8e1GAXAbzvhNZYdUm3n5i",
+      "name": "moon",
+      "imageUri": "https://turbo-gateway.com/9dfD9RZyB3rr3RIUuqj0J6EhE47w_Pkx731LtIfzElI?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/KXRPyCkeg4tNu8xglhRgCTu2NtDSQ9SYa3aitRaIh-Q",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/9dfD9RZyB3rr3RIUuqj0J6EhE47w_Pkx731LtIfzElI?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "J41suiR5XVy6DsQAN2pcisg3xLHewVtC6ukFNvcfahf1",
+      "owner": "BAc2cy4iJbjqhEJ3hiM4JZ3SFqSUqFehMnY3r8G2eb6g",
+      "name": "moon",
+      "imageUri": "https://turbo-gateway.com/9dfD9RZyB3rr3RIUuqj0J6EhE47w_Pkx731LtIfzElI?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/KXRPyCkeg4tNu8xglhRgCTu2NtDSQ9SYa3aitRaIh-Q",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/9dfD9RZyB3rr3RIUuqj0J6EhE47w_Pkx731LtIfzElI?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "7M2oypMQ9k35Hh1gkZvsrHrHQrUZz9vP7deFP3rChX8c",
+      "owner": "35JjexQB5SUa35a8Rb1FiVzWVD8rQKBnpPFp7jNmvL6N",
+      "name": "Paul of Buttons",
+      "imageUri": "https://turbo-gateway.com/aiqfX9kLy_J40lsqPDxhCC_C5qzhtbU0XzpIHOhKcCA?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/rFi89T27wEIESQHSf2Wp4CXq0yyaqA6WEYSO2APioek",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/aiqfX9kLy_J40lsqPDxhCC_C5qzhtbU0XzpIHOhKcCA?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "GPT685N3LXTJPPfpJCGiVHyLt3SWXcbu8sgLhbQnFXZK",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "Paul of Buttons",
+      "imageUri": "https://turbo-gateway.com/aiqfX9kLy_J40lsqPDxhCC_C5qzhtbU0XzpIHOhKcCA?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/rFi89T27wEIESQHSf2Wp4CXq0yyaqA6WEYSO2APioek",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/aiqfX9kLy_J40lsqPDxhCC_C5qzhtbU0XzpIHOhKcCA?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "GUsnkDPkGhD37fe5bYR3SQiuMNNVc39GsHdSRkRB9z1f",
+      "owner": "ADPhX7Ah1j1hqUzTJW9ifQrzCNyvLu1TsYUTDGRCoUZC",
+      "name": "Paul of Buttons",
+      "imageUri": "https://turbo-gateway.com/aiqfX9kLy_J40lsqPDxhCC_C5qzhtbU0XzpIHOhKcCA?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/rFi89T27wEIESQHSf2Wp4CXq0yyaqA6WEYSO2APioek",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/aiqfX9kLy_J40lsqPDxhCC_C5qzhtbU0XzpIHOhKcCA?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "7Q26pjnAPNoFQbvNG1UrcmJ1ZpmAUNxU5YHwUtwUkc3",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "Poliworld Card #2",
+      "imageUri": "https://turbo-gateway.com/QzuAu6qhQi_m1uIxTJ7OkDMPPWkRM20njJX6-2X6dn0?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/u-wJLpGOV65xczSsfJuzEVs9VHaKo5KiN1CQztFdfNU",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/QzuAu6qhQi_m1uIxTJ7OkDMPPWkRM20njJX6-2X6dn0?ext=png"
+        }
+      ],
+      "attributes": [
+        {
+          "trait_type": "artist",
+          "value": "egfreid"
+        }
+      ],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "2CEPgwtADwpoAvMBCce1auxssQt8zxPmepWadKmgHNBd",
+      "owner": "75dz9RiqHPEFh19oPBXwjNwCT3jRp3KMS1zHXYvJzZzp",
+      "name": "Rainbow Dark Dragonair",
+      "imageUri": "https://turbo-gateway.com/UrlGODtI89aQoXzqNxh2I-FPqn-8-lmI4-7ATkBZz2M?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/Hbrkm3ti9RwzmHv9uDXxbodeQl7dhCoo7x3RsNulXhw",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/UrlGODtI89aQoXzqNxh2I-FPqn-8-lmI4-7ATkBZz2M?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "2sCxrzZgnmN2ZSr9MhBa8a9NbVxRt7GisfQV9fEfE7Db",
+      "owner": "CYLyL9MZsyrsrrsgkFjnGFYPtLsrKfa2sn6apqKcyLd6",
+      "name": "Rainbow Dark Dragonair",
+      "imageUri": "https://turbo-gateway.com/UrlGODtI89aQoXzqNxh2I-FPqn-8-lmI4-7ATkBZz2M?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/Hbrkm3ti9RwzmHv9uDXxbodeQl7dhCoo7x3RsNulXhw",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/UrlGODtI89aQoXzqNxh2I-FPqn-8-lmI4-7ATkBZz2M?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "3HszeY3JtXHch1McthdrwdPAvhPzErd98gHXSuQx5KfY",
+      "owner": "2XSfmmMqAaNaYhYbd9zMo2fcneUCQCC6Vj16gxoLxB12",
+      "name": "Rainbow Dark Dragonair",
+      "imageUri": "https://turbo-gateway.com/UrlGODtI89aQoXzqNxh2I-FPqn-8-lmI4-7ATkBZz2M?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/Hbrkm3ti9RwzmHv9uDXxbodeQl7dhCoo7x3RsNulXhw",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/UrlGODtI89aQoXzqNxh2I-FPqn-8-lmI4-7ATkBZz2M?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "6mr9PEeeCvr7hGYNK7mwto2ywukUc2CeeKU4AFh8tYLm",
+      "owner": "7cvobj5KmjqxsN4coHxyCu9bHZLJWnjCzqcRNzC9pMf9",
+      "name": "Rainbow Dark Dragonair",
+      "imageUri": "https://turbo-gateway.com/UrlGODtI89aQoXzqNxh2I-FPqn-8-lmI4-7ATkBZz2M?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/Hbrkm3ti9RwzmHv9uDXxbodeQl7dhCoo7x3RsNulXhw",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/UrlGODtI89aQoXzqNxh2I-FPqn-8-lmI4-7ATkBZz2M?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "6N9xgAGjo5LRRsqms6JqPtemf5DihtZygN1aysnpobA6",
+      "owner": "HJparYWsZpirhC8QshssENHyXs8ZNh9ngYed4Zo3VJ8r",
+      "name": "Rainbow Dark Dragonair",
+      "imageUri": "https://turbo-gateway.com/UrlGODtI89aQoXzqNxh2I-FPqn-8-lmI4-7ATkBZz2M?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/Hbrkm3ti9RwzmHv9uDXxbodeQl7dhCoo7x3RsNulXhw",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/UrlGODtI89aQoXzqNxh2I-FPqn-8-lmI4-7ATkBZz2M?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "9j8YSHn2aP1ea2CCdCqxtPoUibMTf6Udyi3mDXYtD7kK",
+      "owner": "97qxpvG3zmhbq9ie91bDgN81xqUq7ij5HrVWG5RN9MRv",
+      "name": "Rainbow Dark Dragonair",
+      "imageUri": "https://turbo-gateway.com/UrlGODtI89aQoXzqNxh2I-FPqn-8-lmI4-7ATkBZz2M?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/Hbrkm3ti9RwzmHv9uDXxbodeQl7dhCoo7x3RsNulXhw",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/UrlGODtI89aQoXzqNxh2I-FPqn-8-lmI4-7ATkBZz2M?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "9UBU2iW3PNUX8tXhcQFWRHU3Y3TNhBTrLJxj3eG3Ndc4",
+      "owner": "D3MuDmrs2dm6U9CiZur651CnPjLwUWjs9p1a3PoDs76H",
+      "name": "Rainbow Dark Dragonair",
+      "imageUri": "https://turbo-gateway.com/UrlGODtI89aQoXzqNxh2I-FPqn-8-lmI4-7ATkBZz2M?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/Hbrkm3ti9RwzmHv9uDXxbodeQl7dhCoo7x3RsNulXhw",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/UrlGODtI89aQoXzqNxh2I-FPqn-8-lmI4-7ATkBZz2M?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "CwnwFjx8yK1G4XY2FxzWuhNqRFGoLtiYQx3XYcE9xhxw",
+      "owner": "H1LGi1K9BsJvSFLKsigJEmFiGAE4BCt8yhRkTivWJ9GG",
+      "name": "Rainbow Dark Dragonair",
+      "imageUri": "https://turbo-gateway.com/UrlGODtI89aQoXzqNxh2I-FPqn-8-lmI4-7ATkBZz2M?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/Hbrkm3ti9RwzmHv9uDXxbodeQl7dhCoo7x3RsNulXhw",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/UrlGODtI89aQoXzqNxh2I-FPqn-8-lmI4-7ATkBZz2M?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "F9p1kKrwETgGzStiDRPzMuY8YyREUbF7DjgFwva345hM",
+      "owner": "9GhmmohQK7W1NM4b1m2unzfm2P7n2iA6PfNzYyGLgzf7",
+      "name": "Rainbow Dark Dragonair",
+      "imageUri": "https://turbo-gateway.com/UrlGODtI89aQoXzqNxh2I-FPqn-8-lmI4-7ATkBZz2M?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/Hbrkm3ti9RwzmHv9uDXxbodeQl7dhCoo7x3RsNulXhw",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/UrlGODtI89aQoXzqNxh2I-FPqn-8-lmI4-7ATkBZz2M?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "FW4eMSGmAqL9j4XBUm7VNaVh4XWYex5ftLdmG13eVSp6",
+      "owner": "45nPDQWpfRsGxxr5CvgsdBBy8X3FvXydpYoVxNpCqcNP",
+      "name": "Rainbow Dark Dragonair",
+      "imageUri": "https://turbo-gateway.com/UrlGODtI89aQoXzqNxh2I-FPqn-8-lmI4-7ATkBZz2M?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/Hbrkm3ti9RwzmHv9uDXxbodeQl7dhCoo7x3RsNulXhw",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/UrlGODtI89aQoXzqNxh2I-FPqn-8-lmI4-7ATkBZz2M?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "H531q7xSdJAC4DxgpHjGhoTcuByf6AeNzF13tkDBpZkb",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "Rainbow Dark Dragonair",
+      "imageUri": "https://turbo-gateway.com/UrlGODtI89aQoXzqNxh2I-FPqn-8-lmI4-7ATkBZz2M?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/Hbrkm3ti9RwzmHv9uDXxbodeQl7dhCoo7x3RsNulXhw",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/UrlGODtI89aQoXzqNxh2I-FPqn-8-lmI4-7ATkBZz2M?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "J4i6VvAJB98JGkaFEp9DeuBC95pSmf7SUAagrG9rW3SS",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "Ritual Calculus",
+      "imageUri": "https://turbo-gateway.com/iicQ6mb7XHAEsJj-539DoZGHd6XS_pRDriy8L4ImeU0?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/NE8YGQ7bE219fGX3M_4Y6bOh2hRWQO6TxBg3vpZ_TU8",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/iicQ6mb7XHAEsJj-539DoZGHd6XS_pRDriy8L4ImeU0?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "2QvEx1c8B76sWD3igpNkBG2h3S8yqt3efrRy1jikCAvd",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "Spirit Bond",
+      "imageUri": "https://turbo-gateway.com/stTFbq4NSm24STlqn9uWCLa7kwAxLunxbifBIsMRaZs?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/YVFBH54ME9lDVd5kdoPJwVr6IX-Nj8QyMguUEd4XyP8",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/stTFbq4NSm24STlqn9uWCLa7kwAxLunxbifBIsMRaZs?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "2ysKMgiSBG55gegytVpm3w51VLo4NZ9zLthfobScbEpd",
+      "owner": "35JjexQB5SUa35a8Rb1FiVzWVD8rQKBnpPFp7jNmvL6N",
+      "name": "Steward Billy Blue",
+      "imageUri": "https://turbo-gateway.com/M2wi7J9MsE8bq_HVp5aBOzWyAgDxrNyey03FToTiuyE?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/UtLtf-ZUZfhVme5W9_t8Qiq9bVX7FOAIP9YzqizIxcY",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/M2wi7J9MsE8bq_HVp5aBOzWyAgDxrNyey03FToTiuyE?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "4twxtWzRaGhc5AgiCxvvc179Ug85QVGEMuFeXp6T8dQW",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "Steward Billy Blue",
+      "imageUri": "https://turbo-gateway.com/M2wi7J9MsE8bq_HVp5aBOzWyAgDxrNyey03FToTiuyE?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/UtLtf-ZUZfhVme5W9_t8Qiq9bVX7FOAIP9YzqizIxcY",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/M2wi7J9MsE8bq_HVp5aBOzWyAgDxrNyey03FToTiuyE?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "AcFoJJDBXo1iH7jqzoRZK7PtNyg9UGEdYYxqS4e6agV7",
+      "owner": "42RsbnRWtzzw6QL6jmqn3xhau77ptkjrynWuJwdirHHX",
+      "name": "Steward Billy Blue",
+      "imageUri": "https://turbo-gateway.com/M2wi7J9MsE8bq_HVp5aBOzWyAgDxrNyey03FToTiuyE?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/UtLtf-ZUZfhVme5W9_t8Qiq9bVX7FOAIP9YzqizIxcY",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/M2wi7J9MsE8bq_HVp5aBOzWyAgDxrNyey03FToTiuyE?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "99zscCRdXFM3LNJk63NHqaxMNedy2Hv7jMvaNjFTThxH",
+      "owner": "35JjexQB5SUa35a8Rb1FiVzWVD8rQKBnpPFp7jNmvL6N",
+      "name": "Still Keeps Me Alive",
+      "imageUri": "https://turbo-gateway.com/50zPdPDw1QlvCRn0hWuKHSAgBl_Dae5zQYclraluG_4?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/CXojSSgXxR8nRN3ndTuJfX92gy8S-F3LIgfB-W-4XoQ",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/50zPdPDw1QlvCRn0hWuKHSAgBl_Dae5zQYclraluG_4?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "9YLrsKu5sfr15JtiU3ATcsQCnrNZufWr8Ga7RCKSbAMc",
+      "owner": "8bhUJrfbd6j2CwCqGRwmyNtdT5DAnBAxxe5daoLmHbxr",
+      "name": "Still Keeps Me Alive",
+      "imageUri": "https://turbo-gateway.com/50zPdPDw1QlvCRn0hWuKHSAgBl_Dae5zQYclraluG_4?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/CXojSSgXxR8nRN3ndTuJfX92gy8S-F3LIgfB-W-4XoQ",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/50zPdPDw1QlvCRn0hWuKHSAgBl_Dae5zQYclraluG_4?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "HuXWvTH2aeg7HRXouV9JsdyHxzaddLLPnpF7uHUFbHpU",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "Still Keeps Me Alive",
+      "imageUri": "https://turbo-gateway.com/50zPdPDw1QlvCRn0hWuKHSAgBl_Dae5zQYclraluG_4?ext=jpeg",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/CXojSSgXxR8nRN3ndTuJfX92gy8S-F3LIgfB-W-4XoQ",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://turbo-gateway.com/50zPdPDw1QlvCRn0hWuKHSAgBl_Dae5zQYclraluG_4?ext=jpeg"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "2r2Hy8ze53MQhgac9pKV4Vg9DfdvPKdhCALfiXCjbhjK",
+      "owner": "7cvobj5KmjqxsN4coHxyCu9bHZLJWnjCzqcRNzC9pMf9",
+      "name": "sun",
+      "imageUri": "https://turbo-gateway.com/Xevi8ibM_L1bg4K6YcNLE0I2XsscDRKuVYLl0K0xMgc?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/ZpCvUqdP_zG7JLwqmiEMiDKIKAQPCxIKB2lsqSD-jK4",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/Xevi8ibM_L1bg4K6YcNLE0I2XsscDRKuVYLl0K0xMgc?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "58aEZuhWa4NtWL36gyiAseYPoqvJkpktyKfDkBXfeyFv",
+      "owner": "CYLyL9MZsyrsrrsgkFjnGFYPtLsrKfa2sn6apqKcyLd6",
+      "name": "sun",
+      "imageUri": "https://turbo-gateway.com/Xevi8ibM_L1bg4K6YcNLE0I2XsscDRKuVYLl0K0xMgc?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/ZpCvUqdP_zG7JLwqmiEMiDKIKAQPCxIKB2lsqSD-jK4",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/Xevi8ibM_L1bg4K6YcNLE0I2XsscDRKuVYLl0K0xMgc?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "5rNEnrrT7ogQzTJb8F81yBRiASk7QJ1NedCtkZkRnCTR",
+      "owner": "35JjexQB5SUa35a8Rb1FiVzWVD8rQKBnpPFp7jNmvL6N",
+      "name": "sun",
+      "imageUri": "https://turbo-gateway.com/Xevi8ibM_L1bg4K6YcNLE0I2XsscDRKuVYLl0K0xMgc?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/ZpCvUqdP_zG7JLwqmiEMiDKIKAQPCxIKB2lsqSD-jK4",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/Xevi8ibM_L1bg4K6YcNLE0I2XsscDRKuVYLl0K0xMgc?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "9ppADVJw4TVBVJR4Ab8d2E87wfCFnzvT5tuymASymhuS",
+      "owner": "HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh",
+      "name": "sun",
+      "imageUri": "https://turbo-gateway.com/Xevi8ibM_L1bg4K6YcNLE0I2XsscDRKuVYLl0K0xMgc?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/ZpCvUqdP_zG7JLwqmiEMiDKIKAQPCxIKB2lsqSD-jK4",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/Xevi8ibM_L1bg4K6YcNLE0I2XsscDRKuVYLl0K0xMgc?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "BEERdpF4QpY2FT6ykda4yFYHCgr9YwmBrDtXEGDSSv6r",
+      "owner": "9KSXvBcqs6ginViTZhAFgqq9sRgXBTxAucJhTTCJW45M",
+      "name": "sun",
+      "imageUri": "https://turbo-gateway.com/Xevi8ibM_L1bg4K6YcNLE0I2XsscDRKuVYLl0K0xMgc?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/ZpCvUqdP_zG7JLwqmiEMiDKIKAQPCxIKB2lsqSD-jK4",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/Xevi8ibM_L1bg4K6YcNLE0I2XsscDRKuVYLl0K0xMgc?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "CkK6qtzmeeAt7eRzTJFmovHaZdCPxHc8xDTxya6EsSFp",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "sun",
+      "imageUri": "https://turbo-gateway.com/Xevi8ibM_L1bg4K6YcNLE0I2XsscDRKuVYLl0K0xMgc?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/ZpCvUqdP_zG7JLwqmiEMiDKIKAQPCxIKB2lsqSD-jK4",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/Xevi8ibM_L1bg4K6YcNLE0I2XsscDRKuVYLl0K0xMgc?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "ET2GbEn8mUprMkG78tGxvtNBB4bWt4K7ttSWR9rrynTZ",
+      "owner": "2ENontbMEDUiac8DDmzK3fQCfRa9RZAPqgyDoD4U7hy2",
+      "name": "sun",
+      "imageUri": "https://turbo-gateway.com/Xevi8ibM_L1bg4K6YcNLE0I2XsscDRKuVYLl0K0xMgc?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/ZpCvUqdP_zG7JLwqmiEMiDKIKAQPCxIKB2lsqSD-jK4",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/Xevi8ibM_L1bg4K6YcNLE0I2XsscDRKuVYLl0K0xMgc?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "Ex5uXBQbUhqfXe5RLA85oYSJurGEjXTgmriDwNQHaUCY",
+      "owner": "BAc2cy4iJbjqhEJ3hiM4JZ3SFqSUqFehMnY3r8G2eb6g",
+      "name": "sun",
+      "imageUri": "https://turbo-gateway.com/Xevi8ibM_L1bg4K6YcNLE0I2XsscDRKuVYLl0K0xMgc?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/ZpCvUqdP_zG7JLwqmiEMiDKIKAQPCxIKB2lsqSD-jK4",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/Xevi8ibM_L1bg4K6YcNLE0I2XsscDRKuVYLl0K0xMgc?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "H79ig3gsKGGMJgff4SiAw3RVpNQWGYQtK63ArUjMGftt",
+      "owner": "BvUvpLf1Gur5wypNomSkmmS8e1GAXAbzvhNZYdUm3n5i",
+      "name": "sun",
+      "imageUri": "https://turbo-gateway.com/Xevi8ibM_L1bg4K6YcNLE0I2XsscDRKuVYLl0K0xMgc?ext=gif",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/ZpCvUqdP_zG7JLwqmiEMiDKIKAQPCxIKB2lsqSD-jK4",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://turbo-gateway.com/Xevi8ibM_L1bg4K6YcNLE0I2XsscDRKuVYLl0K0xMgc?ext=gif"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "2778uJ1VVdAFBy9Y7Zh36Gu1bJ8XtoNZTc8iMhFFftbN",
+      "owner": "AmzcjtuzXkSziYHRqmavPiTsbJveW13wiRhCTRnuheiq",
+      "name": "Virginia%27s Dratini",
+      "imageUri": "https://turbo-gateway.com/-KkFs2eKPd_hwSyeexZh2Evt1s4rJ4_s43sTuWYdcEI?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/ErxNtETbAqZ5832qdTh1oLIt_pDAAwyIVmrObPO_KqE",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/-KkFs2eKPd_hwSyeexZh2Evt1s4rJ4_s43sTuWYdcEI?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "2UFrJcUVsPfb5dXrW4Q87Bi5uAo2mRe6hPrNz2ZSKXDJ",
+      "owner": "2hL345EvjWgeWuaoT3z5M6qzmkTRwCcEM9LGnYUKLPm1",
+      "name": "Virginia%27s Dratini",
+      "imageUri": "https://turbo-gateway.com/-KkFs2eKPd_hwSyeexZh2Evt1s4rJ4_s43sTuWYdcEI?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/ErxNtETbAqZ5832qdTh1oLIt_pDAAwyIVmrObPO_KqE",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/-KkFs2eKPd_hwSyeexZh2Evt1s4rJ4_s43sTuWYdcEI?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "4MrULy5BdX6t6sFkCwppj9B87SbSgqnY2ZQ2BgDgZ1jD",
+      "owner": "2cdnoQE61VCsbxMjoGd7AHyc9NTmwEhC8e3FS5NTaRgn",
+      "name": "Virginia%27s Dratini",
+      "imageUri": "https://turbo-gateway.com/-KkFs2eKPd_hwSyeexZh2Evt1s4rJ4_s43sTuWYdcEI?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/ErxNtETbAqZ5832qdTh1oLIt_pDAAwyIVmrObPO_KqE",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/-KkFs2eKPd_hwSyeexZh2Evt1s4rJ4_s43sTuWYdcEI?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "5udBgLRKAs3EkYftgiFU6vTjFXcw6kPRoAsoiSujSmet",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "Virginia%27s Dratini",
+      "imageUri": "https://turbo-gateway.com/-KkFs2eKPd_hwSyeexZh2Evt1s4rJ4_s43sTuWYdcEI?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/ErxNtETbAqZ5832qdTh1oLIt_pDAAwyIVmrObPO_KqE",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/-KkFs2eKPd_hwSyeexZh2Evt1s4rJ4_s43sTuWYdcEI?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "7NBMNz3aUAD7ng3MxVep763TvmbhyD1JGQaKRpmxhsJY",
+      "owner": "14VeBxDiEPps8PG2G3vaTonMgSszXPAPBQGeoR33k8Nb",
+      "name": "Virginia%27s Dratini",
+      "imageUri": "https://turbo-gateway.com/-KkFs2eKPd_hwSyeexZh2Evt1s4rJ4_s43sTuWYdcEI?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/ErxNtETbAqZ5832qdTh1oLIt_pDAAwyIVmrObPO_KqE",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/-KkFs2eKPd_hwSyeexZh2Evt1s4rJ4_s43sTuWYdcEI?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "9F7xdMc8bs1E9YPuDopCCGPgkYDAicpgvr1chRAwPGR3",
+      "owner": "42RsbnRWtzzw6QL6jmqn3xhau77ptkjrynWuJwdirHHX",
+      "name": "Virginia%27s Dratini",
+      "imageUri": "https://turbo-gateway.com/-KkFs2eKPd_hwSyeexZh2Evt1s4rJ4_s43sTuWYdcEI?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/ErxNtETbAqZ5832qdTh1oLIt_pDAAwyIVmrObPO_KqE",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/-KkFs2eKPd_hwSyeexZh2Evt1s4rJ4_s43sTuWYdcEI?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "CVeXrsRGPJWndf4EpaCYgzyqy6KeGudfpfKCKAS61gwY",
+      "owner": "7cvobj5KmjqxsN4coHxyCu9bHZLJWnjCzqcRNzC9pMf9",
+      "name": "Virginia%27s Dratini",
+      "imageUri": "https://turbo-gateway.com/-KkFs2eKPd_hwSyeexZh2Evt1s4rJ4_s43sTuWYdcEI?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/ErxNtETbAqZ5832qdTh1oLIt_pDAAwyIVmrObPO_KqE",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/-KkFs2eKPd_hwSyeexZh2Evt1s4rJ4_s43sTuWYdcEI?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "DGhtVTkRySPfRjJZKEKhU5GBnF1QZp4CcwrgMvFWxRWM",
+      "owner": "9GhmmohQK7W1NM4b1m2unzfm2P7n2iA6PfNzYyGLgzf7",
+      "name": "Virginia%27s Dratini",
+      "imageUri": "https://turbo-gateway.com/-KkFs2eKPd_hwSyeexZh2Evt1s4rJ4_s43sTuWYdcEI?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/ErxNtETbAqZ5832qdTh1oLIt_pDAAwyIVmrObPO_KqE",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/-KkFs2eKPd_hwSyeexZh2Evt1s4rJ4_s43sTuWYdcEI?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "GHHgm82wzquKVj6BfVGMEGH54X2Kh692hQxB9PG8Njcf",
+      "owner": "35JjexQB5SUa35a8Rb1FiVzWVD8rQKBnpPFp7jNmvL6N",
+      "name": "Virginia%27s Dratini",
+      "imageUri": "https://turbo-gateway.com/-KkFs2eKPd_hwSyeexZh2Evt1s4rJ4_s43sTuWYdcEI?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/ErxNtETbAqZ5832qdTh1oLIt_pDAAwyIVmrObPO_KqE",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/-KkFs2eKPd_hwSyeexZh2Evt1s4rJ4_s43sTuWYdcEI?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "hGMNu6TDnNqfavPJ7GhzfPBvyNGoYTdYsFcjinfkB7q",
+      "owner": "HERw2MV76uvfVMRKXtjK9jGkAVmfPbsJrH21ZB25D3LM",
+      "name": "Virginia%27s Dratini",
+      "imageUri": "https://turbo-gateway.com/-KkFs2eKPd_hwSyeexZh2Evt1s4rJ4_s43sTuWYdcEI?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/ErxNtETbAqZ5832qdTh1oLIt_pDAAwyIVmrObPO_KqE",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/-KkFs2eKPd_hwSyeexZh2Evt1s4rJ4_s43sTuWYdcEI?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "HwWdtT2CGxsYYuEiWfhDxZELpfjEW1bLHtpS4hjVTpFW",
+      "owner": "9iRRPZMbRR5cJ9Cfx6WJHwxEJ6ysVQ3Ei2YDkVDWZHE1",
+      "name": "Virginia%27s Dratini",
+      "imageUri": "https://turbo-gateway.com/-KkFs2eKPd_hwSyeexZh2Evt1s4rJ4_s43sTuWYdcEI?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/ErxNtETbAqZ5832qdTh1oLIt_pDAAwyIVmrObPO_KqE",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/-KkFs2eKPd_hwSyeexZh2Evt1s4rJ4_s43sTuWYdcEI?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE_EDITION",
+      "metadataFetchError": ""
+    }
+  ],
+  "excludedAssets": [
+    {
+      "onchainId": "AouSgHVvKXBjdyCWyKtCChL6iPBTCdERad8f5xCVMq2w",
+      "owner": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+      "name": "cards1",
+      "imageUri": "https://turbo-gateway.com/To8Ly8u8QQaEyBSfiDcApBnC2pJnM3oTths8XYjxg04?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/kHgCjmeZCjunTtNpYqFm8xjSmRWFhSbYdatFDJhU_x4",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/To8Ly8u8QQaEyBSfiDcApBnC2pJnM3oTths8XYjxg04?ext=png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "SPL_TOKEN",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": "",
+      "groupKeyHash": "e92f1faa34b930c723eca75565ad8c0de2600ebe53c548b3dcee71c1b67d9629",
+      "exclusionReason": "configured mint exclusion: AouSgHVvKXBjdyCWyKtCChL6iPBTCdERad8f5xCVMq2w"
+    }
+  ],
+  "cards": [
+    {
+      "number": 1,
+      "assetNumber": 12,
+      "stableId": "jpegs:group-560c44196601d8b73213eefa",
+      "groupKeyHash": "560c44196601d8b73213eefa86d1e8fa0c504577f7d6720f5d4d1a0baea09755",
+      "title": "judgement",
+      "mints": [
+        "29ciFLhB7EE48cSH9zCGpFov2E3fdfELszm7fmo4GafY",
+        "2RWarbSLvKQtCcWQnSijHbpsRh1mj6Z7V4HS782zJ2U8",
+        "3geSp59t8e6YQttbak5WLFBuK18XnCJ3HqFUTwqm7TiX",
+        "6yYhbHMPzLhT4rtwyLnVAukQReiuuAWGM2wXqELayK4B",
+        "CGDu4QUFhEN78qaNEat5tbRvdcLtgNyzK1J2DhQ2U5RR",
+        "CiNEmeBwAAvpHHQHkKsrpeSHYwFdnoJ63xKV5AqG6A9Z",
+        "FYHMRAbq9rxwyNv4q52kf9CpUcFPLu5Nh51ZmN6eif4a",
+        "tNDXsg3o2sinhn24CNwyZgkvXZmmb7WQBnQFCV6BhPW"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/uFfG2MFkS0AFbnQUvtVWyyz-8U82cA-af43ThclggjQ",
+      "sourceImageUri": "https://turbo-gateway.com/jHF8hkJnomab8Fu27SAbSVAQVAdpzWxEyUcMkXMXUas?ext=png",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "e08167c6d04b36011a9f5606be0736dd47b58149c9a31432deb00b518e867d52",
+      "metadataFile": "assets/jpegs/metadata/0000/card-12.json",
+      "cardFile": "assets/jpegs/cards/0000/card-12.webp",
+      "animation": null
+    },
+    {
+      "number": 2,
+      "assetNumber": 20,
+      "stableId": "jpegs:group-70f2fc9db9c26b601fbebe0f",
+      "groupKeyHash": "70f2fc9db9c26b601fbebe0f4eb048c4678e261ef588190b8820c7509ea5c3e1",
+      "title": "Rainbow Dark Dragonair",
+      "mints": [
+        "2CEPgwtADwpoAvMBCce1auxssQt8zxPmepWadKmgHNBd",
+        "2sCxrzZgnmN2ZSr9MhBa8a9NbVxRt7GisfQV9fEfE7Db",
+        "3HszeY3JtXHch1McthdrwdPAvhPzErd98gHXSuQx5KfY",
+        "6mr9PEeeCvr7hGYNK7mwto2ywukUc2CeeKU4AFh8tYLm",
+        "6N9xgAGjo5LRRsqms6JqPtemf5DihtZygN1aysnpobA6",
+        "9j8YSHn2aP1ea2CCdCqxtPoUibMTf6Udyi3mDXYtD7kK",
+        "9UBU2iW3PNUX8tXhcQFWRHU3Y3TNhBTrLJxj3eG3Ndc4",
+        "CwnwFjx8yK1G4XY2FxzWuhNqRFGoLtiYQx3XYcE9xhxw",
+        "F9p1kKrwETgGzStiDRPzMuY8YyREUbF7DjgFwva345hM",
+        "FW4eMSGmAqL9j4XBUm7VNaVh4XWYex5ftLdmG13eVSp6",
+        "H531q7xSdJAC4DxgpHjGhoTcuByf6AeNzF13tkDBpZkb"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/Hbrkm3ti9RwzmHv9uDXxbodeQl7dhCoo7x3RsNulXhw",
+      "sourceImageUri": "https://turbo-gateway.com/UrlGODtI89aQoXzqNxh2I-FPqn-8-lmI4-7ATkBZz2M?ext=png",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "d6a4bfd8f54cd2b5648a51b06aa98da1c02e39a66857c0f8e633ed5ed78288c6",
+      "metadataFile": "assets/jpegs/metadata/0000/card-20.json",
+      "cardFile": "assets/jpegs/cards/0000/card-20.webp",
+      "animation": null
+    },
+    {
+      "number": 3,
+      "assetNumber": 3,
+      "stableId": "jpegs:group-7c4dd16a04b5ee369d29ba88",
+      "groupKeyHash": "7c4dd16a04b5ee369d29ba888fcb5877e372977e38f6603c7bab4e602a344f4a",
+      "title": "Blood",
+      "mints": [
+        "3juSpjEb8W3LJhrsriK8Roacx9he4dBE8Kvk7r9KAEUE",
+        "3mQznbjj3Cpk3f2hP3Fh9U1FuHmeDrDPiRgerr1o539M",
+        "4W89JyQS82frg5vNSX7diXq4MuELBWixs4zwmMv1pBkr",
+        "5ARAgzmRXAH1hk8zizeRpDYwmpifYu3ATcCGbhtXhRpN",
+        "5k4Y77EfxDBkV7tsuNk39epkS8hg4ozYELUGvJdgJWtJ",
+        "5S5XsjjQ6zMdytMhCZDtm4hNtKnwtQYKvFC5SQQ8NE2a",
+        "9XzqXepF9eTy7R26B6of57BZdeEZq4p9aGmTmwfAjSC9",
+        "CCX5ZzdYFm7LCHNoGN8gCoLA8iLvNHYGqT611z7yNTgE",
+        "Cd7oLqnwmxKbcJxPUq2fQZ17RM2NufEg63UbBfZBpJ5q",
+        "F9KzcELmfu5XZNM69Fz1iTW15fGPexLAafW5Fdff7b3x",
+        "GuQBD7YpoY6oANsVfWSBCdeNZsfHLxjQMsZErsMtP4g3"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/jrtQHMlHFTH4QyWZEf1o7SNhlTzlme1FNiqoUoZuOCw",
+      "sourceImageUri": "https://turbo-gateway.com/AvmtyySk79kVtZ3cM95aIKFoe4JmfxYMcaCypFfMJZA?ext=jpeg",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "583fdb6df9878731f30d1fb36edbdac81675310e84295b53902efd05b37a10c3",
+      "metadataFile": "assets/jpegs/metadata/0000/card-3.json",
+      "cardFile": "assets/jpegs/cards/0000/card-3.webp",
+      "animation": null
+    },
+    {
+      "number": 4,
+      "assetNumber": 26,
+      "stableId": "jpegs:group-62b32b5018522a39a0a1785c",
+      "groupKeyHash": "62b32b5018522a39a0a1785c67e13e89eafb874979bb1782cc3cab1a7068c1e5",
+      "title": "Virginia%27s Dratini",
+      "mints": [
+        "2778uJ1VVdAFBy9Y7Zh36Gu1bJ8XtoNZTc8iMhFFftbN",
+        "2UFrJcUVsPfb5dXrW4Q87Bi5uAo2mRe6hPrNz2ZSKXDJ",
+        "4MrULy5BdX6t6sFkCwppj9B87SbSgqnY2ZQ2BgDgZ1jD",
+        "5udBgLRKAs3EkYftgiFU6vTjFXcw6kPRoAsoiSujSmet",
+        "7NBMNz3aUAD7ng3MxVep763TvmbhyD1JGQaKRpmxhsJY",
+        "9F7xdMc8bs1E9YPuDopCCGPgkYDAicpgvr1chRAwPGR3",
+        "CVeXrsRGPJWndf4EpaCYgzyqy6KeGudfpfKCKAS61gwY",
+        "DGhtVTkRySPfRjJZKEKhU5GBnF1QZp4CcwrgMvFWxRWM",
+        "GHHgm82wzquKVj6BfVGMEGH54X2Kh692hQxB9PG8Njcf",
+        "hGMNu6TDnNqfavPJ7GhzfPBvyNGoYTdYsFcjinfkB7q",
+        "HwWdtT2CGxsYYuEiWfhDxZELpfjEW1bLHtpS4hjVTpFW"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/ErxNtETbAqZ5832qdTh1oLIt_pDAAwyIVmrObPO_KqE",
+      "sourceImageUri": "https://turbo-gateway.com/-KkFs2eKPd_hwSyeexZh2Evt1s4rJ4_s43sTuWYdcEI?ext=png",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "2241d3f91ed87da593eef9535ce623c20d8e846ee44a8568c57a69dd077e9c89",
+      "metadataFile": "assets/jpegs/metadata/0000/card-26.json",
+      "cardFile": "assets/jpegs/cards/0000/card-26.webp",
+      "animation": null
+    },
+    {
+      "number": 5,
+      "assetNumber": 2,
+      "stableId": "jpegs:group-0cf4ba8bdb67bc054ee143d1",
+      "groupKeyHash": "0cf4ba8bdb67bc054ee143d15acc8aa847f5942b9c64e39071caa71035ab3ced",
+      "title": "AGM-158 JASSM Salesman",
+      "mints": [
+        "13CHZSoZujwd6yiwrdBxovHqyChgS4DYDPuGYVK2SAka",
+        "2pHnEnw9dF6JFg6xYZmfQB97opkevoYPkmHXit7BSYdT",
+        "47k8xtWmCTVTBC5anV7t54QETHaEvmSTxH2bacxEAYmP",
+        "4SCScDpbMYh98zekwFvPGjybhszoVpz6RQYFXnmF1wgL",
+        "55idb6PuQ7wMXeY5Kwsi7pu65jysdG7hVtDz3hi4d5Tk",
+        "6Fo3uf3RXPhpaCk1eXjJ6mpYhp7e3PPdLoCiBeuEJxq2",
+        "9Ziv74jkFko4W7inedBvGrjoy4USnD2RmJ34fTj13mVb",
+        "AeajP3s9fgzmpsvx1S5GQZhmbL9JBAdKu262ABnBmDyK",
+        "AKYhAwjQmiRmY111AfF3iFc4Tn7oYtR9vgyeyLmpS4Ba",
+        "DQDxwoBrNP5AZyHqfMWL1DjC1GTNUgrv94eihSwZxoyJ",
+        "FkmXEi6Dq4EKZMhgwVYS45E7xmmEiss3uzugsSFJSkDJ"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/w-jPynk4iNSwNTIiIgg-nLU87Cm5RpO0yQSZR-_FrsI",
+      "sourceImageUri": "https://turbo-gateway.com/fiXJ41GFzeHF0YUVLlTRNEKx-NKeqLh4Qqb4aLg0RTc?ext=jpeg",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "065b1de4609c5834a80405720c1af4a7c7dac93c488186990a05ea520ce1c7f6",
+      "metadataFile": "assets/jpegs/metadata/0000/card-2.json",
+      "cardFile": "assets/jpegs/cards/0000/card-2.webp",
+      "animation": null
+    },
+    {
+      "number": 6,
+      "assetNumber": 13,
+      "stableId": "jpegs:group-eeff381dcbe264e1fec838aa",
+      "groupKeyHash": "eeff381dcbe264e1fec838aa6c33a3e0103298e7d7a6b76e720db64d19f12f21",
+      "title": "Lucky Card",
+      "mints": [
+        "3edPDq96FYM2FM9SzqQAjCtLLDRdEmMxoheZioU9Qv2c",
+        "5TzFSXP82VNTy1L9CZCuQBZgNha9Jw6w9qHFqxB63neE",
+        "7w8XrH1hmh1r87zNET27HDrCLzUadGXyqPQTpU17ofF5",
+        "Bz22hm36Quyzy47cpiBAFrryBs1jYKjnrxSNHruzgsz5",
+        "EmGkL7bCEiRybqcZERBywTLZ9ABhPGPmoZ46RsJfW7gf",
+        "HcCndrEkK7tMACr8tPNzWGw8m8RXCeTdkPmTp2RqE6T8"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/fiveRBYxzVnZRVoug-iN9_ZSW_uys4HGuwXz2HV60Dw",
+      "sourceImageUri": "https://turbo-gateway.com/tDqEyNRYd0CuNKAuVT-O5nQiiuJypd0LRDi40bZdVsM?ext=jpeg",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "fe9db20fc7ec5b134780e6fe70a1ff66c2a4961de1ababc8ee803837ab707010",
+      "metadataFile": "assets/jpegs/metadata/0000/card-13.json",
+      "cardFile": "assets/jpegs/cards/0000/card-13.webp",
+      "animation": null
+    },
+    {
+      "number": 7,
+      "assetNumber": 14,
+      "stableId": "jpegs:group-ccd44a4f671b1529b70e6d65",
+      "groupKeyHash": "ccd44a4f671b1529b70e6d65729334284b6b03ab12bda0a2838bec55d8727991",
+      "title": "Mifella",
+      "mints": [
+        "14jjJGScjfs7oWYHufEtqX1qAmZomu4TAXNudoRXToQP",
+        "2JgFsZvN2tiTsV3HPNCokSNm7GYZHXY9dxdr3m61fHxe",
+        "3k22HBa9hDzdwt95Y7wp8DGY2FY15AoJvXmhRr3uDwzV",
+        "3QqLxe8GkT4QhZ467YWbHT9MRfEi9smoSGUN1aBNafDf",
+        "7G7rWb8pQ4hkJrC61LgBMv23yZmQP77iZEdr7qiP1wpA",
+        "7YvZ2p9DzPvxGDTMLe1gZAZX6Lt32ULsyPHNN31VVakW",
+        "9xUtanxMvZpeTyA3hd9zEfjPay5CJRDJNdQ9xxVDtR8",
+        "BZ1d7MwhEeVnh7NTZwx58eCDkqcUvn16iJtcvLrxpkLf",
+        "Cmg19mXTVagPndRJQxRvTtyYJTe3PrQNvDnRMAVpD5Xg",
+        "YLHrPUcnXGq7J9Td6f4yzFqYXmXYNQv57oJmmoMUqSG"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/vtx0dXK1l8kk898bLUrPbjxBEbu1JRcypzmERCALD0E",
+      "sourceImageUri": "https://turbo-gateway.com/H_SdILSX3cxOnxDqV0SJn3K3-aeOjgb8d6AaIG9Br-8?ext=jpeg",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "2be39d2b41ba7b90c67b0105588c7f34cee155931b48125a8b342c5fab309e04",
+      "metadataFile": "assets/jpegs/metadata/0000/card-14.json",
+      "cardFile": "assets/jpegs/cards/0000/card-14.webp",
+      "animation": null
+    },
+    {
+      "number": 8,
+      "assetNumber": 15,
+      "stableId": "jpegs:group-841734a17c51404f7145a82c",
+      "groupKeyHash": "841734a17c51404f7145a82c70a2253d5dca08de804ceda58e6ff442bbe38c37",
+      "title": "Mifella",
+      "mints": [
+        "2kae95ecybVV5iSeiWy1R9ZnwdXMDojLMzXkyUC4SXQV",
+        "6MwrjcGLCHMWaxqhjxEAgeFGkaD9w6aupoinqCtic3kt",
+        "AB5dK5vJ3cmDC9BW7EXRoC5fs6bf1yQmM2dmsNmuKdjL",
+        "B19GQFGmqxMpmABhdqjpuW6ThczWDipdKRRAAfVBhKHU",
+        "CUERhMBi4r28LTWBsLtsXJ2MY81WpjgtjthcRfGsx6m",
+        "EnSqqGEyM7EpCBaxEvWHDS6oZrU48cipyvTrZfYhfFWw",
+        "ErTcaGL86NNQMHYfKKTyJjTqcNuEboSXH6XvKUa9H2UE"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/b_T9bqYX9Bgmy2Fo8rUShfu_23jb4cHDAF0YgUkUshQ",
+      "sourceImageUri": "https://turbo-gateway.com/xroJCaDwHxBv8cwnBWO1T5QsnAUcuZExq5a1x1vl_Kw?ext=jpeg",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "3f4235b5c102d7f8323c1da3633f60f03cc40281a802fc73d8e1dbe98989a123",
+      "metadataFile": "assets/jpegs/metadata/0000/card-15.json",
+      "cardFile": "assets/jpegs/cards/0000/card-15.webp",
+      "animation": null
+    },
+    {
+      "number": 9,
+      "assetNumber": 16,
+      "stableId": "jpegs:group-44e44c271d229f8f63991e78",
+      "groupKeyHash": "44e44c271d229f8f63991e781f678480103571d89b194cfe76f3376805ae6b31",
+      "title": "Mifella",
+      "mints": [
+        "33nmCNUXU527G2R1zeKpWV7MpLSm1tMpkbMf4uSAHMyX",
+        "3Xn8FDMppYr3Yz1enrx1KPfLziNKn9jmaAF8HC4NzHdr",
+        "52tHTpAPQuvdRufGxPKGBbcfLWbiWyoPyujLsCHgy7Wn",
+        "53213e1n1KucvJugzbAtPE1qnRkCwN23LrTdExfNuYir",
+        "7ZAVHJbwsHKZMK6dyw4FkjuxKYk1pvrvbcEVDL3cQjgq",
+        "8bqumYDMrYM6ZZ4wMnhHySe4tLzpf1aNVMiVLv8QWHjt",
+        "8dUxTcyayDaMcYKZbjpwXLsqwsKNyD9cVWgz1yPwC3Ui",
+        "ADpyksRX49njTBEbsgk3pw4Pqt6uWApsUBS7PJSTvy91",
+        "F8d9N1BaiNSEfPMhYSZaByJJmd48VaMF3kPXadzRjT1D",
+        "Gxa1qWAVX9fbgHixWt5EEjyzbbSyFZLQDUW5QzxwicKm",
+        "HML11aA6cBXidWhCVsaC5J1JLNCNWqZh56wgFikT4ey3"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/LkjwQ_482gTNltfuVkwMCkZZ9xQjYhuhYweDMuB0TYU",
+      "sourceImageUri": "https://turbo-gateway.com/YB_EUR_vSXtewqrD-4TCpN-QOHQg2WqtBRpdAL0UYLg?ext=jpeg",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "358216dab6b02ec2079c3b7ee3105d0fb62f946101622157d0f2425959ac1dc9",
+      "metadataFile": "assets/jpegs/metadata/0000/card-16.json",
+      "cardFile": "assets/jpegs/cards/0000/card-16.webp",
+      "animation": null
+    },
+    {
+      "number": 10,
+      "assetNumber": 11,
+      "stableId": "jpegs:group-bcc5e89ea559839e9c952199",
+      "groupKeyHash": "bcc5e89ea559839e9c9521997514a00bd7937bb0ab575f59410ef77c250cc88b",
+      "title": "Drone Party #01: Shahed 136",
+      "mints": [
+        "129ZEExDTeodEMfsyR5CJX9mZJxoaXgNhuuCm4PRsUrY",
+        "43SqjaVTKugNqwWhRKaifikjGp5nWPF26qWZetcfQqXP",
+        "5hbS4tizNuEdM2HB4fUvSeDxdBgJr5VvX1S5utkRMwnX",
+        "6uXJFuHN7dvXXzeXjLykW86M3SSWc8ihGWZWmT1bFCG2",
+        "APzewPEHvDva45ztzxhxxFLmKun75FFXt7C7cuUbzCQF",
+        "Bov3uYvqvaLnSmM1a6ekynChW3QobX4xHeUinwPUh8aD",
+        "BR4PuHVQaY35aNEAAvGSp9ABHjiaKHk3GJToHQisEb37",
+        "CrjuamJtF26CpgdpmqMhYBuKqsWALAGTgBZP3gCziqD2",
+        "ERNg6MdSJnPQXxo9jiGvQ8Rrk9sJLhndQbudQoPKcTWG",
+        "EuDFM9Nc9YjdwzRV9HuBoxiybDgjuKTxwmCmTJroEXsB",
+        "GFQYqhUrjh3MMAkS8ibC9nGj15TLCwcTnhBaYJCEeUpi"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/WU8k8WsxiwN2qWDvb4Jr5bdUhBc6WWmYa0fNMbSPjOI",
+      "sourceImageUri": "https://turbo-gateway.com/YSvswbaSzEd6HpoWK50z-skdaAtYmAQmYNFuvqGRCeA?ext=gif",
+      "sourceAnimatedGifUri": "https://turbo-gateway.com/YSvswbaSzEd6HpoWK50z-skdaAtYmAQmYNFuvqGRCeA?ext=gif",
+      "sourceImageSignature": "acfcef5a9a9d2ff02754ecfdb5edcc1ea998af4192343c2539ef862cda8808a3",
+      "metadataFile": "assets/jpegs/metadata/0000/card-11.json",
+      "cardFile": "assets/jpegs/cards/0000/card-11.webp",
+      "animation": {
+        "file": "assets/jpegs/animated/0000/card-11.webp",
+        "frames": 8,
+        "delays": [
+          70,
+          70,
+          70,
+          70,
+          70,
+          70,
+          70,
+          70
+        ],
+        "frameDuration": 70,
+        "loop": 0,
+        "width": 600,
+        "height": 840,
+        "sprite": {
+          "file": "assets/jpegs/animated-sprites/0000/card-11.webp",
+          "frames": 8,
+          "columns": 4,
+          "rows": 2,
+          "frameWidth": 340,
+          "frameHeight": 476,
+          "frameDuration": 70
+        }
+      }
+    },
+    {
+      "number": 11,
+      "assetNumber": 4,
+      "stableId": "jpegs:group-702fda57affcd126db81c6e4",
+      "groupKeyHash": "702fda57affcd126db81c6e487572796b7205610b8209517fad960ed4415f80d",
+      "title": "Call It When It Terrifies You",
+      "mints": [
+        "4Vzpkr3tyq8yxHtcST5XiMxRdqiYopcMzgQiBTyY2kif",
+        "523JydeCrTuLubEEEwuXHQELnvynt7pgeUuyLdviKh4s"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/bny3OEVliY9vbBlEdOvq9jI0btm70PEhfKEofiZZy98",
+      "sourceImageUri": "https://turbo-gateway.com/QBJEYx28nT7-EqukR6I_U2AcIPSSeyWjlmHQv8yTxNU?ext=jpeg",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "98c11e542106ad87c43ec57706737362754d14886362e9469757811609ef1df8",
+      "metadataFile": "assets/jpegs/metadata/0000/card-4.json",
+      "cardFile": "assets/jpegs/cards/0000/card-4.webp",
+      "animation": null
+    },
+    {
+      "number": 12,
+      "assetNumber": 24,
+      "stableId": "jpegs:group-35f431f90049e352baa2b213",
+      "groupKeyHash": "35f431f90049e352baa2b2130f5b10901dd4ab3d77525551615ac9d08c526b37",
+      "title": "Still Keeps Me Alive",
+      "mints": [
+        "99zscCRdXFM3LNJk63NHqaxMNedy2Hv7jMvaNjFTThxH",
+        "9YLrsKu5sfr15JtiU3ATcsQCnrNZufWr8Ga7RCKSbAMc",
+        "HuXWvTH2aeg7HRXouV9JsdyHxzaddLLPnpF7uHUFbHpU"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/CXojSSgXxR8nRN3ndTuJfX92gy8S-F3LIgfB-W-4XoQ",
+      "sourceImageUri": "https://turbo-gateway.com/50zPdPDw1QlvCRn0hWuKHSAgBl_Dae5zQYclraluG_4?ext=jpeg",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "1a5c01ef3d09c1b8703ba1638d7888fa7122948a053621a9d11779c479d8909a",
+      "metadataFile": "assets/jpegs/metadata/0000/card-24.json",
+      "cardFile": "assets/jpegs/cards/0000/card-24.webp",
+      "animation": null
+    },
+    {
+      "number": 13,
+      "assetNumber": 5,
+      "stableId": "jpegs:group-a1553ae4a453cf0b904d865b",
+      "groupKeyHash": "a1553ae4a453cf0b904d865b652b45690a8f705ce54ab7b8d27fb356840a7a82",
+      "title": "card",
+      "mints": [
+        "4jTJ2wDj4AKZmF78bBNJbNZWySTLXvjuwQoMziL7Gzd4",
+        "ALDdU5gsFFW8bahzgZBe2Heca7jwtYWQh6psenAiNo2u",
+        "DqrkVW9oMyMgWZwZwJS8EJsyFemfdx4anQz9z14nJgQi",
+        "E2vtBS4kyJuYj6dKnXGywkuFkbJuqVuoKGXKNCVYTkf3"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/wrY7hNLP53y982G4PN6Pu4PaEy7ETpLxJk45sn6Ay9Y",
+      "sourceImageUri": "https://turbo-gateway.com/cQgQN87tqxS_y-a_X774jaybT7eFT9bhUhMxs5bSCf4?ext=png",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "4d6cdf613c44b3307c31819319cafe3dfb5b45bb85278d37487547dd595626e6",
+      "metadataFile": "assets/jpegs/metadata/0000/card-5.json",
+      "cardFile": "assets/jpegs/cards/0000/card-5.webp",
+      "animation": null
+    },
+    {
+      "number": 14,
+      "assetNumber": 6,
+      "stableId": "jpegs:group-a110fdc6a24538002519b5f5",
+      "groupKeyHash": "a110fdc6a24538002519b5f5002a0093e2166667cac097ce7c21a1164f733ceb",
+      "title": "card",
+      "mints": [
+        "5iKgcv4cHJ5fzDHiNVXkhKEVyjvPkkYrwNEFoBUBRekW",
+        "6BZABT3zmFbKd6ro9zxqG1PYKVDi5x8VwivM7gRVNQNn",
+        "ByXAyPem3U59QSt7quNnv62xHGt3Dke9PWYzcxe2oBLP",
+        "Ez9mxe5UVHJTZn5ZbBV6EtLeYwWxF2UpU4cNGpYu3uhx",
+        "FixaXc3EkKUnYDFfDLTaq58BQ3JbphyzRbzWehE6SRLd",
+        "sX9uVEoGGaMQ45GDGd73diqK8Hj9MR3UyusA6E7eCnD"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/daEXg6PyysO_zYKgOV4Y3jwrdc6ZSQHbndzscOJdaIc",
+      "sourceImageUri": "https://turbo-gateway.com/dfoGbRHJ6bF0oK4sHqSpHFXvOLI74NeyXS7hVhgRd0M?ext=png",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "5deba08b8c5e8194e5ac9b7e3d74d2c1da131be8dce8950de113dc88f2f4f655",
+      "metadataFile": "assets/jpegs/metadata/0000/card-6.json",
+      "cardFile": "assets/jpegs/cards/0000/card-6.webp",
+      "animation": null
+    },
+    {
+      "number": 15,
+      "assetNumber": 7,
+      "stableId": "jpegs:group-001ef02e56d9ea032f7c35b9",
+      "groupKeyHash": "001ef02e56d9ea032f7c35b98fb20c08bcecd0db638759d1ed722e0179ecbb7e",
+      "title": "card",
+      "mints": [
+        "6oam3qrqDQ7smSVv3brsf4brxg3GA5ihiha6qPKzJ5gG",
+        "9o2zon4G2TPLqjyXZkWaPFE9m5DdH3moxqijr4VEuU8z",
+        "DftaEANsut1hsnMuoKG9TtvbD7yUTQ6qwavJ1sbLV87S",
+        "SWJTZ1PW5jq34gLrwfLihcAnvmtjqAqAkEuh52k6bSx"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/VrjGp5VoxbVr2dNNFNe1dDcRBACTVFM0NoorSEgHUY4",
+      "sourceImageUri": "https://turbo-gateway.com/OSnWPwLZqTqTB76n2ljhXjCcX3SNWfi6-8ataKRmeuo?ext=png",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "84b2eb6e5a838654347a09cf2837b8343a0373eedd987ca5c16b502a965f6040",
+      "metadataFile": "assets/jpegs/metadata/0000/card-7.json",
+      "cardFile": "assets/jpegs/cards/0000/card-7.webp",
+      "animation": null
+    },
+    {
+      "number": 16,
+      "assetNumber": 8,
+      "stableId": "jpegs:group-1f3a2df83cf7073075a56fae",
+      "groupKeyHash": "1f3a2df83cf7073075a56fae9db688eba66b3a1d74bcdd146ec2b9badbe46605",
+      "title": "card",
+      "mints": [
+        "6WJpY7mPqNUz7Tp7EkaoQLSQHBXdxmhdMZZbf4gKozkm",
+        "8kXgp9zngHJq4WXgEvvGTB8zd3gsowcSP2VZzrH4DudN",
+        "ChCsqXZm8UWcptKRHYu737Uaia4sW8kgnkBcJaHoS9pU",
+        "D5FMd3dEuSe4xpZ23PFXThg5Rp8qqxa8oAUDGU9y2GdV"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/t6eTiSxSnsH5TD6v07CSxoN6GuDzkIFqzuo4tPbyRlw",
+      "sourceImageUri": "https://turbo-gateway.com/G30ew55awdmON5qMz8imbtzNZG6RonisAJQbdTzeprA?ext=png",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "02d189fd534ac91b6055d8b2b05db8776553ea965e8dfde726bb0ee1c8dc2363",
+      "metadataFile": "assets/jpegs/metadata/0000/card-8.json",
+      "cardFile": "assets/jpegs/cards/0000/card-8.webp",
+      "animation": null
+    },
+    {
+      "number": 17,
+      "assetNumber": 25,
+      "stableId": "jpegs:group-03176461e4f70578005019ca",
+      "groupKeyHash": "03176461e4f70578005019caa6565b507cfb3066dd1412848e2dac0c00dd3659",
+      "title": "sun",
+      "mints": [
+        "2r2Hy8ze53MQhgac9pKV4Vg9DfdvPKdhCALfiXCjbhjK",
+        "58aEZuhWa4NtWL36gyiAseYPoqvJkpktyKfDkBXfeyFv",
+        "5rNEnrrT7ogQzTJb8F81yBRiASk7QJ1NedCtkZkRnCTR",
+        "9ppADVJw4TVBVJR4Ab8d2E87wfCFnzvT5tuymASymhuS",
+        "BEERdpF4QpY2FT6ykda4yFYHCgr9YwmBrDtXEGDSSv6r",
+        "CkK6qtzmeeAt7eRzTJFmovHaZdCPxHc8xDTxya6EsSFp",
+        "ET2GbEn8mUprMkG78tGxvtNBB4bWt4K7ttSWR9rrynTZ",
+        "Ex5uXBQbUhqfXe5RLA85oYSJurGEjXTgmriDwNQHaUCY",
+        "H79ig3gsKGGMJgff4SiAw3RVpNQWGYQtK63ArUjMGftt"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/ZpCvUqdP_zG7JLwqmiEMiDKIKAQPCxIKB2lsqSD-jK4",
+      "sourceImageUri": "https://turbo-gateway.com/Xevi8ibM_L1bg4K6YcNLE0I2XsscDRKuVYLl0K0xMgc?ext=gif",
+      "sourceAnimatedGifUri": "https://turbo-gateway.com/Xevi8ibM_L1bg4K6YcNLE0I2XsscDRKuVYLl0K0xMgc?ext=gif",
+      "sourceImageSignature": "85aac30d1b1866d3328f65bf3527f7a531275149d96be15503b5f58bae160864",
+      "metadataFile": "assets/jpegs/metadata/0000/card-25.json",
+      "cardFile": "assets/jpegs/cards/0000/card-25.webp",
+      "animation": {
+        "file": "assets/jpegs/animated/0000/card-25.webp",
+        "frames": 14,
+        "delays": [
+          150,
+          150,
+          150,
+          150,
+          150,
+          150,
+          150,
+          150,
+          150,
+          150,
+          150,
+          150,
+          150,
+          150
+        ],
+        "frameDuration": 150,
+        "loop": 0,
+        "width": 600,
+        "height": 840,
+        "sprite": {
+          "file": "assets/jpegs/animated-sprites/0000/card-25.webp",
+          "frames": 14,
+          "columns": 5,
+          "rows": 3,
+          "frameWidth": 340,
+          "frameHeight": 476,
+          "frameDuration": 150
+        }
+      }
+    },
+    {
+      "number": 18,
+      "assetNumber": 17,
+      "stableId": "jpegs:group-b373069d635a02be2c89ee18",
+      "groupKeyHash": "b373069d635a02be2c89ee18788fddf8068cb1ba3c8825b217956d6a5ffb832e",
+      "title": "moon",
+      "mints": [
+        "3yen3XPPaGDo6vAF6h19EoXeRLUpL7XhaBxqPwtknRmg",
+        "7nzV8414ztagg5e5WSUR5w9zzGKnm6UnLYdg4vqDymSL",
+        "7urwESwf9SbimBdzbg1bTZrugKERLHHnWDmKkR8kAYF1",
+        "Cdi5tg2i93NBKjbx7bN4iBZE7XAfkNu2TLbKErAprqhK",
+        "CswHeLXUQEHuvH88LzwBRqB2QPSYvjdfuRQGLGcK1ygB",
+        "FTRtBz1nFdb1rM3vAX4PHEoEroQjVTGpakXXnLLvVBUs",
+        "GQ92rV1ty1ibPZ8FNmDxDmeEF27EXZspHU946Kfe5X6g",
+        "Hyv7qGaDjuN9swsiF6nXsgbpjx2QUJssdAsXaT1hd121",
+        "J41suiR5XVy6DsQAN2pcisg3xLHewVtC6ukFNvcfahf1"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/KXRPyCkeg4tNu8xglhRgCTu2NtDSQ9SYa3aitRaIh-Q",
+      "sourceImageUri": "https://turbo-gateway.com/9dfD9RZyB3rr3RIUuqj0J6EhE47w_Pkx731LtIfzElI?ext=gif",
+      "sourceAnimatedGifUri": "https://turbo-gateway.com/9dfD9RZyB3rr3RIUuqj0J6EhE47w_Pkx731LtIfzElI?ext=gif",
+      "sourceImageSignature": "caace3c2043732629d9b48503b0d15d8c1bff166db710dfb09f94d3c898332dd",
+      "metadataFile": "assets/jpegs/metadata/0000/card-17.json",
+      "cardFile": "assets/jpegs/cards/0000/card-17.webp",
+      "animation": {
+        "file": "assets/jpegs/animated/0000/card-17.webp",
+        "frames": 14,
+        "delays": [
+          150,
+          150,
+          150,
+          150,
+          150,
+          150,
+          150,
+          150,
+          150,
+          150,
+          150,
+          150,
+          150,
+          150
+        ],
+        "frameDuration": 150,
+        "loop": 0,
+        "width": 600,
+        "height": 840,
+        "sprite": {
+          "file": "assets/jpegs/animated-sprites/0000/card-17.webp",
+          "frames": 14,
+          "columns": 5,
+          "rows": 3,
+          "frameWidth": 340,
+          "frameHeight": 476,
+          "frameDuration": 150
+        }
+      }
+    },
+    {
+      "number": 19,
+      "assetNumber": 19,
+      "stableId": "jpegs:group-8843bfea66fa8455d7a2794e",
+      "groupKeyHash": "8843bfea66fa8455d7a2794e6160a3f2af028f7c82880a41125ad09a6ed97988",
+      "title": "Poliworld Card #2",
+      "mints": [
+        "7Q26pjnAPNoFQbvNG1UrcmJ1ZpmAUNxU5YHwUtwUkc3"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/u-wJLpGOV65xczSsfJuzEVs9VHaKo5KiN1CQztFdfNU",
+      "sourceImageUri": "https://turbo-gateway.com/QzuAu6qhQi_m1uIxTJ7OkDMPPWkRM20njJX6-2X6dn0?ext=png",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "4c085b46f22dc9a8e8b411642133483f0f9c24a4ce759391dd63d23947995d21",
+      "metadataFile": "assets/jpegs/metadata/0000/card-19.json",
+      "cardFile": "assets/jpegs/cards/0000/card-19.webp",
+      "animation": null
+    },
+    {
+      "number": 20,
+      "assetNumber": 21,
+      "stableId": "jpegs:group-bdf2130ae6bb3063283c8aa8",
+      "groupKeyHash": "bdf2130ae6bb3063283c8aa8a9c457e741fc0bdc3a5db6f12c44a1a078bbc7f4",
+      "title": "Ritual Calculus",
+      "mints": [
+        "J4i6VvAJB98JGkaFEp9DeuBC95pSmf7SUAagrG9rW3SS"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/NE8YGQ7bE219fGX3M_4Y6bOh2hRWQO6TxBg3vpZ_TU8",
+      "sourceImageUri": "https://turbo-gateway.com/iicQ6mb7XHAEsJj-539DoZGHd6XS_pRDriy8L4ImeU0?ext=png",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "48992b2e354d4f7545d72e50b0effd0ab8047b4abdf56b64fb6d77c690d6c9f3",
+      "metadataFile": "assets/jpegs/metadata/0000/card-21.json",
+      "cardFile": "assets/jpegs/cards/0000/card-21.webp",
+      "animation": null
+    },
+    {
+      "number": 21,
+      "assetNumber": 22,
+      "stableId": "jpegs:group-5322b710ab7d99962d709387",
+      "groupKeyHash": "5322b710ab7d99962d7093870816e50ba85ae87043ebf37ee113fad20929482e",
+      "title": "Spirit Bond",
+      "mints": [
+        "2QvEx1c8B76sWD3igpNkBG2h3S8yqt3efrRy1jikCAvd"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/YVFBH54ME9lDVd5kdoPJwVr6IX-Nj8QyMguUEd4XyP8",
+      "sourceImageUri": "https://turbo-gateway.com/stTFbq4NSm24STlqn9uWCLa7kwAxLunxbifBIsMRaZs?ext=png",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "45b69a89d8cb08ac11728cd6253bd7c4c80389e577e40e3b14f33ecd5b9f4e03",
+      "metadataFile": "assets/jpegs/metadata/0000/card-22.json",
+      "cardFile": "assets/jpegs/cards/0000/card-22.webp",
+      "animation": null
+    },
+    {
+      "number": 22,
+      "assetNumber": 18,
+      "stableId": "jpegs:group-7ec1db5f78f451417696d2da",
+      "groupKeyHash": "7ec1db5f78f451417696d2da7b73562629f3a1825d97dc584fecaa2eb2f3c460",
+      "title": "Paul of Buttons",
+      "mints": [
+        "7M2oypMQ9k35Hh1gkZvsrHrHQrUZz9vP7deFP3rChX8c",
+        "GPT685N3LXTJPPfpJCGiVHyLt3SWXcbu8sgLhbQnFXZK",
+        "GUsnkDPkGhD37fe5bYR3SQiuMNNVc39GsHdSRkRB9z1f"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/rFi89T27wEIESQHSf2Wp4CXq0yyaqA6WEYSO2APioek",
+      "sourceImageUri": "https://turbo-gateway.com/aiqfX9kLy_J40lsqPDxhCC_C5qzhtbU0XzpIHOhKcCA?ext=png",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "249a5cbbc6adbafd501761cbaa3c9309fb44dd539a61b1b474dacd039223d7cf",
+      "metadataFile": "assets/jpegs/metadata/0000/card-18.json",
+      "cardFile": "assets/jpegs/cards/0000/card-18.webp",
+      "animation": null
+    },
+    {
+      "number": 23,
+      "assetNumber": 10,
+      "stableId": "jpegs:group-26c7ad107b51907d93a8a071",
+      "groupKeyHash": "26c7ad107b51907d93a8a0714c89759bc2e4d769b38e45276e50cb46879b2cfd",
+      "title": "Claire Most Unfair",
+      "mints": [
+        "6obtDbrmhvH7N9Rnz62jaqHyrHJnSh8cSf4LNKvxzWtz",
+        "AwvQiVVQDGtXydckPi1KSmogAiaM2MtXsm3feLM9pjog"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/SeOYdVosxTonfVtoLTaJydT6ocqXqOX08j9H-chBsHI",
+      "sourceImageUri": "https://turbo-gateway.com/Cop_PxkZMsrnlynfc4VhcidNeMpd-eOvm_gBFOn3xX4?ext=png",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "adcea4e00c7699ee9f2c9e7fbe18fff458b8f1c00e018e88a697d962ea0b4431",
+      "metadataFile": "assets/jpegs/metadata/0000/card-10.json",
+      "cardFile": "assets/jpegs/cards/0000/card-10.webp",
+      "animation": null
+    },
+    {
+      "number": 24,
+      "assetNumber": 23,
+      "stableId": "jpegs:group-e9ae7a02ef8065f14987050c",
+      "groupKeyHash": "e9ae7a02ef8065f14987050c2627e0e58d716904d79b602c8a4369deb116bb31",
+      "title": "Steward Billy Blue",
+      "mints": [
+        "2ysKMgiSBG55gegytVpm3w51VLo4NZ9zLthfobScbEpd",
+        "4twxtWzRaGhc5AgiCxvvc179Ug85QVGEMuFeXp6T8dQW",
+        "AcFoJJDBXo1iH7jqzoRZK7PtNyg9UGEdYYxqS4e6agV7"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/UtLtf-ZUZfhVme5W9_t8Qiq9bVX7FOAIP9YzqizIxcY",
+      "sourceImageUri": "https://turbo-gateway.com/M2wi7J9MsE8bq_HVp5aBOzWyAgDxrNyey03FToTiuyE?ext=png",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "646f1ee51db7ce524ddada8b157b260ae0ed0c5164f0e4751f2cac91c57953fc",
+      "metadataFile": "assets/jpegs/metadata/0000/card-23.json",
+      "cardFile": "assets/jpegs/cards/0000/card-23.webp",
+      "animation": null
+    },
+    {
+      "number": 25,
+      "assetNumber": 1,
+      "stableId": "jpegs:group-cd79a614f167ca7390f614ac",
+      "groupKeyHash": "cd79a614f167ca7390f614ac3ba62b5df969393f84b2a11fa8b378c448f4537c",
+      "title": "360 Robert",
+      "mints": [
+        "Cpwe6TNwDYGE8gbm9QQPCcK4K1GpWHKVc81ojPAJDAm3",
+        "ErT2XrkpKkkSkmQcFKUN8HriDLDEcHvzGX75PeefDeL8"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/z9V_j0ONfM3h6VbtB20rm2QWFDdl5Wbn8dYWiNzRfRU",
+      "sourceImageUri": "https://turbo-gateway.com/1p66TOKdrcW2F4ykh7CEilkMYqoV_wiv_dyiIYzj_as?ext=png",
+      "sourceAnimatedGifUri": "",
+      "sourceImageSignature": "3922efdd42cc3c775d74e425f77466b02f183d6b186876e307e661d78b26316c",
+      "metadataFile": "assets/jpegs/metadata/0000/card-1.json",
+      "cardFile": "assets/jpegs/cards/0000/card-1.webp",
+      "animation": null
+    }
+  ]
+}

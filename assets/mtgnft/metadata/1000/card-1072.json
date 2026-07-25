@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1071",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1071",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_babe"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Herald of Anafenza"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_serious"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_daurk"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "gunhandright"
+    }
+  ],
+  "edition": 1684,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1071"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5wGkiLBrZ98nCTXMecKa4PxuzrMLWrpJJEHNWdCyP4c8"
+  ]
+}

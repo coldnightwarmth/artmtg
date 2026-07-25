@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1583",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1583",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "peaceischeap"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Wild Onslaught"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_saskue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_orc"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "reachright"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "gbc"
+    }
+  ],
+  "edition": 1214,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1583"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7GytWNWw161B4MMo6o1RfdRDPuP8tAoFtoVuzBrbkGKF"
+  ]
+}

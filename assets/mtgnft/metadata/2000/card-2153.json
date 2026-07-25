@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #2152",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2152",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_attic"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Trigon of Rage"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_saskue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "jokersmirk"
+    },
+    {
+      "trait_type": "hat",
+      "value": "workingondying"
+    }
+  ],
+  "edition": 1792,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2152"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DwdupkUbAiZ5v82h8DUbfjuds7agj2d1pd2xyMMHnbWf"
+  ]
+}

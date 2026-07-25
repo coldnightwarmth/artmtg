@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1564",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1564",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_graveyard"
+    },
+    {
+      "trait_type": "behind",
+      "value": "traits"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Rakdos Guildgate"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_perc5"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "chomp"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "boofright"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "breaktop"
+    }
+  ],
+  "edition": 999,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1564"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BQEZV3KFfGwNxmTF6hUkvqsBKZWq4CAy3MMm1SBnuV25"
+  ]
+}

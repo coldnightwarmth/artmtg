@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1838",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1838",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_uni"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_5"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Fat Ass"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "yarinvert"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_glitched"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "pokemondigimon"
+    }
+  ],
+  "edition": 575,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1838"
+      }
+    ]
+  },
+  "collection_mints": [
+    "ErL3mc7RnqsVByGR3T5EFDMQcSTiF1AyLLk8kWVfH5JZ"
+  ]
+}

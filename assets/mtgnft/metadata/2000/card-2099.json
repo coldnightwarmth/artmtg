@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #2098",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2098",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_balloonparty"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ninja of the New Moon"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_creepypasta"
+    },
+    {
+      "trait_type": "top left",
+      "value": "ramielleft"
+    }
+  ],
+  "edition": 274,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2098"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DYVFJhG2EfSqoJ4gHZJvJhnLyvzHRpzrs3YYVjvw2DsM"
+  ]
+}

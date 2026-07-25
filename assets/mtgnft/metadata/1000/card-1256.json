@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1255",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1255",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_gnometown"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Talisman of Resilience"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "facesuit2"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_myspacecore"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "lightning"
+    }
+  ],
+  "edition": 1858,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1255"
+      }
+    ]
+  },
+  "collection_mints": [
+    "EdfhLqNQRHBT1uTdAt8R128A79o6n5qDjLZE4EDE2969"
+  ]
+}

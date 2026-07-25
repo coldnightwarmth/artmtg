@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1865",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1865",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "roses"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Utopia Tree"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "ballerpros"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "redblur"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_smeerk"
+    },
+    {
+      "trait_type": "top right",
+      "value": "ibpholo"
+    },
+    {
+      "trait_type": "special top",
+      "value": "loz"
+    }
+  ],
+  "edition": 1033,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1865"
+      }
+    ]
+  },
+  "collection_mints": [
+    "C1JfkPjDk7BkoiLWU1cVb1Dfo4hP52E5W2qraPy7csyG"
+  ]
+}

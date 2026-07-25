@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #689",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/689",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_hiz"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_145"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Searing Light"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "swagtoshinakamoto"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_beez"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_neverbrush"
+    },
+    {
+      "trait_type": "special top",
+      "value": "digimon"
+    }
+  ],
+  "edition": 219,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/689"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Lx2JqjiA5JnN9UMdisdBrdKMGJ17Q7pXNuNeJSPrS5V"
+  ]
+}

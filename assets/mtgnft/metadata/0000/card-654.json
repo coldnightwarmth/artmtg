@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #653",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/653",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_paradise"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Call the Gatewatch"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_blush2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "widesmirk"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "spiro"
+    },
+    {
+      "trait_type": "special top",
+      "value": "issacantibirth"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "ssbm"
+    }
+  ],
+  "edition": 969,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/653"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BcPf9Eg7UmNkkv7dNFaz6bM67QhDYaC662ud6fqdR5Az"
+  ]
+}

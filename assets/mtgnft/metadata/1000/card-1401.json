@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1400",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1400",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_dmttunnels"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Kashi-Tribe Elite"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_prada"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "rpg"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "confessional"
+    }
+  ],
+  "edition": 2096,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1400"
+      }
+    ]
+  },
+  "collection_mints": [
+    "D4C6pyTufm8n93Za9rfosDFrGdhAzX642iqHxYzrjDzL"
+  ]
+}

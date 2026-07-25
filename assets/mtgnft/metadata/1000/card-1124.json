@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1123",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1123",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_asspizzagun"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_108"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Diabolic Edict"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_smil"
+    },
+    {
+      "trait_type": "hat",
+      "value": "toymachine"
+    }
+  ],
+  "edition": 302,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1123"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CM9rDjxrQCz3kdDejTpF5rkpihctMffcx9BvDnB4W2tk"
+  ]
+}

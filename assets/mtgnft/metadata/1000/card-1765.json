@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1764",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1764",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_spookydance"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Kalastria Healer"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "kanye"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "reachleft"
+    }
+  ],
+  "edition": 1006,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1764"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7iYRX4Hc6iC7Wehs4pK2gj87t8sAhonsGYndNAA5KBsZ"
+  ]
+}

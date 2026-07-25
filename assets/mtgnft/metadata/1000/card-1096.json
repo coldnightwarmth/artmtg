@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1095",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1095",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_riot"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_124"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Exhume"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_greenlady"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_toofers"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "gunhandright"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mtnhardcore"
+    }
+  ],
+  "edition": 2120,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1095"
+      }
+    ]
+  },
+  "collection_mints": [
+    "42V8f2fYW7x16rLMewvEG1JRT2odcf1HwEQYUQ5PsQU1"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1410",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1410",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_portaltohell"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Power Armor"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_tounge"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "fingerleft"
+    }
+  ],
+  "edition": 603,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1410"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Gt34xde1uKoLr6cd9HsJLxnDFLcSQoLiqDydNmtH3cZ6"
+  ]
+}

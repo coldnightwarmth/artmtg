@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #276",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/276",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "blackops1"
+    },
+    {
+      "trait_type": "behind",
+      "value": "Untitled_Artwork-2"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_159"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Woodland Sleuth"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_perc5"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_cursed"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "rpg"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "pipetobaccoright"
+    }
+  ],
+  "edition": 957,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/276"
+      }
+    ]
+  },
+  "collection_mints": [
+    "AbC91mTicK9QPhmTWi6YtgGvJCWvYBuu93d2uDgXs7UJ"
+  ]
+}

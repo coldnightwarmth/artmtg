@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1460",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1460",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "plane"
+    },
+    {
+      "trait_type": "behind",
+      "value": "bubbles"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Retribution of the Ancients"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_mifellasmirk"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "warrencoin"
+    }
+  ],
+  "edition": 1395,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1460"
+      }
+    ]
+  },
+  "collection_mints": [
+    "A34gkJAzW1YCp4D9RnjEBoQzXvSNfuUKZXVDgkin3QEq"
+  ]
+}

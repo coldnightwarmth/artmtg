@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #245",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/245",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_dmtheaven"
+    },
+    {
+      "trait_type": "behind",
+      "value": "diamondsword"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_77"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Dutiful Return"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "goldgrillz"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "thumbsup"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "chaosemeralds"
+    }
+  ],
+  "edition": 110,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/245"
+      }
+    ]
+  },
+  "collection_mints": [
+    "AFLsfkL445WJUvx5FeA7bg8AWSP3cdHCJEn69UT9tCtp"
+  ]
+}

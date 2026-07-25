@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1500",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1500",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_hellcastle"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Walker of the Wastes"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_larvatar"
+    },
+    {
+      "trait_type": "hat",
+      "value": "gibus"
+    }
+  ],
+  "edition": 1217,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1500"
+      }
+    ]
+  },
+  "collection_mints": [
+    "AzWQ54YbK21si5rEpNSVUh53DMZGXi8RhKwRDNBpdzqr"
+  ]
+}

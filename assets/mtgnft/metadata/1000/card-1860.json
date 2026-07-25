@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1859",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1859",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_clown"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Rime Tender"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_mifella3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_spongebob"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "foxboss"
+    },
+    {
+      "trait_type": "special top",
+      "value": "mariopaint2"
+    }
+  ],
+  "edition": 361,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1859"
+      }
+    ]
+  },
+  "collection_mints": [
+    "G7vefsb4kTyrn8cFoTbBsmdwesmg3YJkcRbtsm5okUR4"
+  ]
+}

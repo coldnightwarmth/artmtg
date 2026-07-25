@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1597",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1597",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "brucewayne"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_163"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Plague Spitter"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_bloodsmirk"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "draw"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_ps3"
+    }
+  ],
+  "edition": 158,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1597"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BC1q17TqNh4jpLYwukJwwP7CQcx1zFVTMzX5XPBWhV4D"
+  ]
+}

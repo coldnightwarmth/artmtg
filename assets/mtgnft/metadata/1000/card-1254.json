@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1253",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1253",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_party"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_84"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Minamo Scrollkeeper"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "tongetooth"
+    },
+    {
+      "trait_type": "hat",
+      "value": "supreme"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "gothbaby"
+    }
+  ],
+  "edition": 227,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1253"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HG2pJuMkGVBzcBbFYcMGX5v3SWHgkzP2wQsnffhy9qaZ"
+  ]
+}

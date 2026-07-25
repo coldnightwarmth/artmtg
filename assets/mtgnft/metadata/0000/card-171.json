@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #170",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/170",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_rapture"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_181"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Llanowar Tribe"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_chromed"
+    },
+    {
+      "trait_type": "special top",
+      "value": "warhammer40k"
+    }
+  ],
+  "edition": 501,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/170"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GPAQG4AmrxGpiJSkwLmtkiNRsSYZDLXyN5FqJXNgaAQ3"
+  ]
+}

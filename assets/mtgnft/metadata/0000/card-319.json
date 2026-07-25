@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #318",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/318",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "brucewayne"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ruin in Their Wake"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_blush2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_orc"
+    }
+  ],
+  "edition": 2032,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/318"
+      }
+    ]
+  },
+  "collection_mints": [
+    "F5bgUcxoCVhYhi9ZYxLd8TpZ7ZxAToZGmAKQ9cARHatK"
+  ]
+}

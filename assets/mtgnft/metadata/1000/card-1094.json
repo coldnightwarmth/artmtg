@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1093",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1093",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_3dnetmask"
+    },
+    {
+      "trait_type": "behind",
+      "value": "ddr"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Seize the Initiative"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_redblur"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_rubbermouf"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "vaperight"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "ciggie"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "dadjotaro"
+    }
+  ],
+  "edition": 1270,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1093"
+      }
+    ]
+  },
+  "collection_mints": [
+    "AceDPgQRcx6Q3b38EH5ZNEGLQnTx1j3ehWHXT5aEabxb"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1946",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1946",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "pulls"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_54"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Carnifex Demon"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "teeeef"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_seph"
+    }
+  ],
+  "edition": 1135,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1946"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HGc8yDyfd6zZemNACRk73JcqCDGEWPQMLd4Bc5SaEeZB"
+  ]
+}

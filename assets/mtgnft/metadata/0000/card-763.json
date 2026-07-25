@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #762",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/762",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_afgankush"
+    },
+    {
+      "trait_type": "behind",
+      "value": "Untitled_Artwork-2"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_71"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Rock Hydra"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "fangs"
+    },
+    {
+      "trait_type": "special top",
+      "value": "nsmb"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "asspizza2022"
+    }
+  ],
+  "edition": 2149,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/762"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5VxMSav8HBgHD68JfwFvYtHDcWnXBWy8paM67nWuo1S1"
+  ]
+}

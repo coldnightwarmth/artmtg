@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #631",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/631",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_attic"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Hakim, Loreweaver"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_troll"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "misalute"
+    }
+  ],
+  "edition": 570,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/631"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GNZ2CNvTCz28MoCqw2rvoTT3qyzacLUno4ohNgiQ1m9A"
+  ]
+}

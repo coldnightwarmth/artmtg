@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1671",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1671",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "secondlifeangel"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Runic Repetition"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_bigyawn"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_theonering"
+    }
+  ],
+  "edition": 681,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1671"
+      }
+    ]
+  },
+  "collection_mints": [
+    "A8DrQAZwAz1xTiLErzaZX6R6mdH4Z8o1QdoQSX8Gr99z"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #730",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/730",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_gothdeath"
+    },
+    {
+      "trait_type": "behind",
+      "value": "mastersword"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Nagging Thoughts"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_perc5shine"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "drools"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "black"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "jpncards"
+    }
+  ],
+  "edition": 839,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/730"
+      }
+    ]
+  },
+  "collection_mints": [
+    "FyFQva73iT49kUYxQuitXDpWde2BWS926rmyz45Y5uaD"
+  ]
+}

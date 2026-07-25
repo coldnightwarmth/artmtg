@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #249",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/249",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_cacacombs"
+    },
+    {
+      "trait_type": "behind",
+      "value": "911"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Duskwatch Recruiter"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "tactikyle"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_scarred"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "whatsinyocuppiiiimp"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_asukaxbox"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "success"
+    }
+  ],
+  "edition": 2132,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/249"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6UW9sAKZVkU3L5K1fug3kUyC1saivf2bpKdcaD8F1PjD"
+  ]
+}

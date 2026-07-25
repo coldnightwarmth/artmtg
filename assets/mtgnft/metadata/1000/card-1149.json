@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1148",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1148",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "tumblraf2"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Forked Bolt"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_wavey"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "bnw"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "beretta"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "jpncards"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "berryladiess"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "breaktop"
+    }
+  ],
+  "edition": 65,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1148"
+      }
+    ]
+  },
+  "collection_mints": [
+    "9yJcNw7NYrxxQbteohu8QgyJuFGwVez7ExfFBvdMrsxq"
+  ]
+}

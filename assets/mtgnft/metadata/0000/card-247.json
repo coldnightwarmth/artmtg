@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #246",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/246",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_brucewayne"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Mire Shade"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "breath"
+    },
+    {
+      "trait_type": "hat",
+      "value": "sexy"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "point"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "ssbm"
+    }
+  ],
+  "edition": 1920,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/246"
+      }
+    ]
+  },
+  "collection_mints": [
+    "dhSJ26VXh56LWfvnyv5oaYGthx1PyiGLhFo7ezi1eCg"
+  ]
+}

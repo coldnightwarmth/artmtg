@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1139",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1139",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_whatitradeoff"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Mantis Rider"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_larvatar"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "pufforangee"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "pkmnsilver"
+    }
+  ],
+  "edition": 1267,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1139"
+      }
+    ]
+  },
+  "collection_mints": [
+    "EAM8ggeGpBGTBscXeE46guJ1MbfiQYx9UX83rtHiCpUs"
+  ]
+}

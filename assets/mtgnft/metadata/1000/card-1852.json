@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #1851",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1851",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_mansion"
+    },
+    {
+      "trait_type": "behind",
+      "value": "terrariasword"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Lightning Reflexes"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "cursed"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "whatsinyocuppiiimp"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "navi"
+    },
+    {
+      "trait_type": "special top",
+      "value": "jjba"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "pkmncrystal"
+    }
+  ],
+  "edition": 834,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1851"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GHPSfDUJ9UgBVXUafAoeBZqK95HwwwjEVAU4ry3qq8gg"
+  ]
+}

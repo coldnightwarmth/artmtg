@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #2149",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2149",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_shrine"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_61"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Fork"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_serious"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_babe"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "nissa"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "failure"
+    }
+  ],
+  "edition": 1589,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2149"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6cARKLkjSjqusGdbpQPZxo5hZqhh4vARVBkT2amUwDEi"
+  ]
+}

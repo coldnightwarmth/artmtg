@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1318",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1318",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "toonblueeyes"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Worldspine Wurm"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_yelling"
+    },
+    {
+      "trait_type": "hat",
+      "value": "snes"
+    }
+  ],
+  "edition": 550,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1318"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6wKPqQMpiajWgs2Mjqfn4bgV3Bo9HWTiL5HPgPDp64Qn"
+  ]
+}

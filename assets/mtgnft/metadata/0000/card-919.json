@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #918",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/918",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_abstract1"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Gryff's Boon"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "kushh"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_silenceofthelambs"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_sonic"
+    }
+  ],
+  "edition": 200,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/918"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HgMBCMhVtvP2sTczi7fppTW6vvZ3HpaZvmaAvHipExRy"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1988",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1988",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "spawner"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Gigantomancer"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "animu2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_smile"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "shootah"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "fingerleft"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mista"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "tree"
+    }
+  ],
+  "edition": 1511,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1988"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CucRdNRAbx859WG2RdjktC7KwWPSDjVAJ6BLwzjcb4yq"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #925",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/925",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_animeangel"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_162"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Bureaucracy"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_69"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_marle"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_grinch5s"
+    }
+  ],
+  "edition": 2159,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/925"
+      }
+    ]
+  },
+  "collection_mints": [
+    "F1Rv6K1fZn33cZeAoH5ShkJJUcbH2fWVChcH2Y6N4pQ"
+  ]
+}

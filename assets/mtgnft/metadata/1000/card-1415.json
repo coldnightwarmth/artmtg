@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1414",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1414",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_rapture"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Elder of Laurels"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_wavey"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_breath"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "vapeleft"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "acid"
+    }
+  ],
+  "edition": 711,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1414"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8VBnFvF91M4sFGPteUHBFGDMhZqJ82NGuAcCXCvKEvzQ"
+  ]
+}

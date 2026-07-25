@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1023",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1023",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "snorlax"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Bonescythe Sliver"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "serious"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_myspacecore"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "point"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "blessed"
+    },
+    {
+      "trait_type": "special top",
+      "value": "perc30top"
+    }
+  ],
+  "edition": 1926,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1023"
+      }
+    ]
+  },
+  "collection_mints": [
+    "FfgNAmfy7QMFVvYVky7LmptsKdCVvw9vHvmdAKKfT4QD"
+  ]
+}

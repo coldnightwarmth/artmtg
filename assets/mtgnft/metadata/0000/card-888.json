@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #887",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/887",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_dxmtrip"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_192"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Force of Virtue"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "digiogs"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_serious"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_69"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "vaperight"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_grinch5s"
+    }
+  ],
+  "edition": 815,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/887"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5Yviy6yYYpQnc8JTgLu5LuypuuGxR9VoFjqGChe5BzHp"
+  ]
+}

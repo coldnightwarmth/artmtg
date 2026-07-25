@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #864",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/864",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_brucewayne"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Worldspine Wurm"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_wavey"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_smoke"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_vegita"
+    }
+  ],
+  "edition": 1476,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/864"
+      }
+    ]
+  },
+  "collection_mints": [
+    "A9dcLLnwchKaEseQBBZs4Y3Gfwfg93wP88Zf3antawxb"
+  ]
+}

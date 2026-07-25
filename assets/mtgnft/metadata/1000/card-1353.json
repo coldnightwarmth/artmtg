@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1352",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1352",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_hiz"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_193"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Might Beyond Reason"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_greenlady"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "orc"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "pdagger"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "maniq"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "pron"
+    }
+  ],
+  "edition": 1150,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1352"
+      }
+    ]
+  },
+  "collection_mints": [
+    "ScXh4cE2A6DEreLQj5FCFrFf3sbSAqYWXRLpdSPSzKU"
+  ]
+}

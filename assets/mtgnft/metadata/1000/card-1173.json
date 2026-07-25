@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1172",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1172",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "cloudheaven"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Khalni Gem"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "saskue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_fangs"
+    },
+    {
+      "trait_type": "special top",
+      "value": "majorasmoon"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "1thousandnuts"
+    }
+  ],
+  "edition": 1982,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1172"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4RKknowRsixVDkuqUg4HgbZe4mEX5NPPqcr9mpq1GcXK"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #777",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/777",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_snowcapped"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Kashi-Tribe Elite"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "prada"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "clrighthand0"
+    }
+  ],
+  "edition": 1761,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/777"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3aFjtndaJh7Kw8Aey3Zy1wpHUxt7wVDudWWeCr4XtSRh"
+  ]
+}

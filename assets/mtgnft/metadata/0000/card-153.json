@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #152",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/152",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_blurryaminegirl"
+    },
+    {
+      "trait_type": "behind",
+      "value": "unknownball"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_47"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Opal Acrolith"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_babeblur"
+    },
+    {
+      "trait_type": "special top",
+      "value": "drain"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "ATfield"
+    }
+  ],
+  "edition": 1434,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/152"
+      }
+    ]
+  },
+  "collection_mints": [
+    "27XmDQdGqVyH24V7G4LmD1rEAWrE3mt1NV6VvWRYSzUk"
+  ]
+}

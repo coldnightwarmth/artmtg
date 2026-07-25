@@ -1,0 +1,27 @@
+{
+  "name": "Steward Billy Blue",
+  "description": "The Steward Billy Blue, Responsible for the Longer Lines, Their Direction, Their Behaviour, and Any Sudden Inclination to Become Decorative Without Permission\n\nAn entry from The Garden, Being a Record of Its Conduct, Its Surprises, and Its Occasional Tendency Toward the Radiant and the Improbable",
+  "seller_fee_basis_points": 500,
+  "image": "https://turbo-gateway.com/M2wi7J9MsE8bq_HVp5aBOzWyAgDxrNyey03FToTiuyE?ext=png",
+  "properties": {
+    "files": [
+      {
+        "uri": "https://turbo-gateway.com/M2wi7J9MsE8bq_HVp5aBOzWyAgDxrNyey03FToTiuyE?ext=png",
+        "type": "image/png"
+      }
+    ],
+    "creators": [
+      {
+        "address": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+        "share": 100,
+        "verified": true
+      }
+    ]
+  },
+  "attributes": [],
+  "collection_mints": [
+    "2ysKMgiSBG55gegytVpm3w51VLo4NZ9zLthfobScbEpd",
+    "4twxtWzRaGhc5AgiCxvvc179Ug85QVGEMuFeXp6T8dQW",
+    "AcFoJJDBXo1iH7jqzoRZK7PtNyg9UGEdYYxqS4e6agV7"
+  ]
+}

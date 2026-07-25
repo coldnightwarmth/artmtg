@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1989",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1989",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_spooky"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Oran-Rief Survivalist"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "bigyawn"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "ily"
+    }
+  ],
+  "edition": 828,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1989"
+      }
+    ]
+  },
+  "collection_mints": [
+    "ALn2ptxgbBrfUTArVZ9z5MhAX8eU9299yDhP6WysqvB8"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1688",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1688",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_abstract1"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_176"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Corpse Lunge"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "evil1"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "csssniper"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "solanamaxi"
+    }
+  ],
+  "edition": 1454,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1688"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CbPZiqwj2SFPHYXNkobHXPtCtXeUPub7bBiX3htXTcnp"
+  ]
+}

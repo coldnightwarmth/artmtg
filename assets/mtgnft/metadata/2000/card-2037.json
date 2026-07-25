@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #2036",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2036",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_coffeehouseart"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Elvish Archers"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "beez"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "bnw"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "Untitled_Artwork-49"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "homerun"
+    }
+  ],
+  "edition": 1298,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2036"
+      }
+    ]
+  },
+  "collection_mints": [
+    "agDfPjHdu8FgMF1PW3Qi7D19Ph5vL9J73tSqd6Yp7Jy"
+  ]
+}

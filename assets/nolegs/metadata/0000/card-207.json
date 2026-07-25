@@ -1,0 +1,19 @@
+{
+  "name": "CARD #214",
+  "description": "1 of 1 CARDS",
+  "image": "https://ipfs.io/ipfs/QmXq4NQzpQUwVEcjNPuuncvmhLLN1dtZHXBrr8ZEriiLkP",
+  "attributes": [],
+  "tags": [],
+  "properties": {
+    "category": "image",
+    "files": [
+      {
+        "uri": "https://ipfs.io/ipfs/QmXq4NQzpQUwVEcjNPuuncvmhLLN1dtZHXBrr8ZEriiLkP",
+        "type": "image/jpeg"
+      }
+    ]
+  },
+  "collection_mints": [
+    "98fqzWMcodHHp48mSYFbH81kJFomVCTTLjRnZ6aXuxgh"
+  ]
+}

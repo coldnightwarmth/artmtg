@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #46",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/46",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_brands"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Bloodsoaked Champion"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_redblur"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_emo"
+    },
+    {
+      "trait_type": "hat",
+      "value": "edhardy"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "scraped"
+    }
+  ],
+  "edition": 1359,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/46"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HYa4VRwvwPVQaCrYQMGgnjCTseLwzpUcgvP4gef6Y18x"
+  ]
+}

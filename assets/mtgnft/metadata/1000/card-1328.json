@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1327",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1327",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_spookydance"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Settle Beyond Reality"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_animu3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_braces"
+    },
+    {
+      "trait_type": "hat",
+      "value": "poloplaid"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "kimbo"
+    }
+  ],
+  "edition": 1867,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1327"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3RJr9eKcMnojC5Hn3vS4k23K1eyq8qpSNYxEkbtmVBTh"
+  ]
+}

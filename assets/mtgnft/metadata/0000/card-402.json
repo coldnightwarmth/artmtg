@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #401",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/401",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_imnotcomingbackforawhile"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Gloomhunter"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "goober"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_DDDDC"
+    },
+    {
+      "trait_type": "special top",
+      "value": "perc30top"
+    }
+  ],
+  "edition": 903,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/401"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BtJTweN9iHZTum3PXFumZGugqswSuHuZcMJSmrncRdkh"
+  ]
+}

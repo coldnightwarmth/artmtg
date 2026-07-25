@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #2131",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2131",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_snowcapped"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ogre Sentry"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_serious"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_yay"
+    }
+  ],
+  "edition": 377,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2131"
+      }
+    ]
+  },
+  "collection_mints": [
+    "AZaGi9JAovkhxX7GieSVbTTNbTLPN5jUcFgNryjBw69A"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "name": "Sweet Curse Card #199",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreicxubsomihtizlnxto5t6qemziyjtbc2ragtcasavmlhxwinuvz2i",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "A.R.T."
+    },
+    {
+      "trait_type": "Background",
+      "value": "Rooms by the sea"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Cristo redentor cup"
+    },
+    {
+      "trait_type": "Description",
+      "value": "micah_alhadeff"
+    },
+    {
+      "trait_type": "Score",
+      "value": "Naomi"
+    },
+    {
+      "trait_type": "Name",
+      "value": "MJ bad"
+    },
+    {
+      "trait_type": "Signature",
+      "value": "Erz8"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Firetag"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Gachu"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "St. Anthony"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Gang"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Goth mommy"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "oil"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreicxubsomihtizlnxto5t6qemziyjtbc2ragtcasavmlhxwinuvz2i",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigc3pjrvegzk3ws7rm4bmqeervshwtabn2tvaefh5d3nb2gwveonm",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigc3pjrvegzk3ws7rm4bmqeervshwtabn2tvaefh5d3nb2gwveonm",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigc3pjrvegzk3ws7rm4bmqeervshwtabn2tvaefh5d3nb2gwveonm",
+  "collection_mints": [
+    "ESS1JNdEYXsABYeMPyuC5BappV3EuLis9mNruX1LyjTb"
+  ]
+}

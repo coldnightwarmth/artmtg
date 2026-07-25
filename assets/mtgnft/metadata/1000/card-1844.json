@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1843",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1843",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_babe"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_30"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Somberwald Spider"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_goldgrillz"
+    }
+  ],
+  "edition": 539,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1843"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Feqjmhti5dy7BiEiVJsYDDZdKrt6DKSqMYjfDdUJziCD"
+  ]
+}

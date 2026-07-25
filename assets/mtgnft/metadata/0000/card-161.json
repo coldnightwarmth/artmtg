@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #160",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/160",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_guntomyhead"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Might Beyond Reason"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "facesuit1"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_kaneki"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "crawlleft"
+    }
+  ],
+  "edition": 426,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/160"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6TiJKgoXun1YHDzBWpEWEkNEszDmBW5FYHGFBxJ4dBi9"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "name": "Sweet Curse Card #162",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreicaw7ws6ts23h5pzjejsurtljubg7a7vcqn2egifp6st4tll3nktu",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Door"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Bunker"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Jameswillan"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Mailart3"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Purple rain"
+    },
+    {
+      "trait_type": "Signature",
+      "value": "Erz3"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Dammit2"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Sonizard"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Sugarspike"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Braxton"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "In your eyes"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Jeune n"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "oil"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreicaw7ws6ts23h5pzjejsurtljubg7a7vcqn2egifp6st4tll3nktu",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidxmuzbmjhdddbfmxflns74wfolap5ncqklerjbwe2xonzm3rjibm",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidxmuzbmjhdddbfmxflns74wfolap5ncqklerjbwe2xonzm3rjibm",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidxmuzbmjhdddbfmxflns74wfolap5ncqklerjbwe2xonzm3rjibm",
+  "collection_mints": [
+    "GR9hBdT3aacjrGjMHzD8f8NAJfvAnG9xmhVifDdBdUEU"
+  ]
+}

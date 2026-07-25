@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #295",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/295",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_uni"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Corpse Cur"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_paulwall"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "endofeva"
+    }
+  ],
+  "edition": 1787,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/295"
+      }
+    ]
+  },
+  "collection_mints": [
+    "A8kT2RoppePrXhgHD1dX1zP9yVHujVsrHa5QSTn5r4eh"
+  ]
+}

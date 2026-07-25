@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #530",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/530",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_brands"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_134"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Thicket Basilisk"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_toofers"
+    }
+  ],
+  "edition": 791,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/530"
+      }
+    ]
+  },
+  "collection_mints": [
+    "D8NFyswPzqcc32cF7L29yBPQzS1zA7cW7GkHj1nmYjXd"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #425",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/425",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_iceberg"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Holy Armor"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_greenlady"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_evil1"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "nessleft"
+    },
+    {
+      "trait_type": "top right",
+      "value": "virtusproholo"
+    }
+  ],
+  "edition": 819,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/425"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GezY9QQ29UM5WPmf1HD92rTtHLzmf47Y1MxGfUKZduU9"
+  ]
+}

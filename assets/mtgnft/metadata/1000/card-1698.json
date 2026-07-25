@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #1697",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1697",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_spookydance"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_155"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Trumpet Blast"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_kinkd"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "blue"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_joskue"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "tripplebox"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "gayfish"
+    }
+  ],
+  "edition": 1760,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1697"
+      }
+    ]
+  },
+  "collection_mints": [
+    "2DVZcTD7gcyT2q9Y7REG66JFgS6Mqp2qXPz2uuU7YPJA"
+  ]
+}

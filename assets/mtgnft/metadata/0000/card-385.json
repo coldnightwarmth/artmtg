@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #384",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/384",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_chaotic"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_91"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Eldrazi Mimic"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_tiger"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_jiggly"
+    }
+  ],
+  "edition": 2052,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/384"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DopzFzLCkS7FcuGhJwGBzcRXoVGzeySrWHDrxMVGVC9S"
+  ]
+}

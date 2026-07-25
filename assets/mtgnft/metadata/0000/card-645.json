@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #644",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/644",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_butterfreelove"
+    },
+    {
+      "trait_type": "cards",
+      "value": "World-Bottling Kit"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "forcedtowatch"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_animy1"
+    }
+  ],
+  "edition": 556,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/644"
+      }
+    ]
+  },
+  "collection_mints": [
+    "53t7fSX2Eb5NWh285u2WtUJyjV8q5WUhetNxsKbDZviW"
+  ]
+}

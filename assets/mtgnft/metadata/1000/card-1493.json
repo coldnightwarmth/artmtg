@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1492",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1492",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_burningmonk"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_184"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Vines of Vastwood"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "drool"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_jay"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "vegita"
+    }
+  ],
+  "edition": 115,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1492"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Fmu66A2SdwgKQmuJBEAgdpCiGTT7gFy6cb9szq4ATVqJ"
+  ]
+}

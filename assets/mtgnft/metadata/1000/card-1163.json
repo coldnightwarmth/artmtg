@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1162",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1162",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_forrest"
+    },
+    {
+      "trait_type": "behind",
+      "value": "scrabble"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Sea Gate Wreckage"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "wavey"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_kittygrin"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "xanaxmug"
+    }
+  ],
+  "edition": 1342,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1162"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GxsNrnt6AvvjdmjgW2F7T4okNhRWFJPPDvhrDyEFrnhE"
+  ]
+}

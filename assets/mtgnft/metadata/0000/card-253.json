@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #252",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/252",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "server"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ashmouth Blade"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_glitched2"
+    },
+    {
+      "trait_type": "hat",
+      "value": "goofyhat"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "breaktop"
+    }
+  ],
+  "edition": 131,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/252"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7vY1EesngkvNWrmtP14C742MAuTC4NX3hcKbKoAKUNNg"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #301",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/301",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_eboynoise"
+    },
+    {
+      "trait_type": "behind",
+      "value": "matrixcode"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_184"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Murasa Ranger"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_myspacecore"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "fingerleft"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "nge soundtrack"
+    }
+  ],
+  "edition": 760,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/301"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Bv1ahhX886SnYzkJ58kJ3cHLoRu67YDVXJ7Zo4zUMTZv"
+  ]
+}

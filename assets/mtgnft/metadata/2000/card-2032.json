@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #2031",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2031",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_ethereal"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Sword of Body and Mind"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "killaqueenbomb"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_greenlady"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "drifellateeth"
+    },
+    {
+      "trait_type": "hat",
+      "value": "goofyhat"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "issac1"
+    }
+  ],
+  "edition": 526,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2031"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6L4s6K2fcipKrxCf6oCYqPScG25aU78JUm5L9uTPNiBs"
+  ]
+}

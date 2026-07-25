@@ -1,0 +1,82 @@
+{
+  "name": "Sweet Curse Card #48",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreih4ly57zeus6tmy4wdjcdoce4joygvjrsvgkjm5v42ulqmta3lmgi",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Trap"
+    },
+    {
+      "trait_type": "Background",
+      "value": "What is love ? baby don't hurt me"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Dr.monochrome Seaking"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Mailart5"
+    },
+    {
+      "trait_type": "Score",
+      "value": "18:06:09"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Lets go g"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Tar"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Ronaldo"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Fountain"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "2 girls 1 joint"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Swanton bomb"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Never fix"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "rust"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreih4ly57zeus6tmy4wdjcdoce4joygvjrsvgkjm5v42ulqmta3lmgi",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifa6laqqcji6nmiqypzhz7nk2avsgj4c2nnp7cbc7agzfgrligcy4",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifa6laqqcji6nmiqypzhz7nk2avsgj4c2nnp7cbc7agzfgrligcy4",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifa6laqqcji6nmiqypzhz7nk2avsgj4c2nnp7cbc7agzfgrligcy4",
+  "collection_mints": [
+    "BuoMmBhUWiDvsvmJSkpacbyXasB4vWmwxVbBNuZSqhGY"
+  ]
+}

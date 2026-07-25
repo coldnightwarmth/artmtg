@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1791",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1791",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "killerinstint"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_190"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Phantom Ninja"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_larvatar"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "blue"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "kirb"
+    }
+  ],
+  "edition": 1708,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1791"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DsBa7YKL2RXmCie67dzyvfdSV7N6CdoLzDtu2zxw47Pj"
+  ]
+}

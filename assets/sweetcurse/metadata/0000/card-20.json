@@ -1,0 +1,90 @@
+{
+  "name": "Sweet Curse Card #20",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreia7iq4ni6477lmhcvuqv2anygbvjodh4wkbh24yitnmccvkdoogra",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Bio"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Macro r"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Link DS"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Pelican petroleum"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Baddrizzzz"
+    },
+    {
+      "trait_type": "Signature",
+      "value": "Erz8"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Stained glass"
+    },
+    {
+      "trait_type": "Full art",
+      "value": "Pizzart"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Manhole cover"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Windows_2006"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "St. Anthony"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Peeping shady"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Violence in museums"
+    },
+    {
+      "trait_type": "Erzart",
+      "value": "Chocolart"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "pixelsort"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreia7iq4ni6477lmhcvuqv2anygbvjodh4wkbh24yitnmccvkdoogra",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiebjbwo2ah6traquhej6m4nm2zmaoif66mjtfaquef4qehibmjmq4",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiebjbwo2ah6traquhej6m4nm2zmaoif66mjtfaquef4qehibmjmq4",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiebjbwo2ah6traquhej6m4nm2zmaoif66mjtfaquef4qehibmjmq4",
+  "collection_mints": [
+    "FFPmhzMnDMHS1sRBHnAMfRQEHrZ6cEMihnNPXfW5QkiF"
+  ]
+}

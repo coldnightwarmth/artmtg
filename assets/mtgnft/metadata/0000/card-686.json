@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #685",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/685",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "cartmanpope"
+    },
+    {
+      "trait_type": "behind",
+      "value": "godsword"
+    },
+    {
+      "trait_type": "cards",
+      "value": "War-Name Aspirant"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_mifella2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_smile"
+    }
+  ],
+  "edition": 1251,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/685"
+      }
+    ]
+  },
+  "collection_mints": [
+    "EaGVquhh9mwqyQC3mH5tjuSKFnxBjXqhAo35T2Qb2YTW"
+  ]
+}

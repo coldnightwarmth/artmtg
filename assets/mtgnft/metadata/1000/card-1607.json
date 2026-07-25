@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #1606",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1606",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_pkmnbugluv"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Consecrate Land"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_widesmirk"
+    }
+  ],
+  "edition": 799,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1606"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7ah292x7Bmsmr253F4wUCbYqqaS7e2TDtnyzaUiNovJu"
+  ]
+}

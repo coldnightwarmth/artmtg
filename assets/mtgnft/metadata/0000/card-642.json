@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #641",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/641",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_weeniehead"
+    },
+    {
+      "trait_type": "behind",
+      "value": "matrixcode"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_188"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Culling Dais"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "blood"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "fangs"
+    },
+    {
+      "trait_type": "special top",
+      "value": "nsmbu"
+    }
+  ],
+  "edition": 967,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/641"
+      }
+    ]
+  },
+  "collection_mints": [
+    "gP1unx4h4Nudogvk59gf9xiJxwdnMHd5DN4XHECgBsT"
+  ]
+}

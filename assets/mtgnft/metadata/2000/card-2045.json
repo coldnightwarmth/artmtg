@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #2044",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2044",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_abstract2"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Drainpipe Vermin"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "chompers"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_gothstompers"
+    },
+    {
+      "trait_type": "top right",
+      "value": "lucario"
+    }
+  ],
+  "edition": 325,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2044"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CsMJXf41MECuEhx8nttZzBxb9CFYUWwrLATUXP69Hvoh"
+  ]
+}

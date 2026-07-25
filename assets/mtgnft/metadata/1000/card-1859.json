@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1858",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1858",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_forresttrain"
+    },
+    {
+      "trait_type": "behind",
+      "value": "ddr"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Verduran Enchantress"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_melty"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "rightpeek"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "jolyne"
+    }
+  ],
+  "edition": 12,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1858"
+      }
+    ]
+  },
+  "collection_mints": [
+    "EsWha2pj5nNSrNmGQh5ufFNZFWgBS3i4tL4sX4fPBnQw"
+  ]
+}

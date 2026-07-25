@@ -1,0 +1,39 @@
+{
+  "name": "Igors Quest #1286",
+  "description": "Collect over 40 unique monsters, freaks and ghouls in Igors Quest: Shadylands!",
+  "symbol": "IGORSQUEST",
+  "image": "https://we-assets.pinit.io/75t7GEYpY7uThhjQrhrg13YnUbtY6Gy5CNG1UxoisyNQ/7f2d4a0b-58cb-4c8a-a1b3-1fba7a857ecb/pack-0-nft-319.png",
+  "attributes": [
+    {
+      "trait_type": "Big Background",
+      "value": "RED"
+    },
+    {
+      "trait_type": "Card",
+      "value": "Bricked"
+    },
+    {
+      "trait_type": "Background",
+      "value": "The Worm"
+    },
+    {
+      "trait_type": "CharactersComplete",
+      "value": "Brainiac"
+    },
+    {
+      "trait_type": "Rarity Rank",
+      "value": "1166"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://we-assets.pinit.io/75t7GEYpY7uThhjQrhrg13YnUbtY6Gy5CNG1UxoisyNQ/7f2d4a0b-58cb-4c8a-a1b3-1fba7a857ecb/pack-0-nft-319.png",
+        "type": "image/png"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8W4QQEFBTu6VZGnREWfZR1keYBa2GUYu5jrteCZn2WTP"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #735",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/735",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_nam"
+    },
+    {
+      "trait_type": "behind",
+      "value": "daorcs"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Rotting Fensnake"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "perc5shine"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_mifellasmirk"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "bong"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "greymon"
+    }
+  ],
+  "edition": 1804,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/735"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5xS7kgdYwprmdjghJenueFWrKVigj4xvt54o5MRFKctk"
+  ]
+}

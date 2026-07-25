@@ -1,0 +1,19 @@
+{
+  "name": "CARD 17",
+  "symbol": "cards",
+  "description": "1 of 1 CARDS",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiclfpesu63evmtzszl7oicgfx7yrf4et7yizuumxvoco3u77kl7uq",
+  "attributes": [],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiclfpesu63evmtzszl7oicgfx7yrf4et7yizuumxvoco3u77kl7uq",
+        "type": "image/jpeg"
+      }
+    ],
+    "category": "image"
+  },
+  "collection_mints": [
+    "CQNGsJSUVgjnpJoGi67JovX5v7RjtU158xZX6zqbspua"
+  ]
+}

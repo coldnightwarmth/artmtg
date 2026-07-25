@@ -1,0 +1,35 @@
+{
+  "name": "Virginia%27s Dratini",
+  "description": "Terrorism",
+  "seller_fee_basis_points": 500,
+  "image": "https://turbo-gateway.com/-KkFs2eKPd_hwSyeexZh2Evt1s4rJ4_s43sTuWYdcEI?ext=png",
+  "properties": {
+    "files": [
+      {
+        "uri": "https://turbo-gateway.com/-KkFs2eKPd_hwSyeexZh2Evt1s4rJ4_s43sTuWYdcEI?ext=png",
+        "type": "image/png"
+      }
+    ],
+    "creators": [
+      {
+        "address": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+        "share": 100,
+        "verified": true
+      }
+    ]
+  },
+  "attributes": [],
+  "collection_mints": [
+    "2778uJ1VVdAFBy9Y7Zh36Gu1bJ8XtoNZTc8iMhFFftbN",
+    "2UFrJcUVsPfb5dXrW4Q87Bi5uAo2mRe6hPrNz2ZSKXDJ",
+    "4MrULy5BdX6t6sFkCwppj9B87SbSgqnY2ZQ2BgDgZ1jD",
+    "5udBgLRKAs3EkYftgiFU6vTjFXcw6kPRoAsoiSujSmet",
+    "7NBMNz3aUAD7ng3MxVep763TvmbhyD1JGQaKRpmxhsJY",
+    "9F7xdMc8bs1E9YPuDopCCGPgkYDAicpgvr1chRAwPGR3",
+    "CVeXrsRGPJWndf4EpaCYgzyqy6KeGudfpfKCKAS61gwY",
+    "DGhtVTkRySPfRjJZKEKhU5GBnF1QZp4CcwrgMvFWxRWM",
+    "GHHgm82wzquKVj6BfVGMEGH54X2Kh692hQxB9PG8Njcf",
+    "hGMNu6TDnNqfavPJ7GhzfPBvyNGoYTdYsFcjinfkB7q",
+    "HwWdtT2CGxsYYuEiWfhDxZELpfjEW1bLHtpS4hjVTpFW"
+  ]
+}

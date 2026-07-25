@@ -1,0 +1,98 @@
+{
+  "name": "Sweet Curse Card #97",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreigcqg73axrc2hsn7csxtjmjmkwifi3f77y2tkixw34qtze7gjkrqi",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Bio"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Micro - Peacock"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Ho-oh"
+    },
+    {
+      "trait_type": "Description",
+      "value": "State cattle3"
+    },
+    {
+      "trait_type": "Score",
+      "value": "Tupac chicken"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Jet mj"
+    },
+    {
+      "trait_type": "Signature",
+      "value": "Erz Wordart2"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Gold"
+    },
+    {
+      "trait_type": "Full art",
+      "value": "Time out"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Fypi"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Sonizard"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Music tech"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "St. Anthony"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Winamp3"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Pachimon bombardilo"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Whole Blood"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "pixel"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "on"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreigcqg73axrc2hsn7csxtjmjmkwifi3f77y2tkixw34qtze7gjkrqi",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihly3kv66dwbx66ahh7bpgeda26mh5d4nj4vpseifhn3b4czslj6y",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihly3kv66dwbx66ahh7bpgeda26mh5d4nj4vpseifhn3b4czslj6y",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihly3kv66dwbx66ahh7bpgeda26mh5d4nj4vpseifhn3b4czslj6y",
+  "collection_mints": [
+    "Ed51QhRyS3bJ54gN47VjxDPeAXwuifhJ77pxAio5SjQH"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "name": "Sweet Curse Card #83",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreihek7q6smlnuemnyd2n7kzdwfvbpyj33nijk3y77opsheylwl3uvy",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Noise"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Error"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Joancornella kim"
+    },
+    {
+      "trait_type": "Description",
+      "value": "State cattle3"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Oudmourte"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Cola"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Hong Kong Phooey Px"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Jacksachs3"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Splash"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "YouruncleStar"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Jeune n"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "pixel"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreihek7q6smlnuemnyd2n7kzdwfvbpyj33nijk3y77opsheylwl3uvy",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidxufgtm5uxbeql7newznhdxteocmoajbgerkkmqnbvjbvtcrm2eq",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidxufgtm5uxbeql7newznhdxteocmoajbgerkkmqnbvjbvtcrm2eq",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidxufgtm5uxbeql7newznhdxteocmoajbgerkkmqnbvjbvtcrm2eq",
+  "collection_mints": [
+    "4RRJQi5NF3NN1Sh5jkJAHWd1vgRpY8Q9RcWa8ifphXe5"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #786",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/786",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "colage"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Primordial Hydra"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_spongebob"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "blue"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "fingerright"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_legobuu"
+    }
+  ],
+  "edition": 1784,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/786"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7ofvaixvRpNT2hGW68hT8eXD2Cu7hGgSfx2ZC4nSnDcm"
+  ]
+}

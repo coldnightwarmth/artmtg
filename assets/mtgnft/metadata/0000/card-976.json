@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #975",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/975",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_black"
+    },
+    {
+      "trait_type": "cards",
+      "value": "High Sentinels of Arashin"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "asspizzaalienn"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_animu2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_melty"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_schoolgirl"
+    }
+  ],
+  "edition": 579,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/975"
+      }
+    ]
+  },
+  "collection_mints": [
+    "STLmcNRd9qB46dEVKfAHRd5EWVzSKfvSJxGTUbq2BVh"
+  ]
+}

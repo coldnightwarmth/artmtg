@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #1830",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1830",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_weeniehead"
+    },
+    {
+      "trait_type": "behind",
+      "value": "swirledtv"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_181"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Rabid Bite"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "digiogsblur"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "goofy"
+    },
+    {
+      "trait_type": "hat",
+      "value": "halogreen"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "hoohdisplay"
+    }
+  ],
+  "edition": 1238,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1830"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GyS4oFeMS3nKupK3o1wh3AMuowzCUmy2NZzXXmvuALB7"
+  ]
+}

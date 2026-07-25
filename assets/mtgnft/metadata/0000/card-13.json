@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #12",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/12",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_tabs1"
+    },
+    {
+      "trait_type": "behind",
+      "value": "matrixcode"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Expunge"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "mifella1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_bigyawn"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "issac1"
+    }
+  ],
+  "edition": 1594,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/12"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Fi9f1RrzDqkCgy3y8iuizZ4gA58cATeh9GnWwFcoRiJ4"
+  ]
+}

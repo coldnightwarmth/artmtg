@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1704",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1704",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_usa"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Locust Swarm"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_mifella2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_moneypls"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "vapeleft"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "spiro"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mewtwo"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "angemonprotek"
+    }
+  ],
+  "edition": 534,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1704"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5S3HT6y5Zbg2D7zZsNs1eutMh5BjUtA89G6KZk4CpSxV"
+  ]
+}

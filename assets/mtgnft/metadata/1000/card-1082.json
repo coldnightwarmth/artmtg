@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1081",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1081",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_dxmdreams"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_37"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ainok Tracker"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "cursed"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "fingerright"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "charazard"
+    }
+  ],
+  "edition": 565,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1081"
+      }
+    ]
+  },
+  "collection_mints": [
+    "JAhdMBrcbyJD3i5LCFH9P8NGGo4yuij9zr9c1HTiENpo"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #165",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/165",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_nomansland"
+    },
+    {
+      "trait_type": "behind",
+      "value": "gutsdragonslayer"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_97"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Eel Umbra"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "saskue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_drools"
+    }
+  ],
+  "edition": 587,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/165"
+      }
+    ]
+  },
+  "collection_mints": [
+    "ExPbw6mSMea6yjrhPiiLcBbaJ72hdd4cRvJpQN8CcS4p"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1376",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1376",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_boom"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Barrin's Unmaking"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "glockchain"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_widesmirk"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "leftpeek"
+    }
+  ],
+  "edition": 1391,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1376"
+      }
+    ]
+  },
+  "collection_mints": [
+    "PRAJ6fnDqJkV98unDsdwPfxh2k8nhV48XvrZstMw1T3"
+  ]
+}

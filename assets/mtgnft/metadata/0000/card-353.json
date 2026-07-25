@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #352",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/352",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_changeofheart"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Silver Myr"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "joker"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "warrencoin"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_fox"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_suiclady"
+    }
+  ],
+  "edition": 1366,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/352"
+      }
+    ]
+  },
+  "collection_mints": [
+    "AsHV9Zeo4fGWAsYCoCZx8sV9yP71umijeZrteCMLZQAZ"
+  ]
+}

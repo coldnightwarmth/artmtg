@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #1427",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1427",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_coffeehouseart"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ongoing Investigation"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_perc5"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "daurk"
+    }
+  ],
+  "edition": 1649,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1427"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5cgovM1kMXznGr64986DjEcA7cDvtbcwP4VXtXq9LCZy"
+  ]
+}

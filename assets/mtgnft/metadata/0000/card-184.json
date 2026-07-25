@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #183",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/183",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_mirror"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Feast of Blood"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "toonblueeyes"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "axe"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "weatherreport"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "pkmnsilver"
+    }
+  ],
+  "edition": 2144,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/183"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5uXRG72Cn1k7SExprfA1EEd5Gq2CNa7dYHWKEkJPw76j"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1194",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1194",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_3dnetmask"
+    },
+    {
+      "trait_type": "behind",
+      "value": "Untitled_Artwork-1"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Selfless Cathar"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_droopy"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "thumbsup"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "swolearm"
+    }
+  ],
+  "edition": 163,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1194"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DAQGuWwYkMbrbRLbY3ABpw71qoqmDa2Ft52Xf4SCoQzP"
+  ]
+}

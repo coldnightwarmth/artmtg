@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #1757",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1757",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_cacti"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_47"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Sea Gate Oracle"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_mifella2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_bnw"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "theGodfellaZ"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_monke"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_luna"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "misalute"
+    }
+  ],
+  "edition": 1074,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1757"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GSTpQbK3YzfQq9xhm2hWrpq1mCQczLkHwaGAjgZzC99U"
+  ]
+}

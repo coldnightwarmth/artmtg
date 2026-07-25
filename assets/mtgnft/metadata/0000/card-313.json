@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #312",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/312",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_forresttrain"
+    },
+    {
+      "trait_type": "behind",
+      "value": "swirledtv"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Rugged Highlands"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "perc5shine"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_kinkd"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "red"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "lolipop"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "gucci"
+    }
+  ],
+  "edition": 1087,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/312"
+      }
+    ]
+  },
+  "collection_mints": [
+    "J459zt3JUzsMK3FkhGG63kM9ZtrvAgDB7HDSSmeDB4s7"
+  ]
+}

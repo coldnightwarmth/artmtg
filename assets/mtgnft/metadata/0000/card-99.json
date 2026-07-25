@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #98",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/98",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "bloodygoth"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_97"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Lifesmith"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_animu2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_69"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "pinkhearts"
+    }
+  ],
+  "edition": 1922,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/98"
+      }
+    ]
+  },
+  "collection_mints": [
+    "C3VcisSq1a2qz85MyBag8K6piNhXpavoWA8WopXqTcXc"
+  ]
+}

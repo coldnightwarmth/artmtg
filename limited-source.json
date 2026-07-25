@@ -1,0 +1,887 @@
+{
+  "fetchedAt": "2026-07-24T19:39:12.456Z",
+  "source": "https://lauraine-qytyxk-fast-mainnet.helius-rpc.com",
+  "tensorPage": "https://www.tensor.trade/portfolio?wallet=97qxpvG3zmhbq9ie91bDgN81xqUq7ij5HrVWG5RN9MRv&portSlug=8ab4b754-1a80-4d07-93d8-12e94c1a1c6e",
+  "collectionSlug": null,
+  "collectionDisplaySlug": null,
+  "membershipPolicy": "Exactly the configured curated Solana mint IDs, in configured order",
+  "assetRevision": "limited-cutouts-3",
+  "animationRevision": "limited-animation-1",
+  "liveMintCount": 8,
+  "tensorFetchedMintCount": 8,
+  "tensorReportedMintCount": null,
+  "excludedMintCount": 0,
+  "exclusionRules": {
+    "mintIds": []
+  },
+  "cardCount": 8,
+  "groupedDuplicateMintCount": 0,
+  "metadataFetchFailureCount": 0,
+  "liveMintIdsSha256": "b9a45838690e927a79707aa4405dcac7a0523602ca9882b432b9f740825bc083",
+  "tensorLiveMintIdsSha256": "b9a45838690e927a79707aa4405dcac7a0523602ca9882b432b9f740825bc083",
+  "instrument": {
+    "id": "limited:explicit-mints",
+    "slug": null,
+    "slugDisplay": null,
+    "name": "Limited 1/1s",
+    "symbol": "LIMITED",
+    "imageUri": null,
+    "description": "Curated explicit Solana mint set",
+    "tokenStandard": null,
+    "tokenProgram": null,
+    "compressed": null,
+    "statsV2": {
+      "numMints": null
+    }
+  },
+  "conversion": {
+    "format": "webp",
+    "width": 600,
+    "height": 840,
+    "quality": 75,
+    "effort": 4,
+    "fit": "contain",
+    "background": "#111111",
+    "removeExteriorWhite": false,
+    "cardExtractions": {
+      "5JFC9TFEdNXB12WRuterfFukHVogCYuHzehTFuqmLkpc": {
+        "mode": "polygon",
+        "preferOriginal": true,
+        "padding": 0,
+        "points": [
+          [
+            0.04938271604938271,
+            0.09632224168126094
+          ],
+          [
+            0.8962962962962963,
+            0.09632224168126094
+          ],
+          [
+            0.8962962962962963,
+            0.9632224168126094
+          ],
+          [
+            0.04938271604938271,
+            0.9632224168126094
+          ]
+        ]
+      },
+      "BsUmejVkYwLy5WDoYxvtdmbKjig6WTXjQ1MfpESXo6Ay": {
+        "mode": "dark-exterior",
+        "preferOriginal": true,
+        "maximum": 24,
+        "closeRadius": 3
+      },
+      "BWM9X8buLSaXzMYmWhP8oxT9DaCgp7Wy3xxDYTskwZSS": {
+        "mode": "dark-exterior",
+        "preferOriginal": false,
+        "maximum": 18,
+        "closeRadius": 3
+      }
+    },
+    "imageProxy": "https://prod-image-cdn.tensor.trade/images/600x600/freeze=true"
+  },
+  "animationConversion": {
+    "format": "animated webp",
+    "width": 600,
+    "height": 840,
+    "quality": 75,
+    "effort": 4,
+    "fit": "contain",
+    "background": "#111111",
+    "spriteWidth": 340,
+    "spriteQuality": 76
+  },
+  "sharedBack": {
+    "source": "english yugioh card back",
+    "color": null,
+    "file": "assets/limited/backs/limited-back.webp",
+    "width": 699,
+    "height": 1017
+  },
+  "liveAssets": [
+    {
+      "onchainId": "BWM9X8buLSaXzMYmWhP8oxT9DaCgp7Wy3xxDYTskwZSS",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "drifella card 1",
+      "imageUri": "https://arweave.net/pTPkaZJNj6cOKfy3gwF2Ch3bhB3K8--rzkbRRGuA01k?ext=PNG",
+      "animationUri": "",
+      "metadataUri": "https://arweave.net/NsHNH6HmT9l4abyC7cLK6DkvGSUUAmbY8qqEqsC7D0E",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://arweave.net/pTPkaZJNj6cOKfy3gwF2Ch3bhB3K8--rzkbRRGuA01k?ext=PNG"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "",
+      "tokenStandard": "V1_NFT",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "BsUmejVkYwLy5WDoYxvtdmbKjig6WTXjQ1MfpESXo6Ay",
+      "owner": "3B5M8dmFYnwN3KYSAnUk8XDBCuRVGABJneuVNkc1UJkj",
+      "name": "Drifella Card 2",
+      "imageUri": "https://gateway.irys.xyz/ZuRWrnyHhgNCMUVI0m2Uq9J4jozKCcTjl1DVtX0g-WY/IMG_8722%203.PNG",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/qJt0-oaFtJ3LBWKsGgMBO72RzVwLWc4K9bMwqK0uyd0/0",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ZuRWrnyHhgNCMUVI0m2Uq9J4jozKCcTjl1DVtX0g-WY/IMG_8722%203.PNG"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "MplCoreAsset",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "5JFC9TFEdNXB12WRuterfFukHVogCYuHzehTFuqmLkpc",
+      "owner": "EQqzvxot1zHDdejpPi1C6ZmNyBWa1amLHVpNvTCUDLzW",
+      "name": "MiFella Card 004: Drifella Ball",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifvzsbax4l5ma4ek64heihqhiaub6cpqhuhzvtlbwcypp33zhiuhu",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeie5zykqt3brkitn5l2ubs7cbhbagwr5yqwvb5hhmg7ykhbx4nsy4q/0",
+      "files": [
+        {
+          "type": "image/jpeg",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifvzsbax4l5ma4ek64heihqhiaub6cpqhuhzvtlbwcypp33zhiuhu"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "MplCoreAsset",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "7USCewaUGspP4ByhAiV8a6MRbGZUbdho4fPTE1AwpF4q",
+      "owner": "97qxpvG3zmhbq9ie91bDgN81xqUq7ij5HrVWG5RN9MRv",
+      "name": "Beckoning Bell No 59822133",
+      "imageUri": "https://turbo-gateway.com/zOuW-o9_lg4O_JTfZ2osoE6nhonLWfvvb1sOQl1JotE?ext=png",
+      "animationUri": "",
+      "metadataUri": "https://turbo-gateway.com/XM1PgiyT-lbt3zWs_BjvX3Yh5XYdf84mYVNUc6yfpTk",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://turbo-gateway.com/zOuW-o9_lg4O_JTfZ2osoE6nhonLWfvvb1sOQl1JotE?ext=png"
+        }
+      ],
+      "attributes": [
+        {
+          "trait_type": "FLOOR7778777",
+          "value": "psalm00000001"
+        }
+      ],
+      "tokenProgram": "",
+      "tokenStandard": "V1_NFT",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "3MShd9mS5PeaShUTXYrZ7hFF4xju2nJKXE3sxGLHPy7C",
+      "owner": "97qxpvG3zmhbq9ie91bDgN81xqUq7ij5HrVWG5RN9MRv",
+      "name": "☃☃CCsDOsSOTN☃☃angel0003",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiee2ioguqbphn2ko4cxq5y3idk7avl35qf6oyqf5t6w77r5s64dq4",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibwaadl7ym34gb7px2ao7jf5ko5yu2nhfz7nphogmz37xgcvcm2ae/1",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiee2ioguqbphn2ko4cxq5y3idk7avl35qf6oyqf5t6w77r5s64dq4"
+        }
+      ],
+      "attributes": [
+        {
+          "trait_type": "FLOOR1 ☆ Strawberry 7,106, RetailersWholesalers CNCR",
+          "value": "°ʚ(๑මั‸මั๑)ɞ♡°unlovable0034"
+        },
+        {
+          "trait_type": "FLOOR111181111 ☆ a mirror in pitch dark reflects nothing",
+          "value": "PSP - SD Gundam G Generation Overworld - Map Sprites - Map Effects txd_02(m06380@3,22)☃☃LinearReverseCastle"
+        },
+        {
+          "trait_type": "FLOOR111191111 ☆ the hungry spoke with the hungry about hunger",
+          "value": "March 33 GGG"
+        },
+        {
+          "trait_type": "FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃°",
+          "value": "PC Computer - MapleStory - Ulu City Background - cloudian6_solarize_value_inverse_linear_inverse☃☃ValueReverseCastle"
+        },
+        {
+          "trait_type": "FLOOR44 ☆ SkyLobby ♡⛪︎⛪︎⛪︎♡",
+          "value": "invisibleGrundo_born16⛇01⛇2024_died11⛇09⛇2001"
+        },
+        {
+          "trait_type": "FLOOR111181111 ☆ a mirror in pitch dark reflects nothing",
+          "value": "PC _ Computer - Pocket Mirror - User Interface - Pause Menu☃☃ValueReverseCastle"
+        },
+        {
+          "trait_type": "FLOOR111191111 ☆ the hungry spoke with the hungry about hunger",
+          "value": "°ʚ(๑මั‸මั๑)ɞ♡°unlovable0233☃☃LinearReverseCastle"
+        },
+        {
+          "trait_type": "FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃°",
+          "value": "PC Computer - MapleStory - Ulu City Background - cloudian4"
+        },
+        {
+          "trait_type": "FLOOR78 ☆ SkyLobby ♡⛫⛫⛫♡",
+          "value": "invisibleZafara_born11⛇09⛇2001_died11⛇09⛇2001"
+        },
+        {
+          "trait_type": "FLOOR111181111 ☆ a mirror in pitch dark reflects nothing",
+          "value": "Persona4 TITLE.BIN_6☃☃CastleCastle"
+        },
+        {
+          "trait_type": "FLOOR111191111 ☆ the hungry spoke with the hungry about hunger",
+          "value": "March 33 GGG"
+        },
+        {
+          "trait_type": "FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃°",
+          "value": "PC Computer - MapleStory - Ulu City Background - cloudian4_value_inverse_linear_inverse☃☃LinearReverseCastle"
+        },
+        {
+          "trait_type": "FLOOR108 ☆ MechanicalPenthouse ♡⛪︎⛪︎⛪︎♡",
+          "value": "WonderSwan _ WSC - One Piece_ Grand Battle Swan Colosseum - Other - Card Collection - Luffy☃☃LinearReverseCastle"
+        },
+        {
+          "trait_type": "FLOOR111181111 ☆ a mirror in pitch dark reflects nothing",
+          "value": "PlayStation - Aquarian Age_ Tokyo Wars (JPN) - Miscellaneous - Effects - lightningXXX"
+        },
+        {
+          "trait_type": "FLOOR111191111 ☆ the hungry spoke with the hungry about hunger",
+          "value": "March 23 NNN"
+        },
+        {
+          "trait_type": "FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃°",
+          "value": "PC Computer - MapleStory - Ulu City Background - cloudian6_value_inverse_linear_inverse"
+        },
+        {
+          "trait_type": "FLOOR109 ☆ MechanicalPenthouse ♡⛫⛫⛫♡",
+          "value": "invisibleUsul_born28⛇11⛇2019_died11⛇09⛇2001"
+        },
+        {
+          "trait_type": "FLOOR111181111 ☆ a mirror in pitch dark reflects nothing",
+          "value": "SNES - Star Ocean (JPN) - Miscellaneous - Fog Parallax☃☃ValueReverseCastle"
+        },
+        {
+          "trait_type": "FLOOR111191111 ☆ the hungry spoke with the hungry about hunger",
+          "value": "Pasted Layer #8 unicorn"
+        },
+        {
+          "trait_type": "FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃°",
+          "value": "PC Computer - MapleStory - Ulu City Background - cloudian2 copy"
+        },
+        {
+          "trait_type": "FLOOR265252859812191058636308479999999 ☆ star3_GlassPond28_SaintValentine",
+          "value": "3DS - Swapdoodle - 2D copy 3☃☃CastleCastle"
+        },
+        {
+          "trait_type": "FLOOR99999199999 ☆ star3_GlassPond496_SaintJoan",
+          "value": "PC _ Computer - MapleStory - Monsters (Event Monsters_ Anniversary) - Cake Mob (2nd) byMageker☃☃ValueReverseCastle☃☃LinearReverseCastle"
+        },
+        {
+          "trait_type": "FLOOR111191111 ☆ the hungry spoke with the hungry about hunger",
+          "value": "March 27 BBB 333☃☃CastleCastle"
+        },
+        {
+          "trait_type": "FLOOR263130836933693530167218012159999999 ☆ star3_GlassPond444_ChateauMariyasha",
+          "value": "giraffeGiraffe"
+        },
+        {
+          "trait_type": "FLOOR7778777 ☆ the Library of Serko and Simon °ʚ(๑මั‸મั๑)ɞ☃☃°",
+          "value": "☃☃CCsDOsSOTN☃☃angel0003 ♡♡ layer=FLOOR1 ☆ Strawberry 7,106, RetailersWholesalers CNCR ♡♡ file=°ʚ(๑මั‸මั๑)ɞ♡°unlovable0034.png ♡♡ opacity=1.00000000 ♡♡ layer=FLOOR111181111 ☆ a mirror in pitch dark reflects nothing ♡♡ file=PSP - SD Gundam G Generation Overworld - Map Sprites - Map Effects txd_02(m06380@3,22)☃☃LinearReverseCastle.png ♡♡ opacity=0.54890523 ♡♡ layer=FLOOR111191111 ☆ the hungry spoke with the hungry about hunger ♡♡ file=March 33 GGG.png ♡♡ opacity=0.35926132 ♡♡ layer=FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃° ♡♡ file=PC Computer - MapleStory - Ulu City Background - cloudian6_solarize_value_inverse_linear_inverse☃☃ValueReverseCastle.png ♡♡ opacity=0.36551734 ♡♡ layer=FLOOR44 ☆ SkyLobby ♡⛪︎⛪︎⛪︎♡ ♡♡ file=invisibleGrundo_born16⛇01⛇2024_died11⛇09⛇2001.png ♡♡ opacity=0.77777777 ♡♡ layer=FLOOR111181111 ☆ a mirror in pitch dark reflects nothing ♡♡ file=PC _ Computer - Pocket Mirror - User Interface - Pause Menu☃☃ValueReverseCastle.png ♡♡ opacity=0.36414238 ♡♡ layer=FLOOR111191111 ☆ the hungry spoke with the hungry about hunger ♡♡ file=°ʚ(๑මั‸මั๑)ɞ♡°unlovable0233☃☃LinearReverseCastle.png ♡♡ opacity=0.45229052 ♡♡ layer=FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃° ♡♡ file=PC Computer - MapleStory - Ulu City Background - cloudian4.png ♡♡ opacity=0.39814723 ♡♡ layer=FLOOR78 ☆ SkyLobby ♡⛫⛫⛫♡ ♡♡ file=invisibleZafara_born11⛇09⛇2001_died11⛇09⛇2001.png ♡♡ opacity=0.88888888 ♡♡ layer=FLOOR111181111 ☆ a mirror in pitch dark reflects nothing ♡♡ file=Persona4 TITLE.BIN_6☃☃CastleCastle.png ♡♡ opacity=0.23211944 ♡♡ layer=FLOOR111191111 ☆ the hungry spoke with the hungry about hunger ♡♡ file=March 33 GGG.png ♡♡ opacity=0.42868127 ♡♡ layer=FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃° ♡♡ file=PC Computer - MapleStory - Ulu City Background - cloudian4_value_inverse_linear_inverse☃☃LinearReverseCastle.png ♡♡ opacity=0.30279232 ♡♡ layer=FLOOR108 ☆ MechanicalPenthouse ♡⛪︎⛪︎⛪︎♡ ♡♡ file=WonderSwan _ WSC - One Piece_ Grand Battle Swan Colosseum - Other - Card Collection - Luffy☃☃LinearReverseCastle.png ♡♡ opacity=0.77777777 ♡♡ layer=FLOOR111181111 ☆ a mirror in pitch dark reflects nothing ♡♡ file=PlayStation - Aquarian Age_ Tokyo Wars (JPN) - Miscellaneous - Effects - lightningXXX.png ♡♡ opacity=0.17809520 ♡♡ layer=FLOOR111191111 ☆ the hungry spoke with the hungry about hunger ♡♡ file=March 23 NNN.png ♡♡ opacity=0.57482826 ♡♡ layer=FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃° ♡♡ file=PC Computer - MapleStory - Ulu City Background - cloudian6_value_inverse_linear_inverse.png ♡♡ opacity=0.17519808 ♡♡ layer=FLOOR109 ☆ MechanicalPenthouse ♡⛫⛫⛫♡ ♡♡ file=invisibleUsul_born28⛇11⛇2019_died11⛇09⛇2001.png ♡♡ opacity=0.55555555 ♡♡ layer=FLOOR111181111 ☆ a mirror in pitch dark reflects nothing ♡♡ file=SNES - Star Ocean (JPN) - Miscellaneous - Fog Parallax☃☃ValueReverseCastle.png ♡♡ opacity=0.22959715 ♡♡ layer=FLOOR111191111 ☆ the hungry spoke with the hungry about hunger ♡♡ file=Pasted Layer #8 unicorn.png ♡♡ opacity=0.49093087 ♡♡ layer=FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃° ♡♡ file=PC Computer - MapleStory - Ulu City Background - cloudian2 copy.png ♡♡ opacity=0.49337529 ♡♡ layer=FLOOR265252859812191058636308479999999 ☆ star3_GlassPond28_SaintValentine ♡♡ file=3DS - Swapdoodle - 2D copy 3☃☃CastleCastle.png ♡♡ opacity=0.53514863 ♡♡ layer=FLOOR99999199999 ☆ star3_GlassPond496_SaintJoan ♡♡ file=PC _ Computer - MapleStory - Monsters (Event Monsters_ Anniversary) - Cake Mob (2nd) byMageker☃☃ValueReverseCastle☃☃LinearReverseCastle.png ♡♡ opacity=0.56191245 ♡♡ layer=FLOOR111191111 ☆ the hungry spoke with the hungry about hunger ♡♡ file=March 27 BBB 333☃☃CastleCastle.png ♡♡ opacity=0.45652683 ♡♡ layer=FLOOR263130836933693530167218012159999999 ☆ star3_GlassPond444_ChateauMariyasha ♡♡ file=giraffeGiraffe.png ♡♡ opacity=1.00000000"
+        }
+      ],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "MplCoreAsset",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "6QZbX2WeHXMvaWrqvGSJy5A5wdjyWkHdMR76HG4Qrdad",
+      "owner": "97qxpvG3zmhbq9ie91bDgN81xqUq7ij5HrVWG5RN9MRv",
+      "name": "☃☃CCsDOsSOTN☃☃angel0001",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibqcjdidqjawke34qzbdjksul7hqjiufrecrmvgsswf27epym3hyq",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibwaadl7ym34gb7px2ao7jf5ko5yu2nhfz7nphogmz37xgcvcm2ae/0",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibqcjdidqjawke34qzbdjksul7hqjiufrecrmvgsswf27epym3hyq"
+        }
+      ],
+      "attributes": [
+        {
+          "trait_type": "FLOOR1 ☆ the Mall at the World Trade Center",
+          "value": "°ʚ(๑මั‸මั๑)ɞ♡°unlovable0001"
+        },
+        {
+          "trait_type": "FLOOR111181111 ☆ a mirror in pitch dark reflects nothing",
+          "value": "Persona4 TITLE.BIN_5☃☃ValueReverseCastle"
+        },
+        {
+          "trait_type": "FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃°",
+          "value": "PC Computer - MapleStory - Ulu City Background - cloudian1_value_inverse_linear_inverse☃☃LinearReverseCastle"
+        },
+        {
+          "trait_type": "FLOOR44 ☆ SkyLobby ♡⛪︎⛪︎⛪︎♡",
+          "value": "WonderSwan _ WSC - One Piece_ Grand Battle Swan Colosseum - Other - Card Collection - Sanji☃☃LinearReverseCastle"
+        },
+        {
+          "trait_type": "FLOOR111181111 ☆ a mirror in pitch dark reflects nothing",
+          "value": "Nintendo Switch - Disgaea 5 Complete - Weapons - Weapons (Staff Effects) - 40C: Yggdrasil"
+        },
+        {
+          "trait_type": "FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃°",
+          "value": "PC Computer - MapleStory - Ulu City Background - cloudian5_solarize_value_inverse_linear_inverse☃☃ValueReverseCastle"
+        },
+        {
+          "trait_type": "FLOOR78 ☆ SkyLobby ♡⛫⛫⛫♡",
+          "value": "invisibleSkeith_born25⛇09⛇2003_died11⛇09⛇2001"
+        },
+        {
+          "trait_type": "FLOOR111181111 ☆ a mirror in pitch dark reflects nothing",
+          "value": "PSP - SD Gundam G Generation Overworld - Map Sprites - Map Effects txd_03(m06380@4,22)☃☃LinearReverseCastle"
+        },
+        {
+          "trait_type": "FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃°",
+          "value": "PC Computer - MapleStory - Ulu City Background - cloudian4_value_inverse"
+        },
+        {
+          "trait_type": "FLOOR108 ☆ MechanicalPenthouse ♡⛪︎⛪︎⛪︎♡",
+          "value": "WonderSwan _ WSC - One Piece_ Grand Battle Swan Colosseum - Other - Card Collection - Nami☃☃ValueReverseCastle"
+        },
+        {
+          "trait_type": "FLOOR111181111 ☆ a mirror in pitch dark reflects nothing",
+          "value": "Persona4 TITLE.BIN_5"
+        },
+        {
+          "trait_type": "FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃°",
+          "value": "PC Computer - MapleStory - Ulu City Background - cloudian3_value_inverse"
+        },
+        {
+          "trait_type": "FLOOR109 ☆ MechanicalPenthouse ♡⛫⛫⛫♡",
+          "value": "invisibleKau_born19⛇06⛇2007_died11⛇09⛇2001"
+        },
+        {
+          "trait_type": "FLOOR111181111 ☆ a mirror in pitch dark reflects nothing",
+          "value": "Persona4 TITLE.BIN_7"
+        },
+        {
+          "trait_type": "FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃°",
+          "value": "PC Computer - MapleStory - Ulu City Background - cloudian5_value_inverse_linear_inverse☃☃ValueReverseCastle"
+        },
+        {
+          "trait_type": "FLOOR87178291199 ☆ star3_CasperWY_雲の砦Junior",
+          "value": "PC _ Computer - Pocket Mirror - Maps - Enjel Realm☃☃ValueReverseCastle"
+        },
+        {
+          "trait_type": "FLOOR265252859812191058636308479999999 ☆ star3_GlassPond28_SaintValentine",
+          "value": "%22Ode to Gothic King Cobra%22-page1of5 copy"
+        },
+        {
+          "trait_type": "FLOOR99999199999 ☆ star3_GlassPond496_SaintJoan",
+          "value": "Game Boy Advance - Ed, Edd 'n Eddy_ Jawbreakers! - Characters - Plank☃☃LinearReverseCastle"
+        },
+        {
+          "trait_type": "FLOOR1 ☆ the Mall at the World Trade Center",
+          "value": "°ʚ(๑මั‸මั๑)ɞ♡°unlovable0001"
+        },
+        {
+          "trait_type": "FLOOR263130836933693530167218012159999999 ☆ star3_GlassPond444_ChateauMariyasha",
+          "value": "giraffeCirno"
+        },
+        {
+          "trait_type": "FLOOR7778777 ☆ the Library of Serko and Simon °ʚ(๑මั‸મั๑)ɞ☃☃°",
+          "value": "☃☃CCsDOsSOTN☃☃angel0001 ♡♡ layer=FLOOR1 ☆ the Mall at the World Trade Center ♡♡ file=°ʚ(๑මั‸මั๑)ɞ♡°unlovable0001.png ♡♡ opacity=1.00000000 ♡♡ layer=FLOOR111181111 ☆ a mirror in pitch dark reflects nothing ♡♡ file=Persona4 TITLE.BIN_5☃☃ValueReverseCastle.png ♡♡ opacity=0.32520026 ♡♡ layer=FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃° ♡♡ file=PC Computer - MapleStory - Ulu City Background - cloudian1_value_inverse_linear_inverse☃☃LinearReverseCastle.png ♡♡ opacity=0.20943918 ♡♡ layer=FLOOR44 ☆ SkyLobby ♡⛪︎⛪︎⛪︎♡ ♡♡ file=WonderSwan _ WSC - One Piece_ Grand Battle Swan Colosseum - Other - Card Collection - Sanji☃☃LinearReverseCastle.png ♡♡ opacity=0.11111111 ♡♡ layer=FLOOR111181111 ☆ a mirror in pitch dark reflects nothing ♡♡ file=Nintendo Switch - Disgaea 5 Complete - Weapons - Weapons (Staff Effects) - 40C: Yggdrasil.png ♡♡ opacity=0.25893470 ♡♡ layer=FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃° ♡♡ file=PC Computer - MapleStory - Ulu City Background - cloudian5_solarize_value_inverse_linear_inverse☃☃ValueReverseCastle.png ♡♡ opacity=0.44555253 ♡♡ layer=FLOOR78 ☆ SkyLobby ♡⛫⛫⛫♡ ♡♡ file=invisibleSkeith_born25⛇09⛇2003_died11⛇09⛇2001.png ♡♡ opacity=0.11111111 ♡♡ layer=FLOOR111181111 ☆ a mirror in pitch dark reflects nothing ♡♡ file=PSP - SD Gundam G Generation Overworld - Map Sprites - Map Effects txd_03(m06380@4,22)☃☃LinearReverseCastle.png ♡♡ opacity=0.48182550 ♡♡ layer=FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃° ♡♡ file=PC Computer - MapleStory - Ulu City Background - cloudian4_value_inverse.png ♡♡ opacity=0.24362914 ♡♡ layer=FLOOR108 ☆ MechanicalPenthouse ♡⛪︎⛪︎⛪︎♡ ♡♡ file=WonderSwan _ WSC - One Piece_ Grand Battle Swan Colosseum - Other - Card Collection - Nami☃☃ValueReverseCastle.png ♡♡ opacity=0.33333333 ♡♡ layer=FLOOR111181111 ☆ a mirror in pitch dark reflects nothing ♡♡ file=Persona4 TITLE.BIN_5.png ♡♡ opacity=0.54348957 ♡♡ layer=FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃° ♡♡ file=PC Computer - MapleStory - Ulu City Background - cloudian3_value_inverse.png ♡♡ opacity=0.53965896 ♡♡ layer=FLOOR109 ☆ MechanicalPenthouse ♡⛫⛫⛫♡ ♡♡ file=invisibleKau_born19⛇06⛇2007_died11⛇09⛇2001.png ♡♡ opacity=0.99999999 ♡♡ layer=FLOOR111181111 ☆ a mirror in pitch dark reflects nothing ♡♡ file=Persona4 TITLE.BIN_7.png ♡♡ opacity=0.38756578 ♡♡ layer=FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃° ♡♡ file=PC Computer - MapleStory - Ulu City Background - cloudian5_value_inverse_linear_inverse☃☃ValueReverseCastle.png ♡♡ opacity=0.25384416 ♡♡ layer=FLOOR87178291199 ☆ star3_CasperWY_雲の砦Junior ♡♡ file=PC _ Computer - Pocket Mirror - Maps - Enjel Realm☃☃ValueReverseCastle.png ♡♡ opacity=0.50550320 ♡♡ layer=FLOOR265252859812191058636308479999999 ☆ star3_GlassPond28_SaintValentine ♡♡ file=%22Ode to Gothic King Cobra%22-page1of5 copy.png ♡♡ opacity=0.39971767 ♡♡ layer=FLOOR99999199999 ☆ star3_GlassPond496_SaintJoan ♡♡ file=Game Boy Advance - Ed, Edd 'n Eddy_ Jawbreakers! - Characters - Plank☃☃LinearReverseCastle.png ♡♡ opacity=0.43293066 ♡♡ layer=FLOOR1 ☆ the Mall at the World Trade Center ♡♡ file=°ʚ(๑මั‸මั๑)ɞ♡°unlovable0001.png ♡♡ opacity=0.14930352 ♡♡ layer=FLOOR263130836933693530167218012159999999 ☆ star3_GlassPond444_ChateauMariyasha ♡♡ file=giraffeCirno.png ♡♡ opacity=1.00000000"
+        }
+      ],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "MplCoreAsset",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "D7A4LK3B5qpL4WyM1pqBsoCE8tM8XFEybYCU8A5StvLc",
+      "owner": "97qxpvG3zmhbq9ie91bDgN81xqUq7ij5HrVWG5RN9MRv",
+      "name": "☃☃CCsDOsSOTN☃☃angel0021",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihxo4f7kurg5bijkrvljnmzqftaasis2ypvna3v5e6uputykquana",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibwaadl7ym34gb7px2ao7jf5ko5yu2nhfz7nphogmz37xgcvcm2ae/3",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihxo4f7kurg5bijkrvljnmzqftaasis2ypvna3v5e6uputykquana"
+        }
+      ],
+      "attributes": [
+        {
+          "trait_type": "FLOOR1 ☆ the Mall at the World Trade Center",
+          "value": "Beckoning Bell No 94381039"
+        },
+        {
+          "trait_type": "FLOOR111191111 ☆ the hungry spoke with the hungry about hunger",
+          "value": "Beckoning Bell No 09348522"
+        },
+        {
+          "trait_type": "FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃°",
+          "value": "PC Computer - MapleStory - Ulu City Background - cloudian4"
+        },
+        {
+          "trait_type": "FLOOR44 ☆ SkyLobby ♡⛪︎⛪︎⛪︎♡",
+          "value": "PC _ Computer - Hatsune Miku_ Project DIVA Mega Mix+ - Songs - Logos☃☃ValueReverseCastle"
+        },
+        {
+          "trait_type": "FLOOR111181111 ☆ a mirror in pitch dark reflects nothing",
+          "value": "ib2012garryRose☃☃LinearReverseCastle"
+        },
+        {
+          "trait_type": "FLOOR111191111 ☆ the hungry spoke with the hungry about hunger",
+          "value": "March 27 CCC☃☃LinearReverseCastle"
+        },
+        {
+          "trait_type": "FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃°",
+          "value": "PC Computer - MapleStory - Ulu City Background - cloudian1_value_inverse_linear_inverse☃☃LinearReverseCastle"
+        },
+        {
+          "trait_type": "FLOOR78 ☆ SkyLobby ♡⛫⛫⛫♡",
+          "value": "invisibleMeerca_born01⛇04⛇2025_died11⛇09⛇2001"
+        },
+        {
+          "trait_type": "FLOOR111181111 ☆ a mirror in pitch dark reflects nothing",
+          "value": "maplestory.io_api_GMS_210.1.1_npc_1520070_icon"
+        },
+        {
+          "trait_type": "FLOOR111191111 ☆ the hungry spoke with the hungry about hunger",
+          "value": "Cloudcastle March 42 EEE copy 333"
+        },
+        {
+          "trait_type": "FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃°",
+          "value": "PC Computer - MapleStory - Ulu City Background - cloudian3 copy"
+        },
+        {
+          "trait_type": "FLOOR108 ☆ MechanicalPenthouse ♡⛪︎⛪︎⛪︎♡",
+          "value": "Rothko1963_untitled"
+        },
+        {
+          "trait_type": "FLOOR111181111 ☆ a mirror in pitch dark reflects nothing",
+          "value": "DS _ DSi - Kirby Mass Attack - Backgrounds - Rocket Level"
+        },
+        {
+          "trait_type": "FLOOR111191111 ☆ the hungry spoke with the hungry about hunger",
+          "value": "°ʚ(๑මั‸මั๑)ɞ♡°unlovable6765s0042☃☃ValueReverseCastle"
+        },
+        {
+          "trait_type": "FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃°",
+          "value": "PC Computer - MapleStory - Ulu City Background - cloudian4_value_inverse_linear_inverse"
+        },
+        {
+          "trait_type": "FLOOR87178291199 ☆ star3_CasperWY_雲の砦Junior",
+          "value": "Pasted Layer #13☃☃ValueReverseCastle"
+        },
+        {
+          "trait_type": "FLOOR265252859812191058636308479999999 ☆ star3_GlassPond28_SaintValentine",
+          "value": "3DS - Swapdoodle - 3D copy 5☃☃CastleCastle"
+        },
+        {
+          "trait_type": "FLOOR99999199999 ☆ star3_GlassPond496_SaintJoan",
+          "value": "PC _ Computer - MapleStory - Monsters (Lith Harbor) - Red Snail byBoo☃☃CastleCastle"
+        },
+        {
+          "trait_type": "FLOOR109 ☆ MechanicalPenthouse ♡⛫⛫⛫♡",
+          "value": "invisibleScorchio_born11⛇09⛇2001_died11⛇09⛇2001"
+        },
+        {
+          "trait_type": "FLOOR111181111 ☆ a mirror in pitch dark reflects nothing",
+          "value": "PSP - SD Gundam G Generation Overworld - Map Sprites - Map Effects - txd_00(m06380@1,22)☃☃CastleCastle"
+        },
+        {
+          "trait_type": "FLOOR111191111 ☆ the hungry spoke with the hungry about hunger",
+          "value": "March 33 AAA 444"
+        },
+        {
+          "trait_type": "FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃°",
+          "value": "PC Computer - MapleStory - Ulu City Background - cloudian1 copy"
+        },
+        {
+          "trait_type": "GIRAFFEE",
+          "value": "Danger!? giraffePuupiks?"
+        },
+        {
+          "trait_type": "GIF_OVERLAY",
+          "value": "❦ MariyashaSenpai ❦ כרת נְסִיכָה"
+        },
+        {
+          "trait_type": "GIF_MODE",
+          "value": "TOPMOST"
+        },
+        {
+          "trait_type": "DNA",
+          "value": "layer=FLOOR1 ☆ the Mall at the World Trade Center ♡♡ file=Beckoning Bell No 94381039.png ♡♡ opacity=1.00000000♡♡layer=FLOOR111191111 ☆ the hungry spoke with the hungry about hunger ♡♡ file=Beckoning Bell No 09348522.png ♡♡ opacity=0.33605211♡♡layer=FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃° ♡♡ file=PC Computer - MapleStory - Ulu City Background - cloudian4.png ♡♡ opacity=0.47176722♡♡layer=FLOOR44 ☆ SkyLobby ♡⛪︎⛪︎⛪︎♡ ♡♡ file=PC _ Computer - Hatsune Miku_ Project DIVA Mega Mix+ - Songs - Logos☃☃ValueReverseCastle.png ♡♡ opacity=0.88888888♡♡layer=FLOOR111181111 ☆ a mirror in pitch dark reflects nothing ♡♡ file=ib2012garryRose☃☃LinearReverseCastle.png ♡♡ opacity=0.23958566♡♡layer=FLOOR111191111 ☆ the hungry spoke with the hungry about hunger ♡♡ file=March 27 CCC☃☃LinearReverseCastle.png ♡♡ opacity=0.57835450♡♡layer=FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃° ♡♡ file=PC Computer - MapleStory - Ulu City Background - cloudian1_value_inverse_linear_inverse☃☃LinearReverseCastle.png ♡♡ opacity=0.41806700♡♡layer=FLOOR78 ☆ SkyLobby ♡⛫⛫⛫♡ ♡♡ file=invisibleMeerca_born01⛇04⛇2025_died11⛇09⛇2001.png ♡♡ opacity=0.66666666♡♡layer=FLOOR111181111 ☆ a mirror in pitch dark reflects nothing ♡♡ file=maplestory.io_api_GMS_210.1.1_npc_1520070_icon.png ♡♡ opacity=0.36103888♡♡layer=FLOOR111191111 ☆ the hungry spoke with the hungry about hunger ♡♡ file=Cloudcastle March 42 EEE copy 333.png ♡♡ opacity=0.60447045♡♡layer=FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃° ♡♡ file=PC Computer - MapleStory - Ulu City Background - cloudian3 copy.png ♡♡ opacity=0.60441627♡♡layer=FLOOR108 ☆ MechanicalPenthouse ♡⛪︎⛪︎⛪︎♡ ♡♡ file=Rothko1963_untitled.PNG ♡♡ opacity=0.44444444♡♡layer=FLOOR111181111 ☆ a mirror in pitch dark reflects nothing ♡♡ file=DS _ DSi - Kirby Mass Attack - Backgrounds - Rocket Level.png ♡♡ opacity=0.28487037♡♡layer=FLOOR111191111 ☆ the hungry spoke with the hungry about hunger ♡♡ file=°ʚ(๑මั‸මั๑)ɞ♡°unlovable6765s0042☃☃ValueReverseCastle.png ♡♡ opacity=0.18910488♡♡layer=FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃° ♡♡ file=PC Computer - MapleStory - Ulu City Background - cloudian4_value_inverse_linear_inverse.png ♡♡ opacity=0.15987311♡♡layer=FLOOR87178291199 ☆ star3_CasperWY_雲の砦Junior ♡♡ file=Pasted Layer #13☃☃ValueReverseCastle.png ♡♡ opacity=0.62936834♡♡layer=FLOOR265252859812191058636308479999999 ☆ star3_GlassPond28_SaintValentine ♡♡ file=3DS - Swapdoodle - 3D copy 5☃☃CastleCastle.png ♡♡ opacity=0.41076174♡♡layer=FLOOR99999199999 ☆ star3_GlassPond496_SaintJoan ♡♡ file=PC _ Computer - MapleStory - Monsters (Lith Harbor) - Red Snail byBoo☃☃CastleCastle.png ♡♡ opacity=0.22685170♡♡layer=FLOOR109 ☆ MechanicalPenthouse ♡⛫⛫⛫♡ ♡♡ file=invisibleScorchio_born11⛇09⛇2001_died11⛇09⛇2001.png ♡♡ opacity=0.11111111♡♡layer=FLOOR111181111 ☆ a mirror in pitch dark reflects nothing ♡♡ file=PSP - SD Gundam G Generation Overworld - Map Sprites - Map Effects - txd_00(m06380@1,22)☃☃CastleCastle.png ♡♡ opacity=0.61115676♡♡layer=FLOOR111191111 ☆ the hungry spoke with the hungry about hunger ♡♡ file=March 33 AAA 444.png ♡♡ opacity=0.58705952♡♡layer=FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃° ♡♡ file=PC Computer - MapleStory - Ulu City Background - cloudian1 copy.png ♡♡ opacity=0.16658962♡♡layer=GIRAFFEE ♡♡ file=Danger!? giraffePuupiks?.png ♡♡ opacity=1.00000000♡♡layer=GIF_OVERLAY ♡♡ file=❦ MariyashaSenpai ❦ כרת נְסִיכָה.gif ♡♡ opacity=0.24157817"
+        }
+      ],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "MplCoreAsset",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "DyhP8FAVfxHNRSBFUkMLH9XJZvbVvAyYDbG6Tt2fbata",
+      "owner": "97qxpvG3zmhbq9ie91bDgN81xqUq7ij5HrVWG5RN9MRv",
+      "name": "☃☃CCsDOsSOTN☃☃angel0008",
+      "imageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeieb73zqzuqq75qe4bq23fyb66ux32gcovztnru5yjkrkyhuwj3ziu",
+      "animationUri": "",
+      "metadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibwaadl7ym34gb7px2ao7jf5ko5yu2nhfz7nphogmz37xgcvcm2ae/2",
+      "files": [
+        {
+          "type": "image/gif",
+          "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeieb73zqzuqq75qe4bq23fyb66ux32gcovztnru5yjkrkyhuwj3ziu"
+        }
+      ],
+      "attributes": [
+        {
+          "trait_type": "FLOOR1 ☆ the Mall at the World Trade Center",
+          "value": "Rothko1969_untitled_again"
+        },
+        {
+          "trait_type": "FLOOR111191111 ☆ the hungry spoke with the hungry about hunger",
+          "value": "March 27 BBB 222☃☃CastleCastle"
+        },
+        {
+          "trait_type": "FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃°",
+          "value": "PC Computer - MapleStory - Ulu City Background - cloudian2_value_inverse"
+        },
+        {
+          "trait_type": "FLOOR44 ☆ SkyLobby ♡⛪︎⛪︎⛪︎♡",
+          "value": "PC _ Computer - MapleStory - Pets - Jr. Balrog (Pet) byMageker"
+        },
+        {
+          "trait_type": "FLOOR111181111 ☆ a mirror in pitch dark reflects nothing",
+          "value": "Persona4 TITLE.BIN_7"
+        },
+        {
+          "trait_type": "FLOOR111191111 ☆ the hungry spoke with the hungry about hunger",
+          "value": "°ʚ(๑මั‸මั๑)ɞ♡°unlovable0233"
+        },
+        {
+          "trait_type": "FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃°",
+          "value": "PC Computer - MapleStory - Ulu City Background - cloudian4_value_inverse"
+        },
+        {
+          "trait_type": "FLOOR78 ☆ SkyLobby ♡⛫⛫⛫♡",
+          "value": "SNES - EarthBound - Miscellaneous - Objects & Effects Window byMatheus"
+        },
+        {
+          "trait_type": "FLOOR111181111 ☆ a mirror in pitch dark reflects nothing",
+          "value": "SNES - Star Ocean (JPN) - Miscellaneous - Cloud Parallax"
+        },
+        {
+          "trait_type": "FLOOR111191111 ☆ the hungry spoke with the hungry about hunger",
+          "value": "Beckoning Bell No 09348522 SaintValentine2025"
+        },
+        {
+          "trait_type": "FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃°",
+          "value": "PC Computer - MapleStory - Ulu City Background - cloudian4_value_inverse"
+        },
+        {
+          "trait_type": "FLOOR108 ☆ MechanicalPenthouse ♡⛪︎⛪︎⛪︎♡",
+          "value": "WonderSwan _ WSC - One Piece_ Grand Battle Swan Colosseum - Other - Card Collection - Usopp"
+        },
+        {
+          "trait_type": "FLOOR111181111 ☆ a mirror in pitch dark reflects nothing",
+          "value": "SNES - Star Ocean (JPN) - Miscellaneous - Fog Parallax"
+        },
+        {
+          "trait_type": "FLOOR111191111 ☆ the hungry spoke with the hungry about hunger",
+          "value": "Beckoning Bell No 09348522"
+        },
+        {
+          "trait_type": "FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃°",
+          "value": "PC Computer - MapleStory - Ulu City Background - cloudian4_value_inverse_linear_inverse"
+        },
+        {
+          "trait_type": "FLOOR87178291199 ☆ star3_CasperWY_雲の砦Junior",
+          "value": "PC _ Computer - Pocket Mirror - Maps - Harpae Entrance copy"
+        },
+        {
+          "trait_type": "FLOOR265252859812191058636308479999999 ☆ star3_GlassPond28_SaintValentine",
+          "value": "3DS - Swapnote - Pop Out copy 5"
+        },
+        {
+          "trait_type": "FLOOR99999199999 ☆ star3_GlassPond496_SaintJoan",
+          "value": "❦ PC Computer - MapleStory - Book Monster ❦ a tower of Giraffes all the way to Heaven"
+        },
+        {
+          "trait_type": "FLOOR109 ☆ MechanicalPenthouse ♡⛫⛫⛫♡",
+          "value": "invisibleKacheek_born11⛇09⛇2001_died11⛇09⛇2001"
+        },
+        {
+          "trait_type": "FLOOR111181111 ☆ a mirror in pitch dark reflects nothing",
+          "value": "Persona4 TITLE.BIN_5"
+        },
+        {
+          "trait_type": "FLOOR111191111 ☆ the hungry spoke with the hungry about hunger",
+          "value": "March 33 AAA 444"
+        },
+        {
+          "trait_type": "FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃°",
+          "value": "PC Computer - MapleStory - Ulu City Background - cloudian2_value_inverse_linear_inverse"
+        },
+        {
+          "trait_type": "GIRAFFEE",
+          "value": "Danger!? giraffeMariyasha?☃☃ValueReverseCastle☃☃ValueReverseCastle"
+        },
+        {
+          "trait_type": "GIF_OVERLAY",
+          "value": "❦ MariyashaSenpai ❦ כרת נְסִיכָה"
+        },
+        {
+          "trait_type": "GIF_MODE",
+          "value": "TOPMOST"
+        },
+        {
+          "trait_type": "DNA",
+          "value": "layer=FLOOR1 ☆ the Mall at the World Trade Center ♡♡ file=Rothko1969_untitled_again.jpg ♡♡ opacity=1.00000000♡♡layer=FLOOR111191111 ☆ the hungry spoke with the hungry about hunger ♡♡ file=March 27 BBB 222☃☃CastleCastle.png ♡♡ opacity=0.32636616♡♡layer=FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃° ♡♡ file=PC Computer - MapleStory - Ulu City Background - cloudian2_value_inverse.png ♡♡ opacity=0.22976873♡♡layer=FLOOR44 ☆ SkyLobby ♡⛪︎⛪︎⛪︎♡ ♡♡ file=PC _ Computer - MapleStory - Pets - Jr. Balrog (Pet) byMageker.png ♡♡ opacity=0.88888888♡♡layer=FLOOR111181111 ☆ a mirror in pitch dark reflects nothing ♡♡ file=Persona4 TITLE.BIN_7.png ♡♡ opacity=0.44374713♡♡layer=FLOOR111191111 ☆ the hungry spoke with the hungry about hunger ♡♡ file=°ʚ(๑මั‸මั๑)ɞ♡°unlovable0233.png ♡♡ opacity=0.42948474♡♡layer=FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃° ♡♡ file=PC Computer - MapleStory - Ulu City Background - cloudian4_value_inverse.png ♡♡ opacity=0.31497668♡♡layer=FLOOR78 ☆ SkyLobby ♡⛫⛫⛫♡ ♡♡ file=SNES - EarthBound - Miscellaneous - Objects & Effects Window byMatheus.png ♡♡ opacity=0.11111111♡♡layer=FLOOR111181111 ☆ a mirror in pitch dark reflects nothing ♡♡ file=SNES - Star Ocean (JPN) - Miscellaneous - Cloud Parallax.png ♡♡ opacity=0.31614194♡♡layer=FLOOR111191111 ☆ the hungry spoke with the hungry about hunger ♡♡ file=Beckoning Bell No 09348522 SaintValentine2025.png ♡♡ opacity=0.47418715♡♡layer=FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃° ♡♡ file=PC Computer - MapleStory - Ulu City Background - cloudian4_value_inverse.png ♡♡ opacity=0.15308510♡♡layer=FLOOR108 ☆ MechanicalPenthouse ♡⛪︎⛪︎⛪︎♡ ♡♡ file=WonderSwan _ WSC - One Piece_ Grand Battle Swan Colosseum - Other - Card Collection - Usopp.png ♡♡ opacity=0.66666666♡♡layer=FLOOR111181111 ☆ a mirror in pitch dark reflects nothing ♡♡ file=SNES - Star Ocean (JPN) - Miscellaneous - Fog Parallax.png ♡♡ opacity=0.34826613♡♡layer=FLOOR111191111 ☆ the hungry spoke with the hungry about hunger ♡♡ file=Beckoning Bell No 09348522.png ♡♡ opacity=0.62096437♡♡layer=FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃° ♡♡ file=PC Computer - MapleStory - Ulu City Background - cloudian4_value_inverse_linear_inverse.png ♡♡ opacity=0.58720963♡♡layer=FLOOR87178291199 ☆ star3_CasperWY_雲の砦Junior ♡♡ file=PC _ Computer - Pocket Mirror - Maps - Harpae Entrance copy.png ♡♡ opacity=0.48948024♡♡layer=FLOOR265252859812191058636308479999999 ☆ star3_GlassPond28_SaintValentine ♡♡ file=3DS - Swapnote - Pop Out copy 5.png ♡♡ opacity=0.52231964♡♡layer=FLOOR99999199999 ☆ star3_GlassPond496_SaintJoan ♡♡ file=❦ PC Computer - MapleStory - Book Monster ❦ a tower of Giraffes all the way to Heaven.png ♡♡ opacity=0.52109779♡♡layer=FLOOR109 ☆ MechanicalPenthouse ♡⛫⛫⛫♡ ♡♡ file=invisibleKacheek_born11⛇09⛇2001_died11⛇09⛇2001.png ♡♡ opacity=0.77777777♡♡layer=FLOOR111181111 ☆ a mirror in pitch dark reflects nothing ♡♡ file=Persona4 TITLE.BIN_5.png ♡♡ opacity=0.55165824♡♡layer=FLOOR111191111 ☆ the hungry spoke with the hungry about hunger ♡♡ file=March 33 AAA 444.png ♡♡ opacity=0.45946198♡♡layer=FLOOR7772777 ☆ the Library of Hill and Betts and Nash °ʚ(๑මั‸මั๑)ɞ☃☃° ♡♡ file=PC Computer - MapleStory - Ulu City Background - cloudian2_value_inverse_linear_inverse.png ♡♡ opacity=0.35531095♡♡layer=GIRAFFEE ♡♡ file=Danger!? giraffeMariyasha?☃☃ValueReverseCastle☃☃ValueReverseCastle.png ♡♡ opacity=1.00000000♡♡layer=GIF_OVERLAY ♡♡ file=❦ MariyashaSenpai ❦ כרת נְסִיכָה.gif ♡♡ opacity=0.24157817"
+        }
+      ],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "MplCoreAsset",
+      "metadataFetchError": ""
+    }
+  ],
+  "excludedAssets": [],
+  "cards": [
+    {
+      "number": 1,
+      "assetNumber": 1,
+      "stableId": "limited:group-36e830340c9bb833e5079f35",
+      "groupKeyHash": "36e830340c9bb833e5079f352eba15400d509e5c6e89e1b7358e8c0c0d82f561",
+      "title": "drifella card 1",
+      "mints": [
+        "BWM9X8buLSaXzMYmWhP8oxT9DaCgp7Wy3xxDYTskwZSS"
+      ],
+      "sourceMetadataUri": "https://arweave.net/NsHNH6HmT9l4abyC7cLK6DkvGSUUAmbY8qqEqsC7D0E",
+      "sourceImageUri": "https://arweave.net/pTPkaZJNj6cOKfy3gwF2Ch3bhB3K8--rzkbRRGuA01k?ext=PNG",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "813bc7c903e19e799b5a61761787a81d809e2044fddebc3ce0e12705a5e80d4b",
+      "metadataFile": "assets/limited/metadata/0000/card-1.json",
+      "cardFile": "assets/limited/cards/0000/card-1.webp",
+      "animation": null
+    },
+    {
+      "number": 2,
+      "assetNumber": 2,
+      "stableId": "limited:group-3784ca9cd8fb6e3e37458295",
+      "groupKeyHash": "3784ca9cd8fb6e3e37458295d3484421f49918ddbf2e6a973022b924b5a7035e",
+      "title": "Drifella Card 2",
+      "mints": [
+        "BsUmejVkYwLy5WDoYxvtdmbKjig6WTXjQ1MfpESXo6Ay"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/qJt0-oaFtJ3LBWKsGgMBO72RzVwLWc4K9bMwqK0uyd0/0",
+      "sourceImageUri": "https://gateway.irys.xyz/ZuRWrnyHhgNCMUVI0m2Uq9J4jozKCcTjl1DVtX0g-WY/IMG_8722%203.PNG",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "aaf9becaa7b89fad73bd3a612ec20d63bece7db5667c56f9f8d4c4dcadf462eb",
+      "metadataFile": "assets/limited/metadata/0000/card-2.json",
+      "cardFile": "assets/limited/cards/0000/card-2.webp",
+      "animation": null
+    },
+    {
+      "number": 3,
+      "assetNumber": 3,
+      "stableId": "limited:group-da0fde553a79aec08fffe4f1",
+      "groupKeyHash": "da0fde553a79aec08fffe4f17fd1b293a064a1b515b7c74145423bc353a562a0",
+      "title": "MiFella Card 004: Drifella Ball",
+      "mints": [
+        "5JFC9TFEdNXB12WRuterfFukHVogCYuHzehTFuqmLkpc"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeie5zykqt3brkitn5l2ubs7cbhbagwr5yqwvb5hhmg7ykhbx4nsy4q/0",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeifvzsbax4l5ma4ek64heihqhiaub6cpqhuhzvtlbwcypp33zhiuhu",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "528d2730bdf94ea903f9fd6be05bbac78e67cf77684a66b253f16565adad10b2",
+      "metadataFile": "assets/limited/metadata/0000/card-3.json",
+      "cardFile": "assets/limited/cards/0000/card-3.webp",
+      "animation": null
+    },
+    {
+      "number": 4,
+      "assetNumber": 4,
+      "stableId": "limited:group-e3546e6d8497883f66ed4a8e",
+      "groupKeyHash": "e3546e6d8497883f66ed4a8e230acfdef91fe2b133ea88ab4e89b122029337fe",
+      "title": "Beckoning Bell No 59822133",
+      "mints": [
+        "7USCewaUGspP4ByhAiV8a6MRbGZUbdho4fPTE1AwpF4q"
+      ],
+      "sourceMetadataUri": "https://turbo-gateway.com/XM1PgiyT-lbt3zWs_BjvX3Yh5XYdf84mYVNUc6yfpTk",
+      "sourceImageUri": "https://turbo-gateway.com/zOuW-o9_lg4O_JTfZ2osoE6nhonLWfvvb1sOQl1JotE?ext=png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "2973d789538aeeff83a85374bca47146d214c1b869f5662f6fb292639519aaa7",
+      "metadataFile": "assets/limited/metadata/0000/card-4.json",
+      "cardFile": "assets/limited/cards/0000/card-4.webp",
+      "animation": null
+    },
+    {
+      "number": 5,
+      "assetNumber": 5,
+      "stableId": "limited:group-bf3880a5e58f9d1074b1b2b1",
+      "groupKeyHash": "bf3880a5e58f9d1074b1b2b1018bda2ad9d318fdef8efd001f5bdb139c01631d",
+      "title": "☃☃CCsDOsSOTN☃☃angel0003",
+      "mints": [
+        "3MShd9mS5PeaShUTXYrZ7hFF4xju2nJKXE3sxGLHPy7C"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibwaadl7ym34gb7px2ao7jf5ko5yu2nhfz7nphogmz37xgcvcm2ae/1",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiee2ioguqbphn2ko4cxq5y3idk7avl35qf6oyqf5t6w77r5s64dq4",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "95293abfea135ef79c4d454acc575bc09faab5ad1cb2d813cc8978c95e824d28",
+      "metadataFile": "assets/limited/metadata/0000/card-5.json",
+      "cardFile": "assets/limited/cards/0000/card-5.webp",
+      "animation": null
+    },
+    {
+      "number": 6,
+      "assetNumber": 6,
+      "stableId": "limited:group-c8636d6c9119766580a021c7",
+      "groupKeyHash": "c8636d6c9119766580a021c76b368167524ceacbdb3d937cd42b8691ff395091",
+      "title": "☃☃CCsDOsSOTN☃☃angel0001",
+      "mints": [
+        "6QZbX2WeHXMvaWrqvGSJy5A5wdjyWkHdMR76HG4Qrdad"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibwaadl7ym34gb7px2ao7jf5ko5yu2nhfz7nphogmz37xgcvcm2ae/0",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibqcjdidqjawke34qzbdjksul7hqjiufrecrmvgsswf27epym3hyq",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "df79c5e0230603bcdbadb88b396a2ec7b980d5f9bbfd845c7ea1635ff5d5dcd4",
+      "metadataFile": "assets/limited/metadata/0000/card-6.json",
+      "cardFile": "assets/limited/cards/0000/card-6.webp",
+      "animation": null
+    },
+    {
+      "number": 7,
+      "assetNumber": 7,
+      "stableId": "limited:group-644e0fa6e53f55e7ccb2ae03",
+      "groupKeyHash": "644e0fa6e53f55e7ccb2ae03800653b31a214e77c023490b2c86f7bdb521bd02",
+      "title": "☃☃CCsDOsSOTN☃☃angel0021",
+      "mints": [
+        "D7A4LK3B5qpL4WyM1pqBsoCE8tM8XFEybYCU8A5StvLc"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibwaadl7ym34gb7px2ao7jf5ko5yu2nhfz7nphogmz37xgcvcm2ae/3",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihxo4f7kurg5bijkrvljnmzqftaasis2ypvna3v5e6uputykquana",
+      "sourceAnimatedGifUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeihxo4f7kurg5bijkrvljnmzqftaasis2ypvna3v5e6uputykquana",
+      "sourceAnimatedGifSignature": "7f3ab01be7c47ef3fc328908f2224e9316ee49775ffc511450f969366d390609",
+      "sourceImageSignature": "7f3ab01be7c47ef3fc328908f2224e9316ee49775ffc511450f969366d390609",
+      "metadataFile": "assets/limited/metadata/0000/card-7.json",
+      "cardFile": "assets/limited/cards/0000/card-7.webp",
+      "animation": {
+        "file": "assets/limited/animated/0000/card-7.webp",
+        "frames": 27,
+        "delays": [
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100
+        ],
+        "frameDuration": 100,
+        "loop": 0,
+        "width": 600,
+        "height": 840,
+        "sprite": {
+          "file": "assets/limited/animated-sprites/0000/card-7.webp",
+          "frames": 27,
+          "columns": 7,
+          "rows": 4,
+          "frameWidth": 340,
+          "frameHeight": 476,
+          "frameDuration": 100
+        }
+      }
+    },
+    {
+      "number": 8,
+      "assetNumber": 8,
+      "stableId": "limited:group-df5afe5db52e9f465df0185d",
+      "groupKeyHash": "df5afe5db52e9f465df0185d0c538e699496865948d9f29726b01374b049869c",
+      "title": "☃☃CCsDOsSOTN☃☃angel0008",
+      "mints": [
+        "DyhP8FAVfxHNRSBFUkMLH9XJZvbVvAyYDbG6Tt2fbata"
+      ],
+      "sourceMetadataUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibwaadl7ym34gb7px2ao7jf5ko5yu2nhfz7nphogmz37xgcvcm2ae/2",
+      "sourceImageUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeieb73zqzuqq75qe4bq23fyb66ux32gcovztnru5yjkrkyhuwj3ziu",
+      "sourceAnimatedGifUri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeieb73zqzuqq75qe4bq23fyb66ux32gcovztnru5yjkrkyhuwj3ziu",
+      "sourceAnimatedGifSignature": "8bdbf32dad21cb95ac6ff15b4b12413ef6dd43bc596ac875e7682ec4559034d1",
+      "sourceImageSignature": "8bdbf32dad21cb95ac6ff15b4b12413ef6dd43bc596ac875e7682ec4559034d1",
+      "metadataFile": "assets/limited/metadata/0000/card-8.json",
+      "cardFile": "assets/limited/cards/0000/card-8.webp",
+      "animation": {
+        "file": "assets/limited/animated/0000/card-8.webp",
+        "frames": 27,
+        "delays": [
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100
+        ],
+        "frameDuration": 100,
+        "loop": 0,
+        "width": 600,
+        "height": 840,
+        "sprite": {
+          "file": "assets/limited/animated-sprites/0000/card-8.webp",
+          "frames": 27,
+          "columns": 7,
+          "rows": 4,
+          "frameWidth": 340,
+          "frameHeight": 476,
+          "frameDuration": 100
+        }
+      }
+    }
+  ]
+}

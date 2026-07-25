@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #656",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/656",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_dxmtrip"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_148"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Sporogenesis"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_x"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_goober"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "screm"
+    },
+    {
+      "trait_type": "special top",
+      "value": "drain"
+    }
+  ],
+  "edition": 1754,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/656"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CxJ9Uey5yAgLHg6gpFMaE4Ne1ne9wwdvPudZKx3b1TQB"
+  ]
+}

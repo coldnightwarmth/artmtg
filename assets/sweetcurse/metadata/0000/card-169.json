@@ -1,0 +1,78 @@
+{
+  "name": "Sweet Curse Card #169",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreiakgfn7khs2y4k3xflqvcx7wnuc7k2q5w6hhxmhyzhgm46puctxr4",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Noise"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Error"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Gon"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Yurei.raw6"
+    },
+    {
+      "trait_type": "Score",
+      "value": "Tupac chicken"
+    },
+    {
+      "trait_type": "Name",
+      "value": "MAD"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Zabiwa"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Butter"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "St. Anthony"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "The blitz"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Riverside roads"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "ascii"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreiakgfn7khs2y4k3xflqvcx7wnuc7k2q5w6hhxmhyzhgm46puctxr4",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiaj2wzblqn6xuypskhd5h4s3xq3qvsgunmoeqrqzcjisr4wsyf5ym",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiaj2wzblqn6xuypskhd5h4s3xq3qvsgunmoeqrqzcjisr4wsyf5ym",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeiaj2wzblqn6xuypskhd5h4s3xq3qvsgunmoeqrqzcjisr4wsyf5ym",
+  "collection_mints": [
+    "3qyRs9f5t5FDJxDCLbGCEGF69dm9Fy5khxWV51jjeUDk"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #701",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/701",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_paradise"
+    },
+    {
+      "trait_type": "behind",
+      "value": "diamondsword"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_138"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Quest for Ancient Secrets"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_redblur"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "unf"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "bible"
+    }
+  ],
+  "edition": 1829,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/701"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5HpbBsKNY64tsLoAFNzQboobF4W4iuYkWdaqH28SoCy5"
+  ]
+}

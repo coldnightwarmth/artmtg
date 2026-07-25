@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #2072",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2072",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_butterfreelove"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_97"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Caravan Hurda"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_drifellateeth"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "warrencoin"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "liquid2018"
+    },
+    {
+      "trait_type": "special top",
+      "value": "pokemontcg"
+    }
+  ],
+  "edition": 1687,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2072"
+      }
+    ]
+  },
+  "collection_mints": [
+    "33KJg7SPtBe3BGUwYKr8Vsx6gPGyCdYdQAdE5ybAf4m2"
+  ]
+}

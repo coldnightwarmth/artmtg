@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #866",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/866",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "office"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Jodah, Archmage Eternal"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_chompers"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "smush"
+    }
+  ],
+  "edition": 878,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/866"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CKHzXPL5jSEwZdPf148frnqZX86Xo1e5Q1VTXu9LkYjR"
+  ]
+}

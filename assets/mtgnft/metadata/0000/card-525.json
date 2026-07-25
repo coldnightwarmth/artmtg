@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #524",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/524",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_heavenintheclouds"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Dark Hatchling"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_greenlady"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_missingtooth"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "blue"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "boofleft"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_pinksonicgirlidc"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_cfalcon"
+    }
+  ],
+  "edition": 650,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/524"
+      }
+    ]
+  },
+  "collection_mints": [
+    "C3NjvaBFbZAwetxzcY2MC7pDfC8QoDRNnbo5mZAjKhM3"
+  ]
+}

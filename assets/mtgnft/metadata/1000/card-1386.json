@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1385",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1385",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "livingroom"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_20"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Llanowar Elves_3"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_perc5"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "widesmirk"
+    },
+    {
+      "trait_type": "hat",
+      "value": "poloplaid"
+    },
+    {
+      "trait_type": "special top",
+      "value": "pokemontcg"
+    }
+  ],
+  "edition": 2079,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1385"
+      }
+    ]
+  },
+  "collection_mints": [
+    "95JnsZhEP7A8sjfTxPLwG3pmEDRAdsH8uwpitBfPP1Xg"
+  ]
+}

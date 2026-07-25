@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #1563",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1563",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_eboynoise"
+    },
+    {
+      "trait_type": "cards",
+      "value": "World Breaker"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_mifella2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_emo"
+    }
+  ],
+  "edition": 1293,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1563"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3ZAh62QkQZcz4pYY8ksqug4u8PeRkjHz2AZvoJCWe7dZ"
+  ]
+}

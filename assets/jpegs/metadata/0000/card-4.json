@@ -1,0 +1,26 @@
+{
+  "name": "Call It When It Terrifies You",
+  "description": "Vidal Herrera",
+  "seller_fee_basis_points": 500,
+  "image": "https://turbo-gateway.com/QBJEYx28nT7-EqukR6I_U2AcIPSSeyWjlmHQv8yTxNU?ext=jpeg",
+  "properties": {
+    "files": [
+      {
+        "uri": "https://turbo-gateway.com/QBJEYx28nT7-EqukR6I_U2AcIPSSeyWjlmHQv8yTxNU?ext=jpeg",
+        "type": "image/jpeg"
+      }
+    ],
+    "creators": [
+      {
+        "address": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+        "share": 100,
+        "verified": true
+      }
+    ]
+  },
+  "attributes": [],
+  "collection_mints": [
+    "4Vzpkr3tyq8yxHtcST5XiMxRdqiYopcMzgQiBTyY2kif",
+    "523JydeCrTuLubEEEwuXHQELnvynt7pgeUuyLdviKh4s"
+  ]
+}

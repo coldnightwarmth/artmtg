@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #2186",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2186",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_snorlax"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Pawn of Ulamog"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_yay"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "spyro"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_ghostsoy"
+    },
+    {
+      "trait_type": "special top",
+      "value": "jjba"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "lilith"
+    }
+  ],
+  "edition": 1027,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2186"
+      }
+    ]
+  },
+  "collection_mints": [
+    "32A4ha85mk1kkEpA8t7uBsuimoaPeG4RMTbdFULUKtCe"
+  ]
+}

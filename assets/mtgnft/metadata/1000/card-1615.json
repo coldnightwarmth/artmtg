@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1614",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1614",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_nam"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Mana Leech"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_myspacecore"
+    },
+    {
+      "trait_type": "special top",
+      "value": "perc30top"
+    }
+  ],
+  "edition": 1795,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1614"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HSxnuvRwmdUfEmMyH4XfkRbbARWCdT5XFpZn7qEnEeSM"
+  ]
+}

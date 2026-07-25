@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #552",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/552",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_littletests"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Sire of Stagnation"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_beez"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_kaneki"
+    },
+    {
+      "trait_type": "hat",
+      "value": "mtg"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "luigi"
+    },
+    {
+      "trait_type": "special top",
+      "value": "mw2"
+    }
+  ],
+  "edition": 974,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/552"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DiXPchxn5ydXdE6NyibRdAxzWHJs6STKoo2ZTDJNdZuE"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #858",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/858",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_heavenintheclouds"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_100"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ghoulcaller's Bell"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_greenlady"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_chow"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "gunhandleft"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "Untitled_Artwork-29"
+    }
+  ],
+  "edition": 1457,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/858"
+      }
+    ]
+  },
+  "collection_mints": [
+    "kwy6U4vqbvYbkv6YqrrNXKm1PkVNBkgYkP2F3QnC1C1"
+  ]
+}

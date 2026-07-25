@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #2020",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2020",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_animeangel"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Kalastria Healer"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_mifella2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "coupleasmokes"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "bluestar"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "ps3"
+    }
+  ],
+  "edition": 233,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2020"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4vwsxJh768iFD7351fEUpVcWAd5dfPHSUnhCWVcGn63m"
+  ]
+}

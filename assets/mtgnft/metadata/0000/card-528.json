@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #527",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/527",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_guntomyhead"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_118"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Checks and Balances"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_wavey"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "jokersmirk"
+    },
+    {
+      "trait_type": "special top",
+      "value": "nsmb2"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "joeyy"
+    }
+  ],
+  "edition": 1780,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/527"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4mx5ZZB7HEX27u8EEJJ8gamvQYMLw8f5VwMh9GSTdLKb"
+  ]
+}

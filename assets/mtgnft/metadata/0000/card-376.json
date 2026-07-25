@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #375",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/375",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_mansion"
+    },
+    {
+      "trait_type": "behind",
+      "value": "ddr"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_8"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Mox Opal"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_joint"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "poker"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "pisstestleft"
+    }
+  ],
+  "edition": 357,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/375"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4bdp8TRV1sLqwAxiBWE3eopojWrUL2aPooF6MTa4KncH"
+  ]
+}

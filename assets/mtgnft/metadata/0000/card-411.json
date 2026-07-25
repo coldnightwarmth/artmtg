@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #410",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/410",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "csgostitch"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Expedition Raptor"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_goldfangs"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "pipetobaccoleft"
+    }
+  ],
+  "edition": 1773,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/410"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3aHdwAwqQ3uk1pmXqK9o89m2oXQC4aM2XHSDw9rZjcmS"
+  ]
+}

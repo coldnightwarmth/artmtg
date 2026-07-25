@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #336",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/336",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_hiz"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Checks and Balances"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_sidechompers"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "axe"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "perscribed"
+    }
+  ],
+  "edition": 1988,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/336"
+      }
+    ]
+  },
+  "collection_mints": [
+    "73QpwUtmD76QQxCc5mEWbm5GcxVY9ig2azZvzJR6Hu5n"
+  ]
+}

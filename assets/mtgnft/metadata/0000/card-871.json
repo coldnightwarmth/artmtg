@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #870",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/870",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_gothdeath"
+    },
+    {
+      "trait_type": "behind",
+      "value": "fire"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Rooting Kavu"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_animu2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "drool"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "boofleft"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "thps2"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_n64"
+    },
+    {
+      "trait_type": "special top",
+      "value": "cometobrazil"
+    }
+  ],
+  "edition": 1566,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/870"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5GV6sMEjvwA9UUdZCVrKe7JwneGA5CXp5MagaVjxa9SM"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1452",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1452",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_killerinstint"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Devout Lightcaster"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "emo"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "black"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "axe"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "digi"
+    },
+    {
+      "trait_type": "top left",
+      "value": "superstar"
+    }
+  ],
+  "edition": 170,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1452"
+      }
+    ]
+  },
+  "collection_mints": [
+    "iMH7GsLdB7m9gH85Tu1Jj2vukTXiBYHreMBnzQsbBnZ"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1065",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1065",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_domeearth"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Dream Fighter"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_perc5"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_tiger"
+    },
+    {
+      "trait_type": "hat",
+      "value": "asspizzajackolantern"
+    },
+    {
+      "trait_type": "special top",
+      "value": "digimon"
+    }
+  ],
+  "edition": 1097,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1065"
+      }
+    ]
+  },
+  "collection_mints": [
+    "29YrzPR2i52cGJGf5YLBFdTmiZwsGB9jnZwrbaQui1hv"
+  ]
+}

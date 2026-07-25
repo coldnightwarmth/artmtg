@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #6",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/6",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_wolfen"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Cryptolith Rite"
+    },
+    {
+      "trait_type": "overcard",
+      "value": "tactikyle"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_yelling"
+    },
+    {
+      "trait_type": "special top",
+      "value": "halfhealth"
+    }
+  ],
+  "edition": 2185,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/6"
+      }
+    ]
+  },
+  "collection_mints": [
+    "AjDS2aQieidYMLdzKuiaTDURdncHUVpJBHhaCbNjuHbR"
+  ]
+}

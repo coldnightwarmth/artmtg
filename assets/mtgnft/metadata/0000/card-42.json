@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #41",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/41",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "gmod"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Slimy Kavu"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "larvatar"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_uwuright"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "rockhole"
+    }
+  ],
+  "edition": 1985,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/41"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HbMpB8Kc3W4BCzdgpHL1nVfBLaU1e7tmXhQPdpqNyTfy"
+  ]
+}

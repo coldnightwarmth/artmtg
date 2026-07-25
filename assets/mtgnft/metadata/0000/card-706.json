@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #705",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/705",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_bladerunner"
+    },
+    {
+      "trait_type": "behind",
+      "value": "miketyson"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Treefolk Healer"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_neverbrush"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "superstar"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "dualdeag"
+    }
+  ],
+  "edition": 485,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/705"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DZg64cFmjBrBZ4D1kd74RKxbcVyq47GKYCXY29WZu2XW"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #94",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/94",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_batman"
+    },
+    {
+      "trait_type": "behind",
+      "value": "scanlines4"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Burst Lightning"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_widesmirk"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "red"
+    },
+    {
+      "trait_type": "top left",
+      "value": "alienhominid"
+    },
+    {
+      "trait_type": "special top",
+      "value": "majorasmoon"
+    }
+  ],
+  "edition": 706,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/94"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HLxdq9GeSY37JnPEcZKCsbXtY4oJgujV6q4eFJGv1FRP"
+  ]
+}

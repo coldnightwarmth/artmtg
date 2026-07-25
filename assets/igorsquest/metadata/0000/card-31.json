@@ -1,0 +1,39 @@
+{
+  "name": "Igors Quest #527",
+  "description": "Collect over 40 unique monsters, freaks and ghouls in Igors Quest: Shadylands!",
+  "symbol": "IGORSQUEST",
+  "image": "https://we-assets.pinit.io/75t7GEYpY7uThhjQrhrg13YnUbtY6Gy5CNG1UxoisyNQ/7f2d4a0b-58cb-4c8a-a1b3-1fba7a857ecb/pack-0-nft-976.png",
+  "attributes": [
+    {
+      "trait_type": "Big Background",
+      "value": "Corrupted"
+    },
+    {
+      "trait_type": "Card",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Cave"
+    },
+    {
+      "trait_type": "CharactersComplete",
+      "value": "Rare Guardian"
+    },
+    {
+      "trait_type": "Rarity Rank",
+      "value": "74"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://we-assets.pinit.io/75t7GEYpY7uThhjQrhrg13YnUbtY6Gy5CNG1UxoisyNQ/7f2d4a0b-58cb-4c8a-a1b3-1fba7a857ecb/pack-0-nft-976.png",
+        "type": "image/png"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3twWm9VyEE72ZxJb2mxr1aqRycXnNWeCMiCUTLiV2SKW"
+  ]
+}

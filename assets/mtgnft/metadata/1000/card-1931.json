@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1930",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1930",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "portaltohell"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Dreamstone Hedron"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "frown"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "asukaxbox"
+    }
+  ],
+  "edition": 345,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1930"
+      }
+    ]
+  },
+  "collection_mints": [
+    "33ip5UowPdjV95LyDYcasuHaZuRi4DDFqMzaNbZiFUKt"
+  ]
+}

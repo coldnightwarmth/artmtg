@@ -1,0 +1,27 @@
+{
+  "name": "play card alpha test print 29",
+  "symbol": "playca",
+  "description": "",
+  "seller_fee_basis_points": 500,
+  "image": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/23",
+  "external_url": "",
+  "attributes": [],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh/6a9b054b-e1b6-4ab2-8068-b27ce4acbb02/23",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "HxdFH2HsqwtJJCbdaW3Dh5KuBuov3Q9fMz7BL4pmmNVh",
+        "share": 100
+      }
+    ]
+  },
+  "collection_mints": [
+    "5rqvbTTzCP1U4R9WL4TwRJA7oPudqEgPZZx1q4dD3xpx"
+  ]
+}

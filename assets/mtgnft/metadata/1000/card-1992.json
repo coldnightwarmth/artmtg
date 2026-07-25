@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1991",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1991",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_spawner"
+    },
+    {
+      "trait_type": "behind",
+      "value": "Untitled_Artwork-1"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Lumbering Falls"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_bluecry"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "silenceofthelambs"
+    }
+  ],
+  "edition": 817,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1991"
+      }
+    ]
+  },
+  "collection_mints": [
+    "24eqa4TQmRQvZKGfv9t9fFfWXG2VF9fByjuKCDW7v5yw"
+  ]
+}

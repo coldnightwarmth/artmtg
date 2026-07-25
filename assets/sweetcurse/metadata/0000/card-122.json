@@ -1,0 +1,78 @@
+{
+  "name": "Sweet Curse Card #122",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreiei35exjobdmsv3hao4vo2xegiglbbjgr2g2zeailmmplepdmx7vm",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Bio"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Micro - Leaf"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Gon"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Raw scan"
+    },
+    {
+      "trait_type": "Base",
+      "value": "lego"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Hong Kong Phooey Px"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "R. Mascaro3"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "2t_k Porygon"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Windows_2005"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Christion cross"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "How much"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "overgrowth"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreiei35exjobdmsv3hao4vo2xegiglbbjgr2g2zeailmmplepdmx7vm",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeie3adplafadfpbc2pqc26jtgrxmy7quuk2rpsfhmxgmqnszo6x3ge",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeie3adplafadfpbc2pqc26jtgrxmy7quuk2rpsfhmxgmqnszo6x3ge",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeie3adplafadfpbc2pqc26jtgrxmy7quuk2rpsfhmxgmqnszo6x3ge",
+  "collection_mints": [
+    "3zndguvHodFZQpU2pbufND4jGS8keX2ePjfCtaTiJWKy"
+  ]
+}

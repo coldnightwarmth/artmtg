@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #435",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/435",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_pkmnbugluv"
+    },
+    {
+      "trait_type": "behind",
+      "value": "terrariasword"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Mindmelter"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_kinkd"
+    },
+    {
+      "trait_type": "hat",
+      "value": "workingondying"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "wokky"
+    }
+  ],
+  "edition": 1906,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/435"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8pKHCcFmeMoGSAmKMUqxEmoHi9BRKajj2H2wGvo2nR9E"
+  ]
+}

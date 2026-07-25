@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #1185",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1185",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_dxmdreams"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_71"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Goblin Champion"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_mifella1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_nar"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "gamecube"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_howl"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_kirbyball"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "invader"
+    }
+  ],
+  "edition": 267,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1185"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Dnp3CfUQGCNMWK2t4EMv4v5viTeXxTQHhxMSNjKmBafH"
+  ]
+}

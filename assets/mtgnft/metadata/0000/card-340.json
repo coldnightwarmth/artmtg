@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #339",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/339",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_usa"
+    },
+    {
+      "trait_type": "behind",
+      "value": "blueflames"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Incorrigible Youths"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "rubbermouf"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "thps2"
+    }
+  ],
+  "edition": 1564,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/339"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4NoWet8Zu25unmAwzKKrEmSHTj5GDazY96ZD9nfCfyrW"
+  ]
+}

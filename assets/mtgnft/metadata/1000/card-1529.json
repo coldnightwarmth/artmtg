@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1528",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1528",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_chrischanmewtwo"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_191"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Nahiri's Machinations"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "bloodsmirk"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "grinch5s"
+    },
+    {
+      "trait_type": "special top",
+      "value": "mariopaint2"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "thps"
+    }
+  ],
+  "edition": 801,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1528"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BmfkxoDfbee5qoSppa2RyXyWJq52ZwcUYcNgGvozKECP"
+  ]
+}

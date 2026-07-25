@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1615",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1615",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_tabs1"
+    },
+    {
+      "trait_type": "behind",
+      "value": "godsword"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_81"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Goblin Cadets"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_neverbrush"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "whatsinyocuppiiimp"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_dg5s"
+    }
+  ],
+  "edition": 281,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1615"
+      }
+    ]
+  },
+  "collection_mints": [
+    "2gxGSk4rPi1XzVmQ5Tx1ZRE5YncM1J1gPe9rheWfvcgd"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Drifella Card 2",
+  "symbol": "DC2",
+  "description": "Drifella Card 2\n2023",
+  "image": "https://gateway.irys.xyz/ZuRWrnyHhgNCMUVI0m2Uq9J4jozKCcTjl1DVtX0g-WY/IMG_8722%203.PNG",
+  "attributes": [],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://gateway.irys.xyz/ZuRWrnyHhgNCMUVI0m2Uq9J4jozKCcTjl1DVtX0g-WY/IMG_8722%203.PNG",
+        "type": "image/png"
+      }
+    ],
+    "category": "image"
+  },
+  "collection_mints": [
+    "BsUmejVkYwLy5WDoYxvtdmbKjig6WTXjQ1MfpESXo6Ay"
+  ]
+}

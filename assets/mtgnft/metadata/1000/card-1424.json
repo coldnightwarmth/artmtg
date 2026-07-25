@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1423",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1423",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_eboynoise"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Giver of Runes"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "fangs"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "wokky"
+    }
+  ],
+  "edition": 1898,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1423"
+      }
+    ]
+  },
+  "collection_mints": [
+    "2kej5CjEC5RJ2mLQeKq8bF24LPTRCQk17T8g7orGpaNL"
+  ]
+}

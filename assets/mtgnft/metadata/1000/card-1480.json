@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1479",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1479",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_littletests"
+    },
+    {
+      "trait_type": "behind",
+      "value": "matrixcode"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Horned Cheetah"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_animu2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "kinkd"
+    }
+  ],
+  "edition": 309,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1479"
+      }
+    ]
+  },
+  "collection_mints": [
+    "22grgMCrmqbFayJg3JGPKjRVQX2DuRLsvkSovQbdFUXQ"
+  ]
+}

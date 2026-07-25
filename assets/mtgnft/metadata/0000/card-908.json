@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #907",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/907",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_drifella2"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Wooded Bastion"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_smeerk"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "bible"
+    },
+    {
+      "trait_type": "special top",
+      "value": "mariopaint1"
+    }
+  ],
+  "edition": 1139,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/907"
+      }
+    ]
+  },
+  "collection_mints": [
+    "AJMcypo7MmKfgCX1zpisPpjBBjUdwPFx72YKZG4nGYfp"
+  ]
+}

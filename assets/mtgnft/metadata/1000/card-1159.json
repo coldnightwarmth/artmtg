@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1158",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1158",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_cockpit"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Horned Cheetah"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "yelling"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "axe"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "shiningmagickarp"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_mummy"
+    },
+    {
+      "trait_type": "special top",
+      "value": "warhammer40k"
+    }
+  ],
+  "edition": 932,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1158"
+      }
+    ]
+  },
+  "collection_mints": [
+    "BPxWzVUtvpuXA5jDdsuTjHtmXh3XdfjYdib2RqWPpcmF"
+  ]
+}

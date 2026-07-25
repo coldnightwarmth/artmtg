@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #485",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/485",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_chaotic"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_77"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Copperhorn Scout"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_breath"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_kirb"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "ps3"
+    }
+  ],
+  "edition": 500,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/485"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6ZKYYaoXN423WFTF9AQH5JFDBuM6JUtwBA9CtEKbE7Sj"
+  ]
+}

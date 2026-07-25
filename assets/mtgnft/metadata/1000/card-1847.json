@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1846",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1846",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_toonblueeyes"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Palisade Giant"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_ahhhhhh"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_jontron"
+    },
+    {
+      "trait_type": "special top",
+      "value": "mw2"
+    }
+  ],
+  "edition": 260,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1846"
+      }
+    ]
+  },
+  "collection_mints": [
+    "KeHdwGwixhQ2aNhscBEMhcWHT6hzBN1Pw1fbFKVv3Lj"
+  ]
+}

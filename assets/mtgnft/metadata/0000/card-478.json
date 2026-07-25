@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #477",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/477",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_eboynoise"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Shared Discovery"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_larvatar"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "killakweenT"
+    }
+  ],
+  "edition": 1701,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/477"
+      }
+    ]
+  },
+  "collection_mints": [
+    "46bXGMJFyGkWh1T1rFjuF1Yn5L9r44GWAaqfehVBsrit"
+  ]
+}

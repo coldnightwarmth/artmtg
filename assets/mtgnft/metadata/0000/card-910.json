@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #909",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/909",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_asspizzagun"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Viashino Sandsprinter"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_breath"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "buutoy"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "pron"
+    }
+  ],
+  "edition": 1077,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/909"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Azx1xWvun1Gznrd5rf1QfWjLwwSCdTzDSZmt4FPBPAgP"
+  ]
+}

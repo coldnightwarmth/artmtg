@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #390",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/390",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_tumblraf2"
+    },
+    {
+      "trait_type": "behind",
+      "value": "unknownball"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Slice in Twain"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_serious"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_cursed"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "green"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_greymon"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "pron"
+    }
+  ],
+  "edition": 1350,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/390"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GsaNqumdxjFQrFg95P3LFZJmHucrtKsHay8p6EUCo1Np"
+  ]
+}

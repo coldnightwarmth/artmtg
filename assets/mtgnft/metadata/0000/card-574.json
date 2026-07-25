@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #573",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/573",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_usa"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "color_enhance_scattered_159"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Teferi's Curse"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "mifellasmirk"
+    }
+  ],
+  "edition": 2187,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/573"
+      }
+    ]
+  },
+  "collection_mints": [
+    "HVxmV8X2zKuSNu23qmLwE8ta1WiHNDJ6zXS6eghc12qG"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #782",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/782",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_animeangel"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_137"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Weakness"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "kinkd"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "vig"
+    }
+  ],
+  "edition": 1117,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/782"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6uhNpLkxKYF29CLftPb8X54dt65N2C1VoQzSwKthLDrZ"
+  ]
+}

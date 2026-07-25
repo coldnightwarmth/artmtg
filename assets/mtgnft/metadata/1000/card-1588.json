@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1587",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1587",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_snowcapped"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Veiled Sentry"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_yarinvert"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "babe"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "gunhandleft"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "rocksaltleft"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "joeyy"
+    }
+  ],
+  "edition": 729,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1587"
+      }
+    ]
+  },
+  "collection_mints": [
+    "53eroEShV9uvAuiH5uHdcJiaBim5avHGsvUCWHZCrmzv"
+  ]
+}

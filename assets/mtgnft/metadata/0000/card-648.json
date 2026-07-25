@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #647",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/647",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_spookydance"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Discordant Spirit"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_neverbrush"
+    }
+  ],
+  "edition": 2190,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/647"
+      }
+    ]
+  },
+  "collection_mints": [
+    "EZqCWF8KovkVTEkBWhkPfDMxT2CG94JCK8dD8rYSqosf"
+  ]
+}

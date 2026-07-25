@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #755",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/755",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_abstract5"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Viashino Sandsprinter"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "animu2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_smirk"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_redmiata"
+    }
+  ],
+  "edition": 1315,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/755"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DmC1UNpi1CHR6MNqt2prCrigipKbrFFj4kqXLcFod4hi"
+  ]
+}

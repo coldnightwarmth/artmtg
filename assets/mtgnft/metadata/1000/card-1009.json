@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1008",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1008",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_eboynoise"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Accursed Witch"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_mifella1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_orc"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "jiggly"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "markedup"
+    }
+  ],
+  "edition": 1107,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1008"
+      }
+    ]
+  },
+  "collection_mints": [
+    "G8TozGRojTVtnj8ctQRuuekQoAuwyqgGzpaeLNtisc6u"
+  ]
+}

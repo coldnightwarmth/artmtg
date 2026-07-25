@@ -1,0 +1,78 @@
+{
+  "name": "Sweet Curse Card #224",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigocampbh344l66x2eegsgwe3adu6ogyvjyxfmiac5wbzocvi4loe",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Noise"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Error"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Joancornella kim"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Yurei.raw3"
+    },
+    {
+      "trait_type": "Score",
+      "value": "Rorschach3"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Lets go g"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Gossip"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Jsrf2"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "2t_k Porygon"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Peeping shady"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "Pov lifestyle"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "trahison"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeigocampbh344l66x2eegsgwe3adu6ogyvjyxfmiac5wbzocvi4loe",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidqhjezxwognidirouybsif6pnlxchyw2ly4stb7b7gu45rnlfiwu",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidqhjezxwognidirouybsif6pnlxchyw2ly4stb7b7gu45rnlfiwu",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeidqhjezxwognidirouybsif6pnlxchyw2ly4stb7b7gu45rnlfiwu",
+  "collection_mints": [
+    "Djp3Z7uhDDNq3qxzLxeFX3HJ6t3x7C3mkgcfZnEkGGxp"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #23",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/23",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_riot"
+    },
+    {
+      "trait_type": "behind",
+      "value": "Untitled_Artwork-1"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Bursting Beebles"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_redblur"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_emo"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "gunleft"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "kirby"
+    }
+  ],
+  "edition": 1405,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/23"
+      }
+    ]
+  },
+  "collection_mints": [
+    "EvuTsZqekxEcTwz9pvk6CdUhbQaHfLWdmXELB26R46bs"
+  ]
+}

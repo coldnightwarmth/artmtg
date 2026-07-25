@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #753",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/753",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "ac130"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Startled Awake"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_larvatar"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "blue"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "rolledciggie"
+    }
+  ],
+  "edition": 408,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/753"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4FGaUq82h4hwcccgTYyFrkv1jb3Ej6qzR6DxtTQPQYza"
+  ]
+}

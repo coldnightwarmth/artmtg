@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1754",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1754",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_iceberg"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Hivis of the Scale"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_rubbermouf"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "green"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "reachright"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "reachleft"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "theonering"
+    }
+  ],
+  "edition": 2099,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1754"
+      }
+    ]
+  },
+  "collection_mints": [
+    "13oKdB7zxr4WrR63sq6hkckTLYHmhueyUuNLoQ1e9XNj"
+  ]
+}

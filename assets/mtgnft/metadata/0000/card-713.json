@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #712",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/712",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_heavygrain"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Gigantomancer"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "chompers"
+    },
+    {
+      "trait_type": "special top",
+      "value": "digimon"
+    }
+  ],
+  "edition": 1862,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/712"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4jg8yRaQgrR2mVbGmCqPW2FJBpQfrZmgirLYaVsJovaA"
+  ]
+}

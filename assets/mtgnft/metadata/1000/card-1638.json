@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1637",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1637",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_charazard"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_83"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Vampire"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_animu2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "kittygrin"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "crawlleft"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "cs1point6"
+    }
+  ],
+  "edition": 2016,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1637"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Eo4KxLo5MD7US9NBnuhmMBvgTomkY6VHAFfzFS8ob6r6"
+  ]
+}

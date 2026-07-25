@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1195",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1195",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_heaven"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Call the Bloodline"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_bluestrain"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_larvatar"
+    },
+    {
+      "trait_type": "special top",
+      "value": "digimon"
+    }
+  ],
+  "edition": 1487,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1195"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GtcmbM5tVdvqBaRvcWfQJWuveq7awUwFR1WviFGVnqkv"
+  ]
+}

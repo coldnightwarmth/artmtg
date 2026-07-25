@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #956",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/956",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_enterthematrix"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_103"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Dream Twist"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "troll"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_morphoius"
+    }
+  ],
+  "edition": 1693,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/956"
+      }
+    ]
+  },
+  "collection_mints": [
+    "73VdZK2WeZ4Z4s5aEieEUEcak2hP9kMbUWTGmCjDyJZs"
+  ]
+}

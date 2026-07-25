@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #807",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/807",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "blackops1"
+    },
+    {
+      "trait_type": "behind",
+      "value": "scanlines3"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Mana Prism"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_blush2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_teeef"
+    },
+    {
+      "trait_type": "special top",
+      "value": "sufficentswag"
+    }
+  ],
+  "edition": 301,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/807"
+      }
+    ]
+  },
+  "collection_mints": [
+    "2gShZo6W1DeYo9EDvk7XXmmW25Dk5q3DA3Cb1wooFDhi"
+  ]
+}

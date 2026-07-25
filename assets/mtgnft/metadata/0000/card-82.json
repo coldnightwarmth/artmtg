@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #81",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/81",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_cacti"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Windswept Heath"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_snorlax"
+    }
+  ],
+  "edition": 943,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/81"
+      }
+    ]
+  },
+  "collection_mints": [
+    "8R89oGgooGay5mYrQDJnHqb8bkJhPHsQsb9Wkb5HrY1W"
+  ]
+}

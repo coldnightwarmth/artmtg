@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #581",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/581",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_1stedition"
+    },
+    {
+      "trait_type": "behind",
+      "value": "wave"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_7"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Cyclone Sire"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "wavey"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "joker"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "axe"
+    }
+  ],
+  "edition": 888,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/581"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5Cf43cyn33GS5X7iijz7CCYjFdN5YdnmKyJfAS9BKKR9"
+  ]
+}

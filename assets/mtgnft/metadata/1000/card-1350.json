@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1349",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1349",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_sciencelab"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Vicious Offering"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_mifella3"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_goldgrillz"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "green"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "theGodfellaZ"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_gucciflops"
+    }
+  ],
+  "edition": 1435,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1349"
+      }
+    ]
+  },
+  "collection_mints": [
+    "EaNgUb1AxCbMiRqTgA5xVoDabqSKnawUSuDfFujbrmp2"
+  ]
+}

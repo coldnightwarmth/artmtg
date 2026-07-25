@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #2129",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2129",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_dxmdreams"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Paper Tiger"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_spongebob"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_thelost"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "invader"
+    }
+  ],
+  "edition": 515,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2129"
+      }
+    ]
+  },
+  "collection_mints": [
+    "FBaRsZNm3TGEb3Rp1dk4h6v9th96GvpGAWpmQ4mygj73"
+  ]
+}

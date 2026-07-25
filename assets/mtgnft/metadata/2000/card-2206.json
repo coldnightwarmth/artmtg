@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #2205",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2205",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_expiredfilm"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Okina Nightwatch"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_sidechompers"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_cs1point6"
+    }
+  ],
+  "edition": 1938,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2205"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6EfibPWFpjc4m8QVejnwtxfmisLhECF8B72RdrMbuRXN"
+  ]
+}

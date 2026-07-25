@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #2038",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2038",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_brands"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_181"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Conversion"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_dizzy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_joint"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "dreamland"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "yugiohcard"
+    }
+  ],
+  "edition": 1793,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2038"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DpsWH9kWmX128uL7FpBP56jnR4MfGsfCzACtuirp1AD6"
+  ]
+}

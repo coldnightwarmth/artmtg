@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1085",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1085",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_peaceischeap"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_55"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Death of a Thousand Stings"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_scarred"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_monke2"
+    },
+    {
+      "trait_type": "special top",
+      "value": "howiswag"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "osrs"
+    }
+  ],
+  "edition": 247,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1085"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5gJVivJBkbdxzMZMh9UdFJdLzB4f48CXtkAfC8h1RF4Y"
+  ]
+}

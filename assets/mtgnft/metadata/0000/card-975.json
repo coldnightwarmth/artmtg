@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #974",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/974",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_cartmanpope"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_40"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Sorry"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "solana"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_kittygrin"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_kidgoku"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "youngjotaro"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "thps"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "asspizzaalien"
+    }
+  ],
+  "edition": 42,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/974"
+      }
+    ]
+  },
+  "collection_mints": [
+    "6KSzhV9hcijuwQRTSz45TrHAy8bvtXcpMuPhPXS49jKd"
+  ]
+}

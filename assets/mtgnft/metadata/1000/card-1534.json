@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1533",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1533",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_artistshouse"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Set Adrift"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_enjoy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "neverbrush"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "digi"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "bowserlock"
+    }
+  ],
+  "edition": 1468,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1533"
+      }
+    ]
+  },
+  "collection_mints": [
+    "CkBTKdWwXYQec2Y5CrUtjdK6BYp1W9nF9JZg52YSRfk7"
+  ]
+}

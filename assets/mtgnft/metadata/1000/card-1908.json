@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1907",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1907",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "nomansland"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Conservator"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_perc5shine"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "tongetooth"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "scraped"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_tree"
+    }
+  ],
+  "edition": 1741,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1907"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3wikgbykzsB39ULBHWQoZVsKUhtBDZPntJt2peFJCtRf"
+  ]
+}

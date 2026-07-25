@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #309",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/309",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_killerinstint"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Rune of Protection Green"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_drifellateeth"
+    }
+  ],
+  "edition": 109,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/309"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4fPHFGNqeJh9jFttbBkeiGdBpLnNr3zsbgKm3TahUgAe"
+  ]
+}

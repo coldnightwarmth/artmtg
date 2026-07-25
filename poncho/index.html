@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en" data-collection-id="poncho">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <title>cards.art</title>
+    <link rel="icon" type="image/png" href="../cardnft.png">
+    <link rel="apple-touch-icon" href="../cardnft.png">
+    <link rel="stylesheet" href="../styles.css?v=cardnft-129">
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../vendor/three.module.min.js?v=three-r165-min-1"
+        }
+      }
+    </script>
+    <link rel="modulepreload" href="../app.js?v=cardnft-292">
+    <link rel="modulepreload" href="../vendor/three.module.min.js?v=three-r165-min-1">
+    <link rel="modulepreload" href="../browser-traits-catalog.js?v=browser-traits-5">
+    <link rel="modulepreload" href="../poncho-data.js?v=poncho-3">
+  </head>
+  <body>
+    <main class="table" id="table">
+      <section class="card-rig" id="cardRig" aria-label="3D Poncho Drifella viewer">
+        <canvas id="cardCanvas" aria-label="Rotatable Poncho Drifella card"></canvas>
+        <div class="button-row" aria-label="Card controls">
+          <button class="icon-button" id="cardBinderReturnButton" type="button" title="Back to binder position" aria-label="Back to binder position">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 5v14"></path>
+              <path d="m19 12-7 7-7-7"></path>
+            </svg>
+          </button>
+          <button class="icon-button" id="previousButton" type="button" title="Previous card" aria-label="Previous card">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18 9 12l6-6"></path></svg>
+          </button>
+          <button class="icon-button" id="nextButton" type="button" title="Next card" aria-label="Next card">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+          </button>
+          <button class="icon-button" id="shuffleButton" type="button" title="Shuffle card. Right-click to return to the previous shuffled card." aria-label="Shuffle card">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M16 3h5v5"></path>
+              <path d="M4 20 21 3"></path>
+              <path d="M21 16v5h-5"></path>
+              <path d="M15 15l6 6"></path>
+              <path d="M4 4l5 5"></path>
+            </svg>
+          </button>
+          <button class="icon-button" id="favoriteButton" type="button" title="Toggle favorite" aria-label="Toggle favorite" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.55 5.16 5.7.83-4.12 4.02.97 5.68L12 16.6l-5.1 2.69.97-5.68-4.12-4.02 5.7-.83L12 3.6Z"></path></svg>
+          </button>
+          <button class="icon-button" id="traitInfoButton" type="button" title="Toggle traits" aria-label="Toggle traits" aria-expanded="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 12h.01"></path>
+              <path d="M12 12h.01"></path>
+              <path d="M18 12h.01"></path>
+            </svg>
+          </button>
+        </div>
+        <section class="trait-panel" id="traitPanel" aria-label="Card traits" aria-hidden="true">
+          <div class="trait-panel-content">
+            <div class="trait-grid" id="traitGrid"></div>
+            <div class="trait-action-row" aria-label="Card trait actions">
+              <a class="icon-button trait-link-button trait-tensor-button" id="traitTensorButton" target="_blank" rel="noopener noreferrer" title="Open on Tensor" aria-label="Open on Tensor">
+                <img class="trait-logo-image tensor-logo" src="../assets/ui/tensor-logo.png" alt="">
+              </a>
+              <a class="icon-button trait-link-button trait-solscan-button" id="traitSolscanButton" target="_blank" rel="noopener noreferrer" title="Open on Solscan" aria-label="Open on Solscan">
+                <img class="trait-logo-image solscan-logo" src="../assets/ui/solscan-logo.png" alt="">
+              </a>
+              <button class="icon-button trait-download-button" id="traitDownloadButton" type="button" title="Download card art" aria-label="Download card art">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3v12"></path>
+                  <path d="m7 10 5 5 5-5"></path>
+                  <path d="M5 21h14"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
+        <div class="card-filename" id="cardFileName" aria-live="polite"></div>
+      </section>
+
+      <section class="gallery-panel" id="galleryPanel" aria-label="Poncho Drifella gallery" hidden>
+        <div class="gallery-filter-controls" aria-label="Gallery filters">
+          <button class="gallery-clear-filters-button" id="galleryClearFiltersButton" type="button" title="Reset sort and filters" aria-label="Reset sort and filters" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 6l12 12"></path>
+              <path d="M18 6 6 18"></path>
+            </svg>
+          </button>
+          <label class="gallery-sort-control" id="gallerySortControl" aria-expanded="false">
+            <span>sort by</span>
+            <select id="traitSortSelect" aria-label="Sort by trait category">
+              <option value="all">all</option>
+            </select>
+          </label>
+          <button class="gallery-trait-search-button" id="traitSearchButton" type="button" aria-pressed="false"><span class="gallery-trait-search-label" id="traitSearchButtonLabel">traits</span></button>
+        </div>
+        <div class="gallery-grid" id="galleryGrid" hidden></div>
+        <div class="binder-panel" id="binderPanel">
+          <canvas id="binderCanvas" aria-label="3D Poncho Drifella binder"></canvas>
+          <div class="binder-loading" id="binderLoading" hidden><span></span></div>
+        </div>
+        <section class="trait-search-panel" id="traitSearchPanel" aria-label="Trait search" hidden>
+          <div class="trait-search-filter">
+            <input class="trait-search-input" id="traitSearchInput" type="search" autocomplete="off" spellcheck="false" aria-label="Search traits">
+          </div>
+          <div class="trait-search-layout">
+            <div class="trait-search-groups" id="traitSearchGroups"></div>
+            <nav class="trait-search-sidebar" id="traitSearchSidebar" aria-label="Trait categories"></nav>
+          </div>
+        </section>
+        <div class="binder-page-controls" id="binderPageControls" aria-label="Binder page controls">
+          <button class="icon-button binder-table-view-button" id="binderTableViewButton" type="button" title="Place binder on table" aria-label="Place binder on table" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 5v14"></path>
+              <path d="m19 12-7 7-7-7"></path>
+            </svg>
+          </button>
+          <button class="icon-button" id="binderZoomOutButton" type="button" title="Return to binder spread" aria-label="Return to binder spread" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 5v14"></path>
+              <path d="m19 12-7 7-7-7"></path>
+            </svg>
+          </button>
+          <button class="icon-button" id="binderPreviousPageButton" type="button" title="Previous binder page" aria-label="Previous binder page">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18 9 12l6-6"></path></svg>
+          </button>
+          <button class="icon-button" id="binderNextPageButton" type="button" title="Next binder page" aria-label="Next binder page">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+          </button>
+          <button class="icon-button" id="binderShuffleButton" type="button" title="Shuffle binder spread. Right-click to return to the previous spread." aria-label="Shuffle binder spread">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M16 3h5v5"></path>
+              <path d="M4 20 21 3"></path>
+              <path d="M21 16v5h-5"></path>
+              <path d="M15 15l6 6"></path>
+              <path d="M4 4l5 5"></path>
+            </svg>
+          </button>
+          <button class="icon-button" id="binderFavoriteButton" type="button" title="Toggle favorite" aria-label="Toggle favorite" aria-pressed="false" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.55 5.16 5.7.83-4.12 4.02.97 5.68L12 16.6l-5.1 2.69.97-5.68-4.12-4.02 5.7-.83L12 3.6Z"></path></svg>
+          </button>
+          <button class="icon-button" id="binderOpenCardButton" type="button" title="Open card view" aria-label="Open card view" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 11V6a2 2 0 0 1 4 0v4"></path>
+              <path d="M12 10V5a2 2 0 0 1 4 0v6"></path>
+              <path d="M16 11V7a2 2 0 0 1 4 0v7"></path>
+              <path d="M8 11a2 2 0 0 0-4 0v3c0 4.4 3.6 8 8 8h1.5a6.5 6.5 0 0 0 6.5-6.5V14"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="binder-page-status" id="binderPageStatus" aria-live="polite"></div>
+        <section class="wallet-search-panel" id="walletSearchPanel" aria-label="Wallet card search" aria-hidden="true" hidden>
+          <form class="wallet-search-dialog" id="walletSearchForm">
+            <p class="wallet-search-message" id="walletSearchMessage">Enter a SOL address to view collected cards:</p>
+            <input class="wallet-address-input" id="walletAddressInput" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" inputmode="text" aria-label="Solana wallet address">
+            <button class="icon-button wallet-search-submit-button" id="walletSearchSubmitButton" type="submit" title="Search wallet holdings" aria-label="Search wallet holdings">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="10.8" cy="10.8" r="6.2"></circle>
+                <path d="m15.4 15.4 4.2 4.2"></path>
+              </svg>
+            </button>
+          </form>
+        </section>
+        <div class="gallery-empty" id="galleryEmpty" hidden>No favorites yet</div>
+      </section>
+    </main>
+
+    <button class="icon-button corner-gallery" id="galleryToggleButton" type="button" title="Toggle gallery" aria-label="Toggle gallery" aria-pressed="false">
+      <svg class="gallery-toggle-icon gallery-binder-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor" stroke="none" d="M6.35 8.65h2.85v11.25H6.35z"></path>
+        <path fill="currentColor" stroke="none" d="M6.35 8.65 15.25 4.45v2.15L9.2 8.65z"></path>
+        <path fill="currentColor" stroke="none" d="M10.55 7.95 17.65 4.25v12.35l-7.1 4.05z"></path>
+      </svg>
+      <svg class="gallery-toggle-icon gallery-grid-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4.5 4.5h6.2v6.2H4.5z"></path>
+        <path d="M13.3 4.5h6.2v6.2h-6.2z"></path>
+        <path d="M4.5 13.3h6.2v6.2H4.5z"></path>
+        <path d="M13.3 13.3h6.2v6.2h-6.2z"></path>
+      </svg>
+      <svg class="gallery-toggle-icon gallery-card-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <defs>
+          <mask id="gallery-card-icon-cutout" maskUnits="userSpaceOnUse" mask-type="luminance">
+            <rect x="0" y="0" width="24" height="24" fill="white" stroke="none"></rect>
+            <rect x="7.2" y="5.6" width="9.6" height="7.75" rx="0.55" fill="black" stroke="white" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"></rect>
+          </mask>
+        </defs>
+        <rect class="gallery-card-icon-body" x="6.2" y="3.2" width="11.6" height="17.6" rx="1.65" mask="url(#gallery-card-icon-cutout)"></rect>
+      </svg>
+    </button>
+
+    <button class="icon-button gallery-view-toggle" id="galleryViewToggleButton" type="button" title="Show simple gallery" aria-label="Show simple gallery" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4.5 4.5h6.2v6.2H4.5z"></path>
+        <path d="M13.3 4.5h6.2v6.2h-6.2z"></path>
+        <path d="M4.5 13.3h6.2v6.2H4.5z"></path>
+        <path d="M13.3 13.3h6.2v6.2h-6.2z"></path>
+      </svg>
+    </button>
+
+    <button class="icon-button wallet-search-toggle" id="walletSearchButton" type="button" title="Search wallet holdings" aria-label="Search wallet holdings" aria-expanded="false" aria-pressed="false" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="10.8" cy="10.8" r="6.2"></circle>
+        <path d="m15.4 15.4 4.2 4.2"></path>
+      </svg>
+    </button>
+
+    <label class="theme-switch" title="Toggle light mode" aria-label="Toggle light mode">
+      <input id="themeToggle" type="checkbox">
+      <span class="switch-track" aria-hidden="true"><span class="switch-thumb"></span></span>
+    </label>
+
+    <button class="icon-button corner-favorites" id="favoriteFilterButton" type="button" title="Show favorites" aria-label="Show favorites" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.55 5.16 5.7.83-4.12 4.02.97 5.68L12 16.6l-5.1 2.69.97-5.68-4.12-4.02 5.7-.83L12 3.6Z"></path></svg>
+    </button>
+
+    <script type="module" src="../app.js?v=cardnft-292"></script>
+  </body>
+</html>

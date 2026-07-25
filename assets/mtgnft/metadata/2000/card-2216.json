@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #2215",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2215",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_lcartin"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Grave Titan"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "blue"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_smeerk"
+    },
+    {
+      "trait_type": "hat",
+      "value": "goofyhat"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "scraped"
+    },
+    {
+      "trait_type": "bottom center",
+      "value": "dreamland"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "darkmagician"
+    }
+  ],
+  "edition": 2133,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2215"
+      }
+    ]
+  },
+  "collection_mints": [
+    "wrh4TpjJXKmPSRwNKqrRqiNVszRsTUktu1Y48QDgSFh"
+  ]
+}

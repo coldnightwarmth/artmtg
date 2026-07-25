@@ -1,0 +1,33 @@
+{
+  "name": "sun",
+  "description": "Meinong",
+  "seller_fee_basis_points": 500,
+  "image": "https://turbo-gateway.com/Xevi8ibM_L1bg4K6YcNLE0I2XsscDRKuVYLl0K0xMgc?ext=gif",
+  "properties": {
+    "files": [
+      {
+        "uri": "https://turbo-gateway.com/Xevi8ibM_L1bg4K6YcNLE0I2XsscDRKuVYLl0K0xMgc?ext=gif",
+        "type": "image/gif"
+      }
+    ],
+    "creators": [
+      {
+        "address": "B2xAGgzNrFJ77JF1ni9cUjJ4F8zQUA7vXW31CKzGT9qC",
+        "share": 100,
+        "verified": true
+      }
+    ]
+  },
+  "attributes": [],
+  "collection_mints": [
+    "2r2Hy8ze53MQhgac9pKV4Vg9DfdvPKdhCALfiXCjbhjK",
+    "58aEZuhWa4NtWL36gyiAseYPoqvJkpktyKfDkBXfeyFv",
+    "5rNEnrrT7ogQzTJb8F81yBRiASk7QJ1NedCtkZkRnCTR",
+    "9ppADVJw4TVBVJR4Ab8d2E87wfCFnzvT5tuymASymhuS",
+    "BEERdpF4QpY2FT6ykda4yFYHCgr9YwmBrDtXEGDSSv6r",
+    "CkK6qtzmeeAt7eRzTJFmovHaZdCPxHc8xDTxya6EsSFp",
+    "ET2GbEn8mUprMkG78tGxvtNBB4bWt4K7ttSWR9rrynTZ",
+    "Ex5uXBQbUhqfXe5RLA85oYSJurGEjXTgmriDwNQHaUCY",
+    "H79ig3gsKGGMJgff4SiAw3RVpNQWGYQtK63ArUjMGftt"
+  ]
+}

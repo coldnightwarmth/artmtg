@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #642",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/642",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_peachscastle"
+    },
+    {
+      "trait_type": "behind",
+      "value": "chaosbehind"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "scattered_150"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Cathodion"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_wavey"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_orc"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "digipacks"
+    }
+  ],
+  "edition": 372,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/642"
+      }
+    ]
+  },
+  "collection_mints": [
+    "41JRkyC4vkpntHdw1oMG3tABhseyCUo4bQtiGi7cT8Xu"
+  ]
+}

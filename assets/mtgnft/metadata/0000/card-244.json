@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #243",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/243",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_whereyouwork"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "sharpness_scattered_122"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Breaking Wave"
+    },
+    {
+      "trait_type": "holo",
+      "value": "crumpled"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "contrast_yar"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_joint"
+    },
+    {
+      "trait_type": "hat",
+      "value": "toymachine"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "shootah"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "adam"
+    }
+  ],
+  "edition": 837,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/243"
+      }
+    ]
+  },
+  "collection_mints": [
+    "GFeHPNvepnoCm4CUBPZPZ8Dm2ztFE3mPR2fokNdvJpL4"
+  ]
+}

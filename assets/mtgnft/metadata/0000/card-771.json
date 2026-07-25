@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #770",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/770",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_tokyo"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Chariot of the Sun"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_perc5shine"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_comicjoker"
+    },
+    {
+      "trait_type": "hat",
+      "value": "preppybear"
+    }
+  ],
+  "edition": 317,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/770"
+      }
+    ]
+  },
+  "collection_mints": [
+    "2WMRqCuy5QGjSr2V9mQyPn7H4Ep1BT3LN9cxyCESzm2Y"
+  ]
+}

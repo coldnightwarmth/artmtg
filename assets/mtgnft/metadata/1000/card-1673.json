@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #1672",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1672",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "sharpness_xanax"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Dreg Mangler"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_strained"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_breath"
+    }
+  ],
+  "edition": 1842,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1672"
+      }
+    ]
+  },
+  "collection_mints": [
+    "EuChsocr79nb8WLDcUs8gNJQKRjM7hSjWKysZWyLddzy"
+  ]
+}

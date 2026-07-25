@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #2150",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2150",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_whatitradeoff"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Grimoire of the Dead"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "evil1"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "ucantseeme"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "misalute"
+    }
+  ],
+  "edition": 188,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/2150"
+      }
+    ]
+  },
+  "collection_mints": [
+    "42damJmFVL3NBVqS2bsimME4rJv36ifgyMGvhoMMVh2r"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #1732",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1732",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_iceberg"
+    },
+    {
+      "trait_type": "behind",
+      "value": "911"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Ebony Charm"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "troll"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_braindamage"
+    }
+  ],
+  "edition": 1797,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1732"
+      }
+    ]
+  },
+  "collection_mints": [
+    "JDR4og6aAR7PX7BqFmkbVSJ3s2HDawv6G7rzYBwPC5xE"
+  ]
+}

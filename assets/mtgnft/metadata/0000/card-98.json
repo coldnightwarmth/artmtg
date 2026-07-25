@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #97",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/97",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_akat"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Orim's Touch"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_redfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "contrast_toonblueeyes"
+    },
+    {
+      "trait_type": "hat",
+      "value": "gripthefitted"
+    }
+  ],
+  "edition": 305,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/97"
+      }
+    ]
+  },
+  "collection_mints": [
+    "5pRivDXxJTtU9jXGT2hEwrLdFqZHt4ghqFhxzFhM66e2"
+  ]
+}

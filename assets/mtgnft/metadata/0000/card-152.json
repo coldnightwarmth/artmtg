@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #151",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/151",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "contrast_paradise"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Heartless Summoning"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "blush1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_snout"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "mirror_cs1point6"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "chaosemeralds"
+    }
+  ],
+  "edition": 1096,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/151"
+      }
+    ]
+  },
+  "collection_mints": [
+    "4THMBPsxFsDTYx5gYNfBpdxTdZCnzKfcU8x9vrXfU6A2"
+  ]
+}

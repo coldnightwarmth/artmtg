@@ -1,0 +1,82 @@
+{
+  "name": "Sweet Curse Card #38",
+  "symbol": "SCC",
+  "description": "Sweet Curse Cards — drop 1. Une sweet curse par carte, 10% en dualité.",
+  "image": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreicnc45ydp2mcayclrw7ldjtwouswjswnblm4ehu7oe33ybg5wfese",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "A.R.T."
+    },
+    {
+      "trait_type": "Background",
+      "value": "Апофеоз войны"
+    },
+    {
+      "trait_type": "Hero",
+      "value": "Windows_Horse"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Mailart4"
+    },
+    {
+      "trait_type": "Name",
+      "value": "Payme"
+    },
+    {
+      "trait_type": "Signature",
+      "value": "Erz4"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Dammit"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "Biga"
+    },
+    {
+      "trait_type": "Thought",
+      "value": "please"
+    },
+    {
+      "trait_type": "Thought2",
+      "value": "Daily Monsters3"
+    },
+    {
+      "trait_type": "Comprehension",
+      "value": "Pachimon laden"
+    },
+    {
+      "trait_type": "Theory",
+      "value": "SJ"
+    },
+    {
+      "trait_type": "Sweet Curse",
+      "value": "pixelsort"
+    },
+    {
+      "trait_type": "Dichotomie",
+      "value": "off"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafkreicnc45ydp2mcayclrw7ldjtwouswjswnblm4ehu7oe33ybg5wfese",
+        "type": "image/webp"
+      },
+      {
+        "uri": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibikrs352aq24ftusi737itdngc2b5v2cd4737uuk3hayekdianny",
+        "type": "video/mp4"
+      }
+    ],
+    "category": "video"
+  },
+  "animation_url": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibikrs352aq24ftusi737itdngc2b5v2cd4737uuk3hayekdianny",
+  "animation": "https://lime-given-booby-462.mypinata.cloud/ipfs/bafybeibikrs352aq24ftusi737itdngc2b5v2cd4737uuk3hayekdianny",
+  "collection_mints": [
+    "9rtSGXL81MQ7xQEQYRnK8wkEFNGoKYePpxQj7cUgy1vm"
+  ]
+}

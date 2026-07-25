@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1115",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1115",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_mansion"
+    },
+    {
+      "trait_type": "behind",
+      "value": "mastersword"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Thundering Djinn"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "squint"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_myspacecore"
+    },
+    {
+      "trait_type": "special top",
+      "value": "warhammer40k"
+    },
+    {
+      "trait_type": "special bottom",
+      "value": "invader"
+    }
+  ],
+  "edition": 1145,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1115"
+      }
+    ]
+  },
+  "collection_mints": [
+    "QZCtpWcDa1aFCJQN5Fr4AJxUMvAfyxNzAUptBwp2xpX"
+  ]
+}

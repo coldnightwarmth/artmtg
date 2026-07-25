@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #1368",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1368",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "edge_enhance_drifella2"
+    },
+    {
+      "trait_type": "behind",
+      "value": "daorcs"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_42"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Mana Maze"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_perc5shine"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_spongebob"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_n64"
+    }
+  ],
+  "edition": 1311,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1368"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DoBKZ8uQ7DSwzMrh3xCB7LUGJ24NkvSdV1NtPhQiCbEA"
+  ]
+}

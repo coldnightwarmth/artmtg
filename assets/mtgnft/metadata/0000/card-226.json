@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #225",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/225",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_kingbiden"
+    },
+    {
+      "trait_type": "behind",
+      "value": "scanlines2"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Dutiful Return"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_joy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_venom"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "buutoy"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "breakbottom"
+    }
+  ],
+  "edition": 1100,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/225"
+      }
+    ]
+  },
+  "collection_mints": [
+    "B5VNtGurtQsgBmwzJm2HKw8LdgvC8oFR7Bib7s3kbMoB"
+  ]
+}

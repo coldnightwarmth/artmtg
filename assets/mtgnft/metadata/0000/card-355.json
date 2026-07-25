@@ -1,0 +1,42 @@
+{
+  "name": "MTG CARD #354",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/354",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "mirror_hellcastle"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Trigon of Rage"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_perc5"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_joint"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "fingerright"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "bestgirlmisato"
+    }
+  ],
+  "edition": 1629,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/354"
+      }
+    ]
+  },
+  "collection_mints": [
+    "92GpiupFrQoNWquu6tEBbFEpn4CWoL6yhp9gCyFBh7yb"
+  ]
+}

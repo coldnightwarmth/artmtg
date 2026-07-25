@@ -1,0 +1,46 @@
+{
+  "name": "MTG CARD #861",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/861",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "csgostitch"
+    },
+    {
+      "trait_type": "behind",
+      "value": "mastersword"
+    },
+    {
+      "trait_type": "scatter",
+      "value": "mirror_scattered_147"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Paraselene"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "inversion_beez"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_69"
+    },
+    {
+      "trait_type": "special top",
+      "value": "solananetwork"
+    }
+  ],
+  "edition": 582,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/861"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3GZPZXX1mEW8dM2tC8Rg2QhjYLpEgSCES2Xa2vK95VBb"
+  ]
+}

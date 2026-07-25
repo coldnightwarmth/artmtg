@@ -1,0 +1,34 @@
+{
+  "name": "MTG CARD #1431",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1431",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_egirlnoise"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Counterflux"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "greenfella"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "mifellasmirk"
+    }
+  ],
+  "edition": 2208,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1431"
+      }
+    ]
+  },
+  "collection_mints": [
+    "DDJW3d74ayPr2m4T9QGf6AsX4CDs5vcZtw3N4HSmKbNo"
+  ]
+}

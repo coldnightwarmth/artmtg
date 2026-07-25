@@ -1,0 +1,50 @@
+{
+  "name": "MTG CARD #1749",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1749",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_killthejudge"
+    },
+    {
+      "trait_type": "behind",
+      "value": "Untitled_Artwork-1"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Tombstone Stairwell"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "color_enhance_clouds"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_spongebob"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "bible"
+    },
+    {
+      "trait_type": "hand left",
+      "value": "ciggie"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_spiro"
+    }
+  ],
+  "edition": 1859,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1749"
+      }
+    ]
+  },
+  "collection_mints": [
+    "Hz6BujAbEBzMiQiuKzF63inkWB1BkKUFxb5WVw8o3Jdd"
+  ]
+}

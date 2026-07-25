@@ -1,0 +1,54 @@
+{
+  "name": "MTG CARD #1506",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1506",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_animeangel"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Keldon Warlord"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_galaxy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "mifellasmirk"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "red"
+    },
+    {
+      "trait_type": "hat",
+      "value": "toymachine"
+    },
+    {
+      "trait_type": "hand right",
+      "value": "beretta"
+    },
+    {
+      "trait_type": "bottom left",
+      "value": "magic"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_cod4"
+    }
+  ],
+  "edition": 806,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1506"
+      }
+    ]
+  },
+  "collection_mints": [
+    "ARjZB4aPi6P6yXS4s2f1sz11JKPStgjaqgPFwBNHYRs6"
+  ]
+}

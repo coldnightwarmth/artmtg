@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #60",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/60",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "radial_blur_cartelbust2"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Barrin's Codex"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "animu2"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "color_enhance_mifellasmirk"
+    },
+    {
+      "trait_type": "bottom right",
+      "value": "mirror_grinch5s"
+    }
+  ],
+  "edition": 2031,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/60"
+      }
+    ]
+  },
+  "collection_mints": [
+    "3B1RxH1HqtzEqLN1vJCiz2cLdFWrkVw8Dfg2Rh8nDSD1"
+  ]
+}

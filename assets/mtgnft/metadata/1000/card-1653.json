@@ -1,0 +1,38 @@
+{
+  "name": "MTG CARD #1652",
+  "description": "An omage to degeneracy and basement dwelling. I love you.",
+  "image": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1652",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "inversion_littletests"
+    },
+    {
+      "trait_type": "cards",
+      "value": "Copperhorn Scout"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sharpness_mifella1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "sharpness_braces"
+    },
+    {
+      "trait_type": "overlay",
+      "value": "bowserlock"
+    }
+  ],
+  "edition": 1996,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://na-assets.pinit.io/CKsJJnyR4pr6jbKZPuaYRWxgS6AbWqTqjXXyJgbTmpvU/9bd177cd-806d-42d3-85f5-93b117d5c4bd/1652"
+      }
+    ]
+  },
+  "collection_mints": [
+    "772XyqY1JY9WHqzd414tRDtjuph6o69XE64ZmFu8anFd"
+  ]
+}
