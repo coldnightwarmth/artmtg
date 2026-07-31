@@ -119,6 +119,66 @@ body.is-light::before {
   opacity: 0.15;
 }
 
+body > :not(script):not(.card-rain-screensaver) {
+  transition-property: opacity;
+  transition-duration: 420ms;
+  transition-timing-function: cubic-bezier(0.2, 0.76, 0.2, 1);
+}
+
+body.screensaver-mode > :not(script):not(.card-rain-screensaver) {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+body.screensaver-mode [role="tooltip"],
+body.screensaver-mode [data-tooltip],
+body.screensaver-mode .tooltip,
+body.screensaver-mode .ui-tooltip {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+.card-rain-screensaver {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  visibility: hidden;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% -8%, rgba(116, 132, 119, 0.16), transparent 44%),
+    radial-gradient(circle at 74% 82%, rgba(107, 81, 27, 0.18), transparent 46%),
+    linear-gradient(160deg, #0b0e0c, #17150f);
+  transition:
+    opacity 520ms cubic-bezier(0.2, 0.76, 0.2, 1),
+    visibility 0s linear 520ms;
+}
+
+body.is-light .card-rain-screensaver {
+  background:
+    radial-gradient(circle at 50% -8%, rgba(154, 174, 158, 0.24), transparent 46%),
+    radial-gradient(circle at 74% 82%, rgba(152, 119, 54, 0.16), transparent 48%),
+    linear-gradient(160deg, #ebe8de, #dcd7c7);
+}
+
+.card-rain-screensaver.is-mounted {
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+
+.card-rain-screensaver.is-visible {
+  opacity: 1;
+}
+
+.card-rain-screensaver-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 button {
   color: inherit;
   font: inherit;
@@ -331,6 +391,48 @@ a.icon-button {
   opacity: 0;
 }
 
+.icon-button.is-screensaver-hold {
+  color: var(--accent);
+  border-color: rgba(215, 180, 84, 0.58);
+}
+
+.icon-button.is-screensaver-hold::before {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  background: rgba(215, 180, 84, 0.06);
+  transform: scale(0.38) rotate(0deg);
+  animation: card-rain-hold-progress 2000ms linear forwards;
+}
+
+.icon-button.is-screensaver-hold svg {
+  opacity: 0.16;
+  transition: opacity 180ms ease;
+}
+
+.icon-button.is-screensaver-confirmed {
+  color: var(--accent);
+  border-color: rgba(215, 180, 84, 0.68);
+}
+
+.icon-button.is-screensaver-confirmed::before {
+  display: block;
+  width: 15px;
+  height: 8px;
+  border: solid currentColor;
+  border-width: 0 0 2px 2px;
+  border-radius: 0;
+  animation: none;
+  transform: translateY(-1px) rotate(-45deg);
+}
+
+.icon-button.is-screensaver-confirmed svg {
+  opacity: 0;
+}
+
 .icon-button.is-confirmed {
   color: var(--accent);
   border-color: rgba(215, 180, 84, 0.66);
@@ -366,6 +468,20 @@ a.icon-button {
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes card-rain-hold-progress {
+  0% {
+    opacity: 0.28;
+    transform: scale(0.38) rotate(0deg);
+  }
+  68% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(720deg);
   }
 }
 

@@ -808,7 +808,8 @@ const INDIVIDUAL_CARD_PREWARM_STEP_DELAY_MS = 90;
 const INDIVIDUAL_BINDER_SPREAD_PREWARM_IDLE_TIMEOUT_MS = 900;
 const INDIVIDUAL_BINDER_SPREAD_PREWARM_FALLBACK_DELAY_MS = 180;
 const INDIVIDUAL_BINDER_SPREAD_PREWARM_CONCURRENCY = MEMORY_CONSTRAINED_DEVICE ? 1 : 2;
-const FOCUSED_BINDER_CARD_PREWARM_DELAY_MS = 70;
+const FOCUSED_BINDER_CARD_PREWARM_DELAY_MS = 0;
+const FOCUSED_BINDER_FULLY_VISIBLE_EDGE_TOLERANCE_PX = 2;
 const GALLERY_PRIORITY_ROWS = 4;
 const GALLERY_INITIAL_RENDER_MIN = 36;
 const GALLERY_RENDER_BATCH_SIZE = 72;
@@ -822,9 +823,87 @@ const GALLERY_CARD_TILT_SPRING = 0.14;
 const GALLERY_CARD_TILT_DAMPING = 0.76;
 const GALLERY_CARD_TILT_SETTLE_EPSILON = 0.02;
 const TRAIT_SEARCH_TILE_RENDER_BATCH_SIZE = 80;
-const SHUFFLE_TOUCH_UNDO_HOLD_MS = 560;
-const SHUFFLE_TOUCH_UNDO_SUPPRESS_MS = 1000;
-const SHUFFLE_TOUCH_UNDO_MOVE_LIMIT = 14;
+const SCREENSAVER_HOLD_MS = 2000;
+const SCREENSAVER_HOLD_MOVE_LIMIT = 14;
+const SCREENSAVER_PREWARM_DELAY_MS = 220;
+const SCREENSAVER_EXIT_BUFFER_MS = 2000;
+const SCREENSAVER_FADE_MS = 520;
+const SCREENSAVER_CONTEXT_MENU_SUPPRESSION_MS = 1200;
+const SCREENSAVER_INITIAL_CARD_COUNT = MEMORY_CONSTRAINED_DEVICE ? 4 : 7;
+const SCREENSAVER_MAX_CARD_COUNT = MEMORY_CONSTRAINED_DEVICE ? 22 : 34;
+const SCREENSAVER_PREWARM_CARD_COUNT = MEMORY_CONSTRAINED_DEVICE ? 7 : 12;
+const SCREENSAVER_READY_CARD_COUNT = MEMORY_CONSTRAINED_DEVICE ? 8 : 16;
+const SCREENSAVER_PREPARE_CONCURRENCY = MEMORY_CONSTRAINED_DEVICE ? 1 : 2;
+const SCREENSAVER_ACTIVE_PREPARE_CONCURRENCY = 1;
+const SCREENSAVER_PREPARE_IDLE_TIMEOUT_MS = 900;
+const SCREENSAVER_WARMUP_TARGET_SIZE = 8;
+const SCREENSAVER_SPAWN_INTERVAL_MS = MEMORY_CONSTRAINED_DEVICE ? 540 : 380;
+const SCREENSAVER_SPAWN_INTERVAL_JITTER = 0.16;
+const SCREENSAVER_SPAWN_RETRY_MS = 120;
+const SCREENSAVER_OFFSCREEN_LEAD_SECONDS = 0.48;
+const SCREENSAVER_DEPTH_MIN = -3.8;
+const SCREENSAVER_DEPTH_MAX = 3.8;
+const SCREENSAVER_DEPTH_LAYER_COUNT = 4;
+const SCREENSAVER_DEPTH_JITTER = 0.24;
+const SCREENSAVER_FALL_SPEED_JITTER = 0.04;
+const SCREENSAVER_SPAWN_SPACING_HISTORY = 4;
+const SCREENSAVER_SPAWN_POSITION_CANDIDATES = 40;
+const SCREENSAVER_SPAWN_TRAJECTORY_SAMPLE_COUNT = 7;
+const SCREENSAVER_SPAWN_TRAJECTORY_SAMPLE_STEP_SECONDS = 1.4;
+const SCREENSAVER_SPAWN_SCORE_RANDOMNESS = 0.14;
+const SCREENSAVER_SPAWN_MAX_OVERLAP = 0.18;
+const SCREENSAVER_HORIZONTAL_CENTER_LIMIT = 0.5;
+const SCREENSAVER_NORMALIZED_FALL_SPEED = 0.115;
+const SCREENSAVER_FRONT_FACING_PROBABILITY = 0.88;
+const SCREENSAVER_EVIL_COLLECTION_SPAWN_WEIGHTS = Object.freeze({
+  cardnft1: 3,
+  cardnft2: 3,
+  poncho: 2,
+});
+const SCREENSAVER_CARDNFT1_ANIMATED_SPAWN_CHANCE = 0.06;
+const SCREENSAVER_POINTER_ACTIVE_MS = 260;
+const SCREENSAVER_POINTER_MIN_SPEED_PX_S = 20;
+const SCREENSAVER_POINTER_MAX_SPEED_PX_S = 2400;
+const SCREENSAVER_POINTER_FORCE = 3.75;
+const SCREENSAVER_POINTER_ROTATION_FORCE = 30;
+const SCREENSAVER_POINTER_CORE_RADIUS_MIN = 138;
+const SCREENSAVER_POINTER_CORE_RADIUS_MAX = 330;
+const SCREENSAVER_POINTER_AMBIENT_RADIUS_MIN = 430;
+const SCREENSAVER_POINTER_AMBIENT_RADIUS_MAX = 1100;
+const SCREENSAVER_POINTER_AMBIENT_VIEWPORT_RATIO = 0.64;
+const SCREENSAVER_POINTER_AMBIENT_STRENGTH = 0.23;
+const SCREENSAVER_POINTER_WAKE_DURATION_MS = 680;
+const SCREENSAVER_POINTER_WAKE_SAMPLE_CAPACITY = 6;
+const SCREENSAVER_POINTER_WAKE_SAMPLE_SPACING_PX = 72;
+const SCREENSAVER_POINTER_WAKE_MAX_INTERPOLATED_SAMPLES = 3;
+const SCREENSAVER_POINTER_WAKE_FORCE_SCALE = 0.18;
+const SCREENSAVER_POINTER_WAKE_RADIUS_SCALE = 1.08;
+const SCREENSAVER_POINTER_SELECTION_GRACE_MS = 900;
+const SCREENSAVER_POINTER_LINEAR_SPRING = 2.15;
+const SCREENSAVER_POINTER_LINEAR_DAMPING = 2.85;
+const SCREENSAVER_POINTER_ROTATION_SPRING = 2.5;
+const SCREENSAVER_POINTER_ROTATION_DAMPING = 3.1;
+const SCREENSAVER_POINTER_MAX_OFFSET_RATIO = 0.33;
+const SCREENSAVER_POINTER_MAX_VELOCITY_RATIO = 0.76;
+const SCREENSAVER_POINTER_MAX_ANGULAR_VELOCITY = 6;
+const SCREENSAVER_POINTER_HOVER_RAYCAST_INTERVAL_MS = 50;
+const SCREENSAVER_POINTER_CLICK_HALF_DIAGONAL_SCALE = 0.66;
+const SCREENSAVER_COLLISION_RADIUS_FACTOR = 0.46;
+const SCREENSAVER_COLLISION_ACTIVATION_OVERSCAN = 3.2;
+const SCREENSAVER_COLLISION_CARD_DIAGONAL = Math.hypot(CARD_WIDTH, CARD_HEIGHT);
+const SCREENSAVER_CAMERA_FOV = 36;
+const SCREENSAVER_CAMERA_Z = 13;
+const SCREENSAVER_EFFECT_OVERSCAN_CARD_HEIGHTS = 1;
+const SCREENSAVER_PREPARE_POINTER_COOLDOWN_MS = 420;
+const SCREENSAVER_PREPARE_ACTIVATION_GRACE_MS = 900;
+const SCREENSAVER_PREPARE_MIN_IDLE_BUDGET_MS = 8;
+const SCREENSAVER_MAX_MOTION_DELTA_SECONDS = 1 / 60;
+const SCREENSAVER_DIAGNOSTIC_INTERVAL_MS = 1000;
+const SCREENSAVER_FRAME_SAMPLE_SIZE = 120;
+const SCREENSAVER_LONG_FRAME_MS = 24;
+const SCREENSAVER_DIAGNOSTICS_ENABLED = (
+  new URLSearchParams(window.location.search).has("perf")
+);
 const BINDER_FIRST_PAGE_HOLD_MS = 1500;
 const BINDER_FIRST_PAGE_HOLD_SUPPRESS_MS = 1000;
 const BINDER_FIRST_PAGE_HOLD_MOVE_LIMIT = 14;
@@ -1015,12 +1094,103 @@ let cardShuffleGlossOpacity = 1;
 let cardShuffleSpinAnimating = false;
 let cardShuffleSpinToken = 0;
 let cardNameInput = null;
-let shuffleTouchUndoTimer = 0;
-let shuffleTouchUndoPointerId = null;
-let shuffleTouchUndoStartX = 0;
-let shuffleTouchUndoStartY = 0;
-let shuffleTouchUndoTriggeredAt = 0;
-let suppressNextShuffleClick = false;
+let screensaverHoldState = null;
+let screensaverActivationButton = null;
+let screensaverSuppressedButton = null;
+let screensaverSuppressedClickUntil = 0;
+let screensaverPrewarmTimer = 0;
+let screensaverPrewarmPromise = null;
+let screensaverOverlay = null;
+let screensaverCanvas = null;
+let screensaverRenderer = null;
+let screensaverScene = null;
+let screensaverWarmupScene = null;
+let screensaverWarmupTarget = null;
+let screensaverCamera = null;
+let screensaverAnimationFrame = 0;
+let screensaverActive = false;
+let screensaverPreparing = false;
+let screensaverFullscreenRequested = false;
+let screensaverOwnsFullscreen = false;
+let screensaverExitArmedAt = 0;
+let screensaverExitTimer = 0;
+let screensaverLastFrameAt = 0;
+let screensaverFrameSampleCount = 0;
+let screensaverFrameSampleTotalMs = 0;
+let screensaverFrameSampleMaximumMs = 0;
+let screensaverFrameSampleLongFrames = 0;
+let screensaverNextSpawnAt = 0;
+let screensaverPrepareToken = 0;
+let screensaverPrepareActiveCount = 0;
+let screensaverPreparationBlockedUntil = 0;
+let screensaverCardIndexes = [];
+let screensaverCardBag = [];
+let screensaverSourceCollectionIds = [];
+const screensaverCollectionCardBags = new Map();
+let screensaverCollectionPickBag = [];
+let screensaverCardNft1AnimatedIndexes = [];
+let screensaverCardNft1AnimatedBag = [];
+let screensaverSpawnTrackBag = [];
+let screensaverLastSpawnTrackKey = "";
+let screensaverSourceKey = "";
+let screensaverPointerClientX = Number.NaN;
+let screensaverPointerClientY = Number.NaN;
+let screensaverPointerVelocityX = 0;
+let screensaverPointerVelocityY = 0;
+let screensaverPointerLastAt = 0;
+let screensaverPointerForceApplications = 0;
+let screensaverCtrlSelectionActive = false;
+let screensaverContextMenuSuppressedUntil = 0;
+let screensaverSpawnSequence = 0;
+let screensaverPendingPointerX = Number.NaN;
+let screensaverPendingPointerY = Number.NaN;
+let screensaverPendingPointerAt = 0;
+let screensaverPointerInputPending = false;
+let screensaverPointerHoverDirty = false;
+let screensaverPointerHoverNextAt = 0;
+let screensaverDiagnosticsNextAt = 0;
+let screensaverCardDiagnosticsDirty = true;
+let screensaverHoveredCardIndex = null;
+let screensaverHoveredCardAt = 0;
+let screensaverHoveredCardClientX = Number.NaN;
+let screensaverHoveredCardClientY = Number.NaN;
+const screensaverPointerWakeSamples = Array.from(
+  { length: SCREENSAVER_POINTER_WAKE_SAMPLE_CAPACITY },
+  () => ({
+    clientX: 0,
+    clientY: 0,
+    velocityX: 0,
+    velocityY: 0,
+    speed: 0,
+    createdAt: 0,
+    frameFreshness: 0,
+  }),
+);
+let screensaverPointerWakeCursor = 0;
+let screensaverPointerWakeCount = 0;
+const screensaverSuppressedTitles = new Map();
+let screensaverTooltipObserver = null;
+const screensaverCards = [];
+const screensaverReadyCards = [];
+const screensaverAnimatedTextureRecordScratch = new Set();
+const screensaverRaycastMeshScratch = [];
+const screensaverViewportRect = {
+  left: 0,
+  top: 0,
+  width: 1,
+  height: 1,
+  ambientRadius: SCREENSAVER_POINTER_AMBIENT_RADIUS_MIN,
+};
+const screensaverPointerForceFrame = {
+  rect: screensaverViewportRect,
+  clientX: 0,
+  clientY: 0,
+  velocityX: 0,
+  velocityY: 0,
+  speed: 0,
+  freshness: 0,
+  activeWakeCount: 0,
+};
 let binderFirstPageHoldTimer = 0;
 let binderFirstPageHoldPointerId = null;
 let binderFirstPageHoldStartX = 0;
@@ -1188,6 +1358,8 @@ const cardRaycaster = new THREE.Raycaster();
 const cardPointer = new THREE.Vector2();
 const binderRaycaster = new THREE.Raycaster();
 const binderPointer = new THREE.Vector2();
+const screensaverRaycaster = new THREE.Raycaster();
+const screensaverPointer = new THREE.Vector2();
 const binderDefaultCameraPosition = new THREE.Vector3(0, 0.24, 10);
 const binderDefaultCameraLookAt = new THREE.Vector3(0, 0.24, 0);
 const binderDesiredCameraPosition = new THREE.Vector3();
@@ -1529,6 +1701,13 @@ function initEvents() {
   document.addEventListener("gestureend", preventBrowserZoomGesture, { passive: false, capture: true });
   document.addEventListener("wheel", preventBrowserZoomWheel, { passive: false, capture: true });
   document.addEventListener("keydown", preventBrowserZoomKeydown, { capture: true });
+  document.addEventListener("pointerdown", handleScreensaverActivity, { capture: true });
+  document.addEventListener("pointermove", handleScreensaverPointerMove, { capture: true, passive: true });
+  document.addEventListener("keydown", handleScreensaverActivity, { capture: true });
+  document.addEventListener("keyup", handleScreensaverControlKeyUp, { capture: true });
+  document.addEventListener("contextmenu", suppressScreensaverSelectionContextMenu, {
+    capture: true,
+  });
   initUiButtonHoverTilt();
   els.cardBinderReturnButton.addEventListener("click", () => {
     transitionIndividualCardToFocusedBinder().catch(console.error);
@@ -1540,20 +1719,16 @@ function initEvents() {
     transitionAdjacentCard(1, event.currentTarget).catch(console.error);
   });
   els.shuffleButton.addEventListener("click", (event) => {
-    if (consumeSuppressedShuffleClick()) {
+    if (consumeScreensaverHoldClick(event.currentTarget)) {
       event.preventDefault();
       return;
     }
     shuffleCard().catch(console.error);
   });
-  els.shuffleButton.addEventListener("pointerdown", startShuffleTouchUndo);
-  els.shuffleButton.addEventListener("pointermove", moveShuffleTouchUndo);
-  els.shuffleButton.addEventListener("pointerup", cancelShuffleTouchUndo);
-  els.shuffleButton.addEventListener("pointercancel", cancelShuffleTouchUndo);
-  els.shuffleButton.addEventListener("pointerleave", cancelShuffleTouchUndo);
+  initScreensaverHoldButton(els.shuffleButton);
   els.shuffleButton.addEventListener("contextmenu", (event) => {
     event.preventDefault();
-    if (isRecentShuffleTouchUndo()) return;
+    if (screensaverHoldState?.button === els.shuffleButton) return;
     goBackInShuffleHistory();
   });
   els.favoriteButton.addEventListener("click", toggleCurrentFavorite);
@@ -1641,6 +1816,7 @@ function initEvents() {
     setTraitSortPickerOpen(false);
     cancelInterruptedPointerInteractions();
     cancelBinderFirstPageHold();
+    cancelScreensaverHold();
   });
   els.themeToggle.addEventListener("change", () => applyTheme(els.themeToggle.checked));
   els.binderPreviousPageButton.addEventListener("click", (event) => {
@@ -1673,11 +1849,17 @@ function initEvents() {
     openFocusedBinderCard().catch(console.error);
   });
   els.binderFavoriteButton.addEventListener("click", toggleFocusedBinderFavorite);
-  els.binderShuffleButton.addEventListener("click", () => {
+  els.binderShuffleButton.addEventListener("click", (event) => {
+    if (consumeScreensaverHoldClick(event.currentTarget)) {
+      event.preventDefault();
+      return;
+    }
     shuffleBinderSpread().catch(console.error);
   });
+  initScreensaverHoldButton(els.binderShuffleButton);
   els.binderShuffleButton.addEventListener("contextmenu", (event) => {
     event.preventDefault();
+    if (screensaverHoldState?.button === els.binderShuffleButton) return;
     applyPreviousBinderSpread().catch(console.error);
   });
 
@@ -1719,12 +1901,18 @@ function handleDocumentVisibilityChange() {
   if (document.hidden) {
     stopCardRenderLoop();
     stopBinderRenderLoop();
+    stopScreensaverAnimation();
     cancelIndividualCardPrewarmQueue();
     cancelFocusedBinderCardPrewarm();
     return;
   }
 
   requestResize();
+  if (screensaverActive) {
+    screensaverLastFrameAt = performance.now();
+    startScreensaverAnimation();
+    return;
+  }
   if (galleryOpen && isBinderMode && !els.binderPanel.hidden) {
     startBinderRenderLoop();
     requestBinderMaintenance(0);
@@ -2663,7 +2851,7 @@ function createCardSwapEffectMeshes(card, effectTextures = null) {
 }
 
 function getPreparedCardTexture(card) {
-  return getCardTexture(card).then((texture) => {
+  return getCardTexture(card, { fetchPriority: "high" }).then((texture) => {
     prepareTextureForImmediateDisplay(texture);
     return texture;
   });
@@ -3133,74 +3321,2069 @@ function goBackInShuffleHistory() {
   if (Number.isInteger(previous)) setCard(previous);
 }
 
-function startShuffleTouchUndo(event) {
-  if (event.pointerType === "mouse" || event.button > 0 || els.shuffleButton.disabled) return;
+function initScreensaverHoldButton(button) {
+  if (!button) return;
+  button.addEventListener("pointerdown", startScreensaverHold);
+  button.addEventListener("pointermove", moveScreensaverHold);
+  button.addEventListener("pointerup", finishScreensaverHold);
+  button.addEventListener("pointercancel", cancelScreensaverHold);
+  button.addEventListener("lostpointercapture", finishScreensaverHold);
+}
 
-  clearShuffleTouchUndoTimer();
-  shuffleTouchUndoPointerId = event.pointerId;
-  shuffleTouchUndoStartX = event.clientX;
-  shuffleTouchUndoStartY = event.clientY;
+function getDocumentFullscreenElement() {
+  return document.fullscreenElement || document.webkitFullscreenElement || null;
+}
+
+async function requestScreensaverFullscreen() {
+  if (getDocumentFullscreenElement()) return false;
+  const root = document.documentElement;
+  const requestFullscreen = root.requestFullscreen || root.webkitRequestFullscreen;
+  if (typeof requestFullscreen !== "function") return false;
+
+  screensaverFullscreenRequested = true;
   try {
-    els.shuffleButton.setPointerCapture(event.pointerId);
+    await requestFullscreen.call(root);
+    screensaverFullscreenRequested = false;
+    screensaverOwnsFullscreen = getDocumentFullscreenElement() === root;
+    if (screensaverOwnsFullscreen && !screensaverActive && !screensaverPreparing) {
+      await exitScreensaverFullscreen();
+    }
+    return screensaverOwnsFullscreen;
   } catch {
-    // Pointer capture is best-effort; the timeout path still works without it.
+    screensaverFullscreenRequested = false;
+    screensaverOwnsFullscreen = false;
+    return false;
   }
-
-  shuffleTouchUndoTimer = window.setTimeout(() => {
-    if (shuffleTouchUndoPointerId !== event.pointerId) return;
-    shuffleTouchUndoTimer = 0;
-    shuffleTouchUndoTriggeredAt = performance.now();
-    suppressNextShuffleClick = true;
-    goBackInShuffleHistory();
-    window.setTimeout(() => {
-      if (isRecentShuffleTouchUndo()) return;
-      suppressNextShuffleClick = false;
-    }, SHUFFLE_TOUCH_UNDO_SUPPRESS_MS);
-  }, SHUFFLE_TOUCH_UNDO_HOLD_MS);
 }
 
-function moveShuffleTouchUndo(event) {
-  if (shuffleTouchUndoPointerId !== event.pointerId) return;
+async function exitScreensaverFullscreen() {
+  if (!screensaverOwnsFullscreen && !screensaverFullscreenRequested) return false;
+  screensaverFullscreenRequested = false;
+  screensaverOwnsFullscreen = false;
+  if (!getDocumentFullscreenElement()) return false;
 
-  const distance = Math.hypot(
-    event.clientX - shuffleTouchUndoStartX,
-    event.clientY - shuffleTouchUndoStartY,
-  );
-  if (distance > SHUFFLE_TOUCH_UNDO_MOVE_LIMIT) cancelShuffleTouchUndo(event);
+  const exitFullscreen = document.exitFullscreen || document.webkitExitFullscreen;
+  if (typeof exitFullscreen !== "function") return false;
+  try {
+    await exitFullscreen.call(document);
+    return true;
+  } catch {
+    return false;
+  }
 }
 
-function cancelShuffleTouchUndo(event = null) {
+function startScreensaverHold(event) {
+  const button = event.currentTarget;
   if (
-    shuffleTouchUndoPointerId !== null
-    && event?.pointerId != null
-    && event.pointerId !== shuffleTouchUndoPointerId
+    screensaverActive
+    || screensaverPreparing
+    || button?.disabled
+    || event.button !== 0
+    || !event.isPrimary
   ) {
     return;
   }
 
-  clearShuffleTouchUndoTimer();
+  cancelScreensaverHold();
+  screensaverHoldState = {
+    button,
+    pointerId: event.pointerId,
+    startX: event.clientX,
+    startY: event.clientY,
+    timer: 0,
+    triggered: false,
+  };
+  button.classList.add("is-screensaver-hold");
+  button.setAttribute("aria-label", "Hold to start card rain");
   try {
-    if (shuffleTouchUndoPointerId !== null) els.shuffleButton.releasePointerCapture(shuffleTouchUndoPointerId);
+    button.setPointerCapture(event.pointerId);
   } catch {
-    // Pointer capture may already be released by the browser.
+    // Pointer capture is best-effort; movement and release listeners still cancel the hold.
   }
-  shuffleTouchUndoPointerId = null;
+
+  screensaverPrewarmTimer = window.setTimeout(() => {
+    screensaverPrewarmTimer = 0;
+    screensaverPrewarmPromise = prewarmScreensaverMode().catch((error) => {
+      console.error("Screensaver prewarm failed", error);
+      return false;
+    });
+  }, SCREENSAVER_PREWARM_DELAY_MS);
+
+  screensaverHoldState.timer = window.setTimeout(() => {
+    const state = screensaverHoldState;
+    if (!state || state.pointerId !== event.pointerId) return;
+    state.timer = 0;
+    state.triggered = true;
+    state.button.classList.remove("is-screensaver-hold");
+    state.button.classList.add("is-screensaver-confirmed");
+    screensaverActivationButton = state.button;
+    screensaverSuppressedButton = state.button;
+    screensaverSuppressedClickUntil = performance.now() + 1200;
+    const fullscreenPromise = requestScreensaverFullscreen();
+    activateScreensaverMode({ fullscreenPromise }).catch((error) => {
+      console.error("Screensaver activation failed", error);
+      screensaverPreparing = false;
+      void exitScreensaverFullscreen();
+      state.button.classList.remove("is-screensaver-confirmed");
+      restoreShuffleButtonLabel(state.button);
+      if (screensaverActivationButton === state.button) screensaverActivationButton = null;
+    });
+  }, SCREENSAVER_HOLD_MS);
 }
 
-function clearShuffleTouchUndoTimer() {
-  if (!shuffleTouchUndoTimer) return;
-  window.clearTimeout(shuffleTouchUndoTimer);
-  shuffleTouchUndoTimer = 0;
+function moveScreensaverHold(event) {
+  const state = screensaverHoldState;
+  if (!state || state.pointerId !== event.pointerId || state.triggered) return;
+  const distance = Math.hypot(
+    event.clientX - state.startX,
+    event.clientY - state.startY,
+  );
+  if (distance > SCREENSAVER_HOLD_MOVE_LIMIT) cancelScreensaverHold(event);
 }
 
-function consumeSuppressedShuffleClick() {
-  if (!suppressNextShuffleClick) return false;
-  suppressNextShuffleClick = false;
-  return isRecentShuffleTouchUndo();
+function finishScreensaverHold(event) {
+  const state = screensaverHoldState;
+  if (!state || (event?.pointerId != null && event.pointerId !== state.pointerId)) return;
+  if (state.triggered) {
+    releaseScreensaverHoldPointer(state);
+    screensaverHoldState = null;
+    return;
+  }
+  cancelScreensaverHold(event);
 }
 
-function isRecentShuffleTouchUndo() {
-  return performance.now() - shuffleTouchUndoTriggeredAt < SHUFFLE_TOUCH_UNDO_SUPPRESS_MS;
+function cancelScreensaverHold(event = null) {
+  const state = screensaverHoldState;
+  if (
+    state
+    && event?.pointerId != null
+    && event.pointerId !== state.pointerId
+  ) {
+    return;
+  }
+
+  if (screensaverPrewarmTimer) {
+    window.clearTimeout(screensaverPrewarmTimer);
+    screensaverPrewarmTimer = 0;
+  }
+  if (!state) return;
+  if (state.timer) window.clearTimeout(state.timer);
+  state.button.classList.remove("is-screensaver-hold", "is-screensaver-confirmed");
+  restoreShuffleButtonLabel(state.button);
+  releaseScreensaverHoldPointer(state);
+  screensaverHoldState = null;
+}
+
+function releaseScreensaverHoldPointer(state) {
+  try {
+    if (state.button.hasPointerCapture(state.pointerId)) {
+      state.button.releasePointerCapture(state.pointerId);
+    }
+  } catch {
+    // The browser can release capture before lostpointercapture is delivered.
+  }
+}
+
+function restoreShuffleButtonLabel(button) {
+  if (button === els.shuffleButton) {
+    button.setAttribute("aria-label", "Shuffle card");
+  } else if (button === els.binderShuffleButton) {
+    button.setAttribute("aria-label", "Shuffle binder spread");
+  }
+}
+
+function consumeScreensaverHoldClick(button) {
+  if (
+    button !== screensaverSuppressedButton
+    || performance.now() > screensaverSuppressedClickUntil
+  ) {
+    return false;
+  }
+  screensaverSuppressedButton = null;
+  screensaverSuppressedClickUntil = 0;
+  return true;
+}
+
+function getScreensaverCollectionIds() {
+  return ACTIVE_COLLECTION?.introGroup === "evil"
+    ? ["cardnft1", "cardnft2", "poncho"]
+    : [ACTIVE_COLLECTION_ID];
+}
+
+async function getScreensaverCardIndexes() {
+  const collectionIds = getScreensaverCollectionIds();
+  await Promise.all(collectionIds.map(ensureCollectionCards));
+  return {
+    collectionIds,
+    indexes: collectionIds.flatMap((collectionId) => (
+      COLLECTION_CONFIGS[collectionId]?.globalIndexes || []
+    )),
+  };
+}
+
+function ensureScreensaverScene() {
+  if (screensaverRenderer && screensaverScene && screensaverCamera) return;
+
+  if (!screensaverOverlay) {
+    screensaverOverlay = document.createElement("div");
+    screensaverOverlay.className = "card-rain-screensaver";
+    screensaverOverlay.setAttribute("aria-hidden", "true");
+    screensaverCanvas = document.createElement("canvas");
+    screensaverCanvas.className = "card-rain-screensaver-canvas";
+    screensaverOverlay.append(screensaverCanvas);
+    document.body.append(screensaverOverlay);
+  }
+
+  screensaverRenderer = new THREE.WebGLRenderer({
+    canvas: screensaverCanvas,
+    antialias: true,
+    alpha: true,
+    powerPreference: "high-performance",
+  });
+  screensaverRenderer.setPixelRatio(
+    getRendererPixelRatio(getAppViewportWidth(), getAppViewportHeight()),
+  );
+  screensaverRenderer.outputColorSpace = THREE.SRGBColorSpace;
+  screensaverRenderer.setClearColor(0x000000, 0);
+  screensaverWarmupTarget = new THREE.WebGLRenderTarget(
+    SCREENSAVER_WARMUP_TARGET_SIZE,
+    SCREENSAVER_WARMUP_TARGET_SIZE,
+    {
+      depthBuffer: true,
+      stencilBuffer: false,
+    },
+  );
+
+  screensaverScene = new THREE.Scene();
+  screensaverWarmupScene = new THREE.Scene();
+  screensaverCamera = new THREE.PerspectiveCamera(
+    SCREENSAVER_CAMERA_FOV,
+    1,
+    0.1,
+    100,
+  );
+  screensaverCamera.position.set(0, 0, SCREENSAVER_CAMERA_Z);
+  addScreensaverSceneLights(screensaverScene);
+  addScreensaverSceneLights(screensaverWarmupScene);
+
+  screensaverCanvas.addEventListener("webglcontextlost", (event) => {
+    event.preventDefault();
+    stopScreensaverAnimation();
+  }, { passive: false });
+  screensaverCanvas.addEventListener("webglcontextrestored", () => {
+    refreshSceneGpuResources(screensaverScene);
+    refreshSceneGpuResources(screensaverWarmupScene);
+    screensaverRenderer?.resetState();
+    if (screensaverActive) startScreensaverAnimation();
+  });
+  resizeScreensaverRenderer(true);
+}
+
+function addScreensaverSceneLights(scene) {
+  const ambient = new THREE.HemisphereLight(0xffffff, 0x211a14, 1.16);
+  scene.add(ambient);
+  const key = new THREE.DirectionalLight(0xfff2d4, 1.62);
+  key.position.set(-4.4, 5.4, 6.2);
+  scene.add(key);
+  const rim = new THREE.DirectionalLight(0x9ebfd5, 0.78);
+  rim.position.set(4.6, 1.2, -3.4);
+  scene.add(rim);
+}
+
+async function prewarmScreensaverMode() {
+  ensureScreensaverScene();
+  const { collectionIds, indexes } = await getScreensaverCardIndexes();
+  if (!indexes.length) return false;
+
+  const sourceKey = `${collectionIds.join(",")}:${indexes.length}`;
+  screensaverOverlay.dataset.collectionIds = collectionIds.join(",");
+  screensaverOverlay.dataset.cardCount = String(indexes.length);
+  screensaverOverlay.dataset.maximumCards = String(SCREENSAVER_MAX_CARD_COUNT);
+  screensaverOverlay.dataset.spawnIntervalMs = String(SCREENSAVER_SPAWN_INTERVAL_MS);
+  screensaverOverlay.dataset.spawnIntervalJitter = String(SCREENSAVER_SPAWN_INTERVAL_JITTER);
+  screensaverOverlay.dataset.depthJitter = String(SCREENSAVER_DEPTH_JITTER);
+  screensaverOverlay.dataset.pointerForce = String(SCREENSAVER_POINTER_FORCE);
+  screensaverOverlay.dataset.pointerWakeDurationMs = String(
+    SCREENSAVER_POINTER_WAKE_DURATION_MS,
+  );
+  screensaverOverlay.dataset.pointerWakeCapacity = String(
+    SCREENSAVER_POINTER_WAKE_SAMPLE_CAPACITY,
+  );
+  screensaverOverlay.dataset.collectionSampling = collectionIds.length > 1 ? "weighted" : "active";
+  screensaverOverlay.dataset.ponchoSpawnShare = (
+    collectionIds.length > 1 && collectionIds.includes("poncho")
+  ) ? "0.25" : "0";
+  screensaverOverlay.dataset.cardNft1AnimatedSpawnChance = (
+    collectionIds.length > 1 && collectionIds.includes("cardnft1")
+  ) ? String(SCREENSAVER_CARDNFT1_ANIMATED_SPAWN_CHANCE) : "0";
+  delete screensaverOverlay.dataset.selectedCardIndex;
+  delete screensaverOverlay.dataset.selectedCardCollection;
+  delete screensaverOverlay.dataset.selectedCardStableId;
+  delete screensaverOverlay.dataset.selectedCardPath;
+  if (screensaverSourceKey !== sourceKey) {
+    clearScreensaverCards({ includeReady: true });
+    screensaverSourceKey = sourceKey;
+    screensaverCardIndexes = [...indexes];
+    screensaverCardBag = [];
+    screensaverSourceCollectionIds = [...collectionIds];
+    screensaverCollectionCardBags.clear();
+    screensaverCollectionPickBag = [];
+    screensaverCardNft1AnimatedIndexes = (
+      COLLECTION_CONFIGS.cardnft1?.globalIndexes || []
+    ).filter((index) => isAnimatedCard(CARDS[index]));
+    screensaverCardNft1AnimatedBag = [];
+    screensaverSpawnTrackBag = [];
+    screensaverLastSpawnTrackKey = "";
+    screensaverSpawnSequence = 0;
+    screensaverPrepareToken += 1;
+  }
+  screensaverOverlay.dataset.cardNft1AnimatedPool = String(
+    screensaverCardNft1AnimatedIndexes.length,
+  );
+
+  const token = screensaverPrepareToken;
+  const targetCount = Math.min(SCREENSAVER_PREWARM_CARD_COUNT, indexes.length);
+  while (
+    token === screensaverPrepareToken
+    && screensaverReadyCards.length < targetCount
+  ) {
+    const batchSize = Math.min(
+      SCREENSAVER_PREPARE_CONCURRENCY,
+      targetCount - screensaverReadyCards.length,
+    );
+    await Promise.all(
+      Array.from({ length: batchSize }, () => prepareScreensaverCardGroup(token)),
+    );
+  }
+  return screensaverReadyCards.length > 0;
+}
+
+function refillScreensaverCardBag() {
+  screensaverCardBag = [...screensaverCardIndexes];
+  shuffleScreensaverArray(screensaverCardBag);
+}
+
+function refillScreensaverCollectionPickBag() {
+  const useEvilCollectionWeights = ACTIVE_COLLECTION?.introGroup === "evil";
+  screensaverCollectionPickBag = screensaverSourceCollectionIds.flatMap((collectionId) => {
+    const weight = useEvilCollectionWeights
+      ? (SCREENSAVER_EVIL_COLLECTION_SPAWN_WEIGHTS[collectionId] || 1)
+      : 1;
+    return Array.from({ length: weight }, () => collectionId);
+  });
+  shuffleScreensaverArray(screensaverCollectionPickBag);
+}
+
+function takeScreensaverCardIndex() {
+  if (screensaverSourceCollectionIds.length > 1) {
+    if (!screensaverCollectionPickBag.length) refillScreensaverCollectionPickBag();
+    const collectionId = screensaverCollectionPickBag.pop();
+    if (
+      collectionId === "cardnft1"
+      && screensaverCardNft1AnimatedIndexes.length
+      && Math.random() < SCREENSAVER_CARDNFT1_ANIMATED_SPAWN_CHANCE
+    ) {
+      return takeScreensaverCardNft1AnimatedIndex();
+    }
+    let collectionBag = screensaverCollectionCardBags.get(collectionId);
+    if (!collectionBag?.length) {
+      collectionBag = [...(COLLECTION_CONFIGS[collectionId]?.globalIndexes || [])];
+      shuffleScreensaverArray(collectionBag);
+      screensaverCollectionCardBags.set(collectionId, collectionBag);
+    }
+    if (collectionBag.length) return collectionBag.pop();
+  }
+  if (!screensaverCardBag.length) refillScreensaverCardBag();
+  return screensaverCardBag.pop();
+}
+
+function takeScreensaverCardNft1AnimatedIndex() {
+  if (!screensaverCardNft1AnimatedBag.length) {
+    screensaverCardNft1AnimatedBag = [...screensaverCardNft1AnimatedIndexes];
+    shuffleScreensaverArray(screensaverCardNft1AnimatedBag);
+  }
+  return screensaverCardNft1AnimatedBag.pop();
+}
+
+function shuffleScreensaverArray(values) {
+  for (let index = values.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [values[index], values[swapIndex]] = [values[swapIndex], values[index]];
+  }
+  return values;
+}
+
+async function prepareScreensaverCardGroup(token) {
+  const index = takeScreensaverCardIndex();
+  const card = CARDS[index];
+  if (!card) return null;
+  if (screensaverActive && !await waitForScreensaverPreparationIdle(token)) {
+    return null;
+  }
+
+  const prepared = await prepareIndividualCardFor3D(card);
+  if (
+    token !== screensaverPrepareToken
+    || !screensaverScene
+    || !screensaverWarmupScene
+  ) {
+    return null;
+  }
+  if (!await waitForScreensaverPreparationIdle(token)) return null;
+
+  const group = createCardSwapGroup(
+    prepared.frontTexture,
+    prepared.backTexture,
+    card,
+    prepared.effectTextures,
+  );
+  makeScreensaverCardGroupSolid(group);
+  group.position.set(0, 0, 0);
+  group.visible = true;
+  group.userData.screensaverCardIndex = index;
+  group.userData.screensaverEffectActivity = 1;
+  group.traverse((object) => {
+    object.frustumCulled = false;
+  });
+  screensaverWarmupScene.add(group);
+  updateCardEffectUniformsForGroup(
+    group,
+    performance.now() * 0.001,
+    screensaverCamera,
+  );
+
+  try {
+    if (typeof screensaverRenderer.compileAsync === "function") {
+      await screensaverRenderer.compileAsync(screensaverWarmupScene, screensaverCamera);
+    } else if (typeof screensaverRenderer.compile === "function") {
+      screensaverRenderer.compile(screensaverWarmupScene, screensaverCamera);
+    }
+  } catch {
+    // The tiny render-target pass below still warms older WebGL implementations.
+  }
+  if (token !== screensaverPrepareToken) {
+    screensaverWarmupScene.remove(group);
+    disposeCardSwapGroup(group);
+    return null;
+  }
+  if (!await waitForScreensaverPreparationIdle(token)) {
+    screensaverWarmupScene.remove(group);
+    disposeCardSwapGroup(group);
+    return null;
+  }
+
+  warmScreensaverCardGpuResources();
+  screensaverWarmupScene.remove(group);
+  group.visible = false;
+  const recycledIndex = screensaverReadyCards.findIndex((entry) => entry.recycled);
+  if (recycledIndex >= 0) {
+    const [recycled] = screensaverReadyCards.splice(recycledIndex, 1);
+    disposeCardSwapGroup(recycled.group);
+  }
+  screensaverReadyCards.push({ group, card, index, recycled: false });
+  updateScreensaverCardDiagnostics();
+  return group;
+}
+
+function waitForScreensaverPreparationIdle(token) {
+  if (!screensaverActive || typeof window.requestIdleCallback !== "function") {
+    return Promise.resolve(token === screensaverPrepareToken);
+  }
+  return new Promise((resolve) => {
+    const waitForIdle = () => {
+      window.requestIdleCallback(
+        (deadline) => {
+          if (token !== screensaverPrepareToken || !screensaverActive) {
+            resolve(false);
+            return;
+          }
+          if (
+            isScreensaverPointerMotionBusy()
+            || deadline.timeRemaining() < SCREENSAVER_PREPARE_MIN_IDLE_BUDGET_MS
+          ) {
+            window.setTimeout(waitForIdle, 48);
+            return;
+          }
+          resolve(true);
+        },
+        { timeout: SCREENSAVER_PREPARE_IDLE_TIMEOUT_MS },
+      );
+    };
+    waitForIdle();
+  });
+}
+
+function warmScreensaverCardGpuResources() {
+  if (
+    !screensaverRenderer
+    || !screensaverWarmupScene
+    || !screensaverWarmupTarget
+    || !screensaverCamera
+  ) {
+    return;
+  }
+  const previousTarget = screensaverRenderer.getRenderTarget();
+  try {
+    screensaverRenderer.setRenderTarget(screensaverWarmupTarget);
+    screensaverRenderer.clear();
+    screensaverRenderer.render(screensaverWarmupScene, screensaverCamera);
+  } finally {
+    screensaverRenderer.setRenderTarget(previousTarget);
+  }
+}
+
+function makeScreensaverCardGroupSolid(group) {
+  const frontMesh = group?.userData?.frontMesh;
+  const backMesh = group?.userData?.backMesh;
+  group?.traverse((object) => {
+    const materials = Array.isArray(object.material)
+      ? object.material
+      : (object.material ? [object.material] : []);
+    for (const material of materials) {
+      material.depthTest = true;
+      if (material.isMeshPhysicalMaterial) {
+        material.transparent = false;
+        material.opacity = 1;
+        material.depthWrite = true;
+      } else if (object === frontMesh || object === backMesh) {
+        material.transparent = true;
+        material.alphaTest = 0.015;
+        material.depthWrite = true;
+      } else {
+        material.depthWrite = false;
+      }
+      material.needsUpdate = true;
+    }
+  });
+}
+
+async function activateScreensaverMode({ fullscreenPromise = null } = {}) {
+  if (screensaverActive || screensaverPreparing) return;
+  screensaverPreparing = true;
+  if (screensaverPrewarmTimer) {
+    window.clearTimeout(screensaverPrewarmTimer);
+    screensaverPrewarmTimer = 0;
+  }
+
+  const ready = await (screensaverPrewarmPromise || prewarmScreensaverMode());
+  screensaverPrewarmPromise = null;
+  if (!ready) {
+    screensaverPreparing = false;
+    void exitScreensaverFullscreen();
+    cancelScreensaverHold();
+    screensaverActivationButton?.classList.remove("is-screensaver-confirmed");
+    if (screensaverActivationButton) restoreShuffleButtonLabel(screensaverActivationButton);
+    screensaverActivationButton = null;
+    return;
+  }
+  if (fullscreenPromise) {
+    await fullscreenPromise.catch(() => false);
+  }
+  await waitForScreensaverViewportSettle();
+
+  suppressScreensaverTooltips();
+  screensaverActive = true;
+  screensaverPreparing = false;
+  screensaverExitArmedAt = performance.now() + SCREENSAVER_EXIT_BUFFER_MS;
+  screensaverLastFrameAt = performance.now();
+  screensaverPreparationBlockedUntil = (
+    screensaverLastFrameAt + SCREENSAVER_PREPARE_ACTIVATION_GRACE_MS
+  );
+  resetScreensaverFrameDiagnostics();
+  resetScreensaverPointerInteraction();
+  if (screensaverExitTimer) {
+    window.clearTimeout(screensaverExitTimer);
+    screensaverExitTimer = 0;
+  }
+
+  stopCardRenderLoop();
+  stopBinderRenderLoop();
+  clearActiveUiButtonTilt();
+
+  resizeScreensaverRenderer(true);
+  const initialCount = Math.min(
+    SCREENSAVER_INITIAL_CARD_COUNT,
+    screensaverReadyCards.length,
+  );
+  for (let index = 0; index < initialCount; index += 1) {
+    spawnReadyScreensaverCard({ initialOrder: index });
+  }
+  flushScreensaverCardDiagnostics();
+  screensaverNextSpawnAt = screensaverLastFrameAt
+    + getNextScreensaverSpawnInterval();
+  maintainScreensaverReadyCards();
+
+  screensaverOverlay.classList.add("is-mounted");
+  screensaverOverlay.setAttribute("aria-hidden", "false");
+  document.body.classList.add("screensaver-mode");
+  requestAnimationFrame(() => {
+    if (screensaverActive) screensaverOverlay.classList.add("is-visible");
+  });
+  startScreensaverAnimation();
+
+  const heldButton = screensaverActivationButton || screensaverHoldState?.button;
+  heldButton?.classList.remove("is-screensaver-confirmed");
+  if (heldButton) restoreShuffleButtonLabel(heldButton);
+  screensaverActivationButton = null;
+}
+
+function waitForScreensaverViewportSettle() {
+  return new Promise((resolve) => {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        updateAppViewportVars();
+        resolve();
+      });
+    });
+  });
+}
+
+function spawnReadyScreensaverCard({ initialOrder = null } = {}) {
+  const prepared = screensaverReadyCards.shift();
+  if (!prepared || !screensaverScene || !screensaverCamera) return false;
+
+  const track = takeScreensaverSpawnTrack();
+  const depth = track.depth + randomBetween(
+    -SCREENSAVER_DEPTH_JITTER,
+    SCREENSAVER_DEPTH_JITTER,
+  );
+  const view = getScreensaverVisibleWorldSize(depth);
+  const scale = randomBetween(0.39, 0.47);
+  const speedMultiplier = randomBetween(
+    1 - SCREENSAVER_FALL_SPEED_JITTER,
+    1 + SCREENSAVER_FALL_SPEED_JITTER,
+  );
+  const speed = view.height * SCREENSAVER_NORMALIZED_FALL_SPEED * speedMultiplier;
+  const halfCardHeight = CARD_HEIGHT * scale * 0.62;
+  const scheduledLeadSeconds = SCREENSAVER_OFFSCREEN_LEAD_SECONDS
+    + (
+      initialOrder === null
+        ? 0
+        : initialOrder
+          * SCREENSAVER_SPAWN_INTERVAL_MS
+          * randomBetween(0.78, 1.22)
+          / 1000
+    );
+  const startOffset = speed * scheduledLeadSeconds;
+  const group = prepared.group;
+  const startY = view.height / 2 + halfCardHeight + startOffset;
+  const spawnPosition = chooseScreensaverSpawnPosition({
+    view,
+    startY,
+    scale,
+    speed,
+    arrivalSeconds: scheduledLeadSeconds,
+  });
+  if (!spawnPosition) {
+    screensaverReadyCards.unshift(prepared);
+    return false;
+  }
+  const { baseX, screenX } = spawnPosition;
+  const frontFacing = Math.random() < SCREENSAVER_FRONT_FACING_PROBABILITY;
+  const baseRotationX = randomBetween(-0.32, 0.32);
+  const baseRotationY = frontFacing
+    ? randomBetween(-0.34, 0.34)
+    : Math.PI + randomBetween(-0.3, 0.3);
+  const baseRotationZ = randomBetween(-0.55, 0.55);
+
+  group.visible = true;
+  group.scale.setScalar(scale);
+  group.position.set(baseX, startY, depth);
+  group.rotation.set(baseRotationX, baseRotationY, baseRotationZ);
+  screensaverScene.add(group);
+  const entry = {
+    ...prepared,
+    spawnSequence: screensaverSpawnSequence += 1,
+    trackKey: track.key,
+    screenX,
+    depth,
+    viewWidth: view.width,
+    viewHeight: view.height,
+    viewInverseWidth: 1 / view.width,
+    viewInverseHeight: 1 / view.height,
+    pointerWorldPerPixelX: view.width / screensaverViewportRect.width,
+    pointerWorldPerPixelY: view.height / screensaverViewportRect.height,
+    projectedCardHeightPx: (
+      CARD_HEIGHT * scale / view.height * screensaverViewportRect.height
+    ),
+    scale,
+    speed,
+    speedMultiplier,
+    naturalX: baseX,
+    naturalY: startY,
+    offsetX: 0,
+    offsetY: 0,
+    velocityX: 0,
+    velocityY: 0,
+    rotationOffsetX: 0,
+    rotationOffsetY: 0,
+    rotationOffsetZ: 0,
+    angularVelocityX: 0,
+    angularVelocityY: 0,
+    angularVelocityZ: 0,
+    lastPointerForceAt: 0,
+    frontFacing,
+    baseRotationX,
+    baseRotationY,
+    baseRotationZ,
+    rotationAmplitudeX: randomBetween(0.12, 0.38),
+    rotationAmplitudeY: randomBetween(0.18, 0.48),
+    rotationAmplitudeZ: randomBetween(0.08, 0.28),
+    rotationFrequencyX: randomBetween(0.32, 0.58),
+    rotationFrequencyY: randomBetween(0.22, 0.46),
+    rotationFrequencyZ: randomBetween(0.28, 0.52),
+    rotationPhaseX: randomBetween(0, Math.PI * 2),
+    rotationPhaseY: randomBetween(0, Math.PI * 2),
+    rotationPhaseZ: randomBetween(0, Math.PI * 2),
+    age: 0,
+  };
+  group.userData.screensaverEntry = entry;
+  updateScreensaverCollisionFrame(entry);
+  screensaverCards.push(entry);
+  updateScreensaverCardDiagnostics();
+  return true;
+}
+
+function takeScreensaverSpawnTrack() {
+  if (!screensaverSpawnTrackBag.length) refillScreensaverSpawnTrackBag();
+  const track = screensaverSpawnTrackBag.pop();
+  screensaverLastSpawnTrackKey = track.key;
+  return track;
+}
+
+function refillScreensaverSpawnTrackBag() {
+  const tracks = [];
+  for (let depthIndex = 0; depthIndex < SCREENSAVER_DEPTH_LAYER_COUNT; depthIndex += 1) {
+    const depthProgress = depthIndex / Math.max(1, SCREENSAVER_DEPTH_LAYER_COUNT - 1);
+    const depth = THREE.MathUtils.lerp(
+      SCREENSAVER_DEPTH_MIN,
+      SCREENSAVER_DEPTH_MAX,
+      depthProgress,
+    );
+    tracks.push({
+      key: String(depthIndex),
+      depth,
+    });
+  }
+  shuffleScreensaverArray(tracks);
+  if (
+    tracks.length > 1
+    && tracks.at(-1)?.key === screensaverLastSpawnTrackKey
+  ) {
+    [tracks[0], tracks[tracks.length - 1]] = [tracks[tracks.length - 1], tracks[0]];
+  }
+  screensaverSpawnTrackBag = tracks;
+}
+
+function chooseScreensaverSpawnPosition({
+  view,
+  startY,
+  scale,
+  speed,
+  arrivalSeconds,
+}) {
+  const normalizedLimit = SCREENSAVER_HORIZONTAL_CENTER_LIMIT;
+  const newHalfDiagonal = (
+    Math.hypot(CARD_WIDTH, CARD_HEIGHT) * scale * 0.5
+  );
+  const newHalfWidth = newHalfDiagonal / view.width;
+  const newHalfHeight = newHalfDiagonal / view.height;
+  const blockers = screensaverCards
+    .map((entry) => {
+      const entryViewWidth = entry.viewWidth || getScreensaverVisibleWorldSize(entry.depth).width;
+      const entryViewHeight = entry.viewHeight || getScreensaverVisibleWorldSize(entry.depth).height;
+      const halfDiagonal = Math.hypot(CARD_WIDTH, CARD_HEIGHT) * entry.scale * 0.5;
+      return {
+        screenX: entry.group.position.x / entryViewWidth,
+        positionY: entry.group.position.y,
+        speed: entry.speed,
+        viewHeight: entryViewHeight,
+        halfWidth: halfDiagonal / entryViewWidth,
+        halfHeight: halfDiagonal / entryViewHeight,
+      };
+    });
+  const recentScreenXs = screensaverCards
+    .slice(-SCREENSAVER_SPAWN_SPACING_HISTORY)
+    .map((entry) => (
+      entry.group.position.x
+        / (entry.viewWidth || getScreensaverVisibleWorldSize(entry.depth).width)
+    ));
+  const candidates = [];
+  for (let index = 0; index < SCREENSAVER_SPAWN_POSITION_CANDIDATES; index += 1) {
+    candidates.push(randomBetween(-normalizedLimit, normalizedLimit));
+  }
+
+  let bestCandidate = null;
+  let bestScore = -Infinity;
+  const spacingPreference = randomBetween(0.38, 0.72);
+  for (const candidate of candidates) {
+    const spacingScore = recentScreenXs.length
+      ? Math.min(...recentScreenXs.map((screenX) => Math.abs(candidate - screenX)))
+      : normalizedLimit - Math.abs(candidate) * 0.25;
+    const crowdingPenalty = recentScreenXs.reduce((total, screenX) => {
+      const distance = Math.abs(candidate - screenX);
+      return total + Math.max(0, 0.18 - distance) / 0.18;
+    }, 0);
+    let overlapPenalty = 0;
+    let maximumOverlap = 0;
+    for (const blocker of blockers) {
+      const horizontalRange = (newHalfWidth + blocker.halfWidth) * 0.94;
+      const verticalRange = (newHalfHeight + blocker.halfHeight) * 0.94;
+      const horizontalOverlap = clamp(
+        1 - Math.abs(candidate - blocker.screenX) / Math.max(0.001, horizontalRange),
+        0,
+        1,
+      );
+      if (horizontalOverlap <= 0) continue;
+      let blockerMaximumOverlap = 0;
+      for (
+        let sampleIndex = 0;
+        sampleIndex < SCREENSAVER_SPAWN_TRAJECTORY_SAMPLE_COUNT;
+        sampleIndex += 1
+      ) {
+        const sampleSeconds = arrivalSeconds
+          + sampleIndex * SCREENSAVER_SPAWN_TRAJECTORY_SAMPLE_STEP_SECONDS;
+        const newScreenY = (startY - speed * sampleSeconds) / view.height;
+        if (
+          newScreenY > 0.5 + newHalfHeight * 1.4
+          || newScreenY < -0.5 - newHalfHeight * 1.4
+        ) {
+          continue;
+        }
+        const blockerScreenY = (
+          blocker.positionY - blocker.speed * sampleSeconds
+        ) / blocker.viewHeight;
+        const verticalOverlap = clamp(
+          1 - Math.abs(newScreenY - blockerScreenY)
+            / Math.max(0.001, verticalRange),
+          0,
+          1,
+        );
+        blockerMaximumOverlap = Math.max(
+          blockerMaximumOverlap,
+          horizontalOverlap * verticalOverlap,
+        );
+      }
+      overlapPenalty += blockerMaximumOverlap;
+      maximumOverlap = Math.max(maximumOverlap, blockerMaximumOverlap);
+    }
+    const edgePenalty = normalizedLimit > 0
+      ? Math.pow(Math.abs(candidate) / normalizedLimit, 3) * 0.02
+      : 0;
+    if (maximumOverlap > SCREENSAVER_SPAWN_MAX_OVERLAP) continue;
+    const score = spacingScore * spacingPreference
+      - crowdingPenalty * 0.055
+      - overlapPenalty * 0.2
+      - edgePenalty
+      + Math.random() * SCREENSAVER_SPAWN_SCORE_RANDOMNESS;
+    if (score > bestScore) {
+      bestScore = score;
+      bestCandidate = candidate;
+    }
+  }
+
+  if (!Number.isFinite(bestCandidate)) return null;
+  return {
+    baseX: bestCandidate * view.width,
+    screenX: bestCandidate,
+  };
+}
+
+function randomBetween(minimum, maximum) {
+  return minimum + Math.random() * (maximum - minimum);
+}
+
+function getNextScreensaverSpawnInterval() {
+  return SCREENSAVER_SPAWN_INTERVAL_MS * randomBetween(
+    1 - SCREENSAVER_SPAWN_INTERVAL_JITTER,
+    1 + SCREENSAVER_SPAWN_INTERVAL_JITTER,
+  );
+}
+
+function getScreensaverVisibleWorldSize(depth = 0) {
+  if (!screensaverCamera) return { width: 1, height: 1 };
+  const height = 2 * Math.tan(
+    THREE.MathUtils.degToRad(screensaverCamera.fov) / 2,
+  ) * Math.max(0.1, screensaverCamera.position.z - depth);
+  return { width: height * screensaverCamera.aspect, height };
+}
+
+function maintainScreensaverReadyCards() {
+  if (!screensaverActive) return;
+  if (isScreensaverPointerMotionBusy()) return;
+  const target = Math.min(
+    SCREENSAVER_READY_CARD_COUNT,
+    screensaverCardIndexes.length,
+  );
+  const preparedReadyCount = screensaverReadyCards.reduce(
+    (count, entry) => count + (entry.recycled ? 0 : 1),
+    0,
+  );
+  const token = screensaverPrepareToken;
+  while (
+    screensaverPrepareActiveCount < SCREENSAVER_ACTIVE_PREPARE_CONCURRENCY
+    && preparedReadyCount + screensaverPrepareActiveCount < target
+  ) {
+    screensaverPrepareActiveCount += 1;
+    updateScreensaverCardDiagnostics();
+    prepareScreensaverCardGroup(token)
+      .catch((error) => console.error("Screensaver card preparation failed", error))
+      .finally(() => {
+        screensaverPrepareActiveCount = Math.max(0, screensaverPrepareActiveCount - 1);
+        updateScreensaverCardDiagnostics();
+        if (screensaverActive && token === screensaverPrepareToken) {
+          maintainScreensaverReadyCards();
+        }
+      });
+  }
+}
+
+function isScreensaverPointerMotionBusy(now = performance.now()) {
+  return (
+    screensaverActive
+    && (
+      now < screensaverPreparationBlockedUntil
+      || (
+        screensaverPointerLastAt > 0
+        && now - screensaverPointerLastAt < SCREENSAVER_PREPARE_POINTER_COOLDOWN_MS
+      )
+    )
+  );
+}
+
+function startScreensaverAnimation() {
+  if (
+    screensaverAnimationFrame
+    || !screensaverActive
+    || document.hidden
+    || !screensaverRenderer
+  ) {
+    return;
+  }
+  screensaverAnimationFrame = requestAnimationFrame(animateScreensaver);
+}
+
+function stopScreensaverAnimation() {
+  if (!screensaverAnimationFrame) return;
+  cancelAnimationFrame(screensaverAnimationFrame);
+  screensaverAnimationFrame = 0;
+}
+
+function getScreensaverPointerForceFrame(now) {
+  if (
+    screensaverCtrlSelectionActive
+    ||
+    !screensaverCanvas
+    || !Number.isFinite(screensaverPointerClientX)
+    || !Number.isFinite(screensaverPointerClientY)
+  ) {
+    return null;
+  }
+  const age = now - screensaverPointerLastAt;
+  const speed = Math.hypot(
+    screensaverPointerVelocityX,
+    screensaverPointerVelocityY,
+  );
+  const headIsActive = (
+    age >= 0
+    && age <= SCREENSAVER_POINTER_ACTIVE_MS
+    && speed >= SCREENSAVER_POINTER_MIN_SPEED_PX_S
+  );
+  const activeWakeCount = getActiveScreensaverPointerWakeCount(now);
+  if (!headIsActive && activeWakeCount === 0) return null;
+  if (!screensaverViewportRect.width || !screensaverViewportRect.height) return null;
+  screensaverPointerForceFrame.clientX = screensaverPointerClientX;
+  screensaverPointerForceFrame.clientY = screensaverPointerClientY;
+  screensaverPointerForceFrame.velocityX = screensaverPointerVelocityX;
+  screensaverPointerForceFrame.velocityY = screensaverPointerVelocityY;
+  screensaverPointerForceFrame.speed = speed;
+  screensaverPointerForceFrame.freshness = headIsActive
+    ? 1 - clamp(age / SCREENSAVER_POINTER_ACTIVE_MS, 0, 1)
+    : 0;
+  screensaverPointerForceFrame.activeWakeCount = activeWakeCount;
+  return screensaverPointerForceFrame;
+}
+
+function applyScreensaverPointerForce(
+  entry,
+  pointerFrame,
+  now,
+  deltaSeconds,
+  entryInfluence = 1,
+) {
+  if (!pointerFrame || !screensaverCamera) return false;
+  const { rect } = pointerFrame;
+  const cardScreenX = rect.left
+    + (0.5 + entry.group.position.x * entry.viewInverseWidth) * rect.width;
+  const cardScreenY = rect.top
+    + (0.5 - entry.group.position.y * entry.viewInverseHeight) * rect.height;
+  const fallbackView = (
+    Number.isFinite(entry.viewWidth) && Number.isFinite(entry.viewHeight)
+  ) ? null : getScreensaverVisibleWorldSize(entry.depth);
+  const entryViewWidth = entry.viewWidth || fallbackView.width;
+  const entryViewHeight = entry.viewHeight || fallbackView.height;
+  const worldPerPixelX = entry.pointerWorldPerPixelX
+    || entryViewWidth / rect.width;
+  const worldPerPixelY = entry.pointerWorldPerPixelY
+    || entryViewHeight / rect.height;
+  const projectedHeight = entry.projectedCardHeightPx
+    || CARD_HEIGHT * entry.scale / entryViewHeight * rect.height;
+  const baseCoreRadius = clamp(
+    projectedHeight * 0.92 + 72,
+    SCREENSAVER_POINTER_CORE_RADIUS_MIN,
+    SCREENSAVER_POINTER_CORE_RADIUS_MAX,
+  );
+  const baseAmbientRadius = rect.ambientRadius;
+  let applied = false;
+  if (pointerFrame.freshness > 0) {
+    applied = applyScreensaverPointerSampleForce(
+      entry,
+      cardScreenX,
+      cardScreenY,
+      worldPerPixelX,
+      worldPerPixelY,
+      baseCoreRadius,
+      baseAmbientRadius,
+      pointerFrame.clientX,
+      pointerFrame.clientY,
+      pointerFrame.velocityX,
+      pointerFrame.velocityY,
+      pointerFrame.speed,
+      pointerFrame.freshness,
+      entryInfluence,
+      1,
+      deltaSeconds,
+    );
+  }
+
+  for (let offset = 0; offset < pointerFrame.activeWakeCount; offset += 1) {
+    const sampleIndex = (
+      screensaverPointerWakeCursor - 1 - offset
+      + SCREENSAVER_POINTER_WAKE_SAMPLE_CAPACITY
+    ) % SCREENSAVER_POINTER_WAKE_SAMPLE_CAPACITY;
+    const sample = screensaverPointerWakeSamples[sampleIndex];
+    applied = applyScreensaverPointerSampleForce(
+      entry,
+      cardScreenX,
+      cardScreenY,
+      worldPerPixelX,
+      worldPerPixelY,
+      baseCoreRadius,
+      baseAmbientRadius,
+      sample.clientX,
+      sample.clientY,
+      sample.velocityX,
+      sample.velocityY,
+      sample.speed,
+      sample.frameFreshness,
+      SCREENSAVER_POINTER_WAKE_FORCE_SCALE * entryInfluence,
+      SCREENSAVER_POINTER_WAKE_RADIUS_SCALE,
+      deltaSeconds,
+    ) || applied;
+  }
+
+  if (applied) {
+    entry.lastPointerForceAt = now;
+    screensaverPointerForceApplications += 1;
+  }
+  return applied;
+}
+
+function applyScreensaverPointerSampleForce(
+  entry,
+  cardScreenX,
+  cardScreenY,
+  worldPerPixelX,
+  worldPerPixelY,
+  baseCoreRadius,
+  baseAmbientRadius,
+  clientX,
+  clientY,
+  velocityX,
+  velocityY,
+  speed,
+  freshness,
+  forceScale,
+  radiusScale,
+  deltaSeconds,
+) {
+  const deltaX = cardScreenX - clientX;
+  const deltaY = cardScreenY - clientY;
+  const distance = Math.hypot(deltaX, deltaY);
+  const coreRadius = baseCoreRadius * radiusScale;
+  const ambientRadius = baseAmbientRadius * radiusScale;
+  if (distance >= ambientRadius) return false;
+
+  const coreDistance = clamp(distance / Math.max(1, coreRadius), 0, 1);
+  const ambientDistance = clamp(distance / Math.max(1, ambientRadius), 0, 1);
+  const coreFalloff = 1 - coreDistance * coreDistance;
+  const ambientFalloff = 1 - ambientDistance;
+  const coreInfluence = coreFalloff * coreFalloff;
+  const ambientInfluence = ambientFalloff * ambientFalloff
+    * (3 - 2 * (1 - ambientDistance))
+    * SCREENSAVER_POINTER_AMBIENT_STRENGTH;
+  const influence = (coreInfluence + ambientInfluence) * freshness * forceScale;
+  const awayScreenX = distance > 0.01 ? deltaX / distance : 0;
+  const awayScreenY = distance > 0.01 ? deltaY / distance : -1;
+  const motionWorldX = velocityX * worldPerPixelX;
+  const motionWorldY = -velocityY * worldPerPixelY;
+  const awayWorldX = awayScreenX * speed * worldPerPixelX;
+  const awayWorldY = -awayScreenY * speed * worldPerPixelY;
+  const forceStep = SCREENSAVER_POINTER_FORCE * influence * deltaSeconds;
+  const directShare = coreInfluence / Math.max(0.001, coreInfluence + ambientInfluence);
+  const awayShare = 0.12 + directShare * 0.2;
+  const motionShare = 1 - awayShare;
+
+  entry.velocityX += (motionWorldX * motionShare + awayWorldX * awayShare) * forceStep;
+  entry.velocityY += (motionWorldY * motionShare + awayWorldY * awayShare) * forceStep;
+
+  const normalizedVelocityX = velocityX / SCREENSAVER_POINTER_MAX_SPEED_PX_S;
+  const normalizedVelocityY = velocityY / SCREENSAVER_POINTER_MAX_SPEED_PX_S;
+  const rotationStep = SCREENSAVER_POINTER_ROTATION_FORCE * influence * deltaSeconds;
+  entry.angularVelocityX += normalizedVelocityY * rotationStep;
+  entry.angularVelocityY += normalizedVelocityX * rotationStep;
+  entry.angularVelocityZ += (
+    awayScreenX * normalizedVelocityY
+    - awayScreenY * normalizedVelocityX
+  ) * rotationStep * 0.78;
+  return true;
+}
+
+function getActiveScreensaverPointerWakeCount(now) {
+  let activeCount = 0;
+  for (let offset = 0; offset < screensaverPointerWakeCount; offset += 1) {
+    const sampleIndex = (
+      screensaverPointerWakeCursor - 1 - offset
+      + SCREENSAVER_POINTER_WAKE_SAMPLE_CAPACITY
+    ) % SCREENSAVER_POINTER_WAKE_SAMPLE_CAPACITY;
+    const sample = screensaverPointerWakeSamples[sampleIndex];
+    const age = now - sample.createdAt;
+    if (age > SCREENSAVER_POINTER_WAKE_DURATION_MS) break;
+    if (age < 0) continue;
+    sample.frameFreshness = Math.pow(
+      1 - age / SCREENSAVER_POINTER_WAKE_DURATION_MS,
+      1.35,
+    );
+    activeCount += 1;
+  }
+  return activeCount;
+}
+
+function recordScreensaverPointerWake(
+  fromX,
+  fromY,
+  fromAt,
+  toX,
+  toY,
+  toAt,
+) {
+  const speed = Math.hypot(
+    screensaverPointerVelocityX,
+    screensaverPointerVelocityY,
+  );
+  if (speed < SCREENSAVER_POINTER_MIN_SPEED_PX_S) return;
+
+  if (screensaverPointerWakeCount > 0) {
+    const latestIndex = (
+      screensaverPointerWakeCursor - 1
+      + SCREENSAVER_POINTER_WAKE_SAMPLE_CAPACITY
+    ) % SCREENSAVER_POINTER_WAKE_SAMPLE_CAPACITY;
+    const latestSample = screensaverPointerWakeSamples[latestIndex];
+    const distanceFromLatest = Math.hypot(
+      toX - latestSample.clientX,
+      toY - latestSample.clientY,
+    );
+    if (
+      distanceFromLatest < SCREENSAVER_POINTER_WAKE_SAMPLE_SPACING_PX * 0.58
+      && toAt - latestSample.createdAt < 70
+    ) {
+      latestSample.velocityX = screensaverPointerVelocityX;
+      latestSample.velocityY = screensaverPointerVelocityY;
+      latestSample.speed = speed;
+      return;
+    }
+  }
+
+  const hasStart = Number.isFinite(fromX) && Number.isFinite(fromY);
+  const distance = hasStart ? Math.hypot(toX - fromX, toY - fromY) : 0;
+  const sampleCount = clamp(
+    Math.max(1, Math.ceil(distance / SCREENSAVER_POINTER_WAKE_SAMPLE_SPACING_PX)),
+    1,
+    SCREENSAVER_POINTER_WAKE_MAX_INTERPOLATED_SAMPLES,
+  );
+  const elapsed = Number.isFinite(fromAt)
+    ? clamp(toAt - fromAt, 0, 80)
+    : 0;
+
+  for (let step = 1; step <= sampleCount; step += 1) {
+    const progress = step / sampleCount;
+    const sample = screensaverPointerWakeSamples[screensaverPointerWakeCursor];
+    sample.clientX = hasStart
+      ? THREE.MathUtils.lerp(fromX, toX, progress)
+      : toX;
+    sample.clientY = hasStart
+      ? THREE.MathUtils.lerp(fromY, toY, progress)
+      : toY;
+    sample.velocityX = screensaverPointerVelocityX;
+    sample.velocityY = screensaverPointerVelocityY;
+    sample.speed = speed;
+    sample.createdAt = toAt - elapsed * (1 - progress);
+    screensaverPointerWakeCursor = (
+      screensaverPointerWakeCursor + 1
+    ) % SCREENSAVER_POINTER_WAKE_SAMPLE_CAPACITY;
+    screensaverPointerWakeCount = Math.min(
+      SCREENSAVER_POINTER_WAKE_SAMPLE_CAPACITY,
+      screensaverPointerWakeCount + 1,
+    );
+  }
+}
+
+function updateScreensaverCardMomentum(
+  entry,
+  deltaSeconds,
+  linearDamping,
+  rotationDamping,
+) {
+  const fallbackView = (
+    Number.isFinite(entry.viewWidth) && Number.isFinite(entry.viewHeight)
+  ) ? null : getScreensaverVisibleWorldSize(entry.depth);
+  const viewWidth = entry.viewWidth || fallbackView.width;
+  const viewHeight = entry.viewHeight || fallbackView.height;
+  entry.velocityX -= entry.offsetX * SCREENSAVER_POINTER_LINEAR_SPRING * deltaSeconds;
+  entry.velocityY -= entry.offsetY * SCREENSAVER_POINTER_LINEAR_SPRING * deltaSeconds;
+  entry.velocityX *= linearDamping;
+  entry.velocityY *= linearDamping;
+  entry.velocityX = clamp(
+    entry.velocityX,
+    -viewWidth * SCREENSAVER_POINTER_MAX_VELOCITY_RATIO,
+    viewWidth * SCREENSAVER_POINTER_MAX_VELOCITY_RATIO,
+  );
+  entry.velocityY = clamp(
+    entry.velocityY,
+    -viewHeight * SCREENSAVER_POINTER_MAX_VELOCITY_RATIO,
+    viewHeight * SCREENSAVER_POINTER_MAX_VELOCITY_RATIO,
+  );
+  entry.offsetX += entry.velocityX * deltaSeconds;
+  entry.offsetY += entry.velocityY * deltaSeconds;
+
+  const maxOffsetX = viewWidth * SCREENSAVER_POINTER_MAX_OFFSET_RATIO;
+  const maxOffsetY = viewHeight * SCREENSAVER_POINTER_MAX_OFFSET_RATIO;
+  entry.offsetX = clamp(entry.offsetX, -maxOffsetX, maxOffsetX);
+  entry.offsetY = clamp(entry.offsetY, -maxOffsetY, maxOffsetY);
+
+  entry.angularVelocityX -= (
+    entry.rotationOffsetX * SCREENSAVER_POINTER_ROTATION_SPRING * deltaSeconds
+  );
+  entry.angularVelocityY -= (
+    entry.rotationOffsetY * SCREENSAVER_POINTER_ROTATION_SPRING * deltaSeconds
+  );
+  entry.angularVelocityZ -= (
+    entry.rotationOffsetZ * SCREENSAVER_POINTER_ROTATION_SPRING * deltaSeconds
+  );
+  entry.angularVelocityX *= rotationDamping;
+  entry.angularVelocityY *= rotationDamping;
+  entry.angularVelocityZ *= rotationDamping;
+  entry.angularVelocityX = clamp(
+    entry.angularVelocityX,
+    -SCREENSAVER_POINTER_MAX_ANGULAR_VELOCITY,
+    SCREENSAVER_POINTER_MAX_ANGULAR_VELOCITY,
+  );
+  entry.angularVelocityY = clamp(
+    entry.angularVelocityY,
+    -SCREENSAVER_POINTER_MAX_ANGULAR_VELOCITY,
+    SCREENSAVER_POINTER_MAX_ANGULAR_VELOCITY,
+  );
+  entry.angularVelocityZ = clamp(
+    entry.angularVelocityZ,
+    -SCREENSAVER_POINTER_MAX_ANGULAR_VELOCITY,
+    SCREENSAVER_POINTER_MAX_ANGULAR_VELOCITY,
+  );
+  entry.rotationOffsetX += entry.angularVelocityX * deltaSeconds;
+  entry.rotationOffsetY += entry.angularVelocityY * deltaSeconds;
+  entry.rotationOffsetZ += entry.angularVelocityZ * deltaSeconds;
+  entry.rotationOffsetX = clamp(entry.rotationOffsetX, -1.35, 1.35);
+  entry.rotationOffsetY = clamp(entry.rotationOffsetY, -1.6, 1.6);
+  entry.rotationOffsetZ = clamp(entry.rotationOffsetZ, -1.35, 1.35);
+}
+
+function updateScreensaverCollisionFrame(entry) {
+  const collisionRadius = SCREENSAVER_COLLISION_CARD_DIAGONAL
+    * entry.scale
+    * SCREENSAVER_COLLISION_RADIUS_FACTOR;
+  const inverseWidth = entry.viewInverseWidth || 1 / (entry.viewWidth || 1);
+  const inverseHeight = entry.viewInverseHeight || 1 / (entry.viewHeight || 1);
+  entry.screenX = entry.group.position.x * inverseWidth;
+  entry.screenY = entry.group.position.y * inverseHeight;
+  entry.collisionHalfX = collisionRadius * inverseWidth;
+  entry.collisionHalfY = collisionRadius * inverseHeight;
+  const pointerRampStart = 0.5 + entry.collisionHalfY * 1.8;
+  const pointerRampEnd = 0.5 + entry.collisionHalfY * 0.2;
+  const pointerProgress = clamp(
+    (pointerRampStart - Math.abs(entry.screenY))
+      / Math.max(0.001, pointerRampStart - pointerRampEnd),
+    0,
+    1,
+  );
+  entry.pointerInfluence = pointerProgress
+    * pointerProgress
+    * (3 - 2 * pointerProgress);
+  entry.collisionActive = (
+    Math.abs(entry.screenY)
+    <= 0.5
+      + entry.collisionHalfY * SCREENSAVER_COLLISION_ACTIVATION_OVERSCAN
+  );
+}
+
+function animateScreensaver(now = performance.now()) {
+  screensaverAnimationFrame = 0;
+  if (!screensaverActive || document.hidden || !screensaverRenderer) return;
+
+  resizeScreensaverRenderer();
+  const frameDeltaMs = Math.max(0, now - screensaverLastFrameAt);
+  recordScreensaverFrameTiming(frameDeltaMs);
+  const deltaSeconds = Math.min(
+    SCREENSAVER_MAX_MOTION_DELTA_SECONDS,
+    frameDeltaMs / 1000,
+  );
+  screensaverLastFrameAt = now;
+  const cardEffectTime = now * 0.001;
+  processScreensaverPointerInput(now);
+  const pointerFrame = getScreensaverPointerForceFrame(now);
+  const linearDamping = Math.exp(
+    -SCREENSAVER_POINTER_LINEAR_DAMPING * deltaSeconds,
+  );
+  const rotationDamping = Math.exp(
+    -SCREENSAVER_POINTER_ROTATION_DAMPING * deltaSeconds,
+  );
+
+  for (let index = screensaverCards.length - 1; index >= 0; index -= 1) {
+    const entry = screensaverCards[index];
+    entry.age += deltaSeconds;
+    entry.naturalY -= entry.speed * deltaSeconds;
+    if (entry.pointerInfluence > 0.001) {
+      applyScreensaverPointerForce(
+        entry,
+        pointerFrame,
+        now,
+        deltaSeconds,
+        entry.pointerInfluence,
+      );
+    }
+    updateScreensaverCardMomentum(
+      entry,
+      deltaSeconds,
+      linearDamping,
+      rotationDamping,
+    );
+    const naturalRotationX = entry.baseRotationX
+      + Math.sin(entry.age * entry.rotationFrequencyX + entry.rotationPhaseX)
+        * entry.rotationAmplitudeX;
+    const naturalRotationY = entry.baseRotationY
+      + Math.sin(entry.age * entry.rotationFrequencyY + entry.rotationPhaseY)
+        * entry.rotationAmplitudeY;
+    const naturalRotationZ = entry.baseRotationZ
+      + Math.sin(entry.age * entry.rotationFrequencyZ + entry.rotationPhaseZ)
+        * entry.rotationAmplitudeZ;
+    entry.group.position.x = entry.naturalX + entry.offsetX;
+    entry.group.position.y = entry.naturalY + entry.offsetY;
+    entry.group.rotation.x = naturalRotationX + entry.rotationOffsetX;
+    entry.group.rotation.y = naturalRotationY + entry.rotationOffsetY;
+    entry.group.rotation.z = naturalRotationZ + entry.rotationOffsetZ;
+    updateScreensaverCollisionFrame(entry);
+    const effectOverscan = CARD_HEIGHT
+      * entry.scale
+      * SCREENSAVER_EFFECT_OVERSCAN_CARD_HEIGHTS;
+    if (
+      Math.abs(entry.group.position.y)
+      <= entry.viewHeight / 2 + effectOverscan
+    ) {
+      updateCardEffectUniformsForGroup(entry.group, cardEffectTime, screensaverCamera);
+    }
+  }
+
+  updateScreensaverPointerHoverIfNeeded(now);
+
+  for (let index = screensaverCards.length - 1; index >= 0; index -= 1) {
+    const entry = screensaverCards[index];
+    const entryViewHeight = entry.viewHeight
+      || getScreensaverVisibleWorldSize(entry.depth).height;
+    if (entry.group.position.y < -(entryViewHeight / 2 + CARD_HEIGHT * entry.scale + 1)) {
+      screensaverScene.remove(entry.group);
+      entry.group.visible = false;
+      entry.group.userData.screensaverEntry = null;
+      screensaverReadyCards.push({
+        group: entry.group,
+        card: entry.card,
+        index: entry.index,
+        recycled: true,
+      });
+      screensaverCards.splice(index, 1);
+      updateScreensaverCardDiagnostics();
+    }
+  }
+
+  if (
+    now >= screensaverNextSpawnAt
+    && screensaverCards.length < SCREENSAVER_MAX_CARD_COUNT
+  ) {
+    if (spawnReadyScreensaverCard()) {
+      screensaverNextSpawnAt = now + getNextScreensaverSpawnInterval();
+      maintainScreensaverReadyCards();
+    } else {
+      screensaverNextSpawnAt = now + SCREENSAVER_SPAWN_RETRY_MS;
+    }
+  }
+
+  updateAnimatedTextureRecords(getScreensaverAnimatedTextureRecords());
+  if (
+    SCREENSAVER_DIAGNOSTICS_ENABLED
+    && screensaverOverlay
+    && now >= screensaverDiagnosticsNextAt
+  ) {
+    screensaverDiagnosticsNextAt = now + SCREENSAVER_DIAGNOSTIC_INTERVAL_MS;
+    flushScreensaverCardDiagnostics();
+    const pointerForces = String(screensaverPointerForceApplications);
+    if (screensaverOverlay.dataset.pointerForces !== pointerForces) {
+      screensaverOverlay.dataset.pointerForces = pointerForces;
+    }
+    const activeWakeSamples = String(pointerFrame?.activeWakeCount || 0);
+    if (screensaverOverlay.dataset.activeWakeSamples !== activeWakeSamples) {
+      screensaverOverlay.dataset.activeWakeSamples = activeWakeSamples;
+    }
+  }
+  screensaverRenderer.render(screensaverScene, screensaverCamera);
+  maintainScreensaverReadyCards();
+  screensaverAnimationFrame = requestAnimationFrame(animateScreensaver);
+}
+
+function resetScreensaverFrameDiagnostics() {
+  screensaverFrameSampleCount = 0;
+  screensaverFrameSampleTotalMs = 0;
+  screensaverFrameSampleMaximumMs = 0;
+  screensaverFrameSampleLongFrames = 0;
+  if (!screensaverOverlay) return;
+  delete screensaverOverlay.dataset.averageFrameMs;
+  delete screensaverOverlay.dataset.maximumFrameMs;
+  delete screensaverOverlay.dataset.longFrames;
+}
+
+function recordScreensaverFrameTiming(frameDeltaMs) {
+  if (!SCREENSAVER_DIAGNOSTICS_ENABLED) return;
+  if (!Number.isFinite(frameDeltaMs) || frameDeltaMs <= 0) return;
+  screensaverFrameSampleCount += 1;
+  screensaverFrameSampleTotalMs += frameDeltaMs;
+  screensaverFrameSampleMaximumMs = Math.max(
+    screensaverFrameSampleMaximumMs,
+    frameDeltaMs,
+  );
+  if (frameDeltaMs > SCREENSAVER_LONG_FRAME_MS) screensaverFrameSampleLongFrames += 1;
+  if (screensaverFrameSampleCount < SCREENSAVER_FRAME_SAMPLE_SIZE) return;
+
+  if (screensaverOverlay) {
+    screensaverOverlay.dataset.averageFrameMs = (
+      screensaverFrameSampleTotalMs / screensaverFrameSampleCount
+    ).toFixed(2);
+    screensaverOverlay.dataset.maximumFrameMs = screensaverFrameSampleMaximumMs.toFixed(2);
+    screensaverOverlay.dataset.longFrames = String(screensaverFrameSampleLongFrames);
+  }
+  screensaverFrameSampleCount = 0;
+  screensaverFrameSampleTotalMs = 0;
+  screensaverFrameSampleMaximumMs = 0;
+  screensaverFrameSampleLongFrames = 0;
+}
+
+function getScreensaverAnimatedTextureRecords() {
+  const records = screensaverAnimatedTextureRecordScratch;
+  records.clear();
+  for (const entry of screensaverCards) {
+    addAnimatedTextureRecord(records, entry.group?.userData?.frontMesh?.material?.map);
+  }
+  return records;
+}
+
+function updateScreensaverCardDiagnostics() {
+  screensaverCardDiagnosticsDirty = true;
+}
+
+function flushScreensaverCardDiagnostics() {
+  if (
+    !SCREENSAVER_DIAGNOSTICS_ENABLED
+    || !screensaverCardDiagnosticsDirty
+    || !screensaverOverlay
+  ) {
+    return;
+  }
+  screensaverCardDiagnosticsDirty = false;
+  screensaverOverlay.dataset.activeCards = String(screensaverCards.length);
+  screensaverOverlay.dataset.readyCards = String(screensaverReadyCards.length);
+  screensaverOverlay.dataset.preparingCards = String(screensaverPrepareActiveCount);
+  screensaverOverlay.dataset.frontFacingCards = String(
+    screensaverCards.reduce((total, entry) => total + Number(entry.frontFacing), 0),
+  );
+  screensaverOverlay.dataset.ponchoCards = String(
+    screensaverCards.reduce(
+      (total, entry) => total + Number(entry.card?.collection === "poncho"),
+      0,
+    ),
+  );
+  screensaverOverlay.dataset.animatedCards = String(
+    screensaverCards.reduce(
+      (total, entry) => total + Number(isAnimatedCard(entry.card)),
+      0,
+    ),
+  );
+}
+
+function setScreensaverCtrlSelectionActive(active, now = performance.now()) {
+  const nextActive = Boolean(active && screensaverActive);
+  if (screensaverCtrlSelectionActive === nextActive) return;
+  screensaverCtrlSelectionActive = nextActive;
+  screensaverPointerVelocityX = 0;
+  screensaverPointerVelocityY = 0;
+  screensaverPointerWakeCursor = 0;
+  screensaverPointerWakeCount = 0;
+  screensaverPointerLastAt = (
+    Number.isFinite(screensaverPointerClientX)
+    && Number.isFinite(screensaverPointerClientY)
+  ) ? now : 0;
+  if (screensaverOverlay) {
+    screensaverOverlay.dataset.ctrlSelectionActive = String(nextActive);
+    screensaverOverlay.dataset.activeWakeSamples = "0";
+  }
+}
+
+function handleScreensaverControlKeyUp(event) {
+  if (
+    !screensaverActive
+    || event.key !== "Control"
+  ) {
+    return;
+  }
+  setScreensaverCtrlSelectionActive(false);
+  if (event.cancelable) event.preventDefault();
+  event.stopImmediatePropagation();
+}
+
+function handleScreensaverPointerMove(event) {
+  if (
+    !screensaverActive
+    || (event.pointerType && event.pointerType !== "mouse" && event.pointerType !== "pen")
+  ) {
+    return;
+  }
+  event.stopPropagation();
+  setScreensaverCtrlSelectionActive(event.ctrlKey);
+  screensaverPendingPointerX = event.clientX;
+  screensaverPendingPointerY = event.clientY;
+  screensaverPendingPointerAt = performance.now();
+  screensaverPointerInputPending = true;
+  screensaverPointerHoverDirty = true;
+}
+
+function processScreensaverPointerInput(now) {
+  if (!screensaverPointerInputPending) return false;
+  screensaverPointerInputPending = false;
+  const nextClientX = screensaverPendingPointerX;
+  const nextClientY = screensaverPendingPointerY;
+  const inputAt = Math.min(now, screensaverPendingPointerAt || now);
+  const previousClientX = screensaverPointerClientX;
+  const previousClientY = screensaverPointerClientY;
+  const previousPointerAt = screensaverPointerLastAt;
+  const deltaSeconds = (inputAt - screensaverPointerLastAt) / 1000;
+  if (screensaverCtrlSelectionActive) {
+    screensaverPointerVelocityX = 0;
+    screensaverPointerVelocityY = 0;
+    screensaverPointerWakeCursor = 0;
+    screensaverPointerWakeCount = 0;
+    screensaverPointerClientX = nextClientX;
+    screensaverPointerClientY = nextClientY;
+    screensaverPointerLastAt = inputAt;
+    return true;
+  }
+  if (
+    !Number.isFinite(screensaverPointerClientX)
+    || !Number.isFinite(screensaverPointerClientY)
+    || deltaSeconds <= 0
+    || deltaSeconds > 0.18
+  ) {
+    screensaverPointerVelocityX = 0;
+    screensaverPointerVelocityY = 0;
+  } else {
+    let velocityX = (nextClientX - screensaverPointerClientX) / deltaSeconds;
+    let velocityY = (nextClientY - screensaverPointerClientY) / deltaSeconds;
+    const speed = Math.hypot(velocityX, velocityY);
+    if (speed > SCREENSAVER_POINTER_MAX_SPEED_PX_S) {
+      const scale = SCREENSAVER_POINTER_MAX_SPEED_PX_S / speed;
+      velocityX *= scale;
+      velocityY *= scale;
+    }
+    const velocityAlpha = clamp(deltaSeconds * 22, 0.28, 0.72);
+    screensaverPointerVelocityX = THREE.MathUtils.lerp(
+      screensaverPointerVelocityX,
+      velocityX,
+      velocityAlpha,
+    );
+    screensaverPointerVelocityY = THREE.MathUtils.lerp(
+      screensaverPointerVelocityY,
+      velocityY,
+      velocityAlpha,
+    );
+  }
+  recordScreensaverPointerWake(
+    previousClientX,
+    previousClientY,
+    previousPointerAt,
+    nextClientX,
+    nextClientY,
+    inputAt,
+  );
+  screensaverPointerClientX = nextClientX;
+  screensaverPointerClientY = nextClientY;
+  screensaverPointerLastAt = inputAt;
+  return true;
+}
+
+function handleScreensaverActivity(event) {
+  if (!screensaverActive) return;
+  if (event.type !== "pointerdown" && event.type !== "keydown") return;
+  if (event.type === "keydown" && event.key === "Control") {
+    setScreensaverCtrlSelectionActive(true);
+    if (event.cancelable) event.preventDefault();
+    event.stopImmediatePropagation();
+    return;
+  }
+  const ctrlSelecting = (
+    event.type === "pointerdown"
+    && (screensaverCtrlSelectionActive || event.ctrlKey)
+  );
+  if (ctrlSelecting) {
+    screensaverContextMenuSuppressedUntil = (
+      performance.now() + SCREENSAVER_CONTEXT_MENU_SUPPRESSION_MS
+    );
+  }
+  const selectedEntry = event.type === "pointerdown"
+    ? (
+      getScreensaverCardEntryAtPoint(
+        event.clientX,
+        event.clientY,
+        true,
+      )
+      || getRecentScreensaverHoveredCardEntry(event)
+    )
+    : null;
+  if (ctrlSelecting && !selectedEntry) {
+    if (event.cancelable) event.preventDefault();
+    event.stopImmediatePropagation();
+    return;
+  }
+  if (
+    performance.now() < screensaverExitArmedAt
+    && !selectedEntry
+  ) {
+    return;
+  }
+  if (event.cancelable) event.preventDefault();
+  event.stopImmediatePropagation();
+  deactivateScreensaverMode({
+    selectedCardIndex: selectedEntry?.index,
+  });
+}
+
+function suppressScreensaverSelectionContextMenu(event) {
+  const suppressDuringScreensaver = (
+    (screensaverActive || screensaverPreparing)
+    && (screensaverCtrlSelectionActive || event.ctrlKey)
+  );
+  const suppressDuringCardTransition = (
+    performance.now() < screensaverContextMenuSuppressedUntil
+  );
+  if (!suppressDuringScreensaver && !suppressDuringCardTransition) return;
+
+  screensaverContextMenuSuppressedUntil = 0;
+  if (event.cancelable) event.preventDefault();
+  event.stopImmediatePropagation();
+}
+
+function updateScreensaverPointerHoverIfNeeded(now) {
+  if (
+    !screensaverPointerHoverDirty
+    || now < screensaverPointerHoverNextAt
+    || !Number.isFinite(screensaverPointerClientX)
+    || !Number.isFinite(screensaverPointerClientY)
+  ) {
+    return;
+  }
+  screensaverPointerHoverDirty = false;
+  screensaverPointerHoverNextAt = now
+    + SCREENSAVER_POINTER_HOVER_RAYCAST_INTERVAL_MS;
+  updateScreensaverPointerHoverAt(
+    screensaverPointerClientX,
+    screensaverPointerClientY,
+    now,
+  );
+}
+
+function updateScreensaverPointerHoverAt(clientX, clientY, now) {
+  const previousHoveredCardIndex = screensaverHoveredCardIndex;
+  // Hover runs during every mouse-wind gesture, so keep it on the cached
+  // screen-space card bounds. The precise raycast is reserved for clicks.
+  const hoveredEntry = getScreensaverCardEntryAtProjectedPoint(clientX, clientY);
+  if (hoveredEntry) {
+    screensaverHoveredCardIndex = hoveredEntry.index;
+    screensaverHoveredCardAt = now;
+    screensaverHoveredCardClientX = clientX;
+    screensaverHoveredCardClientY = clientY;
+  } else {
+    screensaverHoveredCardIndex = null;
+    screensaverHoveredCardAt = 0;
+  }
+  if (previousHoveredCardIndex === screensaverHoveredCardIndex) return;
+  if (screensaverCanvas) screensaverCanvas.style.cursor = hoveredEntry ? "pointer" : "";
+  if (screensaverOverlay) {
+    if (hoveredEntry) {
+      screensaverOverlay.dataset.hoveredCardIndex = String(hoveredEntry.index);
+      screensaverOverlay.dataset.hoveredCardCollection = (
+        hoveredEntry.card?.collection || ACTIVE_COLLECTION_ID
+      );
+    } else {
+      delete screensaverOverlay.dataset.hoveredCardIndex;
+      delete screensaverOverlay.dataset.hoveredCardCollection;
+    }
+  }
+}
+
+function getRecentScreensaverHoveredCardEntry(event) {
+  if (
+    !Number.isInteger(screensaverHoveredCardIndex)
+    || performance.now() - screensaverHoveredCardAt > SCREENSAVER_POINTER_SELECTION_GRACE_MS
+    || Math.hypot(
+      event.clientX - screensaverHoveredCardClientX,
+      event.clientY - screensaverHoveredCardClientY,
+    ) > 22
+  ) {
+    return null;
+  }
+  return screensaverCards.find((entry) => entry.index === screensaverHoveredCardIndex) || null;
+}
+
+function getScreensaverCardEntryAtPoint(
+  clientX,
+  clientY,
+  refreshMatrices = false,
+) {
+  if (
+    !screensaverCanvas
+    || !screensaverCamera
+    || !screensaverScene
+    || !Number.isFinite(clientX)
+    || !Number.isFinite(clientY)
+  ) {
+    return null;
+  }
+
+  const rect = screensaverViewportRect;
+  if (!rect.width || !rect.height) return null;
+  screensaverPointer.set(
+    ((clientX - rect.left) / rect.width) * 2 - 1,
+    -(((clientY - rect.top) / rect.height) * 2 - 1),
+  );
+  if (refreshMatrices) {
+    screensaverCamera.updateMatrixWorld(true);
+    screensaverScene.updateMatrixWorld(true);
+  }
+  screensaverRaycaster.setFromCamera(screensaverPointer, screensaverCamera);
+
+  const cardFaceMeshes = screensaverRaycastMeshScratch;
+  cardFaceMeshes.length = 0;
+  for (const entry of screensaverCards) {
+    if (!entry.collisionActive) continue;
+    const frontMesh = entry.group?.userData?.frontMesh;
+    const backMesh = entry.group?.userData?.backMesh;
+    if (frontMesh?.visible !== false) cardFaceMeshes.push(frontMesh);
+    if (backMesh?.visible !== false) cardFaceMeshes.push(backMesh);
+  }
+  const hit = screensaverRaycaster.intersectObjects(cardFaceMeshes, false)[0];
+  if (hit?.object) {
+    const hitEntry = getScreensaverEntryFromObject(hit.object);
+    if (hitEntry) return hitEntry;
+  }
+  return refreshMatrices
+    ? getScreensaverCardEntryAtProjectedPoint(clientX, clientY)
+    : null;
+}
+
+function getScreensaverEntryFromObject(object) {
+  let current = object;
+  while (current && current !== screensaverScene) {
+    if (current.userData?.screensaverEntry) {
+      return current.userData.screensaverEntry;
+    }
+    current = current.parent;
+  }
+  return null;
+}
+
+function getScreensaverCardEntryAtProjectedPoint(clientX, clientY) {
+  const rect = screensaverViewportRect;
+  let bestEntry = null;
+  let bestScore = Infinity;
+  for (const entry of screensaverCards) {
+    if (!entry.collisionActive) continue;
+    const centerX = rect.left + (0.5 + entry.screenX) * rect.width;
+    const centerY = rect.top + (0.5 - entry.screenY) * rect.height;
+    const hitRadius = Math.max(
+      10,
+      entry.projectedCardHeightPx
+        * SCREENSAVER_POINTER_CLICK_HALF_DIAGONAL_SCALE,
+    );
+    const normalizedDistance = Math.hypot(
+      clientX - centerX,
+      clientY - centerY,
+    ) / hitRadius;
+    if (normalizedDistance > 1) continue;
+    const depthPreference = entry.depth * 0.012;
+    const score = normalizedDistance - depthPreference;
+    if (score >= bestScore) continue;
+    bestScore = score;
+    bestEntry = entry;
+  }
+  return bestEntry;
+}
+
+function openScreensaverCardInIndividualView(cardIndex) {
+  if (!Number.isInteger(cardIndex) || !CARDS[cardIndex]) return false;
+  const card = CARDS[cardIndex];
+  const collectionId = card.collection || ACTIVE_COLLECTION_ID;
+
+  if (
+    collectionId !== ACTIVE_COLLECTION_ID
+    && ACTIVE_COLLECTION?.introGroup === "evil"
+    && COLLECTION_CONFIGS[collectionId]?.introGroup === "evil"
+  ) {
+    commitActiveEvilBinderCollection(collectionId, {
+      historyMode: "push",
+      prepareBinder: false,
+      tableCollectionOrder: normalizeEvilBinderTableCollectionOrder(
+        binderEvilTableCollectionOrder,
+        collectionId,
+      ),
+    });
+  }
+
+  resetIndividualCardZoom();
+  setGalleryOpen(false);
+  const prepared = getPreparedIndividualCardResult(card);
+  const cardOptions = {};
+  if (prepared?.frontTexture) cardOptions.frontTexture = prepared.frontTexture;
+  if (prepared?.backTexture) cardOptions.backTexture = prepared.backTexture;
+  if (prepared) cardOptions.effectTextures = prepared.effectTextures;
+  setCard(cardIndex, cardOptions);
+  currentRotationX = 0;
+  currentRotationY = 0;
+  targetRotationX = 0;
+  targetRotationY = 0;
+  cardShuffleSpinY = 0;
+  cardGroup.rotation.set(0, 0, 0);
+  resizeCardRenderer();
+  setCardEffectViewTargetOpacity(1, { immediate: true });
+  if (screensaverOverlay) {
+    screensaverOverlay.dataset.selectedCardIndex = String(cardIndex);
+    screensaverOverlay.dataset.selectedCardCollection = collectionId;
+    screensaverOverlay.dataset.selectedCardStableId = card.stableId || "";
+    screensaverOverlay.dataset.selectedCardPath = window.location.pathname;
+  }
+  queueSessionViewStateSave();
+  return true;
+}
+
+function resetScreensaverPointerInteraction() {
+  screensaverCtrlSelectionActive = false;
+  screensaverPointerClientX = Number.NaN;
+  screensaverPointerClientY = Number.NaN;
+  screensaverPointerVelocityX = 0;
+  screensaverPointerVelocityY = 0;
+  screensaverPointerLastAt = 0;
+  screensaverPointerForceApplications = 0;
+  screensaverPendingPointerX = Number.NaN;
+  screensaverPendingPointerY = Number.NaN;
+  screensaverPendingPointerAt = 0;
+  screensaverPointerInputPending = false;
+  screensaverPointerHoverDirty = false;
+  screensaverPointerHoverNextAt = 0;
+  screensaverDiagnosticsNextAt = 0;
+  screensaverHoveredCardIndex = null;
+  screensaverHoveredCardAt = 0;
+  screensaverHoveredCardClientX = Number.NaN;
+  screensaverHoveredCardClientY = Number.NaN;
+  screensaverPointerWakeCursor = 0;
+  screensaverPointerWakeCount = 0;
+  screensaverRaycastMeshScratch.length = 0;
+  if (screensaverCanvas) screensaverCanvas.style.cursor = "";
+  if (screensaverOverlay) screensaverOverlay.dataset.pointerForces = "0";
+  if (screensaverOverlay) screensaverOverlay.dataset.activeWakeSamples = "0";
+  if (screensaverOverlay) screensaverOverlay.dataset.ctrlSelectionActive = "false";
+  if (screensaverOverlay) delete screensaverOverlay.dataset.hoveredCardIndex;
+  if (screensaverOverlay) delete screensaverOverlay.dataset.hoveredCardCollection;
+}
+
+function deactivateScreensaverMode({ selectedCardIndex = null } = {}) {
+  if (!screensaverActive && !screensaverPreparing) return;
+  const openSelectedCard = Number.isInteger(selectedCardIndex)
+    && Boolean(CARDS[selectedCardIndex]);
+  let selectedCardOpened = false;
+  screensaverActive = false;
+  screensaverPreparing = false;
+  void exitScreensaverFullscreen();
+  screensaverExitArmedAt = 0;
+  screensaverPrepareToken += 1;
+  resetScreensaverPointerInteraction();
+  stopScreensaverAnimation();
+  document.body.classList.remove("screensaver-mode");
+  screensaverOverlay?.classList.remove("is-visible");
+  if (openSelectedCard) {
+    try {
+      selectedCardOpened = openScreensaverCardInIndividualView(selectedCardIndex);
+    } catch (error) {
+      console.error("Unable to open selected screensaver card", error);
+    }
+  }
+
+  if (screensaverExitTimer) window.clearTimeout(screensaverExitTimer);
+  screensaverExitTimer = window.setTimeout(() => {
+    screensaverExitTimer = 0;
+    screensaverOverlay?.classList.remove("is-mounted");
+    screensaverOverlay?.setAttribute("aria-hidden", "true");
+    restoreScreensaverTooltips();
+    clearScreensaverCards({ includeReady: true });
+    screensaverPrewarmPromise = null;
+  }, SCREENSAVER_FADE_MS + 80);
+
+  requestResize();
+  if (selectedCardOpened) {
+    startCardRenderLoop();
+  } else if (galleryOpen && isBinderMode && !els.binderPanel.hidden) {
+    startBinderRenderLoop();
+    requestBinderMaintenance(0);
+  } else if (!galleryOpen) {
+    startCardRenderLoop();
+  }
+}
+
+function suppressScreensaverTooltips() {
+  const suppressTitle = (element) => {
+    if (!(element instanceof Element) || !element.hasAttribute("title")) return;
+    screensaverSuppressedTitles.set(element, element.getAttribute("title") || "");
+    element.removeAttribute("title");
+  };
+  const suppressTitlesWithin = (root) => {
+    if (!(root instanceof Element)) return;
+    suppressTitle(root);
+    for (const element of root.querySelectorAll("[title]")) suppressTitle(element);
+  };
+
+  suppressTitlesWithin(document.body);
+  if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
+
+  screensaverTooltipObserver?.disconnect();
+  screensaverTooltipObserver = new MutationObserver((mutations) => {
+    for (const mutation of mutations) {
+      if (mutation.type === "attributes") {
+        suppressTitle(mutation.target);
+        continue;
+      }
+      for (const node of mutation.addedNodes) suppressTitlesWithin(node);
+    }
+  });
+  screensaverTooltipObserver.observe(document.body, {
+    attributes: true,
+    attributeFilter: ["title"],
+    childList: true,
+    subtree: true,
+  });
+}
+
+function restoreScreensaverTooltips() {
+  screensaverTooltipObserver?.disconnect();
+  screensaverTooltipObserver = null;
+  for (const [element, title] of screensaverSuppressedTitles) {
+    if (element.isConnected) element.setAttribute("title", title);
+  }
+  screensaverSuppressedTitles.clear();
+}
+
+function clearScreensaverCards({ includeReady = false } = {}) {
+  for (const entry of screensaverCards.splice(0)) {
+    screensaverScene?.remove(entry.group);
+    disposeCardSwapGroup(entry.group);
+  }
+  if (includeReady) {
+    for (const entry of screensaverReadyCards.splice(0)) {
+      screensaverScene?.remove(entry.group);
+      disposeCardSwapGroup(entry.group);
+    }
+  }
+  screensaverPrepareActiveCount = 0;
+  updateScreensaverCardDiagnostics();
+}
+
+function resizeScreensaverRenderer(force = false) {
+  if (!screensaverRenderer || !screensaverCamera || !screensaverCanvas) return;
+  const width = Math.max(1, Math.floor(getAppViewportWidth()));
+  const height = Math.max(1, Math.floor(getAppViewportHeight()));
+  screensaverViewportRect.left = appViewportLeft || 0;
+  screensaverViewportRect.top = appViewportTop || 0;
+  screensaverViewportRect.width = width;
+  screensaverViewportRect.height = height;
+  screensaverViewportRect.ambientRadius = clamp(
+    Math.hypot(width, height) * SCREENSAVER_POINTER_AMBIENT_VIEWPORT_RATIO,
+    SCREENSAVER_POINTER_AMBIENT_RADIUS_MIN,
+    SCREENSAVER_POINTER_AMBIENT_RADIUS_MAX,
+  );
+  const pixelRatio = getRendererPixelRatio(width, height);
+  if (Math.abs(screensaverRenderer.getPixelRatio() - pixelRatio) > 0.001) {
+    screensaverRenderer.setPixelRatio(pixelRatio);
+    force = true;
+  }
+  if (
+    !force
+    && screensaverCanvas.width === Math.floor(width * pixelRatio)
+    && screensaverCanvas.height === Math.floor(height * pixelRatio)
+  ) {
+    return;
+  }
+  screensaverRenderer.setSize(width, height, false);
+  screensaverCamera.aspect = width / height;
+  screensaverCamera.updateProjectionMatrix();
+  for (const entry of screensaverCards) {
+    const previousViewWidth = entry.viewWidth || 1;
+    const previousViewHeight = entry.viewHeight || 1;
+    const normalizedNaturalX = entry.naturalX / previousViewWidth;
+    const normalizedNaturalY = entry.naturalY / previousViewHeight;
+    const normalizedOffsetX = entry.offsetX / previousViewWidth;
+    const normalizedOffsetY = entry.offsetY / previousViewHeight;
+    const normalizedVelocityX = entry.velocityX / previousViewWidth;
+    const normalizedVelocityY = entry.velocityY / previousViewHeight;
+    const view = getScreensaverVisibleWorldSize(entry.depth);
+    entry.viewWidth = view.width;
+    entry.viewHeight = view.height;
+    entry.viewInverseWidth = 1 / view.width;
+    entry.viewInverseHeight = 1 / view.height;
+    entry.pointerWorldPerPixelX = view.width / width;
+    entry.pointerWorldPerPixelY = view.height / height;
+    entry.projectedCardHeightPx = CARD_HEIGHT * entry.scale / view.height * height;
+    entry.speed = view.height
+      * SCREENSAVER_NORMALIZED_FALL_SPEED
+      * (entry.speedMultiplier || 1);
+    entry.naturalX = normalizedNaturalX * view.width;
+    entry.naturalY = normalizedNaturalY * view.height;
+    entry.offsetX = normalizedOffsetX * view.width;
+    entry.offsetY = normalizedOffsetY * view.height;
+    entry.velocityX = normalizedVelocityX * view.width;
+    entry.velocityY = normalizedVelocityY * view.height;
+    entry.group.position.x = entry.naturalX + entry.offsetX;
+    entry.group.position.y = entry.naturalY + entry.offsetY;
+    updateScreensaverCollisionFrame(entry);
+  }
 }
 
 function tweenCardShuffleSpin(nextIndex, frontTexture, effectTextures, token) {
@@ -6915,6 +9098,7 @@ function commitActiveEvilBinderCollection(
   collectionId,
   {
     historyMode = "push",
+    prepareBinder = true,
     tableCollectionOrder = null,
   } = {},
 ) {
@@ -6927,6 +9111,7 @@ function commitActiveEvilBinderCollection(
   ) {
     throw new Error(`Unable to activate ${collectionId} binder`);
   }
+  if (prepareBinder) initBinderScene();
 
   saveSessionViewState();
   binderEvilTableSwapState = null;
@@ -7009,15 +9194,19 @@ function commitActiveEvilBinderCollection(
   els.body.classList.remove("binder-focused");
   els.binderPanel.classList.remove("is-focused");
 
-  binderEvilTableSetRoot = createEvilBinderTableSet();
-  binderPresentationRoot.add(binderEvilTableSetRoot);
-  setBinderTableView(true, { immediate: true, updateControls: false });
+  if (binderPresentationRoot) {
+    binderEvilTableSetRoot = createEvilBinderTableSet();
+    binderPresentationRoot.add(binderEvilTableSetRoot);
+    setBinderTableView(true, { immediate: true, updateControls: false });
+  }
 
-  const firstCardIndex = ACTIVE_COLLECTION_INDEXES[0] ?? 0;
-  setCard(firstCardIndex, { deferAssets: true });
-  renderGallery();
-  updateBinderPageControls();
-  renderBinderSceneOnce({ includePreload: false, immediateCamera: true });
+  if (prepareBinder) {
+    const firstCardIndex = ACTIVE_COLLECTION_INDEXES[0] ?? 0;
+    setCard(firstCardIndex, { deferAssets: true });
+    renderGallery();
+    updateBinderPageControls();
+    renderBinderSceneOnce({ includePreload: false, immediateCamera: true });
+  }
   queueSessionViewStateSave();
 }
 
@@ -10213,11 +12402,20 @@ function scheduleFocusedBinderCardPrewarm() {
   restoreBinderFullResolutionTexturesExcept(new Set(sharpPositions));
 
   const token = ++focusedBinderCardPrewarmToken;
-  focusedBinderCardPrewarmTimer = window.setTimeout(() => {
-    focusedBinderCardPrewarmTimer = 0;
+  const beginPrewarm = () => {
     if (token !== focusedBinderCardPrewarmToken) return;
     if (!galleryOpen || !isBinderMode || binderFocusPosition !== focusPosition) return;
     prewarmFocusedBinderSharpPositions(sharpPositions, focusPosition, token).catch(console.error);
+  };
+
+  if (FOCUSED_BINDER_CARD_PREWARM_DELAY_MS <= 0) {
+    beginPrewarm();
+    return;
+  }
+
+  focusedBinderCardPrewarmTimer = window.setTimeout(() => {
+    focusedBinderCardPrewarmTimer = 0;
+    beginPrewarm();
   }, FOCUSED_BINDER_CARD_PREWARM_DELAY_MS);
 }
 
@@ -10225,15 +12423,56 @@ function getFocusedBinderSharpPositions(position = binderFocusPosition) {
   const focusedSpot = getBinderFocusedGridPosition(position);
   if (!focusedSpot) return [];
 
-  const positions = [position];
+  const positions = new Set([position]);
   for (const direction of [-1, 1]) {
     const neighborPosition = getFocusedBinderHorizontalNeighborPosition(
       focusedSpot,
       direction,
     );
-    if (neighborPosition >= 0 && !positions.includes(neighborPosition)) {
-      positions.push(neighborPosition);
-    }
+    if (neighborPosition >= 0) positions.add(neighborPosition);
+  }
+  for (const visiblePosition of getFocusedBinderFullyVisiblePositions(position)) {
+    positions.add(visiblePosition);
+  }
+  return [...positions];
+}
+
+function getFocusedBinderFullyVisiblePositions(position = binderFocusPosition) {
+  const focusedMesh = binderCardMeshByPosition.get(position);
+  if (!focusedMesh || !binderCamera || !binderRoot || !els.binderCanvas) return [];
+
+  binderRoot.updateMatrixWorld(true);
+  const focusWorldPosition = focusedMesh.getWorldPosition(new THREE.Vector3());
+  const projectionCamera = binderCamera.clone();
+  projectionCamera.position.set(
+    focusWorldPosition.x,
+    focusWorldPosition.y,
+    focusWorldPosition.z + getBinderFocusDistance(),
+  );
+  projectionCamera.lookAt(focusWorldPosition);
+  projectionCamera.updateMatrixWorld(true);
+  projectionCamera.updateProjectionMatrix();
+
+  const canvasRect = els.binderCanvas.getBoundingClientRect();
+  if (canvasRect.width < 1 || canvasRect.height < 1) return [];
+
+  const edgeTolerance = FOCUSED_BINDER_FULLY_VISIBLE_EDGE_TOLERANCE_PX;
+  const positions = [];
+  for (const candidatePosition of getBinderSpreadPositionsForTurn(
+    getBinderTurnForPosition(position),
+  )) {
+    const mesh = binderCardMeshByPosition.get(candidatePosition);
+    if (!mesh || !isVisibleThroughParents(mesh)) continue;
+
+    const rect = getBinderMeshScreenRect(mesh, projectionCamera, canvasRect);
+    if (!rect) continue;
+    const fullyVisible = (
+      rect.left >= canvasRect.left - edgeTolerance
+      && rect.top >= canvasRect.top - edgeTolerance
+      && rect.left + rect.width <= canvasRect.right + edgeTolerance
+      && rect.top + rect.height <= canvasRect.bottom + edgeTolerance
+    );
+    if (fullyVisible) positions.push(candidatePosition);
   }
   return positions;
 }
@@ -10268,10 +12507,15 @@ async function prewarmFocusedBinderSharpPositions(positions, focusPosition, toke
   const focusedEntry = entries.find((entry) => entry.position === focusPosition);
   const neighborEntries = entries.filter((entry) => entry !== focusedEntry);
 
-  const loadEntry = async (entry, focused = false) => {
-    const result = focused
-      ? await prepareIndividualCardFor3D(CARDS[entry.cardIndex])
-      : { frontTexture: await getPreparedCardTexture(CARDS[entry.cardIndex]) };
+  if (focusedEntry) {
+    // The full 3D preparation can include card backs and effect maps. Start it
+    // now, but let the front image become sharp as soon as that single asset is
+    // ready instead of holding the binder texture behind the extra work.
+    prepareIndividualCardFor3D(CARDS[focusedEntry.cardIndex]).catch(console.error);
+  }
+
+  const loadEntry = async (entry) => {
+    const frontTexture = await getPreparedCardTexture(CARDS[entry.cardIndex]);
     if (
       token !== focusedBinderCardPrewarmToken
       || binderFocusPosition !== focusPosition
@@ -10279,14 +12523,14 @@ async function prewarmFocusedBinderSharpPositions(positions, focusPosition, toke
     ) {
       return;
     }
-    upgradeFocusedBinderTexture(entry.position, result?.frontTexture);
+    upgradeFocusedBinderTexture(entry.position, frontTexture);
   };
 
   // Do not make the adjacent cards wait for the focused card's 3D/effect
   // preparation. This is especially noticeable when a neighbor crosses the
   // spine onto the other physical page.
   await Promise.all([
-    focusedEntry ? loadEntry(focusedEntry, true) : Promise.resolve(),
+    focusedEntry ? loadEntry(focusedEntry) : Promise.resolve(),
     ...neighborEntries.map((entry) => loadEntry(entry)),
   ]);
 }
@@ -11008,18 +13252,21 @@ function getIndividualTransitionImageSource() {
   return image?.currentSrc || image?.src || cardAssetUrl(CARDS[currentIndex]);
 }
 
-function getBinderMeshScreenRect(mesh) {
-  if (!mesh || !binderCamera || !els.binderCanvas || !binderRoot) return null;
+function getBinderMeshScreenRect(
+  mesh,
+  projectionCamera = binderCamera,
+  canvasRect = els.binderCanvas?.getBoundingClientRect(),
+) {
+  if (!mesh || !projectionCamera || !canvasRect || !binderRoot) return null;
 
   binderRoot.updateMatrixWorld(true);
-  const canvasRect = els.binderCanvas.getBoundingClientRect();
   const corners = [
     new THREE.Vector3(-BINDER_CARD_WIDTH / 2, -BINDER_CARD_HEIGHT / 2, 0),
     new THREE.Vector3(BINDER_CARD_WIDTH / 2, -BINDER_CARD_HEIGHT / 2, 0),
     new THREE.Vector3(BINDER_CARD_WIDTH / 2, BINDER_CARD_HEIGHT / 2, 0),
     new THREE.Vector3(-BINDER_CARD_WIDTH / 2, BINDER_CARD_HEIGHT / 2, 0),
   ].map((corner) => {
-    const projected = corner.applyMatrix4(mesh.matrixWorld).project(binderCamera);
+    const projected = corner.applyMatrix4(mesh.matrixWorld).project(projectionCamera);
     return {
       x: canvasRect.left + (projected.x + 1) * canvasRect.width / 2,
       y: canvasRect.top + (1 - projected.y) * canvasRect.height / 2,
@@ -11668,7 +13915,6 @@ function cancelInterruptedPointerInteractions() {
   binderDrag = null;
   binderLastOpenTap = null;
   resetTouchGestures();
-  cancelShuffleTouchUndo();
   clearCardEffectPointer();
   clearBinderIntroLinkCursor();
   if (draggedOuterFlip) startBinderOuterFlipSettle(draggedOuterFlip, 0);
@@ -11773,6 +14019,7 @@ function onBinderPointerDown(event) {
     return;
   }
 
+  prewarmBinderFocusCandidate(event);
   binderDrag = {
     pointerId: event.pointerId,
     startX: event.clientX,
@@ -11788,6 +14035,15 @@ function onBinderPointerDown(event) {
   };
   binderWheelFocusLockUntil = 0;
   event.preventDefault();
+}
+
+function prewarmBinderFocusCandidate(event) {
+  if (isBinderFocusView() || isBinderTableViewActive() || getBinderTargetClosedSide()) return;
+
+  const hit = getBinderCardHit(event);
+  const cardIndex = hit?.object?.userData?.cardIndex;
+  if (!Number.isInteger(cardIndex) || !CARDS[cardIndex]) return;
+  getPreparedCardTexture(CARDS[cardIndex]).catch(() => {});
 }
 
 function onBinderPointerMove(event) {
@@ -12666,19 +14922,34 @@ function updateCardSwapIncomingEffectUniforms(time) {
   updateCardEffectUniformsForGroup(cardSwapIncomingGroup, time);
 }
 
-function updateCardEffectUniformsForGroup(group, time = performance.now() * 0.001) {
+function updateCardEffectUniformsForGroup(
+  group,
+  time = performance.now() * 0.001,
+  camera = cardCamera,
+) {
   const effectMeshes = group?.userData?.effectMeshes || [];
   if (!effectMeshes.length) return;
+  const screensaverActivity = group?.userData?.screensaverEffectActivity;
+  const usesIndependentPointer = Number.isFinite(screensaverActivity);
 
   for (const mesh of effectMeshes) {
     const uniforms = mesh?.material?.uniforms;
     if (!uniforms) continue;
     updateCardEffectTextureUsage(mesh, time * 1000);
-    uniforms.uCameraPosition.value.copy(cardCamera.position);
+    uniforms.uCameraPosition.value.copy(camera.position);
     uniforms.uTime.value = time;
-    if (uniforms.uPointer) uniforms.uPointer.value.set(cardEffectPointerX, cardEffectPointerY);
-    if (uniforms.uPointerActive) uniforms.uPointerActive.value = cardEffectPointerActive;
-    uniforms.uActivity.value = getCardEffectUniformActivity(uniforms.uEffectMode?.value || CARD_EFFECT_MODE_DEFAULT);
+    if (uniforms.uPointer) {
+      uniforms.uPointer.value.set(
+        usesIndependentPointer ? CARD_NFT_2_EFFECT_DEFAULT_POINTER_X : cardEffectPointerX,
+        usesIndependentPointer ? CARD_NFT_2_EFFECT_DEFAULT_POINTER_Y : cardEffectPointerY,
+      );
+    }
+    if (uniforms.uPointerActive) {
+      uniforms.uPointerActive.value = usesIndependentPointer ? 0 : cardEffectPointerActive;
+    }
+    uniforms.uActivity.value = usesIndependentPointer
+      ? screensaverActivity
+      : getCardEffectUniformActivity(uniforms.uEffectMode?.value || CARD_EFFECT_MODE_DEFAULT);
   }
 }
 
@@ -13529,6 +15800,7 @@ function requestResize() {
     updateAppViewportVars();
     resizeCardRenderer();
     resizeBinderRenderer();
+    resizeScreensaverRenderer();
     if (galleryOpen && isBinderMode && !els.binderPanel.hidden) {
       renderBinderSceneOnce();
     }
@@ -14124,15 +16396,15 @@ function easeInOut(value) {
     : 1 - Math.pow(-2 * value + 2, 3) / 2;
 }
 
-function getCardTexture(card) {
-  return getCachedNftTexture(card);
+function getCardTexture(card, options = {}) {
+  return getCachedNftTexture(card, options);
 }
 
 function getBinderTexture(card) {
   return getCachedBinderTexture(card);
 }
 
-function getCachedNftTexture(card) {
+function getCachedNftTexture(card, { fetchPriority = "auto" } = {}) {
   const key = textureAssetPath(card);
   if (nftTextureCache.has(key)) {
     const entry = nftTextureCache.get(key);
@@ -14148,8 +16420,10 @@ function getCachedNftTexture(card) {
   };
   entry.promise = (
     getAnimatedSpriteInfo(card)
-      ? loadAnimatedTexture(card)
-      : loadTexture(cardAssetUrl(card))
+      ? loadAnimatedTexture(card, { fetchPriority })
+      : fetchPriority === "high"
+        ? loadHighPriorityTexture(cardAssetUrl(card))
+        : loadTexture(cardAssetUrl(card))
   ).then((texture) => {
     entry.texture = texture;
     entry.bytes = getDecodedTextureBytes(texture, entry.bytes);
@@ -14326,6 +16600,14 @@ function isTextureAttachedToCardScene(texture) {
   cardSwapIncomingGroup?.traverse((object) => {
     if (object?.material?.map === texture) attached = true;
   });
+  if (!attached) {
+    for (const entry of [...screensaverCards, ...screensaverReadyCards]) {
+      entry.group?.traverse((object) => {
+        if (object?.material?.map === texture) attached = true;
+      });
+      if (attached) break;
+    }
+  }
   return attached;
 }
 
@@ -14669,6 +16951,20 @@ function isEffectTextureAttached(texture) {
       attached = true;
     }
   });
+  if (!attached) {
+    for (const entry of [...screensaverCards, ...screensaverReadyCards]) {
+      entry.group?.traverse((object) => {
+        const uniforms = object?.material?.uniforms;
+        if (
+          uniforms?.uFoilTexture?.value === texture
+          || uniforms?.uMaskTexture?.value === texture
+        ) {
+          attached = true;
+        }
+      });
+      if (attached) break;
+    }
+  }
   return attached;
 }
 
@@ -14679,11 +16975,12 @@ function addCardEffectTextureCacheKeys(keys, card) {
   keys.add(`mask:${profile.cardNumber}`);
 }
 
-function loadAnimatedTexture(card) {
+function loadAnimatedTexture(card, { fetchPriority = "auto" } = {}) {
   const sprite = getAnimatedSpriteInfo(card);
-  if (!sprite) return loadTexture(cardAssetUrl(card));
+  const load = fetchPriority === "high" ? loadHighPriorityTexture : loadTexture;
+  if (!sprite) return load(cardAssetUrl(card));
 
-  return loadTexture(new URL(sprite.file, import.meta.url).href).then((texture) => {
+  return load(new URL(sprite.file, import.meta.url).href).then((texture) => {
     configureAnimatedTexture(texture, sprite);
     return texture;
   });

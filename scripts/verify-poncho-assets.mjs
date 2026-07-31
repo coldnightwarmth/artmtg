@@ -133,7 +133,7 @@ assert(
     && page.includes('rel="apple-touch-icon" href="../cardnft.png"'),
   "Poncho page has the wrong favicon URL",
 );
-assert(page.includes("../app.js?v=cardnft-292"), "Poncho page has a stale app cache key");
+assert(page.includes("../app.js?v=cardnft-321"), "Poncho page has a stale app cache key");
 assert(
   page.includes("../vendor/three.module.min.js?v=three-r165-min-1"),
   "Poncho page is not using the optimized Three.js runtime",
