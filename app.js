@@ -19,6 +19,7 @@ const COLLECTION_DATA_SPECS = {
   winloop: { module: "./winloop-data.js?v=community-5", exportName: "WINLOOP_CARDS" },
   mtgnft: { module: "./mtgnft-data.js?v=community-5", exportName: "MTGNFT_CARDS" },
   igorsquest: { module: "./igorsquest-data.js?v=community-5", exportName: "IGORSQUEST_CARDS" },
+  clear: { module: "./clear-data.js?v=clear-5", exportName: "CLEAR_CARDS" },
 };
 const REQUESTED_COLLECTION_ID = COLLECTION_DATA_SPECS[document.documentElement.dataset.collectionId]
   ? document.documentElement.dataset.collectionId
@@ -249,6 +250,19 @@ const COLLECTION_CONFIGS = {
     traitFiltersEnabled: getBrowserTraitConfig("igorsquest").categories.length > 0,
     backImage: "assets/igorsquest/backs/igorsquest-back.webp?v=igorsquest-1",
     path: "/igorsquest/",
+    introGroup: "community",
+  },
+  clear: {
+    id: "clear",
+    label: "Clear Cards",
+    introLabel: "clear cards",
+    cards: getInitialCollectionCards("clear"),
+    traitCategories: getBrowserTraitConfig("clear").categories,
+    traitModule: getBrowserTraitConfig("clear").module,
+    traits: null,
+    traitFiltersEnabled: false,
+    backImage: "assets/clear/backs/clear-card-back.webp?v=clear-5",
+    path: "/clear/",
     introGroup: "community",
   },
 };
@@ -577,6 +591,13 @@ const CARD_HEIGHT = 3.5;
 const CARD_DEPTH = 0.022;
 const CARD_RADIUS = 0.12;
 const INDIVIDUAL_CARD_WORLD_Y = 0.26;
+const INDIVIDUAL_CARD_MODEL_SCALE = 0.985;
+const INDIVIDUAL_CARD_CLEAR_RESIN_PROFILE = "mons-clear-resin";
+const INDIVIDUAL_CARD_CLEAR_ENVIRONMENT_ROTATION_DEG = 121;
+const INDIVIDUAL_CARD_DRACO_DECODER_PATH = new URL(
+  "./vendor/draco/r165/",
+  import.meta.url,
+).href;
 const BINDER_FACE_WIDTH = 420;
 const BINDER_FACE_HEIGHT = 594;
 const BINDER_COLUMNS = 3;
@@ -1046,8 +1067,17 @@ let cardGradientMesh;
 let cardBackGradientMesh;
 let cardFrontNoiseMesh;
 let cardBackNoiseMesh;
+let cardTransmissionBackdrop;
+let cardDefaultLights = [];
+let cardClearResinLights = [];
+let cardClearResinPointLight;
+let cardClearResinEnvironmentTarget;
+let cardClearResinEnvironmentPromise = null;
+let activeIndividualCardModelRenderProfile = "";
 let cardPlaceholderTexture;
 let cardSurfaceNoiseTexture;
+let individualCardModelLoaderModulesPromise = null;
+const individualCardModelSourcePromises = new Map();
 const backTexturePromises = new Map();
 const backTextures = new Map();
 let allBackTexturesPreloadPromise = null;
@@ -1498,6 +1528,9 @@ function initCardScene() {
   cardRenderer.setPixelRatio(getRendererPixelRatio(getAppViewportWidth(), getAppViewportHeight()));
   cardRenderer.outputColorSpace = THREE.SRGBColorSpace;
   cardRenderer.setClearColor(0x000000, 0);
+  cardRenderer.transmissionResolutionScale = 1;
+  cardRenderer.toneMapping = THREE.NoToneMapping;
+  cardRenderer.toneMappingExposure = 1;
 
   cardScene = new THREE.Scene();
   cardCamera = new THREE.PerspectiveCamera(34, 1, 0.1, 100);
@@ -1513,6 +1546,60 @@ function initCardScene() {
   const rim = new THREE.DirectionalLight(0xaec8d8, 0.72);
   rim.position.set(3.2, 1.8, -2.8);
   cardScene.add(rim);
+
+  cardDefaultLights = [ambient, key, rim];
+
+  const clearHemisphere = new THREE.HemisphereLight(0xdce8ff, 0x2c2018, 0.65);
+  cardClearResinPointLight = new THREE.PointLight(0xffffff, 17, 0, 0.4);
+  cardClearResinPointLight.position.set(-3.9, 5.5, 3);
+  const clearSpot = new THREE.SpotLight(
+    0xc8ddff,
+    110,
+    0,
+    THREE.MathUtils.degToRad(34),
+    0.65,
+    2,
+  );
+  clearSpot.position.set(-3, 4, 4);
+  const clearSpotTarget = new THREE.Object3D();
+  clearSpotTarget.position.set(0, 0, 0);
+  clearSpot.target = clearSpotTarget;
+  cardClearResinLights = [clearHemisphere, cardClearResinPointLight, clearSpot];
+  for (const light of cardClearResinLights) light.visible = false;
+  cardScene.add(clearHemisphere, cardClearResinPointLight, clearSpot, clearSpotTarget);
+
+  const transmissionBackdropMaterial = new THREE.ShaderMaterial({
+    uniforms: {
+      backdropColor: { value: new THREE.Color(0x191919) },
+      backdropAlpha: { value: 0.3 },
+    },
+    vertexShader: `
+      void main() {
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }
+    `,
+    fragmentShader: `
+      uniform vec3 backdropColor;
+      uniform float backdropAlpha;
+
+      void main() {
+        gl_FragColor = vec4(backdropColor, backdropAlpha);
+      }
+    `,
+    depthTest: false,
+    depthWrite: false,
+  });
+  cardTransmissionBackdrop = new THREE.Mesh(
+    new THREE.PlaneGeometry(100, 100),
+    transmissionBackdropMaterial,
+  );
+  cardTransmissionBackdrop.position.z = -10;
+  cardTransmissionBackdrop.renderOrder = -1000;
+  cardTransmissionBackdrop.visible = false;
+  cardTransmissionBackdrop.onBeforeRender = (renderer) => {
+    transmissionBackdropMaterial.colorWrite = renderer.getRenderTarget() !== null;
+  };
+  cardScene.add(cardTransmissionBackdrop);
 
   cardGroup = new THREE.Group();
   cardGroup.position.y = INDIVIDUAL_CARD_WORLD_Y;
@@ -1569,6 +1656,7 @@ function initCardScene() {
   cardBackGlareMesh.rotation.y = Math.PI;
   cardBackGlareMesh.position.z = -CARD_DEPTH / 2 - 0.009;
   cardGroup.add(cardBackGlareMesh);
+  cardGroup.userData.proceduralCardChildren = [...cardGroup.children];
 
   resizeCardRenderer();
 }
@@ -2119,6 +2207,7 @@ function setCard(index, options = {}) {
   resetViewSwitchWheelDistances();
   const deferAssets = Boolean(options.deferAssets);
   individualCardAssetsDeferred = deferAssets;
+  syncIndividualCardModel(card, cardGroup, token, { load: !deferAssets });
   applyLoadedIndividualCardEffect(card, options.effectTextures || null, {
     immediate: Boolean(options.effectTextures),
   });
@@ -2657,6 +2746,12 @@ function promoteCardSwapIncomingGroup(state) {
 
   currentIndex = modulo(state.nextIndex, CARDS.length);
   cardApplyToken += 1;
+  syncIndividualCardModel(
+    CARDS[currentIndex],
+    cardGroup,
+    cardApplyToken,
+    { load: true },
+  );
   if (state.effectTextures) {
     applyLoadedIndividualCardEffect(CARDS[currentIndex], state.effectTextures, { immediate: true });
   } else {
@@ -2780,8 +2875,230 @@ function createCardSwapGroup(frontTexture, backTexture, card = null, effectTextu
   group.userData.backGradientMesh = backGradientMesh || null;
   group.userData.backGlareMesh = backGlareMesh || null;
   group.userData.effectMeshes = effectMeshes;
+  group.userData.proceduralCardChildren = [...group.children];
   applyCardAspectFitToGroup(group, card);
   return group;
+}
+
+function syncIndividualCardModel(
+  card,
+  group,
+  applyToken,
+  { load = true } = {},
+) {
+  const requestToken = (group?.userData?.individualCardModelToken || 0) + 1;
+  if (!group) return;
+  group.userData.individualCardModelToken = requestToken;
+  removeIndividualCardModel(group);
+  setProceduralCardGroupVisible(group, true);
+  resetIndividualCardModelRenderingProfile();
+  els.cardCanvas.dataset.modelState = "none";
+  delete els.cardCanvas.dataset.model;
+  updateIndividualCardTransmissionBackdrop();
+
+  const modelPath = String(card?.model || "").trim();
+  if (!modelPath || !load) return;
+  const modelUrl = new URL(modelPath, import.meta.url).href;
+  els.cardCanvas.dataset.modelState = "loading";
+
+  Promise.all([
+    loadIndividualCardModelSource(modelUrl),
+    prepareIndividualCardModelRenderingProfile(card),
+  ])
+    .then(([source]) => {
+      if (
+        group !== cardGroup
+        || applyToken !== cardApplyToken
+        || group.userData.individualCardModelToken !== requestToken
+        || CARDS[currentIndex] !== card
+      ) {
+        return;
+      }
+
+      const modelRoot = createIndividualCardModelInstance(source);
+      group.userData.individualCardModelRoot = modelRoot;
+      group.add(modelRoot);
+      setProceduralCardGroupVisible(group, false);
+      applyIndividualCardModelRenderingProfile(card);
+      els.cardCanvas.dataset.modelState = "ready";
+      els.cardCanvas.dataset.model = modelUrl;
+      updateIndividualCardTransmissionBackdrop();
+      startCardRenderLoop();
+    })
+    .catch((error) => {
+      if (group.userData.individualCardModelToken !== requestToken) return;
+      console.warn(`Unable to load individual card model: ${modelPath}`, error);
+      setProceduralCardGroupVisible(group, true);
+      resetIndividualCardModelRenderingProfile();
+      els.cardCanvas.dataset.modelState = "error";
+      updateIndividualCardTransmissionBackdrop();
+    });
+}
+
+function loadIndividualCardModelSource(url) {
+  if (individualCardModelSourcePromises.has(url)) {
+    return individualCardModelSourcePromises.get(url);
+  }
+
+  if (!individualCardModelLoaderModulesPromise) {
+    individualCardModelLoaderModulesPromise = Promise.all([
+      import("./vendor/GLTFLoader.js?v=three-r165-gltf-1"),
+      import("./vendor/DRACOLoader.js?v=three-r165-draco-1"),
+    ]);
+  }
+
+  const promise = individualCardModelLoaderModulesPromise
+    .then(([{ GLTFLoader }, { DRACOLoader }]) => {
+      const dracoLoader = new DRACOLoader();
+      dracoLoader.setDecoderPath(INDIVIDUAL_CARD_DRACO_DECODER_PATH);
+      dracoLoader.setWorkerLimit(1);
+      const loader = new GLTFLoader();
+      loader.setDRACOLoader(dracoLoader);
+      return loader.loadAsync(url).finally(() => dracoLoader.dispose());
+    })
+    .then((gltf) => {
+      if (!gltf?.scene) throw new Error("The GLB does not contain a scene");
+      return gltf.scene;
+    })
+    .catch((error) => {
+      individualCardModelSourcePromises.delete(url);
+      throw error;
+    });
+
+  individualCardModelSourcePromises.set(url, promise);
+  return promise;
+}
+
+function createIndividualCardModelInstance(source) {
+  const model = source.clone(true);
+  model.traverse((object) => {
+    if (!object.isMesh) return;
+    object.geometry = object.geometry.clone();
+    object.material = Array.isArray(object.material)
+      ? object.material.map((material) => material.clone())
+      : object.material.clone();
+    object.castShadow = false;
+    object.receiveShadow = false;
+    object.frustumCulled = true;
+  });
+
+  let bounds = new THREE.Box3().setFromObject(model);
+  const size = bounds.getSize(new THREE.Vector3());
+  const scale = Math.min(
+    CARD_WIDTH * INDIVIDUAL_CARD_MODEL_SCALE / Math.max(0.001, size.x),
+    CARD_HEIGHT * INDIVIDUAL_CARD_MODEL_SCALE / Math.max(0.001, size.y),
+  );
+  model.scale.setScalar(scale);
+  bounds = new THREE.Box3().setFromObject(model);
+  const center = bounds.getCenter(new THREE.Vector3());
+  model.position.sub(center);
+
+  const root = new THREE.Group();
+  root.name = "individual-card-model";
+  root.add(model);
+  return root;
+}
+
+function getIndividualCardModelRenderingProfile(card) {
+  return String(card?.modelRenderProfile || "").trim();
+}
+
+function prepareIndividualCardModelRenderingProfile(card) {
+  if (getIndividualCardModelRenderingProfile(card) !== INDIVIDUAL_CARD_CLEAR_RESIN_PROFILE) {
+    return Promise.resolve(null);
+  }
+  if (cardClearResinEnvironmentTarget) {
+    return Promise.resolve(cardClearResinEnvironmentTarget);
+  }
+  if (!cardClearResinEnvironmentPromise) {
+    cardClearResinEnvironmentPromise = import(
+      "./vendor/RoomEnvironment.js?v=three-r165-room-env-1"
+    )
+      .then(({ RoomEnvironment }) => {
+        const roomEnvironment = new RoomEnvironment();
+        const pmremGenerator = new THREE.PMREMGenerator(cardRenderer);
+        pmremGenerator.compileEquirectangularShader();
+        const environmentTarget = pmremGenerator.fromScene(roomEnvironment);
+        roomEnvironment.dispose();
+        pmremGenerator.dispose();
+        cardClearResinEnvironmentTarget = environmentTarget;
+        return environmentTarget;
+      })
+      .catch((error) => {
+        cardClearResinEnvironmentPromise = null;
+        throw error;
+      });
+  }
+  return cardClearResinEnvironmentPromise;
+}
+
+function applyIndividualCardModelRenderingProfile(card) {
+  const profile = getIndividualCardModelRenderingProfile(card);
+  activeIndividualCardModelRenderProfile = profile;
+  const isClearResin = profile === INDIVIDUAL_CARD_CLEAR_RESIN_PROFILE;
+  for (const light of cardDefaultLights) light.visible = !isClearResin;
+  for (const light of cardClearResinLights) light.visible = isClearResin;
+
+  if (isClearResin) {
+    updateIndividualCardClearResinPointLight();
+    cardRenderer.toneMapping = THREE.ACESFilmicToneMapping;
+    cardRenderer.toneMappingExposure = 1.25;
+    cardScene.environment = cardClearResinEnvironmentTarget?.texture || null;
+    cardScene.environmentIntensity = 1;
+    cardScene.environmentRotation.set(
+      0,
+      THREE.MathUtils.degToRad(INDIVIDUAL_CARD_CLEAR_ENVIRONMENT_ROTATION_DEG),
+      0,
+    );
+  } else {
+    cardRenderer.toneMapping = THREE.NoToneMapping;
+    cardRenderer.toneMappingExposure = 1;
+    cardScene.environment = null;
+    cardScene.environmentIntensity = 1;
+    cardScene.environmentRotation.set(0, 0, 0);
+  }
+
+  cardScene.traverse((object) => {
+    if (!object.isMesh && !object.isPoints) return;
+    const materials = Array.isArray(object.material) ? object.material : [object.material];
+    for (const material of materials) material.needsUpdate = true;
+  });
+  updateIndividualCardTransmissionBackdrop();
+}
+
+function resetIndividualCardModelRenderingProfile() {
+  applyIndividualCardModelRenderingProfile(null);
+}
+
+function updateIndividualCardClearResinPointLight() {
+  if (!cardClearResinPointLight) return;
+  if (els.body.classList.contains("is-light")) {
+    cardClearResinPointLight.position.set(-6.5, 1.2, 3);
+  } else {
+    cardClearResinPointLight.position.set(-3.9, 5.5, 3);
+  }
+}
+
+function removeIndividualCardModel(group) {
+  const modelRoot = group?.userData?.individualCardModelRoot;
+  if (!modelRoot) return;
+  group.remove(modelRoot);
+  disposeCardSwapGroup(modelRoot);
+  group.userData.individualCardModelRoot = null;
+}
+
+function setProceduralCardGroupVisible(group, visible) {
+  for (const child of group?.userData?.proceduralCardChildren || []) {
+    child.visible = visible;
+  }
+}
+
+function updateIndividualCardTransmissionBackdrop() {
+  if (!cardTransmissionBackdrop) return;
+  cardTransmissionBackdrop.visible = Boolean(
+    cardGroup?.userData?.individualCardModelRoot
+      && activeIndividualCardModelRenderProfile === INDIVIDUAL_CARD_CLEAR_RESIN_PROFILE,
+  );
 }
 
 function createCardCoreMaterial() {
@@ -18024,6 +18341,10 @@ function saveSessionViewState() {
 function applyTheme(isLight) {
   els.themeToggle.checked = isLight;
   els.body.classList.toggle("is-light", isLight);
+  if (activeIndividualCardModelRenderProfile === INDIVIDUAL_CARD_CLEAR_RESIN_PROFILE) {
+    updateIndividualCardClearResinPointLight();
+    startCardRenderLoop();
+  }
   updateBinderTableSurfaceTheme(isLight);
   writeStorageValue(
     getBrowserStorage("localStorage"),

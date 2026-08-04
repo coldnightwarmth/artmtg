@@ -222,7 +222,6 @@ body.is-gallery .card-rig {
   touch-action: none;
   filter: drop-shadow(0 0 18px rgba(230, 210, 148, 0.1));
   opacity: 1;
-  transition: opacity 260ms ease;
 }
 
 body.is-light #cardCanvas {

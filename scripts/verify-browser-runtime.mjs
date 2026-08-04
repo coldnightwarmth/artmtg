@@ -6,8 +6,8 @@ import { BROWSER_TRAIT_CATALOG } from "../browser-traits-catalog.js";
 import { COMMUNITY_COLLECTIONS } from "./community-collections.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const APP_VERSION = "cardnft-321";
-const STYLE_VERSION = "cardnft-131";
+const APP_VERSION = "cardnft-326";
+const STYLE_VERSION = "cardnft-132";
 const THREE_VERSION = "three-r165-min-1";
 
 const TRAIT_SPECS = [
@@ -96,18 +96,33 @@ const [
   tableDisplayModelStat,
   lightTableTextureStat,
   tableCoinTextureStat,
+  clearCardModelStat,
+  clearCardPreviewStat,
+  clearCardBackStat,
+  dracoDecoderStat,
+  roomEnvironmentStat,
 ] = await Promise.all([
   stat(path.join(ROOT, "assets", "ui", "cardnft1-logo-cover.webp")),
   stat(path.join(ROOT, "assets", "ui", "poncho-drifella-cover.webp")),
   stat(path.join(ROOT, "assets", "models", "table-white-mesh.glb")),
   stat(path.join(ROOT, "assets", "ui", "table-wood-light-seamless.png")),
   stat(path.join(ROOT, "assets", "ui", "table-swag-coin.png")),
+  stat(path.join(ROOT, "assets", "models", "mons-shop-clear-cards", "clear_card_preview.glb")),
+  stat(path.join(ROOT, "assets", "clear", "cards", "0000", "clear-card-preview.webp")),
+  stat(path.join(ROOT, "assets", "clear", "backs", "clear-card-back.webp")),
+  stat(path.join(ROOT, "vendor", "draco", "r165", "draco_decoder.wasm")),
+  stat(path.join(ROOT, "vendor", "RoomEnvironment.js")),
 ]);
 assert(cardNft1CoverStat.size < 60_000, "Card NFT 1 cover emblem is unexpectedly large");
 assert(ponchoCoverStat.size < 120_000, "Poncho cover emblem is unexpectedly large");
 assert(tableDisplayModelStat.size < 100_000, "Table display model is unexpectedly large");
 assert(lightTableTextureStat.size < 320_000, "Light table texture is unexpectedly large");
 assert(tableCoinTextureStat.size < 230_000, "Table coin texture is unexpectedly large");
+assert(clearCardModelStat.size < 500_000, "Clear card GLB is unexpectedly large");
+assert(clearCardPreviewStat.size < 180_000, "Clear card preview WebP is unexpectedly large");
+assert(clearCardBackStat.size < 180_000, "Clear card back WebP is unexpectedly large");
+assert(dracoDecoderStat.size < 250_000, "Draco decoder is unexpectedly large");
+assert(roomEnvironmentStat.size < 10_000, "Room environment runtime is unexpectedly large");
 assert(
   app.includes("const COLLECTION_DATA_SPECS")
     && app.includes("await import(INITIAL_COLLECTION_DATA_SPEC.module)")
@@ -118,6 +133,31 @@ assert(
   app.includes("ensureCollectionTraits")
     && app.includes("browser-traits-catalog.js?v=browser-traits-5"),
   "app does not lazy-load packed browser traits",
+);
+assert(
+  app.includes('clear: { module: "./clear-data.js?v=clear-5"')
+    && app.includes('backImage: "assets/clear/backs/clear-card-back.webp?v=clear-5"')
+    && app.includes("function syncIndividualCardModel(")
+    && app.includes("function loadIndividualCardModelSource(")
+    && app.includes("./vendor/DRACOLoader.js?v=three-r165-draco-1")
+    && app.includes("./vendor/RoomEnvironment.js?v=three-r165-room-env-1")
+    && app.includes("INDIVIDUAL_CARD_DRACO_DECODER_PATH")
+    && app.includes('els.cardCanvas.dataset.modelState = "ready"')
+    && app.includes("function updateIndividualCardTransmissionBackdrop(")
+    && app.includes("function prepareIndividualCardModelRenderingProfile(")
+    && app.includes("new THREE.PMREMGenerator(cardRenderer)")
+    && app.includes("THREE.ACESFilmicToneMapping")
+    && app.includes("cardRenderer.toneMappingExposure = 1.25")
+    && app.includes("INDIVIDUAL_CARD_CLEAR_ENVIRONMENT_ROTATION_DEG = 121")
+    && app.includes("backdropAlpha: { value: 0.3 }")
+    && app.includes("new THREE.Color(0x191919)")
+    && app.includes("new THREE.PointLight(0xffffff, 17, 0, 0.4)")
+    && app.includes("cardClearResinPointLight.position.set(-6.5, 1.2, 3)")
+    && app.includes("cardClearResinPointLight.position.set(-3.9, 5.5, 3)")
+    && app.includes("new THREE.SpotLight(")
+    && !app.includes("modelOpacity")
+    && !styles.includes("--individual-card-model-opacity"),
+  "app does not reproduce the scoped mons.shop clear-resin rendering profile",
 );
 assert(
   app.includes("function updateCardEffectMaterialBlending(")
@@ -621,6 +661,11 @@ await verifyPage({
   prefix: "../",
   dataFile: "poncho-data.js?v=poncho-3",
 });
+await verifyPage({
+  pagePath: "clear/index.html",
+  prefix: "../",
+  dataFile: "clear-data.js?v=clear-5",
+});
 for (const collection of COMMUNITY_COLLECTIONS) {
   await verifyPage({
     pagePath: `${collection.route}/index.html`,
@@ -631,7 +676,7 @@ for (const collection of COMMUNITY_COLLECTIONS) {
 
 console.log(
   `Verified optimized browser runtime: ${TRAIT_SPECS.length} packed trait sets and `
-  + `${COMMUNITY_COLLECTIONS.length + 3} binder routes.`,
+  + `${COMMUNITY_COLLECTIONS.length + 4} binder routes.`,
 );
 
 async function verifyPage({ pagePath, prefix, dataFile }) {
