@@ -14,7 +14,7 @@ import { PONCHO_CARDS } from "../poncho-data.js";
 const require = createRequire(import.meta.url);
 const sharp = loadSharp();
 const root = process.cwd();
-const expectedAppVersion = "cardnft-376";
+const expectedAppVersion = "cardnft-377";
 const requestedIds = process.argv.slice(2);
 const collections = requestedIds.length
   ? requestedIds.map((id) => {

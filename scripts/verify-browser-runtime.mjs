@@ -15,7 +15,7 @@ import { COMMUNITY_COLLECTIONS } from "./community-collections.mjs";
 import { SWAG_PACK_TRANSPARENT_STICKER_FILES } from "../swag-pack-stickers.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const APP_VERSION = "cardnft-376";
+const APP_VERSION = "cardnft-377";
 const STYLE_VERSION = "cardnft-153";
 const THREE_VERSION = "three-r165-min-1";
 
@@ -406,11 +406,11 @@ assert(
     && app.includes('const raisedAboveTrade = kind === "listed" && isCardMarkedForTrade(card)')
     && app.includes("BINDER_STICKER_SIZES.trade[1] + BINDER_STICKER_GAP")
     && app.includes("card.add(sticker)")
-    && app.includes("function setBinderCardStickerOpacity(card, opacity)")
+    && app.includes("function setBinderCardStickerOpacity(")
     && app.includes("sticker.visible = false")
     && app.includes("const ready = Boolean(card?.userData?.textureLoaded)")
     && app.includes("&& !card?.userData?.textureLoadFailed")
-    && app.includes("const stickerOpacity = ready ? clamp(opacity, 0, 1) : 0")
+    && app.includes("const baseOpacity = ready ? clamp(opacity, 0, 1) : 0")
     && app.includes("child.userData.binderCardSticker")
     && app.includes("function configureBinderStickerTexture(texture)")
     && app.includes("texture.minFilter = THREE.LinearMipmapLinearFilter")
@@ -418,6 +418,14 @@ assert(
     && app.includes("texture.generateMipmaps = true")
     && app.includes("function getBinderStickerRotation(card, kind)")
     && app.includes("unit * 10 - 5")
+    && app.includes("function syncFixedClearBinderStickerLayout(cardMesh, card)")
+    && app.includes("sticker.rotation.z = inverseRotation")
+    && app.includes("width / (quarterTurn ? scaleY : scaleX)")
+    && app.includes("height / (quarterTurn ? scaleX : scaleY)")
+    && app.includes("CLEAR_BINDER_COVERED_STICKER_OPACITY = 1 - CLEAR_BINDER_PAGE_OPACITY")
+    && app.includes("function getBinderPageStickerCoverOpacity(")
+    && app.includes('const isClearListedSticker = cardData?.collection === "clear"')
+    && app.includes("baseOpacity * (isClearListedSticker ? clamp(coverOpacity, 0, 1) : 1)")
     && app.includes("function createBinderTransitionStickers(card, rect)")
     && app.includes("updateBinderTransitionStickers(transitionStickers, targetRect, { visible: true })")
     && app.includes("document.body.append(transitionCard, ...transitionStickers.map")

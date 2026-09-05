@@ -883,6 +883,7 @@ const BINDER_PLASTIC_ACTIVE_OPACITY = 0.13;
 const CLEAR_BINDER_PAGE_COLOR = 0x111315;
 const CLEAR_BINDER_PAGE_OPACITY = 0.84;
 const CLEAR_BINDER_POCKET_OPACITY = 1;
+const CLEAR_BINDER_COVERED_STICKER_OPACITY = 1 - CLEAR_BINDER_PAGE_OPACITY;
 const BINDER_FROST_REST_OPACITY = 0.018;
 const BINDER_FROST_ACTIVE_OPACITY = 0.038;
 const BINDER_GLOSS_REST_OPACITY = 0.014;
@@ -15680,6 +15681,47 @@ function createBinderCardSticker(kind, slotIndex = 0, card = null) {
   return sticker;
 }
 
+function syncFixedClearBinderStickerLayout(cardMesh, card) {
+  if (!cardMesh || card?.collection !== "clear") return;
+
+  const scaleX = Math.max(Math.abs(cardMesh.scale.x), 0.0001);
+  const scaleY = Math.max(Math.abs(cardMesh.scale.y), 0.0001);
+  const cardRotation = cardMesh.rotation.z || 0;
+  const inverseRotation = -cardRotation;
+  const cos = Math.cos(inverseRotation);
+  const sin = Math.sin(inverseRotation);
+  const quarterTurn = Math.abs(Math.sin(cardRotation)) > 0.5;
+  const visibleHalfWidth = quarterTurn
+    ? BINDER_CARD_HEIGHT * scaleY / 2
+    : BINDER_CARD_WIDTH * scaleX / 2;
+  const visibleHalfHeight = quarterTurn
+    ? BINDER_CARD_WIDTH * scaleX / 2
+    : BINDER_CARD_HEIGHT * scaleY / 2;
+  const rightEdgeOutset = BINDER_STICKER_RIGHT_EDGE - BINDER_CARD_WIDTH / 2;
+  const bottomEdgeOutset = BINDER_STICKER_BOTTOM_EDGE + BINDER_CARD_HEIGHT / 2;
+
+  for (const sticker of cardMesh.userData.binderStickerMeshes || []) {
+    const kind = sticker.userData.binderCardSticker;
+    const [width, height] = BINDER_STICKER_SIZES[kind] || BINDER_STICKER_SIZES.trade;
+    const verticalOffset = kind === "trade" && card.listed
+      ? BINDER_STICKER_SIZES.listed[1] + BINDER_STICKER_GAP
+      : 0;
+    const targetX = visibleHalfWidth + rightEdgeOutset - width / 2;
+    const targetY = -visibleHalfHeight + bottomEdgeOutset + height / 2 + verticalOffset;
+    const unrotatedX = targetX * cos - targetY * sin;
+    const unrotatedY = targetX * sin + targetY * cos;
+
+    sticker.position.x = unrotatedX / scaleX;
+    sticker.position.y = unrotatedY / scaleY;
+    sticker.rotation.z = inverseRotation;
+    sticker.scale.set(
+      width / (quarterTurn ? scaleY : scaleX),
+      height / (quarterTurn ? scaleX : scaleY),
+      1,
+    );
+  }
+}
+
 function getBinderStickerRotation(card, kind) {
   const stableId = String(card?.stableId || card?.mint || card?.title || "card");
   const unit = stableHash(`${stableId}:${kind}:binder-sticker`) / 0xffffffff;
@@ -15894,6 +15936,7 @@ function createBinderCard(
       card.add(sticker);
       return sticker;
     });
+    syncFixedClearBinderStickerLayout(card, CARDS[cardIndex]);
     binderCardMeshes.push(card);
     binderCardMeshByPosition.set(binderPosition, card);
   }
@@ -15969,6 +16012,7 @@ function applyBinderCardAspectFit(mesh, card, texture = null) {
   mesh.rotation.z = rotateLandscape ? -Math.PI / 2 : 0;
   mesh.userData.cardAspectScale = aspectScale;
   mesh.userData.binderLandscapeRotated = rotateLandscape;
+  syncFixedClearBinderStickerLayout(mesh, card);
 }
 
 function applyCardAspectFitToGroup(group, card) {
@@ -18568,7 +18612,9 @@ function createBinderTransitionStickers(card, rect) {
       kind,
       slotIndex,
       hasTradeSticker: isCardMarkedForTrade(card),
-      rotation: getBinderStickerRotation(card, kind),
+      hasListedSticker: Boolean(card?.listed),
+      fixedClearLayout: card?.collection === "clear",
+      rotation: card?.collection === "clear" ? 0 : getBinderStickerRotation(card, kind),
     };
     applyBinderTransitionStickerRect(sticker, rect);
     return sticker;
@@ -18584,9 +18630,13 @@ function updateBinderTransitionStickers(stickers, rect, { visible = false } = {}
 
 function applyBinderTransitionStickerRect(sticker, cardRect) {
   const [width, height] = BINDER_STICKER_SIZES[sticker.kind] || BINDER_STICKER_SIZES.trade;
-  const verticalOffset = sticker.kind === "listed" && sticker.hasTradeSticker
-    ? BINDER_STICKER_SIZES.trade[1] + BINDER_STICKER_GAP
-    : 0;
+  const verticalOffset = sticker.fixedClearLayout
+    ? sticker.kind === "trade" && sticker.hasListedSticker
+      ? BINDER_STICKER_SIZES.listed[1] + BINDER_STICKER_GAP
+      : 0
+    : sticker.kind === "listed" && sticker.hasTradeSticker
+      ? BINDER_STICKER_SIZES.trade[1] + BINDER_STICKER_GAP
+      : 0;
   const widthRatio = width / BINDER_CARD_WIDTH;
   const heightRatio = height / BINDER_CARD_HEIGHT;
   const rightRatio = 0.5 + BINDER_STICKER_RIGHT_EDGE / BINDER_CARD_WIDTH;
@@ -20862,6 +20912,7 @@ function updateBinderPageTransforms() {
   const activeIndex = isTurning ? lowerTurn : -1;
   const restingTurn = clamp(Math.round(turn), 0, binderPageCount);
   const stackProgress = getBinderStackRestProgress(turnFraction, isTurning);
+  const activeTurnProgress = easeInOut(turnFraction);
 
   for (const page of binderPages) {
     const rawTurn = clamp(turn - page.pageIndex, 0, 1);
@@ -20906,6 +20957,14 @@ function updateBinderPageTransforms() {
       })
       : restLayout.sheetVisibility;
     const pageVisibility = isActivePage ? 1 : restLayout.pageVisibility;
+    const stickerCoverOpacity = getBinderPageStickerCoverOpacity({
+      pageIndex: page.pageIndex,
+      activeIndex,
+      activeTurnProgress,
+      isTurning,
+      isActivePage,
+      restLayout,
+    });
     page.group.visible = !binderOuterFlipState
       && !binderEvilTableSwapState
       && (isActivePage || pageVisibility > 0.001);
@@ -20915,7 +20974,7 @@ function updateBinderPageTransforms() {
       sheetVisibility * pageVisibility,
       pageVisibility,
     );
-    setBinderPageOpacity(page, pageVisibility);
+    setBinderPageOpacity(page, pageVisibility, stickerCoverOpacity);
     applyBinderColumnBend(page, rawTurn);
   }
   applyBinderTableCoverVisibility(binderTableViewProgress);
@@ -20985,6 +21044,26 @@ function getBlendedBinderRestLayout(pageIndex, fromTurn, toTurn, progress) {
 
 function getBinderStackDepth({ isLeftStack, leftStackDepth, rightStackDepth }) {
   return isLeftStack ? leftStackDepth : rightStackDepth;
+}
+
+function getBinderPageStickerCoverOpacity({
+  pageIndex,
+  activeIndex,
+  activeTurnProgress,
+  isTurning,
+  isActivePage,
+  restLayout,
+}) {
+  if (isActivePage) return 1;
+  if (isTurning && pageIndex === activeIndex - 1) {
+    return THREE.MathUtils.lerp(1, CLEAR_BINDER_COVERED_STICKER_OPACITY, activeTurnProgress);
+  }
+  if (isTurning && pageIndex === activeIndex + 1) {
+    return THREE.MathUtils.lerp(CLEAR_BINDER_COVERED_STICKER_OPACITY, 1, activeTurnProgress);
+  }
+  return getBinderStackDepth(restLayout) === 0
+    ? 1
+    : CLEAR_BINDER_COVERED_STICKER_OPACITY;
 }
 
 function getBinderRestPageVisibility(depth) {
@@ -21092,11 +21171,17 @@ function setBinderSheetOpacity(
   }
 }
 
-function setBinderPageOpacity(page, visibilityFactor = 1, now = performance.now()) {
+function setBinderPageOpacity(
+  page,
+  visibilityFactor = 1,
+  stickerCoverOpacity = 1,
+  now = performance.now(),
+) {
   const opacity = clamp(visibilityFactor, 0, 1);
   const previousOpacity = page.cardOpacity ?? 1;
   const pageOpacityChanged = Math.abs(previousOpacity - opacity) > 0.0005;
   page.cardOpacity = opacity;
+  page.stickerCoverOpacity = clamp(stickerCoverOpacity, 0, 1);
   for (const mesh of page.cardMeshes || []) {
     const material = mesh.material;
     if (!material) continue;
@@ -21104,18 +21189,33 @@ function setBinderPageOpacity(page, visibilityFactor = 1, now = performance.now(
     if (pageOpacityChanged || Math.abs((material.opacity ?? 1) - cardOpacity) > 0.0005) {
       material.opacity = cardOpacity;
     }
-    setBinderCardStickerOpacity(mesh, cardOpacity);
+    setBinderCardStickerOpacity(mesh, cardOpacity, page.stickerCoverOpacity);
   }
 }
 
-function setBinderCardStickerOpacity(card, opacity) {
+function setBinderCardStickerOpacity(
+  card,
+  opacity,
+  coverOpacity = getBinderStickerCoverOpacityForPosition(card?.userData?.binderPosition),
+) {
   const ready = Boolean(card?.userData?.textureLoaded)
     && !card?.userData?.textureLoadFailed;
-  const stickerOpacity = ready ? clamp(opacity, 0, 1) : 0;
+  const baseOpacity = ready ? clamp(opacity, 0, 1) : 0;
+  const cardData = CARDS[card?.userData?.cardIndex];
   for (const sticker of card?.userData?.binderStickerMeshes || []) {
+    const isClearListedSticker = cardData?.collection === "clear"
+      && sticker.userData.binderCardSticker === "listed";
+    const stickerOpacity = baseOpacity * (isClearListedSticker ? clamp(coverOpacity, 0, 1) : 1);
     if (sticker.material) sticker.material.opacity = stickerOpacity;
     sticker.visible = stickerOpacity > 0.001;
   }
+}
+
+function getBinderStickerCoverOpacityForPosition(position) {
+  if (!Number.isInteger(position) || position < 0) return 1;
+  const pageIndex = Math.floor(position / BINDER_PAGE_SLOTS);
+  const page = binderPages.find((entry) => entry.pageIndex === pageIndex);
+  return page?.stickerCoverOpacity ?? 1;
 }
 
 function getBinderCardRenderedOpacity(mesh, pageOpacity, now = performance.now()) {
