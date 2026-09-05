@@ -16,7 +16,7 @@ import { SWAG_PACK_TRANSPARENT_STICKER_FILES } from "../swag-pack-stickers.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const APP_VERSION = "cardnft-377";
-const STYLE_VERSION = "cardnft-153";
+const STYLE_VERSION = "cardnft-154";
 const THREE_VERSION = "three-r165-min-1";
 
 const TRAIT_SPECS = [
@@ -324,6 +324,10 @@ assert(
     && styles.includes(".binder-outside-text-controls")
     && styles.includes(".binder-cover-color-label")
     && styles.includes(".binder-cover-link-popover")
+    && styles.includes("body.is-light .binder-cover-text-control textarea")
+    && styles.includes("body.is-light .binder-cover-link-row input")
+    && styles.includes("body.is-light .binder-cover-link-popover::after")
+    && styles.includes("body.is-light .binder-cover-link-row button:disabled")
     && styles.includes(".binder-cover-mode-button"),
   "wallet binder cover artwork and linked inside-cover text editor are incomplete",
 );

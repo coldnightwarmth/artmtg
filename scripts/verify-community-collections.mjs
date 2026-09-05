@@ -568,7 +568,7 @@ for (const collection of collections) {
     `../app.js?v=${expectedAppVersion}`,
     "../vendor/three.module.min.js?v=three-r165-min-1",
     "../browser-traits-catalog.js?v=browser-traits-9",
-    "../styles.css?v=cardnft-153",
+    "../styles.css?v=cardnft-154",
     'id="binderTradeModeButton"',
   ]) {
     assert(page.includes(value), `${collection.id} page is missing ${JSON.stringify(value)}`);
