@@ -174,22 +174,20 @@ async function syncCollection(collection) {
 
   const explicitMintSource = collection.sourceMode === "explicit-mints";
   console.log(
-    `[${collection.id}] resolving ${explicitMintSource ? "configured mint set" : "Tensor collection"}`,
+    `[${collection.id}] resolving ${explicitMintSource ? "configured mint set" : "Tensor collection set"}`,
   );
-  activeTensorPageSlug = collection.tensorPageSlug || "";
   const previousSnapshot = await loadJsonFile(paths.sourcePath);
-  const instrument = explicitMintSource
-    ? createExplicitMintInstrument(collection)
-    : await fetchTensorInstrument(collection);
-  if (!explicitMintSource && instrument.slug !== collection.tensorSlug) {
-    throw new Error(
-      `[${collection.id}] Tensor display slug now resolves to ${instrument.slug}; expected ${collection.tensorSlug}`,
-    );
-  }
-
-  const tensorLiveAssets = explicitMintSource
-    ? await fetchExplicitMintAssets(collection)
-    : await fetchTensorLiveAssets(collection);
+  const tensorSources = explicitMintSource
+    ? [{
+      instrument: createExplicitMintInstrument(collection),
+      assets: await fetchExplicitMintAssets(collection),
+      pageSlug: null,
+      collectionSlug: null,
+      displayTitlePrefix: "",
+    }]
+    : await fetchTensorCollectionSet(collection);
+  const instrument = tensorSources[0]?.instrument;
+  const tensorLiveAssets = tensorSources.flatMap(({ assets }) => assets);
   const resolvedAssets = await resolveAssetMetadata(collection, tensorLiveAssets);
   validateCollectionSortValues(collection, resolvedAssets);
   resolvedAssets.sort((a, b) => compareResolvedAssets(collection, a, b));
@@ -218,6 +216,7 @@ async function syncCollection(collection) {
     collection,
     paths,
     instrument,
+    tensorSources,
     tensorLiveAssets: resolvedAssets,
     liveAssets: includedAssets,
     excludedAssets,
@@ -235,6 +234,65 @@ async function syncCollection(collection) {
     + `${excludedAssets.length ? `; ${excludedAssets.length} configured mint excluded` : ""}`
     + `${metadataFailureCount ? `; ${metadataFailureCount} metadata requests used Tensor fallbacks` : ""}`,
   );
+}
+
+async function fetchTensorCollectionSet(collection) {
+  const configuredSources = [
+    {
+      tensorPageSlug: collection.tensorPageSlug,
+      tensorSlug: collection.tensorSlug,
+      displayTitlePrefix: "",
+      sortByTitleNumber: collection.sortByTitleNumber,
+    },
+    ...(collection.additionalTensorCollections || []),
+  ];
+  const sources = [];
+
+  for (let sourceIndex = 0; sourceIndex < configuredSources.length; sourceIndex += 1) {
+    const source = configuredSources[sourceIndex];
+    const sourceCollection = {
+      ...collection,
+      id: sourceIndex === 0 ? collection.id : `${collection.id}/append-${sourceIndex}`,
+      tensorPageSlug: source.tensorPageSlug,
+      tensorSlug: source.tensorSlug,
+    };
+    activeTensorPageSlug = source.tensorPageSlug || "";
+    const instrument = await fetchTensorInstrument(sourceCollection);
+    if (instrument.slug !== source.tensorSlug) {
+      throw new Error(
+        `[${collection.id}] Tensor display slug ${source.tensorPageSlug} now resolves to `
+        + `${instrument.slug}; expected ${source.tensorSlug}`,
+      );
+    }
+
+    const fetchedAssets = await fetchTensorLiveAssets(sourceCollection);
+    const assets = fetchedAssets.map((asset, sourceOrder) => {
+      const titleNumber = getTitleNumber(asset.name);
+      const displayTitlePrefix = cleanText(source.displayTitlePrefix);
+      if (displayTitlePrefix && !Number.isInteger(titleNumber)) {
+        throw new Error(
+          `[${collection.id}] cannot create ${JSON.stringify(displayTitlePrefix)} title from `
+          + `${JSON.stringify(asset.name)}`,
+        );
+      }
+      return {
+        ...asset,
+        sourceCollectionOrder: sourceIndex,
+        sourceCollectionSlug: source.tensorSlug,
+        sourceOrder,
+        sortByTitleNumber: Boolean(source.sortByTitleNumber),
+        displayName: displayTitlePrefix ? `${displayTitlePrefix}${titleNumber}` : "",
+      };
+    });
+    sources.push({
+      instrument,
+      assets,
+      pageSlug: source.tensorPageSlug,
+      collectionSlug: source.tensorSlug,
+      displayTitlePrefix: cleanText(source.displayTitlePrefix),
+    });
+  }
+  return sources;
 }
 
 function getCollectionPaths(collection) {
@@ -553,7 +611,8 @@ async function resolveAssetMetadata(collection, assets) {
     const attributes = metadataAttributes.length
       ? metadataAttributes
       : asset.attributes;
-    const name = cleanText(directMetadata?.name) || asset.name || asset.onchainId;
+    const sourceName = cleanText(directMetadata?.name) || asset.name || asset.onchainId;
+    const name = cleanText(asset.displayName) || sourceName;
     const imageUri = getMetadataImage(directMetadata)
       || asset.imageUri
       || getImageFile(asset.files);
@@ -580,6 +639,7 @@ async function resolveAssetMetadata(collection, assets) {
     return {
       ...asset,
       name,
+      sourceName,
       imageUri,
       attributes,
       directMetadata: metadata,
@@ -589,25 +649,34 @@ async function resolveAssetMetadata(collection, assets) {
 }
 
 function validateCollectionSortValues(collection, assets) {
-  if (!collection.sortByTitleNumber) return;
-  const seen = new Set();
+  if (!collection.sortByTitleNumber && !collection.additionalTensorCollections?.length) return;
+  const seenBySource = new Map();
   for (const asset of assets) {
+    if (!asset.sortByTitleNumber && !(
+      collection.sortByTitleNumber && Number(asset.sourceCollectionOrder || 0) === 0
+    )) continue;
     const number = getTitleNumber(asset.name);
     if (!Number.isInteger(number)) {
       throw new Error(`[${collection.id}] cannot find a title number in ${JSON.stringify(asset.name)}`);
     }
+    const sourceOrder = Number(asset.sourceCollectionOrder || 0);
+    if (!seenBySource.has(sourceOrder)) seenBySource.set(sourceOrder, new Set());
+    const seen = seenBySource.get(sourceOrder);
     if (seen.has(number)) {
-      throw new Error(`[${collection.id}] duplicate title number ${number}`);
+      throw new Error(`[${collection.id}] duplicate title number ${number} in source ${sourceOrder}`);
     }
     seen.add(number);
   }
 }
 
 function compareResolvedAssets(collection, a, b) {
+  const sourceDifference = Number(a.sourceCollectionOrder || 0)
+    - Number(b.sourceCollectionOrder || 0);
+  if (sourceDifference) return sourceDifference;
   if (collection.preserveConfiguredOrder) {
     return Number(a.sourceOrder) - Number(b.sourceOrder);
   }
-  if (collection.sortByTitleNumber) {
+  if (collection.sortByTitleNumber || a.sortByTitleNumber || b.sortByTitleNumber) {
     const numberDifference = getTitleNumber(a.name) - getTitleNumber(b.name);
     if (numberDifference) return numberDifference;
   }
@@ -739,6 +808,9 @@ async function createCardEntries(collection, paths, groups) {
       file: cardFileForNumber(collection, assetNumber),
       metadataFile,
       sourceMetadataUri: representative.metadataUri,
+      sourceCollectionOrder: Number(representative.sourceCollectionOrder || 0),
+      sourceCollectionSlug: cleanText(representative.sourceCollectionSlug),
+      sourceName: representative.sourceName || representative.name,
       sourceImageUri: representative.imageUri,
       sourceImageSignature: createHash("sha256")
         .update(representative.imageUri)
@@ -1860,6 +1932,15 @@ function getImageSourceCandidates(sourceUrl) {
   const candidates = [];
   try {
     const parsed = new URL(sourceUrl);
+    // Irys' legacy CDN redirect decodes escaped path characters before issuing
+    // its Location header. A filename containing `#` is then interpreted as a
+    // URL fragment and the asset 404s. Preserve the escaping through that
+    // redirect as a fallback while retaining the canonical URI in metadata.
+    if (parsed.hostname === "gateway.irys.xyz" && /%[0-9a-f]{2}/i.test(parsed.pathname)) {
+      candidates.push(
+        `${parsed.origin}${parsed.pathname.replaceAll("%", "%25")}${parsed.search}`,
+      );
+    }
     if (parsed.hostname === "turbo-gateway.com") {
       const transactionId = parsed.pathname.replace(/^\/+|\/+$/g, "");
       if (transactionId) candidates.push(`https://arweave.net/${transactionId}`);
@@ -2004,6 +2085,7 @@ async function writeSourceSnapshot({
   collection,
   paths,
   instrument,
+  tensorSources,
   tensorLiveAssets,
   liveAssets,
   excludedAssets,
@@ -2015,6 +2097,18 @@ async function writeSourceSnapshot({
     .filter((asset) => asset.metadataFetchError)
     .length;
   const explicitMintSource = collection.sourceMode === "explicit-mints";
+  const tensorCollectionRecords = explicitMintSource
+    ? []
+    : tensorSources.map((source, sourceIndex) => ({
+      sourceOrder: sourceIndex,
+      page: `https://www.tensor.trade/trade/${source.pageSlug}`,
+      pageSlug: source.pageSlug,
+      collectionSlug: source.collectionSlug,
+      name: source.instrument?.name || "",
+      displayTitlePrefix: source.displayTitlePrefix || "",
+      fetchedMintCount: source.assets.length,
+      reportedMintCount: Number(source.instrument?.statsV2?.numMints) || null,
+    }));
   const snapshot = {
     fetchedAt: new Date().toISOString(),
     source: explicitMintSource ? SOLANA_DAS_RPC_URL : TENSOR_GRAPHQL_URL,
@@ -2025,6 +2119,8 @@ async function writeSourceSnapshot({
     collectionDisplaySlug: explicitMintSource ? null : collection.tensorPageSlug,
     membershipPolicy: explicitMintSource
       ? "Exactly the configured curated Solana mint IDs, in configured order"
+      : tensorCollectionRecords.length > 1
+        ? "Every live mint returned by the configured Tensor collections; appended collections retain their configured series order; exact duplicate editions share one binder card"
       : excludedAssets.length
         ? "Every live mint returned by Tensor except configured mint exclusions; exact duplicate editions share one binder card"
         : "Every live mint returned by Tensor; exact duplicate editions share one binder card",
@@ -2032,7 +2128,10 @@ async function writeSourceSnapshot({
     animationRevision: collection.animationRevision || null,
     liveMintCount: liveAssets.length,
     tensorFetchedMintCount: tensorLiveAssets.length,
-    tensorReportedMintCount: Number(instrument?.statsV2?.numMints) || null,
+    tensorReportedMintCount: tensorCollectionRecords.length === 1
+      ? Number(instrument?.statsV2?.numMints) || null
+      : null,
+    tensorCollections: tensorCollectionRecords,
     excludedMintCount: excludedAssets.length,
     exclusionRules: {
       mintIds: [...(collection.excludedMintIds || [])],
@@ -2103,6 +2202,9 @@ async function writeSourceSnapshot({
       tokenProgram: asset.tokenProgram,
       tokenStandard: asset.tokenStandard,
       metadataFetchError: asset.metadataFetchError,
+      sourceCollectionOrder: Number(asset.sourceCollectionOrder || 0),
+      sourceCollectionSlug: cleanText(asset.sourceCollectionSlug),
+      sourceName: asset.sourceName || asset.name,
     })),
     excludedAssets: excludedAssets.map((asset) => ({
       onchainId: asset.onchainId,
@@ -2125,6 +2227,9 @@ async function writeSourceSnapshot({
       stableId: entry.stableId,
       groupKeyHash: entry.groupKeyHash,
       title: entry.title,
+      sourceCollectionOrder: entry.sourceCollectionOrder,
+      sourceCollectionSlug: entry.sourceCollectionSlug,
+      sourceName: entry.sourceName,
       mints: entry.mints,
       sourceMetadataUri: entry.sourceMetadataUri,
       sourceImageUri: entry.sourceImageUri,

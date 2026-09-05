@@ -11,7 +11,7 @@ const page = source
   .replace('data-collection-id="cardnft1"', 'data-collection-id="poncho"')
   .replace(
     "../cardnft-data.js?v=cardnft1-1",
-    "../poncho-data.js?v=poncho-3",
+    "../poncho-data.js?v=poncho-4",
   )
   .replaceAll("Card NFT viewer", "Poncho Drifella viewer")
   .replaceAll("Rotatable Card NFT", "Rotatable Poncho Drifella card")

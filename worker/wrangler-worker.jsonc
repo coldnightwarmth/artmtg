@@ -1,0 +1,26 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cards-art-wallet-auth",
+  "main": "src/index.js",
+  "compatibility_date": "2026-08-04",
+  "workers_dev": true,
+  "vars": {
+    "ALLOWED_ORIGINS": "https://cards.art,https://www.cards.art",
+    "AUTH_STATEMENT": "Sign in to cards.art to create and customize your card binder. This will not submit a transaction or cost SOL.",
+    "SESSION_TTL_SECONDS": "604800",
+    "CARD_NFT_2_COLLECTION_URL": "https://cardnft2.taile73682.ts.net/collection",
+    "CARD_NFT_2_WALLET_URL": "https://cardnft2.taile73682.ts.net/wallet",
+    "TENSOR_GRAPHQL_URL": "https://graphql.tensor.trade/graphql"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "cards-art-wallet-auth",
+      "database_id": "c5a01c8b-c1a0-4168-8e94-a85f97cfb4f6",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "triggers": {
+    "crons": ["17 */12 * * *"]
+  }
+}

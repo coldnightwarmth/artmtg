@@ -6,7 +6,7 @@
     <title>cards.art</title>
     <link rel="icon" type="image/png" href="../cardnft.png">
     <link rel="apple-touch-icon" href="../cardnft.png">
-    <link rel="stylesheet" href="../styles.css?v=cardnft-132">
+    <link rel="stylesheet" href="../styles.css?v=cardnft-153">
     <script type="importmap">
       {
         "imports": {
@@ -14,9 +14,11 @@
         }
       }
     </script>
-    <link rel="modulepreload" href="../app.js?v=cardnft-326">
+    <link rel="modulepreload" href="../app.js?v=cardnft-376">
+    <link rel="modulepreload" href="../wallet-auth.js?v=wallet-auth-5">
+    <link rel="modulepreload" href="../swag-pack-stickers.js?v=swag-pack-transparent-1">
     <link rel="modulepreload" href="../vendor/three.module.min.js?v=three-r165-min-1">
-    <link rel="modulepreload" href="../browser-traits-catalog.js?v=browser-traits-5">
+    <link rel="modulepreload" href="../browser-traits-catalog.js?v=browser-traits-9">
     <link rel="modulepreload" href="../badhand-data.js?v=community-2">
   </head>
   <body>
@@ -90,6 +92,8 @@
           <label class="gallery-sort-control" id="gallerySortControl" aria-expanded="false">
             <span>sort by</span>
             <select id="traitSortSelect" aria-label="Sort by trait category">
+              <option value="marked-for-trade">marked for trade</option>
+              <option value="listed-first">listed</option>
               <option value="all">all</option>
             </select>
           </label>
@@ -152,6 +156,15 @@
         <div class="binder-page-status" id="binderPageStatus" aria-live="polite"></div>
         <section class="wallet-search-panel" id="walletSearchPanel" aria-label="Wallet card search" aria-hidden="true" hidden>
           <form class="wallet-search-dialog" id="walletSearchForm">
+            <div class="wallet-connect-section">
+              <button class="wallet-connect-button" id="walletConnectButton" type="button" aria-expanded="false">
+                <span id="walletConnectButtonLabel">Connect Solana wallet</span>
+              </button>
+              <div class="wallet-provider-list" id="walletProviderList" aria-label="Installed Solana wallets" hidden></div>
+              <p class="wallet-connect-status" id="walletConnectStatus" role="status" aria-live="polite">Connect a Solana wallet to create or open its binder.</p>
+              <button class="wallet-sign-out-button" id="walletSignOutButton" type="button" hidden>disconnect wallet</button>
+            </div>
+            <div class="wallet-search-divider" aria-hidden="true"><span>or search an address</span></div>
             <p class="wallet-search-message" id="walletSearchMessage">Enter a SOL address to view collected cards:</p>
             <input class="wallet-address-input" id="walletAddressInput" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" inputmode="text" aria-label="Solana wallet address">
             <button class="icon-button wallet-search-submit-button" id="walletSearchSubmitButton" type="submit" title="Search wallet holdings" aria-label="Search wallet holdings">
@@ -165,6 +178,199 @@
         <div class="gallery-empty" id="galleryEmpty" hidden>No favorites yet</div>
       </section>
     </main>
+
+    <button class="icon-button binder-order-edit-button" id="binderOrderEditButton" type="button" aria-label="Customize binder" aria-haspopup="dialog" aria-expanded="false" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 20h4l10.5-10.5a2.8 2.8 0 0 0-4-4L4 16v4Z"></path>
+        <path d="m13.5 6.5 4 4"></path>
+      </svg>
+    </button>
+
+    <section class="binder-order-editor" id="binderOrderEditor" aria-hidden="true" hidden>
+      <div class="binder-order-dialog" id="binderOrderDialog" role="dialog" aria-modal="true" aria-labelledby="binderOrderTitle" aria-describedby="binderOrderInstructions">
+        <header class="binder-order-header">
+          <h2 id="binderOrderTitle">Customize Binder</h2>
+          <button class="icon-button binder-order-close-button" id="binderOrderCloseButton" type="button" aria-label="Close binder customization">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+          </button>
+        </header>
+        <p class="binder-order-instructions binder-order-assistive" id="binderOrderInstructions">Drag cards into place; on touch, use the dotted handle. Each group of nine is one binder page.</p>
++        <div class="binder-cover-editor" id="binderCoverEditor" aria-label="Wallet binder cover editor" hidden>
+          <div class="binder-cover-preview-grid">
+            <section class="binder-cover-editor-panel" aria-labelledby="binderFrontCoverHeading">
+              <h3 id="binderFrontCoverHeading">front cover</h3>
+              <div class="binder-cover-preview binder-front-cover-preview" id="binderFrontCoverPreview" tabindex="0" aria-label="Front cover artwork preview. Drag to reposition the image.">
+                <img id="binderFrontCoverImage" alt="" draggable="false" hidden>
+                <div class="binder-cover-text-box binder-outside-text-box" id="binderFrontTextBox" tabindex="0" aria-label="Front cover text box. Drag to reposition; drag the corner handle to resize." hidden>
+                  <canvas class="binder-cover-text-preview" id="binderFrontTextPreview" aria-hidden="true"></canvas>
+                  <span class="binder-cover-text-resize" aria-hidden="true"></span>
+                </div>
+                <span class="binder-cover-blank" id="binderFrontCoverBlank">blank</span>
+              </div>
+              <div class="binder-cover-panel-controls">
+                <div class="binder-cover-upload-row">
+                  <label class="binder-cover-upload-button" for="binderFrontCoverUpload">upload image</label>
+                  <input id="binderFrontCoverUpload" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/avif" hidden>
+                  <button class="binder-cover-remove-button" id="binderFrontCoverRemove" type="button" hidden>remove</button>
+                </div>
+                <label class="binder-cover-range-label" for="binderFrontCoverZoom">
+                  <span>image zoom</span>
+                  <input id="binderFrontCoverZoom" type="range" min="0.25" max="4" step="0.01" value="1" disabled>
+                </label>
+                <label class="binder-cover-range-label" for="binderFrontCoverRotation">
+                  <span>image rotation</span>
+                  <input id="binderFrontCoverRotation" type="range" min="-180" max="180" step="1" value="0" disabled>
+                </label>
+                <p class="binder-cover-hint">drag the image to place it anywhere on the cover</p>
+                <button class="binder-cover-add-text" type="button" data-text-surface="front">add text box</button>
+                <div class="binder-outside-text-controls" id="binderFrontTextControls" data-text-surface="front" hidden>
+                  <label class="binder-cover-text-control" for="binderFrontTextInput">
+                    <span>front cover text</span>
+                    <textarea id="binderFrontTextInput" maxlength="2000" rows="3" placeholder="add text to the front cover"></textarea>
+                  </label>
+                  <label class="binder-cover-range-label" for="binderFrontTextFontSize">
+                    <span>font size</span>
+                    <input id="binderFrontTextFontSize" type="range" min="18" max="96" step="1" value="42">
+                  </label>
+                  <label class="binder-cover-range-label" for="binderFrontTextRotation">
+                    <span>text rotation</span>
+                    <input id="binderFrontTextRotation" type="range" min="-180" max="180" step="1" value="0">
+                  </label>
+                  <label class="binder-cover-color-label" for="binderFrontTextColor">
+                    <span>text color</span>
+                    <input id="binderFrontTextColor" type="color" value="#9c9992">
+                  </label>
+                  <button class="binder-cover-remove-text" id="binderFrontTextRemove" type="button">remove text box</button>
+                </div>
+                <div class="binder-cover-sticker-controls" data-sticker-surface="front">
+                  <button class="binder-cover-add-sticker" type="button">add sticker</button>
+                </div>
+              </div>
+            </section>
+
+            <section class="binder-cover-editor-panel" aria-labelledby="binderBackCoverHeading">
+              <h3 id="binderBackCoverHeading">back cover</h3>
+              <div class="binder-cover-preview binder-back-cover-preview" id="binderBackCoverPreview" tabindex="0" aria-label="Back cover artwork preview. Drag to reposition the image.">
+                <img id="binderBackCoverImage" alt="" draggable="false" hidden>
+                <div class="binder-cover-text-box binder-outside-text-box" id="binderBackTextBox" tabindex="0" aria-label="Back cover text box. Drag to reposition; drag the corner handle to resize." hidden>
+                  <canvas class="binder-cover-text-preview" id="binderBackTextPreview" aria-hidden="true"></canvas>
+                  <span class="binder-cover-text-resize" aria-hidden="true"></span>
+                </div>
+                <span class="binder-cover-blank" id="binderBackCoverBlank">blank</span>
+              </div>
+              <div class="binder-cover-panel-controls">
+                <div class="binder-cover-upload-row">
+                  <label class="binder-cover-upload-button" for="binderBackCoverUpload">upload image</label>
+                  <input id="binderBackCoverUpload" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/avif" hidden>
+                  <button class="binder-cover-remove-button" id="binderBackCoverRemove" type="button" hidden>remove</button>
+                </div>
+                <label class="binder-cover-range-label" for="binderBackCoverZoom">
+                  <span>image zoom</span>
+                  <input id="binderBackCoverZoom" type="range" min="0.25" max="4" step="0.01" value="1" disabled>
+                </label>
+                <label class="binder-cover-range-label" for="binderBackCoverRotation">
+                  <span>image rotation</span>
+                  <input id="binderBackCoverRotation" type="range" min="-180" max="180" step="1" value="0" disabled>
+                </label>
+                <p class="binder-cover-hint">drag the image to place it anywhere on the cover</p>
+                <button class="binder-cover-add-text" type="button" data-text-surface="back">add text box</button>
+                <div class="binder-outside-text-controls" id="binderBackTextControls" data-text-surface="back" hidden>
+                  <label class="binder-cover-text-control" for="binderBackTextInput">
+                    <span>back cover text</span>
+                    <textarea id="binderBackTextInput" maxlength="2000" rows="3" placeholder="add text to the back cover"></textarea>
+                  </label>
+                  <label class="binder-cover-range-label" for="binderBackTextFontSize">
+                    <span>font size</span>
+                    <input id="binderBackTextFontSize" type="range" min="18" max="96" step="1" value="42">
+                  </label>
+                  <label class="binder-cover-range-label" for="binderBackTextRotation">
+                    <span>text rotation</span>
+                    <input id="binderBackTextRotation" type="range" min="-180" max="180" step="1" value="0">
+                  </label>
+                  <label class="binder-cover-color-label" for="binderBackTextColor">
+                    <span>text color</span>
+                    <input id="binderBackTextColor" type="color" value="#9c9992">
+                  </label>
+                  <button class="binder-cover-remove-text" id="binderBackTextRemove" type="button">remove text box</button>
+                </div>
+                <div class="binder-cover-sticker-controls" data-sticker-surface="back">
+                  <button class="binder-cover-add-sticker" type="button">add sticker</button>
+                </div>
+              </div>
+            </section>
+
+            <section class="binder-cover-editor-panel" aria-labelledby="binderInsideCoverHeading">
+              <h3 id="binderInsideCoverHeading">inside cover</h3>
+              <div class="binder-cover-preview binder-inside-cover-preview" id="binderInsideCoverPreview" aria-label="Inside cover text preview">
+                <div class="binder-cover-text-box binder-inside-text-box" id="binderInsideTextBox" tabindex="0" aria-label="Inside cover text box. Drag to reposition; drag the corner handle to resize." hidden>
+                  <canvas class="binder-cover-text-preview binder-inside-text-preview" id="binderInsideTextPreview" aria-hidden="true"></canvas>
+                  <span class="binder-cover-text-resize binder-inside-text-resize" aria-hidden="true"></span>
+                </div>
+                <span class="binder-cover-blank" id="binderInsideCoverBlank">blank</span>
+              </div>
+              <div class="binder-cover-panel-controls">
+                <label class="binder-cover-range-label" for="binderInsideFontSize">
+                  <span>font size</span>
+                  <input id="binderInsideFontSize" type="range" min="18" max="96" step="1" value="42">
+                </label>
+                <label class="binder-cover-range-label" for="binderInsideTextRotation">
+                  <span>text rotation</span>
+                  <input id="binderInsideTextRotation" type="range" min="-180" max="180" step="1" value="0">
+                </label>
+                <div class="binder-cover-text-control">
+                  <label for="binderInsideTextInput">inside cover text</label>
+                  <div class="binder-cover-text-editor">
+                    <textarea id="binderInsideTextInput" maxlength="2000" rows="4" placeholder="add text to the inside cover"></textarea>
+                    <div class="binder-cover-link-popover" id="binderInsideLinkPopover" role="dialog" aria-label="Link selected inside-cover text" hidden>
+                      <span>link selected text</span>
+                      <div class="binder-cover-link-row">
+                        <input id="binderInsideLinkUrl" type="url" inputmode="url" autocomplete="url" placeholder="https://example.com" aria-label="Link URL">
+                        <button id="binderInsideLinkApply" type="button">add link</button>
+                        <button id="binderInsideLinkRemove" type="button" hidden>remove</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="binder-cover-sticker-controls" data-sticker-surface="inside">
+                  <button class="binder-cover-add-sticker" type="button">add sticker</button>
+                </div>
+                <div class="binder-cover-color-controls">
+                  <label class="binder-cover-color-label" for="binderBaseColor">
+                    <span>binder base color</span>
+                    <input id="binderBaseColor" type="color" value="#11100d">
+                  </label>
+                  <label class="binder-cover-color-label" for="binderCoverTextColor">
+                    <span>cover text color</span>
+                    <input id="binderCoverTextColor" type="color" value="#9c9992">
+                  </label>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <section class="binder-sticker-picker" id="binderStickerPicker" aria-hidden="true" hidden>
+          <div class="binder-sticker-picker-dialog" role="dialog" aria-modal="true" aria-labelledby="binderStickerPickerTitle" aria-describedby="binderStickerPickerStatus">
+            <header class="binder-sticker-picker-header">
+              <h3 id="binderStickerPickerTitle">Add Swag Pack Sticker</h3>
+              <button class="icon-button binder-sticker-picker-close" id="binderStickerPickerClose" type="button" aria-label="Close sticker gallery">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+              </button>
+            </header>
+            <p class="binder-sticker-picker-status" id="binderStickerPickerStatus" role="status">Checking your wallet for Swag Pack pieces…</p>
+            <div class="binder-sticker-picker-gallery" id="binderStickerPickerGallery" aria-label="Held Swag Pack stickers"></div>
+          </div>
+        </section>
+        <div class="binder-order-scroller" id="binderOrderScroller" tabindex="0">
+          <div class="binder-order-pages" id="binderOrderPages" role="region" aria-label="Held cards in binder order"></div>
+        </div>
+        <footer class="binder-order-footer">
+          <p class="binder-order-status binder-order-assistive" id="binderOrderStatus" role="status" aria-live="polite">Loading your binder…</p>
+          <button class="binder-cover-mode-button" id="binderCoverModeButton" type="button">edit cover</button>
+          <button class="binder-order-confirm-button" id="binderOrderConfirmButton" type="button" hidden>Confirm</button>
+          <button class="binder-trade-mode-button" id="binderTradeModeButton" type="button" aria-pressed="false">mark for trade</button>
+        </footer>
+      </div>
+    </section>
 
     <button class="icon-button corner-gallery" id="galleryToggleButton" type="button" title="Toggle gallery" aria-label="Toggle gallery" aria-pressed="false">
       <svg class="gallery-toggle-icon gallery-binder-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -190,18 +396,23 @@
     </button>
 
     <button class="icon-button gallery-view-toggle" id="galleryViewToggleButton" type="button" title="Show simple gallery" aria-label="Show simple gallery" aria-pressed="false">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
+      <svg class="gallery-view-mode-icon gallery-view-grid-icon" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M4.5 4.5h6.2v6.2H4.5z"></path>
         <path d="M13.3 4.5h6.2v6.2h-6.2z"></path>
         <path d="M4.5 13.3h6.2v6.2H4.5z"></path>
         <path d="M13.3 13.3h6.2v6.2h-6.2z"></path>
       </svg>
+      <svg class="gallery-view-mode-icon gallery-view-binder-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor" stroke="none" d="M6.35 8.65h2.85v11.25H6.35z"></path>
+        <path fill="currentColor" stroke="none" d="M6.35 8.65 15.25 4.45v2.15L9.2 8.65z"></path>
+        <path fill="currentColor" stroke="none" d="M10.55 7.95 17.65 4.25v12.35l-7.1 4.05z"></path>
+      </svg>
     </button>
 
     <button class="icon-button wallet-search-toggle" id="walletSearchButton" type="button" title="Search wallet holdings" aria-label="Search wallet holdings" aria-expanded="false" aria-pressed="false" hidden>
       <svg viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="10.8" cy="10.8" r="6.2"></circle>
-        <path d="m15.4 15.4 4.2 4.2"></path>
+        <circle cx="12" cy="7.5" r="4.5"></circle>
+        <path d="M4 20a8 8 0 0 1 16 0"></path>
       </svg>
     </button>
 
@@ -214,6 +425,6 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.55 5.16 5.7.83-4.12 4.02.97 5.68L12 16.6l-5.1 2.69.97-5.68-4.12-4.02 5.7-.83L12 3.6Z"></path></svg>
     </button>
 
-    <script type="module" src="../app.js?v=cardnft-326"></script>
+    <script type="module" src="../app.js?v=cardnft-376"></script>
   </body>
 </html>

@@ -12,7 +12,11 @@ const execFileAsync = promisify(execFile);
 const ROOT = process.cwd();
 const COLLECTION_URL = process.env.CARDNFT2_COLLECTION_URL || "https://cardnft2.taile73682.ts.net/collection";
 const PINATA_GATEWAY = process.env.CARDNFT2_PINATA_GATEWAY || "https://silver-real-rhinoceros-781.mypinata.cloud/ipfs";
-const METADATA_BASE_URL = process.env.CARDNFT2_METADATA_BASE_URL || "https://assets.mons.link/drops/cardnft2/json";
+const METADATA_BASE_URL = process.env.CARDNFT2_METADATA_BASE_URL
+  || "https://cdn.lil.org/nft/card_nft_2/json";
+const CANONICAL_CARD_BASE_URL = process.env.CARDNFT2_CARD_BASE_URL
+  || "https://cdn.lil.org/nft/card_nft_2/fronts";
+const CANONICAL_CARD_COUNT = Number(process.env.CARDNFT2_CARD_COUNT || 11133);
 const SOURCE_PATH = path.join(ROOT, "cardnft2-source.json");
 const DATA_PATH = path.join(ROOT, "cardnft2-data.js");
 const TRAITS_PATH = path.join(ROOT, "cardnft2-traits.js");
@@ -111,21 +115,15 @@ async function buildEntries(liveAssets) {
     }
   }
 
-  if (!rangeCid.size) throw new Error("Could not derive Card NFT 2 image CID ranges");
-
   await enrichRedeemedReceiptTraits(receiptCards);
 
-  const maxNumber = getMaxCardNumber(rangeCid);
   const entries = [];
-  for (let number = 1; number <= maxNumber; number += 1) {
+  for (let number = 1; number <= CANONICAL_CARD_COUNT; number += 1) {
     if (EXCLUDED_EMPTY_IMAGE_NUMBERS.has(number)) continue;
-    const start = rangeStart(number);
-    const cid = rangeCid.get(start);
-    if (!cid) continue;
     const live = liveCards.get(number);
     const receipt = receiptCards.get(number);
     const title = `card ${number}`;
-    const sourceImageUri = `${PINATA_GATEWAY}/${cid}/${String(number).padStart(4, "0")}.webp`;
+    const sourceImageUri = `${CANONICAL_CARD_BASE_URL}/${number}.webp`;
     const bucket = String(Math.floor((number - 1) / 1000) * 1000).padStart(4, "0");
     const file = `assets/cardnft2/cards/${bucket}/card-${number}.webp`;
     entries.push({
@@ -232,16 +230,6 @@ async function fetchReceiptTraitEntries(number) {
 async function fetchFutureCardTraitEntries(number) {
   const metadata = await fetchOptionalJson(`${METADATA_BASE_URL}/f${number}.json`);
   return getVisibleTraitEntries(metadata?.attributes);
-}
-
-function getMaxCardNumber(rangeCid) {
-  const lastStart = Math.max(...rangeCid.keys());
-  let high = lastStart + 99;
-  const lastKnownFromSource = 11133;
-  if (lastStart <= lastKnownFromSource && lastKnownFromSource <= high) {
-    high = lastKnownFromSource;
-  }
-  return high;
 }
 
 async function convertAssets(entries) {

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f2efe8">
+    <meta
+      name="description"
+      content="A personal, locally rated gallery of every work in the Mi Note collections."
+    >
+    <title>Mi Note Curator · cards.art</title>
+    <link rel="icon" type="image/png" href="../cardnft.png">
+    <link rel="apple-touch-icon" href="../cardnft.png">
+    <link rel="stylesheet" href="./minote-curator.css?v=minote-curator-2">
+    <link rel="modulepreload" href="./minote-curator.js?v=minote-curator-3">
+    <link rel="modulepreload" href="./rating-model.js?v=minote-curator-2">
+    <link rel="modulepreload" href="./minote-data.js?v=minote-curator-data-1">
+  </head>
+  <body>
+    <section class="gallery-toolbar" aria-label="Gallery controls">
+      <div class="filter-block">
+        <span class="control-label" id="ratingFilterLabel">filter by rating</span>
+        <div class="rating-filters" role="group" aria-labelledby="ratingFilterLabel">
+          <button class="filter-pill is-active" type="button" data-rating-filter="all" aria-pressed="true">
+            <span>all</span><span class="pill-count" data-count-for="all">0</span>
+          </button>
+          <button class="filter-pill" type="button" data-rating-filter="0" aria-pressed="false">
+            <span>unrated</span><span class="pill-count" data-count-for="0">0</span>
+          </button>
+          <button class="filter-pill" type="button" data-rating-filter="1" aria-pressed="false">
+            <span>1 star</span><span class="pill-count" data-count-for="1">0</span>
+          </button>
+          <button class="filter-pill" type="button" data-rating-filter="2" aria-pressed="false">
+            <span>2 stars</span><span class="pill-count" data-count-for="2">0</span>
+          </button>
+          <button class="filter-pill" type="button" data-rating-filter="3" aria-pressed="false">
+            <span>3 stars</span><span class="pill-count" data-count-for="3">0</span>
+          </button>
+          <button class="filter-pill" type="button" data-rating-filter="4" aria-pressed="false">
+            <span>4 stars</span><span class="pill-count" data-count-for="4">0</span>
+          </button>
+          <button class="filter-pill" type="button" data-rating-filter="5" aria-pressed="false">
+            <span>5 stars</span><span class="pill-count" data-count-for="5">0</span>
+          </button>
+        </div>
+      </div>
+
+      <label class="sort-control">
+        <span class="control-label">sort</span>
+        <select id="ratingSort">
+          <option value="source">collection order</option>
+          <option value="rating-desc">highest rated</option>
+          <option value="rating-asc">lowest rated</option>
+          <option value="unrated-first">unrated first</option>
+        </select>
+      </label>
+
+      <div class="result-summary" aria-live="polite" aria-atomic="true">
+        <strong id="visibleCount">0</strong>
+        <span id="visibleCountLabel">pieces shown</span>
+      </div>
+    </section>
+
+    <main>
+      <div class="gallery" id="curatorGallery" aria-label="Mi Note artwork gallery"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <strong>No pieces have this rating yet.</strong>
+        <button type="button" id="showAllButton">Show all pieces</button>
+      </div>
+    </main>
+
+    <div class="image-preview" id="imagePreview" hidden aria-hidden="true">
+      <button class="image-preview-close" id="imagePreviewClose" type="button" aria-label="Close image preview">×</button>
+      <figure class="image-preview-figure">
+        <img class="image-preview-image" id="imagePreviewImage" alt="">
+        <figcaption class="image-preview-caption" id="imagePreviewCaption"></figcaption>
+      </figure>
+    </div>
+
+    <footer class="page-footer">
+      <p>
+        Collection data and marketplace links provided by
+        <a href="https://opensea.io" target="_blank" rel="noopener noreferrer">OpenSea</a>.
+      </p>
+      <nav aria-label="Mi Note collections on OpenSea">
+        <a href="https://opensea.io/collection/minote" target="_blank" rel="noopener noreferrer">Mi Note</a>
+        <a href="https://opensea.io/collection/mi-note2" target="_blank" rel="noopener noreferrer">Mi Note 2</a>
+        <a href="https://opensea.io/collection/mi-note-3" target="_blank" rel="noopener noreferrer">Mi Note 3</a>
+      </nav>
+    </footer>
+
+    <p class="visually-hidden" id="ratingInstructions">
+      Choose a star to set a rating. Choose the currently selected star again to clear the rating.
+    </p>
+    <div class="visually-hidden" id="ratingAnnouncement" aria-live="polite" aria-atomic="true"></div>
+
+    <script type="module" src="./minote-curator.js?v=minote-curator-3"></script>
+  </body>
+</html>

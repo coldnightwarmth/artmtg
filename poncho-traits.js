@@ -9018,7 +9018,7 @@ export const PONCHO_TRAITS = [
     "entries": [
       {
         "category": "Status",
-        "value": "Still in pack"
+        "value": "Redeemed"
       },
       {
         "category": "card base",

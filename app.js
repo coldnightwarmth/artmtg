@@ -1,17 +1,38 @@
 import * as THREE from "three";
-import { BROWSER_TRAIT_CATALOG } from "./browser-traits-catalog.js?v=browser-traits-5";
+import { BROWSER_TRAIT_CATALOG } from "./browser-traits-catalog.js?v=browser-traits-9";
 import { CARD_NFT_ANIMATED } from "./cardnft-animated.js";
 import { CARD_NFT_ANIMATED_SPRITES } from "./cardnft-animated-sprites.js";
+import {
+  TENSOR_LISTED_CARD_IDS,
+  TENSOR_LISTED_CARD_MINTS,
+} from "./marketplace-status.js?v=marketplace-status-6";
+import {
+  disconnectSolanaWallet,
+  getCompatibleSolanaWallets,
+  getGlobalTradeStatuses,
+  getOwnerWalletBinder,
+  getPublicWalletBinder,
+  getWalletAuthSession,
+  isCanonicalSolanaAddress,
+  signInWithSolanaWallet,
+  signOutWalletAuthSession,
+  subscribeToWalletAccountChanges,
+  updateOwnerWalletBinder,
+  watchCompatibleSolanaWallets,
+} from "./wallet-auth.js?v=wallet-auth-5";
+import { CARD_NFT_2_COMMON_IDS } from "./cardnft2-common-ids.js?v=cardnft2-common-1";
+import { SWAG_PACK_TRANSPARENT_STICKER_FILES } from "./swag-pack-stickers.js?v=swag-pack-transparent-1";
 
 const COLLECTION_DATA_SPECS = {
   cardnft1: { module: "./cardnft-data.js?v=cardnft1-1", exportName: "CARD_NFTS" },
-  cardnft2: { module: "./cardnft2-data.js?v=cardnft2-2", exportName: "CARD_NFT_2S" },
-  poncho: { module: "./poncho-data.js?v=poncho-3", exportName: "PONCHO_CARDS" },
+  cardnft2: { module: "./cardnft2-data.js?v=cardnft2-3", exportName: "CARD_NFT_2S" },
+  poncho: { module: "./poncho-data.js?v=poncho-4", exportName: "PONCHO_CARDS" },
   limited: { module: "./limited-data.js?v=community-8", exportName: "LIMITED_CARDS" },
-  cloudcastle: { module: "./cloudcastle-data.js?v=community-2", exportName: "CLOUDCASTLE_CARDS" },
+  cloudcastle: { module: "./cloudcastle-data.js?v=community-3", exportName: "CLOUDCASTLE_CARDS" },
   badhand: { module: "./badhand-data.js?v=community-2", exportName: "BADHAND_CARDS" },
+  badhand2: { module: "./badhand2-data.js?v=community-1", exportName: "BADHAND2_CARDS" },
   jpegs: { module: "./jpegs-data.js?v=community-7", exportName: "JPEGS_CARDS" },
-  nolegs: { module: "./nolegs-data.js?v=community-4", exportName: "NOLEGS_CARDS" },
+  nolegs: { module: "./nolegs-data.js?v=community-5", exportName: "NOLEGS_CARDS" },
   playcards: { module: "./playcards-data.js?v=community-2", exportName: "PLAYCARDS_CARDS" },
   kardmane: { module: "./kardmane-data.js?v=community-2", exportName: "KARDMANE_CARDS" },
   cloudcastles: { module: "./cloudcastles-data.js?v=community-5", exportName: "CLOUDCASTLES_CARDS" },
@@ -19,7 +40,7 @@ const COLLECTION_DATA_SPECS = {
   winloop: { module: "./winloop-data.js?v=community-5", exportName: "WINLOOP_CARDS" },
   mtgnft: { module: "./mtgnft-data.js?v=community-5", exportName: "MTGNFT_CARDS" },
   igorsquest: { module: "./igorsquest-data.js?v=community-5", exportName: "IGORSQUEST_CARDS" },
-  clear: { module: "./clear-data.js?v=clear-5", exportName: "CLEAR_CARDS" },
+  clear: { module: "./clear-data.js?v=clear-8", exportName: "CLEAR_CARDS" },
 };
 const REQUESTED_COLLECTION_ID = COLLECTION_DATA_SPECS[document.documentElement.dataset.collectionId]
   ? document.documentElement.dataset.collectionId
@@ -133,6 +154,19 @@ const COLLECTION_CONFIGS = {
     traitFiltersEnabled: getBrowserTraitConfig("badhand").categories.length > 0,
     backImage: "assets/badhand/backs/badhand-back.webp?v=yugioh-english-2",
     path: "/badhand/",
+    introGroup: "community",
+  },
+  badhand2: {
+    id: "badhand2",
+    label: "BAD HAND 2",
+    introLabel: "bad hand 2",
+    cards: getInitialCollectionCards("badhand2"),
+    traitCategories: getBrowserTraitConfig("badhand2").categories,
+    traitModule: getBrowserTraitConfig("badhand2").module,
+    traits: null,
+    traitFiltersEnabled: getBrowserTraitConfig("badhand2").categories.length > 0,
+    backImage: "assets/badhand2/backs/badhand2-back.webp?v=yugioh-english-2",
+    path: "/badhand2/",
     introGroup: "community",
   },
   jpegs: {
@@ -262,6 +296,7 @@ const COLLECTION_CONFIGS = {
     traits: null,
     traitFiltersEnabled: false,
     backImage: "assets/clear/backs/clear-card-back.webp?v=clear-5",
+    showUnpairedBinderBacks: false,
     path: "/clear/",
     introGroup: "community",
   },
@@ -274,7 +309,9 @@ const COMMUNITY_COVER_COLLECTION_ORDER = [
   "cloudcastle",
   "cloudcastles",
   "badhand",
+  "badhand2",
   "jpegs",
+  "clear",
   "nolegs",
   "mtgnft",
   "playcards",
@@ -295,6 +332,14 @@ let ACTIVE_COLLECTION_INDEXES = [];
 const CARD_NFT_MINT_TO_INDEX = new Map();
 const CARD_NUMBER_TO_INDEX = new Map();
 const CARD_STABLE_ID_TO_INDEX = new Map();
+let liveCardStatusSnapshot = null;
+let liveCardStatusRefreshPromise = null;
+let liveCardStatusLastFetchedAt = 0;
+let liveCardStatusRefreshTimer = 0;
+let globalTradeCardStableIds = new Set();
+let globalTradeStatusRefreshPromise = null;
+let globalTradeStatusLastFetchedAt = 0;
+let globalTradeStatusRefreshTimer = 0;
 
 function registerCollectionCards(collectionId, cards) {
   const collection = COLLECTION_CONFIGS[collectionId];
@@ -307,6 +352,8 @@ function registerCollectionCards(collectionId, cards) {
     card.collectionIndex = collectionIndex;
     card.stableId = card.stableId || `${collectionId}:${card.mint || card.title || collectionIndex}`;
     card.setIndex = collectionIndex;
+    card.listed = TENSOR_LISTED_CARD_IDS.has(card.stableId);
+    card.listedMint = TENSOR_LISTED_CARD_MINTS.get(card.stableId) || "";
 
     const globalIndex = CARDS.length;
     CARDS.push(card);
@@ -327,9 +374,13 @@ function registerCollectionCards(collectionId, cards) {
     if (Number.isInteger(number)) CARD_NUMBER_TO_INDEX.set(`${collectionId}:${number}`, globalIndex);
 
     const stableId = String(card?.stableId || "").trim();
-    if (stableId) CARD_STABLE_ID_TO_INDEX.set(stableId, globalIndex);
+    if (!stableId || stableId.length > 256 || CARD_STABLE_ID_TO_INDEX.has(stableId)) {
+      throw new Error(`Invalid or duplicate card stable ID: ${stableId || "(empty)"}`);
+    }
+    CARD_STABLE_ID_TO_INDEX.set(stableId, globalIndex);
   });
   collection.cardsLoaded = true;
+  applyLiveCardStatusCollection(collectionId);
   return collection.cards;
 }
 
@@ -512,6 +563,10 @@ const CARD_NFT_2_HOLO_EFFECT_MODES_BY_REMAINDER = [
   CARD_EFFECT_MODE_CARD_NFT_2_TRAINER_FULL_ART,
   CARD_EFFECT_MODE_CARD_NFT_2_AMAZING_RARE,
 ];
+const CARD_NFT_2_COMMON_ID_SET = new Set(CARD_NFT_2_COMMON_IDS);
+// IDs through 7008 are the rare/common release block; the shop's common list
+// separates neutral commons from rares that receive the masked holo effects.
+const CARD_NFT_2_RARE_CARD_ID_MAX = 7008;
 const CARD_NFT_2_SUPER_RARE_RANGES = Object.freeze([
   Object.freeze([7009, 10999]),
   Object.freeze([11111, 11132]),
@@ -541,6 +596,12 @@ const UI_BUTTON_TILT_MAX_DEGREES = 5.5;
 const SOLANA_RPC_URL = "https://api.mainnet-beta.solana.com";
 const SOLANA_DAS_RPC_URL = "https://lauraine-qytyxk-fast-mainnet.helius-rpc.com";
 const TENSOR_GRAPHQL_URL = "https://graphql.tensor.trade/graphql";
+const CLEAR_CARD_COLLECTION_MINT = "3fYe95cviaHzka38Q82q64JLhhddKQm37Jt4dQSxPKxz";
+const SWAG_PACK_COLLECTION_MINT = "C22esis7kQMbX9JGWsMaKvsh1X5GeBmHPju28jiKDyAP";
+const SWAG_PACK_IMAGE_BUNDLE_PATH = "/_9RePBUya-xCV91FMTJU7lUpU87tkf4MtJTF4qpgE9k/";
+const SWAG_PACK_TRANSPARENT_STICKER_FILE_SET = new Set(
+  SWAG_PACK_TRANSPARENT_STICKER_FILES,
+);
 const SOLANA_TOKEN_PROGRAM_IDS = [
   "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
   "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
@@ -557,11 +618,32 @@ const DAS_WALLET_MAX_ASSETS = 10000;
 let cardNftOwnerToIndexes = null;
 let cardNftOwnerIndexPromise = null;
 const WALLET_SEARCH_REQUEST_TIMEOUT_MS = 9000;
+const LIVE_DATA_REQUEST_TIMEOUT_MS = 30000;
+const LIVE_CARD_STATUS_REFRESH_MS = 12 * 60 * 60 * 1000;
+const GLOBAL_TRADE_STATUS_REFRESH_MS = 60 * 1000;
+const WALLET_HOLDINGS_AUTO_REFRESH_MS = 5 * 60 * 1000;
+const WALLET_HOLDINGS_FOCUS_REFRESH_MS = 60 * 1000;
 const SOLANA_ADDRESS_PATTERN = /^[1-9A-HJ-NP-Za-km-z]{32,44}$/;
 const WALLET_SEARCH_PROMPT = "Enter a SOL address to view collected cards:";
-const WALLET_SEARCH_EMPTY_MESSAGE = "No cards found, try again.";
+const WALLET_SEARCH_EMPTY_MESSAGE = "Enter a valid Solana wallet address.";
 const WALLET_SEARCH_BUSY_MESSAGE = "Checking wallet holdings...";
 const WALLET_SEARCH_ERROR_MESSAGE = "Search failed, try again.";
+const WALLET_CONNECT_PROMPT = "Connect a Solana wallet to create or open its binder.";
+const WALLET_CONNECT_NO_EXTENSION_MESSAGE = "No compatible Solana wallet extension found.";
+const WALLET_CONNECT_BUSY_MESSAGE = "Approve the connection and login message in your wallet...";
+const WALLET_TRADE_FILTER_VALUE = "marked-for-trade";
+const LISTED_SORT_VALUE = "listed-first";
+const GALLERY_SORT_QUERY_PARAM = "sort";
+const GALLERY_TRAIT_CATEGORY_QUERY_PARAM = "trait";
+const GALLERY_TRAIT_VALUE_QUERY_PARAM = "trait-value";
+const GALLERY_TRAIT_COLLECTION_QUERY_PARAM = "trait-collection";
+const WALLET_ROUTE_ADDRESS = getWalletAddressFromPathname(window.location.pathname);
+const WALLET_AUTH_API_BASE_URL = getWalletAuthApiBaseUrl();
+
+function usesEvilBinderPresentation() {
+  return !WALLET_ROUTE_ADDRESS && ACTIVE_COLLECTION?.introGroup === "evil";
+}
+
 const BINDER_INTRO_SPRITES = [
   {
     url: new URL("./assets/ui/drif-iii-card-back-square.png", import.meta.url).href,
@@ -604,10 +686,49 @@ const BINDER_COLUMNS = 3;
 const BINDER_ROWS = 3;
 const BINDER_SIDE_SLOTS = BINDER_COLUMNS * BINDER_ROWS;
 const BINDER_PAGE_SLOTS = BINDER_SIDE_SLOTS * 2;
+const BINDER_ORDER_DRAG_THRESHOLD_PX = 5;
+const BINDER_ORDER_AUTO_SCROLL_EDGE_PX = 96;
+const BINDER_ORDER_AUTO_SCROLL_OVERSHOOT_PX = 170;
+const BINDER_ORDER_AUTO_SCROLL_MIN_PX_PER_SECOND = 110;
+const BINDER_ORDER_AUTO_SCROLL_EDGE_PX_PER_SECOND = 820;
+const BINDER_ORDER_AUTO_SCROLL_MAX_PX_PER_SECOND = 1800;
+const BINDER_ORDER_AUTO_SCROLL_MAX_FRAME_MS = 34;
+const BINDER_ORDER_TARGET_HYSTERESIS_PX = 12;
+const BINDER_ORDER_FLIP_DURATION_MS = 170;
+const BINDER_COVER_ARTWORK_MAX_FILE_BYTES = 16 * 1024 * 1024;
+const BINDER_COVER_ARTWORK_MAX_DATA_URL_LENGTH = 1_350_000;
+const BINDER_COVER_ARTWORK_MAX_WIDTH = 1400;
+const BINDER_COVER_ARTWORK_MAX_HEIGHT = 1900;
+const BINDER_COVER_INSIDE_TEXT_MAX_LENGTH = 2000;
+const BINDER_COVER_STICKER_MAX_COUNT = 24;
+const BINDER_COVER_UNDO_LIMIT = 50;
+const BINDER_COVER_STICKER_DEFAULT_SCALE = 0.32;
+const BINDER_COVER_STICKER_MIN_SCALE = 0.08;
+const BINDER_COVER_STICKER_MAX_SCALE = 1.5;
+const BINDER_COVER_ROTATION_MIN_DEGREES = -180;
+const BINDER_COVER_ROTATION_MAX_DEGREES = 180;
+const BINDER_COVER_STICKER_SURFACES = Object.freeze(["front", "back", "inside"]);
+const BINDER_COVER_DEFAULT_COLOR_HEX = "#11100d";
+const BINDER_COVER_DEFAULT_TEXT_COLOR_HEX = "#9c9992";
 const BINDER_SINGLE_PAGE_COVER_SIDE = -1;
 const BINDER_CARD_WIDTH = 1.38;
 const BINDER_CARD_HEIGHT = BINDER_CARD_WIDTH * (CARD_HEIGHT / CARD_WIDTH);
 const BINDER_CARD_RADIUS = BINDER_CARD_WIDTH * (CARD_RADIUS / CARD_WIDTH);
+const BINDER_TRADE_STICKER_TEXTURE_URL = new URL(
+  "./assets/ui/trade-sticker.png?v=binder-stickers-1",
+  import.meta.url,
+).href;
+const BINDER_LISTED_STICKER_TEXTURE_URL = new URL(
+  "./assets/ui/listed-sticker.png?v=binder-stickers-1",
+  import.meta.url,
+).href;
+const BINDER_STICKER_RIGHT_EDGE = BINDER_CARD_WIDTH * 0.54;
+const BINDER_STICKER_BOTTOM_EDGE = -BINDER_CARD_HEIGHT * 0.52;
+const BINDER_STICKER_GAP = BINDER_CARD_WIDTH * 0.018;
+const BINDER_STICKER_SIZES = Object.freeze({
+  listed: Object.freeze([BINDER_CARD_WIDTH * 0.26, BINDER_CARD_WIDTH * 0.172]),
+  trade: Object.freeze([BINDER_CARD_WIDTH * 0.225, BINDER_CARD_WIDTH * 0.225]),
+});
 const BINDER_POCKET_PAD = 0.12;
 const BINDER_GRID_GAP = 0.055;
 const BINDER_PAGE_INNER_MARGIN = 0.11;
@@ -682,23 +803,39 @@ const BINDER_TABLE_SURFACE_LIGHT_TEXTURE_URL = new URL(
 ).href;
 const BINDER_TABLE_SURFACE_REPEAT_X = 2.4;
 const BINDER_TABLE_SURFACE_REPEAT_Y = 2.7;
-const BINDER_TABLE_DISPLAY_MODEL_URL = new URL(
-  "./assets/models/table-white-mesh.glb?v=table-model-1",
-  import.meta.url,
-).href;
-const BINDER_TABLE_DISPLAY_MODEL_HEIGHT = 1.16;
+const BINDER_TABLE_DISPLAY_MODEL_HEIGHT = 1.04;
+const BINDER_TABLE_DISPLAY_MODEL_SPECS = Object.freeze([
+  Object.freeze({
+    id: "omom",
+    url: new URL("./assets/models/table-white-mesh.glb?v=table-model-1", import.meta.url).href,
+    materialProfile: "blue-resin",
+  }),
+  Object.freeze({
+    id: "squishy",
+    url: new URL("./assets/models/table-display/squishy.glb?v=table-display-1", import.meta.url).href,
+    materialProfile: "embedded",
+    yawOffset: Math.PI / 2 - THREE.MathUtils.degToRad(35),
+  }),
+  Object.freeze({
+    id: "angelgotchi",
+    url: new URL("./assets/models/table-display/angelgotchi.glb?v=table-display-1", import.meta.url).href,
+    materialProfile: "embedded",
+    pitchOffset: -Math.PI / 2,
+    scaleMultiplier: 1.24,
+    positionYOffset: -0.14,
+  }),
+]);
 const BINDER_TABLE_DISPLAY_MODEL_X = -3.1;
 const BINDER_TABLE_DISPLAY_MODEL_Y = 2.78;
 const BINDER_TABLE_DISPLAY_MODEL_YAW = THREE.MathUtils.degToRad(28);
 const BINDER_TABLE_DISPLAY_MODEL_MAX_OPACITY = 0.76;
 const BINDER_TABLE_DISPLAY_MODEL_REVEAL_DURATION_MS = 360;
-const BINDER_TABLE_DISPLAY_MODEL_SHADOW_OPACITY = 0.12;
 const BINDER_TABLE_COIN_TEXTURE_URL = new URL(
   "./assets/ui/table-swag-coin.png?v=table-coin-1",
   import.meta.url,
 ).href;
-const BINDER_TABLE_COIN_RADIUS = 0.5;
-const BINDER_TABLE_COIN_THICKNESS = 0.07;
+const BINDER_TABLE_COIN_RADIUS = 0.45;
+const BINDER_TABLE_COIN_THICKNESS = 0.063;
 const BINDER_TABLE_COIN_X = -4.88;
 const BINDER_TABLE_COIN_Y = 2.43;
 const BINDER_TABLE_COIN_ROTATION = THREE.MathUtils.degToRad(-217);
@@ -717,6 +854,11 @@ const BINDER_COVER_BASE_COLOR = new THREE.Color(0x11100d);
 const BINDER_COVER_TABLE_COLOR = new THREE.Color(0x716958);
 const BINDER_COVER_BASE_EMISSIVE = new THREE.Color(0x040302);
 const BINDER_COVER_TABLE_EMISSIVE = new THREE.Color(0x252019);
+const binderCoverCustomBaseColor = new THREE.Color(BINDER_COVER_BASE_COLOR);
+const binderCoverCustomTableColor = new THREE.Color(BINDER_COVER_TABLE_COLOR);
+const binderCoverCustomBaseEmissive = new THREE.Color(BINDER_COVER_BASE_EMISSIVE);
+const binderCoverCustomTableEmissive = new THREE.Color(BINDER_COVER_TABLE_EMISSIVE);
+let binderCoverColorPaletteSource = "";
 const BINDER_COVER_BASE_EMISSIVE_INTENSITY = 0.28;
 const BINDER_COVER_TABLE_EMISSIVE_INTENSITY = 1.05;
 const BINDER_TABLE_COVER_RENDER_ORDER = 12;
@@ -738,6 +880,9 @@ const BINDER_EVIL_TABLE_SWAP_STORAGE_KEY = "cardnft:evilBinderTableSwap:v1";
 const BINDER_EVIL_TABLE_SWAP_ARRIVAL_MAX_AGE_MS = 15_000;
 const BINDER_PLASTIC_REST_OPACITY = 0.066;
 const BINDER_PLASTIC_ACTIVE_OPACITY = 0.13;
+const CLEAR_BINDER_PAGE_COLOR = 0x111315;
+const CLEAR_BINDER_PAGE_OPACITY = 0.84;
+const CLEAR_BINDER_POCKET_OPACITY = 1;
 const BINDER_FROST_REST_OPACITY = 0.018;
 const BINDER_FROST_ACTIVE_OPACITY = 0.038;
 const BINDER_GLOSS_REST_OPACITY = 0.014;
@@ -939,11 +1084,13 @@ const BINDER_MAX_FRAME_DELTA_MS = 34;
 const BINDER_TURN_BASE_ALPHA = 0.16;
 const BINDER_CAMERA_BASE_ALPHA = 0.1;
 const BINDER_FOCUS_CAMERA_BASE_ALPHA = 0.12;
-let SESSION_VIEW_STATE_KEY = `cardnft:${ACTIVE_COLLECTION_ID}:sessionView:v1`;
+let SESSION_VIEW_STATE_KEY = WALLET_ROUTE_ADDRESS
+  ? `cardnft:wallet:${WALLET_ROUTE_ADDRESS}:sessionView:v1`
+  : `cardnft:${ACTIVE_COLLECTION_ID}:sessionView:v1`;
 const TENSOR_ITEM_URL_BASE = "https://www.tensor.trade/item/";
 const SOLSCAN_TOKEN_URL_BASE = "https://solscan.io/token/";
 const restoredEvilBinderTableSwap = consumeEvilBinderTableSwapArrival();
-const restoredSessionViewState = loadSessionViewState();
+const restoredSessionViewState = WALLET_ROUTE_ADDRESS ? null : loadSessionViewState();
 
 const els = {
   body: document.body,
@@ -989,9 +1136,76 @@ const els = {
   walletSearchButton: document.querySelector("#walletSearchButton"),
   walletSearchPanel: document.querySelector("#walletSearchPanel"),
   walletSearchForm: document.querySelector("#walletSearchForm"),
+  walletConnectButton: document.querySelector("#walletConnectButton"),
+  walletConnectButtonLabel: document.querySelector("#walletConnectButtonLabel"),
+  walletProviderList: document.querySelector("#walletProviderList"),
+  walletConnectStatus: document.querySelector("#walletConnectStatus"),
+  walletSignOutButton: document.querySelector("#walletSignOutButton"),
   walletSearchMessage: document.querySelector("#walletSearchMessage"),
   walletAddressInput: document.querySelector("#walletAddressInput"),
   walletSearchSubmitButton: document.querySelector("#walletSearchSubmitButton"),
+  binderOrderEditButton: document.querySelector("#binderOrderEditButton"),
+  binderOrderEditor: document.querySelector("#binderOrderEditor"),
+  binderOrderDialog: document.querySelector("#binderOrderDialog"),
+  binderOrderCloseButton: document.querySelector("#binderOrderCloseButton"),
+  binderOrderScroller: document.querySelector("#binderOrderScroller"),
+  binderOrderPages: document.querySelector("#binderOrderPages"),
+  binderOrderStatus: document.querySelector("#binderOrderStatus"),
+  binderOrderConfirmButton: document.querySelector("#binderOrderConfirmButton"),
+  binderTradeModeButton: document.querySelector("#binderTradeModeButton"),
+  binderOrderInstructions: document.querySelector("#binderOrderInstructions"),
+  binderOrderTitle: document.querySelector("#binderOrderTitle"),
+  binderCoverModeButton: document.querySelector("#binderCoverModeButton"),
+  binderCoverEditor: document.querySelector("#binderCoverEditor"),
+  binderFrontCoverPreview: document.querySelector("#binderFrontCoverPreview"),
+  binderFrontCoverImage: document.querySelector("#binderFrontCoverImage"),
+  binderFrontCoverBlank: document.querySelector("#binderFrontCoverBlank"),
+  binderFrontCoverUpload: document.querySelector("#binderFrontCoverUpload"),
+  binderFrontCoverRemove: document.querySelector("#binderFrontCoverRemove"),
+  binderFrontCoverZoom: document.querySelector("#binderFrontCoverZoom"),
+  binderFrontCoverRotation: document.querySelector("#binderFrontCoverRotation"),
+  binderFrontTextBox: document.querySelector("#binderFrontTextBox"),
+  binderFrontTextPreview: document.querySelector("#binderFrontTextPreview"),
+  binderFrontTextControls: document.querySelector("#binderFrontTextControls"),
+  binderFrontTextInput: document.querySelector("#binderFrontTextInput"),
+  binderFrontTextFontSize: document.querySelector("#binderFrontTextFontSize"),
+  binderFrontTextRotation: document.querySelector("#binderFrontTextRotation"),
+  binderFrontTextColor: document.querySelector("#binderFrontTextColor"),
+  binderFrontTextRemove: document.querySelector("#binderFrontTextRemove"),
+  binderBackCoverPreview: document.querySelector("#binderBackCoverPreview"),
+  binderBackCoverImage: document.querySelector("#binderBackCoverImage"),
+  binderBackCoverBlank: document.querySelector("#binderBackCoverBlank"),
+  binderBackCoverUpload: document.querySelector("#binderBackCoverUpload"),
+  binderBackCoverRemove: document.querySelector("#binderBackCoverRemove"),
+  binderBackCoverZoom: document.querySelector("#binderBackCoverZoom"),
+  binderBackCoverRotation: document.querySelector("#binderBackCoverRotation"),
+  binderBackTextBox: document.querySelector("#binderBackTextBox"),
+  binderBackTextPreview: document.querySelector("#binderBackTextPreview"),
+  binderBackTextControls: document.querySelector("#binderBackTextControls"),
+  binderBackTextInput: document.querySelector("#binderBackTextInput"),
+  binderBackTextFontSize: document.querySelector("#binderBackTextFontSize"),
+  binderBackTextRotation: document.querySelector("#binderBackTextRotation"),
+  binderBackTextColor: document.querySelector("#binderBackTextColor"),
+  binderBackTextRemove: document.querySelector("#binderBackTextRemove"),
+  binderInsideCoverPreview: document.querySelector("#binderInsideCoverPreview"),
+  binderInsideTextBox: document.querySelector("#binderInsideTextBox"),
+  binderInsideTextPreview: document.querySelector("#binderInsideTextPreview"),
+  binderInsideCoverBlank: document.querySelector("#binderInsideCoverBlank"),
+  binderInsideFontSize: document.querySelector("#binderInsideFontSize"),
+  binderInsideTextRotation: document.querySelector("#binderInsideTextRotation"),
+  binderInsideTextInput: document.querySelector("#binderInsideTextInput"),
+  binderInsideLinkPopover: document.querySelector("#binderInsideLinkPopover"),
+  binderInsideLinkUrl: document.querySelector("#binderInsideLinkUrl"),
+  binderInsideLinkApply: document.querySelector("#binderInsideLinkApply"),
+  binderInsideLinkRemove: document.querySelector("#binderInsideLinkRemove"),
+  binderBaseColor: document.querySelector("#binderBaseColor"),
+  binderCoverTextColor: document.querySelector("#binderCoverTextColor"),
+  binderCoverStickerControls: [...document.querySelectorAll(".binder-cover-sticker-controls")],
+  binderStickerPicker: document.querySelector("#binderStickerPicker"),
+  binderStickerPickerClose: document.querySelector("#binderStickerPickerClose"),
+  binderStickerPickerTitle: document.querySelector("#binderStickerPickerTitle"),
+  binderStickerPickerStatus: document.querySelector("#binderStickerPickerStatus"),
+  binderStickerPickerGallery: document.querySelector("#binderStickerPickerGallery"),
   themeToggle: document.querySelector("#themeToggle"),
   galleryEmpty: document.querySelector("#galleryEmpty"),
 };
@@ -1000,6 +1214,7 @@ const textureLoader = new THREE.TextureLoader();
 textureLoader.setCrossOrigin("anonymous");
 const nftTextureCache = new Map();
 const binderTextureCache = new Map();
+const binderStickerTextures = new Map();
 const cardNft2EffectTextureCache = new Map();
 const preparedIndividualCardPromises = new Map();
 const preparedIndividualCardResults = new Map();
@@ -1032,6 +1247,7 @@ const traitSearchRenderStates = new Map();
 let traitSortPickerOpen = false;
 let traitSortPickerOpenedAt = 0;
 let traitSortPickerSyncFrame = 0;
+let galleryUrlNavigationToken = 0;
 let activeGalleryTiltCard = null;
 let galleryTiltFrame = 0;
 let galleryRenderToken = 0;
@@ -1045,10 +1261,69 @@ let lastTouchEndAt = 0;
 let walletSearchOpen = false;
 let walletSearchLoading = false;
 let walletSearchToken = 0;
+let walletAuthLoading = false;
+let walletAuthSession = null;
+let walletAuthWallet = null;
+let walletAuthAccountAddress = "";
+let compatibleSolanaWallets = [];
+let walletProviderListOpen = false;
+let walletConnectMessage = WALLET_CONNECT_PROMPT;
+let walletRegistryUnsubscribe = null;
+let walletAccountUnsubscribe = null;
+let walletRouteLoading = false;
+let walletRouteLoadFailed = false;
+let walletRouteLoadErrorMessage = "";
+let walletRouteProfile = null;
+let walletHoldingsRefreshTimer = 0;
+let walletHoldingsRefreshPromise = null;
+let walletHoldingsLastFetchedAt = 0;
 let walletFilterCardIndexes = null;
 let walletFilterCardIndexSet = null;
 let walletFilterAddress = "";
 let walletMatchedMintByCardIndex = new Map();
+let walletTradeCardStableIds = new Set();
+let binderOrderEditorOpen = false;
+let binderOrderEditorLoading = false;
+let binderOrderEditorSaving = false;
+let binderOrderEditorToken = 0;
+let binderOrderOwnerDocument = null;
+let binderOrderDraftIndexes = [];
+let binderOrderInitialStableIds = [];
+let binderTradeMarkingMode = false;
+let binderTradeDraftStableIds = new Set();
+let binderTradeInitialStableIds = new Set();
+let binderOrderReturnFocus = null;
+let binderOrderDrag = null;
+let binderOrderDragFrame = 0;
+const binderOrderCardNodes = new Map();
+let binderOrderKeyboardStableId = "";
+let binderOrderPositionEdit = null;
+let binderOrderSuppressClickUntil = 0;
+let binderCustomizationMode = "cards";
+let binderCoverDraft = null;
+let binderCoverInitialJson = "";
+let binderCoverInteraction = null;
+let binderCoverUndoStack = [];
+let binderCoverUndoCoalesceKey = "";
+const binderOutsideTextBoxEnabled = { front: false, back: false };
+let binderCoverPreviewResizeObserver = null;
+let binderInsideLinkSelection = null;
+let binderInsideTextPointerSelection = null;
+let binderInsideTextPointerClickHandled = false;
+let binderCoverSelectedStickerMint = "";
+let binderStickerPickerOpen = false;
+let binderStickerPickerSurface = "front";
+let binderStickerPickerLoading = false;
+let binderStickerPickerToken = 0;
+let walletSwagPackAssets = [];
+let walletSwagPackAssetsFetchedAt = 0;
+let binderWalletCoverArtworkTexture = null;
+let binderWalletCoverArtworkToken = 0;
+let binderWalletCoverArtworkPromise = null;
+let binderWalletCoverArtworkSource = "";
+let binderWalletBackCoverArtworkTexture = null;
+let binderWalletBackCoverArtworkPromise = null;
+let binderWalletBackCoverArtworkSource = "";
 let isBinderMode = typeof restoredSessionViewState?.isBinderMode === "boolean"
   ? restoredSessionViewState.isBinderMode
   : true;
@@ -1289,8 +1564,8 @@ let binderTableSurfaceTexturesPromise = null;
 const binderTableSurfaceTextures = new Map();
 let binderTableDisplayModelRoot = null;
 let binderTableDisplayModelPromise = null;
-let binderTableDisplayModelMaterial = null;
-let binderTableDisplayModelShadowMaterial = null;
+let binderTableDisplayModelEntries = [];
+let binderTableDisplayModelIndex = 0;
 let binderTableDisplayModelLoadedAt = 0;
 let binderTableAccessoryRoot = null;
 let binderTableAccessoryMaterials = [];
@@ -1308,6 +1583,8 @@ let binderTableViewProgress = 0;
 let binderTableViewTarget = 0;
 let binderTableViewAnimation = null;
 let binderCardGeometry = null;
+let binderPocketBackingGeometry = null;
+let binderStickerGeometry = null;
 let binderColumnSheetGeometry = null;
 let binderColumnGlossGeometry = null;
 let binderVerticalSeamGeometry = null;
@@ -1315,6 +1592,7 @@ let binderHorizontalSeamGeometry = null;
 let binderLoadingRingGeometry = null;
 let binderLoadingRingMaterial = null;
 let binderCoverTexture = null;
+let binderCustomCoverTexture = null;
 const binderFrontCoverEmblemTextures = new Map();
 const binderFrontCoverEmblemTexturePromises = new Map();
 let binderIntroNoteTexture = null;
@@ -1405,27 +1683,48 @@ init().catch((error) => {
 });
 
 async function init() {
-  await prepareRestoredLazyData(restoredSessionViewState);
+  const initialGalleryUrlState = readGalleryUrlState();
+  await Promise.all([
+    prepareRestoredLazyData(restoredSessionViewState),
+    prepareGalleryUrlState(initialGalleryUrlState),
+  ]);
   updateAppViewportVars();
   applyTheme(readStorageValue(getBrowserStorage("localStorage"), "cardnft:theme:v1") === "light");
   els.body.classList.toggle("trait-filters-disabled", !TRAIT_FILTERS_ENABLED);
   applyRestoredSessionViewState(restoredSessionViewState);
   if (restoredEvilBinderTableSwap) applyEvilBinderTableSwapViewDefaults();
+  const initialGalleryUrlApplied = !WALLET_ROUTE_ADDRESS
+    && applyGalleryUrlState(initialGalleryUrlState);
   updateGalleryViewModeButton();
   populateTraitSortOptions();
   initCardScene();
   initEvents();
   initializeEvilBinderHistoryState();
+  initializeLiveDataRefresh();
   await preloadCollectionBackTextures(ACTIVE_COLLECTION_ID);
-  const startsInGallery = !restoredSessionViewState || Boolean(restoredSessionViewState.galleryOpen);
+  const startsInGallery = Boolean(WALLET_ROUTE_ADDRESS)
+    || initialGalleryUrlApplied
+    || !restoredSessionViewState
+    || Boolean(restoredSessionViewState.galleryOpen);
   setCard(getRestoredSessionCardIndex(restoredSessionViewState), {
     deferAssets: startsInGallery,
   });
-  if (restoredEvilBinderTableSwap) {
+  if (WALLET_ROUTE_ADDRESS) {
+    primeWalletBinderRoute(WALLET_ROUTE_ADDRESS);
+    setGalleryOpen(true);
+    loadWalletBinderRoute(WALLET_ROUTE_ADDRESS).catch((error) => {
+      console.error("Wallet binder could not load", error);
+    });
+  } else if (initialGalleryUrlApplied) {
+    setGalleryOpen(true);
+  } else if (restoredEvilBinderTableSwap) {
     restoreEvilBinderTableSwapArrival();
   } else {
     restoreSessionGalleryView(restoredSessionViewState);
   }
+  initializeWalletAuth().catch(() => {
+    updateWalletAuthUi();
+  });
   preloadAllConfiguredBackTextures().catch(console.error);
   if (!galleryOpen) startCardRenderLoop();
 }
@@ -1789,6 +2088,12 @@ function initEvents() {
   document.addEventListener("gestureend", preventBrowserZoomGesture, { passive: false, capture: true });
   document.addEventListener("wheel", preventBrowserZoomWheel, { passive: false, capture: true });
   document.addEventListener("keydown", preventBrowserZoomKeydown, { capture: true });
+  document.addEventListener("keydown", handleBinderCoverUndoKeydown, { capture: true });
+  window.addEventListener("popstate", () => {
+    handleGalleryUrlNavigation().catch(console.error);
+  });
+  window.addEventListener("focus", refreshLiveDataAfterFocus);
+  document.addEventListener("visibilitychange", refreshLiveDataAfterFocus);
   document.addEventListener("pointerdown", handleScreensaverActivity, { capture: true });
   document.addEventListener("pointermove", handleScreensaverPointerMove, { capture: true, passive: true });
   document.addEventListener("keydown", handleScreensaverActivity, { capture: true });
@@ -1835,6 +2140,86 @@ function initEvents() {
   els.galleryGrid.addEventListener("pointercancel", releaseActiveGalleryCardTilt);
   els.galleryClearFiltersButton.addEventListener("click", clearGallerySortAndFilters);
   els.walletSearchButton.addEventListener("click", toggleWalletSearchPanel);
+  els.walletConnectButton.addEventListener("click", handleWalletConnectButtonClick);
+  els.walletProviderList.addEventListener("click", handleWalletProviderListClick);
+  els.walletSignOutButton.addEventListener("click", () => {
+    signOutCurrentWallet().catch(console.error);
+  });
+  els.binderOrderEditButton.addEventListener("click", () => {
+    openBinderOrderEditor().catch(console.error);
+  });
+  els.binderOrderCloseButton.addEventListener("click", closeBinderOrderEditor);
+  els.binderOrderConfirmButton.addEventListener("click", () => {
+    confirmBinderOrder().catch(console.error);
+  });
+  els.binderTradeModeButton.addEventListener("click", toggleBinderTradeMarkingMode);
+  els.binderCoverModeButton.addEventListener("click", toggleBinderCoverEditorMode);
+  els.binderFrontCoverUpload.addEventListener("change", () => {
+    handleBinderCoverArtworkUpload("front").catch(console.error);
+  });
+  els.binderFrontCoverRemove.addEventListener("click", () => removeBinderCoverArtwork("front"));
+  els.binderFrontCoverZoom.addEventListener("input", () => handleBinderCoverArtworkZoom("front"));
+  els.binderFrontCoverRotation.addEventListener("input", () => handleBinderCoverArtworkRotation("front"));
+  els.binderFrontCoverPreview.addEventListener("pointerdown", (event) => {
+    startBinderCoverPreviewInteraction(event, "front");
+  });
+  els.binderBackCoverUpload.addEventListener("change", () => {
+    handleBinderCoverArtworkUpload("back").catch(console.error);
+  });
+  els.binderBackCoverRemove.addEventListener("click", () => removeBinderCoverArtwork("back"));
+  els.binderBackCoverZoom.addEventListener("input", () => handleBinderCoverArtworkZoom("back"));
+  els.binderBackCoverRotation.addEventListener("input", () => handleBinderCoverArtworkRotation("back"));
+  els.binderBackCoverPreview.addEventListener("pointerdown", (event) => {
+    startBinderCoverPreviewInteraction(event, "back");
+  });
+  els.binderInsideTextInput.addEventListener("input", handleBinderInsideTextInput);
+  els.binderInsideTextInput.addEventListener("select", updateBinderInsideLinkPopover);
+  els.binderInsideTextInput.addEventListener("keyup", updateBinderInsideLinkPopover);
+  els.binderInsideTextInput.addEventListener("pointerdown", startBinderInsideTextSelection);
+  els.binderInsideTextInput.addEventListener("click", handleBinderInsideTextClick);
+  els.binderInsideFontSize.addEventListener("input", handleBinderInsideFontSizeInput);
+  els.binderInsideTextRotation.addEventListener("input", handleBinderInsideTextRotationInput);
+  els.binderInsideTextBox.addEventListener("pointerdown", startBinderInsideTextBoxDrag);
+  els.binderInsideCoverPreview.addEventListener("pointerdown", (event) => {
+    startBinderCoverPreviewInteraction(event, "inside");
+  });
+  els.binderInsideLinkApply.addEventListener("click", addBinderInsideTextLink);
+  els.binderInsideLinkRemove.addEventListener("click", removeBinderInsideTextLink);
+  els.binderBaseColor.addEventListener("input", handleBinderBaseColorInput);
+  els.binderCoverTextColor.addEventListener("input", handleBinderCoverTextColorInput);
+  els.binderCoverEditor.addEventListener("click", handleBinderCoverStickerControlsClick);
+  els.binderCoverEditor.addEventListener("input", handleBinderCoverStickerControlsInput);
+  els.binderCoverEditor.addEventListener("change", endBinderCoverUndoCoalescing);
+  els.binderCoverEditor.addEventListener("keydown", handleBinderCoverStickerKeyboard);
+  els.binderStickerPickerClose.addEventListener("click", closeBinderStickerPicker);
+  els.binderStickerPicker.addEventListener("pointerdown", (event) => {
+    if (event.target === els.binderStickerPicker) closeBinderStickerPicker();
+  });
+  els.binderStickerPickerGallery.addEventListener("click", handleBinderStickerPickerClick);
+  els.binderOrderEditor.addEventListener("pointerdown", (event) => {
+    if (event.target === els.binderOrderEditor) closeBinderOrderEditor();
+  });
+  els.binderOrderPages.addEventListener("pointerdown", startBinderOrderDrag);
+  els.binderOrderEditor.addEventListener("lostpointercapture", cancelBinderOrderDrag);
+  els.binderOrderPages.addEventListener("click", handleBinderOrderCardClick);
+  els.binderOrderPages.addEventListener("dblclick", startBinderOrderPositionEdit);
+  els.binderOrderPages.addEventListener("keydown", handleBinderOrderCardKeydown);
+  document.addEventListener("pointermove", moveBinderOrderDrag, { passive: false, capture: true });
+  document.addEventListener("pointerup", finishBinderOrderDrag, { capture: true });
+  document.addEventListener("pointercancel", cancelBinderOrderDrag, { capture: true });
+  document.addEventListener("pointermove", moveBinderCoverInteraction, { passive: false, capture: true });
+  document.addEventListener("pointerup", finishBinderCoverInteraction, { capture: true });
+  document.addEventListener("pointerup", finishBinderInsideTextSelection, { capture: true });
+  document.addEventListener("pointercancel", finishBinderCoverInteraction, { capture: true });
+  document.addEventListener("pointercancel", finishBinderInsideTextSelection, { capture: true });
+  document.addEventListener("pointerdown", dismissBinderInsideLinkPopoverOnPointerDown);
+  document.addEventListener("selectionchange", handleBinderInsideTextSelectionChange);
+  window.addEventListener("blur", cancelBinderOrderDrag);
+  window.addEventListener("blur", finishBinderCoverInteraction);
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) cancelBinderOrderDrag();
+  });
+  document.addEventListener("keydown", handleBinderOrderEditorKeydown, { capture: true });
   els.walletSearchPanel.addEventListener("pointerdown", (event) => {
     if (event.target === els.walletSearchPanel) {
       setWalletSearchPanelOpen(false, { preserveMessage: true });
@@ -1900,8 +2285,13 @@ function initEvents() {
     if (!binderPageStatusInput || binderPageStatusInput.contains(event.target)) return;
     closeBinderPageStatusEdit();
   }, true);
+  document.addEventListener("pointerdown", (event) => {
+    if (!binderOrderPositionEdit?.input || binderOrderPositionEdit.input.contains(event.target)) return;
+    commitBinderOrderPositionEdit({ restoreFocus: false });
+  }, true);
   window.addEventListener("blur", () => {
     setTraitSortPickerOpen(false);
+    cancelBinderOrderDrag();
     cancelInterruptedPointerInteractions();
     cancelBinderFirstPageHold();
     cancelScreensaverHold();
@@ -2081,20 +2471,174 @@ function retryFailedBinderTextures() {
   }
 }
 
+function readGalleryUrlState(url = new URL(window.location.href)) {
+  const params = url.searchParams;
+  const sortCategory = String(params.get(GALLERY_SORT_QUERY_PARAM) || "").trim();
+  const traitCategory = String(params.get(GALLERY_TRAIT_CATEGORY_QUERY_PARAM) || "").trim();
+  const traitValue = String(params.get(GALLERY_TRAIT_VALUE_QUERY_PARAM) || "").trim();
+  const traitCollectionId = String(
+    params.get(GALLERY_TRAIT_COLLECTION_QUERY_PARAM) || ACTIVE_COLLECTION_ID,
+  ).trim();
+  return {
+    sortCategory,
+    traitCategory,
+    traitValue,
+    traitCollectionId,
+    hasParameters: [
+      GALLERY_SORT_QUERY_PARAM,
+      GALLERY_TRAIT_CATEGORY_QUERY_PARAM,
+      GALLERY_TRAIT_VALUE_QUERY_PARAM,
+      GALLERY_TRAIT_COLLECTION_QUERY_PARAM,
+    ].some((name) => params.has(name)),
+  };
+}
+
+async function prepareGalleryUrlState(state) {
+  if (!state?.hasParameters) return;
+  const collectionId = COLLECTION_CONFIGS[state.traitCollectionId]?.id || ACTIVE_COLLECTION_ID;
+  if (state.traitCategory && state.traitValue && traitFiltersEnabledForCollection(collectionId)) {
+    await Promise.all([
+      ensureCollectionCards(collectionId),
+      ensureCollectionTraits(collectionId),
+    ]);
+    return;
+  }
+  if (
+    state.sortCategory
+    && !["all", LISTED_SORT_VALUE, WALLET_TRADE_FILTER_VALUE].includes(state.sortCategory)
+    && TRAIT_FILTERS_ENABLED
+  ) {
+    await ensureCollectionTraits(ACTIVE_COLLECTION_ID);
+  }
+}
+
+function applyGalleryUrlState(state) {
+  const requestedSortCategory = getValidGallerySortCategory(state?.sortCategory);
+  const collectionId = COLLECTION_CONFIGS[state?.traitCollectionId]?.id || ACTIVE_COLLECTION_ID;
+  const requestedTraitCategory = String(state?.traitCategory || "").trim();
+  const requestedTraitValue = String(state?.traitValue || "").trim();
+  let nextTraitFilter = null;
+
+  if (
+    requestedTraitCategory
+    && requestedTraitValue
+    && traitFiltersEnabledForCollection(collectionId)
+  ) {
+    const matchedCategory = getTraitDisplayCategoryOptions(collectionId)
+      .find((option) => (
+        normalizeTraitValue(option.category) === normalizeTraitValue(requestedTraitCategory)
+      ));
+    if (matchedCategory) {
+      nextTraitFilter = {
+        collectionId,
+        category: matchedCategory.category,
+        value: requestedTraitValue,
+        normalizedValue: normalizeTraitValue(requestedTraitValue),
+        sourceCategories: getValidTraitFilterSourceCategories(
+          matchedCategory.sourceCategories,
+          matchedCategory.category,
+          collectionId,
+        ),
+      };
+    }
+  }
+
+  activeTraitFilter = nextTraitFilter;
+  favoritesOnly = false;
+  traitSearchOpen = false;
+  resetTraitSearchQuery();
+  traitSortCategory = nextTraitFilter
+    ? (collectionId === ACTIVE_COLLECTION_ID ? nextTraitFilter.category : "all")
+    : requestedSortCategory;
+  if (els.traitSortSelect) els.traitSortSelect.value = traitSortCategory;
+  updateFavoriteButtons();
+  updateTraitSearchState();
+  return Boolean(nextTraitFilter || requestedSortCategory !== "all");
+}
+
+function getValidGallerySortCategory(category) {
+  const value = String(category || "").trim();
+  if (!value || value === "all") return "all";
+  if (value === LISTED_SORT_VALUE) return LISTED_SORT_VALUE;
+  if (value === WALLET_TRADE_FILTER_VALUE) return WALLET_TRADE_FILTER_VALUE;
+  return TRAIT_FILTERS_ENABLED ? getValidTraitSortCategory(value) : "all";
+}
+
+function updateGalleryUrlFromState({ replace = false } = {}) {
+  const url = new URL(window.location.href);
+  url.searchParams.delete(GALLERY_SORT_QUERY_PARAM);
+  url.searchParams.delete(GALLERY_TRAIT_CATEGORY_QUERY_PARAM);
+  url.searchParams.delete(GALLERY_TRAIT_VALUE_QUERY_PARAM);
+  url.searchParams.delete(GALLERY_TRAIT_COLLECTION_QUERY_PARAM);
+
+  if (activeTraitFilter) {
+    url.searchParams.set(GALLERY_TRAIT_CATEGORY_QUERY_PARAM, activeTraitFilter.category);
+    url.searchParams.set(GALLERY_TRAIT_VALUE_QUERY_PARAM, activeTraitFilter.value);
+    if (activeTraitFilter.collectionId !== ACTIVE_COLLECTION_ID) {
+      url.searchParams.set(GALLERY_TRAIT_COLLECTION_QUERY_PARAM, activeTraitFilter.collectionId);
+    }
+  } else if (traitSortCategory !== "all") {
+    url.searchParams.set(GALLERY_SORT_QUERY_PARAM, traitSortCategory);
+  }
+
+  if (url.href === window.location.href) return;
+  const method = replace ? "replaceState" : "pushState";
+  window.history[method](window.history.state, "", url.href);
+}
+
+function activeCollectionMatchesCurrentPath() {
+  if (WALLET_ROUTE_ADDRESS) return window.location.pathname === `/${WALLET_ROUTE_ADDRESS}`;
+  const expected = new URL(ACTIVE_COLLECTION.path, window.location.origin).pathname.replace(/\/+$/, "");
+  const current = window.location.pathname.replace(/\/+$/, "");
+  return current === expected;
+}
+
+async function handleGalleryUrlNavigation() {
+  if (!activeCollectionMatchesCurrentPath()) return;
+  const token = ++galleryUrlNavigationToken;
+  const state = readGalleryUrlState();
+  await prepareGalleryUrlState(state);
+  if (token !== galleryUrlNavigationToken || !activeCollectionMatchesCurrentPath()) return;
+  applyGalleryUrlState(state);
+  resetBinderGalleryPosition();
+  if (!galleryOpen && state.hasParameters) {
+    setGalleryOpen(true);
+  } else if (galleryOpen) {
+    renderGallery();
+  }
+  queueSessionViewStateSave();
+}
+
 function populateTraitSortOptions() {
   if (HIDDEN_TRAIT_CATEGORIES.has(traitSortCategory)) traitSortCategory = "all";
-  els.traitSortSelect.disabled = !TRAIT_FILTERS_ENABLED;
+  els.traitSortSelect.disabled = false;
+  els.traitSortSelect.replaceChildren();
   els.traitSearchButton.disabled = !TRAIT_FILTERS_ENABLED;
   if (!TRAIT_FILTERS_ENABLED) {
     els.gallerySortControl.title = "Trait sorting is not available for this collection yet";
     els.traitSearchButton.title = "Trait search is not available for this collection yet";
   }
 
+  const tradeOption = document.createElement("option");
+  tradeOption.value = WALLET_TRADE_FILTER_VALUE;
+  tradeOption.textContent = "marked for trade";
+  els.traitSortSelect.append(tradeOption);
+  const listedOption = document.createElement("option");
+  listedOption.value = LISTED_SORT_VALUE;
+  listedOption.textContent = "listed";
+  els.traitSortSelect.append(listedOption);
+  const allOption = document.createElement("option");
+  allOption.value = "all";
+  allOption.textContent = "all";
+  els.traitSortSelect.append(allOption);
   const fragment = document.createDocumentFragment();
-  for (const { category } of TRAIT_FILTERS_ENABLED ? getTraitDisplayCategoryOptions() : []) {
+  const traitOptions = TRAIT_FILTERS_ENABLED ? getTraitDisplayCategoryOptions() : [];
+  for (const { category } of traitOptions) {
     const option = document.createElement("option");
     option.value = category;
-    option.textContent = category;
+    option.textContent = normalizeTraitValue(category) === "status"
+      ? "redeem status"
+      : category;
     fragment.append(option);
   }
   els.traitSortSelect.append(fragment);
@@ -2115,25 +2659,29 @@ function updateTraitSearchPlaceholder() {
 async function applyTraitSortSelection() {
   setTraitSortPickerOpen(false);
   const nextCategory = els.traitSortSelect.value || "all";
-  if (nextCategory !== "all") {
+  if (
+    nextCategory !== "all"
+    && nextCategory !== WALLET_TRADE_FILTER_VALUE
+    && nextCategory !== LISTED_SORT_VALUE
+  ) {
     els.traitSortSelect.disabled = true;
     try {
       await ensureCollectionTraits(ACTIVE_COLLECTION_ID);
     } finally {
-      els.traitSortSelect.disabled = !TRAIT_FILTERS_ENABLED;
+      els.traitSortSelect.disabled = false;
     }
   }
   activeTraitFilter = null;
   traitSearchOpen = false;
   resetTraitSearchQuery();
   traitSortCategory = nextCategory;
+  updateGalleryUrlFromState();
   updateTraitSearchState();
   resetBinderGalleryPosition();
   renderGallery();
 }
 
 function openTraitSortPicker() {
-  if (!TRAIT_FILTERS_ENABLED) return;
   setTraitSortPickerOpen(true);
   els.traitSortSelect.focus();
   if (typeof els.traitSortSelect.showPicker === "function") {
@@ -2314,15 +2862,19 @@ function getCardEffectProfile(card) {
   if (
     card?.collection !== "cardnft2"
     || !Number.isInteger(cardNumber)
-    || !isCardNft2SuperRare(cardNumber)
+    || (!isCardNft2Rare(cardNumber) && !isCardNft2SuperRare(cardNumber))
   ) {
     return {
       effectMode: CARD_EFFECT_MODE_DEFAULT,
       cardNumber: 0,
       needsEffectTextures: false,
+      usesProceduralHolo: false,
+      usesEngravingMask: false,
+      effectStrength: 1,
     };
   }
 
+  const superRare = isCardNft2SuperRare(cardNumber);
   const effectMode = CARD_NFT_2_HOLO_EFFECT_MODES_BY_REMAINDER[
     modulo(cardNumber, CARD_NFT_2_HOLO_EFFECT_MODES_BY_REMAINDER.length)
   ];
@@ -2330,8 +2882,19 @@ function getCardEffectProfile(card) {
   return {
     effectMode,
     cardNumber,
-    needsEffectTextures: true,
+    // Normal rares use the same moving holo families without the card-specific
+    // engraving pass. The downloaded foil + alpha mask remains SR-only.
+    needsEffectTextures: superRare,
+    usesProceduralHolo: !superRare,
+    usesEngravingMask: superRare,
+    effectStrength: superRare ? 1 : 0.42,
   };
+}
+
+function isCardNft2Rare(cardNumber) {
+  return cardNumber >= 1
+    && cardNumber <= CARD_NFT_2_RARE_CARD_ID_MAX
+    && !CARD_NFT_2_COMMON_ID_SET.has(cardNumber);
 }
 
 function isCardNft2SuperRare(cardNumber) {
@@ -2345,6 +2908,9 @@ function getCardBackEffectProfile(frontProfile) {
     effectMode: CARD_EFFECT_MODE_DEFAULT,
     cardNumber: frontProfile?.cardNumber || 0,
     needsEffectTextures: false,
+    usesProceduralHolo: false,
+    usesEngravingMask: false,
+    effectStrength: 1,
   };
 }
 
@@ -2352,9 +2918,11 @@ function applyCardEffectProfileToMesh(mesh, profile) {
   const uniforms = mesh?.material?.uniforms;
   if (!uniforms) return;
   uniforms.uEffectMode.value = profile.effectMode;
+  uniforms.uEffectStrength.value = profile.effectStrength ?? 1;
+  uniforms.uUseEngravingMask.value = profile.usesEngravingMask ? 1 : 0;
   uniforms.uFoilTexture.value = getCardPlaceholderTexture();
   uniforms.uMaskTexture.value = getCardPlaceholderTexture();
-  setCardEffectTextureUsage(mesh, 0, { immediate: true });
+  setCardEffectTextureUsage(mesh, profile.usesProceduralHolo ? 1 : 0, { immediate: true });
   updateCardEffectMaterialBlending(mesh, profile.effectMode);
 }
 
@@ -2374,9 +2942,10 @@ function updateCardEffectMaterialBlending(mesh, effectMode) {
         ? THREE.AdditiveBlending
         : THREE.NormalBlending;
     } else {
-      // Trainer and amazing-rare glare are intentionally dark compositing
-      // passes in mons.shop; multiply preserves their contrast in 3D.
+      // The trainer profile uses multiply in mons.shop. Amazing Rare uses an
+      // overlay pass, approximated separately with low-opacity normal blending.
       nextBlending = effectMode >= CARD_EFFECT_MODE_CARD_NFT_2_TRAINER_FULL_ART
+        && effectMode < CARD_EFFECT_MODE_CARD_NFT_2_AMAZING_RARE
         ? THREE.MultiplyBlending
         : THREE.NormalBlending;
     }
@@ -2887,32 +3456,39 @@ function syncIndividualCardModel(
   { load = true } = {},
 ) {
   const requestToken = (group?.userData?.individualCardModelToken || 0) + 1;
-  if (!group) return;
+  if (!group) return Promise.resolve(false);
   group.userData.individualCardModelToken = requestToken;
   removeIndividualCardModel(group);
-  setProceduralCardGroupVisible(group, true);
+  const modelPath = String(card?.model || "").trim();
+  const hideProceduralWhileLoading = load
+    && modelPath
+    && getIndividualCardModelRenderingProfile(card) === INDIVIDUAL_CARD_CLEAR_RESIN_PROFILE;
+  setProceduralCardGroupVisible(group, !hideProceduralWhileLoading);
   resetIndividualCardModelRenderingProfile();
   els.cardCanvas.dataset.modelState = "none";
   delete els.cardCanvas.dataset.model;
   updateIndividualCardTransmissionBackdrop();
 
-  const modelPath = String(card?.model || "").trim();
-  if (!modelPath || !load) return;
+  if (!modelPath || !load) {
+    const unavailablePromise = Promise.resolve(false);
+    group.userData.individualCardModelReadyPromise = unavailablePromise;
+    return unavailablePromise;
+  }
   const modelUrl = new URL(modelPath, import.meta.url).href;
   els.cardCanvas.dataset.modelState = "loading";
 
-  Promise.all([
+  const readyPromise = Promise.all([
     loadIndividualCardModelSource(modelUrl),
     prepareIndividualCardModelRenderingProfile(card),
   ])
-    .then(([source]) => {
+    .then(async ([source]) => {
       if (
         group !== cardGroup
         || applyToken !== cardApplyToken
         || group.userData.individualCardModelToken !== requestToken
         || CARDS[currentIndex] !== card
       ) {
-        return;
+        return false;
       }
 
       const modelRoot = createIndividualCardModelInstance(source);
@@ -2920,19 +3496,55 @@ function syncIndividualCardModel(
       group.add(modelRoot);
       setProceduralCardGroupVisible(group, false);
       applyIndividualCardModelRenderingProfile(card);
+      updateIndividualCardTransmissionBackdrop();
+
+      try {
+        resizeCardRenderer();
+        if (typeof cardRenderer.compileAsync === "function") {
+          await cardRenderer.compileAsync(cardScene, cardCamera);
+        } else if (typeof cardRenderer.compile === "function") {
+          cardRenderer.compile(cardScene, cardCamera);
+        }
+        cardRenderer.render(cardScene, cardCamera);
+        await nextAnimationFrame();
+      } catch {
+        // The normal render loop remains a safe fallback if eager preparation fails.
+      }
+      if (
+        group !== cardGroup
+        || applyToken !== cardApplyToken
+        || group.userData.individualCardModelToken !== requestToken
+        || CARDS[currentIndex] !== card
+      ) {
+        return false;
+      }
+
       els.cardCanvas.dataset.modelState = "ready";
       els.cardCanvas.dataset.model = modelUrl;
-      updateIndividualCardTransmissionBackdrop();
       startCardRenderLoop();
+      return true;
     })
     .catch((error) => {
-      if (group.userData.individualCardModelToken !== requestToken) return;
+      if (group.userData.individualCardModelToken !== requestToken) return false;
       console.warn(`Unable to load individual card model: ${modelPath}`, error);
       setProceduralCardGroupVisible(group, true);
       resetIndividualCardModelRenderingProfile();
       els.cardCanvas.dataset.modelState = "error";
       updateIndividualCardTransmissionBackdrop();
+      return false;
     });
+  group.userData.individualCardModelReadyPromise = readyPromise;
+  return readyPromise;
+}
+
+function prewarmIndividualCardModelAssets(card) {
+  const modelPath = String(card?.model || "").trim();
+  if (!modelPath) return Promise.resolve(false);
+  const modelUrl = new URL(modelPath, import.meta.url).href;
+  return Promise.all([
+    loadIndividualCardModelSource(modelUrl),
+    prepareIndividualCardModelRenderingProfile(card),
+  ]).then(() => true);
 }
 
 function loadIndividualCardModelSource(url) {
@@ -3822,13 +4434,26 @@ function consumeScreensaverHoldClick(button) {
 }
 
 function getScreensaverCollectionIds() {
-  return ACTIVE_COLLECTION?.introGroup === "evil"
+  if (WALLET_ROUTE_ADDRESS) {
+    return [...new Set(
+      (walletFilterCardIndexes || [])
+        .map((index) => CARDS[index]?.collection)
+        .filter((collectionId) => COLLECTION_CONFIGS[collectionId]),
+    )];
+  }
+  return usesEvilBinderPresentation()
     ? ["cardnft1", "cardnft2", "poncho"]
     : [ACTIVE_COLLECTION_ID];
 }
 
 async function getScreensaverCardIndexes() {
   const collectionIds = getScreensaverCollectionIds();
+  if (WALLET_ROUTE_ADDRESS) {
+    return {
+      collectionIds,
+      indexes: (walletFilterCardIndexes || []).slice(),
+    };
+  }
   await Promise.all(collectionIds.map(ensureCollectionCards));
   return {
     collectionIds,
@@ -3981,7 +4606,7 @@ function refillScreensaverCardBag() {
 }
 
 function refillScreensaverCollectionPickBag() {
-  const useEvilCollectionWeights = ACTIVE_COLLECTION?.introGroup === "evil";
+  const useEvilCollectionWeights = usesEvilBinderPresentation();
   screensaverCollectionPickBag = screensaverSourceCollectionIds.flatMap((collectionId) => {
     const weight = useEvilCollectionWeights
       ? (SCREENSAVER_EVIL_COLLECTION_SPAWN_WEIGHTS[collectionId] || 1)
@@ -5474,7 +6099,7 @@ function openScreensaverCardInIndividualView(cardIndex) {
 
   if (
     collectionId !== ACTIVE_COLLECTION_ID
-    && ACTIVE_COLLECTION?.introGroup === "evil"
+    && usesEvilBinderPresentation()
     && COLLECTION_CONFIGS[collectionId]?.introGroup === "evil"
   ) {
     commitActiveEvilBinderCollection(collectionId, {
@@ -5948,7 +6573,7 @@ function renderTraitPanel() {
     const tile = document.createElement("button");
     tile.className = "trait-tile";
     tile.type = "button";
-    if (traitFiltersEnabledForCollection(trait.collection)) {
+    if (trait.filterable !== false && traitFiltersEnabledForCollection(trait.collection)) {
       tile.title = `Show cards with ${trait.value}`;
       tile.addEventListener("click", () => openTraitFilteredGallery(trait));
     } else {
@@ -6068,12 +6693,13 @@ function applyTraitFilter(category, value, options = {}) {
   traitSortCategory = canShowSortCategory ? displayCategory : "all";
   els.traitSortSelect.value = traitSortCategory;
   favoritesOnly = false;
-  resetWalletCardFilter();
+  if (!WALLET_ROUTE_ADDRESS) resetWalletCardFilter();
   traitSearchOpen = false;
   resetTraitSearchQuery();
   setGalleryViewMode(true, { render: false });
   updateFavoriteButtons();
   updateTraitSearchState();
+  if (options.updateUrl !== false) updateGalleryUrlFromState();
   resetBinderGalleryPosition();
   setGalleryOpen(true);
 }
@@ -6087,14 +6713,43 @@ function getCardTraitEntries(index) {
   for (let offset = 0; offset + 1 < row.length; offset += 2) {
     const category = String(collection.traitCategories[row[offset]] || "").trim();
     const value = String(dictionary[row[offset + 1]] || "").trim();
-    if (!category || HIDDEN_TRAIT_CATEGORIES.has(category) || !isVisibleTraitValue(value)) continue;
+    if (
+      !category
+      || HIDDEN_TRAIT_CATEGORIES.has(category)
+      || normalizeTraitValue(category) === "status"
+      || !isVisibleTraitValue(value)
+    ) continue;
     entries.push({
       collection: collection.id,
       category,
       value,
     });
   }
-  return orderTraitPanelEntries(entries);
+  const orderedEntries = orderTraitPanelEntries(entries);
+  const statusValue = getCardStatusTraitValue(card?.status);
+  if (statusValue) {
+    orderedEntries.unshift({
+      collection: collection.id,
+      category: "Status",
+      value: statusValue,
+      filterable: false,
+    });
+  }
+  orderedEntries.push({
+    collection: collection.id,
+    category: "listed?",
+    value: card?.listed ? "true" : "false",
+    filterable: false,
+  });
+  return orderedEntries;
+}
+
+function getCardStatusTraitValue(status) {
+  const normalizedStatus = normalizeTraitValue(status);
+  if (normalizedStatus === "in pack") return "Still in pack";
+  if (normalizedStatus === "redeemed") return "Redeemed";
+  if (normalizedStatus === "pulled") return "Pulled";
+  return "";
 }
 
 function orderTraitPanelEntries(entries) {
@@ -6143,6 +6798,20 @@ function getTraitPanelSourceCategoryOrder(entry) {
 function getTraitOccurrenceCount(category, value, collectionId = ACTIVE_COLLECTION_ID) {
   const collection = COLLECTION_CONFIGS[collectionId] || ACTIVE_COLLECTION;
   const normalizedValue = normalizeTraitValue(value);
+  if (normalizeTraitValue(category) === "listed?") {
+    return (collection.cards || []).reduce((total, card) => (
+      total + (String(Boolean(card?.listed)) === normalizedValue ? 1 : 0)
+    ), 0);
+  }
+  if (normalizeTraitValue(category) === "status") {
+    return (collection.cards || []).reduce((total, card) => (
+      total + (
+        normalizeTraitValue(getCardStatusTraitValue(card?.status)) === normalizedValue
+          ? 1
+          : 0
+      )
+    ), 0);
+  }
   if (!collection.traits || !normalizedValue) return 0;
   if (!collection.traitOccurrenceCountCache) buildTraitOccurrenceCountCache(collection);
   const displayCategory = getTraitSearchDisplayCategory(category, collection.id);
@@ -6444,6 +7113,9 @@ function restoreRememberedBinderViewFocus() {
 }
 
 function setGalleryOpen(open, options = {}) {
+  if (!open && binderOrderEditorOpen) {
+    closeBinderOrderEditor({ restoreFocus: false });
+  }
   resetViewSwitchWheelDistances();
   resetTouchGestures();
   binderOuterFlipState = null;
@@ -6486,6 +7158,7 @@ function setGalleryOpen(open, options = {}) {
     startCardRenderLoop();
   }
   updateCardNameJumpState();
+  updateBinderOrderEditorAvailability();
   queueSessionViewStateSave();
 }
 
@@ -6503,8 +7176,13 @@ function resetGalleryFilters({ preserveFavorites = false } = {}) {
 }
 
 function clearGallerySortAndFilters() {
+  if (WALLET_ROUTE_ADDRESS && walletFilterCardIndexSet) {
+    window.location.assign(new URL("/", window.location.origin).href);
+    return;
+  }
   setTraitSortPickerOpen(false);
   resetGalleryFilters({ preserveFavorites: true });
+  updateGalleryUrlFromState();
   resetBinderGalleryPosition();
   renderGallery();
 }
@@ -6518,6 +7196,7 @@ async function toggleFavoriteFilter() {
     traitSortCategory = "all";
     resetWalletCardFilter();
     if (els.traitSortSelect) els.traitSortSelect.value = "all";
+    updateGalleryUrlFromState();
   }
   traitSearchOpen = false;
   resetTraitSearchQuery();
@@ -6614,7 +7293,12 @@ function hasActiveGalleryMode() {
 }
 
 function hasActiveBinderIntroSuppressor() {
-  return favoritesOnly || hasActiveGallerySortOrFilter();
+  return Boolean(
+    favoritesOnly
+    || activeTraitFilter
+    || traitSortCategory !== "all"
+    || (!WALLET_ROUTE_ADDRESS && walletFilterCardIndexSet)
+  );
 }
 
 function updateTraitSearchButtonLabel() {
@@ -6640,6 +7324,7 @@ function toggleWalletSearchPanel() {
     updateTraitSearchState();
     renderGallery();
   }
+  if (!walletSearchOpen) refreshCompatibleSolanaWallets();
   setWalletSearchPanelOpen(!walletSearchOpen);
 }
 
@@ -6649,7 +7334,10 @@ function setWalletSearchPanelOpen(open, options = {}) {
   if (els.walletSearchPanel) {
     els.walletSearchPanel.hidden = !nextOpen;
     els.walletSearchPanel.setAttribute("aria-hidden", String(!nextOpen));
-    els.walletSearchPanel.setAttribute("aria-busy", String(walletSearchLoading && nextOpen));
+    els.walletSearchPanel.setAttribute(
+      "aria-busy",
+      String((walletSearchLoading || walletAuthLoading) && nextOpen),
+    );
   }
   if (els.walletSearchButton) {
     els.walletSearchButton.setAttribute("aria-expanded", String(nextOpen));
@@ -6657,7 +7345,9 @@ function setWalletSearchPanelOpen(open, options = {}) {
 
   if (!nextOpen) {
     walletSearchToken += 1;
+    walletProviderListOpen = false;
     setWalletSearchLoading(false);
+    updateWalletAuthUi();
     return;
   }
 
@@ -6665,7 +7355,12 @@ function setWalletSearchPanelOpen(open, options = {}) {
     els.walletSearchMessage.textContent = WALLET_SEARCH_PROMPT;
   }
   setWalletSearchLoading(false);
-  requestAnimationFrame(() => els.walletAddressInput.focus());
+  refreshCompatibleSolanaWallets();
+  updateWalletAuthUi();
+  requestAnimationFrame(() => {
+    if (walletAuthSession?.authenticated) els.walletConnectButton.focus();
+    else els.walletAddressInput.focus();
+  });
 }
 
 function updateWalletSearchState() {
@@ -6686,9 +7381,7 @@ function updateWalletSearchState() {
 
 function setWalletSearchLoading(loading) {
   walletSearchLoading = Boolean(loading);
-  els.walletAddressInput.disabled = walletSearchLoading;
-  els.walletSearchSubmitButton.disabled = walletSearchLoading;
-  els.walletSearchPanel.setAttribute("aria-busy", String(walletSearchLoading && walletSearchOpen));
+  updateWalletDialogBusyState();
 }
 
 async function submitWalletSearch() {
@@ -6702,35 +7395,17 @@ async function submitWalletSearch() {
   const token = ++walletSearchToken;
   setWalletSearchLoading(true);
   els.walletSearchMessage.textContent = WALLET_SEARCH_BUSY_MESSAGE;
-
-  try {
-    await ensureAllCollectionCards();
-    if (token !== walletSearchToken) return;
-    const walletResult = await findWalletCardIndexes(address);
-    if (token !== walletSearchToken) return;
-
-    if (!walletResult.indexes.length) {
-      els.walletSearchMessage.textContent = WALLET_SEARCH_EMPTY_MESSAGE;
-      els.walletAddressInput.focus();
-      return;
-    }
-
-    applyWalletCardFilter(address, walletResult);
-    setWalletSearchPanelOpen(false, { preserveMessage: true });
-  } catch {
-    if (token !== walletSearchToken) return;
-    els.walletSearchMessage.textContent = WALLET_SEARCH_ERROR_MESSAGE;
-    els.walletAddressInput.focus();
-  } finally {
-    if (token === walletSearchToken) setWalletSearchLoading(false);
-  }
+  await Promise.resolve();
+  if (token !== walletSearchToken) return;
+  navigateToWalletBinder(address);
 }
 
-function applyWalletCardFilter(address, { indexes, matchedMints }) {
+function applyWalletCardFilter(address, { indexes, matchedMints }, options = {}) {
   walletFilterAddress = address;
-  walletFilterCardIndexes = [...new Set(indexes)].sort(compareCardIndexes);
+  walletFilterCardIndexes = orderWalletCardIndexes(indexes, options.cardOrder);
   walletFilterCardIndexSet = new Set(walletFilterCardIndexes);
   walletMatchedMintByCardIndex = new Map(matchedMints);
+  walletTradeCardStableIds = normalizeBinderStableIdSet(options.tradeCardIds);
   favoritesOnly = false;
   activeTraitFilter = null;
   traitSearchOpen = false;
@@ -6742,6 +7417,3446 @@ function applyWalletCardFilter(address, { indexes, matchedMints }) {
   updateTraitSearchState();
   resetBinderGalleryPosition();
   renderGallery();
+  updateBinderOrderEditorAvailability();
+}
+
+function updateWalletDialogBusyState() {
+  const busy = walletSearchLoading || walletAuthLoading;
+  els.walletAddressInput.disabled = busy;
+  els.walletSearchSubmitButton.disabled = busy;
+  els.walletConnectButton.disabled = busy;
+  els.walletProviderList.toggleAttribute("inert", busy);
+  els.walletSearchPanel.setAttribute("aria-busy", String(busy && walletSearchOpen));
+}
+
+function refreshCompatibleSolanaWallets() {
+  compatibleSolanaWallets = getCompatibleSolanaWallets();
+  if (!compatibleSolanaWallets.length) walletProviderListOpen = false;
+  renderWalletProviderList();
+}
+
+async function initializeWalletAuth() {
+  refreshCompatibleSolanaWallets();
+  walletRegistryUnsubscribe?.();
+  walletRegistryUnsubscribe = watchCompatibleSolanaWallets((wallets) => {
+    compatibleSolanaWallets = wallets;
+    if (!wallets.length) walletProviderListOpen = false;
+    renderWalletProviderList();
+    updateWalletAuthUi();
+  });
+
+  try {
+    const session = await getWalletAuthSession(WALLET_AUTH_API_BASE_URL);
+    if (session?.authenticated) {
+      walletAuthSession = session;
+      walletAuthAccountAddress = session.profile?.walletAddress || "";
+      walletConnectMessage = `Wallet verified: ${shortenSolAddress(walletAuthAccountAddress)}`;
+    }
+  } catch {
+    // Public wallet browsing remains available while the optional login API is unavailable.
+  }
+  updateWalletAuthUi();
+}
+
+function handleWalletConnectButtonClick() {
+  if (walletAuthLoading) return;
+  const sessionAddress = walletAuthSession?.profile?.walletAddress;
+  if (walletAuthSession?.authenticated && isPossibleSolanaAddress(sessionAddress)) {
+    navigateToWalletBinder(sessionAddress);
+    return;
+  }
+
+  refreshCompatibleSolanaWallets();
+  if (!compatibleSolanaWallets.length) {
+    walletConnectMessage = WALLET_CONNECT_NO_EXTENSION_MESSAGE;
+    walletProviderListOpen = false;
+    updateWalletAuthUi();
+    return;
+  }
+  if (compatibleSolanaWallets.length === 1) {
+    startWalletSignIn(compatibleSolanaWallets[0]).catch(console.error);
+    return;
+  }
+
+  walletProviderListOpen = !walletProviderListOpen;
+  walletConnectMessage = walletProviderListOpen
+    ? "Choose an installed wallet:"
+    : WALLET_CONNECT_PROMPT;
+  updateWalletAuthUi();
+  if (walletProviderListOpen) {
+    requestAnimationFrame(() => els.walletProviderList.querySelector("button")?.focus());
+  }
+}
+
+function handleWalletProviderListClick(event) {
+  const button = event.target.closest("button[data-wallet-index]");
+  if (!button || !els.walletProviderList.contains(button)) return;
+  const wallet = compatibleSolanaWallets[Number(button.dataset.walletIndex)];
+  if (wallet) startWalletSignIn(wallet).catch(console.error);
+}
+
+async function startWalletSignIn(wallet) {
+  walletAuthLoading = true;
+  walletProviderListOpen = false;
+  walletConnectMessage = WALLET_CONNECT_BUSY_MESSAGE;
+  updateWalletAuthUi();
+  ensureAllCollectionCards().catch(() => {});
+
+  try {
+    const result = await signInWithSolanaWallet(wallet, WALLET_AUTH_API_BASE_URL);
+    const address = result.session?.profile?.walletAddress || result.account?.address || "";
+    if (!isPossibleSolanaAddress(address)) throw new Error("Wallet returned an invalid address");
+    walletAuthSession = result.session;
+    walletAuthWallet = result.wallet;
+    walletAuthAccountAddress = address;
+    bindWalletAccountChanges(result.wallet);
+    walletConnectMessage = `Wallet verified: ${shortenSolAddress(address)}`;
+    walletAuthLoading = false;
+    updateWalletAuthUi();
+    navigateToWalletBinder(address);
+  } catch (error) {
+    walletConnectMessage = getWalletConnectErrorMessage(error);
+    walletAuthLoading = false;
+    updateWalletAuthUi();
+  }
+}
+
+function bindWalletAccountChanges(wallet) {
+  walletAccountUnsubscribe?.();
+  walletAccountUnsubscribe = subscribeToWalletAccountChanges(wallet, (account) => {
+    if (account?.address === walletAuthAccountAddress) return;
+    signOutCurrentWallet({
+      disconnect: false,
+      message: "Wallet account changed. Sign in again to edit its binder.",
+    }).catch(console.error);
+  });
+}
+
+async function signOutCurrentWallet(options = {}) {
+  const session = walletAuthSession;
+  const wallet = walletAuthWallet;
+  walletAccountUnsubscribe?.();
+  walletAccountUnsubscribe = null;
+  walletAuthSession = null;
+  walletAuthWallet = null;
+  walletAuthAccountAddress = "";
+  walletProviderListOpen = false;
+  walletConnectMessage = options.message || WALLET_CONNECT_PROMPT;
+  updateWalletAuthUi();
+
+  try {
+    if (session?.authenticated) {
+      await signOutWalletAuthSession(WALLET_AUTH_API_BASE_URL, session.csrfToken || "");
+    }
+  } catch {
+    // Local owner controls are cleared even if an already-expired session cannot be revoked.
+  }
+  if (options.disconnect !== false) await disconnectSolanaWallet(wallet);
+}
+
+function updateWalletAuthUi() {
+  if (!els.walletConnectButton) return;
+  const address = walletAuthSession?.profile?.walletAddress || "";
+  const authenticated = Boolean(walletAuthSession?.authenticated && address);
+  els.walletConnectButton.classList.toggle("is-connected", authenticated);
+  els.walletConnectButton.setAttribute("aria-expanded", String(walletProviderListOpen));
+  els.walletConnectButtonLabel.textContent = authenticated
+    ? `Open ${shortenSolAddress(address)}`
+    : walletAuthLoading
+      ? "Waiting for wallet..."
+      : "Connect Solana wallet";
+  els.walletConnectStatus.textContent = walletConnectMessage;
+  els.walletSignOutButton.hidden = !authenticated;
+  renderWalletProviderList();
+  updateWalletDialogBusyState();
+  updateBinderOrderEditorAvailability();
+}
+
+function isCurrentWalletBinderOwner() {
+  const sessionAddress = walletAuthSession?.profile?.walletAddress || "";
+  return Boolean(
+    WALLET_ROUTE_ADDRESS
+    && galleryOpen
+    && !walletRouteLoading
+    && !walletRouteLoadFailed
+    && Array.isArray(walletFilterCardIndexes)
+    && walletAuthSession?.authenticated
+    && sessionAddress === WALLET_ROUTE_ADDRESS,
+  );
+}
+
+function updateBinderOrderEditorAvailability() {
+  if (!els.binderOrderEditButton) return;
+  const available = isCurrentWalletBinderOwner();
+  els.binderOrderEditButton.hidden = !available;
+  els.binderOrderEditButton.setAttribute("aria-expanded", String(binderOrderEditorOpen));
+  if (!available && binderOrderEditorOpen) {
+    closeBinderOrderEditor({ force: true, restoreFocus: false });
+  }
+}
+
+async function openBinderOrderEditor() {
+  if (!isCurrentWalletBinderOwner() || binderOrderEditorOpen) return;
+  if (walletSearchOpen) setWalletSearchPanelOpen(false, { preserveMessage: true });
+  if (traitSearchOpen) {
+    traitSearchOpen = false;
+    resetTraitSearchQuery();
+    updateTraitSearchState();
+    renderGallery();
+  }
+
+  binderOrderReturnFocus = document.activeElement instanceof HTMLElement
+    ? document.activeElement
+    : els.binderOrderEditButton;
+  binderOrderEditorOpen = true;
+  binderOrderEditorLoading = true;
+  binderOrderEditorSaving = false;
+  binderOrderOwnerDocument = null;
+  binderOrderDraftIndexes = [];
+  binderOrderInitialStableIds = [];
+  binderTradeMarkingMode = false;
+  binderTradeDraftStableIds = new Set();
+  binderTradeInitialStableIds = new Set();
+  binderOrderKeyboardStableId = "";
+  binderCustomizationMode = "cards";
+  binderCoverDraft = null;
+  binderCoverInitialJson = "";
+  resetBinderCoverUndoHistory();
+  binderOutsideTextBoxEnabled.front = false;
+  binderOutsideTextBoxEnabled.back = false;
+  binderCoverSelectedStickerMint = "";
+  binderStickerPickerOpen = false;
+  binderStickerPickerLoading = false;
+  const token = ++binderOrderEditorToken;
+
+  els.body.classList.add("is-binder-order-editor");
+  els.binderOrderEditor.hidden = false;
+  els.binderOrderEditor.setAttribute("aria-hidden", "false");
+  els.binderOrderEditButton.setAttribute("aria-expanded", "true");
+  els.binderOrderDialog.classList.add("is-loading");
+  els.binderOrderDialog.classList.remove("is-trade-marking", "is-cover-editing");
+  els.binderOrderDialog.setAttribute("aria-busy", "true");
+  els.binderTradeModeButton.setAttribute("aria-pressed", "false");
+  els.binderTradeModeButton.textContent = "mark for trade";
+  setBinderCustomizationMode("cards", { focus: false });
+  els.binderOrderInstructions.textContent = "Drag cards into place, or double-click an order number to type a new position. On touch, use the dotted handle. Each group of nine is one binder page.";
+  renderBinderOrderEditorMessage("Loading your held cards…");
+  setBinderOrderStatus("Loading your binder…");
+  refreshBinderOrderConfirmButton();
+  requestAnimationFrame(() => els.binderOrderCloseButton.focus());
+
+  try {
+    const ownerDocument = await getOwnerWalletBinder(WALLET_AUTH_API_BASE_URL);
+    if (token !== binderOrderEditorToken || !binderOrderEditorOpen) return;
+    if (
+      ownerDocument?.walletAddress !== WALLET_ROUTE_ADDRESS
+      || !isCurrentWalletBinderOwner()
+    ) {
+      throw new Error("This wallet session does not own the binder being viewed.");
+    }
+
+    binderOrderOwnerDocument = ownerDocument;
+    syncWalletAuthCsrfToken(ownerDocument.csrfToken);
+    binderOrderDraftIndexes = orderWalletCardIndexes(
+      walletFilterCardIndexes,
+      ownerDocument.cardOrder,
+    );
+    binderOrderInitialStableIds = getBinderOrderStableIds(binderOrderDraftIndexes);
+    binderTradeDraftStableIds = normalizeBinderStableIdSet(ownerDocument.tradeCardIds);
+    binderTradeInitialStableIds = new Set(binderTradeDraftStableIds);
+    binderCoverDraft = normalizeBinderCoverSettings(ownerDocument.cover);
+    resetBinderCoverUndoHistory();
+    binderOutsideTextBoxEnabled.front = Boolean(binderCoverDraft.frontText);
+    binderOutsideTextBoxEnabled.back = Boolean(binderCoverDraft.backText);
+    binderCoverInitialJson = serializeBinderCoverSettings(binderCoverDraft);
+    binderOrderEditorLoading = false;
+    els.binderOrderDialog.classList.remove("is-loading");
+    els.binderOrderDialog.setAttribute("aria-busy", "false");
+    renderBinderOrderEditorCards();
+    refreshBinderOrderConfirmButton();
+    const pageCount = Math.ceil(binderOrderDraftIndexes.length / BINDER_SIDE_SLOTS);
+    setBinderOrderStatus(
+      binderOrderDraftIndexes.length
+        ? `${binderOrderDraftIndexes.length} held card${binderOrderDraftIndexes.length === 1 ? "" : "s"} across ${pageCount} page${pageCount === 1 ? "" : "s"}.`
+        : "No supported cards are currently held by this wallet.",
+    );
+  } catch (error) {
+    if (token !== binderOrderEditorToken || !binderOrderEditorOpen) return;
+    if (error?.code === "authentication_required") {
+      invalidateWalletAuthSession("Wallet login expired. Reconnect to edit your binder.");
+      return;
+    }
+    binderOrderEditorLoading = false;
+    els.binderOrderDialog.classList.remove("is-loading");
+    els.binderOrderDialog.setAttribute("aria-busy", "false");
+    renderBinderOrderEditorMessage("Your card order could not be loaded.");
+    setBinderOrderStatus(getBinderOrderErrorMessage(error, "load"), { error: true });
+    refreshBinderOrderConfirmButton();
+  }
+}
+
+function closeBinderOrderEditor(options = {}) {
+  if (!binderOrderEditorOpen) return;
+  if (binderOrderEditorSaving && !options.force) return;
+  binderOrderEditorToken += 1;
+  closeBinderStickerPicker({ restoreFocus: false });
+  cancelBinderOrderPositionEdit({ restoreFocus: false });
+  cancelBinderOrderDrag();
+  binderOrderEditorOpen = false;
+  binderOrderEditorLoading = false;
+  binderOrderEditorSaving = false;
+  binderOrderOwnerDocument = null;
+  binderOrderDraftIndexes = [];
+  binderOrderInitialStableIds = [];
+  binderTradeMarkingMode = false;
+  binderTradeDraftStableIds = new Set();
+  binderTradeInitialStableIds = new Set();
+  binderOrderKeyboardStableId = "";
+  binderCustomizationMode = "cards";
+  finishBinderCoverInteraction();
+  hideBinderInsideLinkPopover();
+  binderCoverPreviewResizeObserver?.disconnect();
+  binderCoverPreviewResizeObserver = null;
+  binderCoverDraft = null;
+  binderCoverInitialJson = "";
+  resetBinderCoverUndoHistory();
+  binderOutsideTextBoxEnabled.front = false;
+  binderOutsideTextBoxEnabled.back = false;
+  binderCoverSelectedStickerMint = "";
+  els.body.classList.remove("is-binder-order-editor");
+  els.binderOrderEditor.hidden = true;
+  els.binderOrderEditor.setAttribute("aria-hidden", "true");
+  els.binderOrderDialog.classList.remove("is-loading", "is-saving", "is-trade-marking", "is-cover-editing");
+  els.binderOrderDialog.setAttribute("aria-busy", "false");
+  els.binderOrderEditButton.setAttribute("aria-expanded", "false");
+  stopBinderOrderCardAnimations();
+  els.binderOrderPages.replaceChildren();
+  binderOrderCardNodes.clear();
+  els.binderOrderConfirmButton.hidden = true;
+  els.binderOrderConfirmButton.disabled = false;
+  els.binderTradeModeButton.disabled = false;
+  els.binderTradeModeButton.setAttribute("aria-pressed", "false");
+  els.binderTradeModeButton.textContent = "mark for trade";
+  els.binderCoverModeButton.textContent = "edit cover";
+  els.binderCoverEditor.hidden = true;
+  els.binderOrderScroller.hidden = false;
+  els.binderTradeModeButton.hidden = false;
+  els.binderFrontCoverUpload.value = "";
+  els.binderBackCoverUpload.value = "";
+  els.binderOrderCloseButton.disabled = false;
+
+  const returnFocus = binderOrderReturnFocus;
+  binderOrderReturnFocus = null;
+  if (
+    options.restoreFocus !== false
+    && returnFocus instanceof HTMLElement
+    && returnFocus.isConnected
+    && !returnFocus.hidden
+  ) {
+    requestAnimationFrame(() => returnFocus.focus());
+  }
+}
+
+function renderBinderOrderEditorMessage(message) {
+  binderOrderCardNodes.clear();
+  const paragraph = document.createElement("p");
+  paragraph.className = "binder-order-empty";
+  paragraph.textContent = message;
+  els.binderOrderPages.replaceChildren(paragraph);
+}
+
+function renderBinderOrderEditorCards() {
+  if (!binderOrderEditorOpen || binderOrderEditorLoading) return;
+  if (!binderOrderDraftIndexes.length) {
+    renderBinderOrderEditorMessage("No supported cards found in this wallet.");
+    return;
+  }
+
+  binderOrderCardNodes.clear();
+  const fragment = document.createDocumentFragment();
+  const totalCards = binderOrderDraftIndexes.length;
+  const totalPages = Math.ceil(totalCards / BINDER_SIDE_SLOTS);
+  for (let pageIndex = 0; pageIndex < totalPages; pageIndex += 1) {
+    const section = document.createElement("section");
+    section.className = "binder-order-page";
+    section.setAttribute("aria-label", `Binder page ${pageIndex + 1}`);
+
+    const heading = document.createElement("h3");
+    heading.className = "binder-order-page-heading";
+    heading.textContent = `Page ${pageIndex + 1}`;
+
+    const grid = document.createElement("div");
+    grid.className = "binder-order-page-grid";
+    const start = pageIndex * BINDER_SIDE_SLOTS;
+    const end = Math.min(start + BINDER_SIDE_SLOTS, totalCards);
+    for (let position = start; position < end; position += 1) {
+      const cardIndex = binderOrderDraftIndexes[position];
+      const card = CARDS[cardIndex];
+      if (!card) continue;
+      const stableId = String(card.stableId || "");
+      const button = createBinderOrderCardButton(cardIndex, position);
+      updateBinderOrderCardButton(button, cardIndex, position);
+      binderOrderCardNodes.set(stableId, button);
+      grid.append(button);
+    }
+    section.append(heading, grid);
+    fragment.append(section);
+  }
+  els.binderOrderPages.replaceChildren(fragment);
+}
+
+function createBinderOrderCardButton(cardIndex, position) {
+  const card = CARDS[cardIndex];
+  const button = document.createElement("div");
+  button.className = "binder-order-card";
+  button.tabIndex = 0;
+  button.setAttribute("role", "button");
+  button.setAttribute("aria-keyshortcuts", "Enter Space F2 ArrowLeft ArrowRight ArrowUp ArrowDown PageUp PageDown");
+
+  const image = document.createElement("img");
+  image.alt = "";
+  image.decoding = "async";
+  image.draggable = false;
+  image.loading = position < BINDER_PAGE_SLOTS ? "eager" : "lazy";
+  if (position < BINDER_PAGE_SLOTS) image.fetchPriority = "high";
+  image.src = cardStillAssetUrl(card);
+
+  const positionLabel = createBinderOrderPositionLabel(position);
+
+  const handle = document.createElement("span");
+  handle.className = "binder-order-card-handle";
+  handle.setAttribute("aria-hidden", "true");
+  handle.textContent = "⠿";
+  button.append(image, positionLabel, handle);
+  return button;
+}
+
+function createBinderOrderPositionLabel(position) {
+  const label = document.createElement("span");
+  label.className = "binder-order-card-position";
+  label.setAttribute("aria-hidden", "true");
+  label.title = "Double-click to edit position";
+  label.textContent = String(position + 1);
+  return label;
+}
+
+function updateBinderOrderCardButton(button, cardIndex, position) {
+  const card = CARDS[cardIndex];
+  if (!button || !card) return;
+  const stableId = String(card.stableId || "");
+  const markedForTrade = binderTradeDraftStableIds.has(stableId);
+  button.dataset.cardIndex = String(cardIndex);
+  button.dataset.stableId = stableId;
+  button.dataset.orderPosition = String(position);
+  button.setAttribute(
+    "aria-keyshortcuts",
+    binderTradeMarkingMode
+      ? "Space Enter"
+      : "Space F2 ArrowLeft ArrowRight ArrowUp ArrowDown PageUp PageDown",
+  );
+  button.setAttribute("aria-posinset", String(position + 1));
+  button.setAttribute("aria-setsize", String(binderOrderDraftIndexes.length));
+  button.setAttribute(
+    "aria-label",
+    binderTradeMarkingMode
+      ? `${card.title}. ${markedForTrade ? "Marked" : "Not marked"} for trade. Press Space or Enter to toggle.`
+      : `${card.title}. Position ${position + 1} of ${binderOrderDraftIndexes.length}. Double-click the position number or press F2 to enter a position. Press Space, then use arrow keys to move.`,
+  );
+  button.setAttribute(
+    "aria-pressed",
+    String(binderTradeMarkingMode ? markedForTrade : stableId === binderOrderKeyboardStableId),
+  );
+  button.classList.toggle("is-keyboard-selected", stableId === binderOrderKeyboardStableId);
+  button.classList.toggle("is-marked-for-trade", markedForTrade);
+  button.classList.toggle("is-dragging", stableId === binderOrderDrag?.stableId);
+  const positionLabel = button.querySelector(".binder-order-card-position");
+  if (positionLabel) positionLabel.textContent = String(position + 1);
+}
+
+function startBinderOrderPositionEdit(event) {
+  if (
+    !binderOrderEditorOpen
+    || binderOrderEditorLoading
+    || binderOrderEditorSaving
+    || binderTradeMarkingMode
+    || binderOrderDrag
+  ) return;
+  const label = event.target.closest(".binder-order-card-position");
+  const cardNode = label?.closest(".binder-order-card");
+  if (!label || !cardNode || !els.binderOrderPages.contains(cardNode)) return;
+  event.preventDefault();
+  event.stopPropagation();
+  beginBinderOrderPositionEdit(cardNode, label);
+}
+
+function beginBinderOrderPositionEdit(cardNode, positionLabel = null) {
+  if (
+    !cardNode
+    || binderOrderEditorLoading
+    || binderOrderEditorSaving
+    || binderTradeMarkingMode
+  ) return;
+  if (binderOrderPositionEdit?.cardNode === cardNode) {
+    binderOrderPositionEdit.input.select();
+    return;
+  }
+  if (binderOrderPositionEdit) {
+    commitBinderOrderPositionEdit({ restoreFocus: false });
+  }
+
+  const stableId = String(cardNode.dataset.stableId || "");
+  const position = binderOrderDraftIndexes.findIndex((index) => (
+    CARDS[index]?.stableId === stableId
+  ));
+  const label = positionLabel || cardNode.querySelector(".binder-order-card-position");
+  if (!stableId || position < 0 || !label) return;
+
+  cancelBinderOrderDrag();
+  binderOrderKeyboardStableId = "";
+  renderBinderOrderKeyboardSelection();
+
+  const input = document.createElement("input");
+  input.type = "text";
+  input.className = "binder-order-position-input";
+  input.inputMode = "numeric";
+  input.pattern = "[0-9]*";
+  input.autocomplete = "off";
+  input.spellcheck = false;
+  input.maxLength = String(binderOrderDraftIndexes.length).length;
+  input.value = String(position + 1);
+  input.setAttribute("aria-label", `Move card to position, from 1 to ${binderOrderDraftIndexes.length}`);
+  label.replaceWith(input);
+  cardNode.classList.add("is-position-editing");
+  binderOrderPositionEdit = { input, cardNode, stableId };
+
+  input.addEventListener("keydown", (inputEvent) => {
+    if (inputEvent.key === "Enter") {
+      inputEvent.preventDefault();
+      inputEvent.stopPropagation();
+      commitBinderOrderPositionEdit({ restoreFocus: true });
+    } else if (inputEvent.key === "Escape") {
+      inputEvent.preventDefault();
+      inputEvent.stopPropagation();
+      cancelBinderOrderPositionEdit({ restoreFocus: true });
+    }
+  });
+  input.addEventListener("blur", () => {
+    if (binderOrderPositionEdit?.input === input) {
+      commitBinderOrderPositionEdit({ restoreFocus: false });
+    }
+  });
+  input.focus({ preventScroll: true });
+  input.select();
+  setBinderOrderStatus(`Enter a position from 1 to ${binderOrderDraftIndexes.length}, then press Enter.`);
+}
+
+function commitBinderOrderPositionEdit({ restoreFocus = false } = {}) {
+  const edit = binderOrderPositionEdit;
+  if (!edit) return false;
+  const currentPosition = binderOrderDraftIndexes.findIndex((index) => (
+    CARDS[index]?.stableId === edit.stableId
+  ));
+  const rawPosition = edit.input.value.trim();
+  const requestedPosition = /^\d+$/.test(rawPosition)
+    ? Number.parseInt(rawPosition, 10)
+    : Number.NaN;
+  const valid = Number.isSafeInteger(requestedPosition) && requestedPosition > 0;
+  const targetPosition = valid
+    ? clamp(requestedPosition - 1, 0, binderOrderDraftIndexes.length - 1)
+    : currentPosition;
+
+  finishBinderOrderPositionEdit(currentPosition, { restoreFocus: false });
+  if (!valid) {
+    setBinderOrderStatus(`Enter a whole number from 1 to ${binderOrderDraftIndexes.length}.`, { error: true });
+  } else if (currentPosition === targetPosition) {
+    setBinderOrderStatus(`Card is already at position ${currentPosition + 1}.`);
+  } else {
+    moveBinderOrderDraftItem(currentPosition, targetPosition, {
+      activeStableId: edit.stableId,
+    });
+  }
+
+  if (restoreFocus) {
+    requestAnimationFrame(() => {
+      const movedCard = findBinderOrderCardButton(edit.stableId);
+      if (!movedCard?.isConnected) return;
+      movedCard.focus({ preventScroll: true });
+      movedCard.scrollIntoView({ block: "nearest", inline: "nearest" });
+    });
+  }
+  return valid;
+}
+
+function cancelBinderOrderPositionEdit({ restoreFocus = false } = {}) {
+  const edit = binderOrderPositionEdit;
+  if (!edit) return;
+  const currentPosition = binderOrderDraftIndexes.findIndex((index) => (
+    CARDS[index]?.stableId === edit.stableId
+  ));
+  finishBinderOrderPositionEdit(currentPosition, { restoreFocus });
+  setBinderOrderStatus("Position edit canceled. Confirm to save any other changes.");
+}
+
+function finishBinderOrderPositionEdit(position, { restoreFocus = false } = {}) {
+  const edit = binderOrderPositionEdit;
+  if (!edit) return;
+  binderOrderPositionEdit = null;
+  edit.cardNode.classList.remove("is-position-editing");
+  if (edit.input.isConnected) {
+    edit.input.replaceWith(createBinderOrderPositionLabel(Math.max(0, position)));
+  }
+  if (restoreFocus) {
+    requestAnimationFrame(() => {
+      if (edit.cardNode.isConnected) edit.cardNode.focus({ preventScroll: true });
+    });
+  }
+}
+
+function refreshBinderOrderEditorCardStates() {
+  for (let position = 0; position < binderOrderDraftIndexes.length; position += 1) {
+    const cardIndex = binderOrderDraftIndexes[position];
+    const stableId = String(CARDS[cardIndex]?.stableId || "");
+    updateBinderOrderCardButton(binderOrderCardNodes.get(stableId), cardIndex, position);
+  }
+}
+
+function getBinderOrderStableIds(indexes = binderOrderDraftIndexes) {
+  return (indexes || [])
+    .map((index) => String(CARDS[index]?.stableId || "").trim())
+    .filter(Boolean);
+}
+
+function normalizeBinderStableIdSet(values) {
+  return new Set(
+    (Array.isArray(values) ? values : [])
+      .map((value) => String(value || "").trim())
+      .filter(Boolean),
+  );
+}
+
+function binderCardOrderHasChanges() {
+  const current = getBinderOrderStableIds();
+  return current.length !== binderOrderInitialStableIds.length
+    || current.some((stableId, index) => stableId !== binderOrderInitialStableIds[index]);
+}
+
+function binderTradeMarksHaveChanges() {
+  if (binderTradeDraftStableIds.size !== binderTradeInitialStableIds.size) return true;
+  return [...binderTradeDraftStableIds]
+    .some((stableId) => !binderTradeInitialStableIds.has(stableId));
+}
+
+function binderCoverHasChanges() {
+  return Boolean(
+    binderCoverDraft
+    && serializeBinderCoverSettings(binderCoverDraft) !== binderCoverInitialJson
+  );
+}
+
+function binderOrderHasChanges() {
+  return binderCardOrderHasChanges()
+    || binderTradeMarksHaveChanges()
+    || binderCoverHasChanges();
+}
+
+function refreshBinderOrderConfirmButton() {
+  const dirty = binderOrderHasChanges();
+  els.binderOrderConfirmButton.hidden = !dirty;
+  els.binderOrderConfirmButton.disabled = (
+    !dirty
+    || binderOrderEditorLoading
+    || binderOrderEditorSaving
+  );
+  els.binderOrderCloseButton.disabled = binderOrderEditorSaving;
+  els.binderTradeModeButton.disabled = binderOrderEditorLoading || binderOrderEditorSaving;
+  els.binderCoverModeButton.disabled = binderOrderEditorLoading || binderOrderEditorSaving;
+}
+
+function setBinderOrderStatus(message, options = {}) {
+  if (els.binderOrderStatus.textContent !== message) {
+    els.binderOrderStatus.textContent = message;
+  }
+  els.binderOrderStatus.classList.toggle("is-error", Boolean(options.error));
+}
+
+function toggleBinderTradeMarkingMode() {
+  if (binderOrderEditorLoading || binderOrderEditorSaving) return;
+  if (binderOrderPositionEdit) commitBinderOrderPositionEdit({ restoreFocus: false });
+  cancelBinderOrderDrag();
+  binderTradeMarkingMode = !binderTradeMarkingMode;
+  binderOrderKeyboardStableId = "";
+  els.binderOrderDialog.classList.toggle("is-trade-marking", binderTradeMarkingMode);
+  els.binderTradeModeButton.setAttribute("aria-pressed", String(binderTradeMarkingMode));
+  els.binderTradeModeButton.textContent = binderTradeMarkingMode
+    ? "marking for trade"
+    : "mark for trade";
+  els.binderOrderInstructions.textContent = binderTradeMarkingMode
+    ? "Select any cards that are available for trade. Reordering is paused until you leave this mode."
+    : "Drag cards into place, or double-click an order number to type a new position. On touch, use the dotted handle. Each group of nine is one binder page.";
+  refreshBinderOrderEditorCardStates();
+  const markedCount = getBinderOrderStableIds()
+    .filter((stableId) => binderTradeDraftStableIds.has(stableId)).length;
+  setBinderOrderStatus(
+    binderTradeMarkingMode
+      ? `${markedCount} held card${markedCount === 1 ? " is" : "s are"} marked for trade. Confirm to save changes.`
+      : "Reordering restored. Confirm to save any changes.",
+  );
+}
+
+function toggleBinderCoverEditorMode() {
+  if (binderOrderEditorLoading || binderOrderEditorSaving) return;
+  setBinderCustomizationMode(binderCustomizationMode === "cover" ? "cards" : "cover");
+}
+
+function setBinderCustomizationMode(mode, options = {}) {
+  binderCustomizationMode = mode === "cover" ? "cover" : "cards";
+  const editingCover = binderCustomizationMode === "cover";
+  if (!editingCover) {
+    hideBinderInsideLinkPopover();
+    closeBinderStickerPicker({ restoreFocus: false });
+  }
+  if (editingCover && binderTradeMarkingMode) toggleBinderTradeMarkingMode();
+  els.binderOrderDialog.classList.toggle("is-cover-editing", editingCover);
+  els.binderCoverEditor.hidden = !editingCover;
+  els.binderOrderScroller.hidden = editingCover;
+  els.binderTradeModeButton.hidden = editingCover;
+  els.binderCoverModeButton.textContent = editingCover ? "edit cards" : "edit cover";
+  els.binderOrderTitle.textContent = editingCover ? "Edit Binder Cover" : "Customize Binder";
+  els.binderOrderInstructions.textContent = editingCover
+    ? "Customize all three cover areas with art, movable linked text, and held Swag Pack stickers. Ctrl/Cmd+Z undoes up to 50 cover changes."
+    : "Drag cards into place; on touch, use the dotted handle. Each group of nine is one binder page.";
+  if (editingCover) {
+    if (!binderCoverDraft) binderCoverDraft = normalizeBinderCoverSettings();
+    renderBinderCoverEditor();
+    if (!binderCoverPreviewResizeObserver && typeof ResizeObserver === "function") {
+      binderCoverPreviewResizeObserver = new ResizeObserver(() => {
+        renderBinderInsideTextBox();
+        positionBinderCoverStickerRemoveButton();
+      });
+      binderCoverPreviewResizeObserver.observe(els.binderFrontCoverPreview);
+      binderCoverPreviewResizeObserver.observe(els.binderBackCoverPreview);
+      binderCoverPreviewResizeObserver.observe(els.binderInsideCoverPreview);
+    }
+  }
+  refreshBinderOrderConfirmButton();
+  if (options.focus !== false) {
+    requestAnimationFrame(() => (
+      editingCover ? els.binderFrontCoverPreview : els.binderOrderScroller
+    ).focus());
+  }
+}
+
+function resetBinderCoverUndoHistory() {
+  binderCoverUndoStack = [];
+  binderCoverUndoCoalesceKey = "";
+}
+
+function captureBinderCoverUndoState() {
+  if (!binderCoverDraft) return null;
+  return {
+    settings: {
+      ...binderCoverDraft,
+      insideLinks: binderCoverDraft.insideLinks.map((link) => ({ ...link })),
+      stickers: binderCoverDraft.stickers.map((sticker) => ({ ...sticker })),
+    },
+    outsideTextEnabled: { ...binderOutsideTextBoxEnabled },
+    selectedStickerMint: binderCoverSelectedStickerMint,
+  };
+}
+
+function recordBinderCoverUndoState(actionKey = "", options = {}) {
+  if (!binderCoverDraft) return false;
+  const coalesce = Boolean(options.coalesce);
+  if (coalesce && actionKey && binderCoverUndoCoalesceKey === actionKey) return false;
+  const snapshot = options.snapshot || captureBinderCoverUndoState();
+  if (!snapshot) return false;
+  binderCoverUndoStack.push(snapshot);
+  if (binderCoverUndoStack.length > BINDER_COVER_UNDO_LIMIT) {
+    binderCoverUndoStack.splice(0, binderCoverUndoStack.length - BINDER_COVER_UNDO_LIMIT);
+  }
+  binderCoverUndoCoalesceKey = coalesce ? actionKey : "";
+  return true;
+}
+
+function endBinderCoverUndoCoalescing() {
+  binderCoverUndoCoalesceKey = "";
+}
+
+function handleBinderCoverUndoKeydown(event) {
+  if (
+    !binderOrderEditorOpen
+    || binderCustomizationMode !== "cover"
+    || binderOrderEditorLoading
+    || binderOrderEditorSaving
+    || event.altKey
+    || (!event.ctrlKey && !event.metaKey)
+    || String(event.key || "").toLowerCase() !== "z"
+  ) return;
+  event.preventDefault();
+  event.stopPropagation();
+  if (event.shiftKey) {
+    setBinderOrderStatus("Redo is not available. Ctrl/Cmd+Z steps back through cover changes.");
+    return;
+  }
+  undoBinderCoverChange();
+}
+
+function undoBinderCoverChange() {
+  const snapshot = binderCoverUndoStack.pop();
+  if (!snapshot) {
+    setBinderOrderStatus("No earlier cover changes remain since the last confirm.");
+    return false;
+  }
+  finishBinderCoverInteraction();
+  closeBinderStickerPicker({ restoreFocus: false });
+  binderCoverUndoCoalesceKey = "";
+  binderCoverDraft = normalizeBinderCoverSettings(snapshot.settings);
+  binderOutsideTextBoxEnabled.front = Boolean(snapshot.outsideTextEnabled.front);
+  binderOutsideTextBoxEnabled.back = Boolean(snapshot.outsideTextEnabled.back);
+  binderCoverSelectedStickerMint = binderCoverDraft.stickers.some((sticker) => (
+    sticker.mint === snapshot.selectedStickerMint
+  )) ? snapshot.selectedStickerMint : "";
+  hideBinderInsideLinkPopover();
+  renderBinderCoverEditor();
+  refreshBinderOrderConfirmButton();
+  setBinderOrderStatus(
+    `Cover change undone. ${binderCoverUndoStack.length} earlier action${binderCoverUndoStack.length === 1 ? "" : "s"} available.`,
+  );
+  return true;
+}
+
+function normalizeBinderCoverSettings(settings = {}) {
+  const source = settings && typeof settings === "object" && !Array.isArray(settings)
+    ? settings
+    : {};
+  const artworkDataUrl = /^data:image\/(?:png|jpe?g|webp);base64,/i.test(source.artworkDataUrl || "")
+    ? String(source.artworkDataUrl).slice(0, BINDER_COVER_ARTWORK_MAX_DATA_URL_LENGTH)
+    : "";
+  const backArtworkDataUrl = /^data:image\/(?:png|jpe?g|webp);base64,/i.test(source.backArtworkDataUrl || "")
+    ? String(source.backArtworkDataUrl).slice(0, BINDER_COVER_ARTWORK_MAX_DATA_URL_LENGTH)
+    : "";
+  const baseColor = /^#[0-9a-f]{6}$/i.test(source.baseColor || "")
+    ? String(source.baseColor).toLowerCase()
+    : BINDER_COVER_DEFAULT_COLOR_HEX;
+  const insideTextColor = /^#[0-9a-f]{6}$/i.test(source.insideTextColor || "")
+    ? String(source.insideTextColor).toLowerCase()
+    : BINDER_COVER_DEFAULT_TEXT_COLOR_HEX;
+  const insideText = String(source.insideText || "").slice(0, BINDER_COVER_INSIDE_TEXT_MAX_LENGTH);
+  const frontText = String(source.frontText || "").slice(0, BINDER_COVER_INSIDE_TEXT_MAX_LENGTH);
+  const backText = String(source.backText || "").slice(0, BINDER_COVER_INSIDE_TEXT_MAX_LENGTH);
+  const frontTextColor = /^#[0-9a-f]{6}$/i.test(source.frontTextColor || "")
+    ? String(source.frontTextColor).toLowerCase()
+    : BINDER_COVER_DEFAULT_TEXT_COLOR_HEX;
+  const backTextColor = /^#[0-9a-f]{6}$/i.test(source.backTextColor || "")
+    ? String(source.backTextColor).toLowerCase()
+    : BINDER_COVER_DEFAULT_TEXT_COLOR_HEX;
+  const stickers = normalizeBinderCoverStickers(source.stickers);
+  return {
+    ...source,
+    baseColor,
+    insideTextColor,
+    artworkDataUrl,
+    artworkX: clampFiniteNumber(source.artworkX, 0.5, -0.5, 1.5),
+    artworkY: clampFiniteNumber(source.artworkY, 0.5, -0.5, 1.5),
+    artworkScale: clampFiniteNumber(source.artworkScale, 1, 0.25, 4),
+    artworkRotation: clampFiniteNumber(source.artworkRotation, 0, BINDER_COVER_ROTATION_MIN_DEGREES, BINDER_COVER_ROTATION_MAX_DEGREES),
+    backArtworkDataUrl,
+    backArtworkX: clampFiniteNumber(source.backArtworkX, 0.5, -0.5, 1.5),
+    backArtworkY: clampFiniteNumber(source.backArtworkY, 0.5, -0.5, 1.5),
+    backArtworkScale: clampFiniteNumber(source.backArtworkScale, 1, 0.25, 4),
+    backArtworkRotation: clampFiniteNumber(source.backArtworkRotation, 0, BINDER_COVER_ROTATION_MIN_DEGREES, BINDER_COVER_ROTATION_MAX_DEGREES),
+    frontText,
+    frontTextColor,
+    frontTextX: clampFiniteNumber(source.frontTextX, 0.5, 0.1, 0.9),
+    frontTextY: clampFiniteNumber(source.frontTextY, 0.5, 0.06, 0.94),
+    frontTextWidth: clampFiniteNumber(source.frontTextWidth, 0.72, 0.2, 0.94),
+    frontTextHeight: clampFiniteNumber(source.frontTextHeight, 0.3, 0.1, 0.9),
+    frontFontSize: Math.round(clampFiniteNumber(source.frontFontSize, 42, 18, 96)),
+    frontTextRotation: clampFiniteNumber(source.frontTextRotation, 0, BINDER_COVER_ROTATION_MIN_DEGREES, BINDER_COVER_ROTATION_MAX_DEGREES),
+    backText,
+    backTextColor,
+    backTextX: clampFiniteNumber(source.backTextX, 0.5, 0.1, 0.9),
+    backTextY: clampFiniteNumber(source.backTextY, 0.5, 0.06, 0.94),
+    backTextWidth: clampFiniteNumber(source.backTextWidth, 0.72, 0.2, 0.94),
+    backTextHeight: clampFiniteNumber(source.backTextHeight, 0.3, 0.1, 0.9),
+    backFontSize: Math.round(clampFiniteNumber(source.backFontSize, 42, 18, 96)),
+    backTextRotation: clampFiniteNumber(source.backTextRotation, 0, BINDER_COVER_ROTATION_MIN_DEGREES, BINDER_COVER_ROTATION_MAX_DEGREES),
+    insideText,
+    insideTextX: clampFiniteNumber(source.insideTextX, 0.5, 0.1, 0.9),
+    insideTextY: clampFiniteNumber(source.insideTextY, 0.5, 0.06, 0.94),
+    insideTextWidth: clampFiniteNumber(source.insideTextWidth, 0.72, 0.2, 0.94),
+    insideTextHeight: clampFiniteNumber(source.insideTextHeight, 0.3, 0.1, 0.9),
+    insideFontSize: Math.round(clampFiniteNumber(source.insideFontSize, 42, 18, 96)),
+    insideTextRotation: clampFiniteNumber(source.insideTextRotation, 0, BINDER_COVER_ROTATION_MIN_DEGREES, BINDER_COVER_ROTATION_MAX_DEGREES),
+    insideLinks: normalizeBinderInsideLinks(source.insideLinks, insideText),
+    stickers,
+  };
+}
+
+function normalizeBinderCoverStickers(stickers) {
+  const normalized = [];
+  const seenMints = new Set();
+  for (const candidate of Array.isArray(stickers) ? stickers : []) {
+    const mint = String(candidate?.mint || "").trim();
+    const surface = BINDER_COVER_STICKER_SURFACES.includes(candidate?.surface)
+      ? candidate.surface
+      : "front";
+    const sourceImageUrl = normalizeBinderStickerImageUrl(candidate?.imageUrl);
+    const imageUrl = getTransparentSwagPackStickerImageUrl(sourceImageUrl) || sourceImageUrl;
+    if (
+      !isPossibleSolanaAddress(mint)
+      || seenMints.has(mint)
+      || !imageUrl
+    ) continue;
+    seenMints.add(mint);
+    normalized.push({
+      mint,
+      name: String(candidate?.name || "Swag Pack sticker").trim().slice(0, 120)
+        || "Swag Pack sticker",
+      imageUrl,
+      surface,
+      x: clampFiniteNumber(candidate?.x, 0.5, -0.25, 1.25),
+      y: clampFiniteNumber(candidate?.y, 0.5, -0.25, 1.25),
+      scale: clampFiniteNumber(
+        candidate?.scale,
+        BINDER_COVER_STICKER_DEFAULT_SCALE,
+        BINDER_COVER_STICKER_MIN_SCALE,
+        BINDER_COVER_STICKER_MAX_SCALE,
+      ),
+      rotation: clampFiniteNumber(
+        candidate?.rotation,
+        0,
+        BINDER_COVER_ROTATION_MIN_DEGREES,
+        BINDER_COVER_ROTATION_MAX_DEGREES,
+      ),
+    });
+    if (normalized.length === BINDER_COVER_STICKER_MAX_COUNT) break;
+  }
+  return normalized;
+}
+
+function normalizeBinderStickerImageUrl(value) {
+  try {
+    const url = new URL(String(value || "").trim());
+    const sameOriginTransparentAsset = (
+      url.origin === window.location.origin
+      && /^\/assets\/swag-pack\/transparent\/\d+\.webp$/i.test(url.pathname)
+    );
+    return (
+      (url.protocol === "https:" || sameOriginTransparentAsset)
+      && url.href.length <= 2048
+    ) ? url.href : "";
+  } catch {
+    return "";
+  }
+}
+
+function getTransparentSwagPackStickerImageUrl(sourceImageUrl) {
+  try {
+    const url = new URL(sourceImageUrl);
+    const localMatch = url.pathname.match(
+      /^\/assets\/swag-pack\/transparent\/(\d+)\.webp$/i,
+    );
+    const sourceMatch = url.pathname.includes(SWAG_PACK_IMAGE_BUNDLE_PATH)
+      ? url.pathname.match(/\/(\d+)\.(?:png|jpe?g|webp)$/i)
+      : null;
+    const assetNumber = localMatch?.[1] || sourceMatch?.[1] || "";
+    const filename = assetNumber ? `${assetNumber}.webp` : "";
+    if (!SWAG_PACK_TRANSPARENT_STICKER_FILE_SET.has(filename)) return "";
+    return new URL(
+      `./assets/swag-pack/transparent/${filename}?v=swag-pack-transparent-1`,
+      import.meta.url,
+    ).href;
+  } catch {
+    return "";
+  }
+}
+
+function clampFiniteNumber(value, fallback, minimum, maximum) {
+  const number = Number(value);
+  return clamp(Number.isFinite(number) ? number : fallback, minimum, maximum);
+}
+
+function normalizeBinderCoverRotation(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return 0;
+  const normalized = ((number + 180) % 360 + 360) % 360 - 180;
+  return normalized === -180 && number > 0 ? 180 : normalized;
+}
+
+function normalizeBinderInsideLinks(links, text) {
+  const normalized = [];
+  for (const candidate of Array.isArray(links) ? links : []) {
+    const start = Math.max(0, Math.floor(Number(candidate?.start)));
+    const end = Math.min(text.length, Math.floor(Number(candidate?.end)));
+    const url = normalizeBinderCoverLinkUrl(candidate?.url, { addProtocol: false });
+    if (!url || !Number.isFinite(start) || !Number.isFinite(end) || end <= start) continue;
+    normalized.push({ start, end, url });
+  }
+  normalized.sort((left, right) => left.start - right.start || left.end - right.end);
+  const nonOverlapping = [];
+  for (const link of normalized) {
+    if (nonOverlapping.length && link.start < nonOverlapping.at(-1).end) continue;
+    nonOverlapping.push(link);
+    if (nonOverlapping.length === 24) break;
+  }
+  return nonOverlapping;
+}
+
+function normalizeBinderCoverLinkUrl(value, { addProtocol = true } = {}) {
+  let candidate = String(value || "").trim();
+  if (!candidate) return "";
+  if (addProtocol && !/^[a-z][a-z0-9+.-]*:/i.test(candidate)) candidate = `https://${candidate}`;
+  try {
+    const url = new URL(candidate);
+    return ["http:", "https:"].includes(url.protocol) && url.href.length <= 2048
+      ? url.href
+      : "";
+  } catch {
+    return "";
+  }
+}
+
+function serializeBinderCoverSettings(settings) {
+  return JSON.stringify(getBinderCoverPayload(settings));
+}
+
+function getBinderCoverPayload(settings = binderCoverDraft) {
+  const normalized = normalizeBinderCoverSettings(settings);
+  const {
+    baseColor,
+    insideTextColor,
+    artworkDataUrl,
+    artworkX,
+    artworkY,
+    artworkScale,
+    artworkRotation,
+    backArtworkDataUrl,
+    backArtworkX,
+    backArtworkY,
+    backArtworkScale,
+    backArtworkRotation,
+    frontText,
+    frontTextColor,
+    frontTextX,
+    frontTextY,
+    frontTextWidth,
+    frontTextHeight,
+    frontFontSize,
+    frontTextRotation,
+    backText,
+    backTextColor,
+    backTextX,
+    backTextY,
+    backTextWidth,
+    backTextHeight,
+    backFontSize,
+    backTextRotation,
+    insideText,
+    insideTextX,
+    insideTextY,
+    insideTextWidth,
+    insideTextHeight,
+    insideFontSize,
+    insideTextRotation,
+    insideLinks,
+    stickers,
+    ...existing
+  } = normalized;
+  const payload = { ...existing };
+  if (baseColor !== BINDER_COVER_DEFAULT_COLOR_HEX) payload.baseColor = baseColor;
+  if (insideTextColor !== BINDER_COVER_DEFAULT_TEXT_COLOR_HEX) {
+    payload.insideTextColor = insideTextColor;
+  }
+  if (artworkDataUrl) {
+    Object.assign(payload, { artworkDataUrl, artworkX, artworkY, artworkScale, artworkRotation });
+  }
+  if (backArtworkDataUrl) {
+    Object.assign(payload, {
+      backArtworkDataUrl,
+      backArtworkX,
+      backArtworkY,
+      backArtworkScale,
+      backArtworkRotation,
+    });
+  }
+  if (frontText) {
+    Object.assign(payload, {
+      frontText,
+      frontTextColor,
+      frontTextX,
+      frontTextY,
+      frontTextWidth,
+      frontTextHeight,
+      frontFontSize,
+      frontTextRotation,
+    });
+  }
+  if (backText) {
+    Object.assign(payload, {
+      backText,
+      backTextColor,
+      backTextX,
+      backTextY,
+      backTextWidth,
+      backTextHeight,
+      backFontSize,
+      backTextRotation,
+    });
+  }
+  if (insideText) {
+    Object.assign(payload, {
+      insideText,
+      insideTextX,
+      insideTextY,
+      insideTextWidth,
+      insideTextHeight,
+      insideFontSize,
+      insideTextRotation,
+      insideLinks,
+    });
+  }
+  if (stickers.length) {
+    payload.stickers = stickers.map(({ mint, surface, x, y, scale, rotation }) => ({
+      mint,
+      surface,
+      x,
+      y,
+      scale,
+      rotation,
+    }));
+  }
+  return payload;
+}
+
+function renderBinderCoverEditor() {
+  if (!binderCoverDraft) return;
+  renderBinderCoverArtworkEditor("front");
+  renderBinderCoverArtworkEditor("back");
+  renderBinderOutsideTextEditor("front");
+  renderBinderOutsideTextEditor("back");
+  renderBinderCoverStickers();
+  els.binderBaseColor.value = binderCoverDraft.baseColor;
+  els.binderCoverTextColor.value = binderCoverDraft.insideTextColor;
+  for (const preview of [
+    els.binderFrontCoverPreview,
+    els.binderBackCoverPreview,
+    els.binderInsideCoverPreview,
+  ]) {
+    preview.style.backgroundColor = binderCoverDraft.baseColor;
+  }
+  els.binderInsideTextInput.value = binderCoverDraft.insideText;
+  els.binderInsideFontSize.value = String(binderCoverDraft.insideFontSize);
+  els.binderInsideTextRotation.value = String(binderCoverDraft.insideTextRotation);
+  renderBinderInsideTextBox();
+  updateBinderInsideLinkPopover();
+}
+
+function getBinderCoverArtworkEditor(side = "front") {
+  const isBack = side === "back";
+  return {
+    side: isBack ? "back" : "front",
+    dataUrlKey: isBack ? "backArtworkDataUrl" : "artworkDataUrl",
+    xKey: isBack ? "backArtworkX" : "artworkX",
+    yKey: isBack ? "backArtworkY" : "artworkY",
+    scaleKey: isBack ? "backArtworkScale" : "artworkScale",
+    rotationKey: isBack ? "backArtworkRotation" : "artworkRotation",
+    preview: isBack ? els.binderBackCoverPreview : els.binderFrontCoverPreview,
+    image: isBack ? els.binderBackCoverImage : els.binderFrontCoverImage,
+    blank: isBack ? els.binderBackCoverBlank : els.binderFrontCoverBlank,
+    upload: isBack ? els.binderBackCoverUpload : els.binderFrontCoverUpload,
+    remove: isBack ? els.binderBackCoverRemove : els.binderFrontCoverRemove,
+    zoom: isBack ? els.binderBackCoverZoom : els.binderFrontCoverZoom,
+    rotation: isBack ? els.binderBackCoverRotation : els.binderFrontCoverRotation,
+  };
+}
+
+function renderBinderCoverArtworkEditor(side) {
+  const editor = getBinderCoverArtworkEditor(side);
+  const hasArtwork = Boolean(binderCoverDraft[editor.dataUrlKey]);
+  if (hasArtwork && editor.image.src !== binderCoverDraft[editor.dataUrlKey]) {
+    editor.image.src = binderCoverDraft[editor.dataUrlKey];
+  } else if (!hasArtwork) {
+    editor.image.removeAttribute("src");
+  }
+  editor.image.hidden = !hasArtwork;
+  editor.blank.hidden = hasArtwork
+    || binderOutsideTextBoxEnabled[editor.side]
+    || binderCoverDraft.stickers.some((sticker) => sticker.surface === editor.side);
+  editor.remove.hidden = !hasArtwork;
+  editor.zoom.disabled = !hasArtwork;
+  editor.rotation.disabled = !hasArtwork;
+  editor.zoom.value = String(binderCoverDraft[editor.scaleKey]);
+  editor.rotation.value = String(binderCoverDraft[editor.rotationKey]);
+  editor.image.style.left = `${binderCoverDraft[editor.xKey] * 100}%`;
+  editor.image.style.top = `${binderCoverDraft[editor.yKey] * 100}%`;
+  editor.image.style.transform = `translate(-50%, -50%) rotate(${binderCoverDraft[editor.rotationKey]}deg) scale(${binderCoverDraft[editor.scaleKey]})`;
+}
+
+function getBinderOutsideTextEditor(side = "front") {
+  const isBack = side === "back";
+  const prefix = isBack ? "back" : "front";
+  return {
+    side: prefix,
+    textKey: `${prefix}Text`,
+    colorKey: `${prefix}TextColor`,
+    xKey: `${prefix}TextX`,
+    yKey: `${prefix}TextY`,
+    widthKey: `${prefix}TextWidth`,
+    heightKey: `${prefix}TextHeight`,
+    fontSizeKey: `${prefix}FontSize`,
+    rotationKey: `${prefix}TextRotation`,
+    preview: isBack ? els.binderBackCoverPreview : els.binderFrontCoverPreview,
+    box: isBack ? els.binderBackTextBox : els.binderFrontTextBox,
+    canvas: isBack ? els.binderBackTextPreview : els.binderFrontTextPreview,
+    controls: isBack ? els.binderBackTextControls : els.binderFrontTextControls,
+    input: isBack ? els.binderBackTextInput : els.binderFrontTextInput,
+    fontSize: isBack ? els.binderBackTextFontSize : els.binderFrontTextFontSize,
+    rotation: isBack ? els.binderBackTextRotation : els.binderFrontTextRotation,
+    color: isBack ? els.binderBackTextColor : els.binderFrontTextColor,
+    remove: isBack ? els.binderBackTextRemove : els.binderFrontTextRemove,
+    add: els.binderCoverEditor.querySelector(`.binder-cover-add-text[data-text-surface="${prefix}"]`),
+  };
+}
+
+function renderBinderOutsideTextEditor(side = "front") {
+  if (!binderCoverDraft) return;
+  const editor = getBinderOutsideTextEditor(side);
+  const enabled = binderOutsideTextBoxEnabled[editor.side];
+  editor.add.hidden = enabled;
+  editor.controls.hidden = !enabled;
+  editor.box.hidden = !enabled;
+  editor.input.value = binderCoverDraft[editor.textKey];
+  editor.fontSize.value = String(binderCoverDraft[editor.fontSizeKey]);
+  editor.rotation.value = String(binderCoverDraft[editor.rotationKey]);
+  editor.color.value = binderCoverDraft[editor.colorKey];
+  if (!enabled) return;
+  editor.box.style.left = `${binderCoverDraft[editor.xKey] * 100}%`;
+  editor.box.style.top = `${binderCoverDraft[editor.yKey] * 100}%`;
+  editor.box.style.width = `${binderCoverDraft[editor.widthKey] * 100}%`;
+  editor.box.style.height = `${binderCoverDraft[editor.heightKey] * 100}%`;
+  editor.box.style.transform = `translate(-50%, -50%) rotate(${binderCoverDraft[editor.rotationKey]}deg)`;
+  renderBinderCoverTextPreview(editor.canvas, {
+    text: binderCoverDraft[editor.textKey] || "type here",
+    width: binderCoverDraft[editor.widthKey],
+    height: binderCoverDraft[editor.heightKey],
+    fontSize: binderCoverDraft[editor.fontSizeKey],
+    color: binderCoverDraft[editor.colorKey],
+  });
+  const artwork = getBinderCoverArtworkEditor(editor.side);
+  artwork.blank.hidden = true;
+}
+
+function renderBinderInsideTextBox() {
+  if (!binderCoverDraft || !els.binderInsideTextBox) return;
+  const settings = binderCoverDraft;
+  const hasText = Boolean(settings.insideText);
+  els.binderInsideTextBox.hidden = !hasText;
+  els.binderInsideCoverBlank.hidden = hasText || binderCoverDraft.stickers.some((sticker) => (
+    sticker.surface === "inside"
+  ));
+  if (!hasText) {
+    const context = els.binderInsideTextPreview.getContext("2d");
+    context.clearRect(0, 0, els.binderInsideTextPreview.width, els.binderInsideTextPreview.height);
+    return;
+  }
+  els.binderInsideTextBox.style.left = `${settings.insideTextX * 100}%`;
+  els.binderInsideTextBox.style.top = `${settings.insideTextY * 100}%`;
+  els.binderInsideTextBox.style.width = `${settings.insideTextWidth * 100}%`;
+  els.binderInsideTextBox.style.height = `${settings.insideTextHeight * 100}%`;
+  els.binderInsideTextBox.style.transform = `translate(-50%, -50%) rotate(${settings.insideTextRotation}deg)`;
+  renderBinderInsideRichTextPreview();
+}
+
+function renderBinderCoverTextPreview(canvas, { text, width, height, fontSize, color, links = [] }) {
+  const coverWidth = BINDER_COVER_OUTER_X - BINDER_COVER_SPINE_WIDTH / 2;
+  const coverHeight = BINDER_PAGE_HEIGHT + BINDER_COVER_VERTICAL_OVERHANG;
+  const surfaceWidth = 1024;
+  const surfaceHeight = Math.max(1, Math.round(surfaceWidth * coverHeight / coverWidth));
+  canvas.width = Math.max(1, Math.round(width * surfaceWidth));
+  canvas.height = Math.max(1, Math.round(height * surfaceHeight));
+  const context = canvas.getContext("2d");
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  drawBinderCustomInsideText(context, {
+    text,
+    links,
+    box: { x: 0, y: 0, width: canvas.width, height: canvas.height },
+    fontSize,
+    fontStack: SITE_FONT_STACK,
+    textFillStyle: color,
+    linkFillStyle: color,
+  });
+}
+
+function renderBinderCoverStickers() {
+  if (!binderCoverDraft) return;
+  const stickerMints = new Set(binderCoverDraft.stickers.map((sticker) => sticker.mint));
+  if (binderCoverSelectedStickerMint && !stickerMints.has(binderCoverSelectedStickerMint)) {
+    binderCoverSelectedStickerMint = "";
+  }
+  for (const surface of BINDER_COVER_STICKER_SURFACES) {
+    const preview = getBinderCoverPreview(surface);
+    if (!preview) continue;
+    const existing = new Map(
+      [...preview.querySelectorAll(".binder-cover-sticker")]
+        .map((node) => [node.dataset.mint || "", node]),
+    );
+    const surfaceStickers = binderCoverDraft.stickers.filter((sticker) => (
+      sticker.surface === surface
+    ));
+    surfaceStickers.forEach((sticker, layerIndex) => {
+      let node = existing.get(sticker.mint);
+      if (!node) {
+        node = document.createElement("div");
+        node.className = "binder-cover-sticker";
+        node.tabIndex = 0;
+        node.setAttribute("role", "button");
+        const image = document.createElement("img");
+        image.alt = "";
+        image.draggable = false;
+        image.decoding = "async";
+        const resizeHandle = document.createElement("button");
+        resizeHandle.type = "button";
+        resizeHandle.className = "binder-cover-sticker-resize";
+        resizeHandle.setAttribute("aria-label", "Resize sticker");
+        const rotateHandle = document.createElement("button");
+        rotateHandle.type = "button";
+        rotateHandle.className = "binder-cover-sticker-rotate";
+        rotateHandle.tabIndex = 0;
+        rotateHandle.setAttribute("role", "slider");
+        rotateHandle.setAttribute("aria-label", "Rotate sticker");
+        rotateHandle.setAttribute("aria-valuemin", String(BINDER_COVER_ROTATION_MIN_DEGREES));
+        rotateHandle.setAttribute("aria-valuemax", String(BINDER_COVER_ROTATION_MAX_DEGREES));
+        image.addEventListener("load", positionBinderCoverStickerRemoveButton);
+        node.append(image, resizeHandle, rotateHandle);
+        preview.append(node);
+      }
+      existing.delete(sticker.mint);
+      node.dataset.mint = sticker.mint;
+      node.dataset.surface = surface;
+      node.style.left = `${sticker.x * 100}%`;
+      node.style.top = `${sticker.y * 100}%`;
+      node.style.width = `${sticker.scale * 100}%`;
+      node.style.transform = `translate(-50%, -50%) rotate(${sticker.rotation}deg)`;
+      node.style.setProperty("--sticker-counter-rotation", `${-sticker.rotation}deg`);
+      node.style.zIndex = String(3 + layerIndex);
+      node.classList.toggle("is-selected", sticker.mint === binderCoverSelectedStickerMint);
+      node.setAttribute("aria-pressed", String(sticker.mint === binderCoverSelectedStickerMint));
+      node.setAttribute("aria-label", `${sticker.name}. Drag to move; use the corner handles to resize or rotate.`);
+      const rotateHandle = node.querySelector(".binder-cover-sticker-rotate");
+      rotateHandle?.setAttribute("aria-valuenow", String(Math.round(sticker.rotation)));
+      const image = node.querySelector("img");
+      if (image && image.src !== sticker.imageUrl) image.src = sticker.imageUrl;
+    });
+    for (const node of existing.values()) node.remove();
+  }
+  renderBinderCoverStickerRemoveButton();
+}
+
+function renderBinderCoverStickerRemoveButton() {
+  const selected = getBinderCoverSelectedSticker();
+  let button = els.binderCoverEditor.querySelector(".binder-cover-sticker-remove");
+  if (!selected) {
+    button?.remove();
+    return;
+  }
+  const preview = getBinderCoverPreview(selected.surface);
+  const stickerNode = preview?.querySelector(
+    `.binder-cover-sticker[data-mint="${selected.mint}"]`,
+  );
+  if (!preview || !stickerNode) {
+    button?.remove();
+    return;
+  }
+  if (!button) {
+    button = document.createElement("button");
+    button.type = "button";
+    button.className = "binder-cover-sticker-remove";
+    button.setAttribute("aria-label", "Remove selected sticker");
+    button.textContent = "×";
+  }
+  if (button.parentElement !== preview) preview.append(button);
+  button.dataset.mint = selected.mint;
+  button.dataset.surface = selected.surface;
+  positionBinderCoverStickerRemoveButton();
+}
+
+function positionBinderCoverStickerRemoveButton() {
+  const button = els.binderCoverEditor.querySelector(".binder-cover-sticker-remove");
+  if (!button) return;
+  const preview = getBinderCoverPreview(button.dataset.surface);
+  const stickerNode = preview?.querySelector(
+    `.binder-cover-sticker[data-mint="${button.dataset.mint}"]`,
+  );
+  if (!preview || !stickerNode) return;
+  const previewRect = preview.getBoundingClientRect();
+  const stickerRect = stickerNode.getBoundingClientRect();
+  const controlRadius = 16;
+  button.style.left = `${clamp(
+    stickerRect.left + stickerRect.width / 2 - previewRect.left,
+    controlRadius,
+    Math.max(controlRadius, previewRect.width - controlRadius),
+  )}px`;
+  button.style.top = `${clamp(
+    stickerRect.bottom - previewRect.top + 13,
+    controlRadius,
+    Math.max(controlRadius, previewRect.height - controlRadius),
+  )}px`;
+}
+
+function getBinderCoverPreview(surface) {
+  if (surface === "back") return els.binderBackCoverPreview;
+  if (surface === "inside") return els.binderInsideCoverPreview;
+  return els.binderFrontCoverPreview;
+}
+
+function getBinderCoverSelectedSticker() {
+  return binderCoverDraft?.stickers.find((sticker) => (
+    sticker.mint === binderCoverSelectedStickerMint
+  )) || null;
+}
+
+function renderBinderInsideRichTextPreview() {
+  const settings = binderCoverDraft;
+  if (!settings?.insideText) return;
+  const coverWidth = BINDER_COVER_OUTER_X - BINDER_COVER_SPINE_WIDTH / 2;
+  const coverHeight = BINDER_PAGE_HEIGHT + BINDER_COVER_VERTICAL_OVERHANG;
+  const surfaceWidth = 1024;
+  const surfaceHeight = Math.max(1, Math.round(surfaceWidth * coverHeight / coverWidth));
+  const canvas = els.binderInsideTextPreview;
+  canvas.width = Math.max(1, Math.round(settings.insideTextWidth * surfaceWidth));
+  canvas.height = Math.max(1, Math.round(settings.insideTextHeight * surfaceHeight));
+  const context = canvas.getContext("2d");
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  drawBinderCustomInsideText(context, {
+    text: settings.insideText,
+    links: settings.insideLinks,
+    box: { x: 0, y: 0, width: canvas.width, height: canvas.height },
+    fontSize: settings.insideFontSize,
+    fontStack: SITE_FONT_STACK,
+    textFillStyle: settings.insideTextColor,
+    linkFillStyle: settings.insideTextColor,
+  });
+}
+
+async function handleBinderCoverArtworkUpload(side = "front") {
+  const editor = getBinderCoverArtworkEditor(side);
+  const file = editor.upload.files?.[0];
+  editor.upload.value = "";
+  if (!file || binderOrderEditorLoading || binderOrderEditorSaving) return;
+  if (!file.type.startsWith("image/") || file.size > BINDER_COVER_ARTWORK_MAX_FILE_BYTES) {
+    setBinderOrderStatus("Choose a PNG, JPEG, WebP, GIF, or AVIF image under 16 MB.", { error: true });
+    return;
+  }
+  const token = binderOrderEditorToken;
+  els.binderCoverModeButton.disabled = true;
+  setBinderOrderStatus("Preparing cover artwork…");
+  try {
+    const artworkDataUrl = await createBinderCoverArtworkDataUrl(file);
+    if (token !== binderOrderEditorToken || !binderOrderEditorOpen) return;
+    recordBinderCoverUndoState(`artwork-upload-${editor.side}`);
+    binderCoverDraft = normalizeBinderCoverSettings({
+      ...binderCoverDraft,
+      [editor.dataUrlKey]: artworkDataUrl,
+      [editor.xKey]: 0.5,
+      [editor.yKey]: 0.5,
+      [editor.scaleKey]: 1,
+      [editor.rotationKey]: 0,
+    });
+    renderBinderCoverEditor();
+    setBinderOrderStatus(`${editor.side === "back" ? "Back" : "Front"} cover image ready. Drag to place it and confirm to save.`);
+    refreshBinderOrderConfirmButton();
+  } catch (error) {
+    setBinderOrderStatus(error?.message || "That image could not be prepared.", { error: true });
+  } finally {
+    if (token === binderOrderEditorToken && binderOrderEditorOpen) refreshBinderOrderConfirmButton();
+  }
+}
+
+async function createBinderCoverArtworkDataUrl(file) {
+  const source = await createImageBitmap(file);
+  try {
+    let scale = Math.min(
+      1,
+      BINDER_COVER_ARTWORK_MAX_WIDTH / source.width,
+      BINDER_COVER_ARTWORK_MAX_HEIGHT / source.height,
+    );
+    let width = Math.max(1, Math.round(source.width * scale));
+    let height = Math.max(1, Math.round(source.height * scale));
+    for (let attempt = 0; attempt < 7; attempt += 1) {
+      const canvas = document.createElement("canvas");
+      canvas.width = width;
+      canvas.height = height;
+      const context = canvas.getContext("2d", { alpha: true });
+      context.clearRect(0, 0, width, height);
+      context.drawImage(source, 0, 0, width, height);
+      const quality = Math.max(0.7, 0.94 - attempt * 0.04);
+      const dataUrl = canvas.toDataURL("image/webp", quality);
+      if (dataUrl.length <= BINDER_COVER_ARTWORK_MAX_DATA_URL_LENGTH) return dataUrl;
+      width = Math.max(320, Math.round(width * 0.82));
+      height = Math.max(320, Math.round(height * 0.82));
+    }
+  } finally {
+    source.close?.();
+  }
+  throw new Error("This image is too detailed to fit. Try a smaller image.");
+}
+
+function removeBinderCoverArtwork(side = "front") {
+  if (!binderCoverDraft || binderOrderEditorSaving) return;
+  const editor = getBinderCoverArtworkEditor(side);
+  if (!binderCoverDraft[editor.dataUrlKey]) return;
+  recordBinderCoverUndoState(`artwork-remove-${editor.side}`);
+  binderCoverDraft[editor.dataUrlKey] = "";
+  binderCoverDraft[editor.xKey] = 0.5;
+  binderCoverDraft[editor.yKey] = 0.5;
+  binderCoverDraft[editor.scaleKey] = 1;
+  binderCoverDraft[editor.rotationKey] = 0;
+  renderBinderCoverEditor();
+  setBinderOrderStatus(`${editor.side === "back" ? "Back" : "Front"} cover artwork removed. Confirm to save.`);
+  refreshBinderOrderConfirmButton();
+}
+
+function handleBinderCoverStickerControlsClick(event) {
+  const stickerRemoveButton = event.target.closest(".binder-cover-sticker-remove");
+  if (stickerRemoveButton) {
+    binderCoverSelectedStickerMint = String(stickerRemoveButton.dataset.mint || "");
+    removeSelectedBinderCoverSticker(stickerRemoveButton.dataset.surface || "front");
+    return;
+  }
+  const addTextButton = event.target.closest(".binder-cover-add-text");
+  if (addTextButton) {
+    addBinderOutsideTextBox(addTextButton.dataset.textSurface);
+    return;
+  }
+  const textControls = event.target.closest(".binder-outside-text-controls");
+  if (textControls && event.target.closest(".binder-cover-remove-text")) {
+    removeBinderOutsideTextBox(textControls.dataset.textSurface);
+    return;
+  }
+  const controls = event.target.closest(".binder-cover-sticker-controls");
+  if (!controls || !els.binderCoverEditor.contains(controls)) return;
+  const surface = BINDER_COVER_STICKER_SURFACES.includes(controls.dataset.stickerSurface)
+    ? controls.dataset.stickerSurface
+    : "front";
+  if (event.target.closest(".binder-cover-add-sticker")) {
+    openBinderStickerPicker(surface).catch(console.error);
+    return;
+  }
+}
+
+function handleBinderCoverStickerControlsInput(event) {
+  const textControls = event.target.closest(".binder-outside-text-controls");
+  if (textControls) {
+    handleBinderOutsideTextControlsInput(event, textControls.dataset.textSurface);
+    return;
+  }
+}
+
+function handleBinderCoverStickerKeyboard(event) {
+  const rotateHandle = event.target.closest(".binder-cover-sticker-rotate");
+  if (!rotateHandle || !binderCoverDraft || binderOrderEditorSaving) return;
+  const stickerNode = rotateHandle.closest(".binder-cover-sticker");
+  const sticker = binderCoverDraft.stickers.find((entry) => (
+    entry.mint === stickerNode?.dataset.mint
+  ));
+  if (!sticker) return;
+  let delta = 0;
+  if (event.key === "ArrowLeft" || event.key === "ArrowDown") delta = event.shiftKey ? -10 : -1;
+  else if (event.key === "ArrowRight" || event.key === "ArrowUp") delta = event.shiftKey ? 10 : 1;
+  else if (event.key !== "Home") return;
+  const nextRotation = delta
+    ? normalizeBinderCoverRotation(sticker.rotation + delta)
+    : 0;
+  if (nextRotation === sticker.rotation) return;
+  event.preventDefault();
+  recordBinderCoverUndoState(`sticker-rotate-key-${sticker.mint}`);
+  binderCoverSelectedStickerMint = sticker.mint;
+  sticker.rotation = nextRotation;
+  renderBinderCoverStickers();
+  refreshBinderOrderConfirmButton();
+  requestAnimationFrame(() => (
+    getBinderCoverPreview(sticker.surface)
+      ?.querySelector(`.binder-cover-sticker[data-mint="${sticker.mint}"] .binder-cover-sticker-rotate`)
+      ?.focus({ preventScroll: true })
+  ));
+}
+
+function addBinderOutsideTextBox(side = "front") {
+  if (!binderCoverDraft || binderOrderEditorSaving) return;
+  const editor = getBinderOutsideTextEditor(side);
+  if (binderOutsideTextBoxEnabled[editor.side]) return;
+  recordBinderCoverUndoState(`text-add-${editor.side}`);
+  binderOutsideTextBoxEnabled[editor.side] = true;
+  renderBinderCoverEditor();
+  setBinderOrderStatus(`${editor.side === "back" ? "Back" : "Front"} cover text box added. Type below, then drag or resize it in the preview.`);
+  requestAnimationFrame(() => editor.input.focus());
+}
+
+function removeBinderOutsideTextBox(side = "front") {
+  if (!binderCoverDraft || binderOrderEditorSaving) return;
+  const editor = getBinderOutsideTextEditor(side);
+  if (!binderOutsideTextBoxEnabled[editor.side]) return;
+  recordBinderCoverUndoState(`text-remove-${editor.side}`);
+  binderOutsideTextBoxEnabled[editor.side] = false;
+  binderCoverDraft[editor.textKey] = "";
+  binderCoverDraft[editor.xKey] = 0.5;
+  binderCoverDraft[editor.yKey] = 0.5;
+  binderCoverDraft[editor.widthKey] = 0.72;
+  binderCoverDraft[editor.heightKey] = 0.3;
+  binderCoverDraft[editor.fontSizeKey] = 42;
+  binderCoverDraft[editor.rotationKey] = 0;
+  binderCoverDraft[editor.colorKey] = BINDER_COVER_DEFAULT_TEXT_COLOR_HEX;
+  renderBinderCoverEditor();
+  refreshBinderOrderConfirmButton();
+  setBinderOrderStatus(`${editor.side === "back" ? "Back" : "Front"} cover text removed. Confirm to save.`);
+}
+
+function handleBinderOutsideTextControlsInput(event, side = "front") {
+  if (!binderCoverDraft || binderOrderEditorSaving) return;
+  const editor = getBinderOutsideTextEditor(side);
+  const target = event.target;
+  if (target === editor.input) {
+    const value = target.value.slice(0, BINDER_COVER_INSIDE_TEXT_MAX_LENGTH);
+    if (value === binderCoverDraft[editor.textKey]) return;
+    recordBinderCoverUndoState(`text-input-${editor.side}`, { coalesce: true });
+    binderCoverDraft[editor.textKey] = value;
+  } else if (target === editor.fontSize) {
+    const value = Math.round(clampFiniteNumber(target.value, 42, 18, 96));
+    if (value === binderCoverDraft[editor.fontSizeKey]) return;
+    recordBinderCoverUndoState(`text-font-${editor.side}`, { coalesce: true });
+    binderCoverDraft[editor.fontSizeKey] = value;
+  } else if (target === editor.rotation) {
+    const value = clampFiniteNumber(
+      target.value,
+      0,
+      BINDER_COVER_ROTATION_MIN_DEGREES,
+      BINDER_COVER_ROTATION_MAX_DEGREES,
+    );
+    if (value === binderCoverDraft[editor.rotationKey]) return;
+    recordBinderCoverUndoState(`text-rotation-${editor.side}`, { coalesce: true });
+    binderCoverDraft[editor.rotationKey] = value;
+  } else if (target === editor.color) {
+    const color = String(target.value || "").toLowerCase();
+    if (!/^#[0-9a-f]{6}$/.test(color) || color === binderCoverDraft[editor.colorKey]) return;
+    recordBinderCoverUndoState(`text-color-${editor.side}`, { coalesce: true });
+    binderCoverDraft[editor.colorKey] = color;
+  } else {
+    return;
+  }
+  renderBinderOutsideTextEditor(editor.side);
+  refreshBinderOrderConfirmButton();
+}
+
+function removeSelectedBinderCoverSticker(surface) {
+  const selected = getBinderCoverSelectedSticker();
+  if (!selected || selected.surface !== surface || binderOrderEditorSaving) return;
+  recordBinderCoverUndoState(`sticker-remove-${selected.mint}`);
+  binderCoverDraft.stickers = binderCoverDraft.stickers.filter((sticker) => (
+    sticker.mint !== selected.mint
+  ));
+  binderCoverSelectedStickerMint = "";
+  renderBinderCoverEditor();
+  refreshBinderOrderConfirmButton();
+  setBinderOrderStatus(`${selected.name} removed. Confirm to save.`);
+}
+
+async function openBinderStickerPicker(surface = "front") {
+  if (!binderCoverDraft || binderOrderEditorSaving || binderStickerPickerOpen) return;
+  const requestToken = ++binderStickerPickerToken;
+  binderStickerPickerSurface = BINDER_COVER_STICKER_SURFACES.includes(surface) ? surface : "front";
+  binderStickerPickerOpen = true;
+  binderStickerPickerLoading = true;
+  els.binderStickerPicker.hidden = false;
+  els.binderStickerPicker.setAttribute("aria-hidden", "false");
+  els.binderStickerPickerTitle.textContent = `Add sticker to ${getBinderCoverSurfaceLabel(binderStickerPickerSurface)}`;
+  els.binderStickerPickerStatus.textContent = "Checking your wallet for Swag Pack pieces…";
+  renderBinderStickerPickerGallery();
+  requestAnimationFrame(() => els.binderStickerPickerClose.focus());
+
+  const editorToken = binderOrderEditorToken;
+  try {
+    walletSwagPackAssets = await fetchWalletSwagPackAssets(WALLET_ROUTE_ADDRESS, { force: true });
+    walletSwagPackAssetsFetchedAt = Date.now();
+    if (
+      !binderStickerPickerOpen
+      || requestToken !== binderStickerPickerToken
+      || editorToken !== binderOrderEditorToken
+    ) return;
+    binderStickerPickerLoading = false;
+    renderBinderStickerPickerGallery();
+  } catch {
+    if (
+      !binderStickerPickerOpen
+      || requestToken !== binderStickerPickerToken
+      || editorToken !== binderOrderEditorToken
+    ) return;
+    binderStickerPickerLoading = false;
+    els.binderStickerPickerGallery.replaceChildren();
+    els.binderStickerPickerStatus.textContent = "Swag Pack holdings could not be checked. Try again.";
+  }
+}
+
+function closeBinderStickerPicker({ restoreFocus = true } = {}) {
+  if (!binderStickerPickerOpen) return;
+  const surface = binderStickerPickerSurface;
+  binderStickerPickerOpen = false;
+  binderStickerPickerLoading = false;
+  binderStickerPickerToken += 1;
+  els.binderStickerPicker.hidden = true;
+  els.binderStickerPicker.setAttribute("aria-hidden", "true");
+  els.binderStickerPickerGallery.replaceChildren();
+  if (!restoreFocus) return;
+  requestAnimationFrame(() => {
+    const controls = els.binderCoverStickerControls.find((entry) => (
+      entry.dataset.stickerSurface === surface
+    ));
+    controls?.querySelector(".binder-cover-add-sticker")?.focus();
+  });
+}
+
+function renderBinderStickerPickerGallery() {
+  els.binderStickerPickerGallery.replaceChildren();
+  if (binderStickerPickerLoading) return;
+  if (!walletSwagPackAssets.length) {
+    els.binderStickerPickerStatus.textContent = "This wallet does not currently hold any Swag Pack pieces.";
+    return;
+  }
+  const placedByMint = new Map(
+    binderCoverDraft.stickers.map((sticker) => [sticker.mint, sticker]),
+  );
+  const fragment = document.createDocumentFragment();
+  for (const asset of walletSwagPackAssets) {
+    const placed = placedByMint.get(asset.mint);
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "binder-sticker-picker-item";
+    button.dataset.mint = asset.mint;
+    button.classList.toggle("is-placed", Boolean(placed));
+    button.setAttribute(
+      "aria-label",
+      placed
+        ? `${asset.name}, currently on ${getBinderCoverSurfaceLabel(placed.surface)}. Move it to ${getBinderCoverSurfaceLabel(binderStickerPickerSurface)}.`
+        : `Add ${asset.name} to ${getBinderCoverSurfaceLabel(binderStickerPickerSurface)}`,
+    );
+    const image = document.createElement("img");
+    image.src = asset.imageUrl;
+    image.alt = "";
+    image.loading = "lazy";
+    image.decoding = "async";
+    const name = document.createElement("span");
+    name.textContent = asset.name;
+    button.append(image, name);
+    if (placed) {
+      const status = document.createElement("small");
+      status.textContent = `on ${getBinderCoverSurfaceLabel(placed.surface)}`;
+      button.append(status);
+    }
+    fragment.append(button);
+  }
+  els.binderStickerPickerGallery.append(fragment);
+  els.binderStickerPickerStatus.textContent = `${walletSwagPackAssets.length} held Swag Pack piece${walletSwagPackAssets.length === 1 ? "" : "s"}. Select one to place it.`;
+}
+
+function handleBinderStickerPickerClick(event) {
+  const button = event.target.closest(".binder-sticker-picker-item");
+  if (!button || binderStickerPickerLoading || !binderCoverDraft) return;
+  const asset = walletSwagPackAssets.find((entry) => entry.mint === button.dataset.mint);
+  if (!asset) return;
+  let sticker = binderCoverDraft.stickers.find((entry) => entry.mint === asset.mint);
+  if (!sticker && binderCoverDraft.stickers.length >= BINDER_COVER_STICKER_MAX_COUNT) {
+    els.binderStickerPickerStatus.textContent = `A binder can have up to ${BINDER_COVER_STICKER_MAX_COUNT} stickers.`;
+    return;
+  }
+  if (!sticker || sticker.surface !== binderStickerPickerSurface) {
+    recordBinderCoverUndoState(`sticker-place-${asset.mint}`);
+  }
+  if (sticker) {
+    sticker.surface = binderStickerPickerSurface;
+  } else {
+    sticker = {
+      ...asset,
+      surface: binderStickerPickerSurface,
+      x: 0.5,
+      y: 0.5,
+      scale: BINDER_COVER_STICKER_DEFAULT_SCALE,
+      rotation: 0,
+    };
+    binderCoverDraft.stickers.push(sticker);
+  }
+  binderCoverSelectedStickerMint = sticker.mint;
+  const name = sticker.name;
+  const surface = sticker.surface;
+  closeBinderStickerPicker({ restoreFocus: false });
+  renderBinderCoverEditor();
+  refreshBinderOrderConfirmButton();
+  setBinderOrderStatus(`${name} placed on ${getBinderCoverSurfaceLabel(surface)}. Select it to move, resize, rotate, or remove it directly in the preview.`);
+  requestAnimationFrame(() => {
+    const node = getBinderCoverPreview(surface)?.querySelector(
+      `.binder-cover-sticker[data-mint="${sticker.mint}"]`,
+    );
+    node?.focus({ preventScroll: true });
+  });
+}
+
+function getBinderCoverSurfaceLabel(surface) {
+  if (surface === "back") return "back cover";
+  if (surface === "inside") return "inside cover";
+  return "front cover";
+}
+
+function handleBinderCoverArtworkZoom(side = "front") {
+  const editor = getBinderCoverArtworkEditor(side);
+  if (!binderCoverDraft?.[editor.dataUrlKey]) return;
+  const value = clampFiniteNumber(
+    editor.zoom.value,
+    1,
+    0.25,
+    4,
+  );
+  if (value === binderCoverDraft[editor.scaleKey]) return;
+  recordBinderCoverUndoState(`artwork-zoom-${editor.side}`, { coalesce: true });
+  binderCoverDraft[editor.scaleKey] = value;
+  renderBinderCoverEditor();
+  refreshBinderOrderConfirmButton();
+}
+
+function handleBinderCoverArtworkRotation(side = "front") {
+  const editor = getBinderCoverArtworkEditor(side);
+  if (!binderCoverDraft?.[editor.dataUrlKey]) return;
+  const value = clampFiniteNumber(
+    editor.rotation.value,
+    0,
+    BINDER_COVER_ROTATION_MIN_DEGREES,
+    BINDER_COVER_ROTATION_MAX_DEGREES,
+  );
+  if (value === binderCoverDraft[editor.rotationKey]) return;
+  recordBinderCoverUndoState(`artwork-rotation-${editor.side}`, { coalesce: true });
+  binderCoverDraft[editor.rotationKey] = value;
+  renderBinderCoverArtworkEditor(editor.side);
+  refreshBinderOrderConfirmButton();
+}
+
+function startBinderCoverPreviewInteraction(event, side = "front") {
+  if (event.target.closest(".binder-cover-sticker-remove")) return;
+  const stickerNode = event.target.closest(".binder-cover-sticker");
+  if (stickerNode) {
+    startBinderCoverStickerInteraction(event, side, stickerNode);
+    return;
+  }
+  if (event.target.closest(".binder-cover-text-box")) {
+    startBinderCoverTextBoxInteraction(event, side);
+    return;
+  }
+  if (binderCoverSelectedStickerMint) {
+    binderCoverSelectedStickerMint = "";
+    renderBinderCoverStickers();
+  }
+  if (side !== "inside") startBinderCoverArtworkDrag(event, side);
+}
+
+function startBinderCoverStickerInteraction(event, surface, stickerNode) {
+  if (event.button > 0 || binderOrderEditorSaving || !binderCoverDraft) return;
+  const mint = String(stickerNode.dataset.mint || "");
+  const sticker = binderCoverDraft.stickers.find((entry) => entry.mint === mint);
+  if (!sticker || sticker.surface !== surface) return;
+  event.preventDefault();
+  event.stopPropagation();
+  binderCoverSelectedStickerMint = mint;
+  renderBinderCoverStickers();
+  const preview = getBinderCoverPreview(surface);
+  const activeNode = preview?.querySelector(`.binder-cover-sticker[data-mint="${mint}"]`);
+  const rect = activeNode?.getBoundingClientRect();
+  const resizing = Boolean(event.target.closest(".binder-cover-sticker-resize"));
+  const rotating = Boolean(event.target.closest(".binder-cover-sticker-rotate"));
+  const centerX = rect ? rect.left + rect.width / 2 : event.clientX;
+  const centerY = rect ? rect.top + rect.height / 2 : event.clientY;
+  binderCoverInteraction = {
+    type: rotating ? "sticker-rotate" : resizing ? "sticker-resize" : "sticker-move",
+    surface,
+    stickerMint: mint,
+    pointerId: event.pointerId,
+    startClientX: event.clientX,
+    startClientY: event.clientY,
+    startX: sticker.x,
+    startY: sticker.y,
+    startScale: sticker.scale,
+    startRotation: sticker.rotation,
+    centerX,
+    centerY,
+    startAngle: Math.atan2(event.clientY - centerY, event.clientX - centerX),
+    startDistance: rect
+      ? Math.max(12, Math.hypot(event.clientX - centerX, event.clientY - centerY))
+      : 12,
+    undoSnapshot: captureBinderCoverUndoState(),
+    undoRecorded: false,
+  };
+  activeNode?.setPointerCapture?.(event.pointerId);
+  activeNode?.classList.add(rotating ? "is-rotating" : resizing ? "is-resizing" : "is-dragging");
+}
+
+function startBinderCoverArtworkDrag(event, side = "front") {
+  const editor = getBinderCoverArtworkEditor(side);
+  if (event.button > 0 || !binderCoverDraft?.[editor.dataUrlKey] || binderOrderEditorSaving) return;
+  event.preventDefault();
+  binderCoverInteraction = {
+    type: "artwork",
+    side: editor.side,
+    pointerId: event.pointerId,
+    startClientX: event.clientX,
+    startClientY: event.clientY,
+    startX: binderCoverDraft[editor.xKey],
+    startY: binderCoverDraft[editor.yKey],
+    undoSnapshot: captureBinderCoverUndoState(),
+    undoRecorded: false,
+  };
+  editor.preview.setPointerCapture?.(event.pointerId);
+  editor.preview.classList.add("is-dragging");
+}
+
+function handleBinderInsideTextInput() {
+  if (!binderCoverDraft) return;
+  const previousText = binderCoverDraft.insideText;
+  const nextText = els.binderInsideTextInput.value.slice(0, BINDER_COVER_INSIDE_TEXT_MAX_LENGTH);
+  if (nextText === previousText) return;
+  recordBinderCoverUndoState("inside-text-input", { coalesce: true });
+  binderCoverDraft.insideLinks = remapBinderInsideLinksAfterEdit(
+    previousText,
+    nextText,
+    binderCoverDraft.insideLinks,
+  );
+  binderCoverDraft.insideText = nextText;
+  hideBinderInsideLinkPopover();
+  renderBinderInsideTextBox();
+  refreshBinderOrderConfirmButton();
+}
+
+function remapBinderInsideLinksAfterEdit(previousText, nextText, links) {
+  if (previousText === nextText) return links;
+  let prefixLength = 0;
+  while (
+    prefixLength < previousText.length
+    && prefixLength < nextText.length
+    && previousText[prefixLength] === nextText[prefixLength]
+  ) prefixLength += 1;
+  let suffixLength = 0;
+  while (
+    suffixLength < previousText.length - prefixLength
+    && suffixLength < nextText.length - prefixLength
+    && previousText[previousText.length - 1 - suffixLength]
+      === nextText[nextText.length - 1 - suffixLength]
+  ) suffixLength += 1;
+  const oldEditEnd = previousText.length - suffixLength;
+  const delta = nextText.length - previousText.length;
+  return links.flatMap((link) => {
+    if (link.end <= prefixLength) return [link];
+    if (link.start >= oldEditEnd) {
+      return [{ ...link, start: link.start + delta, end: link.end + delta }];
+    }
+    return [];
+  });
+}
+
+function handleBinderInsideFontSizeInput() {
+  if (!binderCoverDraft) return;
+  const value = Math.round(clampFiniteNumber(
+    els.binderInsideFontSize.value,
+    42,
+    18,
+    96,
+  ));
+  if (value === binderCoverDraft.insideFontSize) return;
+  recordBinderCoverUndoState("inside-text-font", { coalesce: true });
+  binderCoverDraft.insideFontSize = value;
+  renderBinderInsideTextBox();
+  refreshBinderOrderConfirmButton();
+}
+
+function handleBinderInsideTextRotationInput() {
+  if (!binderCoverDraft) return;
+  const value = clampFiniteNumber(
+    els.binderInsideTextRotation.value,
+    0,
+    BINDER_COVER_ROTATION_MIN_DEGREES,
+    BINDER_COVER_ROTATION_MAX_DEGREES,
+  );
+  if (value === binderCoverDraft.insideTextRotation) return;
+  recordBinderCoverUndoState("inside-text-rotation", { coalesce: true });
+  binderCoverDraft.insideTextRotation = value;
+  renderBinderInsideTextBox();
+  refreshBinderOrderConfirmButton();
+}
+
+function handleBinderBaseColorInput() {
+  if (!binderCoverDraft || binderOrderEditorSaving) return;
+  const color = String(els.binderBaseColor.value || "").toLowerCase();
+  if (!/^#[0-9a-f]{6}$/.test(color) || color === binderCoverDraft.baseColor) return;
+  recordBinderCoverUndoState("binder-base-color", { coalesce: true });
+  binderCoverDraft.baseColor = color;
+  renderBinderCoverEditor();
+  refreshBinderOrderConfirmButton();
+}
+
+function handleBinderCoverTextColorInput() {
+  if (!binderCoverDraft || binderOrderEditorSaving) return;
+  const color = String(els.binderCoverTextColor.value || "").toLowerCase();
+  if (!/^#[0-9a-f]{6}$/.test(color) || color === binderCoverDraft.insideTextColor) return;
+  recordBinderCoverUndoState("inside-text-color", { coalesce: true });
+  binderCoverDraft.insideTextColor = color;
+  renderBinderInsideTextBox();
+  refreshBinderOrderConfirmButton();
+}
+
+function startBinderInsideTextBoxDrag(event) {
+  startBinderCoverTextBoxInteraction(event, "inside");
+}
+
+function getBinderCoverTextEditor(surface = "inside") {
+  if (surface !== "inside") return getBinderOutsideTextEditor(surface);
+  return {
+    side: "inside",
+    textKey: "insideText",
+    xKey: "insideTextX",
+    yKey: "insideTextY",
+    widthKey: "insideTextWidth",
+    heightKey: "insideTextHeight",
+    rotationKey: "insideTextRotation",
+    preview: els.binderInsideCoverPreview,
+    box: els.binderInsideTextBox,
+  };
+}
+
+function startBinderCoverTextBoxInteraction(event, surface = "inside") {
+  const editor = getBinderCoverTextEditor(surface);
+  const enabled = editor.side === "inside"
+    ? Boolean(binderCoverDraft?.insideText)
+    : binderOutsideTextBoxEnabled[editor.side];
+  if (event.button > 0 || !enabled || binderOrderEditorSaving) return;
+  event.preventDefault();
+  event.stopPropagation();
+  const resizing = Boolean(event.target.closest(".binder-cover-text-resize"));
+  binderCoverInteraction = {
+    type: resizing ? "cover-text-resize" : "cover-text-move",
+    surface: editor.side,
+    pointerId: event.pointerId,
+    startClientX: event.clientX,
+    startClientY: event.clientY,
+    startX: binderCoverDraft[editor.xKey],
+    startY: binderCoverDraft[editor.yKey],
+    startWidth: binderCoverDraft[editor.widthKey],
+    startHeight: binderCoverDraft[editor.heightKey],
+    startRotation: binderCoverDraft[editor.rotationKey],
+    undoSnapshot: captureBinderCoverUndoState(),
+    undoRecorded: false,
+  };
+  editor.box.setPointerCapture?.(event.pointerId);
+  editor.box.classList.add(resizing ? "is-resizing" : "is-dragging");
+}
+
+function moveBinderCoverInteraction(event) {
+  if (!binderCoverInteraction || event.pointerId !== binderCoverInteraction.pointerId) return;
+  event.preventDefault();
+  const interaction = binderCoverInteraction;
+  if (
+    !interaction.undoRecorded
+    && (event.clientX !== interaction.startClientX || event.clientY !== interaction.startClientY)
+  ) {
+    interaction.undoRecorded = recordBinderCoverUndoState(
+      `preview-${interaction.type}-${interaction.stickerMint || interaction.side || interaction.surface || "cover"}`,
+      { snapshot: interaction.undoSnapshot },
+    );
+  }
+  if (
+    interaction.type === "sticker-move"
+    || interaction.type === "sticker-resize"
+    || interaction.type === "sticker-rotate"
+  ) {
+    const sticker = binderCoverDraft.stickers.find((entry) => (
+      entry.mint === interaction.stickerMint
+    ));
+    const preview = getBinderCoverPreview(interaction.surface);
+    if (!sticker || !preview) return;
+    const rect = preview.getBoundingClientRect();
+    if (interaction.type === "sticker-move") {
+      sticker.x = clamp(
+        interaction.startX + (event.clientX - interaction.startClientX) / Math.max(1, rect.width),
+        -0.25,
+        1.25,
+      );
+      sticker.y = clamp(
+        interaction.startY + (event.clientY - interaction.startClientY) / Math.max(1, rect.height),
+        -0.25,
+        1.25,
+      );
+    } else if (interaction.type === "sticker-resize") {
+      const stickerNode = preview.querySelector(
+        `.binder-cover-sticker[data-mint="${interaction.stickerMint}"]`,
+      );
+      const stickerRect = stickerNode?.getBoundingClientRect();
+      const centerX = stickerRect ? stickerRect.left + stickerRect.width / 2 : interaction.startClientX;
+      const centerY = stickerRect ? stickerRect.top + stickerRect.height / 2 : interaction.startClientY;
+      const distance = Math.hypot(event.clientX - centerX, event.clientY - centerY);
+      sticker.scale = clamp(
+        interaction.startScale * distance / interaction.startDistance,
+        BINDER_COVER_STICKER_MIN_SCALE,
+        BINDER_COVER_STICKER_MAX_SCALE,
+      );
+    } else {
+      const angle = Math.atan2(
+        event.clientY - interaction.centerY,
+        event.clientX - interaction.centerX,
+      );
+      sticker.rotation = normalizeBinderCoverRotation(
+        interaction.startRotation + (angle - interaction.startAngle) * 180 / Math.PI,
+      );
+    }
+    renderBinderCoverStickers();
+    return;
+  }
+  if (interaction.type === "artwork") {
+    const editor = getBinderCoverArtworkEditor(interaction.side);
+    const rect = editor.preview.getBoundingClientRect();
+    binderCoverDraft[editor.xKey] = clamp(
+      interaction.startX + (event.clientX - interaction.startClientX) / Math.max(1, rect.width),
+      -0.5,
+      1.5,
+    );
+    binderCoverDraft[editor.yKey] = clamp(
+      interaction.startY + (event.clientY - interaction.startClientY) / Math.max(1, rect.height),
+      -0.5,
+      1.5,
+    );
+    renderBinderCoverEditor();
+    return;
+  }
+  if (interaction.type !== "cover-text-move" && interaction.type !== "cover-text-resize") return;
+  const editor = getBinderCoverTextEditor(interaction.surface);
+  const rect = editor.preview.getBoundingClientRect();
+  const deltaX = (event.clientX - interaction.startClientX) / Math.max(1, rect.width);
+  const deltaY = (event.clientY - interaction.startClientY) / Math.max(1, rect.height);
+  if (interaction.type === "cover-text-move") {
+    const halfWidth = binderCoverDraft[editor.widthKey] / 2;
+    const halfHeight = binderCoverDraft[editor.heightKey] / 2;
+    binderCoverDraft[editor.xKey] = clamp(interaction.startX + deltaX, halfWidth, 1 - halfWidth);
+    binderCoverDraft[editor.yKey] = clamp(interaction.startY + deltaY, halfHeight, 1 - halfHeight);
+  } else {
+    const radians = interaction.startRotation * Math.PI / 180;
+    const pixelDeltaX = event.clientX - interaction.startClientX;
+    const pixelDeltaY = event.clientY - interaction.startClientY;
+    const localDeltaX = (
+      pixelDeltaX * Math.cos(radians) + pixelDeltaY * Math.sin(radians)
+    ) / Math.max(1, rect.width);
+    const localDeltaY = (
+      -pixelDeltaX * Math.sin(radians) + pixelDeltaY * Math.cos(radians)
+    ) / Math.max(1, rect.height);
+    const left = interaction.startX - interaction.startWidth / 2;
+    const top = interaction.startY - interaction.startHeight / 2;
+    binderCoverDraft[editor.widthKey] = clamp(interaction.startWidth + localDeltaX, 0.2, 0.94 - left);
+    binderCoverDraft[editor.heightKey] = clamp(interaction.startHeight + localDeltaY, 0.1, 0.9 - top);
+    binderCoverDraft[editor.xKey] = left + binderCoverDraft[editor.widthKey] / 2;
+    binderCoverDraft[editor.yKey] = top + binderCoverDraft[editor.heightKey] / 2;
+  }
+  if (editor.side === "inside") renderBinderInsideTextBox();
+  else renderBinderOutsideTextEditor(editor.side);
+}
+
+function finishBinderCoverInteraction(event = null) {
+  if (
+    !binderCoverInteraction
+    || (event?.pointerId != null && event.pointerId !== binderCoverInteraction.pointerId)
+  ) return;
+  binderCoverInteraction = null;
+  els.binderFrontCoverPreview?.classList.remove("is-dragging");
+  els.binderBackCoverPreview?.classList.remove("is-dragging");
+  els.binderCoverEditor?.querySelectorAll(".binder-cover-text-box")
+    .forEach((node) => node.classList.remove("is-dragging", "is-resizing"));
+  els.binderCoverEditor?.querySelectorAll(".binder-cover-sticker")
+    .forEach((node) => node.classList.remove("is-dragging", "is-resizing", "is-rotating"));
+  refreshBinderOrderConfirmButton();
+}
+
+function updateBinderInsideLinkPopover() {
+  if (
+    !binderCoverDraft?.insideText
+    || binderCustomizationMode !== "cover"
+    || binderOrderEditorLoading
+    || binderOrderEditorSaving
+  ) {
+    hideBinderInsideLinkPopover();
+    return;
+  }
+  const start = els.binderInsideTextInput.selectionStart;
+  const end = els.binderInsideTextInput.selectionEnd;
+  if (!Number.isInteger(start) || !Number.isInteger(end) || end <= start) {
+    hideBinderInsideLinkPopover();
+    return;
+  }
+
+  const existingLinkIndex = binderCoverDraft.insideLinks.findIndex((link) => (
+    link.start < end && link.end > start
+  ));
+  const selectionChanged = (
+    !binderInsideLinkSelection
+    || binderInsideLinkSelection.start !== start
+    || binderInsideLinkSelection.end !== end
+    || binderInsideLinkSelection.existingLinkIndex !== existingLinkIndex
+  );
+  binderInsideLinkSelection = { start, end, existingLinkIndex };
+  const existingLink = binderCoverDraft.insideLinks[existingLinkIndex];
+  if (selectionChanged) els.binderInsideLinkUrl.value = existingLink?.url || "";
+  els.binderInsideLinkApply.textContent = existingLink ? "update" : "add link";
+  els.binderInsideLinkRemove.hidden = !existingLink;
+  els.binderInsideLinkPopover.hidden = false;
+}
+
+function handleBinderInsideTextSelectionChange() {
+  if (document.activeElement !== els.binderInsideTextInput) return;
+  updateBinderInsideLinkPopover();
+}
+
+function startBinderInsideTextSelection(event) {
+  if (event.button > 0) return;
+  binderInsideTextPointerClickHandled = false;
+  binderInsideTextPointerSelection = {
+    pointerId: event.pointerId,
+    start: els.binderInsideTextInput.selectionStart,
+    end: els.binderInsideTextInput.selectionEnd,
+    popoverWasOpen: !els.binderInsideLinkPopover.hidden,
+  };
+}
+
+function finishBinderInsideTextSelection(event) {
+  const previous = binderInsideTextPointerSelection;
+  if (!previous || event.pointerId !== previous.pointerId) return;
+  binderInsideTextPointerSelection = null;
+  binderInsideTextPointerClickHandled = true;
+  if (event.type === "pointercancel") {
+    hideBinderInsideLinkPopover();
+    return;
+  }
+  const start = els.binderInsideTextInput.selectionStart;
+  const end = els.binderInsideTextInput.selectionEnd;
+  const collapsed = !Number.isInteger(start) || !Number.isInteger(end) || end <= start;
+  const unchanged = start === previous.start && end === previous.end;
+  if (previous.popoverWasOpen && (collapsed || unchanged)) {
+    hideBinderInsideLinkPopover();
+    return;
+  }
+  updateBinderInsideLinkPopover();
+}
+
+function handleBinderInsideTextClick() {
+  if (binderInsideTextPointerClickHandled) {
+    binderInsideTextPointerClickHandled = false;
+    return;
+  }
+  if (!els.binderInsideLinkPopover.hidden) {
+    hideBinderInsideLinkPopover();
+    return;
+  }
+  updateBinderInsideLinkPopover();
+}
+
+function hideBinderInsideLinkPopover() {
+  binderInsideLinkSelection = null;
+  els.binderInsideLinkPopover.hidden = true;
+  els.binderInsideLinkRemove.hidden = true;
+}
+
+function dismissBinderInsideLinkPopoverOnPointerDown(event) {
+  if (
+    els.binderInsideLinkPopover.hidden
+    || event.target === els.binderInsideTextInput
+    || els.binderInsideLinkPopover.contains(event.target)
+  ) return;
+  hideBinderInsideLinkPopover();
+}
+
+function addBinderInsideTextLink() {
+  if (!binderCoverDraft?.insideText || binderOrderEditorSaving) return;
+  const start = binderInsideLinkSelection?.start;
+  const end = binderInsideLinkSelection?.end;
+  if (!Number.isInteger(start) || !Number.isInteger(end) || end <= start) {
+    setBinderOrderStatus("Select the words in the text box that should become a link.", { error: true });
+    els.binderInsideTextInput.focus();
+    return;
+  }
+  const url = normalizeBinderCoverLinkUrl(els.binderInsideLinkUrl.value);
+  if (!url) {
+    setBinderOrderStatus("Enter a valid http or https link.", { error: true });
+    els.binderInsideLinkUrl.focus();
+    return;
+  }
+  recordBinderCoverUndoState("inside-text-link-add");
+  binderCoverDraft.insideLinks = normalizeBinderInsideLinks([
+    ...binderCoverDraft.insideLinks.filter((link) => link.end <= start || link.start >= end),
+    { start, end, url },
+  ], binderCoverDraft.insideText);
+  els.binderInsideLinkUrl.value = "";
+  hideBinderInsideLinkPopover();
+  renderBinderInsideTextBox();
+  refreshBinderOrderConfirmButton();
+  setBinderOrderStatus("Selected text linked. Confirm to save.");
+}
+
+function removeBinderInsideTextLink() {
+  if (!binderCoverDraft) return;
+  const index = binderInsideLinkSelection?.existingLinkIndex;
+  if (!Number.isInteger(index) || index < 0 || index >= binderCoverDraft.insideLinks.length) return;
+  recordBinderCoverUndoState("inside-text-link-remove");
+  binderCoverDraft.insideLinks.splice(index, 1);
+  hideBinderInsideLinkPopover();
+  renderBinderInsideTextBox();
+  refreshBinderOrderConfirmButton();
+  setBinderOrderStatus("Link removed. Confirm to save.");
+}
+
+function toggleBinderTradeCard(button) {
+  const stableId = String(button?.dataset?.stableId || "").trim();
+  if (!stableId) return;
+  const marked = !binderTradeDraftStableIds.has(stableId);
+  if (marked) binderTradeDraftStableIds.add(stableId);
+  else binderTradeDraftStableIds.delete(stableId);
+  button.classList.toggle("is-marked-for-trade", marked);
+  button.setAttribute("aria-pressed", String(marked));
+  const cardIndex = Number(button.dataset.cardIndex);
+  const title = CARDS[cardIndex]?.title || "Card";
+  button.setAttribute(
+    "aria-label",
+    `${title}. ${marked ? "Marked" : "Not marked"} for trade. Press Space or Enter to toggle.`,
+  );
+  refreshBinderOrderConfirmButton();
+  setBinderOrderStatus(`${title} ${marked ? "marked" : "unmarked"} for trade. Confirm to save changes.`);
+}
+
+function startBinderOrderDrag(event) {
+  if (
+    !binderOrderEditorOpen
+    || binderOrderEditorLoading
+    || binderOrderEditorSaving
+    || binderTradeMarkingMode
+    || binderOrderPositionEdit
+    || binderOrderDrag
+    || event.isPrimary === false
+    || (event.pointerType !== "touch" && event.button !== 0)
+  ) return;
+  const button = event.target.closest(".binder-order-card");
+  if (!button || !els.binderOrderPages.contains(button)) return;
+  if (event.target.closest(".binder-order-card-position, .binder-order-position-input")) return;
+  if (event.pointerType === "touch" && !event.target.closest(".binder-order-card-handle")) {
+    return;
+  }
+  event.preventDefault();
+  button.focus({ preventScroll: true });
+  binderOrderKeyboardStableId = "";
+  renderBinderOrderKeyboardSelection();
+  const rect = button.getBoundingClientRect();
+  binderOrderDrag = {
+    pointerId: event.pointerId,
+    pointerType: event.pointerType,
+    stableId: button.dataset.stableId || "",
+    cardNode: button,
+    startX: event.clientX,
+    startY: event.clientY,
+    clientX: event.clientX,
+    clientY: event.clientY,
+    offsetX: event.clientX - rect.left,
+    offsetY: event.clientY - rect.top,
+    width: rect.width,
+    height: rect.height,
+    started: false,
+    ghost: null,
+    layout: null,
+    lastFrameTime: 0,
+  };
+  try {
+    els.binderOrderEditor.setPointerCapture(event.pointerId);
+  } catch {
+    // Document-level pointer listeners still keep the drag usable when capture is unavailable.
+  }
+}
+
+function moveBinderOrderDrag(event) {
+  if (!binderOrderDrag || event.pointerId !== binderOrderDrag.pointerId) return;
+  binderOrderDrag.clientX = event.clientX;
+  binderOrderDrag.clientY = event.clientY;
+  if (!binderOrderDrag.started) {
+    const distance = Math.hypot(
+      event.clientX - binderOrderDrag.startX,
+      event.clientY - binderOrderDrag.startY,
+    );
+    if (distance < BINDER_ORDER_DRAG_THRESHOLD_PX) return;
+    beginBinderOrderDrag();
+  }
+  if (event.cancelable) event.preventDefault();
+}
+
+function beginBinderOrderDrag() {
+  if (!binderOrderDrag || binderOrderDrag.started) return;
+  binderOrderDrag.started = true;
+  stopBinderOrderCardAnimations();
+  binderOrderDrag.layout = measureBinderOrderDragLayout();
+  const image = binderOrderDrag.cardNode.querySelector("img");
+  const ghost = document.createElement("div");
+  ghost.className = "binder-order-drag-ghost";
+  ghost.style.width = `${binderOrderDrag.width}px`;
+  ghost.style.height = `${binderOrderDrag.height}px`;
+  const ghostImage = document.createElement("img");
+  ghostImage.alt = "";
+  ghostImage.src = image?.currentSrc || image?.src || "";
+  ghost.append(ghostImage);
+  document.body.append(ghost);
+  binderOrderDrag.ghost = ghost;
+  binderOrderDrag.cardNode.classList.add("is-dragging");
+  document.body.classList.add("is-reordering-binder");
+  positionBinderOrderDragGhost();
+  requestBinderOrderDragFrame();
+}
+
+function positionBinderOrderDragGhost() {
+  if (!binderOrderDrag?.ghost) return;
+  const x = binderOrderDrag.clientX - binderOrderDrag.offsetX;
+  const y = binderOrderDrag.clientY - binderOrderDrag.offsetY;
+  binderOrderDrag.ghost.style.transform = (
+    `translate3d(${x}px, ${y}px, 0) rotate(1.25deg) scale(1.035)`
+  );
+}
+
+function reorderBinderOrderAtPoint(clientX, clientY) {
+  if (!binderOrderDrag?.started) return;
+  const targetPosition = getBinderOrderPositionAtPoint(clientX, clientY);
+  const currentPosition = binderOrderDraftIndexes.findIndex((index) => (
+    CARDS[index]?.stableId === binderOrderDrag.stableId
+  ));
+  if (targetPosition < 0 || currentPosition < 0 || targetPosition === currentPosition) return;
+  moveBinderOrderDraftItem(currentPosition, targetPosition, {
+    activeStableId: binderOrderDrag.stableId,
+    announce: false,
+  });
+}
+
+function getBinderOrderPositionAtPoint(clientX, clientY) {
+  const scrollerRect = els.binderOrderScroller.getBoundingClientRect();
+  ensureBinderOrderDragLayout(scrollerRect);
+  const layout = binderOrderDrag?.layout;
+  if (!layout?.slots?.length) return -1;
+  const horizontalAllowance = (binderOrderDrag?.width || 0) * 0.35;
+  const verticalAllowance = binderOrderDrag?.height || 0;
+  if (
+    clientX < scrollerRect.left - horizontalAllowance
+    || clientX > scrollerRect.right + horizontalAllowance
+    || clientY < scrollerRect.top - verticalAllowance
+    || clientY > scrollerRect.bottom + verticalAllowance
+  ) return -1;
+
+  const contentX = clientX - scrollerRect.left + els.binderOrderScroller.scrollLeft;
+  const clampedClientY = clamp(clientY, scrollerRect.top, scrollerRect.bottom);
+  const contentY = clampedClientY - scrollerRect.top + els.binderOrderScroller.scrollTop;
+  let nearestPosition = -1;
+  let nearestDistanceSquared = Number.POSITIVE_INFINITY;
+  for (const slot of layout.slots) {
+    if (!slot) continue;
+    const deltaX = contentX - slot.centerX;
+    const deltaY = contentY - slot.centerY;
+    const distanceSquared = deltaX * deltaX + deltaY * deltaY;
+    if (distanceSquared >= nearestDistanceSquared) continue;
+    nearestDistanceSquared = distanceSquared;
+    nearestPosition = slot.position;
+  }
+
+  const currentPosition = binderOrderDraftIndexes.findIndex((index) => (
+    CARDS[index]?.stableId === binderOrderDrag?.stableId
+  ));
+  const currentSlot = layout.slots[currentPosition];
+  if (nearestPosition !== currentPosition && currentSlot) {
+    const currentDistance = Math.hypot(
+      contentX - currentSlot.centerX,
+      contentY - currentSlot.centerY,
+    );
+    const nearestDistance = Math.sqrt(nearestDistanceSquared);
+    if (currentDistance - nearestDistance < BINDER_ORDER_TARGET_HYSTERESIS_PX) {
+      return currentPosition;
+    }
+  }
+  return nearestPosition;
+}
+
+function measureBinderOrderDragLayout(scrollerRect = els.binderOrderScroller.getBoundingClientRect()) {
+  const scrollLeft = els.binderOrderScroller.scrollLeft;
+  const scrollTop = els.binderOrderScroller.scrollTop;
+  const slots = [];
+  for (const button of binderOrderCardNodes.values()) {
+    const position = Number(button.dataset.orderPosition);
+    if (!Number.isInteger(position)) continue;
+    const rect = button.getBoundingClientRect();
+    slots[position] = {
+      position,
+      centerX: rect.left - scrollerRect.left + scrollLeft + rect.width / 2,
+      centerY: rect.top - scrollerRect.top + scrollTop + rect.height / 2,
+    };
+  }
+  return {
+    viewportLeft: scrollerRect.left,
+    viewportTop: scrollerRect.top,
+    viewportWidth: scrollerRect.width,
+    viewportHeight: scrollerRect.height,
+    slots,
+  };
+}
+
+function ensureBinderOrderDragLayout(scrollerRect) {
+  if (!binderOrderDrag?.started) return;
+  const layout = binderOrderDrag.layout;
+  const changed = !layout
+    || Math.abs(layout.viewportLeft - scrollerRect.left) > 0.5
+    || Math.abs(layout.viewportTop - scrollerRect.top) > 0.5
+    || Math.abs(layout.viewportWidth - scrollerRect.width) > 0.5
+    || Math.abs(layout.viewportHeight - scrollerRect.height) > 0.5;
+  if (!changed) return;
+  stopBinderOrderCardAnimations();
+  binderOrderDrag.layout = measureBinderOrderDragLayout(scrollerRect);
+}
+
+function captureBinderOrderFlipRects(fromPosition, toPosition, activeStableId) {
+  const previousRects = new Map();
+  if (prefersReducedBinderOrderMotion()) return previousRects;
+  const scrollerRect = els.binderOrderScroller.getBoundingClientRect();
+  const first = Math.min(fromPosition, toPosition);
+  const last = Math.max(fromPosition, toPosition);
+  for (let position = first; position <= last; position += 1) {
+    const stableId = String(CARDS[binderOrderDraftIndexes[position]]?.stableId || "");
+    if (!stableId || stableId === activeStableId || previousRects.has(stableId)) continue;
+    const button = binderOrderCardNodes.get(stableId);
+    if (!button) continue;
+    const rect = button.getBoundingClientRect();
+    if (
+      rect.bottom >= scrollerRect.top - rect.height * 2
+      && rect.top <= scrollerRect.bottom + rect.height * 2
+    ) {
+      previousRects.set(stableId, rect);
+    }
+    stopBinderOrderCardAnimation(button);
+  }
+  return previousRects;
+}
+
+function syncBinderOrderEditorCardPositions(fromPosition, toPosition) {
+  const first = Math.min(fromPosition, toPosition);
+  const last = Math.max(fromPosition, toPosition);
+  const firstPage = Math.floor(first / BINDER_SIDE_SLOTS);
+  const lastPage = Math.floor(last / BINDER_SIDE_SLOTS);
+  const grids = els.binderOrderPages.querySelectorAll(".binder-order-page-grid");
+
+  for (let pageIndex = firstPage; pageIndex <= lastPage; pageIndex += 1) {
+    const grid = grids[pageIndex];
+    if (!grid) continue;
+    const start = pageIndex * BINDER_SIDE_SLOTS;
+    const end = Math.min(start + BINDER_SIDE_SLOTS, binderOrderDraftIndexes.length);
+    for (let position = start; position < end; position += 1) {
+      const stableId = String(CARDS[binderOrderDraftIndexes[position]]?.stableId || "");
+      const desiredNode = binderOrderCardNodes.get(stableId);
+      if (!desiredNode) continue;
+      const localPosition = position - start;
+      const currentNode = grid.children[localPosition] || null;
+      if (currentNode !== desiredNode) grid.insertBefore(desiredNode, currentNode);
+    }
+  }
+
+  for (let position = first; position <= last; position += 1) {
+    const cardIndex = binderOrderDraftIndexes[position];
+    const stableId = String(CARDS[cardIndex]?.stableId || "");
+    updateBinderOrderCardButton(binderOrderCardNodes.get(stableId), cardIndex, position);
+  }
+}
+
+function animateBinderOrderCards(previousRects) {
+  if (!previousRects.size || prefersReducedBinderOrderMotion()) return;
+  for (const [stableId, previousRect] of previousRects) {
+    const button = binderOrderCardNodes.get(stableId);
+    if (!button || typeof button.animate !== "function") continue;
+    const nextRect = button.getBoundingClientRect();
+    const deltaX = previousRect.left - nextRect.left;
+    const deltaY = previousRect.top - nextRect.top;
+    if (Math.abs(deltaX) < 0.5 && Math.abs(deltaY) < 0.5) continue;
+    const animation = button.animate(
+      [
+        { transform: `translate3d(${deltaX}px, ${deltaY}px, 0)` },
+        { transform: "translate3d(0, 0, 0)" },
+      ],
+      {
+        duration: BINDER_ORDER_FLIP_DURATION_MS,
+        easing: "cubic-bezier(0.2, 0.82, 0.2, 1)",
+      },
+    );
+    button.binderOrderFlipAnimation = animation;
+    button.classList.add("is-shifting");
+    animation.finished.catch(() => {}).finally(() => {
+      if (button.binderOrderFlipAnimation !== animation) return;
+      button.binderOrderFlipAnimation = null;
+      button.classList.remove("is-shifting");
+    });
+  }
+}
+
+function stopBinderOrderCardAnimation(button) {
+  if (!button) return;
+  const animation = button.binderOrderFlipAnimation;
+  button.binderOrderFlipAnimation = null;
+  if (animation) animation.cancel();
+  else button.getAnimations?.().forEach((activeAnimation) => activeAnimation.cancel());
+  button.classList.remove("is-shifting");
+}
+
+function stopBinderOrderCardAnimations() {
+  for (const button of binderOrderCardNodes.values()) {
+    stopBinderOrderCardAnimation(button);
+  }
+}
+
+function moveBinderOrderDraftItem(fromPosition, toPosition, options = {}) {
+  if (
+    !Number.isInteger(fromPosition)
+    || !Number.isInteger(toPosition)
+    || fromPosition === toPosition
+    || fromPosition < 0
+    || fromPosition >= binderOrderDraftIndexes.length
+    || toPosition < 0
+    || toPosition >= binderOrderDraftIndexes.length
+  ) return false;
+  const activeStableId = options.activeStableId
+    || String(CARDS[binderOrderDraftIndexes[fromPosition]]?.stableId || "");
+  const previousRects = captureBinderOrderFlipRects(
+    fromPosition,
+    toPosition,
+    activeStableId,
+  );
+  const [cardIndex] = binderOrderDraftIndexes.splice(fromPosition, 1);
+  binderOrderDraftIndexes.splice(toPosition, 0, cardIndex);
+  syncBinderOrderEditorCardPositions(fromPosition, toPosition);
+  animateBinderOrderCards(previousRects);
+  refreshBinderOrderConfirmButton();
+  if (options.announce !== false) announceBinderOrderMove(cardIndex, toPosition);
+  else setBinderOrderStatus("Order changed. Confirm to save it for every viewer.");
+  return true;
+}
+
+function announceBinderOrderMove(cardIndex, position) {
+  const page = Math.floor(position / BINDER_SIDE_SLOTS) + 1;
+  const slot = (position % BINDER_SIDE_SLOTS) + 1;
+  setBinderOrderStatus(
+    `${CARDS[cardIndex]?.title || "Card"} moved to page ${page}, slot ${slot}.`,
+  );
+}
+
+function requestBinderOrderDragFrame() {
+  if (binderOrderDragFrame || !binderOrderDrag?.started) return;
+  binderOrderDragFrame = requestAnimationFrame(stepBinderOrderDragFrame);
+}
+
+function stepBinderOrderDragFrame(timestamp) {
+  binderOrderDragFrame = 0;
+  if (!binderOrderDrag?.started) return;
+  const rect = els.binderOrderScroller.getBoundingClientRect();
+  ensureBinderOrderDragLayout(rect);
+  positionBinderOrderDragGhost();
+
+  const previousTimestamp = binderOrderDrag.lastFrameTime || timestamp;
+  const elapsedSeconds = clamp(
+    timestamp - previousTimestamp,
+    0,
+    BINDER_ORDER_AUTO_SCROLL_MAX_FRAME_MS,
+  ) / 1000;
+  binderOrderDrag.lastFrameTime = timestamp;
+  const velocity = getBinderOrderAutoScrollVelocity(rect);
+  if (velocity && elapsedSeconds) {
+    const maxScrollTop = Math.max(
+      0,
+      els.binderOrderScroller.scrollHeight - els.binderOrderScroller.clientHeight,
+    );
+    els.binderOrderScroller.scrollTop = clamp(
+      els.binderOrderScroller.scrollTop + velocity * elapsedSeconds,
+      0,
+      maxScrollTop,
+    );
+  }
+  reorderBinderOrderAtPoint(binderOrderDrag.clientX, binderOrderDrag.clientY);
+  requestBinderOrderDragFrame();
+}
+
+function getBinderOrderAutoScrollVelocity(scrollerRect) {
+  if (!binderOrderDrag?.started) return 0;
+  const cardTop = binderOrderDrag.clientY - binderOrderDrag.offsetY;
+  const cardBottom = cardTop + binderOrderDrag.height;
+  const topStrength = clamp(
+    (scrollerRect.top + BINDER_ORDER_AUTO_SCROLL_EDGE_PX - cardTop)
+      / BINDER_ORDER_AUTO_SCROLL_EDGE_PX,
+    0,
+    1,
+  );
+  const bottomStrength = clamp(
+    (cardBottom - (scrollerRect.bottom - BINDER_ORDER_AUTO_SCROLL_EDGE_PX))
+      / BINDER_ORDER_AUTO_SCROLL_EDGE_PX,
+    0,
+    1,
+  );
+  if (!topStrength && !bottomStrength) return 0;
+  const direction = bottomStrength > topStrength ? 1 : -1;
+  const strength = Math.max(topStrength, bottomStrength);
+  const easedStrength = strength * strength;
+  const overshootStrength = direction < 0
+    ? clamp(
+      (scrollerRect.top - cardTop) / BINDER_ORDER_AUTO_SCROLL_OVERSHOOT_PX,
+      0,
+      1,
+    )
+    : clamp(
+      (cardBottom - scrollerRect.bottom) / BINDER_ORDER_AUTO_SCROLL_OVERSHOOT_PX,
+      0,
+      1,
+    );
+  const easedOvershootStrength = overshootStrength * overshootStrength;
+  return direction * (
+    BINDER_ORDER_AUTO_SCROLL_MIN_PX_PER_SECOND
+    + (BINDER_ORDER_AUTO_SCROLL_EDGE_PX_PER_SECOND
+      - BINDER_ORDER_AUTO_SCROLL_MIN_PX_PER_SECOND) * easedStrength
+    + (BINDER_ORDER_AUTO_SCROLL_MAX_PX_PER_SECOND
+      - BINDER_ORDER_AUTO_SCROLL_EDGE_PX_PER_SECOND) * easedOvershootStrength
+  );
+}
+
+function finishBinderOrderDrag(event) {
+  if (!binderOrderDrag || event?.pointerId !== binderOrderDrag.pointerId) return;
+  if (binderOrderDrag.started) {
+    binderOrderDrag.clientX = event.clientX;
+    binderOrderDrag.clientY = event.clientY;
+    positionBinderOrderDragGhost();
+    reorderBinderOrderAtPoint(event.clientX, event.clientY);
+  }
+  const draggedCardIndex = binderOrderDraftIndexes.find((index) => (
+    CARDS[index]?.stableId === binderOrderDrag.stableId
+  ));
+  const finalPosition = binderOrderDraftIndexes.indexOf(draggedCardIndex);
+  const didDrag = binderOrderDrag.started;
+  cleanupBinderOrderDrag();
+  if (!didDrag) return;
+  binderOrderSuppressClickUntil = performance.now() + 320;
+  if (Number.isInteger(draggedCardIndex) && finalPosition >= 0) {
+    announceBinderOrderMove(draggedCardIndex, finalPosition);
+  }
+}
+
+function cancelBinderOrderDrag(event) {
+  if (!binderOrderDrag) return;
+  if (event?.pointerId != null && event.pointerId !== binderOrderDrag.pointerId) return;
+  const didDrag = binderOrderDrag.started;
+  cleanupBinderOrderDrag();
+  if (didDrag) binderOrderSuppressClickUntil = performance.now() + 320;
+}
+
+function cleanupBinderOrderDrag() {
+  const pointerId = binderOrderDrag?.pointerId;
+  if (binderOrderDragFrame) cancelAnimationFrame(binderOrderDragFrame);
+  binderOrderDragFrame = 0;
+  binderOrderDrag?.ghost?.remove();
+  binderOrderDrag?.cardNode?.classList.remove("is-dragging");
+  els.binderOrderPages?.querySelectorAll(".is-dragging")
+    .forEach((node) => node.classList.remove("is-dragging"));
+  document.body.classList.remove("is-reordering-binder");
+  binderOrderDrag = null;
+  try {
+    if (pointerId != null && els.binderOrderEditor.hasPointerCapture(pointerId)) {
+      els.binderOrderEditor.releasePointerCapture(pointerId);
+    }
+  } catch {
+    // Pointer capture may already be released by pointerup or pointercancel.
+  }
+}
+
+function handleBinderOrderCardClick(event) {
+  if (performance.now() < binderOrderSuppressClickUntil) {
+    event.preventDefault();
+    event.stopPropagation();
+    return;
+  }
+  if (!binderTradeMarkingMode || binderOrderEditorLoading || binderOrderEditorSaving) return;
+  const button = event.target.closest(".binder-order-card");
+  if (!button || !els.binderOrderPages.contains(button)) return;
+  event.preventDefault();
+  toggleBinderTradeCard(button);
+}
+
+function handleBinderOrderCardKeydown(event) {
+  if (binderOrderEditorLoading || binderOrderEditorSaving) return;
+  if (event.target.closest(".binder-order-position-input")) return;
+  const button = event.target.closest(".binder-order-card");
+  if (!button || !els.binderOrderPages.contains(button)) return;
+  const stableId = button.dataset.stableId || "";
+  if (binderTradeMarkingMode) {
+    if (event.key !== " " && event.key !== "Enter") return;
+    event.preventDefault();
+    toggleBinderTradeCard(button);
+    return;
+  }
+  if (event.key === "F2") {
+    event.preventDefault();
+    beginBinderOrderPositionEdit(button);
+    return;
+  }
+  if (event.key === " " || event.key === "Enter") {
+    event.preventDefault();
+    binderOrderKeyboardStableId = binderOrderKeyboardStableId === stableId ? "" : stableId;
+    renderBinderOrderKeyboardSelection();
+    setBinderOrderStatus(
+      binderOrderKeyboardStableId
+        ? "Card selected. Use arrow keys to move it, then press Space to release."
+        : "Card released. Confirm to save any changes.",
+    );
+    return;
+  }
+  if (binderOrderKeyboardStableId !== stableId) return;
+
+  const currentPosition = binderOrderDraftIndexes.findIndex((index) => (
+    CARDS[index]?.stableId === stableId
+  ));
+  let targetPosition = currentPosition;
+  if (event.key === "ArrowLeft") targetPosition -= 1;
+  else if (event.key === "ArrowRight") targetPosition += 1;
+  else if (event.key === "ArrowUp") targetPosition -= BINDER_COLUMNS;
+  else if (event.key === "ArrowDown") targetPosition += BINDER_COLUMNS;
+  else if (event.key === "PageUp") targetPosition -= BINDER_SIDE_SLOTS;
+  else if (event.key === "PageDown") targetPosition += BINDER_SIDE_SLOTS;
+  else return;
+
+  event.preventDefault();
+  targetPosition = clamp(targetPosition, 0, binderOrderDraftIndexes.length - 1);
+  if (!moveBinderOrderDraftItem(currentPosition, targetPosition)) return;
+  requestAnimationFrame(() => {
+    const movedButton = findBinderOrderCardButton(stableId);
+    movedButton?.focus({ preventScroll: true });
+    movedButton?.scrollIntoView({ block: "nearest", inline: "nearest" });
+  });
+}
+
+function renderBinderOrderKeyboardSelection() {
+  for (const button of binderOrderCardNodes.values()) {
+    if (binderTradeMarkingMode) {
+      const marked = binderTradeDraftStableIds.has(button.dataset.stableId || "");
+      button.classList.remove("is-keyboard-selected");
+      button.classList.toggle("is-marked-for-trade", marked);
+      button.setAttribute("aria-pressed", String(marked));
+      continue;
+    }
+    const selected = button.dataset.stableId === binderOrderKeyboardStableId;
+    button.classList.toggle("is-keyboard-selected", selected);
+    button.setAttribute("aria-pressed", String(selected));
+  }
+}
+
+function findBinderOrderCardButton(stableId) {
+  return binderOrderCardNodes.get(stableId) || null;
+}
+
+function handleBinderOrderEditorKeydown(event) {
+  if (!binderOrderEditorOpen) return;
+  if (event.key === "Escape") {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    if (binderStickerPickerOpen) {
+      closeBinderStickerPicker();
+      return;
+    }
+    if (!els.binderInsideLinkPopover.hidden) {
+      hideBinderInsideLinkPopover();
+      els.binderInsideTextInput.focus();
+      return;
+    }
+    if (binderCustomizationMode === "cover") {
+      setBinderCustomizationMode("cards");
+      return;
+    }
+    if (binderOrderPositionEdit) {
+      cancelBinderOrderPositionEdit({ restoreFocus: true });
+      return;
+    }
+    if (binderOrderDrag) {
+      cancelBinderOrderDrag();
+      return;
+    }
+    if (binderTradeMarkingMode) {
+      toggleBinderTradeMarkingMode();
+      return;
+    }
+    if (binderOrderKeyboardStableId) {
+      binderOrderKeyboardStableId = "";
+      renderBinderOrderKeyboardSelection();
+      setBinderOrderStatus("Card released. Confirm to save any changes.");
+      return;
+    }
+    closeBinderOrderEditor();
+    return;
+  }
+  if (event.key !== "Tab") return;
+  const focusScope = binderStickerPickerOpen
+    ? els.binderStickerPicker
+    : els.binderOrderDialog;
+  const focusable = [...focusScope.querySelectorAll(
+    'button:not(:disabled):not([hidden]), [href], input:not(:disabled), select:not(:disabled), textarea:not(:disabled), [tabindex]:not([tabindex="-1"])',
+  )].filter((element) => element.getClientRects().length > 0);
+  if (!focusable.length) return;
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  } else if (!focusScope.contains(document.activeElement)) {
+    event.preventDefault();
+    first.focus();
+  }
+}
+
+async function confirmBinderOrder() {
+  if (
+    !binderOrderEditorOpen
+    || binderOrderEditorLoading
+    || binderOrderEditorSaving
+    || !binderOrderOwnerDocument
+    || !binderOrderHasChanges()
+  ) return;
+  const token = binderOrderEditorToken;
+  const cardOrder = mergeBinderOrderWithUndetectedStableIds(
+    getBinderOrderStableIds(),
+    binderOrderOwnerDocument.cardOrder,
+  );
+  const tradeCardIds = [...binderTradeDraftStableIds];
+  const cover = getBinderCoverPayload();
+  binderOrderEditorSaving = true;
+  els.binderOrderDialog.classList.add("is-saving");
+  els.binderOrderDialog.setAttribute("aria-busy", "true");
+  setBinderOrderStatus("Saving binder changes for every viewer…");
+  refreshBinderOrderConfirmButton();
+
+  try {
+    const savedDocument = await saveBinderOrderDocument(cardOrder, tradeCardIds, cover);
+    if (token !== binderOrderEditorToken || !binderOrderEditorOpen) return;
+    binderOrderOwnerDocument = savedDocument;
+    syncWalletAuthCsrfToken(savedDocument.csrfToken);
+    binderOrderInitialStableIds = cardOrder.slice();
+    binderTradeDraftStableIds = normalizeBinderStableIdSet(savedDocument.tradeCardIds);
+    binderTradeInitialStableIds = new Set(binderTradeDraftStableIds);
+    syncGlobalTradeMarks(walletTradeCardStableIds, binderTradeDraftStableIds);
+    walletTradeCardStableIds = new Set(binderTradeDraftStableIds);
+    binderCoverDraft = normalizeBinderCoverSettings(savedDocument.cover);
+    binderCoverInitialJson = serializeBinderCoverSettings(binderCoverDraft);
+    resetBinderCoverUndoHistory();
+    walletRouteProfile = { ...walletRouteProfile, ...savedDocument };
+
+    const currentIndexes = walletFilterCardIndexes.slice();
+    walletFilterCardIndexes = orderWalletCardIndexes(
+      currentIndexes,
+      savedDocument.cardOrder,
+    );
+    walletFilterCardIndexSet = new Set(walletFilterCardIndexes);
+    refreshWalletBinderCoverRendering();
+    renderGallery();
+    binderOrderEditorSaving = false;
+    els.binderOrderDialog.classList.remove("is-saving");
+    els.binderOrderDialog.setAttribute("aria-busy", "false");
+    setBinderOrderStatus("Binder changes saved.");
+    refreshBinderOrderConfirmButton();
+    closeBinderOrderEditor();
+  } catch (error) {
+    if (token !== binderOrderEditorToken || !binderOrderEditorOpen) return;
+    if (error?.code === "authentication_required") {
+      invalidateWalletAuthSession("Wallet login expired. Reconnect to edit your binder.");
+      return;
+    }
+    binderOrderEditorSaving = false;
+    els.binderOrderDialog.classList.remove("is-saving");
+    els.binderOrderDialog.setAttribute("aria-busy", "false");
+    setBinderOrderStatus(getBinderOrderErrorMessage(error, "save"), { error: true });
+    refreshBinderOrderConfirmButton();
+  }
+}
+
+async function saveBinderOrderDocument(cardOrder, tradeCardIds, cover) {
+  let ownerDocument = binderOrderOwnerDocument;
+  try {
+    return await updateOwnerWalletBinder(
+      WALLET_AUTH_API_BASE_URL,
+      { ...ownerDocument, cardOrder, tradeCardIds, cover },
+      ownerDocument.csrfToken || walletAuthSession?.csrfToken || "",
+    );
+  } catch (error) {
+    if (error?.code === "revision_conflict") throw error;
+    if (error?.code !== "csrf_invalid") throw error;
+  }
+
+  ownerDocument = await getOwnerWalletBinder(WALLET_AUTH_API_BASE_URL);
+  if (
+    ownerDocument?.walletAddress !== WALLET_ROUTE_ADDRESS
+    || !isCurrentWalletBinderOwner()
+  ) {
+    throw new Error("This wallet session no longer owns the binder being viewed.");
+  }
+  binderOrderOwnerDocument = ownerDocument;
+  syncWalletAuthCsrfToken(ownerDocument.csrfToken);
+  return updateOwnerWalletBinder(
+    WALLET_AUTH_API_BASE_URL,
+    { ...ownerDocument, cardOrder, tradeCardIds, cover },
+    ownerDocument.csrfToken || walletAuthSession?.csrfToken || "",
+  );
+}
+
+function refreshWalletBinderCoverRendering() {
+  if (!WALLET_ROUTE_ADDRESS) return;
+  binderWalletCoverArtworkToken += 1;
+  if (binderWalletCoverArtworkTexture) {
+    binderWalletCoverArtworkTexture.dispose();
+    binderWalletCoverArtworkTexture = null;
+  }
+  if (binderWalletBackCoverArtworkTexture) {
+    binderWalletBackCoverArtworkTexture.dispose();
+    binderWalletBackCoverArtworkTexture = null;
+  }
+  binderWalletCoverArtworkPromise = null;
+  binderWalletCoverArtworkSource = "";
+  binderWalletBackCoverArtworkPromise = null;
+  binderWalletBackCoverArtworkSource = "";
+  if (binderIntroNoteTexture) {
+    binderIntroNoteTexture.dispose();
+    binderIntroNoteTexture = null;
+  }
+  binderIndexesKey = "";
+}
+
+function syncWalletAuthCsrfToken(csrfToken) {
+  if (!csrfToken || !walletAuthSession) return;
+  walletAuthSession = { ...walletAuthSession, csrfToken };
+}
+
+function mergeBinderOrderWithUndetectedStableIds(draftOrder, previousOrder) {
+  const draft = [...new Set((draftOrder || []).map((value) => String(value || "").trim()).filter(Boolean))];
+  const draftSet = new Set(draft);
+  const previous = [...new Set(
+    (previousOrder || [])
+      .map((value) => String(value || "").trim())
+      .filter((stableId) => stableId && CARD_STABLE_ID_TO_INDEX.has(stableId)),
+  )];
+  const merged = [];
+  let draftPosition = 0;
+  for (const stableId of previous) {
+    if (draftSet.has(stableId)) {
+      const replacement = draft[draftPosition++];
+      if (replacement) merged.push(replacement);
+    } else {
+      merged.push(stableId);
+    }
+  }
+  while (draftPosition < draft.length) merged.push(draft[draftPosition++]);
+  return merged;
+}
+
+function invalidateWalletAuthSession(message = WALLET_CONNECT_PROMPT) {
+  walletAccountUnsubscribe?.();
+  walletAccountUnsubscribe = null;
+  walletAuthSession = null;
+  walletAuthWallet = null;
+  walletAuthAccountAddress = "";
+  walletProviderListOpen = false;
+  walletConnectMessage = message;
+  closeBinderOrderEditor({ force: true, restoreFocus: false });
+  updateWalletAuthUi();
+}
+
+function getBinderOrderErrorMessage(error, action) {
+  if (error?.code === "authentication_required") {
+    return "Your wallet login expired. Reconnect, then try again.";
+  }
+  if (error?.code === "revision_conflict") {
+    return "This binder changed in another session. Close and reopen the editor before saving.";
+  }
+  if (["api_unavailable", "api_timeout"].includes(error?.code)) {
+    return "The binder service is temporarily unavailable. Your changes are still here.";
+  }
+  const message = String(error?.message || "").trim();
+  if (message) return message;
+  return action === "load"
+    ? "Unable to load your saved order. Close this menu and try again."
+    : "The order could not be saved. Your changes are still here.";
+}
+
+function prefersReducedBinderOrderMotion() {
+  return Boolean(window.matchMedia?.("(prefers-reduced-motion: reduce)").matches);
+}
+
+function renderWalletProviderList() {
+  if (!els.walletProviderList) return;
+  els.walletProviderList.replaceChildren();
+  const visible = walletProviderListOpen
+    && !walletAuthSession?.authenticated
+    && compatibleSolanaWallets.length > 1;
+  els.walletProviderList.hidden = !visible;
+  if (!visible) return;
+
+  compatibleSolanaWallets.forEach((wallet, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "wallet-provider-button";
+    button.dataset.walletIndex = String(index);
+    const icon = document.createElement("img");
+    icon.className = "wallet-provider-icon";
+    icon.alt = "";
+    icon.setAttribute("aria-hidden", "true");
+    if (/^data:image\//i.test(String(wallet.icon || ""))) icon.src = wallet.icon;
+    else icon.hidden = true;
+    const label = document.createElement("span");
+    label.textContent = String(wallet.name || "Solana wallet");
+    button.append(icon, label);
+    els.walletProviderList.append(button);
+  });
+}
+
+function getWalletConnectErrorMessage(error) {
+  if (error?.code === "api_unavailable") {
+    return "Wallet login is temporarily unavailable. Address search still works.";
+  }
+  if (["connect_rejected", "signature_rejected"].includes(error?.code)) {
+    return "Wallet login cancelled. No transaction was submitted.";
+  }
+  return String(error?.message || "Wallet login failed. Try again.");
+}
+
+function initializeLiveDataRefresh() {
+  refreshLiveCardStatuses().catch((error) => {
+    console.warn("Live card statuses could not be refreshed", error);
+  });
+  refreshGlobalTradeStatuses().catch((error) => {
+    console.warn("Global trade statuses could not be refreshed", error);
+  });
+  scheduleLiveCardStatusRefresh();
+  scheduleGlobalTradeStatusRefresh();
+}
+
+function scheduleLiveCardStatusRefresh() {
+  if (liveCardStatusRefreshTimer) window.clearTimeout(liveCardStatusRefreshTimer);
+  const elapsed = liveCardStatusLastFetchedAt
+    ? Date.now() - liveCardStatusLastFetchedAt
+    : 0;
+  const delay = Math.max(60_000, LIVE_CARD_STATUS_REFRESH_MS - elapsed);
+  liveCardStatusRefreshTimer = window.setTimeout(() => {
+    liveCardStatusRefreshTimer = 0;
+    refreshLiveCardStatuses({ force: true }).catch((error) => {
+      console.warn("Live card statuses could not be refreshed", error);
+    });
+  }, delay);
+}
+
+async function refreshLiveCardStatuses(options = {}) {
+  const force = Boolean(options.force);
+  if (
+    !force
+    && liveCardStatusLastFetchedAt
+    && Date.now() - liveCardStatusLastFetchedAt < LIVE_CARD_STATUS_REFRESH_MS
+  ) {
+    return false;
+  }
+  if (liveCardStatusRefreshPromise) return liveCardStatusRefreshPromise;
+
+  liveCardStatusRefreshPromise = (async () => {
+    const response = await fetchWithTimeout(`${WALLET_AUTH_API_BASE_URL}/card-statuses`, {
+      headers: { accept: "application/json" },
+      cache: "no-cache",
+      timeoutMs: LIVE_DATA_REQUEST_TIMEOUT_MS,
+    });
+    if (!response.ok) throw new Error(`Live card status fetch failed: ${response.status}`);
+    const snapshot = await response.json();
+    if (!snapshot?.collections || typeof snapshot.collections !== "object") {
+      throw new Error("Live card status response is invalid");
+    }
+    liveCardStatusSnapshot = snapshot;
+    liveCardStatusLastFetchedAt = Date.now();
+    let changed = false;
+    for (const collectionId of Object.keys(snapshot.collections)) {
+      changed = applyLiveCardStatusCollection(collectionId) || changed;
+    }
+    if (changed && options.render !== false) {
+      if (traitsOpen || traitInfoOpenRequested) renderTraitPanel();
+      if (galleryOpen) renderGallery();
+    }
+    return changed;
+  })().finally(() => {
+    liveCardStatusRefreshPromise = null;
+    scheduleLiveCardStatusRefresh();
+  });
+  return liveCardStatusRefreshPromise;
+}
+
+function scheduleGlobalTradeStatusRefresh() {
+  if (globalTradeStatusRefreshTimer) window.clearTimeout(globalTradeStatusRefreshTimer);
+  const elapsed = globalTradeStatusLastFetchedAt
+    ? Date.now() - globalTradeStatusLastFetchedAt
+    : 0;
+  const delay = Math.max(15_000, GLOBAL_TRADE_STATUS_REFRESH_MS - elapsed);
+  globalTradeStatusRefreshTimer = window.setTimeout(() => {
+    globalTradeStatusRefreshTimer = 0;
+    refreshGlobalTradeStatuses({ force: true }).catch((error) => {
+      console.warn("Global trade statuses could not be refreshed", error);
+    });
+  }, delay);
+}
+
+async function refreshGlobalTradeStatuses(options = {}) {
+  if (
+    !options.force
+    && globalTradeStatusLastFetchedAt
+    && Date.now() - globalTradeStatusLastFetchedAt < GLOBAL_TRADE_STATUS_REFRESH_MS
+  ) return false;
+  if (globalTradeStatusRefreshPromise) return globalTradeStatusRefreshPromise;
+
+  globalTradeStatusRefreshPromise = (async () => {
+    const payload = await getGlobalTradeStatuses(WALLET_AUTH_API_BASE_URL);
+    if (!Array.isArray(payload?.tradeCardIds)) {
+      throw new Error("Global trade status response is invalid");
+    }
+    const nextTradeIds = normalizeBinderStableIdSet(payload.tradeCardIds);
+    const changed = !sameStringSet(nextTradeIds, globalTradeCardStableIds);
+    globalTradeCardStableIds = nextTradeIds;
+    globalTradeStatusLastFetchedAt = Date.now();
+    if (changed && options.render !== false && galleryOpen) renderGallery();
+    return changed;
+  })().finally(() => {
+    globalTradeStatusRefreshPromise = null;
+    scheduleGlobalTradeStatusRefresh();
+  });
+  return globalTradeStatusRefreshPromise;
+}
+
+function applyLiveCardStatusCollection(collectionId) {
+  const collection = COLLECTION_CONFIGS[collectionId];
+  const snapshot = liveCardStatusSnapshot?.collections?.[collectionId];
+  if (!collection?.cardsLoaded || !Array.isArray(snapshot?.cards)) return false;
+
+  let changed = false;
+  for (const record of snapshot.cards) {
+    const number = Number(record?.[0]);
+    const status = String(record?.[1] || "").trim();
+    const mint = String(record?.[2] || "").trim();
+    const globalIndex = CARD_NUMBER_TO_INDEX.get(`${collectionId}:${number}`);
+    const card = CARDS[globalIndex];
+    if (!card || !["in pack", "pulled", "redeemed"].includes(status)) continue;
+
+    const previousMint = String(card.mint || "").trim();
+    if (card.status !== status || previousMint !== mint) changed = true;
+    if (previousMint && previousMint !== mint && CARD_NFT_MINT_TO_INDEX.get(previousMint) === globalIndex) {
+      CARD_NFT_MINT_TO_INDEX.delete(previousMint);
+    }
+    card.status = status;
+    card.mint = mint;
+    if (mint) CARD_NFT_MINT_TO_INDEX.set(mint, globalIndex);
+  }
+
+  if (changed) {
+    collection.traitOccurrenceCountCache = null;
+    collection.traitSearchGroupsCache = null;
+  }
+  return changed;
+}
+
+function refreshLiveDataAfterFocus() {
+  if (document.hidden) return;
+  if (Date.now() - liveCardStatusLastFetchedAt >= LIVE_CARD_STATUS_REFRESH_MS) {
+    refreshLiveCardStatuses({ force: true }).catch(() => {});
+  }
+  if (Date.now() - globalTradeStatusLastFetchedAt >= GLOBAL_TRADE_STATUS_REFRESH_MS) {
+    refreshGlobalTradeStatuses({ force: true }).catch(() => {});
+  }
+  if (
+    WALLET_ROUTE_ADDRESS
+    && Date.now() - walletHoldingsLastFetchedAt >= WALLET_HOLDINGS_FOCUS_REFRESH_MS
+  ) {
+    refreshWalletBinderHoldings({ force: true }).catch(() => {});
+  }
+}
+
+function primeWalletBinderRoute(address) {
+  walletRouteLoading = true;
+  walletRouteLoadFailed = false;
+  walletRouteLoadErrorMessage = "";
+  walletFilterAddress = address;
+  walletFilterCardIndexes = [];
+  walletFilterCardIndexSet = new Set();
+  walletMatchedMintByCardIndex = new Map();
+  walletTradeCardStableIds = new Set();
+  walletSwagPackAssets = [];
+  walletSwagPackAssetsFetchedAt = 0;
+  favoritesOnly = false;
+  activeTraitFilter = null;
+  traitSearchOpen = false;
+  traitSortCategory = "all";
+  isBinderMode = true;
+  document.title = `${shortenSolAddress(address)} — cards.art`;
+  ensureWalletCanonicalLink(address);
+  updateBinderOrderEditorAvailability();
+}
+
+async function loadWalletBinderRoute(address) {
+  try {
+    const [profile] = await Promise.all([
+      getWalletBinderProfile(address),
+      ensureAllCollectionCards(),
+      refreshLiveCardStatuses({ render: false }).catch(() => null),
+    ]);
+    walletRouteProfile = profile;
+    const result = await findWalletCardIndexes(address);
+    walletHoldingsLastFetchedAt = Date.now();
+    walletRouteLoading = false;
+    walletRouteLoadFailed = false;
+    walletRouteLoadErrorMessage = "";
+    applyWalletCardFilter(address, result, {
+      cardOrder: profile?.cardOrder,
+      tradeCardIds: profile?.tradeCardIds,
+    });
+    if (readGalleryUrlState().hasParameters) {
+      await handleGalleryUrlNavigation();
+    }
+  } catch (error) {
+    walletRouteLoading = false;
+    walletRouteLoadFailed = true;
+    walletRouteLoadErrorMessage = error?.code === "binder_not_found"
+      ? "This wallet binder is private."
+      : "Wallet binder could not load. Try again.";
+    updateBinderOrderEditorAvailability();
+    renderGallery();
+    throw error;
+  } finally {
+    scheduleWalletHoldingsRefresh();
+  }
+}
+
+function scheduleWalletHoldingsRefresh() {
+  if (walletHoldingsRefreshTimer) window.clearTimeout(walletHoldingsRefreshTimer);
+  if (!WALLET_ROUTE_ADDRESS) return;
+  const elapsed = walletHoldingsLastFetchedAt
+    ? Date.now() - walletHoldingsLastFetchedAt
+    : 0;
+  const delay = Math.max(15_000, WALLET_HOLDINGS_AUTO_REFRESH_MS - elapsed);
+  walletHoldingsRefreshTimer = window.setTimeout(() => {
+    walletHoldingsRefreshTimer = 0;
+    refreshWalletBinderHoldings({ force: true }).catch(() => {});
+  }, delay);
+}
+
+async function refreshWalletBinderHoldings(options = {}) {
+  if (
+    !WALLET_ROUTE_ADDRESS
+    || document.hidden
+    || binderOrderEditorOpen
+    || walletRouteLoading
+  ) {
+    scheduleWalletHoldingsRefresh();
+    return false;
+  }
+  if (
+    !options.force
+    && walletHoldingsLastFetchedAt
+    && Date.now() - walletHoldingsLastFetchedAt < WALLET_HOLDINGS_AUTO_REFRESH_MS
+  ) {
+    scheduleWalletHoldingsRefresh();
+    return false;
+  }
+  if (walletHoldingsRefreshPromise) return walletHoldingsRefreshPromise;
+
+  walletHoldingsRefreshPromise = (async () => {
+    await ensureAllCollectionCards();
+    const statusesChanged = await refreshLiveCardStatuses({ render: false }).catch(() => false);
+    const [profile, result] = await Promise.all([
+      getWalletBinderProfile(WALLET_ROUTE_ADDRESS),
+      findWalletCardIndexes(WALLET_ROUTE_ADDRESS),
+    ]);
+    const nextIndexes = orderWalletCardIndexes(result.indexes, profile?.cardOrder);
+    const holdingsChanged = !sameNumberArray(nextIndexes, walletFilterCardIndexes || []);
+    const tradeIds = normalizeBinderStableIdSet(profile?.tradeCardIds);
+    const tradeMarksChanged = !sameStringSet(tradeIds, walletTradeCardStableIds);
+    const coverChanged = JSON.stringify(profile?.cover || {})
+      !== JSON.stringify(walletRouteProfile?.cover || {});
+
+    walletRouteProfile = profile;
+    walletFilterAddress = WALLET_ROUTE_ADDRESS;
+    walletFilterCardIndexes = nextIndexes;
+    walletFilterCardIndexSet = new Set(nextIndexes);
+    walletMatchedMintByCardIndex = new Map(result.matchedMints);
+    syncGlobalTradeMarks(walletTradeCardStableIds, tradeIds);
+    walletTradeCardStableIds = tradeIds;
+    walletHoldingsLastFetchedAt = Date.now();
+    walletRouteLoading = false;
+    walletRouteLoadFailed = false;
+    walletRouteLoadErrorMessage = "";
+
+    if (coverChanged) refreshWalletBinderCoverRendering();
+    if (holdingsChanged || tradeMarksChanged || statusesChanged || coverChanged) renderGallery();
+    updateWalletSearchState();
+    updateBinderOrderEditorAvailability();
+    return holdingsChanged || tradeMarksChanged || statusesChanged || coverChanged;
+  })().finally(() => {
+    walletHoldingsRefreshPromise = null;
+    scheduleWalletHoldingsRefresh();
+  });
+  return walletHoldingsRefreshPromise;
+}
+
+function sameNumberArray(left, right) {
+  return left.length === right.length && left.every((value, index) => value === right[index]);
+}
+
+function sameStringSet(left, right) {
+  return left.size === right.size && [...left].every((value) => right.has(value));
+}
+
+function syncGlobalTradeMarks(previousIds, nextIds) {
+  for (const stableId of previousIds || []) globalTradeCardStableIds.delete(stableId);
+  for (const stableId of nextIds || []) globalTradeCardStableIds.add(stableId);
+}
+
+async function getWalletBinderProfile(address) {
+  return getPublicWalletBinder(WALLET_AUTH_API_BASE_URL, address);
+}
+
+function orderWalletCardIndexes(indexes, cardOrder = []) {
+  const owned = new Set((indexes || []).filter((index) => Number.isInteger(index) && CARDS[index]));
+  const ordered = [];
+  for (const stableId of Array.isArray(cardOrder) ? cardOrder : []) {
+    const index = CARD_STABLE_ID_TO_INDEX.get(String(stableId || "").trim());
+    if (!owned.delete(index)) continue;
+    ordered.push(index);
+  }
+  return ordered.concat([...owned].sort(compareWalletCardIndexes));
+}
+
+function compareWalletCardIndexes(leftIndex, rightIndex) {
+  const left = CARDS[leftIndex];
+  const right = CARDS[rightIndex];
+  const collectionOrder = Object.keys(COLLECTION_CONFIGS);
+  return collectionOrder.indexOf(left?.collection) - collectionOrder.indexOf(right?.collection)
+    || compareCardIndexes(leftIndex, rightIndex)
+    || Number(left?.collectionIndex || 0) - Number(right?.collectionIndex || 0);
+}
+
+function navigateToWalletBinder(address) {
+  const destination = new URL(`/${address}`, window.location.origin);
+  window.location.assign(destination.href);
+}
+
+function ensureWalletCanonicalLink(address) {
+  let canonical = document.querySelector('link[rel="canonical"]');
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.rel = "canonical";
+    document.head.append(canonical);
+  }
+  canonical.href = new URL(`/${address}`, window.location.origin).href;
 }
 
 function resetWalletCardFilter() {
@@ -6749,32 +10864,43 @@ function resetWalletCardFilter() {
   walletFilterCardIndexSet = null;
   walletFilterAddress = "";
   walletMatchedMintByCardIndex = new Map();
+  walletTradeCardStableIds = new Set();
+  walletSwagPackAssets = [];
+  walletSwagPackAssetsFetchedAt = 0;
   updateWalletSearchState();
 }
 
 async function findWalletCardIndexes(address) {
+  try {
+    const matches = await fetchLiveWalletCardMatches(address);
+    const indexes = new Set();
+    const matchedMints = new Map();
+    addWalletCardMatches(indexes, matchedMints, matches);
+    return {
+      indexes: [...indexes].sort(compareCardIndexes),
+      matchedMints,
+    };
+  } catch {
+    // The direct sources below preserve wallet browsing if the API Worker is unavailable.
+  }
+
   const indexes = new Set();
   const matchedMints = new Map();
-  for (const index of await getSnapshotWalletCardIndexes(address)) {
-    indexes.add(index);
-    const mint = String(CARDS[index]?.mint || "").trim();
-    if (mint) matchedMints.set(index, mint);
-  }
   const [
-    magicEdenMatches,
+    magicEdenResult,
     dasResult,
     tensorCoreResult,
     tokenAccountResult,
     cardNft2Result,
   ] = await Promise.all([
-    fetchMagicEdenWalletCardMatches(address).catch(() => []),
+    settleWalletMatchSource(fetchMagicEdenWalletCardMatches(address)),
     settleWalletMatchSource(fetchWalletDasCardMatches(address)),
     settleWalletMatchSource(fetchTensorMplCoreWalletCardMatches(address)),
     settleWalletMatchSource(fetchWalletTokenAccountCardMatches(address)),
     settleWalletMatchSource(fetchCardNft2WalletCardMatches(address)),
   ]);
-  addWalletCardMatches(indexes, matchedMints, magicEdenMatches);
   const liveResults = [
+    magicEdenResult,
     dasResult,
     tensorCoreResult,
     tokenAccountResult,
@@ -6783,12 +10909,131 @@ async function findWalletCardIndexes(address) {
   for (const result of liveResults) {
     addWalletCardMatches(indexes, matchedMints, result.matches);
   }
+  const liveCardNft1OwnershipAvailable = magicEdenResult.ok
+    || dasResult.ok
+    || tokenAccountResult.ok;
+  if (!liveCardNft1OwnershipAvailable) {
+    for (const index of await getSnapshotWalletCardIndexes(address)) {
+      indexes.add(index);
+      const mint = String(CARDS[index]?.mint || "").trim();
+      if (mint) matchedMints.set(index, mint);
+    }
+  }
   if (!liveResults.some((result) => result.ok) && !indexes.size) {
     throw new Error("All live wallet sources failed");
   }
   return {
     indexes: [...indexes].sort(compareCardIndexes),
     matchedMints,
+  };
+}
+
+async function fetchLiveWalletCardMatches(address) {
+  const payload = await fetchLiveWalletHoldingsPayload(address);
+  walletSwagPackAssets = normalizeWalletSwagPackAssets(payload.swagPackAssets);
+  walletSwagPackAssetsFetchedAt = Date.now();
+  return [
+    ...getCardMatchesForMints(payload.mints),
+    ...getCardMatchesForReferences(payload.cardRefs),
+  ];
+}
+
+async function fetchLiveWalletHoldingsPayload(address) {
+  const url = `${WALLET_AUTH_API_BASE_URL}/wallets/${encodeURIComponent(address)}/holdings`;
+  const response = await fetchWithTimeout(url, {
+    headers: { accept: "application/json" },
+    cache: "no-store",
+    timeoutMs: LIVE_DATA_REQUEST_TIMEOUT_MS,
+  });
+  if (!response.ok) throw new Error(`Live wallet holdings failed: ${response.status}`);
+  const payload = await response.json();
+  if (!Array.isArray(payload?.mints)) throw new Error("Live wallet holdings are invalid");
+  return payload;
+}
+
+async function fetchWalletSwagPackAssets(address, options = {}) {
+  if (
+    !options.force
+    && walletSwagPackAssetsFetchedAt
+    && Date.now() - walletSwagPackAssetsFetchedAt < WALLET_HOLDINGS_FOCUS_REFRESH_MS
+  ) return walletSwagPackAssets.slice();
+  try {
+    const payload = await fetchLiveWalletHoldingsPayload(address);
+    return normalizeWalletSwagPackAssets(payload.swagPackAssets);
+  } catch {
+    return fetchWalletDasSwagPackAssets(address);
+  }
+}
+
+function normalizeWalletSwagPackAssets(assets) {
+  const byImage = new Map();
+  for (const candidate of Array.isArray(assets) ? assets : []) {
+    const mint = String(candidate?.mint || "").trim();
+    const sourceImageUrl = normalizeBinderStickerImageUrl(candidate?.imageUrl);
+    const imageUrl = getTransparentSwagPackStickerImageUrl(sourceImageUrl) || sourceImageUrl;
+    if (!isPossibleSolanaAddress(mint) || !imageUrl || byImage.has(imageUrl)) continue;
+    byImage.set(imageUrl, {
+      mint,
+      name: String(candidate?.name || "Swag Pack sticker").trim().slice(0, 120)
+        || "Swag Pack sticker",
+      imageUrl,
+    });
+  }
+  return [...byImage.values()].sort((left, right) => (
+    left.name.localeCompare(right.name, undefined, { numeric: true, sensitivity: "base" })
+      || left.mint.localeCompare(right.mint)
+  ));
+}
+
+async function fetchWalletDasSwagPackAssets(address) {
+  const assets = [];
+  let page = 1;
+  let fetched = 0;
+  while (fetched < DAS_WALLET_MAX_ASSETS) {
+    const result = await solanaDasRpc("getAssetsByOwner", {
+      ownerAddress: address,
+      page,
+      limit: DAS_WALLET_PAGE_LIMIT,
+      displayOptions: {
+        showFungible: false,
+        showNativeBalance: false,
+      },
+    });
+    const items = Array.isArray(result?.items) ? result.items : [];
+    for (const asset of items) {
+      const record = getSwagPackAssetForDas(asset);
+      if (record) assets.push(record);
+    }
+    fetched += items.length;
+    const total = Number(result?.total);
+    if (
+      items.length < DAS_WALLET_PAGE_LIMIT
+      || (Number.isFinite(total) && fetched >= total)
+    ) break;
+    page += 1;
+  }
+  return normalizeWalletSwagPackAssets(assets);
+}
+
+function getSwagPackAssetForDas(asset) {
+  const belongsToSwagPack = (asset?.grouping || []).some((group) => (
+    String(group?.group_key || "").trim() === "collection"
+    && String(group?.group_value || "").trim() === SWAG_PACK_COLLECTION_MINT
+  ));
+  if (!belongsToSwagPack) return null;
+  const mint = String(asset?.id || "").trim();
+  const metadata = asset?.content?.metadata || {};
+  const imageUrl = normalizeBinderStickerImageUrl(
+    asset?.content?.links?.image
+      || (asset?.content?.files || []).find((file) => (
+        String(file?.mime || "").startsWith("image/")
+      ))?.uri,
+  );
+  if (!isPossibleSolanaAddress(mint) || !imageUrl) return null;
+  return {
+    mint,
+    name: String(metadata.json_name || metadata.name || "Swag Pack sticker").trim().slice(0, 120),
+    imageUrl,
   };
 }
 
@@ -6857,14 +11102,20 @@ function buildCardNftOwnerIndex(snapshot) {
 
 async function fetchMagicEdenWalletCardMatches(address) {
   const matches = [];
+  let successfulCollectionRequests = 0;
   for (const symbol of CARD_NFT_COLLECTION_SYMBOLS) {
     try {
       let offset = 0;
+      let collectionResponded = false;
 
       while (offset < MAGIC_EDEN_WALLET_MAX_TOKENS) {
         const tokens = await magicEdenApi(
           `/wallets/${encodeURIComponent(address)}/tokens?collection_symbol=${encodeURIComponent(symbol)}&offset=${offset}&limit=${MAGIC_EDEN_WALLET_PAGE_LIMIT}&listStatus=both`,
         );
+        if (!collectionResponded) {
+          collectionResponded = true;
+          successfulCollectionRequests += 1;
+        }
         const page = Array.isArray(tokens) ? tokens : tokens?.results || [];
 
         for (const token of page) {
@@ -6881,7 +11132,7 @@ async function fetchMagicEdenWalletCardMatches(address) {
       // One unavailable marketplace collection should not hide holdings from the others.
     }
   }
-
+  if (!successfulCollectionRequests) throw new Error("Magic Eden wallet lookup failed");
   return matches;
 }
 
@@ -6907,9 +11158,8 @@ async function fetchWalletDasCardMatches(address) {
     });
     const items = Array.isArray(result?.items) ? result.items : [];
     for (const asset of items) {
-      const mint = String(asset?.id || "").trim();
-      const index = CARD_NFT_MINT_TO_INDEX.get(mint);
-      if (Number.isInteger(index) && !matches.has(index)) matches.set(index, mint);
+      const match = getCardMatchForDasAsset(asset);
+      if (match && !matches.has(match.index)) matches.set(match.index, match.mint);
     }
 
     fetched += items.length;
@@ -7006,6 +11256,44 @@ function getCardMatchesForMints(mints) {
   return matches;
 }
 
+function getCardMatchesForReferences(references) {
+  const matches = [];
+  for (const reference of Array.isArray(references) ? references : []) {
+    const collectionId = String(reference?.[0] || "").trim();
+    const number = Number(reference?.[1]);
+    const mint = String(reference?.[2] || "").trim();
+    const index = CARD_NUMBER_TO_INDEX.get(`${collectionId}:${number}`);
+    if (Number.isInteger(index) && mint) matches.push({ index, mint });
+  }
+  return matches;
+}
+
+function getCardMatchForDasAsset(asset) {
+  const mint = String(asset?.id || "").trim();
+  if (!mint) return null;
+  const knownIndex = CARD_NFT_MINT_TO_INDEX.get(mint);
+  if (Number.isInteger(knownIndex)) return { index: knownIndex, mint };
+
+  const collectionIds = (asset?.grouping || [])
+    .filter((group) => String(group?.group_key || "").trim() === "collection")
+    .map((group) => String(group?.group_value || "").trim());
+  if (!collectionIds.includes(CLEAR_CARD_COLLECTION_MINT)) return null;
+
+  const attributes = asset?.content?.metadata?.attributes || [];
+  const type = String(attributes.find((attribute) => (
+    String(attribute?.trait_type || "").trim().toLowerCase() === "type"
+  ))?.value || "").trim().toLowerCase();
+  if (type !== "card" && type !== "card receipt") return null;
+
+  const metadataUri = String(asset?.content?.json_uri || "").trim();
+  const name = String(asset?.content?.metadata?.name || "").trim();
+  const numberMatch = metadataUri.match(/\/(?:r?f)(\d+)\.json(?:$|[?#])/i)
+    || name.match(/(?:card\s*#?\s*)(\d+)\s*$/i);
+  const number = numberMatch ? Number.parseInt(numberMatch[1], 10) : null;
+  const index = CARD_NUMBER_TO_INDEX.get(`clear:${number}`);
+  return Number.isInteger(index) ? { index, mint } : null;
+}
+
 async function magicEdenApi(path) {
   const response = await fetchWithTimeout(`${MAGIC_EDEN_API_URL}${path}`);
   if (!response.ok) throw new Error(`Magic Eden API failed: ${response.status}`);
@@ -7075,10 +11363,12 @@ async function solanaDasRpc(method, params) {
 }
 
 async function fetchWithTimeout(url, options = {}) {
+  const timeoutMs = Number(options.timeoutMs) || WALLET_SEARCH_REQUEST_TIMEOUT_MS;
+  const { timeoutMs: _timeoutMs, ...fetchOptions } = options;
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), WALLET_SEARCH_REQUEST_TIMEOUT_MS);
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
   try {
-    return await fetch(url, { ...options, signal: controller.signal });
+    return await fetch(url, { ...fetchOptions, signal: controller.signal });
   } finally {
     clearTimeout(timeout);
   }
@@ -7099,7 +11389,49 @@ function hasPositiveTokenBalance(tokenAmount) {
 }
 
 function isPossibleSolanaAddress(value) {
-  return SOLANA_ADDRESS_PATTERN.test(String(value || "").trim());
+  const address = String(value || "").trim();
+  return SOLANA_ADDRESS_PATTERN.test(address) && isCanonicalSolanaAddress(address);
+}
+
+function getWalletAddressFromPathname(pathname) {
+  const segments = String(pathname || "").split("/").filter(Boolean);
+  if (segments.length !== 1) return "";
+  let address;
+  try {
+    address = decodeURIComponent(segments[0]);
+  } catch {
+    return "";
+  }
+  if (!isPossibleSolanaAddress(address)) return "";
+  if (window.location.pathname !== `/${address}`) {
+    window.history.replaceState(window.history.state, "", `/${address}${window.location.search}${window.location.hash}`);
+  }
+  return address;
+}
+
+function getWalletAuthApiBaseUrl() {
+  const configured = document.querySelector('meta[name="cards-art-auth-api"]')?.content?.trim();
+  if (configured) return configured.replace(/\/+$/, "");
+  if (isLoopbackBrowserHostname(window.location.hostname)) {
+    return `${window.location.protocol}//${window.location.hostname}:8787/api`;
+  }
+  return "https://api.cards.art/api";
+}
+
+function isLoopbackBrowserHostname(hostname) {
+  const normalized = String(hostname || "").toLowerCase();
+  if (
+    normalized === "localhost"
+    || normalized.endsWith(".localhost")
+    || normalized === "::1"
+    || normalized === "[::1]"
+  ) {
+    return true;
+  }
+  const octets = normalized.split(".");
+  return octets.length === 4
+    && octets[0] === "127"
+    && octets.every((octet) => /^\d{1,3}$/.test(octet) && Number(octet) <= 255);
 }
 
 function shortenSolAddress(value) {
@@ -7133,11 +11465,11 @@ function resetBinderGalleryPosition() {
 
 function getVisibleIndexes() {
   const traitCollectionId = activeTraitFilter?.collectionId;
-  let indexes = (favoritesOnly || walletFilterCardIndexSet || (
-    traitCollectionId && traitCollectionId !== ACTIVE_COLLECTION_ID
-  ))
-    ? CARDS.map((_, index) => index)
-    : ACTIVE_COLLECTION_INDEXES.slice();
+  let indexes = walletFilterCardIndexes
+    ? walletFilterCardIndexes.slice()
+    : (favoritesOnly || (traitCollectionId && traitCollectionId !== ACTIVE_COLLECTION_ID))
+      ? CARDS.map((_, index) => index)
+      : ACTIVE_COLLECTION_INDEXES.slice();
   if (favoritesOnly) {
     indexes = indexes.filter((index) => favorites.has(favoriteKey(index)));
   }
@@ -7152,6 +11484,17 @@ function getVisibleIndexes() {
       return matchesCollection
         && cardHasTraitValue(index, sourceCategories, activeTraitFilter.normalizedValue);
     });
+  }
+  if (traitSortCategory === WALLET_TRADE_FILTER_VALUE) {
+    return indexes.sort((left, right) => (
+      Number(isCardMarkedForTrade(CARDS[right]))
+      - Number(isCardMarkedForTrade(CARDS[left]))
+    ));
+  }
+  if (traitSortCategory === LISTED_SORT_VALUE) {
+    return indexes.sort((left, right) => (
+      Number(Boolean(CARDS[right]?.listed)) - Number(Boolean(CARDS[left]?.listed))
+    ));
   }
   if (traitSortCategory === "all") return indexes;
   if (activeTraitFilter && traitSortCategory === activeTraitFilter.category) {
@@ -7203,6 +11546,10 @@ function getCardTraitValue(index, category) {
 
 function getCardTraitValues(index, category) {
   const card = CARDS[index];
+  if (normalizeTraitValue(category) === "status") {
+    const status = getCardStatusTraitValue(card?.status);
+    return status ? [status] : [];
+  }
   const collection = getCollectionConfigForCard(card);
   const categoryIndex = collection.traitCategories.indexOf(category);
   if (categoryIndex < 0 || !collection.traits) return [];
@@ -7227,6 +11574,7 @@ function getTraitValueLookupKeys(value) {
 
 function getTraitCategoryDisplayLabel(category) {
   const normalizedCategory = normalizeTraitValue(category);
+  if (normalizedCategory === "listed?") return "listed";
   if (normalizedCategory === "status" || normalizedCategory === "rarity") {
     return normalizedCategory;
   }
@@ -7405,7 +11753,10 @@ function getTraitSearchGroups() {
     const seenValues = new Set();
     for (let offset = 0; offset + 1 < row.length; offset += 2) {
       const category = String(ACTIVE_TRAIT_CATEGORIES[row[offset]] || "").trim();
-      const value = String(dictionary[row[offset + 1]] || "").trim();
+      const sourceValue = String(dictionary[row[offset + 1]] || "").trim();
+      const value = normalizeTraitValue(category) === "status"
+        ? getCardStatusTraitValue(ACTIVE_COLLECTION.cards[traitRecordIndex]?.status)
+        : sourceValue;
       if (!category || HIDDEN_TRAIT_CATEGORIES.has(category) || !isVisibleTraitValue(value)) continue;
 
       const displayCategory = getTraitSearchDisplayCategory(category);
@@ -7847,7 +12198,15 @@ function renderGallery() {
   const empty = indexes.length === 0;
   if (binderFocusPosition >= indexes.length) binderFocusPosition = -1;
   els.galleryEmpty.hidden = !empty;
-  els.galleryEmpty.textContent = favoritesOnly ? "No favorites yet" : "No cards for this trait";
+  els.galleryEmpty.textContent = walletRouteLoading
+    ? "Loading wallet binder..."
+    : walletRouteLoadFailed
+      ? walletRouteLoadErrorMessage || "Wallet binder could not load. Try again."
+      : favoritesOnly
+        ? "No favorites yet"
+        : walletFilterCardIndexSet
+          ? "No supported cards found in this wallet"
+          : "No cards for this trait";
   els.favoriteFilterButton.setAttribute("aria-pressed", String(favoritesOnly));
   updateGalleryViewModeButton();
 
@@ -8379,21 +12738,6 @@ function createBinderTable() {
   );
   binderTableDisplayModelRoot.rotation.z = BINDER_TABLE_DISPLAY_MODEL_YAW;
   binderTableDisplayModelRoot.visible = false;
-  binderTableDisplayModelShadowMaterial = new THREE.MeshBasicMaterial({
-    color: 0x101827,
-    transparent: true,
-    opacity: 0,
-    depthWrite: false,
-  });
-  const displayModelShadow = new THREE.Mesh(
-    new THREE.CircleGeometry(0.58, 28),
-    binderTableDisplayModelShadowMaterial,
-  );
-  displayModelShadow.name = "binder-table-display-model-shadow";
-  displayModelShadow.position.z = 0.003;
-  displayModelShadow.scale.y = 0.42;
-  displayModelShadow.renderOrder = -90;
-  binderTableDisplayModelRoot.add(displayModelShadow);
   table.add(binderTableDisplayModelRoot);
 
   binderTableAccessoryRoot = createBinderTableAccessories();
@@ -8756,6 +13100,33 @@ function handleBinderTableDieTap(event) {
   return true;
 }
 
+function getBinderTableDisplayModelHit(event) {
+  const entry = binderTableDisplayModelEntries[binderTableDisplayModelIndex];
+  if (
+    !binderCamera
+    || !binderTableDisplayModelRoot
+    || !entry
+    || binderTableViewProgress < 0.82
+    || !isVisibleThroughParents(entry.root)
+  ) {
+    return null;
+  }
+
+  const meshes = [];
+  entry.root.traverse((child) => {
+    if (child.isMesh && isVisibleThroughParents(child)) meshes.push(child);
+  });
+  if (!meshes.length) return null;
+
+  setBinderRaycasterFromEvent(event);
+  return binderRaycaster.intersectObjects(meshes, false)[0] || null;
+}
+
+function handleBinderTableDisplayModelTap(event) {
+  if (!getBinderTableDisplayModelHit(event)) return false;
+  return cycleBinderTableDisplayModel();
+}
+
 function beginBinderTableDieToss(index) {
   const entry = binderTableDice[index];
   if (!entry || entry.animation) return false;
@@ -8976,68 +13347,35 @@ function ensureBinderTableDisplayModel() {
   if (binderTableDisplayModelPromise) return binderTableDisplayModelPromise;
   if (!binderTableDisplayModelRoot) return Promise.resolve(null);
 
-  binderTableDisplayModelPromise = import(
-    "./vendor/GLTFLoader.js?v=three-r165-gltf-1"
-  )
-    .then(({ GLTFLoader }) => new Promise((resolve, reject) => {
-      new GLTFLoader().load(
-        BINDER_TABLE_DISPLAY_MODEL_URL,
-        resolve,
-        undefined,
-        reject,
-      );
-    }))
-    .then((gltf) => {
-      const model = gltf?.scene;
-      if (!model || !binderTableDisplayModelRoot) return null;
-
-      const material = new THREE.MeshPhysicalMaterial({
-        color: 0x8babe2,
-        roughness: 0.2,
-        metalness: 0,
-        clearcoat: 0.92,
-        clearcoatRoughness: 0.12,
-        ior: 1.46,
-        specularIntensity: 1,
-        specularColor: 0xeaf2ff,
-        emissive: 0x14213a,
-        emissiveIntensity: 0.16,
-        side: THREE.FrontSide,
-        transparent: true,
-        opacity: 0,
-        depthWrite: false,
-        dithering: true,
-      });
-      material.forceSinglePass = true;
-      model.traverse((child) => {
-        if (!child.isMesh) return;
-        if (!child.geometry.getAttribute("normal")) {
-          child.geometry.computeVertexNormals();
-        }
-        child.material = material;
-        child.frustumCulled = true;
-        child.renderOrder = -70;
-      });
-
-      const bounds = new THREE.Box3().setFromObject(model);
-      const size = bounds.getSize(new THREE.Vector3());
-      const scale = BINDER_TABLE_DISPLAY_MODEL_HEIGHT / Math.max(0.001, size.y);
-      model.scale.setScalar(scale);
-      bounds.setFromObject(model);
-      const center = bounds.getCenter(new THREE.Vector3());
-      model.position.set(-center.x, -bounds.min.y, -center.z);
-
-      const uprightRoot = new THREE.Group();
-      uprightRoot.name = "binder-table-display-model-upright";
-      uprightRoot.rotation.x = Math.PI / 2;
-      uprightRoot.add(model);
-      binderTableDisplayModelRoot.add(uprightRoot);
-      binderTableDisplayModelMaterial = material;
-      binderTableDisplayModelLoadedAt = performance.now();
-      applyBinderTableViewProgress();
-      markBinderInteractionActive(BINDER_TABLE_DISPLAY_MODEL_REVEAL_DURATION_MS + 120);
-      startBinderRenderLoop();
-      return binderTableDisplayModelRoot;
+  binderTableDisplayModelPromise = Promise.all([
+    import("./vendor/GLTFLoader.js?v=three-r165-gltf-1"),
+    import("./vendor/DRACOLoader.js?v=three-r165-draco-1"),
+  ]).then(([{ GLTFLoader }, { DRACOLoader }]) => {
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath(INDIVIDUAL_CARD_DRACO_DECODER_PATH);
+    dracoLoader.setWorkerLimit(1);
+    const loader = new GLTFLoader();
+    loader.setDRACOLoader(dracoLoader);
+    return Promise.all(BINDER_TABLE_DISPLAY_MODEL_SPECS.map((spec) => (
+      new Promise((resolve, reject) => {
+        loader.load(spec.url, resolve, undefined, reject);
+      }).then((gltf) => createBinderTableDisplayModelEntry(gltf, spec))
+    ))).finally(() => dracoLoader.dispose());
+  }).then(async (entries) => {
+    if (!binderTableDisplayModelRoot) return null;
+    binderTableDisplayModelEntries = entries.filter(Boolean);
+    if (!binderTableDisplayModelEntries.length) return null;
+    for (const entry of binderTableDisplayModelEntries) {
+      binderTableDisplayModelRoot.add(entry.root);
+    }
+    await warmBinderTableDisplayModelEntries(binderTableDisplayModelEntries);
+    binderTableDisplayModelIndex = 0;
+    applyBinderTableDisplayModelSelection();
+    binderTableDisplayModelLoadedAt = performance.now();
+    applyBinderTableViewProgress();
+    markBinderInteractionActive(BINDER_TABLE_DISPLAY_MODEL_REVEAL_DURATION_MS + 120);
+    startBinderRenderLoop();
+    return binderTableDisplayModelRoot;
     })
     .catch((error) => {
       binderTableDisplayModelPromise = null;
@@ -9048,10 +13386,207 @@ function ensureBinderTableDisplayModel() {
   return binderTableDisplayModelPromise;
 }
 
+function createBinderTableDisplayModelEntry(gltf, spec) {
+  const model = gltf?.scene;
+  if (!model) return null;
+  model.rotation.y += spec.yawOffset || 0;
+  model.updateMatrixWorld(true);
+
+  const materials = spec.materialProfile === "blue-resin"
+    ? applyBinderTableBlueResinMaterial(model)
+    : preserveBinderTableDisplayModelMaterials(model);
+  model.traverse((child) => {
+    if (!child.isMesh) return;
+    if (!child.geometry.getAttribute("normal")) child.geometry.computeVertexNormals();
+    child.frustumCulled = true;
+    child.renderOrder = -70;
+  });
+
+  const bounds = new THREE.Box3().setFromObject(model);
+  const size = bounds.getSize(new THREE.Vector3());
+  const scale = (
+    BINDER_TABLE_DISPLAY_MODEL_HEIGHT
+    / Math.max(0.001, size.y)
+    * (spec.scaleMultiplier || 1)
+  );
+  model.scale.setScalar(scale);
+
+  const uprightRoot = new THREE.Group();
+  uprightRoot.name = `binder-table-display-model-${spec.id}`;
+  uprightRoot.rotation.x = Math.PI / 2 + (spec.pitchOffset || 0);
+  uprightRoot.userData.binderTableDisplayModelId = spec.id;
+  uprightRoot.add(model);
+  uprightRoot.updateMatrixWorld(true);
+  const placedBounds = new THREE.Box3().setFromObject(uprightRoot);
+  const placedCenter = placedBounds.getCenter(new THREE.Vector3());
+  const worldCorrection = new THREE.Vector3(
+    -placedCenter.x,
+    -placedCenter.y,
+    -placedBounds.min.z,
+  );
+  const localCorrection = worldCorrection.applyQuaternion(
+    uprightRoot.quaternion.clone().invert(),
+  );
+  model.position.add(localCorrection);
+  uprightRoot.position.y = spec.positionYOffset || 0;
+  return {
+    id: spec.id,
+    root: uprightRoot,
+    materials,
+    usesResinMaterial: spec.materialProfile === "blue-resin",
+  };
+}
+
+function applyBinderTableBlueResinMaterial(model) {
+  const material = new THREE.MeshPhysicalMaterial({
+    color: 0x8babe2,
+    roughness: 0.2,
+    metalness: 0,
+    clearcoat: 0.92,
+    clearcoatRoughness: 0.12,
+    ior: 1.46,
+    specularIntensity: 1,
+    specularColor: 0xeaf2ff,
+    emissive: 0x14213a,
+    emissiveIntensity: 0.16,
+    side: THREE.FrontSide,
+    transparent: true,
+    opacity: 0,
+    depthWrite: false,
+    dithering: true,
+  });
+  material.forceSinglePass = true;
+  material.userData.tableDisplayBaseOpacity = 1;
+  model.traverse((child) => {
+    if (child.isMesh) child.material = material;
+  });
+  return [material];
+}
+
+function preserveBinderTableDisplayModelMaterials(model) {
+  const materialClones = new Map();
+  model.traverse((child) => {
+    if (!child.isMesh) return;
+    const sourceMaterials = Array.isArray(child.material)
+      ? child.material
+      : [child.material];
+    const displayMaterials = sourceMaterials.map((sourceMaterial) => {
+      if (!sourceMaterial) return sourceMaterial;
+      if (materialClones.has(sourceMaterial)) return materialClones.get(sourceMaterial);
+      const material = sourceMaterial.clone();
+      material.userData.tableDisplayBaseOpacity = clamp(sourceMaterial.opacity ?? 1, 0, 1);
+      material.transparent = true;
+      material.opacity = 1;
+      material.depthWrite = true;
+      material.dithering = true;
+      material.forceSinglePass = true;
+      material.needsUpdate = true;
+      materialClones.set(sourceMaterial, material);
+      return material;
+    });
+    child.material = Array.isArray(child.material) ? displayMaterials : displayMaterials[0];
+  });
+  return [...materialClones.values()];
+}
+
+async function warmBinderTableDisplayModelEntries(entries) {
+  if (!binderRenderer || !binderScene || !binderCamera || !binderTableDisplayModelRoot) return;
+
+  const rootWasVisible = binderTableDisplayModelRoot.visible;
+  const entryStates = entries.map((entry) => ({
+    entry,
+    visible: entry.root.visible,
+    materials: entry.materials.map((material) => ({
+      material,
+      opacity: material.opacity,
+      depthWrite: material.depthWrite,
+    })),
+  }));
+
+  binderTableDisplayModelRoot.visible = true;
+  for (const { entry } of entryStates) {
+    entry.root.visible = true;
+    entry.root.traverse((object) => {
+      if (object.isMesh) object.frustumCulled = false;
+    });
+    for (const material of entry.materials) {
+      material.opacity = 0;
+      material.depthWrite = false;
+      if (typeof binderRenderer.initTexture !== "function") continue;
+      for (const value of Object.values(material)) {
+        if (!value?.isTexture) continue;
+        try {
+          binderRenderer.initTexture(value);
+        } catch {
+          // The compile pass below is the fallback for drivers that defer uploads.
+        }
+      }
+    }
+  }
+
+  try {
+    if (typeof binderRenderer.compileAsync === "function") {
+      await binderRenderer.compileAsync(binderScene, binderCamera);
+    } else if (typeof binderRenderer.compile === "function") {
+      binderRenderer.compile(binderScene, binderCamera);
+    }
+    binderRenderer.render(binderScene, binderCamera);
+    await nextAnimationFrame();
+    binderRenderer.render(binderScene, binderCamera);
+    binderRenderer.getContext()?.finish?.();
+  } catch {
+    // Normal rendering remains available if eager GPU preparation is unsupported.
+  } finally {
+    binderTableDisplayModelRoot.visible = rootWasVisible;
+    for (const state of entryStates) {
+      state.entry.root.visible = state.visible;
+      state.entry.root.traverse((object) => {
+        if (object.isMesh) object.frustumCulled = true;
+      });
+      for (const materialState of state.materials) {
+        materialState.material.opacity = materialState.opacity;
+        materialState.material.depthWrite = materialState.depthWrite;
+      }
+    }
+  }
+}
+
+function applyBinderTableDisplayModelSelection() {
+  binderTableDisplayModelEntries.forEach((entry, index) => {
+    const selected = index === binderTableDisplayModelIndex;
+    // Keep every model in the render pass at zero opacity so its embedded maps
+    // remain decoded, uploaded, and shader-ready between clicks.
+    entry.root.visible = true;
+    if (selected) return;
+    for (const material of entry.materials) {
+      material.opacity = 0;
+      material.depthWrite = false;
+    }
+  });
+}
+
+function cycleBinderTableDisplayModel() {
+  if (binderTableDisplayModelEntries.length < 2) return false;
+  binderTableDisplayModelIndex = modulo(
+    binderTableDisplayModelIndex + 1,
+    binderTableDisplayModelEntries.length,
+  );
+  applyBinderTableDisplayModelSelection();
+  const entry = binderTableDisplayModelEntries[binderTableDisplayModelIndex];
+  for (const material of entry.materials) {
+    material.opacity = 0;
+    material.depthWrite = !entry.usesResinMaterial;
+  }
+  binderTableDisplayModelLoadedAt = performance.now();
+  markBinderInteractionActive(BINDER_TABLE_DISPLAY_MODEL_REVEAL_DURATION_MS + 120);
+  startBinderRenderLoop();
+  return true;
+}
+
 function updateBinderTableDisplayModelVisibility(now = performance.now()) {
-  const material = binderTableDisplayModelMaterial;
+  const entry = binderTableDisplayModelEntries[binderTableDisplayModelIndex];
   const root = binderTableDisplayModelRoot;
-  if (!material || !root || !binderTableDisplayModelLoadedAt) return false;
+  if (!entry || !root || !binderTableDisplayModelLoadedAt) return false;
 
   const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
   const revealProgress = reducedMotion
@@ -9066,13 +13601,20 @@ function updateBinderTableDisplayModelVisibility(now = performance.now()) {
   const tableOpacity = clamp(binderTableViewProgress / 0.72, 0, 1);
   const opacity = tableOpacity * revealOpacity;
 
-  material.opacity = BINDER_TABLE_DISPLAY_MODEL_MAX_OPACITY * opacity;
-  if (binderTableDisplayModelShadowMaterial) {
-    binderTableDisplayModelShadowMaterial.opacity = (
-      BINDER_TABLE_DISPLAY_MODEL_SHADOW_OPACITY * opacity
-    );
+  for (const material of entry.materials) {
+    const baseOpacity = material.userData.tableDisplayBaseOpacity ?? 1;
+    if (entry.usesResinMaterial) {
+      material.depthWrite = false;
+      material.opacity = baseOpacity * BINDER_TABLE_DISPLAY_MODEL_MAX_OPACITY * opacity;
+    } else {
+      // Embedded models fade with their final depth mode already active, so
+      // self-occlusion never changes or pops at the end of the transition.
+      material.depthWrite = true;
+      material.opacity = baseOpacity * opacity;
+    }
   }
-  root.visible = opacity > 0.001;
+  // Keep the shared root stable while the selected model fades.
+  root.visible = tableOpacity > 0.001;
   return opacity > 0.001 && revealProgress < 1;
 }
 
@@ -9082,7 +13624,7 @@ function createEvilBinderTableSet() {
   binderEvilTableEntries = [];
 
   const collectionOrder = getEvilBinderTableCollectionOrder();
-  if (ACTIVE_COLLECTION.introGroup !== "evil" || collectionOrder.length !== 3) {
+  if (!usesEvilBinderPresentation() || collectionOrder.length !== 3) {
     root.visible = false;
     return root;
   }
@@ -9240,7 +13782,7 @@ function createEvilBinderTableProxy(collectionId, slot) {
 
 function getEvilBinderTableSetBaseOpacity() {
   if (
-    ACTIVE_COLLECTION.introGroup !== "evil"
+    !usesEvilBinderPresentation()
     || binderTableViewProgress <= 0.001
   ) {
     return 0;
@@ -9300,7 +13842,7 @@ function applyEvilBinderTableSetVisibility() {
 
 function canStartEvilBinderTableSwap() {
   return Boolean(
-    ACTIVE_COLLECTION.introGroup === "evil"
+    usesEvilBinderPresentation()
     && binderTableViewTarget > 0.5
     && binderTableViewProgress >= 0.985
     && Math.abs(binderClosure) >= 0.985
@@ -9528,7 +14070,7 @@ function commitActiveEvilBinderCollection(
 }
 
 function initializeEvilBinderHistoryState() {
-  if (ACTIVE_COLLECTION.introGroup !== "evil") return;
+  if (!usesEvilBinderPresentation()) return;
   const collectionOrder = getEvilBinderTableCollectionOrder();
   const nextState = {
     ...(window.history.state || {}),
@@ -9552,6 +14094,7 @@ function handleEvilBinderHistoryNavigation(event) {
   ) {
     return;
   }
+  if (collectionId === ACTIVE_COLLECTION_ID) return;
 
   Promise.all([
     ensureCollectionCards(collectionId),
@@ -9562,6 +14105,7 @@ function handleEvilBinderHistoryNavigation(event) {
         historyMode: "none",
         tableCollectionOrder,
       });
+      handleGalleryUrlNavigation().catch(console.error);
     })
     .catch(console.error);
 }
@@ -9599,6 +14143,7 @@ function setBinderTableView(active, {
   const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
   binderTableViewTarget = nextTarget;
   els.body.classList.toggle("binder-table-view", Boolean(nextTarget));
+  queueSessionViewStateSave();
   if (active) {
     void ensureBinderTableSurfaceTextures();
     void ensureBinderTableDisplayModel();
@@ -9722,6 +14267,7 @@ function applyBinderTableCoverVisibility(progress) {
   if (!binderShellState) return;
 
   const visibility = clamp(progress, 0, 1);
+  const palette = getBinderCoverColorPalette();
   for (const mesh of [
     binderShellState.leftCover,
     binderShellState.rightCover,
@@ -9729,14 +14275,24 @@ function applyBinderTableCoverVisibility(progress) {
   ]) {
     const material = mesh?.material;
     if (!material) continue;
+    if (material.userData.binderColorFaithful) {
+      material.color.setRGB(0, 0, 0);
+      material.emissive.lerpColors(
+        palette.base,
+        palette.table,
+        visibility,
+      );
+      material.emissiveIntensity = 1;
+      continue;
+    }
     material.color.lerpColors(
-      BINDER_COVER_BASE_COLOR,
-      BINDER_COVER_TABLE_COLOR,
+      palette.base,
+      palette.table,
       visibility,
     );
     material.emissive.lerpColors(
-      BINDER_COVER_BASE_EMISSIVE,
-      BINDER_COVER_TABLE_EMISSIVE,
+      palette.baseEmissive,
+      palette.tableEmissive,
       visibility,
     );
     material.emissiveIntensity = THREE.MathUtils.lerp(
@@ -9785,7 +14341,9 @@ function updateBinderItems(indexes) {
     clearBinderFocus({ silent: true });
   }
 
-  const nextKey = indexes.map((index) => favoriteKey(index)).join("\u001f");
+  const nextKey = indexes.map((index) => (
+    `${favoriteKey(index)}:${getBinderCardStickerKinds(CARDS[index]).join(",")}`
+  )).join("\u001f");
   if (nextKey === binderIndexesKey) {
     updateBinderPageControls();
     if (isBinderFocused()) {
@@ -9837,7 +14395,7 @@ function createBinderModel(indexes, placeholderTexture) {
   const model = new THREE.Group();
   model.add(createBinderShell());
 
-  const materials = createBinderPageMaterials();
+  const materials = createBinderPageMaterials(indexes);
   const pageIndexes = getBinderPageWindowIndexes();
   binderPageWindowKey = pageIndexes.join(",");
   for (const pageIndex of pageIndexes) {
@@ -9847,6 +14405,8 @@ function createBinderModel(indexes, placeholderTexture) {
   }
   if (materials.plastic) materials.plastic.dispose();
   if (materials.seam) materials.seam.dispose();
+  if (materials.pageBacking) materials.pageBacking.dispose();
+  if (materials.pocketBacking) materials.pocketBacking.dispose();
 
   updateBinderPageTransforms();
   return model;
@@ -9920,6 +14480,18 @@ function createBinderCoverShellModel({
     -BINDER_COVER_THICKNESS / 2 - 0.012,
   );
   leftPivot.add(frontCoverEmblem);
+  const walletCoverArtwork = createBinderWalletCoverArtwork(
+    coverWidth,
+    coverHeight,
+    { active: emblemActive },
+  );
+  walletCoverArtwork.rotation.y = Math.PI;
+  walletCoverArtwork.position.set(
+    leftCover.position.x,
+    0,
+    -BINDER_COVER_THICKNESS / 2 - 0.014,
+  );
+  leftPivot.add(walletCoverArtwork);
   if (includeIntroNote) {
     const introNote = createBinderIntroNote(coverWidth, coverHeight);
     introNote.position.set(
@@ -9936,6 +14508,18 @@ function createBinderCoverShellModel({
   const rightCover = new THREE.Mesh(rightCoverGeometry, coverMaterial.clone());
   rightCover.position.x = coverWidth / 2;
   rightPivot.add(rightCover);
+  const walletBackCoverArtwork = createBinderWalletBackCoverArtwork(
+    coverWidth,
+    coverHeight,
+    { active: emblemActive },
+  );
+  walletBackCoverArtwork.rotation.y = Math.PI;
+  walletBackCoverArtwork.position.set(
+    rightCover.position.x,
+    0,
+    -BINDER_COVER_THICKNESS / 2 - 0.014,
+  );
+  rightPivot.add(walletBackCoverArtwork);
   shell.add(rightPivot);
 
   const spineGeometry = new THREE.PlaneGeometry(
@@ -9989,8 +14573,10 @@ function createBinderCoverShellModel({
     leftPivot,
     leftCover,
     frontCoverEmblem,
+    walletCoverArtwork,
     rightPivot,
     rightCover,
+    walletBackCoverArtwork,
     spine,
     spineGeometry,
     seam,
@@ -10013,7 +14599,9 @@ function updateBinderShellTransforms() {
   const {
     leftCover,
     frontCoverEmblem,
+    walletCoverArtwork,
     rightCover,
+    walletBackCoverArtwork,
     spine,
   } = binderShellState;
 
@@ -10022,7 +14610,15 @@ function updateBinderShellTransforms() {
     frontCoverEmblem,
     direction < 0 && progress >= BINDER_FRONT_COVER_EMBLEM_VISIBLE_PROGRESS,
   );
+  setBinderWalletCoverArtworkLayer(
+    walletCoverArtwork,
+    direction < 0 && progress >= BINDER_FRONT_COVER_EMBLEM_VISIBLE_PROGRESS,
+  );
   setBinderClosingShellLayer(rightCover, direction > 0 && progress > 0.001);
+  setBinderWalletBackCoverArtworkLayer(
+    walletBackCoverArtwork,
+    direction > 0 && progress >= BINDER_FRONT_COVER_EMBLEM_VISIBLE_PROGRESS,
+  );
   setBinderClosingShellLayer(spine, false);
   setBinderIntroCoverLayer(direction < 0 && progress > 0.001);
   updateBinderRootHorizontalCentering(direction, progress);
@@ -10148,6 +14744,302 @@ function setBinderClosingShellLayer(mesh, active, orderOffset = 0) {
   mesh.material.needsUpdate = true;
 }
 
+function createBinderWalletCoverArtwork(
+  coverWidth,
+  coverHeight,
+  { active = false } = {},
+) {
+  const settings = normalizeBinderCoverSettings(walletRouteProfile?.cover);
+  const source = getBinderCoverSurfaceTextureKey(settings, "front");
+  const enabled = Boolean(WALLET_ROUTE_ADDRESS && source);
+  const cachedTexture = enabled && binderWalletCoverArtworkSource === source
+    ? binderWalletCoverArtworkTexture
+    : null;
+  const material = new THREE.MeshBasicMaterial({
+    map: cachedTexture,
+    transparent: true,
+    opacity: 1,
+    toneMapped: false,
+    side: THREE.FrontSide,
+    depthWrite: false,
+    depthTest: true,
+  });
+  const mesh = new THREE.Mesh(new THREE.PlaneGeometry(coverWidth, coverHeight), material);
+  mesh.userData.binderWalletCoverArtworkActive = Boolean(enabled && active);
+  mesh.userData.binderWalletCoverArtworkLoaded = Boolean(cachedTexture);
+  mesh.visible = Boolean(mesh.userData.binderWalletCoverArtworkActive && cachedTexture);
+
+  if (enabled && !cachedTexture) {
+    getBinderWalletCoverArtworkTexture(settings, coverWidth, coverHeight)
+      .then((texture) => {
+        if (!mesh.parent) return;
+        material.map = texture;
+        material.needsUpdate = true;
+        mesh.userData.binderWalletCoverArtworkLoaded = true;
+        mesh.visible = Boolean(mesh.userData.binderWalletCoverArtworkActive);
+        requestBinderRenderOnce();
+      })
+      .catch((error) => {
+        if (!/changed while loading/i.test(error?.message || "")) console.error(error);
+      });
+  }
+  return mesh;
+}
+
+function setBinderWalletCoverArtworkLayer(mesh, active) {
+  if (!mesh) return;
+  mesh.userData.binderWalletCoverArtworkActive = Boolean(active);
+  mesh.visible = Boolean(active && mesh.userData.binderWalletCoverArtworkLoaded);
+  mesh.renderOrder = active ? BINDER_CLOSING_COVER_RENDER_ORDER + 2 : 0;
+}
+
+function getBinderWalletCoverArtworkTexture(settings, coverWidth, coverHeight) {
+  const source = getBinderCoverSurfaceTextureKey(settings, "front");
+  if (binderWalletCoverArtworkTexture && binderWalletCoverArtworkSource === source) {
+    return Promise.resolve(binderWalletCoverArtworkTexture);
+  }
+  if (binderWalletCoverArtworkPromise && binderWalletCoverArtworkSource === source) {
+    return binderWalletCoverArtworkPromise;
+  }
+
+  const token = binderWalletCoverArtworkToken;
+  binderWalletCoverArtworkSource = source;
+  binderWalletCoverArtworkPromise = createBinderCoverSurfaceTexture(
+    settings,
+    "front",
+    coverWidth,
+    coverHeight,
+  )
+    .then((texture) => {
+      if (token !== binderWalletCoverArtworkToken || source !== binderWalletCoverArtworkSource) {
+        texture.dispose();
+        throw new Error("Binder cover artwork changed while loading");
+      }
+      binderWalletCoverArtworkTexture?.dispose();
+      binderWalletCoverArtworkTexture = texture;
+      return texture;
+    })
+    .finally(() => {
+      if (source === binderWalletCoverArtworkSource) binderWalletCoverArtworkPromise = null;
+    });
+  return binderWalletCoverArtworkPromise;
+}
+
+function createBinderWalletBackCoverArtwork(
+  coverWidth,
+  coverHeight,
+  { active = false } = {},
+) {
+  const settings = normalizeBinderCoverSettings(walletRouteProfile?.cover);
+  const source = getBinderCoverSurfaceTextureKey(settings, "back");
+  const enabled = Boolean(WALLET_ROUTE_ADDRESS && source);
+  const cachedTexture = enabled
+    && binderWalletBackCoverArtworkSource === source
+    ? binderWalletBackCoverArtworkTexture
+    : null;
+  const material = new THREE.MeshBasicMaterial({
+    map: cachedTexture,
+    transparent: true,
+    opacity: 1,
+    toneMapped: false,
+    side: THREE.FrontSide,
+    depthWrite: false,
+    depthTest: true,
+  });
+  const mesh = new THREE.Mesh(new THREE.PlaneGeometry(coverWidth, coverHeight), material);
+  mesh.userData.binderWalletBackCoverArtworkActive = Boolean(enabled && active);
+  mesh.userData.binderWalletBackCoverArtworkLoaded = Boolean(cachedTexture);
+  mesh.visible = Boolean(mesh.userData.binderWalletBackCoverArtworkActive && cachedTexture);
+
+  if (enabled && !cachedTexture) {
+    getBinderWalletBackCoverArtworkTexture(settings, coverWidth, coverHeight)
+      .then((texture) => {
+        if (!mesh.parent) return;
+        material.map = texture;
+        material.needsUpdate = true;
+        mesh.userData.binderWalletBackCoverArtworkLoaded = true;
+        mesh.visible = Boolean(mesh.userData.binderWalletBackCoverArtworkActive);
+        requestBinderRenderOnce();
+      })
+      .catch((error) => {
+        if (!/changed while loading/i.test(error?.message || "")) console.error(error);
+      });
+  }
+  return mesh;
+}
+
+function setBinderWalletBackCoverArtworkLayer(mesh, active) {
+  if (!mesh) return;
+  mesh.userData.binderWalletBackCoverArtworkActive = Boolean(active);
+  mesh.visible = Boolean(active && mesh.userData.binderWalletBackCoverArtworkLoaded);
+  mesh.renderOrder = active ? BINDER_CLOSING_COVER_RENDER_ORDER + 2 : 0;
+}
+
+function getBinderWalletBackCoverArtworkTexture(settings, coverWidth, coverHeight) {
+  const source = getBinderCoverSurfaceTextureKey(settings, "back");
+  if (
+    binderWalletBackCoverArtworkTexture
+    && binderWalletBackCoverArtworkSource === source
+  ) {
+    return Promise.resolve(binderWalletBackCoverArtworkTexture);
+  }
+  if (
+    binderWalletBackCoverArtworkPromise
+    && binderWalletBackCoverArtworkSource === source
+  ) {
+    return binderWalletBackCoverArtworkPromise;
+  }
+
+  const token = binderWalletCoverArtworkToken;
+  binderWalletBackCoverArtworkSource = source;
+  binderWalletBackCoverArtworkPromise = createBinderCoverSurfaceTexture(
+    settings,
+    "back",
+    coverWidth,
+    coverHeight,
+  )
+    .then((texture) => {
+      if (
+        token !== binderWalletCoverArtworkToken
+        || source !== binderWalletBackCoverArtworkSource
+      ) {
+        texture.dispose();
+        throw new Error("Binder back cover artwork changed while loading");
+      }
+      binderWalletBackCoverArtworkTexture?.dispose();
+      binderWalletBackCoverArtworkTexture = texture;
+      return texture;
+    })
+    .finally(() => {
+      if (source === binderWalletBackCoverArtworkSource) {
+        binderWalletBackCoverArtworkPromise = null;
+      }
+    });
+  return binderWalletBackCoverArtworkPromise;
+}
+
+function getBinderCoverSurfaceTextureKey(settings, surface) {
+  const stickers = settings.stickers.filter((sticker) => sticker.surface === surface);
+  const text = getBinderOutsideCoverTextSettings(settings, surface);
+  const artwork = surface === "back"
+    ? {
+      dataUrl: settings.backArtworkDataUrl,
+      x: settings.backArtworkX,
+      y: settings.backArtworkY,
+      scale: settings.backArtworkScale,
+      rotation: settings.backArtworkRotation,
+    }
+    : {
+      dataUrl: settings.artworkDataUrl,
+      x: settings.artworkX,
+      y: settings.artworkY,
+      scale: settings.artworkScale,
+      rotation: settings.artworkRotation,
+    };
+  if (!artwork.dataUrl && !text.text && !stickers.length) return "";
+  return JSON.stringify({ surface, artwork, text, stickers });
+}
+
+function getBinderOutsideCoverTextSettings(settings, surface = "front") {
+  const isBack = surface === "back";
+  return {
+    text: isBack ? settings.backText : settings.frontText,
+    color: isBack ? settings.backTextColor : settings.frontTextColor,
+    x: isBack ? settings.backTextX : settings.frontTextX,
+    y: isBack ? settings.backTextY : settings.frontTextY,
+    width: isBack ? settings.backTextWidth : settings.frontTextWidth,
+    height: isBack ? settings.backTextHeight : settings.frontTextHeight,
+    fontSize: isBack ? settings.backFontSize : settings.frontFontSize,
+    rotation: isBack ? settings.backTextRotation : settings.frontTextRotation,
+  };
+}
+
+async function createBinderCoverSurfaceTexture(settings, surfaceName, coverWidth, coverHeight) {
+  const surface = document.createElement("canvas");
+  surface.width = 1024;
+  surface.height = Math.max(1, Math.round(surface.width * coverHeight / coverWidth));
+  const context = surface.getContext("2d", { alpha: true });
+  context.clearRect(0, 0, surface.width, surface.height);
+  context.imageSmoothingEnabled = true;
+  context.imageSmoothingQuality = "high";
+
+  const artworkUrl = surfaceName === "back"
+    ? settings.backArtworkDataUrl
+    : settings.artworkDataUrl;
+  const artworkImage = artworkUrl
+    ? await loadTextureImage(artworkUrl, { fetchPriority: "high" })
+    : null;
+  if (artworkImage) {
+    const imageWidth = artworkImage.naturalWidth || artworkImage.width;
+    const imageHeight = artworkImage.naturalHeight || artworkImage.height;
+    const containScale = Math.min(
+      surface.width / Math.max(1, imageWidth),
+      surface.height / Math.max(1, imageHeight),
+    );
+    const artworkScale = surfaceName === "back"
+      ? settings.backArtworkScale
+      : settings.artworkScale;
+    const artworkRotation = surfaceName === "back"
+      ? settings.backArtworkRotation
+      : settings.artworkRotation;
+    const centerX = (surfaceName === "back" ? settings.backArtworkX : settings.artworkX)
+      * surface.width;
+    const centerY = (surfaceName === "back" ? settings.backArtworkY : settings.artworkY)
+      * surface.height;
+    const width = imageWidth * containScale * artworkScale;
+    const height = imageHeight * containScale * artworkScale;
+    context.save();
+    context.translate(centerX, centerY);
+    context.rotate(artworkRotation * Math.PI / 180);
+    context.drawImage(artworkImage, -width / 2, -height / 2, width, height);
+    context.restore();
+  }
+
+  const text = getBinderOutsideCoverTextSettings(settings, surfaceName);
+  if (text.text) {
+    const box = {
+      x: (text.x - text.width / 2) * surface.width,
+      y: (text.y - text.height / 2) * surface.height,
+      width: text.width * surface.width,
+      height: text.height * surface.height,
+    };
+    drawRotatedBinderCustomText(context, {
+      text: text.text,
+      links: [],
+      box,
+      fontSize: text.fontSize,
+      fontStack: SITE_FONT_STACK,
+      textFillStyle: text.color,
+      linkFillStyle: text.color,
+    }, text.rotation);
+  }
+
+  const stickers = settings.stickers.filter((sticker) => sticker.surface === surfaceName);
+  const stickerImages = await Promise.all(stickers.map((sticker) => (
+    loadTextureImage(sticker.imageUrl, { fetchPriority: "high" })
+      .then((image) => ({ sticker, image }))
+      .catch(() => null)
+  )));
+  for (const entry of stickerImages) {
+    if (entry) drawBinderCoverStickerImage(context, entry.sticker, entry.image);
+  }
+  return configureDisplayTexture(new THREE.CanvasTexture(surface));
+}
+
+function drawBinderCoverStickerImage(context, sticker, image) {
+  const imageWidth = image.naturalWidth || image.width;
+  const imageHeight = image.naturalHeight || image.height;
+  const width = sticker.scale * context.canvas.width;
+  const height = width * imageHeight / Math.max(1, imageWidth);
+  const centerX = sticker.x * context.canvas.width;
+  const centerY = sticker.y * context.canvas.height;
+  context.save();
+  context.translate(centerX, centerY);
+  context.rotate(sticker.rotation * Math.PI / 180);
+  context.drawImage(image, -width / 2, -height / 2, width, height);
+  context.restore();
+}
+
 function createBinderFrontCoverEmblem(
   coverWidth,
   coverHeight,
@@ -10155,6 +15047,8 @@ function createBinderFrontCoverEmblem(
   { active = false } = {},
 ) {
   const emblemEnabled = (
+    !WALLET_ROUTE_ADDRESS
+    &&
     COLLECTION_CONFIGS[collectionId]?.introGroup === "evil"
   );
   const emblemAspect = getBinderFrontCoverEmblemAspect(collectionId);
@@ -10283,9 +15177,13 @@ function setBinderIntroCoverLayer(active) {
 }
 
 function createBinderIntroNote(coverWidth, coverHeight) {
-  const noteWidth = coverWidth * 0.7;
-  const noteHeight = coverHeight * 0.31;
-  const { texture, linkBounds, focusBounds } = createBinderIntroNoteTexture();
+  const walletCover = Boolean(WALLET_ROUTE_ADDRESS);
+  const noteWidth = coverWidth * (walletCover ? 1 : 0.7);
+  const noteHeight = coverHeight * (walletCover ? 1 : 0.31);
+  const { texture, linkBounds, focusBounds } = createBinderIntroNoteTexture(
+    coverWidth,
+    coverHeight,
+  );
   const note = new THREE.Group();
 
   const noteMesh = new THREE.Mesh(
@@ -10340,7 +15238,7 @@ function createBinderIntroNote(coverWidth, coverHeight) {
 }
 
 function createBinderIntroSpriteMeshes(coverWidth, coverHeight) {
-  if (ACTIVE_COLLECTION.introGroup !== "evil") return [];
+  if (!usesEvilBinderPresentation()) return [];
 
   const textureLoader = new THREE.TextureLoader();
   return BINDER_INTRO_SPRITES.flatMap((sprite) => {
@@ -10394,7 +15292,7 @@ function createBinderIntroSpriteMeshes(coverWidth, coverHeight) {
   });
 }
 
-function createBinderPageMaterials() {
+function createBinderPageMaterials(indexes = []) {
   const plastic = new THREE.MeshBasicMaterial({
     color: 0xdceefa,
     transparent: true,
@@ -10415,13 +15313,51 @@ function createBinderPageMaterials() {
   });
   seam.forceSinglePass = true;
 
-  return { plastic, seam };
+  const pageBacking = usesDedicatedClearBinderPageBacking(indexes)
+    ? new THREE.MeshBasicMaterial({
+      color: CLEAR_BINDER_PAGE_COLOR,
+      transparent: true,
+      opacity: CLEAR_BINDER_PAGE_OPACITY,
+      side: THREE.DoubleSide,
+      depthWrite: false,
+      depthTest: true,
+      toneMapped: false,
+    })
+    : null;
+  if (pageBacking) pageBacking.forceSinglePass = true;
+
+  const pocketBacking = !pageBacking && indexes.some((index) => (
+    CARDS[index]?.collection === "clear"
+  ))
+    ? new THREE.MeshBasicMaterial({
+      color: CLEAR_BINDER_PAGE_COLOR,
+      transparent: true,
+      opacity: CLEAR_BINDER_POCKET_OPACITY,
+      side: THREE.FrontSide,
+      depthWrite: false,
+      depthTest: false,
+      toneMapped: false,
+    })
+    : null;
+  if (pocketBacking) pocketBacking.forceSinglePass = true;
+
+  return { plastic, seam, pageBacking, pocketBacking };
+}
+
+function usesDedicatedClearBinderPageBacking(indexes) {
+  return ACTIVE_COLLECTION_ID === "clear"
+    && !favoritesOnly
+    && !walletFilterCardIndexSet
+    && indexes.length > 0
+    && indexes.every((index) => CARDS[index]?.collection === "clear");
 }
 
 function createBinderPage(pageIndex, indexes, placeholderTexture, materials) {
   const group = new THREE.Group();
   group.position.set(0, 0, -pageIndex * BINDER_PAGE_STACK_GAP);
   group.userData.pageIndex = pageIndex;
+
+  if (materials.pageBacking) addClearBinderPageBacking(group, materials.pageBacking);
 
   const cells = [];
   const cardMeshes = [];
@@ -10439,6 +15375,13 @@ function createBinderPage(pageIndex, indexes, placeholderTexture, materials) {
       const hasBackCard = Number.isInteger(backCardIndex);
 
       if (hasFrontCard) {
+        addClearBinderPocketBacking(
+          cell.group,
+          materials.pocketBacking,
+          frontCardIndex,
+          1,
+          frontOffset,
+        );
         const readyTexture = getReadyBinderTexture(CARDS[frontCardIndex]);
         const card = createBinderCard(
           readyTexture || placeholderTexture,
@@ -10453,6 +15396,13 @@ function createBinderPage(pageIndex, indexes, placeholderTexture, materials) {
       }
 
       if (hasBackCard) {
+        addClearBinderPocketBacking(
+          cell.group,
+          materials.pocketBacking,
+          backCardIndex,
+          -1,
+          backOffset,
+        );
         const readyTexture = getReadyBinderTexture(CARDS[backCardIndex]);
         const card = createBinderCard(
           readyTexture || placeholderTexture,
@@ -10464,7 +15414,7 @@ function createBinderPage(pageIndex, indexes, placeholderTexture, materials) {
         cell.group.add(card);
         cell.group.add(createBinderLoadingRing(card, -1, backOffset));
         cardMeshes.push(card);
-      } else if (hasFrontCard) {
+      } else if (hasFrontCard && ACTIVE_COLLECTION.showUnpairedBinderBacks !== false) {
         const card = createBinderBackCard(placeholderTexture, frontCardIndex);
         cell.group.add(card);
         cardMeshes.push(card);
@@ -10485,6 +15435,36 @@ function createBinderPage(pageIndex, indexes, placeholderTexture, materials) {
     pageIndex,
     sheetMeshes: collectBinderSheetMeshes(group),
   };
+}
+
+function addClearBinderPageBacking(group, sourceMaterial) {
+  const backing = new THREE.Mesh(
+    new THREE.PlaneGeometry(BINDER_PAGE_WIDTH, BINDER_PAGE_HEIGHT, 1, 1),
+    sourceMaterial.clone(),
+  );
+  backing.position.set(BINDER_PAGE_WIDTH / 2, 0, 0);
+  backing.renderOrder = 1;
+  markBinderSheetLayer(backing, CLEAR_BINDER_PAGE_OPACITY, CLEAR_BINDER_PAGE_OPACITY);
+  backing.userData.clearBinderPageBacking = true;
+  group.add(backing);
+}
+
+function addClearBinderPocketBacking(group, sourceMaterial, cardIndex, side, binderPosition) {
+  if (!sourceMaterial || CARDS[cardIndex]?.collection !== "clear") return null;
+
+  const backing = new THREE.Mesh(
+    getBinderPocketBackingGeometry(),
+    sourceMaterial.clone(),
+  );
+  backing.position.z = side * (BINDER_CARD_LIFT - 0.006);
+  if (side < 0) backing.rotation.y = Math.PI;
+  backing.renderOrder = 11;
+  markBinderSheetLayer(backing, CLEAR_BINDER_POCKET_OPACITY, CLEAR_BINDER_POCKET_OPACITY);
+  backing.userData.clearBinderPocketBacking = true;
+  backing.userData.cardIndex = cardIndex;
+  backing.userData.binderPosition = binderPosition;
+  group.add(backing);
+  return backing;
 }
 
 function createBinderColumnPivots(group) {
@@ -10597,6 +15577,115 @@ function getBinderCardGeometry() {
   return binderCardGeometry;
 }
 
+function getBinderPocketBackingGeometry() {
+  if (!binderPocketBackingGeometry) {
+    binderPocketBackingGeometry = new THREE.PlaneGeometry(
+      BINDER_CELL_WIDTH,
+      BINDER_CELL_HEIGHT,
+      1,
+      1,
+    );
+    binderPocketBackingGeometry.userData.sharedBinderGeometry = true;
+  }
+  return binderPocketBackingGeometry;
+}
+
+function getBinderStickerGeometry() {
+  if (!binderStickerGeometry) {
+    binderStickerGeometry = new THREE.CircleGeometry(0.5, 48);
+    binderStickerGeometry.userData.sharedBinderGeometry = true;
+  }
+  return binderStickerGeometry;
+}
+
+function getBinderStickerTexture(kind) {
+  if (binderStickerTextures.has(kind)) return binderStickerTextures.get(kind);
+  const url = getBinderStickerTextureUrl(kind);
+  const texture = textureLoader.load(url, (loadedTexture) => {
+    configureBinderStickerTexture(loadedTexture);
+    if (typeof binderRenderer?.initTexture === "function") {
+      try {
+        binderRenderer.initTexture(loadedTexture);
+      } catch {
+        // The next binder render will upload the texture normally.
+      }
+    }
+    renderBinderSceneOnce();
+  }, undefined, (error) => {
+    console.warn(`Unable to load ${kind} binder sticker`, error);
+  });
+  binderStickerTextures.set(kind, texture);
+  return texture;
+}
+
+function getBinderStickerTextureUrl(kind) {
+  return kind === "trade"
+    ? BINDER_TRADE_STICKER_TEXTURE_URL
+    : BINDER_LISTED_STICKER_TEXTURE_URL;
+}
+
+function configureBinderStickerTexture(texture) {
+  texture.colorSpace = THREE.SRGBColorSpace;
+  texture.minFilter = THREE.LinearMipmapLinearFilter;
+  texture.magFilter = THREE.LinearFilter;
+  texture.wrapS = THREE.ClampToEdgeWrapping;
+  texture.wrapT = THREE.ClampToEdgeWrapping;
+  texture.generateMipmaps = true;
+  texture.anisotropy = Math.max(
+    1,
+    binderRenderer?.capabilities?.getMaxAnisotropy?.() || 1,
+  );
+  texture.needsUpdate = true;
+  return texture;
+}
+
+function getBinderCardStickerKinds(card) {
+  const kinds = [];
+  if (card?.listed) kinds.push("listed");
+  if (isCardMarkedForTrade(card)) kinds.push("trade");
+  return kinds;
+}
+
+function isCardMarkedForTrade(card) {
+  const stableId = String(card?.stableId || "");
+  return globalTradeCardStableIds.has(stableId) || walletTradeCardStableIds.has(stableId);
+}
+
+function createBinderCardSticker(kind, slotIndex = 0, card = null) {
+  const [width, height] = BINDER_STICKER_SIZES[kind] || BINDER_STICKER_SIZES.trade;
+  const raisedAboveTrade = kind === "listed" && isCardMarkedForTrade(card);
+  const verticalOffset = raisedAboveTrade
+    ? BINDER_STICKER_SIZES.trade[1] + BINDER_STICKER_GAP
+    : 0;
+  const material = new THREE.MeshBasicMaterial({
+    map: getBinderStickerTexture(kind),
+    transparent: true,
+    opacity: 0,
+    depthTest: false,
+    depthWrite: false,
+    toneMapped: false,
+    side: THREE.FrontSide,
+  });
+  const sticker = new THREE.Mesh(getBinderStickerGeometry(), material);
+  sticker.scale.set(width, height, 1);
+  sticker.position.set(
+    BINDER_STICKER_RIGHT_EDGE - width / 2,
+    BINDER_STICKER_BOTTOM_EDGE + height / 2 + verticalOffset,
+    raisedAboveTrade ? 0.014 : 0.012,
+  );
+  sticker.rotation.z = getBinderStickerRotation(card, kind);
+  sticker.renderOrder = raisedAboveTrade ? 25 : 24;
+  sticker.visible = false;
+  sticker.userData.binderCardSticker = kind;
+  return sticker;
+}
+
+function getBinderStickerRotation(card, kind) {
+  const stableId = String(card?.stableId || card?.mint || card?.title || "card");
+  const unit = stableHash(`${stableId}:${kind}:binder-sticker`) / 0xffffffff;
+  return THREE.MathUtils.degToRad(unit * 10 - 5);
+}
+
 function getBinderLoadingRingGeometry() {
   if (!binderLoadingRingGeometry) {
     binderLoadingRingGeometry = new THREE.RingGeometry(
@@ -10690,6 +15779,7 @@ function getBinderHorizontalSeamGeometry() {
 function warmBinderInteractionGeometry() {
   const geometries = [
     getBinderCardGeometry(),
+    getBinderPocketBackingGeometry(),
     getBinderColumnSheetGeometry(),
     getBinderColumnGlossGeometry(),
     getBinderVerticalSeamGeometry(),
@@ -10784,8 +15874,7 @@ function createBinderCard(
   });
   const card = new THREE.Mesh(getBinderCardGeometry(), material);
   if (hasCard) {
-    const aspectScale = getCardAspectFitScale(CARDS[cardIndex]);
-    card.scale.set(aspectScale.x, aspectScale.y, 1);
+    applyBinderCardAspectFit(card, CARDS[cardIndex], textureLoaded ? texture : null);
   }
 
   card.position.z = side * BINDER_CARD_LIFT;
@@ -10797,6 +15886,14 @@ function createBinderCard(
     card.userData.binderCard = true;
     card.userData.textureLoaded = Boolean(textureLoaded);
     card.userData.textureFadeComplete = Boolean(textureLoaded);
+    const stickerKinds = getBinderCardStickerKinds(CARDS[cardIndex]);
+    card.userData.binderStickerMeshes = stickerKinds.map((kind, slotIndex) => {
+      const sticker = createBinderCardSticker(kind, slotIndex, CARDS[cardIndex]);
+      sticker.userData.cardIndex = cardIndex;
+      sticker.userData.binderPosition = binderPosition;
+      card.add(sticker);
+      return sticker;
+    });
     binderCardMeshes.push(card);
     binderCardMeshByPosition.set(binderPosition, card);
   }
@@ -10815,15 +15912,63 @@ function createBinderBackCard(texture, sourceCardIndex = null) {
   return card;
 }
 
-function getCardAspectFitScale(card) {
-  const width = Number(card?.width);
-  const height = Number(card?.height);
+function getLoadedCardTextureDimensions(texture) {
+  const image = texture?.image || texture?.source?.data;
+  return {
+    width: Number(
+      texture?.userData?.cardFrameWidth
+        || image?.naturalWidth
+        || image?.videoWidth
+        || image?.width,
+    ),
+    height: Number(
+      texture?.userData?.cardFrameHeight
+        || image?.naturalHeight
+        || image?.videoHeight
+        || image?.height,
+    ),
+  };
+}
+
+function getCardAspectFitScale(
+  card,
+  texture = null,
+  { swapDimensions = false } = {},
+) {
+  const loadedDimensions = getLoadedCardTextureDimensions(texture);
+  const useLoadedClearAspect = card?.collection === "clear"
+    && loadedDimensions.width > 0
+    && loadedDimensions.height > 0;
+  let width = useLoadedClearAspect ? loadedDimensions.width : Number(card?.width);
+  let height = useLoadedClearAspect ? loadedDimensions.height : Number(card?.height);
+  if (swapDimensions) [width, height] = [height, width];
   if (!(width > 0) || !(height > 0)) return { x: 1, y: 1 };
   const activeAspect = CARD_HEIGHT / CARD_WIDTH;
   const aspectRatio = (height / width) / activeAspect;
   return aspectRatio >= 1
     ? { x: 1 / aspectRatio, y: 1 }
     : { x: 1, y: aspectRatio };
+}
+
+function applyBinderCardAspectFit(mesh, card, texture = null) {
+  if (!mesh || !card) return;
+  const loadedDimensions = getLoadedCardTextureDimensions(texture);
+  const rotateLandscape = card.collection === "clear"
+    && loadedDimensions.width > loadedDimensions.height
+    && loadedDimensions.height > 0;
+  const fittedDisplayScale = getCardAspectFitScale(card, texture, {
+    swapDimensions: rotateLandscape,
+  });
+  const aspectScale = rotateLandscape
+    ? {
+      x: (CARD_HEIGHT / CARD_WIDTH) * fittedDisplayScale.y,
+      y: (CARD_WIDTH / CARD_HEIGHT) * fittedDisplayScale.x,
+    }
+    : fittedDisplayScale;
+  mesh.scale.set(aspectScale.x, aspectScale.y, 1);
+  mesh.rotation.z = rotateLandscape ? -Math.PI / 2 : 0;
+  mesh.userData.cardAspectScale = aspectScale;
+  mesh.userData.binderLandscapeRotated = rotateLandscape;
 }
 
 function applyCardAspectFitToGroup(group, card) {
@@ -11196,6 +16341,11 @@ function applyQueuedBinderTexture(entry, now = performance.now()) {
   );
   prepareTextureForImmediateDisplay(entry.texture);
   currentMesh.material.map = entry.texture;
+  applyBinderCardAspectFit(
+    currentMesh,
+    CARDS[currentMesh.userData.cardIndex],
+    entry.texture,
+  );
   currentMesh.material.opacity = startOpacity;
   currentMesh.userData.textureLoaded = true;
   currentMesh.userData.textureLoading = false;
@@ -11282,7 +16432,7 @@ function ensureBinderPageWindow({
   const existingPages = new Set(binderPages.map((page) => page.pageIndex));
   const pageParent = binderPages[0]?.group.parent || binderRoot;
   const placeholderTexture = getBinderPlaceholderTexture();
-  const materials = createBinderPageMaterials();
+  const materials = createBinderPageMaterials(binderVisibleIndexes);
 
   for (const pageIndex of desiredIndexes) {
     if (existingPages.has(pageIndex)) continue;
@@ -11293,6 +16443,8 @@ function ensureBinderPageWindow({
 
   if (materials.plastic) materials.plastic.dispose();
   if (materials.seam) materials.seam.dispose();
+  if (materials.pageBacking) materials.pageBacking.dispose();
+  if (materials.pocketBacking) materials.pocketBacking.dispose();
 
   for (const page of binderPages.slice()) {
     if (desiredPages.has(page.pageIndex)) continue;
@@ -11591,7 +16743,7 @@ function finishBinderFirstPageHold(event) {
     if (isRecentBinderFirstPageHold()) return;
     suppressNextBinderPreviousPageClick = false;
   }, BINDER_FIRST_PAGE_HOLD_SUPPRESS_MS);
-  closeBinderToFrontCoverFromHold();
+  returnBinderToFirstInsidePageFromHold();
 }
 
 function cancelPendingBinderFirstPageHold(event = null) {
@@ -11655,7 +16807,7 @@ function isBinderFirstPageHoldContextValid() {
   );
 }
 
-function closeBinderToFrontCoverFromHold() {
+function returnBinderToFirstInsidePageFromHold() {
   if (!isBinderFirstPageHoldContextValid()) return false;
 
   closeBinderPageStatusEdit({ update: false });
@@ -11663,13 +16815,15 @@ function closeBinderToFrontCoverFromHold() {
   binderPreparingSpread = false;
   binderLastOpenTap = null;
   binderBendDirection = -1;
-  binderSinglePageSide = BINDER_SINGLE_PAGE_COVER_SIDE;
+  binderSinglePageSide = 0;
   binderSinglePageSideTouched = true;
-  // A hold-close is a stack action, not a normal page-by-page navigation.
-  // Collapse every turned page to the front stack in the same frame so the
-  // cover can never overtake slower pages and intersect them.
+  // A hold-return is a stack action, not normal page-by-page navigation.
+  // Collapse every turned page in the same frame, but leave the binder open
+  // on the first inside spread instead of continuing to the front cover.
   binderTargetTurn = 0;
   binderTurn = 0;
+  binderTargetClosure = 0;
+  binderClosure = 0;
   binderTextureQueueKey = "";
   ensureBinderPageWindow({
     force: true,
@@ -11677,7 +16831,11 @@ function closeBinderToFrontCoverFromHold() {
     queueTextures: false,
     updateTransforms: false,
   });
-  setBinderClosureTarget(-1);
+  markBinderInteractionActive();
+  updateBinderDefaultCameraFrame();
+  updateBinderPageControls();
+  startBinderRenderLoop();
+  updateBinderAnimation();
   queueBinderTextureLoads(binderBuildToken, {
     force: true,
     includePreload: false,
@@ -12828,7 +17986,9 @@ async function prewarmFocusedBinderSharpPositions(positions, focusPosition, toke
     // The full 3D preparation can include card backs and effect maps. Start it
     // now, but let the front image become sharp as soon as that single asset is
     // ready instead of holding the binder texture behind the extra work.
-    prepareIndividualCardFor3D(CARDS[focusedEntry.cardIndex]).catch(console.error);
+    const focusedCard = CARDS[focusedEntry.cardIndex];
+    prepareIndividualCardFor3D(focusedCard).catch(console.error);
+    prewarmIndividualCardModelAssets(focusedCard).catch(console.error);
   }
 
   const loadEntry = async (entry) => {
@@ -12872,6 +18032,7 @@ function restoreBinderMeshThumbnail(mesh) {
   if (readyTexture) {
     prepareTextureForImmediateDisplay(readyTexture);
     mesh.material.map = readyTexture;
+    applyBinderCardAspectFit(mesh, card, readyTexture);
     mesh.material.opacity = 1;
     mesh.userData.textureLoaded = true;
     mesh.userData.textureLoading = false;
@@ -12885,6 +18046,7 @@ function restoreBinderMeshThumbnail(mesh) {
   getBinderTexture(card).then((texture) => {
     if (!mesh.parent || mesh.userData.binderPosition !== position) return;
     mesh.material.map = texture;
+    applyBinderCardAspectFit(mesh, card, texture);
     mesh.userData.textureLoaded = true;
     requestBinderRenderOnce();
   }).catch(() => {});
@@ -13353,6 +18515,7 @@ async function transitionIndividualCardToFocusedBinder() {
   transitionCard.src = getIndividualTransitionImageSource();
 
   const sourceRect = getIndividualCardScreenRect() || getCenteredFallbackRect();
+  const transitionStickers = createBinderTransitionStickers(CARDS[cardIndex], sourceRect);
   binderCardViewTransitionActive = true;
   els.body.classList.add(
     "binder-card-transitioning",
@@ -13360,8 +18523,9 @@ async function transitionIndividualCardToFocusedBinder() {
     "binder-card-transition-show-card",
   );
   applyTransitionRect(transitionCard, sourceRect);
-  document.body.append(transitionCard);
+  document.body.append(transitionCard, ...transitionStickers.map(({ element }) => element));
   transitionCard.getBoundingClientRect();
+  transitionStickers.forEach(({ element }) => element.getBoundingClientRect());
 
   try {
     const prepared = await openFocusedBinderGalleryForCard(cardIndex, { pinnedTexture: returnTexture });
@@ -13372,14 +18536,17 @@ async function transitionIndividualCardToFocusedBinder() {
     requestAnimationFrame(() => {
       els.body.classList.remove("binder-card-transition-away", "binder-card-transition-show-card");
       applyTransitionRect(transitionCard, targetRect);
+      updateBinderTransitionStickers(transitionStickers, targetRect, { visible: true });
     });
 
     await delay(BINDER_CARD_VIEW_TRANSITION_MS);
     transitionCard.classList.add("is-dissolving");
+    transitionStickers.forEach(({ element }) => element.classList.add("is-dissolving"));
     lockBinderFocusZoomOut();
     await delay(220);
   } finally {
     transitionCard.remove();
+    transitionStickers.forEach(({ element }) => element.remove());
     els.body.classList.remove(
       "binder-card-transitioning",
       "binder-card-transition-away",
@@ -13387,6 +18554,51 @@ async function transitionIndividualCardToFocusedBinder() {
     );
     binderCardViewTransitionActive = false;
   }
+}
+
+function createBinderTransitionStickers(card, rect) {
+  return getBinderCardStickerKinds(card).map((kind, slotIndex) => {
+    const element = document.createElement("img");
+    element.className = "binder-card-transition-sticker";
+    element.alt = "";
+    element.decoding = "async";
+    element.src = getBinderStickerTextureUrl(kind);
+    const sticker = {
+      element,
+      kind,
+      slotIndex,
+      hasTradeSticker: isCardMarkedForTrade(card),
+      rotation: getBinderStickerRotation(card, kind),
+    };
+    applyBinderTransitionStickerRect(sticker, rect);
+    return sticker;
+  });
+}
+
+function updateBinderTransitionStickers(stickers, rect, { visible = false } = {}) {
+  for (const sticker of stickers) {
+    applyBinderTransitionStickerRect(sticker, rect);
+    sticker.element.classList.toggle("is-visible", visible);
+  }
+}
+
+function applyBinderTransitionStickerRect(sticker, cardRect) {
+  const [width, height] = BINDER_STICKER_SIZES[sticker.kind] || BINDER_STICKER_SIZES.trade;
+  const verticalOffset = sticker.kind === "listed" && sticker.hasTradeSticker
+    ? BINDER_STICKER_SIZES.trade[1] + BINDER_STICKER_GAP
+    : 0;
+  const widthRatio = width / BINDER_CARD_WIDTH;
+  const heightRatio = height / BINDER_CARD_HEIGHT;
+  const rightRatio = 0.5 + BINDER_STICKER_RIGHT_EDGE / BINDER_CARD_WIDTH;
+  const bottomRatio = 0.5
+    - (BINDER_STICKER_BOTTOM_EDGE + verticalOffset) / BINDER_CARD_HEIGHT;
+  Object.assign(sticker.element.style, {
+    left: `${cardRect.left + cardRect.width * (rightRatio - widthRatio)}px`,
+    top: `${cardRect.top + cardRect.height * (bottomRatio - heightRatio)}px`,
+    width: `${cardRect.width * widthRatio}px`,
+    height: `${cardRect.height * heightRatio}px`,
+    transform: `translateZ(0) rotate(${-THREE.MathUtils.radToDeg(sticker.rotation)}deg)`,
+  });
 }
 
 function getIndividualCardReturnTexture(cardIndex = currentIndex) {
@@ -13406,6 +18618,7 @@ function pinBinderFocusedCardTexture(mesh, texture) {
   const targetOpacity = 1;
   prepareTextureForImmediateDisplay(texture);
   mesh.material.map = texture;
+  applyBinderCardAspectFit(mesh, CARDS[mesh.userData.cardIndex], texture);
   mesh.material.opacity = Math.max(mesh.material.opacity ?? 0, targetOpacity);
   mesh.userData.textureLoaded = true;
   mesh.userData.textureLoading = false;
@@ -13489,6 +18702,11 @@ async function transitionFocusedBinderCardToIndividual(cardIndex, focusedMesh, {
     if (backTexture) cardOptions.backTexture = backTexture;
     if (prepared) cardOptions.effectTextures = effectTextures;
     setCard(cardIndex, cardOptions);
+    const waitForClearModel = card.collection === "clear"
+      && getIndividualCardModelRenderingProfile(card) === INDIVIDUAL_CARD_CLEAR_RESIN_PROFILE;
+    const individualModelReadyPromise = waitForClearModel
+      ? cardGroup.userData.individualCardModelReadyPromise
+      : null;
     currentRotationX = 0;
     currentRotationY = 0;
     targetRotationX = 0;
@@ -13510,14 +18728,23 @@ async function transitionFocusedBinderCardToIndividual(cardIndex, focusedMesh, {
       applyTransitionRect(transitionCard, targetRect);
     });
 
-    await delay(BINDER_CARD_VIEW_TRANSITION_MS * 0.46);
-    setCardEffectViewTargetOpacity(1);
-    els.body.classList.add("binder-card-transition-show-card");
-    await delay(BINDER_CARD_VIEW_TRANSITION_MS * 0.54);
+    if (waitForClearModel) {
+      await Promise.all([
+        delay(BINDER_CARD_VIEW_TRANSITION_MS),
+        individualModelReadyPromise || Promise.resolve(false),
+      ]);
+    } else {
+      await delay(BINDER_CARD_VIEW_TRANSITION_MS * 0.46);
+      setCardEffectViewTargetOpacity(1);
+      els.body.classList.add("binder-card-transition-show-card");
+      await delay(BINDER_CARD_VIEW_TRANSITION_MS * 0.54);
+    }
 
     rememberCurrentBinderViewFocus();
     binderIntroFocused = false;
     binderFocusPosition = -1;
+    setCardEffectViewTargetOpacity(1);
+    els.body.classList.add("binder-card-transition-show-card");
     setGalleryOpen(false);
     transitionCard.classList.add("is-dissolving");
     await delay(240);
@@ -14459,6 +19686,8 @@ function onBinderPointerUp(event) {
   }
 
   if (wasClick) {
+    if (handleBinderListedStickerTap(event)) return;
+    if (handleBinderTableDisplayModelTap(event)) return;
     if (handleBinderTableDieTap(event)) return;
     if (handleEvilBinderTableSideTap(event)) return;
     if (handleBinderIntroLinkTap(event)) return;
@@ -14694,6 +19923,7 @@ function updateBinderIntroLinkCursor(event) {
     return;
   }
   const hasPointerTarget = getBinderTableDieHit(event)
+    || getBinderTableDisplayModelHit(event)
     || getEvilBinderTableSideHit(event)
     || getBinderCardHit(event)
     || getBinderIntroLinkHit(event)
@@ -14906,6 +20136,79 @@ function getBinderCardHit(event) {
   if (!cardMeshes.length) return null;
   setBinderRaycasterFromEvent(event);
   return binderRaycaster.intersectObjects(cardMeshes, false)[0] || null;
+}
+
+function handleBinderListedStickerTap(event) {
+  const hit = getBinderListedStickerHit(event);
+  const cardIndex = hit?.object?.userData?.cardIndex;
+  if (!Number.isInteger(cardIndex)) return false;
+
+  const card = CARDS[cardIndex];
+  const mint = String(card?.listedMint || card?.mint || "").trim();
+  if (!mint) return false;
+
+  event.preventDefault();
+  event.stopPropagation();
+  binderLastOpenTap = null;
+  window.open(
+    `${TENSOR_ITEM_URL_BASE}${encodeURIComponent(mint)}`,
+    "_blank",
+    "noopener,noreferrer",
+  );
+  return true;
+}
+
+function getBinderListedStickerHit(event) {
+  if (!binderCamera || !binderCardMeshes.length) return null;
+  if (Math.abs(binderClosure) > 0.08 || Math.abs(binderTargetClosure) > 0.08) return null;
+
+  const stickers = binderCardMeshes.flatMap((card) => (
+    isBinderCardOnCurrentPages(card)
+      ? (card.userData.binderStickerMeshes || []).filter((sticker) => (
+        sticker.userData.binderCardSticker === "listed"
+        && isVisibleThroughParents(sticker)
+      ))
+      : []
+  ));
+  if (!stickers.length) return null;
+
+  binderRoot?.updateMatrixWorld(true);
+  const canvasRect = els.binderCanvas.getBoundingClientRect();
+  for (const sticker of stickers) {
+    const bounds = getBinderStickerScreenBounds(sticker, canvasRect);
+    if (!bounds) continue;
+    if (
+      event.clientX >= bounds.left
+      && event.clientX <= bounds.right
+      && event.clientY >= bounds.top
+      && event.clientY <= bounds.bottom
+    ) {
+      return { object: sticker };
+    }
+  }
+  return null;
+}
+
+function getBinderStickerScreenBounds(sticker, canvasRect) {
+  if (!sticker || !binderCamera || !canvasRect) return null;
+  const corners = [
+    new THREE.Vector3(-0.5, -0.5, 0),
+    new THREE.Vector3(0.5, -0.5, 0),
+    new THREE.Vector3(0.5, 0.5, 0),
+    new THREE.Vector3(-0.5, 0.5, 0),
+  ].map((corner) => {
+    const projected = corner.applyMatrix4(sticker.matrixWorld).project(binderCamera);
+    return {
+      x: canvasRect.left + (projected.x + 1) * canvasRect.width / 2,
+      y: canvasRect.top + (1 - projected.y) * canvasRect.height / 2,
+    };
+  });
+  return {
+    left: Math.min(...corners.map(({ x }) => x)),
+    right: Math.max(...corners.map(({ x }) => x)),
+    top: Math.min(...corners.map(({ y }) => y)),
+    bottom: Math.max(...corners.map(({ y }) => y)),
+  };
 }
 
 function getBinderCardRaycastMeshes() {
@@ -15313,10 +20616,13 @@ function setIndividualCardEffectOpacity(opacity) {
 }
 
 function getCardEffectUniformActivity(effectMode) {
+  const motionActivity = cardGlossActivity * cardShuffleGlossOpacity;
   if (effectMode >= CARD_EFFECT_MODE_CARD_NFT_2_RARE_HOLO_V) {
-    return 1;
+    // mons.shop springs --card-opacity up while the card is interacting and
+    // back to zero afterward; keep its stronger holo profiles dormant at rest.
+    return Math.max(cardEffectPointerActive, motionActivity);
   }
-  return cardGlossActivity * cardShuffleGlossOpacity;
+  return motionActivity;
 }
 
 function renderBinderScene() {
@@ -15603,7 +20909,12 @@ function updateBinderPageTransforms() {
     page.group.visible = !binderOuterFlipState
       && !binderEvilTableSwapState
       && (isActivePage || pageVisibility > 0.001);
-    setBinderSheetOpacity(page, turnActivity, sheetVisibility * pageVisibility);
+    setBinderSheetOpacity(
+      page,
+      turnActivity,
+      sheetVisibility * pageVisibility,
+      pageVisibility,
+    );
     setBinderPageOpacity(page, pageVisibility);
     applyBinderColumnBend(page, rawTurn);
   }
@@ -15754,17 +21065,27 @@ function getBinderUnderlyingSheetVisibility(depth, focused) {
   return Math.max(floor, start - Math.max(0, depth - 1) * falloff);
 }
 
-function setBinderSheetOpacity(page, turnActivity, visibilityFactor = 1) {
+function setBinderSheetOpacity(
+  page,
+  turnActivity,
+  visibilityFactor = 1,
+  pageVisibilityFactor = 1,
+) {
   const activity = easeInOut(clamp(turnActivity, 0, 1));
   const visibleOpacity = clamp(visibilityFactor, 0, 1);
+  const pageOpacity = clamp(pageVisibilityFactor, 0, 1);
   for (const mesh of page.sheetMeshes || []) {
     const material = mesh.material;
     if (!material) continue;
-    const opacity = visibleOpacity * THREE.MathUtils.lerp(
-      mesh.userData.restOpacity,
-      mesh.userData.activeOpacity,
-      activity,
-    );
+    const opacity = mesh.userData.clearBinderPageBacking
+      ? CLEAR_BINDER_PAGE_OPACITY * pageOpacity
+      : mesh.userData.clearBinderPocketBacking
+        ? CLEAR_BINDER_POCKET_OPACITY * pageOpacity
+        : visibleOpacity * THREE.MathUtils.lerp(
+        mesh.userData.restOpacity,
+        mesh.userData.activeOpacity,
+        activity,
+      );
     if (Math.abs(material.opacity - opacity) > 0.0005) {
       material.opacity = opacity;
     }
@@ -15783,6 +21104,17 @@ function setBinderPageOpacity(page, visibilityFactor = 1, now = performance.now(
     if (pageOpacityChanged || Math.abs((material.opacity ?? 1) - cardOpacity) > 0.0005) {
       material.opacity = cardOpacity;
     }
+    setBinderCardStickerOpacity(mesh, cardOpacity);
+  }
+}
+
+function setBinderCardStickerOpacity(card, opacity) {
+  const ready = Boolean(card?.userData?.textureLoaded)
+    && !card?.userData?.textureLoadFailed;
+  const stickerOpacity = ready ? clamp(opacity, 0, 1) : 0;
+  for (const sticker of card?.userData?.binderStickerMeshes || []) {
+    if (sticker.material) sticker.material.opacity = stickerOpacity;
+    sticker.visible = stickerOpacity > 0.001;
   }
 }
 
@@ -15828,6 +21160,7 @@ function updateBinderCardLoadFades(now = performance.now()) {
     if (Math.abs((material.opacity ?? 1) - opacity) > 0.0005) {
       material.opacity = opacity;
     }
+    setBinderCardStickerOpacity(mesh, opacity);
     if (!mesh.userData.textureFadeComplete) fadeActive = true;
   }
   return fadeActive;
@@ -15937,7 +21270,12 @@ function setBinderPageRenderOrder(page, baseOrder, { activePage = false } = {}) 
     if (child.userData.binderRenderOffset === undefined) {
       child.userData.binderRenderOffset = child.renderOrder || 0;
     }
-    const renderBase = activePage && (child.userData.binderCard || child.userData.binderBackCard)
+    const renderBase = activePage && (
+      child.userData.binderCard
+      || child.userData.binderBackCard
+      || child.userData.binderCardSticker
+      || child.userData.clearBinderPocketBacking
+    )
       ? BINDER_FLIPPING_PAGE_CARD_RENDER_ORDER
       : baseOrder;
     child.renderOrder = renderBase + child.userData.binderRenderOffset;
@@ -16171,15 +21509,60 @@ function resizeBinderRenderer() {
 }
 
 function createBinderCoverMaterial() {
-  const map = createBinderCoverTexture();
-  return new THREE.MeshStandardMaterial({
-    color: BINDER_COVER_BASE_COLOR,
+  const palette = getBinderCoverColorPalette();
+  const map = palette.custom
+    ? createBinderCustomCoverTexture()
+    : createBinderCoverTexture();
+  const colorFaithful = Boolean(WALLET_ROUTE_ADDRESS);
+  const material = new THREE.MeshStandardMaterial({
+    color: colorFaithful ? 0x000000 : palette.base,
     map,
     roughness: 0.9,
     metalness: 0.015,
-    emissive: BINDER_COVER_BASE_EMISSIVE,
-    emissiveIntensity: BINDER_COVER_BASE_EMISSIVE_INTENSITY,
+    emissive: colorFaithful ? palette.base : palette.baseEmissive,
+    emissiveMap: colorFaithful ? map : null,
+    emissiveIntensity: colorFaithful ? 1 : BINDER_COVER_BASE_EMISSIVE_INTENSITY,
   });
+  material.userData.binderColorFaithful = colorFaithful;
+  return material;
+}
+
+function getBinderCoverColorPalette() {
+  const settings = normalizeBinderCoverSettings(walletRouteProfile?.cover);
+  const hasCustomColor = Boolean(
+    WALLET_ROUTE_ADDRESS
+    && settings.baseColor !== BINDER_COVER_DEFAULT_COLOR_HEX
+  );
+  const source = hasCustomColor ? settings.baseColor : BINDER_COVER_DEFAULT_COLOR_HEX;
+  if (source === binderCoverColorPaletteSource) {
+    return {
+      base: binderCoverCustomBaseColor,
+      table: binderCoverCustomTableColor,
+      baseEmissive: binderCoverCustomBaseEmissive,
+      tableEmissive: binderCoverCustomTableEmissive,
+      custom: binderCoverColorPaletteSource !== BINDER_COVER_DEFAULT_COLOR_HEX,
+    };
+  }
+
+  binderCoverColorPaletteSource = source;
+  if (hasCustomColor) {
+    binderCoverCustomBaseColor.set(source);
+    binderCoverCustomTableColor.copy(binderCoverCustomBaseColor);
+    binderCoverCustomBaseEmissive.copy(binderCoverCustomBaseColor).multiplyScalar(0.36);
+    binderCoverCustomTableEmissive.copy(binderCoverCustomBaseColor).multiplyScalar(0.26);
+  } else {
+    binderCoverCustomBaseColor.copy(BINDER_COVER_BASE_COLOR);
+    binderCoverCustomTableColor.copy(BINDER_COVER_TABLE_COLOR);
+    binderCoverCustomBaseEmissive.copy(BINDER_COVER_BASE_EMISSIVE);
+    binderCoverCustomTableEmissive.copy(BINDER_COVER_TABLE_EMISSIVE);
+  }
+  return {
+    base: binderCoverCustomBaseColor,
+    table: binderCoverCustomTableColor,
+    baseEmissive: binderCoverCustomBaseEmissive,
+    tableEmissive: binderCoverCustomTableEmissive,
+    custom: hasCustomColor,
+  };
 }
 
 function createBinderCoverTexture() {
@@ -16218,7 +21601,43 @@ function createBinderCoverTexture() {
   return binderCoverTexture;
 }
 
-function createBinderIntroNoteTexture() {
+function createBinderCustomCoverTexture() {
+  if (binderCustomCoverTexture) return binderCustomCoverTexture;
+
+  const size = 256;
+  const surface = document.createElement("canvas");
+  surface.width = size;
+  surface.height = size;
+  const ctx = surface.getContext("2d");
+  const imageData = ctx.createImageData(size, size);
+  let seed = 0x8d4f3b21;
+
+  for (let y = 0; y < size; y += 1) {
+    for (let x = 0; x < size; x += 1) {
+      seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0;
+      const index = (y * size + x) * 4;
+      const grain = (seed >>> 24) % 14;
+      const weave = x % 9 === 0 || y % 11 === 0 ? 4 : 0;
+      const value = Math.min(255, 238 + grain + weave);
+      imageData.data[index] = value;
+      imageData.data[index + 1] = value;
+      imageData.data[index + 2] = value;
+      imageData.data[index + 3] = 255;
+    }
+  }
+
+  ctx.putImageData(imageData, 0, 0);
+  const texture = new THREE.CanvasTexture(surface);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  texture.wrapS = THREE.RepeatWrapping;
+  texture.wrapT = THREE.RepeatWrapping;
+  texture.repeat.set(3.2, 3.2);
+  texture.needsUpdate = true;
+  binderCustomCoverTexture = texture;
+  return binderCustomCoverTexture;
+}
+
+function createBinderIntroNoteTexture(coverWidth = 1, coverHeight = 1) {
   if (binderIntroNoteTexture) {
     return {
       texture: binderIntroNoteTexture,
@@ -16228,7 +21647,9 @@ function createBinderIntroNoteTexture() {
   }
 
   const width = 1024;
-  const height = 584;
+  const height = WALLET_ROUTE_ADDRESS
+    ? Math.max(1, Math.round(width * coverHeight / coverWidth))
+    : 584;
   const surface = document.createElement("canvas");
   surface.width = width;
   surface.height = height;
@@ -16241,11 +21662,43 @@ function createBinderIntroNoteTexture() {
   texture.userData.focusBounds = noteBounds.focusBounds;
   texture.userData.surfaceContext = ctx;
   binderIntroNoteTexture = texture;
+  if (WALLET_ROUTE_ADDRESS) {
+    renderWalletBinderInsideStickers(texture, ctx).catch((error) => {
+      console.error("Unable to render inside-cover stickers", error);
+    });
+  }
   return {
     texture,
     linkBounds: texture.userData.linkBounds,
     focusBounds: texture.userData.focusBounds,
   };
+}
+
+async function renderWalletBinderInsideStickers(texture, context) {
+  const settings = normalizeBinderCoverSettings(walletRouteProfile?.cover);
+  const stickers = settings.stickers.filter((sticker) => sticker.surface === "inside");
+  if (!stickers.length) return;
+  const token = binderWalletCoverArtworkToken;
+  const sourceKey = JSON.stringify(stickers);
+  const images = await Promise.all(stickers.map((sticker) => (
+    loadTextureImage(sticker.imageUrl, { fetchPriority: "high" })
+      .then((image) => ({ sticker, image }))
+      .catch(() => null)
+  )));
+  if (
+    token !== binderWalletCoverArtworkToken
+    || texture !== binderIntroNoteTexture
+    || sourceKey !== JSON.stringify(
+      normalizeBinderCoverSettings(walletRouteProfile?.cover).stickers
+        .filter((sticker) => sticker.surface === "inside"),
+    )
+  ) return;
+  drawBinderIntroNoteSurface(context);
+  for (const entry of images) {
+    if (entry) drawBinderCoverStickerImage(context, entry.sticker, entry.image);
+  }
+  texture.needsUpdate = true;
+  requestBinderRenderOnce();
 }
 
 function drawBinderIntroNoteSurface(ctx) {
@@ -16258,7 +21711,13 @@ function drawBinderIntroNoteSurface(ctx) {
   const maxTextWidth = width * 0.9;
   const textFillStyle = "rgba(156, 153, 146, 0.74)";
   const linkFillStyle = "rgba(176, 172, 164, 0.9)";
-  if (ACTIVE_COLLECTION.introGroup !== "evil") {
+  if (WALLET_ROUTE_ADDRESS) {
+    return drawWalletBinderIntroNote(ctx, {
+      fontStack,
+      textFillStyle,
+    });
+  }
+  if (!usesEvilBinderPresentation()) {
     return drawCommunityBinderIntroLinks(ctx, {
       fontStack,
       textFillStyle,
@@ -16380,6 +21839,207 @@ function drawBinderIntroNoteSurface(ctx) {
       height: focusBottom - focusTop,
     },
   };
+}
+
+function drawWalletBinderIntroNote(
+  ctx,
+  { fontStack, textFillStyle },
+) {
+  const { width, height } = ctx.canvas;
+  const settings = normalizeBinderCoverSettings(walletRouteProfile?.cover);
+  if (!settings.insideText) {
+    return {
+      linkBounds: [],
+      focusBounds: { x: 0, y: 0, width: 0, height: 0 },
+    };
+  }
+
+  const box = {
+    x: (settings.insideTextX - settings.insideTextWidth / 2) * width,
+    y: (settings.insideTextY - settings.insideTextHeight / 2) * height,
+    width: settings.insideTextWidth * width,
+    height: settings.insideTextHeight * height,
+  };
+  const linkBounds = drawRotatedBinderCustomText(ctx, {
+    text: settings.insideText,
+    links: settings.insideLinks,
+    box,
+    fontSize: settings.insideFontSize,
+    fontStack,
+    textFillStyle: settings.insideTextColor || textFillStyle,
+    linkFillStyle: settings.insideTextColor || textFillStyle,
+  }, settings.insideTextRotation);
+
+  const [focusBounds] = rotateBinderCanvasBounds(
+    [{
+      x: box.x / width,
+      y: box.y / height,
+      width: box.width / width,
+      height: box.height / height,
+    }],
+    box.x + box.width / 2,
+    box.y + box.height / 2,
+    settings.insideTextRotation,
+    ctx.canvas,
+  );
+
+  return {
+    linkBounds,
+    focusBounds: {
+      x: clamp(focusBounds.x, 0, 1),
+      y: clamp(focusBounds.y, 0, 1),
+      width: clamp(focusBounds.width, 0, 1),
+      height: clamp(focusBounds.height, 0, 1),
+    },
+  };
+}
+
+function drawRotatedBinderCustomText(ctx, options, rotation = 0) {
+  const { box } = options;
+  const centerX = box.x + box.width / 2;
+  const centerY = box.y + box.height / 2;
+  ctx.save();
+  ctx.translate(centerX, centerY);
+  ctx.rotate(rotation * Math.PI / 180);
+  ctx.translate(-centerX, -centerY);
+  const bounds = drawBinderCustomInsideText(ctx, options);
+  ctx.restore();
+  return rotateBinderCanvasBounds(bounds, centerX, centerY, rotation, ctx.canvas);
+}
+
+function rotateBinderCanvasBounds(bounds, centerX, centerY, rotation, canvas) {
+  if (!rotation) return bounds;
+  const radians = rotation * Math.PI / 180;
+  const cosine = Math.cos(radians);
+  const sine = Math.sin(radians);
+  return bounds.map((bound) => {
+    const left = bound.x * canvas.width;
+    const top = bound.y * canvas.height;
+    const right = left + bound.width * canvas.width;
+    const bottom = top + bound.height * canvas.height;
+    const corners = [[left, top], [right, top], [right, bottom], [left, bottom]].map(([x, y]) => ({
+      x: centerX + (x - centerX) * cosine - (y - centerY) * sine,
+      y: centerY + (x - centerX) * sine + (y - centerY) * cosine,
+    }));
+    const minimumX = Math.min(...corners.map((point) => point.x));
+    const maximumX = Math.max(...corners.map((point) => point.x));
+    const minimumY = Math.min(...corners.map((point) => point.y));
+    const maximumY = Math.max(...corners.map((point) => point.y));
+    return {
+      ...bound,
+      x: minimumX / canvas.width,
+      y: minimumY / canvas.height,
+      width: (maximumX - minimumX) / canvas.width,
+      height: (maximumY - minimumY) / canvas.height,
+    };
+  });
+}
+
+function drawBinderCustomInsideText(
+  ctx,
+  {
+    text,
+    links,
+    box,
+    fontSize,
+    fontStack,
+    textFillStyle,
+    linkFillStyle,
+  },
+) {
+  ctx.save();
+  ctx.beginPath();
+  ctx.rect(box.x, box.y, box.width, box.height);
+  ctx.clip();
+  ctx.font = `400 ${fontSize}px ${fontStack}`;
+  ctx.textAlign = "left";
+  ctx.textBaseline = "alphabetic";
+  const lines = layoutBinderCustomTextLines(ctx, text, box.width * 0.96);
+  const lineHeight = fontSize * 1.22;
+  const totalHeight = lines.length * lineHeight;
+  let baseline = box.y + (box.height - totalHeight) / 2 + fontSize;
+  const bounds = [];
+
+  for (const line of lines) {
+    if (baseline - fontSize <= box.y + box.height && baseline >= box.y) {
+      const lineWidth = ctx.measureText(line.text).width;
+      let x = box.x + (box.width - lineWidth) / 2;
+      const segments = splitBinderCustomTextLineByLinks(line, links);
+      for (const segment of segments) {
+        const segmentWidth = ctx.measureText(segment.text).width;
+        ctx.fillStyle = segment.url ? linkFillStyle : textFillStyle;
+        ctx.fillText(segment.text, x, baseline);
+        if (segment.url && segmentWidth > 0) {
+          drawBinderIntroLinkUnderline(
+            ctx,
+            x,
+            baseline + Math.max(6, fontSize * 0.2),
+            segmentWidth,
+            fontSize,
+          );
+          bounds.push({
+            x: x / ctx.canvas.width,
+            y: (baseline - fontSize) / ctx.canvas.height,
+            width: segmentWidth / ctx.canvas.width,
+            height: lineHeight / ctx.canvas.height,
+            url: segment.url,
+          });
+        }
+        x += segmentWidth;
+      }
+    }
+    baseline += lineHeight;
+  }
+  ctx.restore();
+  return bounds;
+}
+
+function layoutBinderCustomTextLines(ctx, text, maxWidth) {
+  const lines = [];
+  let start = 0;
+  let index = 0;
+  let line = "";
+  while (index < text.length) {
+    const character = text[index];
+    if (character === "\n") {
+      lines.push({ text: line, start, end: index });
+      index += 1;
+      start = index;
+      line = "";
+      continue;
+    }
+    const candidate = line + character;
+    if (line && ctx.measureText(candidate).width > maxWidth) {
+      lines.push({ text: line, start, end: index });
+      start = index;
+      line = character;
+    } else {
+      line = candidate;
+    }
+    index += 1;
+  }
+  lines.push({ text: line, start, end: text.length });
+  return lines;
+}
+
+function splitBinderCustomTextLineByLinks(line, links) {
+  const segments = [];
+  let cursor = line.start;
+  for (const link of links) {
+    const start = Math.max(line.start, link.start);
+    const end = Math.min(line.end, link.end);
+    if (end <= start) continue;
+    if (start > cursor) {
+      segments.push({ text: line.text.slice(cursor - line.start, start - line.start), url: "" });
+    }
+    segments.push({ text: line.text.slice(start - line.start, end - line.start), url: link.url });
+    cursor = end;
+  }
+  if (cursor < line.end) {
+    segments.push({ text: line.text.slice(cursor - line.start), url: "" });
+  }
+  if (!segments.length) segments.push({ text: line.text, url: "" });
+  return segments;
 }
 
 function drawCommunityBinderIntroLinks(
@@ -17135,6 +22795,8 @@ async function loadBinderDisplayTexture(card) {
   context.drawImage(image, 0, 0, surface.width, surface.height);
 
   const texture = configureDisplayTexture(new THREE.CanvasTexture(surface));
+  texture.userData.cardFrameWidth = sourceFrameWidth;
+  texture.userData.cardFrameHeight = sourceFrameHeight;
   if (sprite) configureAnimatedTexture(texture, sprite);
   return texture;
 }
@@ -17421,7 +23083,9 @@ function createCardGradientPlane(normalDirection) {
       uActivity: { value: 0 },
       uTransitionOpacity: { value: 1 },
       uEffectMode: { value: CARD_EFFECT_MODE_DEFAULT },
+      uEffectStrength: { value: 1 },
       uUseEffectTextures: { value: 0 },
+      uUseEngravingMask: { value: 0 },
       uFoilTexture: { value: getCardPlaceholderTexture() },
       uMaskTexture: { value: getCardPlaceholderTexture() },
       uPointer: { value: new THREE.Vector2(CARD_NFT_2_EFFECT_DEFAULT_POINTER_X, CARD_NFT_2_EFFECT_DEFAULT_POINTER_Y) },
@@ -17447,7 +23111,9 @@ function createCardGradientPlane(normalDirection) {
       uniform float uActivity;
       uniform float uTransitionOpacity;
       uniform float uEffectMode;
+      uniform float uEffectStrength;
       uniform float uUseEffectTextures;
+      uniform float uUseEngravingMask;
       uniform vec2 uPointer;
       uniform float uPointerActive;
       uniform sampler2D uFoilTexture;
@@ -17509,9 +23175,9 @@ function createCardGradientPlane(normalDirection) {
           }
 
           float textureBlend = smoothstep(0.0, 1.0, uUseEffectTextures);
-          float engravingAlpha = 0.0;
-          float foilLight = 0.0;
-          if (uUseEffectTextures > 0.001) {
+          float engravingAlpha = 1.0;
+          float foilLight = 0.5;
+          if (uUseEffectTextures > 0.001 && uUseEngravingMask > 0.001) {
             vec4 maskSample = texture2D(uMaskTexture, vUv);
             engravingAlpha = maskSample.a;
             foilLight = dot(
@@ -17519,7 +23185,11 @@ function createCardGradientPlane(normalDirection) {
               vec3(0.299, 0.587, 0.114)
             );
           }
-          float engraving = pow(clamp(engravingAlpha, 0.0, 1.0), 0.82);
+          float engraving = mix(
+            1.0,
+            pow(clamp(engravingAlpha, 0.0, 1.0), 0.82),
+            smoothstep(0.0, 1.0, uUseEngravingMask)
+          );
           float textureReady = textureBlend;
           vec3 sunPillar = rainbow(vUv.y * 6.8 - background.y * 7.0);
           vec3 reverseSunPillar = rainbow(-vUv.y * 4.2 + background.y * 5.0 + background.x * 1.2);
@@ -17616,7 +23286,7 @@ function createCardGradientPlane(normalDirection) {
           alpha *= mix(0.88, 1.08, grain);
           gl_FragColor = vec4(
             clamp(color, 0.0, 1.25),
-            clamp(alpha, 0.0, 0.48) * uActivity * uTransitionOpacity
+            clamp(alpha, 0.0, 0.48) * uEffectStrength * uActivity * uTransitionOpacity
           );
           return;
         }
@@ -17663,7 +23333,9 @@ function createCardGlossPlane(normalDirection) {
       uActivity: { value: 0 },
       uTransitionOpacity: { value: 1 },
       uEffectMode: { value: CARD_EFFECT_MODE_DEFAULT },
+      uEffectStrength: { value: 1 },
       uUseEffectTextures: { value: 0 },
+      uUseEngravingMask: { value: 0 },
       uFoilTexture: { value: getCardPlaceholderTexture() },
       uMaskTexture: { value: getCardPlaceholderTexture() },
       uPointer: { value: new THREE.Vector2(CARD_NFT_2_EFFECT_DEFAULT_POINTER_X, CARD_NFT_2_EFFECT_DEFAULT_POINTER_Y) },
@@ -17689,7 +23361,9 @@ function createCardGlossPlane(normalDirection) {
       uniform float uActivity;
       uniform float uTransitionOpacity;
       uniform float uEffectMode;
+      uniform float uEffectStrength;
       uniform float uUseEffectTextures;
+      uniform float uUseEngravingMask;
       uniform vec2 uPointer;
       uniform float uPointerActive;
       uniform sampler2D uFoilTexture;
@@ -17738,7 +23412,7 @@ function createCardGlossPlane(normalDirection) {
           float inner = smoothstep(0.22, 0.0, distance(vUv, spotlightPointer))
             * spotlightStrength;
           float maskAlpha = 0.0;
-          if (uUseEffectTextures > 0.001) {
+          if (uUseEffectTextures > 0.001 && uUseEngravingMask > 0.001) {
             maskAlpha = texture2D(uMaskTexture, vUv).a;
           }
           float fineGrain = fract(sin(dot(vUv * vec2(811.3, 1247.1), vec2(12.9898, 78.233))) * 43758.5453);
@@ -17776,7 +23450,8 @@ function createCardGlossPlane(normalDirection) {
             color = mix(edge, middle, radial);
             color = mix(color, vec3(1.0, 0.94, 0.72), inner * 0.76);
             float engravedGlare = pow(clamp(maskAlpha, 0.0, 1.0), 0.82)
-              * (0.025 + radial * 0.065);
+              * (0.025 + radial * 0.065)
+              * smoothstep(0.0, 1.0, uUseEngravingMask);
             color = mix(color, vec3(0.94, 0.82, 0.7), engravedGlare * 1.8);
             alpha = mix(0.82, 0.46, radial) - inner * 0.06 + engravedGlare;
           }
@@ -17785,9 +23460,10 @@ function createCardGlossPlane(normalDirection) {
             alpha *= smoothstep(0.0, 1.0, uUseEffectTextures);
           }
           alpha *= mix(0.92, 1.05, fineGrain);
-          float maximumAlpha = uEffectMode >= 4.5 ? 0.9 : 0.38;
-          float composedAlpha = clamp(alpha, 0.0, maximumAlpha) * uActivity * uTransitionOpacity;
-          if (uEffectMode >= 3.5) {
+          float maximumAlpha = uEffectMode >= 4.5 ? 0.22 : 0.38;
+          float composedAlpha = clamp(alpha, 0.0, maximumAlpha)
+            * uEffectStrength * uActivity * uTransitionOpacity;
+          if (uEffectMode >= 3.5 && uEffectMode < 4.5) {
             // Three's multiply blend does not use source alpha. Encode the
             // desired strength toward neutral white so hover and transitions
             // remain smooth instead of applying a full dark pass at once.
@@ -18066,7 +23742,7 @@ function applyRestoredSessionViewState(state) {
   if (typeof state.isBinderMode === "boolean") isBinderMode = state.isBinderMode;
   favoritesOnly = Boolean(state.favoritesOnly);
   traitSearchOpen = TRAIT_FILTERS_ENABLED && Boolean(state.traitSearchOpen);
-  traitSortCategory = TRAIT_FILTERS_ENABLED ? getValidTraitSortCategory(state.traitSortCategory) : "all";
+  traitSortCategory = getValidTraitSortCategory(state.traitSortCategory);
   activeTraitFilter = TRAIT_FILTERS_ENABLED ? getValidSessionTraitFilter(state.activeTraitFilter) : null;
   if (activeTraitFilter?.collectionId === ACTIVE_COLLECTION_ID) {
     traitSortCategory = activeTraitFilter.category;
@@ -18123,7 +23799,9 @@ function restoreSessionGalleryView(state) {
     return;
   }
 
-  if (state.binderIntroFocused && !hasActiveBinderIntroSuppressor()) {
+  const restoreTableView = Boolean(state.binderTableView);
+
+  if (!restoreTableView && state.binderIntroFocused && !hasActiveBinderIntroSuppressor()) {
     focusBinderIntroNote({ immediate: true });
     queueSessionViewStateSave();
     return;
@@ -18132,7 +23810,7 @@ function restoreSessionGalleryView(state) {
   const focusedCardIndex = CARD_STABLE_ID_TO_INDEX.get(
     String(state.binderFocusedCardStableId || "").trim(),
   ) ?? -1;
-  if (focusedCardIndex >= 0) {
+  if (!restoreTableView && focusedCardIndex >= 0) {
     const focusPosition = binderVisibleIndexes.indexOf(focusedCardIndex);
     if (focusPosition !== -1) {
       focusBinderPosition(focusPosition, { immediate: true });
@@ -18169,6 +23847,7 @@ function restoreSessionGalleryView(state) {
     binderSinglePageSide = null;
   }
   ensureBinderPageWindow({ force: true });
+  setBinderTableView(restoreTableView, { immediate: true, updateControls: false });
   updateBinderPageControls();
   startBinderRenderLoop();
   updateBinderAnimation();
@@ -18188,6 +23867,8 @@ function getRestoredSessionCardIndex(state) {
 
 function getValidTraitSortCategory(category) {
   if (category === "all") return "all";
+  if (category === WALLET_TRADE_FILTER_VALUE) return WALLET_TRADE_FILTER_VALUE;
+  if (category === LISTED_SORT_VALUE) return LISTED_SORT_VALUE;
   const matched = getTraitDisplayCategoryOptions()
     .find((option) => normalizeTraitValue(option.category) === normalizeTraitValue(category));
   if (matched) return matched.category;
@@ -18223,6 +23904,7 @@ function getSessionViewState() {
     currentCardStableId: CARDS[currentIndex]?.stableId || null,
     galleryOpen,
     isBinderMode,
+    binderTableView: binderTableViewTarget > 0.5,
     favoritesOnly,
     traitSearchOpen,
     traitSortCategory,
@@ -18275,7 +23957,7 @@ function consumeEvilBinderTableSwapArrival() {
   } catch {
     // A swap arrival remains optional when session storage is unavailable.
   }
-  if (!rawValue || ACTIVE_COLLECTION.introGroup !== "evil") return null;
+  if (!rawValue || !usesEvilBinderPresentation()) return null;
 
   try {
     const value = JSON.parse(rawValue);

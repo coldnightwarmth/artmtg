@@ -1424,11 +1424,11 @@ export const PONCHO_CARDS = [
     "collection": "poncho",
     "title": "Poncho Drifella #130",
     "stableId": "poncho:card-130",
-    "mint": "",
+    "mint": "6BN5iy3X3PbUxdVw1gzhnQthfZLxicwnLEuxGEEzKYBd",
     "file": "assets/poncho/cards/0000/card-130.webp?v=poncho-contain-2",
     "width": 700,
     "height": 980,
-    "status": "in pack"
+    "status": "redeemed"
   },
   {
     "number": 131,

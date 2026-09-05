@@ -1,0 +1,2582 @@
+{
+  "fetchedAt": "2026-09-04T01:44:05.321Z",
+  "source": "https://graphql.tensor.trade/graphql",
+  "tensorPage": "https://www.tensor.trade/trade/badhand2",
+  "collectionSlug": "3afd0857-0fde-4fe6-8a75-bea756209527",
+  "collectionDisplaySlug": "badhand2",
+  "membershipPolicy": "Every live mint returned by Tensor; exact duplicate editions share one binder card",
+  "assetRevision": "badhand2-1",
+  "animationRevision": null,
+  "liveMintCount": 70,
+  "tensorFetchedMintCount": 70,
+  "tensorReportedMintCount": 70,
+  "excludedMintCount": 0,
+  "exclusionRules": {
+    "mintIds": []
+  },
+  "cardCount": 70,
+  "groupedDuplicateMintCount": 0,
+  "metadataFetchFailureCount": 0,
+  "liveMintIdsSha256": "90cc7a75f9dbdc4019e2c261cfe3847de8dc0764907272cc55190563a96068e4",
+  "tensorLiveMintIdsSha256": "90cc7a75f9dbdc4019e2c261cfe3847de8dc0764907272cc55190563a96068e4",
+  "instrument": {
+    "id": "3afd0857-0fde-4fe6-8a75-bea756209527",
+    "slug": "3afd0857-0fde-4fe6-8a75-bea756209527",
+    "slugDisplay": "badhand2",
+    "name": "BAD HAND 2",
+    "symbol": "BAD2",
+    "imageUri": "https://prod-tensor-creators-s3.s3.us-east-1.amazonaws.com/image/dc8ae64c-5468-4a4d-9305-2d8b2a181447",
+    "description": "BAD HAND 2 is a collection of 1/1 collage trading cards by Moldy created with new and vintage magazines, comics, catalogs, original illustration and graffiti on a variety of Pokemon cards. \nClaim your card to redeem the physical! \nUse the BAD HAND 2 redeem page on VVV to verify which physicals have been claimed.",
+    "tokenStandard": "NON_FUNGIBLE",
+    "tokenProgram": "MPL_CORE",
+    "compressed": false,
+    "statsV2": {
+      "numMints": 70
+    }
+  },
+  "conversion": {
+    "format": "webp",
+    "width": 600,
+    "height": 840,
+    "quality": 75,
+    "effort": 4,
+    "fit": "contain",
+    "background": "#111111",
+    "removeExteriorWhite": false,
+    "cardExtractions": {},
+    "imageProxy": "https://prod-image-cdn.tensor.trade/images/600x600/freeze=true"
+  },
+  "animationConversion": null,
+  "sharedBack": {
+    "source": "english yugioh card back",
+    "color": null,
+    "file": "assets/badhand2/backs/badhand2-back.webp",
+    "width": 699,
+    "height": 1017
+  },
+  "liveAssets": [
+    {
+      "onchainId": "okNkcMBgazNQ6mqUB4akv39vVQkpZbeH9PYEBB9V13m",
+      "owner": "97qxpvG3zmhbq9ie91bDgN81xqUq7ij5HrVWG5RN9MRv",
+      "name": "BAD HAND 2 1",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23001.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/0",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23001.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "4eJZCAGpRM17MTmikUMN6r3WcPigcbyHcNSvGHMNKLgb",
+      "owner": "97qxpvG3zmhbq9ie91bDgN81xqUq7ij5HrVWG5RN9MRv",
+      "name": "BAD HAND 2 2",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23002.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/1",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23002.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "8LLqp9mRPqVgJ5on1ayo2XepKXpw6CQVPiZTAM4qCQTK",
+      "owner": "BWc2uSghpjTEqNivSjZ2LqDMhmh1nBC5mYJ7Tp8Yoxmb",
+      "name": "BAD HAND 2 3",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-003.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/2",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-003.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "Gt4WZ4BEnWehYdmgFyvxGDtUCycimCJqDDGFZ5pSXbN2",
+      "owner": "HwySLQoDmnnEPG6tKdDPYqfVofdRbF3Bx4G26GKAsm6m",
+      "name": "BAD HAND 2 4",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23004.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/3",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23004.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "FmeKUX8x8nSG7VrgPFDc4FhfZboQg9QUQcggLJhyVSRV",
+      "owner": "HwySLQoDmnnEPG6tKdDPYqfVofdRbF3Bx4G26GKAsm6m",
+      "name": "BAD HAND 2 5",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23005.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/4",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23005.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "J14Jk9c31nWUSMdK8ucfjJ6o6J1aJyGNQXjYfeJjUK5z",
+      "owner": "HwySLQoDmnnEPG6tKdDPYqfVofdRbF3Bx4G26GKAsm6m",
+      "name": "BAD HAND 2 6",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23006.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/5",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23006.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "DdfXyN3SeiZ1W46M9Qv9a1XvRRjCvC5rtKfGv84db6af",
+      "owner": "AUggYqJNJKA9j8VMjY5CmAJzYxjeSSBPFqBu8aic31ib",
+      "name": "BAD HAND 2 7",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-007.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/6",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-007.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "EbQAtQo2CjFgtRmfsPABNoqFpeLGb8aNDY6jc6SAytKV",
+      "owner": "AUggYqJNJKA9j8VMjY5CmAJzYxjeSSBPFqBu8aic31ib",
+      "name": "BAD HAND 2 8",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-008.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/7",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-008.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "F9JekkqLjsZWgx9fnY13QDQC9LPxAd9S5bHnLqTgeUDC",
+      "owner": "AUggYqJNJKA9j8VMjY5CmAJzYxjeSSBPFqBu8aic31ib",
+      "name": "BAD HAND 2 9",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-009.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/8",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-009.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "J1xepmvgRbCc9ozVGW7tMJGvqNzevzKGsi7F2YpkY5fC",
+      "owner": "AUggYqJNJKA9j8VMjY5CmAJzYxjeSSBPFqBu8aic31ib",
+      "name": "BAD HAND 2 10",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-010.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/9",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-010.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "4ocwa96tuarwz8ffAQA7xdd6MLEYRA1mTbWYNoJuCzGG",
+      "owner": "3SCD8wTraqs7kNfLqXWC9uznm6F2cixLtst4Ty6M1Xpd",
+      "name": "BAD HAND 2 11",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23011.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/10",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23011.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "Hh57jKghoWUuuGp4yyzTtPLUTkpGUFktcjYc9cVaJCVJ",
+      "owner": "BAc2cy4iJbjqhEJ3hiM4JZ3SFqSUqFehMnY3r8G2eb6g",
+      "name": "BAD HAND 2 12",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23012.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/11",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23012.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "HVrEiWSQrSb1FM7i9UEHCzjNvwpTHVYvWB57kxiq9d3k",
+      "owner": "BAc2cy4iJbjqhEJ3hiM4JZ3SFqSUqFehMnY3r8G2eb6g",
+      "name": "BAD HAND 2 13",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23013.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/12",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23013.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "EmSG5K5BmnHsQFpSwc1AYkEDFjfGrmnpgU7ERLMnwzeC",
+      "owner": "HHTqzARsG7h3xMkzSCx3VFcJqhJTf4WdJQ4AZJATKvh8",
+      "name": "BAD HAND 2 14",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-014.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/13",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-014.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "AvEScYWmfqkKkTpip4wW1AFkCDphvZ6RVrsaJ7MGxfHk",
+      "owner": "9bd6HKH6CSzpMYgDakcxMKbej2C3bC5qibzqFGuXf9H3",
+      "name": "BAD HAND 2 15",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23015.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/14",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23015.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "98cdnqDoKcqmLU3FLyBSH8e5bVzi4sHrqpHSBrYc7RbJ",
+      "owner": "CisJHerfxmxaNrPLkp8BHN8BowfxGLxH4LYGZMQFBGSb",
+      "name": "BAD HAND 2 16",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23016.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/15",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23016.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "9WXzZ67zmUZuGJr3sD3PWHCMAbivLCpWNKNEraQDqp9y",
+      "owner": "CisJHerfxmxaNrPLkp8BHN8BowfxGLxH4LYGZMQFBGSb",
+      "name": "BAD HAND 2 17",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23017.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/16",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23017.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "HBfKBV9KW2fM5HKFwSKa1SztVqByxihBmNqzT5ANZSNk",
+      "owner": "CYLyL9MZsyrsrrsgkFjnGFYPtLsrKfa2sn6apqKcyLd6",
+      "name": "BAD HAND 2 18",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23018.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/17",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23018.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "3QFZALdLYuXM1trnh7SD9GDLzBq3ceehp9YXHxrKevrh",
+      "owner": "CYLyL9MZsyrsrrsgkFjnGFYPtLsrKfa2sn6apqKcyLd6",
+      "name": "BAD HAND 2 19",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23019.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/18",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23019.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "3EPdsfCm47gxnDhbnKvwQcatW5FFsHg9hmucJn5k4jDa",
+      "owner": "9pBNL4XBDFieiAuYn9bKSUo5pPvFThbuC1JuF1dfgjY2",
+      "name": "BAD HAND 2 20",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-020.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/19",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-020.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "AKtPMUR8X1BZHBNaMPEHvpeLAw8KA2enTmiWPLMBFNjR",
+      "owner": "9pBNL4XBDFieiAuYn9bKSUo5pPvFThbuC1JuF1dfgjY2",
+      "name": "BAD HAND 2 21",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-021.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/20",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-021.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "9pEDLodC8FGxdtUqTiFh2hB4s7DuSD2Mcn9msN55F8ez",
+      "owner": "9pBNL4XBDFieiAuYn9bKSUo5pPvFThbuC1JuF1dfgjY2",
+      "name": "BAD HAND 2 22",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-022.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/21",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-022.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "AW3CtxQRpZ6nDuJZAteZFiWw2q7otazN8gKnnH6k7KhJ",
+      "owner": "3SCD8wTraqs7kNfLqXWC9uznm6F2cixLtst4Ty6M1Xpd",
+      "name": "BAD HAND 2 23",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23023.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/22",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23023.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "7ypg1m8HTHiojRDWWQ4tm1GUHawp7HF6mPVBP8CETP1p",
+      "owner": "3SCD8wTraqs7kNfLqXWC9uznm6F2cixLtst4Ty6M1Xpd",
+      "name": "BAD HAND 2 24",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23024.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/23",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23024.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "2PdWB4oAbaAjWiKP2bYNt6nFsiKtPp4PAQK7KQH9VWDE",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 25",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-025.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/24",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-025.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "GcMsthFk684ZiS4wt7A7ETE8QMrTGKmhxoMDbUxBhFH",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 26",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-026.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/25",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-026.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "3ANdDaKa25mZkjrTNfXHBEKy8P7KLsecDuKHmsDz3XNB",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 27",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-027.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/26",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-027.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "6DrEhTp9nRZUb32hoExq3nvVyZAFr4hwMe8UBVwRLGiY",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 28",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-028.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/27",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-028.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "4U3VmXbaiyvhGwKN5Z1iYpi15C41L37jcy5oR2RscTXn",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 29",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-029.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/28",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-029.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "8DGNehBSteCR8gVRRqqWC1o8J2BSB4gRmFKgQDbQc2Tb",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 30",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-030.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/29",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-030.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "FVB3qySxfXZXptmgeZhECc6MDCnDoPyaV2GBq3v6ESdT",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 31",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-031.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/30",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-031.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "GFturtt93SUvBcqBnp2UeAbEaDAv3X39HCKPA8cBeUNB",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 32",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-032.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/31",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-032.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "JDRjMexw1ADAuamDdXNE9tRkjxPrcgrdeAAHLkgBvN17",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 33",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-033.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/32",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-033.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "3r2UGqPifKdeQ8QcDKJHEHwPYGiv1tTJLXgajWNyWfUQ",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 34",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-034.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/33",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-034.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "DwrGTQB1jLDhds8WwFgk1Wkp52Mqo9VKjzQUpAa5W7HJ",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 35",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-035.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/34",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-035.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "6zTjSTtGLDSeFYskF4XvMUxjMiFiyxKCPmT5gyXL7VXV",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 36",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-036.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/35",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-036.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "pcqZXDYHvGFzSwgY1VnBxSNH2W7cNgCb3gshSE9U14h",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 37",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-037.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/36",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-037.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "8XmxUQgFtjxygWaDmHhtkNJ5Qr18R7Jv21LFijQ2n8X7",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 38",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-038.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/37",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-038.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "98zdRR1BuJEEZbt38a4spXNzSJESbn2td1sN3QR28AFF",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 39",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-039.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/38",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-039.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "5AH5WaTCsWHEXCER9dMAfJj1QP3ZuJLxtrqe8sKQvovz",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 40",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-040.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/39",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-040.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "8UJRrd52a8WEhWs7y32R432eQi79VeRE9h8zHDsLaXzB",
+      "owner": "9KSXvBcqs6ginViTZhAFgqq9sRgXBTxAucJhTTCJW45M",
+      "name": "BAD HAND 2 41",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23041.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/40",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23041.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "AupWpQmT8fQcHny1GSJHE8aG4qbX9CKtqRbUaVckr4H",
+      "owner": "2DCRRMtFaRq9yk7Bb2TjspqBHjEJCiU3zSkxP7cNzfkM",
+      "name": "BAD HAND 2 42",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-042.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/41",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-042.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "4j5fPNv9SA34x3kxzqkGn8uE6Bf5KPcHwPrYSAynAVhN",
+      "owner": "HJparYWsZpirhC8QshssENHyXs8ZNh9ngYed4Zo3VJ8r",
+      "name": "BAD HAND 2 43",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23043.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/42",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23043.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "2sM6erNwQA2ryf83WpLY6KYd3NXd9ikXaWnih2iLia8K",
+      "owner": "BWc2uSghpjTEqNivSjZ2LqDMhmh1nBC5mYJ7Tp8Yoxmb",
+      "name": "BAD HAND 2 44",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-044.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/43",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-044.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "CDaQsMnE51pFnB2GbnEX2XymTSf6p3PZzRabtKv1zjfx",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 45",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-045.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/44",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-045.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "DuZve9csKUDSV4mxDg2XRqLzQUxKmJJ3DLAUTLuZm5dS",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 46",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-046.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/45",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-046.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "7EfRTSfwa5p8TyxoE2BVHsGdvFFJUwMxBHtpakMFpRGW",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 47",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-047.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/46",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-047.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "GHKTTfM3Z3exJLPqkPYmE7WQXdrFvHSeY59N1pUpMxQi",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 48",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-048.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/47",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-048.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "4PChN3HkFDeCoEzAc57X9H7iQJZZLByEH3xt4ckbjQzf",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 49",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-049.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/48",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-049.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "Hpf2geoqnFDaeJQvYXa8kyngGwjwf9syqhEqdxEQHiWm",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 50",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23050.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/49",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23050.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "HXZcG6FrTamyhQPUJkXZkTBFMi58UwxSvMaeVMtad4EV",
+      "owner": "3n5pz3WFzKqDGFX4diwcJgE5vGu8xB95H6XiXHMTypdV",
+      "name": "BAD HAND 2 51",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-051.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/50",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-051.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "CFPDiw7AVfPHmcidVkckJEuHssv9Dg6t3Dr36yYC1hu7",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 52",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-052.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/51",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-052.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "8MJKF46oyAkzqUfeZNnZ4fW2SMGscmpBuCoDnMXXQTsr",
+      "owner": "HJparYWsZpirhC8QshssENHyXs8ZNh9ngYed4Zo3VJ8r",
+      "name": "BAD HAND 2 53",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23053.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/52",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23053.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "HBRweZm8pNRK1pVJrQgLSFe8Y69v4H7BREcvKrXEZMW1",
+      "owner": "BAc2cy4iJbjqhEJ3hiM4JZ3SFqSUqFehMnY3r8G2eb6g",
+      "name": "BAD HAND 2 54",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23054.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/53",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23054.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "Fh6kwEB8CUGH2XQuxbtCyt6K5nEdRBd2vz5tb5cajtJ8",
+      "owner": "BAc2cy4iJbjqhEJ3hiM4JZ3SFqSUqFehMnY3r8G2eb6g",
+      "name": "BAD HAND 2 55",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23055.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/54",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23055.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "5ropBBU9TveMtyQ7t8WqLnTwcB4dr6c1hf38nxzmnPHz",
+      "owner": "BAc2cy4iJbjqhEJ3hiM4JZ3SFqSUqFehMnY3r8G2eb6g",
+      "name": "BAD HAND 2 56",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23056.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/55",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23056.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "BsaDSo5sTK8Awy7mQdSPZRURTL9b4sWiiRF5JhSVPaQV",
+      "owner": "3SCD8wTraqs7kNfLqXWC9uznm6F2cixLtst4Ty6M1Xpd",
+      "name": "BAD HAND 2 57",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23057.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/56",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23057.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "BS33BssCw6T7fbiexHMcqnDSSNJZKvASDWA1Ninz8Bvq",
+      "owner": "HJparYWsZpirhC8QshssENHyXs8ZNh9ngYed4Zo3VJ8r",
+      "name": "BAD HAND 2 58",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-058.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/57",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-058.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "GZLqBWJ7p1hkrTZXiyx6wj8zxJv1XZ8QVHHep1Tatx1M",
+      "owner": "HJparYWsZpirhC8QshssENHyXs8ZNh9ngYed4Zo3VJ8r",
+      "name": "BAD HAND 2 59",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23059.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/58",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23059.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "CNxxSPwjkg4c5pfUhz97otXbLrbt8e1fMA8nHuSYpJhP",
+      "owner": "HJparYWsZpirhC8QshssENHyXs8ZNh9ngYed4Zo3VJ8r",
+      "name": "BAD HAND 2 60",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23060.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/59",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23060.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "F8aCckcs5Z8nsZ39Y39HfrwWAGw4trxgHdfUh8uKotHD",
+      "owner": "3SCD8wTraqs7kNfLqXWC9uznm6F2cixLtst4Ty6M1Xpd",
+      "name": "BAD HAND 2 61",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23061.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/60",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23061.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "9dsXjwjDpK68xN1wKkrFaqGN6taHeGL11dBXaDAaLXu8",
+      "owner": "3SCD8wTraqs7kNfLqXWC9uznm6F2cixLtst4Ty6M1Xpd",
+      "name": "BAD HAND 2 62",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23062.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/61",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23062.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "AFFhX7DXCZcgpPbKEzsp3TdR9Rkp9F8DDF6ax5iVNFEe",
+      "owner": "5CtjDgMcguAjoe4D8CGWLh1842PK9uf81Y1TPHGfo1CG",
+      "name": "BAD HAND 2 63",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23063.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/62",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23063.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "7qJDwQVzKquxtbb76NMRhzMEfLvaL37YxEdiXoNJuCYs",
+      "owner": "AkJXL8x8sQwnosdb4DjkFHVza5LzaMnUZTzZBQb65sc8",
+      "name": "BAD HAND 2 64",
+      "imageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23064.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/63",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23064.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "NON_FUNGIBLE",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "A7YysRm3BUR9oMg5EcPfZZda6w3t1zL9Avw5Sy2uSoAk",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 65",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-065.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/64",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-065.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "3UWKpavddmsktHzieWvJVkhosjLm9GcJrXWgdWLxFBL3",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 66",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-066.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/65",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-066.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "518ZKGKbTQTbAZVevin6qWmcdzvtdDvvaEeB4MnVkLd6",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 67",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-067.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/66",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-067.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "BX6V4UinJPmBEwzxfuCFnDJQfWXyvcmESmAZidB81Nex",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 68",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-068.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/67",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-068.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "3uudWCsuvQcuF7CWcpxFo8zLsaThR2j7HdRopQixvuiR",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 69",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-069.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/68",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-069.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    },
+    {
+      "onchainId": "6ZxJ4pBYRFFEcjoV7steWrctUrbY6hgZUJYvwmCXqkgo",
+      "owner": "7A5BtUhATwTRYtvrUTypB31ZDHoYpWFMLo3WiHb7jt1v",
+      "name": "BAD HAND 2 70",
+      "imageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-070.png",
+      "animationUri": "",
+      "metadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/69",
+      "files": [
+        {
+          "type": "image/png",
+          "uri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-070.png"
+        }
+      ],
+      "attributes": [],
+      "tokenProgram": "MPL_CORE",
+      "tokenStandard": "",
+      "metadataFetchError": ""
+    }
+  ],
+  "excludedAssets": [],
+  "cards": [
+    {
+      "number": 1,
+      "assetNumber": 1,
+      "stableId": "badhand2:group-d12177229603d6dbb794ec6a",
+      "groupKeyHash": "d12177229603d6dbb794ec6aad75cc3220612ae37c893d2bb6564b7078e210e6",
+      "title": "BAD HAND 2 1",
+      "mints": [
+        "okNkcMBgazNQ6mqUB4akv39vVQkpZbeH9PYEBB9V13m"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/0",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23001.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "51373a3eb06ba727e5ba8600f7cd4fb4bcb8f4727d32a894d7758cd948f18c43",
+      "metadataFile": "assets/badhand2/metadata/0000/card-1.json",
+      "cardFile": "assets/badhand2/cards/0000/card-1.webp",
+      "animation": null
+    },
+    {
+      "number": 2,
+      "assetNumber": 2,
+      "stableId": "badhand2:group-a78b9642a237c7194ce1a0ea",
+      "groupKeyHash": "a78b9642a237c7194ce1a0ea28275fc7f01b981ac8d55fafa001b404b25321c0",
+      "title": "BAD HAND 2 2",
+      "mints": [
+        "4eJZCAGpRM17MTmikUMN6r3WcPigcbyHcNSvGHMNKLgb"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/1",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23002.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "9a2293a3c6158eb306d49ed21e20a0329294f327e88db0be9fcd9b421b6e0096",
+      "metadataFile": "assets/badhand2/metadata/0000/card-2.json",
+      "cardFile": "assets/badhand2/cards/0000/card-2.webp",
+      "animation": null
+    },
+    {
+      "number": 3,
+      "assetNumber": 3,
+      "stableId": "badhand2:group-ab56e9b2ea5de12a156cd0fd",
+      "groupKeyHash": "ab56e9b2ea5de12a156cd0fd1bb644eef6176dff2e2cd38240dc65a1f474fa33",
+      "title": "BAD HAND 2 3",
+      "mints": [
+        "8LLqp9mRPqVgJ5on1ayo2XepKXpw6CQVPiZTAM4qCQTK"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/2",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-003.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "be814d01d2c930ce5ee5c832c128dc1890e237b09d86d5f9e1c2de501c8dfb81",
+      "metadataFile": "assets/badhand2/metadata/0000/card-3.json",
+      "cardFile": "assets/badhand2/cards/0000/card-3.webp",
+      "animation": null
+    },
+    {
+      "number": 4,
+      "assetNumber": 4,
+      "stableId": "badhand2:group-d2a82efc058e7bbf295cbaa1",
+      "groupKeyHash": "d2a82efc058e7bbf295cbaa10fe9f843f539969a5010e0170fd9907a52cadaf3",
+      "title": "BAD HAND 2 4",
+      "mints": [
+        "Gt4WZ4BEnWehYdmgFyvxGDtUCycimCJqDDGFZ5pSXbN2"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/3",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23004.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "19f54a003c0164c7de018a85190a7763e106d5386e38f5651d101c0a13d9ba0a",
+      "metadataFile": "assets/badhand2/metadata/0000/card-4.json",
+      "cardFile": "assets/badhand2/cards/0000/card-4.webp",
+      "animation": null
+    },
+    {
+      "number": 5,
+      "assetNumber": 5,
+      "stableId": "badhand2:group-6b1f8441c6234f17a051f824",
+      "groupKeyHash": "6b1f8441c6234f17a051f8247e5d37b8d14d3fec8bf01880a39028d94f548a12",
+      "title": "BAD HAND 2 5",
+      "mints": [
+        "FmeKUX8x8nSG7VrgPFDc4FhfZboQg9QUQcggLJhyVSRV"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/4",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23005.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "68aae5309ac372f86e813b987c5a4ebde28b8014a1d793634a8730412528fc9b",
+      "metadataFile": "assets/badhand2/metadata/0000/card-5.json",
+      "cardFile": "assets/badhand2/cards/0000/card-5.webp",
+      "animation": null
+    },
+    {
+      "number": 6,
+      "assetNumber": 6,
+      "stableId": "badhand2:group-40bb6b8aa5d0bc7b7fdbad83",
+      "groupKeyHash": "40bb6b8aa5d0bc7b7fdbad83f1b4e0d8aea0e841960c926483eb67319da7adec",
+      "title": "BAD HAND 2 6",
+      "mints": [
+        "J14Jk9c31nWUSMdK8ucfjJ6o6J1aJyGNQXjYfeJjUK5z"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/5",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23006.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "bd2e0232b2fc6f4a7a0568447c9168e5e1dc48ed33c40d7e72b785347730e657",
+      "metadataFile": "assets/badhand2/metadata/0000/card-6.json",
+      "cardFile": "assets/badhand2/cards/0000/card-6.webp",
+      "animation": null
+    },
+    {
+      "number": 7,
+      "assetNumber": 7,
+      "stableId": "badhand2:group-81823e064a7ba45c04f37854",
+      "groupKeyHash": "81823e064a7ba45c04f378547a7555b68d52050907736e94509075412b809214",
+      "title": "BAD HAND 2 7",
+      "mints": [
+        "DdfXyN3SeiZ1W46M9Qv9a1XvRRjCvC5rtKfGv84db6af"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/6",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-007.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "a77df9d66e9185083e2013686c9c9208a71e993d61450e94ad173959ed6e6df6",
+      "metadataFile": "assets/badhand2/metadata/0000/card-7.json",
+      "cardFile": "assets/badhand2/cards/0000/card-7.webp",
+      "animation": null
+    },
+    {
+      "number": 8,
+      "assetNumber": 8,
+      "stableId": "badhand2:group-08f3713a113d03c9af87a220",
+      "groupKeyHash": "08f3713a113d03c9af87a220b00e23b2a0b65b56162645c7deea83b66ec6a172",
+      "title": "BAD HAND 2 8",
+      "mints": [
+        "EbQAtQo2CjFgtRmfsPABNoqFpeLGb8aNDY6jc6SAytKV"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/7",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-008.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "bb80854e72b639040164cc924a1cfd35a306244252db4e4117951c6f55e81680",
+      "metadataFile": "assets/badhand2/metadata/0000/card-8.json",
+      "cardFile": "assets/badhand2/cards/0000/card-8.webp",
+      "animation": null
+    },
+    {
+      "number": 9,
+      "assetNumber": 9,
+      "stableId": "badhand2:group-d56ffc255e25d7dfa620d6e1",
+      "groupKeyHash": "d56ffc255e25d7dfa620d6e1ed95439182a67b0e175fe881d6f637dd771c326d",
+      "title": "BAD HAND 2 9",
+      "mints": [
+        "F9JekkqLjsZWgx9fnY13QDQC9LPxAd9S5bHnLqTgeUDC"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/8",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-009.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "cfdf322d47721a176cea2f909a909c32932d08627d612a45ca43b420de140fcf",
+      "metadataFile": "assets/badhand2/metadata/0000/card-9.json",
+      "cardFile": "assets/badhand2/cards/0000/card-9.webp",
+      "animation": null
+    },
+    {
+      "number": 10,
+      "assetNumber": 10,
+      "stableId": "badhand2:group-66bd976b42c1ec337d8a3c11",
+      "groupKeyHash": "66bd976b42c1ec337d8a3c1131b607039de85401a14fa2cdcd1ae081f349896f",
+      "title": "BAD HAND 2 10",
+      "mints": [
+        "J1xepmvgRbCc9ozVGW7tMJGvqNzevzKGsi7F2YpkY5fC"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/9",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-010.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "0b9674a1d31c3ae8fe39c75c70b6e57cf264ef20d7cceed5ec2f020d8c22f1d8",
+      "metadataFile": "assets/badhand2/metadata/0000/card-10.json",
+      "cardFile": "assets/badhand2/cards/0000/card-10.webp",
+      "animation": null
+    },
+    {
+      "number": 11,
+      "assetNumber": 11,
+      "stableId": "badhand2:group-7e16b1ab49692c5c8ce0d773",
+      "groupKeyHash": "7e16b1ab49692c5c8ce0d773c2bd373f46d93abe3d7faa233fb6b638364e36e8",
+      "title": "BAD HAND 2 11",
+      "mints": [
+        "4ocwa96tuarwz8ffAQA7xdd6MLEYRA1mTbWYNoJuCzGG"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/10",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23011.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "692dc237d2a15338df54ef9b848ca4529685753ddaa108868d52753081e32f6f",
+      "metadataFile": "assets/badhand2/metadata/0000/card-11.json",
+      "cardFile": "assets/badhand2/cards/0000/card-11.webp",
+      "animation": null
+    },
+    {
+      "number": 12,
+      "assetNumber": 12,
+      "stableId": "badhand2:group-7701ac5dc52a006d6e672bcf",
+      "groupKeyHash": "7701ac5dc52a006d6e672bcfab4b56c71c4be21d7592dd6127f2643ffffd5909",
+      "title": "BAD HAND 2 12",
+      "mints": [
+        "Hh57jKghoWUuuGp4yyzTtPLUTkpGUFktcjYc9cVaJCVJ"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/11",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23012.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "6d637d166b2e9b01980faf009067036d92647d3a73b0cb192cc15646b02432c2",
+      "metadataFile": "assets/badhand2/metadata/0000/card-12.json",
+      "cardFile": "assets/badhand2/cards/0000/card-12.webp",
+      "animation": null
+    },
+    {
+      "number": 13,
+      "assetNumber": 13,
+      "stableId": "badhand2:group-f76cee7b52487adc15a596c0",
+      "groupKeyHash": "f76cee7b52487adc15a596c027610e403e0eb63fac85f1df0e806a359e586642",
+      "title": "BAD HAND 2 13",
+      "mints": [
+        "HVrEiWSQrSb1FM7i9UEHCzjNvwpTHVYvWB57kxiq9d3k"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/12",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23013.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "8b51b20dab2cbb2de1e8d3664fa5981bff88db8d05f7640675aef9785f40bb9e",
+      "metadataFile": "assets/badhand2/metadata/0000/card-13.json",
+      "cardFile": "assets/badhand2/cards/0000/card-13.webp",
+      "animation": null
+    },
+    {
+      "number": 14,
+      "assetNumber": 14,
+      "stableId": "badhand2:group-c058cc6df3e44345363d262a",
+      "groupKeyHash": "c058cc6df3e44345363d262a9fe73e00036c002b9ad8ed088f046cc4b981d025",
+      "title": "BAD HAND 2 14",
+      "mints": [
+        "EmSG5K5BmnHsQFpSwc1AYkEDFjfGrmnpgU7ERLMnwzeC"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/13",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-014.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "51661f4fc377d46cfa580e4c9b76dd6503a43f8a2c7058fd389ee50c18441ef8",
+      "metadataFile": "assets/badhand2/metadata/0000/card-14.json",
+      "cardFile": "assets/badhand2/cards/0000/card-14.webp",
+      "animation": null
+    },
+    {
+      "number": 15,
+      "assetNumber": 15,
+      "stableId": "badhand2:group-b559a505ee00c8c1decadd6b",
+      "groupKeyHash": "b559a505ee00c8c1decadd6bd9316d7679eca1716c314546d24896669ef6d349",
+      "title": "BAD HAND 2 15",
+      "mints": [
+        "AvEScYWmfqkKkTpip4wW1AFkCDphvZ6RVrsaJ7MGxfHk"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/14",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23015.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "de8e2be981060aeda242a0976765015950e8a82f483a7221248cbc10c81dac87",
+      "metadataFile": "assets/badhand2/metadata/0000/card-15.json",
+      "cardFile": "assets/badhand2/cards/0000/card-15.webp",
+      "animation": null
+    },
+    {
+      "number": 16,
+      "assetNumber": 16,
+      "stableId": "badhand2:group-16aa423acd269ffb5d4ee1c5",
+      "groupKeyHash": "16aa423acd269ffb5d4ee1c5368037962ad348678175bc77bf8a44d15b9393db",
+      "title": "BAD HAND 2 16",
+      "mints": [
+        "98cdnqDoKcqmLU3FLyBSH8e5bVzi4sHrqpHSBrYc7RbJ"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/15",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23016.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "0e050e0091f26ce592164edaa48e2c474498078d93a589b3637ed034ae5732da",
+      "metadataFile": "assets/badhand2/metadata/0000/card-16.json",
+      "cardFile": "assets/badhand2/cards/0000/card-16.webp",
+      "animation": null
+    },
+    {
+      "number": 17,
+      "assetNumber": 17,
+      "stableId": "badhand2:group-6c1dbe873620cb6190a086bc",
+      "groupKeyHash": "6c1dbe873620cb6190a086bcea3b28789834da88261ef14034c1178d4dd0d777",
+      "title": "BAD HAND 2 17",
+      "mints": [
+        "9WXzZ67zmUZuGJr3sD3PWHCMAbivLCpWNKNEraQDqp9y"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/16",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23017.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "af29066d475e116094cb22d993ce5685289ccb807d0dfe6b221c39108eba91a3",
+      "metadataFile": "assets/badhand2/metadata/0000/card-17.json",
+      "cardFile": "assets/badhand2/cards/0000/card-17.webp",
+      "animation": null
+    },
+    {
+      "number": 18,
+      "assetNumber": 18,
+      "stableId": "badhand2:group-7af2abb4983cd4ceb5a4c642",
+      "groupKeyHash": "7af2abb4983cd4ceb5a4c64231bf04e0492d1f9c42095138ffcb92096049c8f2",
+      "title": "BAD HAND 2 18",
+      "mints": [
+        "HBfKBV9KW2fM5HKFwSKa1SztVqByxihBmNqzT5ANZSNk"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/17",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23018.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "f881bfb0b6248a495611d99ed5ffc7e80c975ee214e43cde60e4878db9e93148",
+      "metadataFile": "assets/badhand2/metadata/0000/card-18.json",
+      "cardFile": "assets/badhand2/cards/0000/card-18.webp",
+      "animation": null
+    },
+    {
+      "number": 19,
+      "assetNumber": 19,
+      "stableId": "badhand2:group-5146fd7e6cff8ff21d8c27ee",
+      "groupKeyHash": "5146fd7e6cff8ff21d8c27ee13036f5d37b95f64d84ac1f43e49e0606cb00592",
+      "title": "BAD HAND 2 19",
+      "mints": [
+        "3QFZALdLYuXM1trnh7SD9GDLzBq3ceehp9YXHxrKevrh"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/18",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23019.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "a1bdb8296e67e1e4bf4ad4daa3b581ab00b1cad3c1ef491d314f9453afbab621",
+      "metadataFile": "assets/badhand2/metadata/0000/card-19.json",
+      "cardFile": "assets/badhand2/cards/0000/card-19.webp",
+      "animation": null
+    },
+    {
+      "number": 20,
+      "assetNumber": 20,
+      "stableId": "badhand2:group-f5f62c75d69216a6bb71a3ae",
+      "groupKeyHash": "f5f62c75d69216a6bb71a3aec8798a3e6c3d467eb71049d987cc36c0125131fb",
+      "title": "BAD HAND 2 20",
+      "mints": [
+        "3EPdsfCm47gxnDhbnKvwQcatW5FFsHg9hmucJn5k4jDa"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/19",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-020.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "6f9f3c83f8dee8551dabe90ba11ae52c1e1c72a0625bbc4fa9792251b8f47e55",
+      "metadataFile": "assets/badhand2/metadata/0000/card-20.json",
+      "cardFile": "assets/badhand2/cards/0000/card-20.webp",
+      "animation": null
+    },
+    {
+      "number": 21,
+      "assetNumber": 21,
+      "stableId": "badhand2:group-d6a7299ea96b490482d246a6",
+      "groupKeyHash": "d6a7299ea96b490482d246a61d87f654bab0b7259158338379367794ac890528",
+      "title": "BAD HAND 2 21",
+      "mints": [
+        "AKtPMUR8X1BZHBNaMPEHvpeLAw8KA2enTmiWPLMBFNjR"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/20",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-021.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "50429a14fad9258b2b6a79e6be7bd37ba2994cbf8140f08febfeff8fab8eb21c",
+      "metadataFile": "assets/badhand2/metadata/0000/card-21.json",
+      "cardFile": "assets/badhand2/cards/0000/card-21.webp",
+      "animation": null
+    },
+    {
+      "number": 22,
+      "assetNumber": 22,
+      "stableId": "badhand2:group-d8aad332d7a8c3526d2fbf51",
+      "groupKeyHash": "d8aad332d7a8c3526d2fbf5142d1bd5692fe0e96e3e74d4853a81a0d7b6fd117",
+      "title": "BAD HAND 2 22",
+      "mints": [
+        "9pEDLodC8FGxdtUqTiFh2hB4s7DuSD2Mcn9msN55F8ez"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/21",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-022.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "5bd58e2012f965d09120b3bf5e43c92edc65409001879c55a802231e971e6bf8",
+      "metadataFile": "assets/badhand2/metadata/0000/card-22.json",
+      "cardFile": "assets/badhand2/cards/0000/card-22.webp",
+      "animation": null
+    },
+    {
+      "number": 23,
+      "assetNumber": 23,
+      "stableId": "badhand2:group-01c7280956a34036c7c85142",
+      "groupKeyHash": "01c7280956a34036c7c85142248a89ee07342d5ffbcaf763052d3911b48cf1a8",
+      "title": "BAD HAND 2 23",
+      "mints": [
+        "AW3CtxQRpZ6nDuJZAteZFiWw2q7otazN8gKnnH6k7KhJ"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/22",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23023.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "f79912074121537ff6177a725aff9cbbf389a65df29f9ffeb31ed1c73aef8de6",
+      "metadataFile": "assets/badhand2/metadata/0000/card-23.json",
+      "cardFile": "assets/badhand2/cards/0000/card-23.webp",
+      "animation": null
+    },
+    {
+      "number": 24,
+      "assetNumber": 24,
+      "stableId": "badhand2:group-4ae5dc5b9e4f4342d8474682",
+      "groupKeyHash": "4ae5dc5b9e4f4342d8474682376bac1bcd0ba3592b0f5b5abbbcb5d6676064b7",
+      "title": "BAD HAND 2 24",
+      "mints": [
+        "7ypg1m8HTHiojRDWWQ4tm1GUHawp7HF6mPVBP8CETP1p"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/23",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23024.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "38ca581701683e9111c7f33b791efb3a510f49f1a38131e36714c29dd72161b1",
+      "metadataFile": "assets/badhand2/metadata/0000/card-24.json",
+      "cardFile": "assets/badhand2/cards/0000/card-24.webp",
+      "animation": null
+    },
+    {
+      "number": 25,
+      "assetNumber": 25,
+      "stableId": "badhand2:group-f4403b7ee820c5560d473b55",
+      "groupKeyHash": "f4403b7ee820c5560d473b556abea6e6db076f42f0bcd161926831d9ad2ac523",
+      "title": "BAD HAND 2 25",
+      "mints": [
+        "2PdWB4oAbaAjWiKP2bYNt6nFsiKtPp4PAQK7KQH9VWDE"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/24",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-025.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "25370736d4d515ac089a1deaaaecadf5f5fd8e7c8a1f859189b656cd854d0de3",
+      "metadataFile": "assets/badhand2/metadata/0000/card-25.json",
+      "cardFile": "assets/badhand2/cards/0000/card-25.webp",
+      "animation": null
+    },
+    {
+      "number": 26,
+      "assetNumber": 26,
+      "stableId": "badhand2:group-ef1fdfc97f3bc3f6a1df4853",
+      "groupKeyHash": "ef1fdfc97f3bc3f6a1df48535ceb44c3864bbeef27f0d177d5c861e1f45304b3",
+      "title": "BAD HAND 2 26",
+      "mints": [
+        "GcMsthFk684ZiS4wt7A7ETE8QMrTGKmhxoMDbUxBhFH"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/25",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-026.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "fe5abf603dbf43e8df81a92dad366f16c471b9ed697fac0b1a2ca531c21470f2",
+      "metadataFile": "assets/badhand2/metadata/0000/card-26.json",
+      "cardFile": "assets/badhand2/cards/0000/card-26.webp",
+      "animation": null
+    },
+    {
+      "number": 27,
+      "assetNumber": 27,
+      "stableId": "badhand2:group-3134b0950b63b8e42c7d0691",
+      "groupKeyHash": "3134b0950b63b8e42c7d069169e214f83f3fb2e5a733ba60d68dbd1f9751d193",
+      "title": "BAD HAND 2 27",
+      "mints": [
+        "3ANdDaKa25mZkjrTNfXHBEKy8P7KLsecDuKHmsDz3XNB"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/26",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-027.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "dd3eba4dc2c1aba5a772e88b412cffef9ebbf546854d355e6f38e474935869fd",
+      "metadataFile": "assets/badhand2/metadata/0000/card-27.json",
+      "cardFile": "assets/badhand2/cards/0000/card-27.webp",
+      "animation": null
+    },
+    {
+      "number": 28,
+      "assetNumber": 28,
+      "stableId": "badhand2:group-d2724a4397042804107e3887",
+      "groupKeyHash": "d2724a4397042804107e388752e8c6ddbe98477adcd08fcb2fc52eb800ff8ab6",
+      "title": "BAD HAND 2 28",
+      "mints": [
+        "6DrEhTp9nRZUb32hoExq3nvVyZAFr4hwMe8UBVwRLGiY"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/27",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-028.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "d49c1dfb349a5bcc0ccb5e80ccdfe27ca5a9b12ce4166ee88ba6ff2964d5a5b6",
+      "metadataFile": "assets/badhand2/metadata/0000/card-28.json",
+      "cardFile": "assets/badhand2/cards/0000/card-28.webp",
+      "animation": null
+    },
+    {
+      "number": 29,
+      "assetNumber": 29,
+      "stableId": "badhand2:group-cfe1e60647320d394e17511b",
+      "groupKeyHash": "cfe1e60647320d394e17511b6bc3b187da7779ccea99da87d8e660abb0d9ecd7",
+      "title": "BAD HAND 2 29",
+      "mints": [
+        "4U3VmXbaiyvhGwKN5Z1iYpi15C41L37jcy5oR2RscTXn"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/28",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-029.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "89d48e3139e475d2a52d43f38ca27ae1b0c9c33a047cff0e83c5ff360ea44bed",
+      "metadataFile": "assets/badhand2/metadata/0000/card-29.json",
+      "cardFile": "assets/badhand2/cards/0000/card-29.webp",
+      "animation": null
+    },
+    {
+      "number": 30,
+      "assetNumber": 30,
+      "stableId": "badhand2:group-c6b49395b63f68107edfb003",
+      "groupKeyHash": "c6b49395b63f68107edfb003bd996879cb5376fa3c4a3ce944e41d5b588a5bfa",
+      "title": "BAD HAND 2 30",
+      "mints": [
+        "8DGNehBSteCR8gVRRqqWC1o8J2BSB4gRmFKgQDbQc2Tb"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/29",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-030.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "ab2c6aa96b25493e939a960d793d029c1dba3f6c17083049dbbc49482ab96067",
+      "metadataFile": "assets/badhand2/metadata/0000/card-30.json",
+      "cardFile": "assets/badhand2/cards/0000/card-30.webp",
+      "animation": null
+    },
+    {
+      "number": 31,
+      "assetNumber": 31,
+      "stableId": "badhand2:group-1c4bbad10fe88ad34a69d4ab",
+      "groupKeyHash": "1c4bbad10fe88ad34a69d4ab7118bcd0e835efe6da3b99dddd3d900fde50fccf",
+      "title": "BAD HAND 2 31",
+      "mints": [
+        "FVB3qySxfXZXptmgeZhECc6MDCnDoPyaV2GBq3v6ESdT"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/30",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-031.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "a169ca7f4d8677cd53f0ce7d9888b188a5845b0a4e7e8a2b7a538aacec6f02ac",
+      "metadataFile": "assets/badhand2/metadata/0000/card-31.json",
+      "cardFile": "assets/badhand2/cards/0000/card-31.webp",
+      "animation": null
+    },
+    {
+      "number": 32,
+      "assetNumber": 32,
+      "stableId": "badhand2:group-8189371437b33ad71e720f78",
+      "groupKeyHash": "8189371437b33ad71e720f78e74ebd8248e3ce12aa1e4536a34455f59b12b456",
+      "title": "BAD HAND 2 32",
+      "mints": [
+        "GFturtt93SUvBcqBnp2UeAbEaDAv3X39HCKPA8cBeUNB"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/31",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-032.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "7d322c6509d1d2a84beed2a442364ce8bb46583b83b47057c3bc6be169449256",
+      "metadataFile": "assets/badhand2/metadata/0000/card-32.json",
+      "cardFile": "assets/badhand2/cards/0000/card-32.webp",
+      "animation": null
+    },
+    {
+      "number": 33,
+      "assetNumber": 33,
+      "stableId": "badhand2:group-1774fbf2c5f29baa64046280",
+      "groupKeyHash": "1774fbf2c5f29baa64046280d8316af91b2368312c423bad05257e74a66cb232",
+      "title": "BAD HAND 2 33",
+      "mints": [
+        "JDRjMexw1ADAuamDdXNE9tRkjxPrcgrdeAAHLkgBvN17"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/32",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-033.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "b55ce5b781be09e0b7687e60bdd8662465b4dda9cd6581dc1e1f03abd9593acc",
+      "metadataFile": "assets/badhand2/metadata/0000/card-33.json",
+      "cardFile": "assets/badhand2/cards/0000/card-33.webp",
+      "animation": null
+    },
+    {
+      "number": 34,
+      "assetNumber": 34,
+      "stableId": "badhand2:group-d9a2047de11d6809bb4c9ea8",
+      "groupKeyHash": "d9a2047de11d6809bb4c9ea89b9b7d58a2b9061fd4cf9a770972af3168062e65",
+      "title": "BAD HAND 2 34",
+      "mints": [
+        "3r2UGqPifKdeQ8QcDKJHEHwPYGiv1tTJLXgajWNyWfUQ"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/33",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-034.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "2b42c21883a8c16c01b1eb2d8800a2b88041bd6e598f168d043457f18d4829ee",
+      "metadataFile": "assets/badhand2/metadata/0000/card-34.json",
+      "cardFile": "assets/badhand2/cards/0000/card-34.webp",
+      "animation": null
+    },
+    {
+      "number": 35,
+      "assetNumber": 35,
+      "stableId": "badhand2:group-b18bb1bc3524c18d6a9066ed",
+      "groupKeyHash": "b18bb1bc3524c18d6a9066edc52c0c9842ff82191c2225b7dbd6deed5d68b676",
+      "title": "BAD HAND 2 35",
+      "mints": [
+        "DwrGTQB1jLDhds8WwFgk1Wkp52Mqo9VKjzQUpAa5W7HJ"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/34",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-035.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "c5820f3e2c8021687f9a04e102988631508c2ba0b19860310e4f2efcab3e2617",
+      "metadataFile": "assets/badhand2/metadata/0000/card-35.json",
+      "cardFile": "assets/badhand2/cards/0000/card-35.webp",
+      "animation": null
+    },
+    {
+      "number": 36,
+      "assetNumber": 36,
+      "stableId": "badhand2:group-98f6049773fe86e89a5e296b",
+      "groupKeyHash": "98f6049773fe86e89a5e296b888bc2ab69936c4ec4b26bebfd16959e1c508760",
+      "title": "BAD HAND 2 36",
+      "mints": [
+        "6zTjSTtGLDSeFYskF4XvMUxjMiFiyxKCPmT5gyXL7VXV"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/35",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-036.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "3aef8af40e0d4968ef3bbb9330c576553b9a8b394e328a313b7f00f318cc742d",
+      "metadataFile": "assets/badhand2/metadata/0000/card-36.json",
+      "cardFile": "assets/badhand2/cards/0000/card-36.webp",
+      "animation": null
+    },
+    {
+      "number": 37,
+      "assetNumber": 37,
+      "stableId": "badhand2:group-8e356d122a176f9fba98402a",
+      "groupKeyHash": "8e356d122a176f9fba98402af29819ef9e62f398830b2e1b3a56381c904dc082",
+      "title": "BAD HAND 2 37",
+      "mints": [
+        "pcqZXDYHvGFzSwgY1VnBxSNH2W7cNgCb3gshSE9U14h"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/36",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-037.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "f02a0b8f13b040e6b03893354424af9c4e22defab1c2c73dee4e109429922680",
+      "metadataFile": "assets/badhand2/metadata/0000/card-37.json",
+      "cardFile": "assets/badhand2/cards/0000/card-37.webp",
+      "animation": null
+    },
+    {
+      "number": 38,
+      "assetNumber": 38,
+      "stableId": "badhand2:group-a804918cf6faef39b00bf304",
+      "groupKeyHash": "a804918cf6faef39b00bf304ba62ad23dd4663f2d8a90e5c8352a67b619833fa",
+      "title": "BAD HAND 2 38",
+      "mints": [
+        "8XmxUQgFtjxygWaDmHhtkNJ5Qr18R7Jv21LFijQ2n8X7"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/37",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-038.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "5f1ac82762fc292be232dece6e856866af5bec0c1f11a4b99a9ec31604a1184d",
+      "metadataFile": "assets/badhand2/metadata/0000/card-38.json",
+      "cardFile": "assets/badhand2/cards/0000/card-38.webp",
+      "animation": null
+    },
+    {
+      "number": 39,
+      "assetNumber": 39,
+      "stableId": "badhand2:group-96f1de29414b4dd72199395d",
+      "groupKeyHash": "96f1de29414b4dd72199395d266092f36ad254078e1c496438466c5d796f2454",
+      "title": "BAD HAND 2 39",
+      "mints": [
+        "98zdRR1BuJEEZbt38a4spXNzSJESbn2td1sN3QR28AFF"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/38",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-039.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "0f59acb3b4224c3fa20b049bd6de1c4ff1c7fde9315f3fbc09ce165adfae7eef",
+      "metadataFile": "assets/badhand2/metadata/0000/card-39.json",
+      "cardFile": "assets/badhand2/cards/0000/card-39.webp",
+      "animation": null
+    },
+    {
+      "number": 40,
+      "assetNumber": 40,
+      "stableId": "badhand2:group-f79d94e67fadfe99fdb62252",
+      "groupKeyHash": "f79d94e67fadfe99fdb622522c35195956ce2214f610188434da83c3bf2ad4e3",
+      "title": "BAD HAND 2 40",
+      "mints": [
+        "5AH5WaTCsWHEXCER9dMAfJj1QP3ZuJLxtrqe8sKQvovz"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/39",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-040.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "e401e4d8b472020695aea51cbdfb4c927b42c876469b64f5fa21b2d428436f7f",
+      "metadataFile": "assets/badhand2/metadata/0000/card-40.json",
+      "cardFile": "assets/badhand2/cards/0000/card-40.webp",
+      "animation": null
+    },
+    {
+      "number": 41,
+      "assetNumber": 41,
+      "stableId": "badhand2:group-c31c219c9e8c8ce6f4ab74b7",
+      "groupKeyHash": "c31c219c9e8c8ce6f4ab74b72bb5ce471209178f2f2a838dfe4bf3ee810e56c9",
+      "title": "BAD HAND 2 41",
+      "mints": [
+        "8UJRrd52a8WEhWs7y32R432eQi79VeRE9h8zHDsLaXzB"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/40",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23041.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "16d5a4955aeffce332723e352c95e5451c0d6298d11cc64d3faa02fd8e9ddfbc",
+      "metadataFile": "assets/badhand2/metadata/0000/card-41.json",
+      "cardFile": "assets/badhand2/cards/0000/card-41.webp",
+      "animation": null
+    },
+    {
+      "number": 42,
+      "assetNumber": 42,
+      "stableId": "badhand2:group-91f62a844b8d060e7c1c4949",
+      "groupKeyHash": "91f62a844b8d060e7c1c494976a5b6f51e17af522a200cec4801366112b2ea72",
+      "title": "BAD HAND 2 42",
+      "mints": [
+        "AupWpQmT8fQcHny1GSJHE8aG4qbX9CKtqRbUaVckr4H"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/41",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-042.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "f7f68d93ab95a25c7593d03b27f1b015921bb99c3a4e7abb34b55e446d7743a1",
+      "metadataFile": "assets/badhand2/metadata/0000/card-42.json",
+      "cardFile": "assets/badhand2/cards/0000/card-42.webp",
+      "animation": null
+    },
+    {
+      "number": 43,
+      "assetNumber": 43,
+      "stableId": "badhand2:group-ea0cef90d0745e81a7a56809",
+      "groupKeyHash": "ea0cef90d0745e81a7a56809148bfdf0814db9fb47e46df415cc9ace89c503c3",
+      "title": "BAD HAND 2 43",
+      "mints": [
+        "4j5fPNv9SA34x3kxzqkGn8uE6Bf5KPcHwPrYSAynAVhN"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/42",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23043.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "2e89959948534279ba7a653ee07068e8c67127f2fac6785a0c4cffb448922945",
+      "metadataFile": "assets/badhand2/metadata/0000/card-43.json",
+      "cardFile": "assets/badhand2/cards/0000/card-43.webp",
+      "animation": null
+    },
+    {
+      "number": 44,
+      "assetNumber": 44,
+      "stableId": "badhand2:group-b270a4fd7cf299e509a39f7f",
+      "groupKeyHash": "b270a4fd7cf299e509a39f7ffadc36a2682af631bf67f33bd3f5bb6c35f05f73",
+      "title": "BAD HAND 2 44",
+      "mints": [
+        "2sM6erNwQA2ryf83WpLY6KYd3NXd9ikXaWnih2iLia8K"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/43",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-044.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "0e240d362ccbf4000b1ce2ae9960f652a5ba93fd667aa64d9a2ab62e4a8438ec",
+      "metadataFile": "assets/badhand2/metadata/0000/card-44.json",
+      "cardFile": "assets/badhand2/cards/0000/card-44.webp",
+      "animation": null
+    },
+    {
+      "number": 45,
+      "assetNumber": 45,
+      "stableId": "badhand2:group-722056e0abf8088d72773bdc",
+      "groupKeyHash": "722056e0abf8088d72773bdcdb6d4884914cd6798bda1f9e167a82337c60ddc1",
+      "title": "BAD HAND 2 45",
+      "mints": [
+        "CDaQsMnE51pFnB2GbnEX2XymTSf6p3PZzRabtKv1zjfx"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/44",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-045.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "2638274710a6faa6b774deee6ed14fb4d88ff7032dd8423458894e8035cf20fd",
+      "metadataFile": "assets/badhand2/metadata/0000/card-45.json",
+      "cardFile": "assets/badhand2/cards/0000/card-45.webp",
+      "animation": null
+    },
+    {
+      "number": 46,
+      "assetNumber": 46,
+      "stableId": "badhand2:group-8bfcc5b0770148bdfd95297b",
+      "groupKeyHash": "8bfcc5b0770148bdfd95297b1690cf68e627e4767b88a46aa29c036275db37ef",
+      "title": "BAD HAND 2 46",
+      "mints": [
+        "DuZve9csKUDSV4mxDg2XRqLzQUxKmJJ3DLAUTLuZm5dS"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/45",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-046.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "52265d6245ab78403f927aa3c61b8e40b08de0a1bcbbd7120ad795e411f1b9c2",
+      "metadataFile": "assets/badhand2/metadata/0000/card-46.json",
+      "cardFile": "assets/badhand2/cards/0000/card-46.webp",
+      "animation": null
+    },
+    {
+      "number": 47,
+      "assetNumber": 47,
+      "stableId": "badhand2:group-e405276401b0ad47bb95bad3",
+      "groupKeyHash": "e405276401b0ad47bb95bad3ddeb27388e9477e3b1e83ebcb9e7e90f34a76f57",
+      "title": "BAD HAND 2 47",
+      "mints": [
+        "7EfRTSfwa5p8TyxoE2BVHsGdvFFJUwMxBHtpakMFpRGW"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/46",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-047.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "dcd33c375e31395c33fdeb0eedb4a4ab3033baa89a162c114c2d7147da7f0c28",
+      "metadataFile": "assets/badhand2/metadata/0000/card-47.json",
+      "cardFile": "assets/badhand2/cards/0000/card-47.webp",
+      "animation": null
+    },
+    {
+      "number": 48,
+      "assetNumber": 48,
+      "stableId": "badhand2:group-72dde72f7ec23d57476657d8",
+      "groupKeyHash": "72dde72f7ec23d57476657d824fe3f8c6dcd93830c2b6487bb4cc6df9dfa0fbe",
+      "title": "BAD HAND 2 48",
+      "mints": [
+        "GHKTTfM3Z3exJLPqkPYmE7WQXdrFvHSeY59N1pUpMxQi"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/47",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-048.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "95987102b1117a9290388302833bdc5f313d385752a8e1c0d027a637fa296796",
+      "metadataFile": "assets/badhand2/metadata/0000/card-48.json",
+      "cardFile": "assets/badhand2/cards/0000/card-48.webp",
+      "animation": null
+    },
+    {
+      "number": 49,
+      "assetNumber": 49,
+      "stableId": "badhand2:group-bb9a510ecc1d60178806904c",
+      "groupKeyHash": "bb9a510ecc1d60178806904c1b9efada03c5a31b2b876209d54ad3936f918e89",
+      "title": "BAD HAND 2 49",
+      "mints": [
+        "4PChN3HkFDeCoEzAc57X9H7iQJZZLByEH3xt4ckbjQzf"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/48",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-049.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "ed14494ba303030675627f8eb2fd91967ffb4a4eb835d3c137b2c290b301ca2c",
+      "metadataFile": "assets/badhand2/metadata/0000/card-49.json",
+      "cardFile": "assets/badhand2/cards/0000/card-49.webp",
+      "animation": null
+    },
+    {
+      "number": 50,
+      "assetNumber": 50,
+      "stableId": "badhand2:group-1a69316342c9937806d4ae11",
+      "groupKeyHash": "1a69316342c9937806d4ae112d5e31f880a20b32f9a0ba409a0f8629d747ff83",
+      "title": "BAD HAND 2 50",
+      "mints": [
+        "Hpf2geoqnFDaeJQvYXa8kyngGwjwf9syqhEqdxEQHiWm"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/49",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23050.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "802c4cd029d9a977f95bebb0bb1623714f7f631bd4bbad76ad8c41b2669f5216",
+      "metadataFile": "assets/badhand2/metadata/0000/card-50.json",
+      "cardFile": "assets/badhand2/cards/0000/card-50.webp",
+      "animation": null
+    },
+    {
+      "number": 51,
+      "assetNumber": 51,
+      "stableId": "badhand2:group-2ecac858ac5bae4594d71686",
+      "groupKeyHash": "2ecac858ac5bae4594d71686d38437a01f2d0931a68db42cfcba9c2fee5cf4c3",
+      "title": "BAD HAND 2 51",
+      "mints": [
+        "HXZcG6FrTamyhQPUJkXZkTBFMi58UwxSvMaeVMtad4EV"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/50",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-051.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "48618e0e0cc1aeff4119e787a795618845f040ff12f7b18f8659419bc4580b05",
+      "metadataFile": "assets/badhand2/metadata/0000/card-51.json",
+      "cardFile": "assets/badhand2/cards/0000/card-51.webp",
+      "animation": null
+    },
+    {
+      "number": 52,
+      "assetNumber": 52,
+      "stableId": "badhand2:group-aeb61d88178c1149cb8d320a",
+      "groupKeyHash": "aeb61d88178c1149cb8d320ae06625802f3244f6bdb0401891ef7ea881121335",
+      "title": "BAD HAND 2 52",
+      "mints": [
+        "CFPDiw7AVfPHmcidVkckJEuHssv9Dg6t3Dr36yYC1hu7"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/51",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-052.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "5e5c20ed74198960c3637732dc1780ac01d72433aebc64b16ddeb953a5196a84",
+      "metadataFile": "assets/badhand2/metadata/0000/card-52.json",
+      "cardFile": "assets/badhand2/cards/0000/card-52.webp",
+      "animation": null
+    },
+    {
+      "number": 53,
+      "assetNumber": 53,
+      "stableId": "badhand2:group-7d31193de07b4490bc9edd5c",
+      "groupKeyHash": "7d31193de07b4490bc9edd5c9cc6ef7bbdfe185fbc5bdf02daf9ddb4e3b7ce18",
+      "title": "BAD HAND 2 53",
+      "mints": [
+        "8MJKF46oyAkzqUfeZNnZ4fW2SMGscmpBuCoDnMXXQTsr"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/52",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23053.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "edbbd0f5555911f1ddd4a3491cfc051010ecc52a16ca87731936f9d4be525560",
+      "metadataFile": "assets/badhand2/metadata/0000/card-53.json",
+      "cardFile": "assets/badhand2/cards/0000/card-53.webp",
+      "animation": null
+    },
+    {
+      "number": 54,
+      "assetNumber": 54,
+      "stableId": "badhand2:group-f8d3db379786233b3182b7d6",
+      "groupKeyHash": "f8d3db379786233b3182b7d6f50b3e6340b0abc0f7e073d9e2757c891ca02279",
+      "title": "BAD HAND 2 54",
+      "mints": [
+        "HBRweZm8pNRK1pVJrQgLSFe8Y69v4H7BREcvKrXEZMW1"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/53",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23054.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "94846f521ea32f65d0005abe7ca3953bd4bd5c437a495984ce5624fd0a5861f6",
+      "metadataFile": "assets/badhand2/metadata/0000/card-54.json",
+      "cardFile": "assets/badhand2/cards/0000/card-54.webp",
+      "animation": null
+    },
+    {
+      "number": 55,
+      "assetNumber": 55,
+      "stableId": "badhand2:group-96662c13d8e98cd37acd08a4",
+      "groupKeyHash": "96662c13d8e98cd37acd08a4f5fa692d7f194f078127dccc77797c74bd1e9a45",
+      "title": "BAD HAND 2 55",
+      "mints": [
+        "Fh6kwEB8CUGH2XQuxbtCyt6K5nEdRBd2vz5tb5cajtJ8"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/54",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23055.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "9b62e6d6d0fa5b85e2c82c27c9980030271d0c135bb161ccd9b8fb4363468669",
+      "metadataFile": "assets/badhand2/metadata/0000/card-55.json",
+      "cardFile": "assets/badhand2/cards/0000/card-55.webp",
+      "animation": null
+    },
+    {
+      "number": 56,
+      "assetNumber": 56,
+      "stableId": "badhand2:group-8cad366f711e415d88208b60",
+      "groupKeyHash": "8cad366f711e415d88208b600e8c6f124ac844cafad16609fe8bbab7d72dbcf6",
+      "title": "BAD HAND 2 56",
+      "mints": [
+        "5ropBBU9TveMtyQ7t8WqLnTwcB4dr6c1hf38nxzmnPHz"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/55",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23056.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "0f8bd9f54ced5e16e32bd2fb377fea30e3d395df2a9211cc02e9ffe7c8ad0813",
+      "metadataFile": "assets/badhand2/metadata/0000/card-56.json",
+      "cardFile": "assets/badhand2/cards/0000/card-56.webp",
+      "animation": null
+    },
+    {
+      "number": 57,
+      "assetNumber": 57,
+      "stableId": "badhand2:group-475d7655afc70065853d9525",
+      "groupKeyHash": "475d7655afc70065853d9525fe0e4ace4eded5035f643ecc9c0bd3697253e116",
+      "title": "BAD HAND 2 57",
+      "mints": [
+        "BsaDSo5sTK8Awy7mQdSPZRURTL9b4sWiiRF5JhSVPaQV"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/56",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23057.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "906de9d800df37e3594677ec44600bf771ac3faa9b57fbb4754e88f28862e975",
+      "metadataFile": "assets/badhand2/metadata/0000/card-57.json",
+      "cardFile": "assets/badhand2/cards/0000/card-57.webp",
+      "animation": null
+    },
+    {
+      "number": 58,
+      "assetNumber": 58,
+      "stableId": "badhand2:group-e9c5071adc8ad45bd6ec6af8",
+      "groupKeyHash": "e9c5071adc8ad45bd6ec6af89f1572664eba8d8c6abe7e0b63005902b90605f6",
+      "title": "BAD HAND 2 58",
+      "mints": [
+        "BS33BssCw6T7fbiexHMcqnDSSNJZKvASDWA1Ninz8Bvq"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/57",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-058.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "1f6a69977398f4e6c216c36a74b481df1d9c1f4ee619fba25674e35962141226",
+      "metadataFile": "assets/badhand2/metadata/0000/card-58.json",
+      "cardFile": "assets/badhand2/cards/0000/card-58.webp",
+      "animation": null
+    },
+    {
+      "number": 59,
+      "assetNumber": 59,
+      "stableId": "badhand2:group-f3591b347b6194f4a2417fb5",
+      "groupKeyHash": "f3591b347b6194f4a2417fb5cd35cdbd93cb27ddc08a79ebd1f494b23d135541",
+      "title": "BAD HAND 2 59",
+      "mints": [
+        "GZLqBWJ7p1hkrTZXiyx6wj8zxJv1XZ8QVHHep1Tatx1M"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/58",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23059.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "9f33a093dcf2dfd9c39c6f90958b3061e186301bf5c84fc4f7567c581a1a6d4e",
+      "metadataFile": "assets/badhand2/metadata/0000/card-59.json",
+      "cardFile": "assets/badhand2/cards/0000/card-59.webp",
+      "animation": null
+    },
+    {
+      "number": 60,
+      "assetNumber": 60,
+      "stableId": "badhand2:group-b98c13eaa0bb2263dfa28254",
+      "groupKeyHash": "b98c13eaa0bb2263dfa282546061a6b3bc4036dfea3c1a1d3bd4240059ced0e3",
+      "title": "BAD HAND 2 60",
+      "mints": [
+        "CNxxSPwjkg4c5pfUhz97otXbLrbt8e1fMA8nHuSYpJhP"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/59",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23060.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "926c3b5457ab799283aa839f0e73df6fa3f55132a28cc7cc6e56f94b0b13c8e0",
+      "metadataFile": "assets/badhand2/metadata/0000/card-60.json",
+      "cardFile": "assets/badhand2/cards/0000/card-60.webp",
+      "animation": null
+    },
+    {
+      "number": 61,
+      "assetNumber": 61,
+      "stableId": "badhand2:group-a32c83b78964d6bfa1e33036",
+      "groupKeyHash": "a32c83b78964d6bfa1e330363e2032e7bbb84fd23c7e7a39e7eb80d0282f3e99",
+      "title": "BAD HAND 2 61",
+      "mints": [
+        "F8aCckcs5Z8nsZ39Y39HfrwWAGw4trxgHdfUh8uKotHD"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/60",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23061.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "300f63e7b880bf0191b67f733498e420d1b4708ebd049d3d21a8f6c4955b8ac8",
+      "metadataFile": "assets/badhand2/metadata/0000/card-61.json",
+      "cardFile": "assets/badhand2/cards/0000/card-61.webp",
+      "animation": null
+    },
+    {
+      "number": 62,
+      "assetNumber": 62,
+      "stableId": "badhand2:group-f1af25d02b06d95734fed47f",
+      "groupKeyHash": "f1af25d02b06d95734fed47fd1cd7565c1c25a4bea215bdf86250782199f498e",
+      "title": "BAD HAND 2 62",
+      "mints": [
+        "9dsXjwjDpK68xN1wKkrFaqGN6taHeGL11dBXaDAaLXu8"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/61",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23062.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "52bc4bcb43237ff813cfd1623ec560acf5f27c82ed23bebfdfeda4894d1a34fe",
+      "metadataFile": "assets/badhand2/metadata/0000/card-62.json",
+      "cardFile": "assets/badhand2/cards/0000/card-62.webp",
+      "animation": null
+    },
+    {
+      "number": 63,
+      "assetNumber": 63,
+      "stableId": "badhand2:group-e626a4a1a9659367d87a08c5",
+      "groupKeyHash": "e626a4a1a9659367d87a08c5cfb94a6ff3a32265c9898d1b4de02f22ca50bad6",
+      "title": "BAD HAND 2 63",
+      "mints": [
+        "AFFhX7DXCZcgpPbKEzsp3TdR9Rkp9F8DDF6ax5iVNFEe"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/62",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23063.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "e7fc8fc4d7cc74e3a1571fddbeeba6dd45e37971a143adb7b8b7aeb775253f81",
+      "metadataFile": "assets/badhand2/metadata/0000/card-63.json",
+      "cardFile": "assets/badhand2/cards/0000/card-63.webp",
+      "animation": null
+    },
+    {
+      "number": 64,
+      "assetNumber": 64,
+      "stableId": "badhand2:group-28606cbd45125b8dd81e0a7c",
+      "groupKeyHash": "28606cbd45125b8dd81e0a7c65c41526d4e26bd8bd7f3576c4133276c67db61c",
+      "title": "BAD HAND 2 64",
+      "mints": [
+        "7qJDwQVzKquxtbb76NMRhzMEfLvaL37YxEdiXoNJuCYs"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/BgIWUbwtgmxWCKZRGtFxQxXqpksX8MPO3sMijEMDQYs/63",
+      "sourceImageUri": "https://gateway.irys.xyz/e0uxAJmRyyhHxkq6TyudKxWJ1E3YeZdzL5LbV7pwAtI/BAD%20HAND%202%20%23064.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "d49b8e00ada5adb203c2274c8cbd5223366289243d3a0fdbfbf4351cb76fe6fe",
+      "metadataFile": "assets/badhand2/metadata/0000/card-64.json",
+      "cardFile": "assets/badhand2/cards/0000/card-64.webp",
+      "animation": null
+    },
+    {
+      "number": 65,
+      "assetNumber": 65,
+      "stableId": "badhand2:group-bce9c7ccb0b70adeb1d81f0f",
+      "groupKeyHash": "bce9c7ccb0b70adeb1d81f0f3884a1971b1d397136493f8a8880807e9704770f",
+      "title": "BAD HAND 2 65",
+      "mints": [
+        "A7YysRm3BUR9oMg5EcPfZZda6w3t1zL9Avw5Sy2uSoAk"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/64",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-065.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "0c1d4ed529e1bf1499870b6e1955c48ed42d368dbef4d1474b24c1d281779754",
+      "metadataFile": "assets/badhand2/metadata/0000/card-65.json",
+      "cardFile": "assets/badhand2/cards/0000/card-65.webp",
+      "animation": null
+    },
+    {
+      "number": 66,
+      "assetNumber": 66,
+      "stableId": "badhand2:group-e4db43b7d61f6f5ebbbdfbc0",
+      "groupKeyHash": "e4db43b7d61f6f5ebbbdfbc0b85e7ef96ae15e3af37b9144523c58c13550490d",
+      "title": "BAD HAND 2 66",
+      "mints": [
+        "3UWKpavddmsktHzieWvJVkhosjLm9GcJrXWgdWLxFBL3"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/65",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-066.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "e07699eb1036ad8afadb73d2757622c54772bccbb4f01526f3fc2f8d0b1df5f2",
+      "metadataFile": "assets/badhand2/metadata/0000/card-66.json",
+      "cardFile": "assets/badhand2/cards/0000/card-66.webp",
+      "animation": null
+    },
+    {
+      "number": 67,
+      "assetNumber": 67,
+      "stableId": "badhand2:group-c07fb4ee57226757b4cfa5e9",
+      "groupKeyHash": "c07fb4ee57226757b4cfa5e96620e4b713f07fb4f2f218ba01bb5209df41b1fb",
+      "title": "BAD HAND 2 67",
+      "mints": [
+        "518ZKGKbTQTbAZVevin6qWmcdzvtdDvvaEeB4MnVkLd6"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/66",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-067.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "ef87f61a42948a00dc0d0dbf6d9d0b76e3b5fe9bb3664b5a74dacedbd596e120",
+      "metadataFile": "assets/badhand2/metadata/0000/card-67.json",
+      "cardFile": "assets/badhand2/cards/0000/card-67.webp",
+      "animation": null
+    },
+    {
+      "number": 68,
+      "assetNumber": 68,
+      "stableId": "badhand2:group-2dc27b1ee9f52c4fec3c3a56",
+      "groupKeyHash": "2dc27b1ee9f52c4fec3c3a565d99ce16297b0b97b8ef5b64e20a6a1c4bb2392c",
+      "title": "BAD HAND 2 68",
+      "mints": [
+        "BX6V4UinJPmBEwzxfuCFnDJQfWXyvcmESmAZidB81Nex"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/67",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-068.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "6f9685ce97b9a87c78932d3b3c51967261c25081795833d026b535eeff7b5b05",
+      "metadataFile": "assets/badhand2/metadata/0000/card-68.json",
+      "cardFile": "assets/badhand2/cards/0000/card-68.webp",
+      "animation": null
+    },
+    {
+      "number": 69,
+      "assetNumber": 69,
+      "stableId": "badhand2:group-d70ae10667b4020a7a34e37c",
+      "groupKeyHash": "d70ae10667b4020a7a34e37ca278b34c99b6ac74f2f8d1c099cf084341f17591",
+      "title": "BAD HAND 2 69",
+      "mints": [
+        "3uudWCsuvQcuF7CWcpxFo8zLsaThR2j7HdRopQixvuiR"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/68",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-069.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "25e17f7df6edcc2cf25ee4101f7eb661762d2f58248082c31f74a060a2b30489",
+      "metadataFile": "assets/badhand2/metadata/0000/card-69.json",
+      "cardFile": "assets/badhand2/cards/0000/card-69.webp",
+      "animation": null
+    },
+    {
+      "number": 70,
+      "assetNumber": 70,
+      "stableId": "badhand2:group-37a8284324998ffd1b9cb05c",
+      "groupKeyHash": "37a8284324998ffd1b9cb05c74124ad0932559ef39937351839ebb799306d193",
+      "title": "BAD HAND 2 70",
+      "mints": [
+        "6ZxJ4pBYRFFEcjoV7steWrctUrbY6hgZUJYvwmCXqkgo"
+      ],
+      "sourceMetadataUri": "https://gateway.irys.xyz/vyxhhTKvNfvmfv68vFtapdJNNJW4PKEmYHN9BTHDG-o/69",
+      "sourceImageUri": "https://gateway.irys.xyz/ktzNG3gDXhZEsAMqBt4EJvuMFlL8Q82jDGgNbFjhpJU/BAD-HAND-2-070.png",
+      "sourceAnimatedGifUri": "",
+      "sourceAnimatedGifSignature": "",
+      "sourceImageSignature": "0721933a6d286128f5e893b959c4ceaf7731b466f008d7486c4bea2c711350f8",
+      "metadataFile": "assets/badhand2/metadata/0000/card-70.json",
+      "cardFile": "assets/badhand2/cards/0000/card-70.webp",
+      "animation": null
+    }
+  ]
+}

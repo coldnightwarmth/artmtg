@@ -15,7 +15,7 @@ const TENSOR_DISPLAY_SLUG = "poncho_drifella";
 const TENSOR_PAGE_URL = "https://www.tensor.trade/trade/poncho_drifella";
 const COLLECTION_ADDRESS = "JCTP3kK3xGtWs5mDHxJBuRro38HftaiCDdKsfkXuK2gH";
 const CANONICAL_METADATA_BASE_URL = process.env.PONCHO_METADATA_BASE_URL
-  || "https://assets.mons.link/drops/poncho/json/figures";
+  || "https://cdn.lil.org/nft/poncho_drifella/json/figures";
 
 const SOURCE_PATH = path.join(ROOT, "poncho-source.json");
 const DATA_PATH = path.join(ROOT, "poncho-data.js");
@@ -32,7 +32,7 @@ const BACK_SOURCE_SIGNATURE = "manual:english-pokemon-card-back";
 const BACK_WIDTH = 1024;
 const BACK_HEIGHT = 1419;
 
-const EXPECTED_LIVE_ASSET_COUNT = Number(process.env.PONCHO_EXPECTED_LIVE_COUNT || 193);
+const EXPECTED_LIVE_ASSET_COUNT = Number(process.env.PONCHO_EXPECTED_LIVE_COUNT || 194);
 const CANONICAL_FIGURE_COUNT = Number(process.env.PONCHO_FIGURE_COUNT || 207);
 const TENSOR_PAGE_LIMIT = Number(process.env.PONCHO_TENSOR_PAGE_LIMIT || 250);
 const MAX_WIDTH = Number(process.env.PONCHO_MAX_WIDTH || 700);
@@ -799,6 +799,12 @@ function normalizeAttributes(attributes) {
 
 function normalizeUri(value) {
   const uri = cleanText(value);
+  if (uri.startsWith("https://assets.mons.link/drops/poncho/")) {
+    return uri.replace(
+      "https://assets.mons.link/drops/poncho/",
+      "https://cdn.lil.org/nft/poncho_drifella/",
+    );
+  }
   if (uri.startsWith("ipfs://")) {
     return `https://ipfs.io/ipfs/${uri.slice("ipfs://".length).replace(/^ipfs\//, "")}`;
   }

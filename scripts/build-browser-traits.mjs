@@ -13,6 +13,7 @@ const COLLECTIONS = [
   ["limited", "limited-traits.js", "LIMITED_TRAIT_CATEGORIES", "LIMITED_TRAITS"],
   ["cloudcastle", "cloudcastle-traits.js", "CLOUDCASTLE_TRAIT_CATEGORIES", "CLOUDCASTLE_TRAITS"],
   ["badhand", "badhand-traits.js", "BADHAND_TRAIT_CATEGORIES", "BADHAND_TRAITS"],
+  ["badhand2", "badhand2-traits.js", "BADHAND2_TRAIT_CATEGORIES", "BADHAND2_TRAITS"],
   ["jpegs", "jpegs-traits.js", "JPEGS_TRAIT_CATEGORIES", "JPEGS_TRAITS"],
   ["nolegs", "nolegs-traits.js", "NOLEGS_TRAIT_CATEGORIES", "NOLEGS_TRAITS"],
   ["playcards", "playcards-traits.js", "PLAYCARDS_TRAIT_CATEGORIES", "PLAYCARDS_TRAITS"],
@@ -80,7 +81,7 @@ for (const [id, sourceFile, categoriesExport, traitsExport] of COLLECTIONS) {
   await writeFile(path.join(OUTPUT_DIR, `${id}.js`), moduleText);
   catalog[id] = {
     categories,
-    module: `./browser-traits/${id}.js?v=browser-traits-5`,
+    module: `./browser-traits/${id}.js?v=browser-traits-9`,
     records: rows.length,
   };
 }

@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cards-art-wallet-auth",
+  "pages_build_output_dir": "./pages-dist",
+  "compatibility_date": "2026-08-04",
+  "vars": {
+    "ALLOWED_ORIGINS": "https://cards.art,https://www.cards.art",
+    "AUTH_STATEMENT": "Sign in to cards.art to create and customize your card binder. This will not submit a transaction or cost SOL.",
+    "SESSION_TTL_SECONDS": "604800"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "cards-art-wallet-auth",
+      "database_id": "c5a01c8b-c1a0-4168-8e94-a85f97cfb4f6",
+      "migrations_dir": "migrations"
+    }
+  ]
+}

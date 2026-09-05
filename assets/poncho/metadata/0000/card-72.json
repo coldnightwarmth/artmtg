@@ -1,18 +1,18 @@
 {
   "name": "Poncho Drifella #72",
   "description": "poncho drifella cards · physical on mons dot shop",
-  "image": "https://assets.mons.link/drops/poncho/items/72.webp",
-  "animation_url": "https://ipfs.io/ipfs/bafybeihhtllco3nhn2vau3ezqu7zpzfjij4x7n7tcxz63k6fkq55jljram/72.mp4",
+  "image": "https://cdn.lil.org/nft/poncho_drifella/items/72.webp",
+  "animation_url": "https://cdn.lil.org/nft/poncho_drifella/videos/72.mp4",
   "external_url": "https://mons.shop",
   "id": 72,
   "properties": {
     "files": [
       {
-        "uri": "https://assets.mons.link/drops/poncho/items/72.webp",
+        "uri": "https://cdn.lil.org/nft/poncho_drifella/items/72.webp",
         "type": "image/webp"
       },
       {
-        "uri": "https://ipfs.io/ipfs/bafybeihhtllco3nhn2vau3ezqu7zpzfjij4x7n7tcxz63k6fkq55jljram/72.mp4",
+        "uri": "https://cdn.lil.org/nft/poncho_drifella/videos/72.mp4",
         "type": "video/mp4"
       }
     ],

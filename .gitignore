@@ -1,2 +1,12 @@
 .DS_Store
 tmp-*.png
+node_modules/
+.dev.vars*
+!.dev.vars.example
+.env
+.env.*
+!.env.example
+.wrangler/
+worker/dist/
+worker/pages-dist/
+rendered-clips/

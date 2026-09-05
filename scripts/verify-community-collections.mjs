@@ -14,7 +14,7 @@ import { PONCHO_CARDS } from "../poncho-data.js";
 const require = createRequire(import.meta.url);
 const sharp = loadSharp();
 const root = process.cwd();
-const expectedAppVersion = "cardnft-326";
+const expectedAppVersion = "cardnft-376";
 const requestedIds = process.argv.slice(2);
 const collections = requestedIds.length
   ? requestedIds.map((id) => {
@@ -81,6 +81,42 @@ for (const collection of collections) {
       || source.tensorReportedMintCount === tensorFetchedMintCount,
     `${collection.id} Tensor count differs from the downloaded live set`,
   );
+  const configuredAdditionalSources = [...(collection.additionalTensorCollections || [])];
+  if (configuredAdditionalSources.length) {
+    const configuredTensorSources = [
+      {
+        tensorPageSlug: collection.tensorPageSlug,
+        tensorSlug: collection.tensorSlug,
+        displayTitlePrefix: "",
+      },
+      ...configuredAdditionalSources,
+    ];
+    assert(
+      Array.isArray(source.tensorCollections)
+        && source.tensorCollections.length === configuredTensorSources.length,
+      `${collection.id} Tensor source records differ`,
+    );
+    for (let sourceIndex = 0; sourceIndex < configuredTensorSources.length; sourceIndex += 1) {
+      const expectedSource = configuredTensorSources[sourceIndex];
+      const actualSource = source.tensorCollections[sourceIndex];
+      assert(
+        actualSource?.sourceOrder === sourceIndex
+          && actualSource?.pageSlug === expectedSource.tensorPageSlug
+          && actualSource?.collectionSlug === expectedSource.tensorSlug
+          && actualSource?.displayTitlePrefix === (expectedSource.displayTitlePrefix || "")
+          && Number.isInteger(actualSource?.fetchedMintCount)
+          && actualSource.fetchedMintCount > 0,
+        `${collection.id} Tensor source ${sourceIndex} differs`,
+      );
+    }
+    assert(
+      source.tensorCollections.reduce(
+        (total, tensorCollection) => total + tensorCollection.fetchedMintCount,
+        0,
+      ) === source.tensorFetchedMintCount,
+      `${collection.id} Tensor source counts differ`,
+    );
+  }
   assert(
     source.metadataFetchFailureCount === 0,
     `${collection.id} has ${source.metadataFetchFailureCount} metadata fallbacks`,
@@ -169,7 +205,8 @@ for (const collection of collections) {
   const animatedGroupKeyHashes = [];
   const categoriesFromCards = [];
   const seenCategories = new Set();
-  let previousTitleNumber = -Infinity;
+  let previousSourceOrder = -1;
+  const previousTitleNumberBySource = new Map();
 
   if (Array.isArray(collection.displayTitleOrder)) {
     assertJsonEqual(
@@ -194,13 +231,40 @@ for (const collection of collections) {
     );
     assert(card.collection === collection.id, `${collection.id} card ${cardNumber} has wrong collection`);
     assert(card.title === sourceCard.title, `${collection.id} card ${cardNumber} title differs`);
-    if (collection.sortByTitleNumber) {
+    const sourceCollectionOrder = Number(sourceCard.sourceCollectionOrder || 0);
+    assert(
+      Number.isInteger(sourceCollectionOrder)
+        && sourceCollectionOrder >= previousSourceOrder
+        && sourceCollectionOrder <= configuredAdditionalSources.length,
+      `${collection.id} source collection order differs at card ${cardNumber}`,
+    );
+    previousSourceOrder = sourceCollectionOrder;
+    const appendedSource = sourceCollectionOrder > 0
+      ? configuredAdditionalSources[sourceCollectionOrder - 1]
+      : null;
+    if (appendedSource) {
+      assert(
+        sourceCard.sourceCollectionSlug === appendedSource.tensorSlug,
+        `${collection.id} appended source slug differs at card ${cardNumber}`,
+      );
+      if (appendedSource.displayTitlePrefix) {
+        assert(
+          card.title.startsWith(appendedSource.displayTitlePrefix),
+          `${collection.id} appended title prefix differs at card ${cardNumber}`,
+        );
+      }
+    }
+    if (
+      (sourceCollectionOrder === 0 && collection.sortByTitleNumber)
+      || appendedSource?.sortByTitleNumber
+    ) {
       const titleNumber = getTitleNumber(card.title);
+      const previousTitleNumber = previousTitleNumberBySource.get(sourceCollectionOrder) ?? -Infinity;
       assert(
         Number.isInteger(titleNumber) && titleNumber > previousTitleNumber,
-        `${collection.id} title order is not strictly numeric at card ${cardNumber}`,
+        `${collection.id} source ${sourceCollectionOrder} title order is not strictly numeric at card ${cardNumber}`,
       );
-      previousTitleNumber = titleNumber;
+      previousTitleNumberBySource.set(sourceCollectionOrder, titleNumber);
     }
     assert(card.file.endsWith(`?v=${collection.revision}`), `${collection.id} card ${cardNumber} has stale URL`);
     assert(cardFile === sourceCard.cardFile, `${collection.id} card ${cardNumber} file differs from source`);
@@ -503,8 +567,9 @@ for (const collection of collections) {
     `aria-label="3D ${collection.label} binder"`,
     `../app.js?v=${expectedAppVersion}`,
     "../vendor/three.module.min.js?v=three-r165-min-1",
-    "../browser-traits-catalog.js?v=browser-traits-5",
-    "../styles.css?v=cardnft-132",
+    "../browser-traits-catalog.js?v=browser-traits-9",
+    "../styles.css?v=cardnft-153",
+    'id="binderTradeModeButton"',
   ]) {
     assert(page.includes(value), `${collection.id} page is missing ${JSON.stringify(value)}`);
   }
@@ -580,7 +645,7 @@ function verifySharedAppArchitecture() {
     "shared DOM card slots do not use fixed 5:7 contain sizing",
   );
   assert(
-    app.includes('if (ACTIVE_COLLECTION.introGroup !== "evil")')
+    app.includes("if (!usesEvilBinderPresentation())")
       && app.includes("collection.id !== ACTIVE_COLLECTION_ID")
       && app.includes('collection.introGroup === "evil"'),
     "app binder-cover collection-link grouping differs",
@@ -607,7 +672,9 @@ function verifySharedAppArchitecture() {
   "cloudcastle",
   "cloudcastles",
   "badhand",
+  "badhand2",
   "jpegs",
+  "clear",
   "nolegs",
   "mtgnft",
   "playcards",

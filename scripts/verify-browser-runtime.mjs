@@ -3,11 +3,20 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { BROWSER_TRAIT_CATALOG } from "../browser-traits-catalog.js";
+import { CLEAR_CARDS } from "../clear-data.js";
+import { NOLEGS_CARDS } from "../nolegs-data.js";
+import {
+  TENSOR_LISTED_CARD_IDS,
+  TENSOR_LISTED_CARD_MINTS,
+  TENSOR_LISTING_STATUS_UPDATED_AT,
+  TENSOR_LISTING_SUMMARIES,
+} from "../marketplace-status.js";
 import { COMMUNITY_COLLECTIONS } from "./community-collections.mjs";
+import { SWAG_PACK_TRANSPARENT_STICKER_FILES } from "../swag-pack-stickers.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const APP_VERSION = "cardnft-326";
-const STYLE_VERSION = "cardnft-132";
+const APP_VERSION = "cardnft-376";
+const STYLE_VERSION = "cardnft-153";
 const THREE_VERSION = "three-r165-min-1";
 
 const TRAIT_SPECS = [
@@ -17,6 +26,7 @@ const TRAIT_SPECS = [
   ["limited", "limited-traits.js", "LIMITED_TRAIT_CATEGORIES", "LIMITED_TRAITS"],
   ["cloudcastle", "cloudcastle-traits.js", "CLOUDCASTLE_TRAIT_CATEGORIES", "CLOUDCASTLE_TRAITS"],
   ["badhand", "badhand-traits.js", "BADHAND_TRAIT_CATEGORIES", "BADHAND_TRAITS"],
+  ["badhand2", "badhand2-traits.js", "BADHAND2_TRAIT_CATEGORIES", "BADHAND2_TRAITS"],
   ["jpegs", "jpegs-traits.js", "JPEGS_TRAIT_CATEGORIES", "JPEGS_TRAITS"],
   ["nolegs", "nolegs-traits.js", "NOLEGS_TRAIT_CATEGORIES", "NOLEGS_TRAITS"],
   ["playcards", "playcards-traits.js", "PLAYCARDS_TRAIT_CATEGORIES", "PLAYCARDS_TRAITS"],
@@ -29,10 +39,11 @@ const TRAIT_SPECS = [
 ];
 
 const DATA_REVISIONS = Object.freeze({
-  cloudcastle: "community-2",
+  cloudcastle: "community-3",
   badhand: "community-2",
+  badhand2: "community-1",
   jpegs: "community-7",
-  nolegs: "community-4",
+  nolegs: "community-5",
   playcards: "community-2",
   kardmane: "community-2",
   cloudcastles: "community-5",
@@ -87,6 +98,19 @@ assertJsonEqual(
 
 const app = await readFile(path.join(ROOT, "app.js"), "utf8");
 const styles = await readFile(path.join(ROOT, "styles.css"), "utf8");
+const walletAuth = await readFile(path.join(ROOT, "wallet-auth.js"), "utf8");
+const walletRouteShell = await readFile(path.join(ROOT, "404.html"), "utf8");
+const walletWorker = await readFile(path.join(ROOT, "worker", "src", "index.js"), "utf8");
+const liveDataWorker = await readFile(path.join(ROOT, "worker", "src", "live-data.js"), "utf8");
+const walletWorkerConfig = await readFile(path.join(ROOT, "worker", "wrangler-worker.jsonc"), "utf8");
+const liveDataMigration = await readFile(
+  path.join(ROOT, "worker", "migrations", "0003_live_card_statuses.sql"),
+  "utf8",
+);
+const clearLiveDataMigration = await readFile(
+  path.join(ROOT, "worker", "migrations", "0004_clear_card_statuses.sql"),
+  "utf8",
+);
 const screensaverHorizontalImpulseCount = (
   app.match(/entry\.velocityX \+=/g) || []
 ).length;
@@ -94,10 +118,12 @@ const [
   cardNft1CoverStat,
   ponchoCoverStat,
   tableDisplayModelStat,
+  tableSquishyModelStat,
+  tableAngelgotchiModelStat,
   lightTableTextureStat,
   tableCoinTextureStat,
-  clearCardModelStat,
-  clearCardPreviewStat,
+  tradeStickerStat,
+  listedStickerStat,
   clearCardBackStat,
   dracoDecoderStat,
   roomEnvironmentStat,
@@ -105,10 +131,12 @@ const [
   stat(path.join(ROOT, "assets", "ui", "cardnft1-logo-cover.webp")),
   stat(path.join(ROOT, "assets", "ui", "poncho-drifella-cover.webp")),
   stat(path.join(ROOT, "assets", "models", "table-white-mesh.glb")),
+  stat(path.join(ROOT, "assets", "models", "table-display", "squishy.glb")),
+  stat(path.join(ROOT, "assets", "models", "table-display", "angelgotchi.glb")),
   stat(path.join(ROOT, "assets", "ui", "table-wood-light-seamless.png")),
   stat(path.join(ROOT, "assets", "ui", "table-swag-coin.png")),
-  stat(path.join(ROOT, "assets", "models", "mons-shop-clear-cards", "clear_card_preview.glb")),
-  stat(path.join(ROOT, "assets", "clear", "cards", "0000", "clear-card-preview.webp")),
+  stat(path.join(ROOT, "assets", "ui", "trade-sticker.png")),
+  stat(path.join(ROOT, "assets", "ui", "listed-sticker.png")),
   stat(path.join(ROOT, "assets", "clear", "backs", "clear-card-back.webp")),
   stat(path.join(ROOT, "vendor", "draco", "r165", "draco_decoder.wasm")),
   stat(path.join(ROOT, "vendor", "RoomEnvironment.js")),
@@ -116,13 +144,241 @@ const [
 assert(cardNft1CoverStat.size < 60_000, "Card NFT 1 cover emblem is unexpectedly large");
 assert(ponchoCoverStat.size < 120_000, "Poncho cover emblem is unexpectedly large");
 assert(tableDisplayModelStat.size < 100_000, "Table display model is unexpectedly large");
+assert(tableSquishyModelStat.size < 3_000_000, "Squishy table model is unexpectedly large");
+assert(tableAngelgotchiModelStat.size < 120_000, "Angelgotchi table model is unexpectedly large");
 assert(lightTableTextureStat.size < 320_000, "Light table texture is unexpectedly large");
 assert(tableCoinTextureStat.size < 230_000, "Table coin texture is unexpectedly large");
-assert(clearCardModelStat.size < 500_000, "Clear card GLB is unexpectedly large");
-assert(clearCardPreviewStat.size < 180_000, "Clear card preview WebP is unexpectedly large");
+assert(tradeStickerStat.size > 0, "Trade sticker is empty");
+assert(listedStickerStat.size > 0, "Listed sticker is empty");
 assert(clearCardBackStat.size < 180_000, "Clear card back WebP is unexpectedly large");
 assert(dracoDecoderStat.size < 250_000, "Draco decoder is unexpectedly large");
 assert(roomEnvironmentStat.size < 10_000, "Room environment runtime is unexpectedly large");
+assert(
+  SWAG_PACK_TRANSPARENT_STICKER_FILES.length === 467
+    && new Set(SWAG_PACK_TRANSPARENT_STICKER_FILES).size === 467,
+  "Swag Pack transparent sticker manifest does not contain 467 unique designs",
+);
+const transparentStickerStats = await Promise.all(
+  SWAG_PACK_TRANSPARENT_STICKER_FILES.map((filename) => (
+    stat(path.join(ROOT, "assets", "swag-pack", "transparent", filename))
+  )),
+);
+assert(
+  transparentStickerStats.every((entry) => entry.size > 0 && entry.size < 600_000),
+  "Swag Pack transparent sticker outputs are missing or unexpectedly large",
+);
+assert(
+  styles.includes('#galleryViewToggleButton[aria-pressed="true"] .gallery-view-grid-icon')
+    && styles.includes('#galleryViewToggleButton[aria-pressed="true"] .gallery-view-binder-icon')
+    && styles.includes('#galleryViewToggleButton .gallery-view-mode-icon')
+    && /#galleryToggleButton\[aria-pressed="true"\],[\s\S]{0,80}#galleryViewToggleButton\[aria-pressed="true"\]/.test(styles),
+  "simple gallery control does not swap to the neutral binder icon",
+);
+assert(
+  app.includes('from "./wallet-auth.js?v=wallet-auth-5"')
+    && app.includes("async function startWalletSignIn(")
+    && app.includes("async function loadWalletBinderRoute(")
+    && app.includes("walletFilterCardIndexes.slice()")
+    && app.includes("liveCardNft1OwnershipAvailable")
+    && app.includes('error?.code === "binder_not_found"')
+    && app.includes('const WALLET_TRADE_FILTER_VALUE = "marked-for-trade"')
+    && app.includes('const LISTED_SORT_VALUE = "listed-first"')
+    && app.includes('Number(isCardMarkedForTrade(CARDS[right]))')
+    && app.includes("async function refreshGlobalTradeStatuses(options = {})")
+    && app.includes("function syncGlobalTradeMarks(previousIds, nextIds)")
+    && app.includes('listedOption.textContent = "listed"')
+    && app.includes('? "redeem status"')
+    && app.includes('traitSortCategory === LISTED_SORT_VALUE')
+    && app.includes('const GALLERY_SORT_QUERY_PARAM = "sort"')
+    && app.includes('const GALLERY_TRAIT_CATEGORY_QUERY_PARAM = "trait"')
+    && app.includes('const GALLERY_TRAIT_VALUE_QUERY_PARAM = "trait-value"')
+    && app.includes("function updateGalleryUrlFromState(")
+    && app.includes("async function handleGalleryUrlNavigation(")
+    && app.includes("walletTradeCardStableIds.has")
+    && app.includes("toggleBinderTradeMarkingMode")
+    && app.includes('return "https://api.cards.art/api"')
+    && walletAuth.includes("wallet-standard:app-ready")
+    && walletAuth.includes("solana:signIn")
+    && walletAuth.includes("solana:signMessage")
+    && walletAuth.includes("tradeCardIds: document.tradeCardIds || []")
+    && walletAuth.includes("async function getGlobalTradeStatuses(")
+    && walletWorker.includes('`${API_PREFIX}/trade-statuses`')
+    && walletWorker.includes("function buildGlobalTradeStatusDocument(")
+    && walletAuth.includes('hasOwnProperty.call(properties, "accounts")')
+    && !walletAuth.includes("signTransaction")
+    && styles.includes(".wallet-connect-button")
+    && styles.includes(".wallet-provider-list")
+    && styles.includes(".binder-order-card.is-marked-for-trade")
+    && styles.includes('background: url("./assets/ui/trade-sticker.png?v=binder-stickers-1") center / contain no-repeat')
+    && styles.includes(".binder-order-assistive")
+    && app.includes("BINDER_ORDER_AUTO_SCROLL_OVERSHOOT_PX = 170")
+    && app.includes("BINDER_ORDER_AUTO_SCROLL_EDGE_PX_PER_SECOND = 820")
+    && app.includes("BINDER_ORDER_AUTO_SCROLL_MAX_PX_PER_SECOND = 1800")
+    && app.includes('? "marking for trade"')
+    && walletRouteShell.includes('<base href="/">')
+    && walletRouteShell.includes('content="noindex, nofollow"'),
+  "app does not include the transaction-free wallet sign-in and public binder route",
+);
+assert(
+  app.includes("async function fetchLiveWalletCardMatches(address)")
+    && app.includes("async function refreshWalletBinderHoldings(options = {})")
+    && app.includes("Object.keys(COLLECTION_CONFIGS).map(ensureCollectionCards)")
+    && app.includes("WALLET_HOLDINGS_AUTO_REFRESH_MS = 5 * 60 * 1000")
+    && app.includes("window.addEventListener(\"focus\", refreshLiveDataAfterFocus)")
+    && app.includes("async function refreshLiveCardStatuses(options = {})")
+    && app.includes("function applyLiveCardStatusCollection(collectionId)")
+    && app.includes("LIVE_CARD_STATUS_REFRESH_MS = 12 * 60 * 60 * 1000")
+    && app.includes("normalizeTraitValue(category) === \"status\"")
+    && app.includes("function getCardMatchesForReferences(references)")
+    && app.includes("function getCardMatchForDasAsset(asset)")
+    && app.includes("CLEAR_CARD_COLLECTION_MINT")
+    && walletWorker.includes("fetchLiveWalletHoldings")
+    && walletWorker.includes('`${API_PREFIX}/card-statuses`')
+    && liveDataWorker.includes('"getAssetsByOwner"')
+    && liveDataWorker.includes('"getAssetsByGroup"')
+    && liveDataWorker.includes("buildClearStatusCards")
+    && liveDataWorker.includes("cardRefs: dasHoldings.cardRefs")
+    && liveDataWorker.includes('["cardnft2", "poncho", "clear"]')
+    && liveDataWorker.includes("refreshLiveCardStatuses")
+    && liveDataWorker.includes("LIVE_STATUS_REFRESH_MS = 12 * 60 * 60 * 1000")
+    && walletWorkerConfig.includes('"17 */12 * * *"')
+    && liveDataMigration.includes("CREATE TABLE live_card_status_snapshots")
+    && clearLiveDataMigration.includes("'cardnft2', 'poncho', 'clear'"),
+  "live wallet holdings and automatic redemption status refresh are incomplete",
+);
+assert(
+  app.indexOf("let liveCardStatusSnapshot = null")
+    < app.indexOf("registerCollectionCards(ACTIVE_COLLECTION_ID, INITIAL_COLLECTION_CARDS)"),
+  "live card status state must initialize before the first collection registers",
+);
+assert(
+  app.includes("function isCurrentWalletBinderOwner()")
+    && app.includes("sessionAddress === WALLET_ROUTE_ADDRESS")
+    && app.includes("async function openBinderOrderEditor()")
+    && app.includes("getOwnerWalletBinder(WALLET_AUTH_API_BASE_URL)")
+    && app.includes("updateOwnerWalletBinder(")
+    && app.includes("getBinderOrderStableIds()")
+    && app.includes("mergeBinderOrderWithUndetectedStableIds(")
+    && app.includes("BINDER_SIDE_SLOTS")
+    && app.includes("button.animate(")
+    && app.includes("binderOrderHasChanges()")
+    && app.includes("function invalidateWalletAuthSession(")
+    && app.includes('return getPublicWalletBinder(WALLET_AUTH_API_BASE_URL, address)')
+    && walletAuth.includes("getOwnerWalletBinder")
+    && walletAuth.includes("updateOwnerWalletBinder")
+    && walletAuth.includes('"/me/binder"')
+    && styles.includes("grid-template-columns: repeat(3, minmax(0, 1fr))")
+    && styles.includes(".binder-order-card.is-dragging")
+    && styles.includes(".binder-order-confirm-button"),
+  "app does not include the owner-only animated binder order editor",
+);
+assert(
+  app.includes("const binderOrderCardNodes = new Map()")
+    && app.includes("function syncBinderOrderEditorCardPositions(")
+    && app.includes("function stepBinderOrderDragFrame(timestamp)")
+    && app.includes("function getBinderOrderAutoScrollVelocity(")
+    && app.includes("BINDER_ORDER_AUTO_SCROLL_MAX_PX_PER_SECOND")
+    && app.includes("velocity * elapsedSeconds")
+    && app.includes("binderOrderDrag.ghost.style.transform")
+    && app.includes("binderOrderCardNodes.get(stableId)")
+    && !app.includes("document.elementFromPoint(clientX, clientY)")
+    && !app.includes("renderBinderOrderEditorCards({")
+    && styles.includes(".binder-order-card.is-shifting")
+    && styles.includes("overflow-anchor: none")
+    && styles.includes("will-change: transform")
+    && !styles.includes("will-change: left, top;"),
+  "binder order dragging does not use the stable frame-synchronized interaction path",
+);
+assert(
+  app.includes("function setBinderCustomizationMode(mode")
+    && app.includes("async function createBinderCoverArtworkDataUrl(file)")
+    && app.includes('function startBinderCoverArtworkDrag(event, side = "front")')
+    && app.includes("function startBinderInsideTextBoxDrag(event)")
+    && app.includes("function addBinderInsideTextLink()")
+    && app.includes("function createBinderWalletCoverArtwork(")
+    && app.includes("function createBinderWalletBackCoverArtwork(")
+    && app.includes("function drawBinderCustomInsideText(")
+    && app.includes("function getBinderCoverColorPalette(")
+    && app.includes("function createBinderCustomCoverTexture(")
+    && app.includes("function handleBinderBaseColorInput()")
+    && app.includes("function handleBinderCoverTextColorInput()")
+    && app.includes("function handleBinderCoverArtworkRotation(")
+    && app.includes("function renderBinderOutsideTextEditor(")
+    && app.includes("function startBinderCoverTextBoxInteraction(")
+    && app.includes("function drawRotatedBinderCustomText(")
+    && app.includes("frontTextRotation")
+    && app.includes("function updateBinderInsideLinkPopover()")
+    && app.includes("function finishBinderInsideTextSelection(event)")
+    && app.includes("function handleBinderInsideTextClick()")
+    && app.includes('document.addEventListener("selectionchange", handleBinderInsideTextSelectionChange)')
+    && app.includes("const noteWidth = coverWidth * (walletCover ? 1 : 0.7)")
+    && app.includes("!WALLET_ROUTE_ADDRESS && walletFilterCardIndexSet")
+    && app.includes("refreshWalletBinderCoverRendering()")
+    && walletAuth.includes("cover: document.cover || {}")
+    && walletWorker.includes("validateBinderArtworkDataUrl")
+    && walletWorker.includes("validateBinderInsideLinks")
+    && walletWorker.includes("validateBinderCoverRotation")
+    && walletWorker.includes('["http:", "https:"].includes(new URL(value).protocol)')
+    && styles.includes(".binder-cover-preview-grid")
+    && styles.includes(".binder-cover-text-resize")
+    && styles.includes(".binder-outside-text-controls")
+    && styles.includes(".binder-cover-color-label")
+    && styles.includes(".binder-cover-link-popover")
+    && styles.includes(".binder-cover-mode-button"),
+  "wallet binder cover artwork and linked inside-cover text editor are incomplete",
+);
+assert(
+  app.includes('const SWAG_PACK_COLLECTION_MINT = "C22esis7kQMbX9JGWsMaKvsh1X5GeBmHPju28jiKDyAP"')
+    && app.includes('from "./swag-pack-stickers.js?v=swag-pack-transparent-1"')
+    && app.includes("function getTransparentSwagPackStickerImageUrl(")
+    && app.includes("const byImage = new Map()")
+    && app.includes("function normalizeBinderCoverStickers(")
+    && app.includes("async function openBinderStickerPicker(")
+    && app.includes("async function fetchWalletSwagPackAssets(")
+    && app.includes("function startBinderCoverStickerInteraction(")
+    && app.includes('type: rotating ? "sticker-rotate"')
+    && app.includes("function handleBinderCoverStickerKeyboard(")
+    && app.includes("function positionBinderCoverStickerRemoveButton(")
+    && app.includes("stickerRect.bottom - previewRect.top + 13")
+    && app.includes("const BINDER_COVER_UNDO_LIMIT = 50")
+    && app.includes("function captureBinderCoverUndoState(")
+    && app.includes("function recordBinderCoverUndoState(")
+    && app.includes("function undoBinderCoverChange(")
+    && app.includes("function handleBinderCoverUndoKeydown(")
+    && app.includes('String(event.key || "").toLowerCase() !== "z"')
+    && app.includes("resetBinderCoverUndoHistory();")
+    && app.includes("function createBinderCoverSurfaceTexture(")
+    && app.includes("function renderWalletBinderInsideStickers(")
+    && app.includes("material.userData.binderColorFaithful = colorFaithful")
+    && walletWorker.includes("authorizeBinderCoverStickers")
+    && walletWorker.includes('"sticker_not_owned"')
+    && liveDataWorker.includes("SWAG_PACK_COLLECTION_MINT")
+    && liveDataWorker.includes("swagPackAssets: dasHoldings.swagPackAssets")
+    && styles.includes(".binder-cover-sticker-resize")
+    && styles.includes(".binder-cover-sticker-rotate")
+    && styles.includes(".binder-cover-sticker-remove")
+    && styles.includes("box-sizing: border-box")
+    && styles.includes("translateY(-3px)")
+    && styles.includes("translateY(3px)")
+    && styles.includes("width: 6px")
+    && styles.includes(".binder-sticker-picker-gallery"),
+  "wallet binder Swag Pack stickers or cover color parity are incomplete",
+);
+assert(
+  app.includes('els.binderOrderPages.addEventListener("dblclick", startBinderOrderPositionEdit)')
+    && app.includes("function beginBinderOrderPositionEdit(")
+    && app.includes('input.inputMode = "numeric"')
+    && app.includes('input.pattern = "[0-9]*"')
+    && app.includes("function commitBinderOrderPositionEdit(")
+    && app.includes("requestedPosition - 1")
+    && app.includes("moveBinderOrderDraftItem(currentPosition, targetPosition")
+    && app.includes("function cancelBinderOrderPositionEdit(")
+    && app.includes('event.key === "F2"')
+    && styles.includes(".binder-order-position-input")
+    && styles.includes(".binder-order-card.is-position-editing")
+    && styles.includes("pointer-events: auto"),
+  "binder order numbers do not support stable inline position editing",
+);
 assert(
   app.includes("const COLLECTION_DATA_SPECS")
     && app.includes("await import(INITIAL_COLLECTION_DATA_SPEC.module)")
@@ -130,13 +386,63 @@ assert(
   "app does not lazy-load route collection data",
 );
 assert(
+  Number.isFinite(Date.parse(TENSOR_LISTING_STATUS_UPDATED_AT))
+    && TENSOR_LISTED_CARD_IDS instanceof Set
+    && TENSOR_LISTED_CARD_IDS.size > 0
+    && TENSOR_LISTED_CARD_MINTS instanceof Map
+    && TENSOR_LISTED_CARD_MINTS.size === TENSOR_LISTED_CARD_IDS.size
+    && Object.keys(TENSOR_LISTING_SUMMARIES).length === 17
+    && app.includes('from "./marketplace-status.js?v=marketplace-status-6"')
+    && app.includes("card.listed = TENSOR_LISTED_CARD_IDS.has(card.stableId)")
+    && app.includes("card.listedMint = TENSOR_LISTED_CARD_MINTS.get(card.stableId)")
+    && app.includes('category: "listed?"')
+    && app.includes('if (normalizedCategory === "listed?") return "listed"')
+    && app.includes('value: card?.listed ? "true" : "false"')
+    && app.includes("function getBinderCardStickerKinds(card)")
+    && app.includes("function isCardMarkedForTrade(card)")
+    && app.includes('if (card?.listed) kinds.push("listed")')
+    && app.includes('kinds.push("trade")')
+    && app.includes("function createBinderCardSticker(kind")
+    && app.includes('const raisedAboveTrade = kind === "listed" && isCardMarkedForTrade(card)')
+    && app.includes("BINDER_STICKER_SIZES.trade[1] + BINDER_STICKER_GAP")
+    && app.includes("card.add(sticker)")
+    && app.includes("function setBinderCardStickerOpacity(card, opacity)")
+    && app.includes("sticker.visible = false")
+    && app.includes("const ready = Boolean(card?.userData?.textureLoaded)")
+    && app.includes("&& !card?.userData?.textureLoadFailed")
+    && app.includes("const stickerOpacity = ready ? clamp(opacity, 0, 1) : 0")
+    && app.includes("child.userData.binderCardSticker")
+    && app.includes("function configureBinderStickerTexture(texture)")
+    && app.includes("texture.minFilter = THREE.LinearMipmapLinearFilter")
+    && app.includes("texture.magFilter = THREE.LinearFilter")
+    && app.includes("texture.generateMipmaps = true")
+    && app.includes("function getBinderStickerRotation(card, kind)")
+    && app.includes("unit * 10 - 5")
+    && app.includes("function createBinderTransitionStickers(card, rect)")
+    && app.includes("updateBinderTransitionStickers(transitionStickers, targetRect, { visible: true })")
+    && app.includes("document.body.append(transitionCard, ...transitionStickers.map")
+    && app.includes("function handleBinderListedStickerTap(event)")
+    && app.includes("function getBinderListedStickerHit(event)")
+    && app.includes("function getBinderStickerScreenBounds(sticker, canvasRect)")
+    && app.includes("card?.listedMint || card?.mint")
+    && app.includes("if (handleBinderListedStickerTap(event)) return")
+    && app.includes("./assets/ui/trade-sticker.png?v=binder-stickers-1")
+    && app.includes("./assets/ui/listed-sticker.png?v=binder-stickers-1")
+    && styles.includes(".binder-card-transition-sticker")
+    && styles.includes("z-index: 91")
+    && styles.includes("image-rendering: auto"),
+  "live Tensor listing metadata and page-bound binder stickers are incomplete",
+);
+assert(
   app.includes("ensureCollectionTraits")
-    && app.includes("browser-traits-catalog.js?v=browser-traits-5"),
+    && app.includes("browser-traits-catalog.js?v=browser-traits-9"),
   "app does not lazy-load packed browser traits",
 );
 assert(
-  app.includes('clear: { module: "./clear-data.js?v=clear-5"')
+  app.includes('clear: { module: "./clear-data.js?v=clear-8"')
     && app.includes('backImage: "assets/clear/backs/clear-card-back.webp?v=clear-5"')
+    && app.includes("showUnpairedBinderBacks: false")
+    && app.includes("hasFrontCard && ACTIVE_COLLECTION.showUnpairedBinderBacks !== false")
     && app.includes("function syncIndividualCardModel(")
     && app.includes("function loadIndividualCardModelSource(")
     && app.includes("./vendor/DRACOLoader.js?v=three-r165-draco-1")
@@ -155,22 +461,108 @@ assert(
     && app.includes("cardClearResinPointLight.position.set(-6.5, 1.2, 3)")
     && app.includes("cardClearResinPointLight.position.set(-3.9, 5.5, 3)")
     && app.includes("new THREE.SpotLight(")
+    && app.includes("function applyBinderCardAspectFit(mesh, card, texture = null)")
+    && app.includes("function getLoadedCardTextureDimensions(texture)")
+    && app.includes('card?.collection === "clear"')
+    && app.includes('card.collection === "clear"')
+    && app.includes("loadedDimensions.width > loadedDimensions.height")
+    && app.includes("swapDimensions: rotateLandscape")
+    && app.includes("(CARD_HEIGHT / CARD_WIDTH) * fittedDisplayScale.y")
+    && app.includes("(CARD_WIDTH / CARD_HEIGHT) * fittedDisplayScale.x")
+    && app.includes("rotateLandscape ? -Math.PI / 2 : 0")
+    && app.includes("texture.userData.cardFrameWidth = sourceFrameWidth")
+    && app.includes("const CLEAR_BINDER_PAGE_COLOR = 0x111315")
+    && app.includes("const CLEAR_BINDER_PAGE_OPACITY = 0.84")
+    && app.includes("const CLEAR_BINDER_POCKET_OPACITY = 1")
+    && app.includes('ACTIVE_COLLECTION_ID === "clear"')
+    && app.includes("function addClearBinderPageBacking(group, sourceMaterial)")
+    && app.includes("backing.userData.clearBinderPageBacking = true")
+    && app.includes("CLEAR_BINDER_PAGE_OPACITY * pageOpacity")
+    && app.includes("function usesDedicatedClearBinderPageBacking(indexes)")
+    && app.includes("&& !favoritesOnly")
+    && app.includes("&& !walletFilterCardIndexSet")
+    && app.includes('indexes.every((index) => CARDS[index]?.collection === "clear")')
+    && app.includes("function addClearBinderPocketBacking(")
+    && app.includes("function getBinderPocketBackingGeometry()")
+    && app.includes("createBinderPageMaterials(binderVisibleIndexes)")
+    && app.includes("BINDER_CELL_WIDTH,")
+    && app.includes("BINDER_CELL_HEIGHT,")
+    && app.includes("backing.userData.clearBinderPocketBacking = true")
+    && app.includes("CLEAR_BINDER_POCKET_OPACITY * pageOpacity")
+    && app.includes("|| child.userData.clearBinderPocketBacking")
+    && app.includes("hideProceduralWhileLoading")
+    && app.includes("group.userData.individualCardModelReadyPromise = readyPromise")
+    && app.includes("function prewarmIndividualCardModelAssets(card)")
+    && app.includes("prewarmIndividualCardModelAssets(focusedCard)")
+    && app.includes("const waitForClearModel = card.collection")
+    && app.includes("individualModelReadyPromise || Promise.resolve(false)")
+    && styles.includes('html[data-collection-id="clear"] .binder-card-transition-card')
+    && /html\[data-collection-id="clear"\] \.binder-card-transition-card[\s\S]{0,220}border-radius: 0;[\s\S]{0,120}box-shadow: none;/.test(styles)
     && !app.includes("modelOpacity")
     && !styles.includes("--individual-card-model-opacity"),
   "app does not reproduce the scoped mons.shop clear-resin rendering profile",
 );
 assert(
-  app.includes("function updateCardEffectMaterialBlending(")
+  CLEAR_CARDS.length === 192
+    && CLEAR_CARDS.every((card, index) => {
+      const number = index + 1;
+      return card.number === number
+        && card.collection === "clear"
+        && card.title === `Card #${number}`
+        && card.stableId === `clear:card-${number}`
+        && card.file === `https://cdn.lil.org/nft/clear_cards/cards/clean_dark/${number}.webp`
+        && card.model === `https://cdn.lil.org/nft/clear_cards/cards/${number}.glb`
+        && card.metadata === `https://cdn.lil.org/nft/clear_cards/json/f${number}.json`
+        && card.modelRenderProfile === "mons-clear-resin"
+        && card.width === 963
+        && card.height === 1400;
+    }),
+  "Clear Cards does not map all 192 CDN image, model, and metadata records",
+);
+assert(
+  CLEAR_CARDS.filter((card) => card.mint).length >= 86
+    && CLEAR_CARDS.filter((card) => card.status === "redeemed").length >= 4
+    && CLEAR_CARDS.filter((card) => card.mint).every((card) => (
+      /^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(card.mint)
+    )),
+  "Clear Cards does not include its current wallet-matchable card and receipt mints",
+);
+const customNoLegsCards = NOLEGS_CARDS.filter((card) => /^CUSTOM #\d+$/.test(card.title));
+assert(
+  customNoLegsCards.length === 13
+    && customNoLegsCards.every((card) => /^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(card.mint)),
+  "the appended CUSTOM no-legs collection is not wallet-matchable",
+);
+assert(
+  app.includes('import { CARD_NFT_2_COMMON_IDS } from "./cardnft2-common-ids.js?v=cardnft2-common-1"')
+    && app.includes("const CARD_NFT_2_COMMON_ID_SET = new Set(CARD_NFT_2_COMMON_IDS)")
+    && app.includes("const CARD_NFT_2_RARE_CARD_ID_MAX = 7008")
+    && app.includes("function isCardNft2Rare(")
+    && /function isCardNft2Rare\([^)]*\)\s*\{[\s\S]{0,220}!CARD_NFT_2_COMMON_ID_SET\.has\(cardNumber\)/.test(app)
+    && /function getCardEffectProfile\([^)]*\)\s*\{[\s\S]{0,260}!isCardNft2Rare\(cardNumber\)[\s\S]{0,80}!isCardNft2SuperRare\(cardNumber\)/.test(app)
+    && app.includes("function updateCardEffectMaterialBlending(")
+    && app.includes("&& effectMode < CARD_EFFECT_MODE_CARD_NFT_2_AMAZING_RARE")
     && app.includes('mesh.userData.cardEffectLayer = "shine"')
     && app.includes('mesh.userData.cardEffectLayer = "glare"')
     && app.includes("engravingAlpha = maskSample.a")
+    && app.includes("needsEffectTextures: superRare")
+    && app.includes("usesProceduralHolo: !superRare")
+    && app.includes("usesEngravingMask: superRare")
+    && app.includes("effectStrength: superRare ? 1 : 0.42")
+    && app.includes("uniform float uUseEngravingMask")
+    && app.includes("profile.usesEngravingMask ? 1 : 0")
+    && app.includes("profile.usesProceduralHolo ? 1 : 0")
+    && app.includes("uUseEffectTextures > 0.001 && uUseEngravingMask > 0.001")
+    && app.includes("* smoothstep(0.0, 1.0, uUseEngravingMask)")
     && app.includes("CARD_NFT_2_SUPER_RARE_RANGES")
     && app.includes("function isCardNft2SuperRare(")
     && app.includes("https://cdn.lil.org/nft/card_nft_2")
-    && /function getCardEffectUniformActivity\([^)]*\)\s*\{[\s\S]{0,180}CARD_EFFECT_MODE_CARD_NFT_2_RARE_HOLO_V[\s\S]{0,80}return 1;/.test(app)
-    && app.includes("applyCardEffectProfile(CARDS[currentIndex], cardApplyToken)")
-    && !app.includes('import { CARD_NFT_2_COMMON_IDS }'),
-  "app does not scope the Card NFT 2 alpha-mask shader to metadata super rares",
+    && app.includes("float maximumAlpha = uEffectMode >= 4.5 ? 0.22 : 0.38")
+    && app.includes("if (uEffectMode >= 3.5 && uEffectMode < 4.5)")
+    && /function getCardEffectUniformActivity\([^)]*\)\s*\{[\s\S]{0,240}CARD_EFFECT_MODE_CARD_NFT_2_RARE_HOLO_V[\s\S]{0,180}Math\.max\(cardEffectPointerActive, motionActivity\)/.test(app)
+    && !/function getCardEffectUniformActivity\([^)]*\)\s*\{[\s\S]{0,180}CARD_EFFECT_MODE_CARD_NFT_2_RARE_HOLO_V[\s\S]{0,80}return 1;/.test(app)
+    && app.includes("applyCardEffectProfile(CARDS[currentIndex], cardApplyToken)"),
+  "app does not keep normal Card NFT 2 rares procedural while reserving engraving masks for super rares",
 );
 assert(
   app.includes("const CARD_EFFECT_TEXTURE_FADE_MS = 180")
@@ -184,7 +576,7 @@ assert(
     && app.includes('loadTextureImage(url, { fetchPriority: "high" })')
     && app.includes("entry.promise = loadHighPriorityTexture(url, options)")
     && app.includes("applyLoadedIndividualCardEffect(CARDS[currentIndex], state.effectTextures, { immediate: true })")
-    && app.includes("if (uUseEffectTextures > 0.001)")
+    && app.includes("if (uUseEffectTextures > 0.001 && uUseEngravingMask > 0.001)")
     && app.includes("vec2 effectPointer = mix(")
     && app.includes("reflectedPointer,")
     && app.includes("vec2 pointerUv = clamp(uPointer, 0.0, 1.0)")
@@ -236,7 +628,7 @@ assert(
     && app.includes("function getCardShuffleGlossEnvelopeOpacity(")
     && app.includes("cardShuffleGlossOpacity = getCardShuffleGlossEnvelopeOpacity(progress)")
     && app.includes("return easeInOutCubic(fadeInProgress)")
-    && /function getCardEffectUniformActivity\([^)]*\)\s*\{[\s\S]{0,180}return 1;[\s\S]{0,100}cardGlossActivity \* cardShuffleGlossOpacity/.test(app)
+    && /function getCardEffectUniformActivity\([^)]*\)\s*\{[\s\S]{0,120}cardGlossActivity \* cardShuffleGlossOpacity[\s\S]{0,360}return motionActivity;/.test(app)
     && /function resetCardShuffleSpinVisualState\(\)\s*\{[\s\S]{0,100}cardShuffleGlossOpacity = 1;/.test(app),
   "app does not keep ordinary gloss hidden while loading and fade it smoothly within the shuffle rotation",
 );
@@ -359,7 +751,7 @@ assert(
     && app.includes("void exitScreensaverFullscreen()")
     && app.includes("function animateScreensaver(")
     && app.includes("SCREENSAVER_MAX_MOTION_DELTA_SECONDS,")
-    && app.includes('return ACTIVE_COLLECTION?.introGroup === "evil"')
+    && app.includes("return usesEvilBinderPresentation()")
     && app.includes('? ["cardnft1", "cardnft2", "poncho"]')
     && app.includes("prepareIndividualCardFor3D(card)")
     && app.includes("createCardSwapGroup(")
@@ -467,11 +859,22 @@ assert(
 assert(
   app.includes('event.animationName !== "binder-first-page-hold-expand"')
     && app.includes("function confirmBinderFirstPageHold()")
-    && app.includes("function closeBinderToFrontCoverFromHold()")
-    && app.includes("setBinderClosureTarget(-1)")
-    && /function closeBinderToFrontCoverFromHold\(\)\s*\{[\s\S]{0,900}binderTargetTurn = 0;[\s\S]{0,80}binderTurn = 0;/.test(app)
+    && app.includes("function returnBinderToFirstInsidePageFromHold()")
+    && /function returnBinderToFirstInsidePageFromHold\(\)\s*\{[\s\S]{0,900}binderSinglePageSide = 0;[\s\S]{0,300}binderTargetTurn = 0;[\s\S]{0,80}binderTurn = 0;[\s\S]{0,80}binderTargetClosure = 0;[\s\S]{0,80}binderClosure = 0;/.test(app)
     && styles.includes("animation: binder-first-page-hold-expand 1500ms linear forwards"),
-  "binder first-page hold does not confirm with its visual animation and close to the front cover",
+  "binder first-page hold does not confirm with its visual animation and return to the first inside spread",
+);
+assert(
+  app.includes("function usesEvilBinderPresentation()")
+    && app.includes('return !WALLET_ROUTE_ADDRESS && ACTIVE_COLLECTION?.introGroup === "evil"')
+    && app.includes("function drawWalletBinderIntroNote(")
+    && app.includes("normalizeBinderCoverSettings(walletRouteProfile?.cover)")
+    && app.includes("if (!settings.insideText)")
+    && /function createEvilBinderTableSet\(\)[\s\S]{0,360}!usesEvilBinderPresentation\(\)/.test(app)
+    && /function createBinderFrontCoverEmblem\([\s\S]{0,420}!WALLET_ROUTE_ADDRESS/.test(app)
+    && /function createBinderIntroSpriteMeshes\([^)]*\)\s*\{[\s\S]{0,100}!usesEvilBinderPresentation\(\)/.test(app)
+    && /function getScreensaverCardIndexes\(\)[\s\S]{0,320}indexes: \(walletFilterCardIndexes \|\| \[\]\)\.slice\(\)/.test(app),
+  "wallet binders still inherit Evil Biscuit cover, table, intro, or screensaver presentation",
 );
 assert(
   app.includes("function updateBinderShellTransforms()")
@@ -526,6 +929,15 @@ assert(
     && app.includes('binderTableSurfaceTextures.set("light", lightTexture)')
     && app.includes("updateBinderTableSurfaceTheme(isLight)")
     && app.includes("table-white-mesh.glb?v=table-model-1")
+    && app.includes("table-display/squishy.glb?v=table-display-1")
+    && app.includes("table-display/angelgotchi.glb?v=table-display-1")
+    && app.includes('id: "omom"')
+    && app.includes('id: "squishy"')
+    && app.includes("yawOffset: Math.PI / 2 - THREE.MathUtils.degToRad(35)")
+    && app.includes('id: "angelgotchi"')
+    && app.includes("pitchOffset: -Math.PI / 2")
+    && app.includes("scaleMultiplier: 1.24")
+    && app.includes("positionYOffset: -0.14")
     && app.includes("table-swag-coin.png?v=table-coin-1")
     && app.includes("function createBinderTableAccessories()")
     && app.includes("function createBinderTableDieGeometry(size)")
@@ -540,9 +952,12 @@ assert(
     && app.includes("new THREE.CylinderGeometry(")
     && app.includes("new THREE.CircleGeometry(BINDER_TABLE_COIN_RADIUS - 0.018, 64)")
     && app.includes('coinFace.name = "binder-table-swag-coin-face"')
-    && app.includes("const BINDER_TABLE_COIN_RADIUS = 0.5")
+    && app.includes("const BINDER_TABLE_COIN_RADIUS = 0.45")
+    && app.includes("const BINDER_TABLE_COIN_THICKNESS = 0.063")
+    && app.includes("const BINDER_TABLE_COIN_X = -4.88")
     && app.includes("const BINDER_TABLE_COIN_ROTATION = THREE.MathUtils.degToRad(-217)")
     && app.includes("const BINDER_TABLE_COIN_Y = 2.43")
+    && app.includes("surfaceZ + BINDER_TABLE_COIN_THICKNESS / 2")
     && app.includes("const BINDER_TABLE_DIE_SIZE = 0.36")
     && app.includes("const BINDER_TABLE_DIE_TOSS_DURATION_MS = 920")
     && app.includes("toneMapped: false")
@@ -555,11 +970,32 @@ assert(
     && app.includes("void ensureBinderTableAccessories();")
     && app.includes("tableAccessoryFadeActive")
     && app.includes("function ensureBinderTableDisplayModel()")
+    && app.includes("loader.setDRACOLoader(dracoLoader)")
+    && app.includes("dracoLoader.setDecoderPath(INDIVIDUAL_CARD_DRACO_DECODER_PATH)")
+    && app.includes("function createBinderTableDisplayModelEntry(")
+    && app.includes("function preserveBinderTableDisplayModelMaterials(")
+    && app.includes("async function warmBinderTableDisplayModelEntries(entries)")
+    && app.includes('typeof binderRenderer.initTexture !== "function"')
+    && app.includes("await binderRenderer.compileAsync(binderScene, binderCamera)")
+    && app.includes("binderRenderer.getContext()?.finish?.()")
+    && app.includes("entry.root.visible = true")
+    && app.includes("material.transparent = true")
+    && app.includes("material.depthWrite = true")
+    && app.includes('usesResinMaterial: spec.materialProfile === "blue-resin"')
+    && app.includes("-placedBounds.min.z")
+    && app.includes("function cycleBinderTableDisplayModel()")
+    && app.includes("function getBinderTableDisplayModelHit(")
+    && app.includes("function handleBinderTableDisplayModelTap(")
+    && app.includes("if (handleBinderTableDisplayModelTap(event)) return")
+    && app.includes("|| getBinderTableDisplayModelHit(event)")
     && app.includes("./vendor/GLTFLoader.js?v=three-r165-gltf-1")
     && app.includes("child.geometry.computeVertexNormals()")
     && app.includes("uprightRoot.rotation.x = Math.PI / 2")
-    && app.includes("const BINDER_TABLE_DISPLAY_MODEL_HEIGHT = 1.16")
+    && app.includes("const BINDER_TABLE_DISPLAY_MODEL_HEIGHT = 1.04")
     && app.includes("const BINDER_TABLE_DISPLAY_MODEL_X = -3.1")
+    && app.includes("const BINDER_TABLE_DISPLAY_MODEL_Y = 2.78")
+    && app.includes("const localCorrection = worldCorrection.applyQuaternion(")
+    && app.includes("model.position.add(localCorrection)")
     && app.includes("THREE.MathUtils.degToRad(28)")
     && app.includes("const BINDER_TABLE_DISPLAY_MODEL_MAX_OPACITY = 0.76")
     && app.includes("new THREE.MeshPhysicalMaterial({")
@@ -568,14 +1004,21 @@ assert(
     && app.includes("specularColor: 0xeaf2ff")
     && app.includes("material.forceSinglePass = true")
     && app.includes("child.renderOrder = -70")
-    && app.includes("material.opacity = BINDER_TABLE_DISPLAY_MODEL_MAX_OPACITY * opacity")
+    && app.includes("material.opacity = baseOpacity * BINDER_TABLE_DISPLAY_MODEL_MAX_OPACITY * opacity")
+    && app.includes("material.opacity = baseOpacity * opacity")
+    && app.includes("return opacity > 0.001 && revealProgress < 1")
     && app.includes("function updateBinderTableDisplayModelVisibility(")
     && app.includes("BINDER_TABLE_DISPLAY_MODEL_REVEAL_DURATION_MS")
-    && app.includes("BINDER_TABLE_DISPLAY_MODEL_SHADOW_OPACITY")
+    && !app.includes("BINDER_TABLE_DISPLAY_MODEL_SHADOW_OPACITY")
+    && !app.includes('binder-table-display-model-shadow')
+    && app.includes("root.visible = tableOpacity > 0.001")
     && app.includes("tableDisplayModelFadeActive")
     && app.includes("void ensureBinderTableSurfaceTextures();")
     && app.includes("void ensureBinderTableDisplayModel();")
     && app.includes("function setBinderTableView(")
+    && app.includes("binderTableView: binderTableViewTarget > 0.5")
+    && app.includes("const restoreTableView = Boolean(state.binderTableView)")
+    && app.includes("setBinderTableView(restoreTableView, { immediate: true, updateControls: false })")
     && app.includes("function updateBinderTableViewAnimation(")
     && app.includes("function applyBinderTableViewProgress()")
     && app.includes("function applyBinderTableCoverVisibility(")
@@ -649,7 +1092,7 @@ assert(
 await verifyPage({
   pagePath: "index.html",
   prefix: "./",
-  dataFile: "cardnft2-data.js?v=cardnft2-2",
+  dataFile: "cardnft2-data.js?v=cardnft2-3",
 });
 await verifyPage({
   pagePath: "cardnft1/index.html",
@@ -659,12 +1102,12 @@ await verifyPage({
 await verifyPage({
   pagePath: "poncho/index.html",
   prefix: "../",
-  dataFile: "poncho-data.js?v=poncho-3",
+  dataFile: "poncho-data.js?v=poncho-4",
 });
 await verifyPage({
   pagePath: "clear/index.html",
   prefix: "../",
-  dataFile: "clear-data.js?v=clear-5",
+  dataFile: "clear-data.js?v=clear-8",
 });
 for (const collection of COMMUNITY_COLLECTIONS) {
   await verifyPage({
@@ -687,13 +1130,85 @@ async function verifyPage({ pagePath, prefix, dataFile }) {
   for (const value of [
     `${prefix}styles.css?v=${STYLE_VERSION}`,
     `${prefix}app.js?v=${APP_VERSION}`,
+    `${prefix}wallet-auth.js?v=wallet-auth-5`,
+    `${prefix}swag-pack-stickers.js?v=swag-pack-transparent-1`,
     `${prefix}vendor/three.module.min.js?v=${THREE_VERSION}`,
-    `${prefix}browser-traits-catalog.js?v=browser-traits-5`,
+    `${prefix}browser-traits-catalog.js?v=browser-traits-9`,
     `${prefix}${dataFile}`,
     'id="binderTableViewButton"',
+    'id="walletConnectButton"',
+    'id="walletConnectButtonLabel"',
+    'id="walletProviderList"',
+    'id="walletConnectStatus"',
+    'id="walletSignOutButton"',
+    'class="wallet-search-divider"',
+    'id="binderOrderEditButton"',
+    'id="binderOrderEditor"',
+    'id="binderOrderDialog"',
+    'id="binderOrderCloseButton"',
+    'id="binderOrderScroller"',
+    'id="binderOrderPages"',
+    'id="binderOrderStatus"',
+    'id="binderOrderConfirmButton"',
+    'id="binderTradeModeButton"',
+    'id="binderCoverModeButton"',
+    'id="binderCoverEditor"',
+    'id="binderFrontCoverPreview"',
+    'id="binderFrontCoverUpload"',
+    'id="binderFrontCoverZoom"',
+    'id="binderFrontCoverRotation"',
+    'id="binderFrontTextBox"',
+    'id="binderFrontTextInput"',
+    'id="binderFrontTextRotation"',
+    'id="binderBackCoverPreview"',
+    'id="binderBackCoverUpload"',
+    'id="binderBackCoverZoom"',
+    'id="binderBackCoverRotation"',
+    'id="binderBackTextBox"',
+    'id="binderBackTextInput"',
+    'id="binderBackTextRotation"',
+    'id="binderInsideCoverPreview"',
+    'id="binderInsideTextBox"',
+    'id="binderInsideFontSize"',
+    'id="binderInsideTextRotation"',
+    'id="binderInsideTextInput"',
+    'id="binderInsideLinkUrl"',
+    'id="binderInsideLinkApply"',
+    'id="binderInsideLinkPopover"',
+    'id="binderInsideLinkRemove"',
+    'id="binderBaseColor"',
+    'id="binderCoverTextColor"',
+    'data-sticker-surface="front"',
+    'data-sticker-surface="back"',
+    'data-sticker-surface="inside"',
+    'id="binderStickerPicker"',
+    'id="binderStickerPickerClose"',
+    'id="binderStickerPickerStatus"',
+    'id="binderStickerPickerGallery"',
+    '<h2 id="binderOrderTitle">Customize Binder</h2>',
+    'class="binder-order-instructions binder-order-assistive"',
+    'class="binder-order-status binder-order-assistive"',
   ]) {
     assert(page.includes(value), `${pagePath} is missing ${value}`);
   }
+  assert(!page.includes("binder-order-kicker"), `${pagePath} still shows the binder editor kicker`);
+  assert(!page.includes("binder-cover-sticker-size"), `${pagePath} still shows the old sticker size slider`);
+  assert(!page.includes("binder-cover-sticker-rotation"), `${pagePath} still shows the old sticker rotation slider`);
+  assert(!page.includes("binder-cover-remove-sticker"), `${pagePath} still shows the old sticker remove button`);
+  assert(!page.includes("binder-cover-link-controls"), `${pagePath} still shows link controls as a separate row`);
+  assert(!page.includes("Edit card order"), `${pagePath} has the old binder editor title`);
+  assert(
+    /id="traitSortSelect"[^>]*>[\s\S]*?<option value="marked-for-trade">marked for trade<\/option>[\s\S]*?<option value="listed-first">listed<\/option>[\s\S]*?<option value="all">all<\/option>/.test(page),
+    `${pagePath} does not put marked-for-trade and listed before all`,
+  );
+  assert(
+    /id="walletSearchButton"[\s\S]{0,260}<circle cx="12" cy="7\.5" r="4\.5"><\/circle>[\s\S]{0,120}<path d="M4 20a8 8 0 0 1 16 0"><\/path>/.test(page),
+    `${pagePath} is missing the wallet user icon`,
+  );
+  assert(
+    /id="galleryViewToggleButton"[\s\S]{0,700}gallery-view-grid-icon[\s\S]{0,700}gallery-view-binder-icon/.test(page),
+    `${pagePath} is missing the simple gallery icon swap`,
+  );
   if (pagePath === "index.html") {
     assert(
       page.includes('<link rel="preconnect" href="https://cdn.lil.org" crossorigin>'),

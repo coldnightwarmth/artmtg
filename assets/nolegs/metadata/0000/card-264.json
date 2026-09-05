@@ -1,0 +1,19 @@
+{
+  "name": "CUSTOM #11",
+  "description": "1 of 1 CARDS // CUSTOM",
+  "image": "https://ipfs.io/ipfs/QmfC8daW7J8Fi7PR9y5CjghCM7UBKtdfSgxVzpiAyQMhvH",
+  "attributes": [],
+  "tags": [],
+  "properties": {
+    "category": "image",
+    "files": [
+      {
+        "uri": "https://ipfs.io/ipfs/QmfC8daW7J8Fi7PR9y5CjghCM7UBKtdfSgxVzpiAyQMhvH",
+        "type": "image/jpeg"
+      }
+    ]
+  },
+  "collection_mints": [
+    "7tiaTw3A9RCXP7fpubTQSZCtn5sNXFCxaK2KVednaWex"
+  ]
+}

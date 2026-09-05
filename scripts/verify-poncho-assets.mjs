@@ -133,13 +133,17 @@ assert(
     && page.includes('rel="apple-touch-icon" href="../cardnft.png"'),
   "Poncho page has the wrong favicon URL",
 );
-assert(page.includes("../app.js?v=cardnft-326"), "Poncho page has a stale app cache key");
+assert(page.includes("../app.js?v=cardnft-376"), "Poncho page has a stale app cache key");
+assert(page.includes("../styles.css?v=cardnft-153"), "Poncho page has a stale style cache key");
+assert(page.includes("../wallet-auth.js?v=wallet-auth-5"), "Poncho page has a stale wallet auth cache key");
+assert(page.includes('id="binderOrderEditButton"'), "Poncho page is missing the binder order editor");
+assert(page.includes('id="binderTradeModeButton"'), "Poncho page is missing the trade marking control");
 assert(
   page.includes("../vendor/three.module.min.js?v=three-r165-min-1"),
   "Poncho page is not using the optimized Three.js runtime",
 );
 assert(
-  page.includes("../poncho-data.js?v=poncho-3"),
+  page.includes("../poncho-data.js?v=poncho-4"),
   "Poncho page is missing its data preload",
 );
 console.log(
