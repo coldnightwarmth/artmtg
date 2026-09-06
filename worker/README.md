@@ -12,8 +12,10 @@ as Clear Cards whose on-chain mint is assigned only after a pack is opened.
 
 From the repository root, run `python3 scripts/serve-local.py`. The local server
 applies pending D1 migrations, starts the wallet Worker on port 8787, waits for
-its health check, and then serves the site on port 8000. It also shuts down the
-Worker when the site server exits. Any loopback origin (`localhost`,
+its health check, supplies the repository's local DAS endpoint, and then serves
+the site on port 8000. While the site is running, the launcher monitors the
+Worker and restarts it after repeated failed health checks. It also shuts down
+the Worker when the site server exits. Any loopback origin (`localhost`,
 `*.localhost`, `127.0.0.0/8`, or `[::1]`) and any frontend port is accepted by
 the local Worker; this exception is enabled only by the local dev command.
 

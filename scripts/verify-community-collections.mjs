@@ -14,7 +14,7 @@ import { PONCHO_CARDS } from "../poncho-data.js";
 const require = createRequire(import.meta.url);
 const sharp = loadSharp();
 const root = process.cwd();
-const expectedAppVersion = "cardnft-377";
+const expectedAppVersion = "cardnft-380";
 const requestedIds = process.argv.slice(2);
 const collections = requestedIds.length
   ? requestedIds.map((id) => {
@@ -568,7 +568,7 @@ for (const collection of collections) {
     `../app.js?v=${expectedAppVersion}`,
     "../vendor/three.module.min.js?v=three-r165-min-1",
     "../browser-traits-catalog.js?v=browser-traits-9",
-    "../styles.css?v=cardnft-154",
+    "../styles.css?v=cardnft-155",
     'id="binderTradeModeButton"',
   ]) {
     assert(page.includes(value), `${collection.id} page is missing ${JSON.stringify(value)}`);

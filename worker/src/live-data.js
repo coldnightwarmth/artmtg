@@ -6,6 +6,7 @@ const CARD_NFT_2_CARD_COUNT = 11_133;
 const CARD_NFT_2_EXCLUDED_NUMBERS = new Set([10_022]);
 const PONCHO_CARD_COUNT = 207;
 const PONCHO_TENSOR_COLLECTION_SLUG = "9aa9b85e-4e43-4900-be61-199e7cce1943";
+const PONCHO_COLLECTION_MINT = "JCTP3kK3xGtWs5mDHxJBuRro38HftaiCDdKsfkXuK2gH";
 const CLEAR_CARD_COUNT = 192;
 const CLEAR_CARD_COLLECTION_MINT = "3fYe95cviaHzka38Q82q64JLhhddKQm37Jt4dQSxPKxz";
 const SWAG_PACK_COLLECTION_MINT = "C22esis7kQMbX9JGWsMaKvsh1X5GeBmHPju28jiKDyAP";
@@ -242,6 +243,7 @@ async function fetchClearStatusSnapshot(env) {
 
 async function fetchDasCollectionAssets(collectionMint, env) {
   const assets = [];
+  const seenAssetIds = new Set();
   let page = 1;
 
   while (assets.length < WALLET_ASSET_MAX) {
@@ -252,11 +254,19 @@ async function fetchDasCollectionAssets(collectionMint, env) {
       limit: WALLET_ASSET_PAGE_LIMIT,
     });
     const items = Array.isArray(result?.items) ? result.items : [];
-    assets.push(...items);
-    const total = Number(result?.total);
+    let newAssetCount = 0;
+    for (const asset of items) {
+      const assetId = cleanText(asset?.id);
+      if (assetId && seenAssetIds.has(assetId)) continue;
+      if (assetId) {
+        seenAssetIds.add(assetId);
+        newAssetCount += 1;
+      }
+      assets.push(asset);
+    }
     if (
       items.length < WALLET_ASSET_PAGE_LIMIT
-      || (Number.isFinite(total) && assets.length >= total)
+      || (items.length > 0 && newAssetCount === 0)
     ) {
       break;
     }
@@ -270,6 +280,8 @@ async function fetchWalletDasHoldings(address, env) {
   const cardRefs = new Map();
   const swagPackAssets = new Map();
   const clearCollectionMint = String(env.CLEAR_CARD_COLLECTION_MINT || CLEAR_CARD_COLLECTION_MINT);
+  const ponchoCollectionMint = String(env.PONCHO_COLLECTION_MINT || PONCHO_COLLECTION_MINT);
+  const seenAssetIds = new Set();
   let page = 1;
   let fetched = 0;
 
@@ -284,19 +296,27 @@ async function fetchWalletDasHoldings(address, env) {
       },
     });
     const items = Array.isArray(result?.items) ? result.items : [];
+    let newAssetCount = 0;
     for (const asset of items) {
       const mint = cleanText(asset?.id);
+      if (mint && seenAssetIds.has(mint)) continue;
+      if (mint) {
+        seenAssetIds.add(mint);
+        newAssetCount += 1;
+      }
       if (mint) mints.add(mint);
-      const reference = getWalletCardReference(asset, clearCollectionMint);
+      const reference = getWalletCardReference(asset, {
+        clearCollectionMint,
+        ponchoCollectionMint,
+      });
       if (reference) cardRefs.set(`${reference[0]}:${reference[1]}`, reference);
       const swagPackAsset = getSwagPackAsset(asset);
       if (swagPackAsset) swagPackAssets.set(swagPackAsset.mint, swagPackAsset);
     }
     fetched += items.length;
-    const total = Number(result?.total);
     if (
       items.length < WALLET_ASSET_PAGE_LIMIT
-      || (Number.isFinite(total) && fetched >= total)
+      || (items.length > 0 && newAssetCount === 0)
     ) {
       break;
     }
@@ -483,11 +503,34 @@ export function buildClearStatusCards(assets) {
   return buildCompleteStatusCards(CLEAR_CARD_COUNT, new Set(), liveCards, receipts);
 }
 
-function getWalletCardReference(asset, clearCollectionMint) {
-  const record = getClearCardRecord(asset, {
-    requiredCollectionMint: clearCollectionMint,
+function getWalletCardReference(asset, collectionMints) {
+  const clearRecord = getClearCardRecord(asset, {
+    requiredCollectionMint: collectionMints.clearCollectionMint,
   });
-  return record ? ["clear", record[0], record[2]] : null;
+  if (clearRecord) return ["clear", clearRecord[0], clearRecord[2]];
+
+  const ponchoRecord = getPonchoCardRecord(asset, {
+    requiredCollectionMint: collectionMints.ponchoCollectionMint,
+  });
+  return ponchoRecord ? ["poncho", ponchoRecord[0], ponchoRecord[2]] : null;
+}
+
+function getPonchoCardRecord(asset, options = {}) {
+  if (
+    options.requiredCollectionMint
+    && !assetBelongsToCollection(asset, options.requiredCollectionMint)
+  ) {
+    return null;
+  }
+
+  const metadata = asset?.content?.metadata || {};
+  const type = normalizeTrait(getAttributeValue(metadata.attributes, "type"));
+  if (type !== "card" && type !== "card receipt") return null;
+
+  const number = cardNumberFromName(metadata.name);
+  const mint = cleanText(asset?.id);
+  if (!Number.isInteger(number) || number < 1 || number > PONCHO_CARD_COUNT || !mint) return null;
+  return [number, type === "card receipt" ? "redeemed" : "pulled", mint];
 }
 
 function getClearCardRecord(asset, options = {}) {

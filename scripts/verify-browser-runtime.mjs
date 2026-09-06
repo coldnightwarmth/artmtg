@@ -15,8 +15,8 @@ import { COMMUNITY_COLLECTIONS } from "./community-collections.mjs";
 import { SWAG_PACK_TRANSPARENT_STICKER_FILES } from "../swag-pack-stickers.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const APP_VERSION = "cardnft-377";
-const STYLE_VERSION = "cardnft-154";
+const APP_VERSION = "cardnft-380";
+const STYLE_VERSION = "cardnft-155";
 const THREE_VERSION = "three-r165-min-1";
 
 const TRAIT_SPECS = [
@@ -183,10 +183,16 @@ assert(
     && app.includes('error?.code === "binder_not_found"')
     && app.includes('const WALLET_TRADE_FILTER_VALUE = "marked-for-trade"')
     && app.includes('const LISTED_SORT_VALUE = "listed-first"')
+    && app.includes('const COLLECTION_SORT_VALUE = "collection"')
     && app.includes('Number(isCardMarkedForTrade(CARDS[right]))')
     && app.includes("async function refreshGlobalTradeStatuses(options = {})")
     && app.includes("function syncGlobalTradeMarks(previousIds, nextIds)")
     && app.includes('listedOption.textContent = "listed"')
+    && app.includes('collectionOption.textContent = "collection"')
+    && app.includes("function renderMixedCollectionFilterPicker()")
+    && app.includes('traitsButton.textContent = "view all traits"')
+    && app.includes("function applyMixedCollectionFilter(collectionId)")
+    && app.includes("activeCollectionFilter\n    || activeTraitFilter")
     && app.includes('? "redeem status"')
     && app.includes('traitSortCategory === LISTED_SORT_VALUE')
     && app.includes('const GALLERY_SORT_QUERY_PARAM = "sort"')
@@ -245,6 +251,17 @@ assert(
     && liveDataMigration.includes("CREATE TABLE live_card_status_snapshots")
     && clearLiveDataMigration.includes("'cardnft2', 'poncho', 'clear'"),
   "live wallet holdings and automatic redemption status refresh are incomplete",
+);
+assert(
+  app.includes('const PONCHO_COLLECTION_MINT = "JCTP3kK3xGtWs5mDHxJBuRro38HftaiCDdKsfkXuK2gH"')
+    && app.includes('collectionIds.includes(PONCHO_COLLECTION_MINT)')
+    && (app.match(/const seenAssetIds = new Set\(\);/g) || []).length >= 2
+    && !app.includes("Number.isFinite(total) && fetched >= total")
+    && liveDataWorker.includes('return ponchoRecord ? ["poncho", ponchoRecord[0], ponchoRecord[2]] : null')
+    && (liveDataWorker.match(/const seenAssetIds = new Set\(\);/g) || []).length >= 2
+    && !liveDataWorker.includes("Number.isFinite(total) && fetched >= total")
+    && !liveDataWorker.includes("Number.isFinite(total) && assets.length >= total"),
+  "wallet DAS pagination or on-chain Poncho fallback is incomplete",
 );
 assert(
   app.indexOf("let liveCardStatusSnapshot = null")
@@ -1210,8 +1227,8 @@ async function verifyPage({ pagePath, prefix, dataFile }) {
   assert(!page.includes("binder-cover-link-controls"), `${pagePath} still shows link controls as a separate row`);
   assert(!page.includes("Edit card order"), `${pagePath} has the old binder editor title`);
   assert(
-    /id="traitSortSelect"[^>]*>[\s\S]*?<option value="marked-for-trade">marked for trade<\/option>[\s\S]*?<option value="listed-first">listed<\/option>[\s\S]*?<option value="all">all<\/option>/.test(page),
-    `${pagePath} does not put marked-for-trade and listed before all`,
+    /id="traitSortSelect"[^>]*>[\s\S]*?<option value="marked-for-trade">marked for trade<\/option>[\s\S]*?<option value="listed-first">listed<\/option>[\s\S]*?<option value="all">default<\/option>/.test(page),
+    `${pagePath} does not put marked-for-trade and listed before default`,
   );
   assert(
     /id="walletSearchButton"[\s\S]{0,260}<circle cx="12" cy="7\.5" r="4\.5"><\/circle>[\s\S]{0,120}<path d="M4 20a8 8 0 0 1 16 0"><\/path>/.test(page),

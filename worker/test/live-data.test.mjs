@@ -151,3 +151,68 @@ test("wallet holdings include Clear references and owned Swag Pack sticker asset
     globalThis.fetch = originalFetch;
   }
 });
+
+test("wallet holdings continue past a misleading full-page total and include Poncho references", async () => {
+  const originalFetch = globalThis.fetch;
+  const requestedAssetPages = [];
+  globalThis.fetch = async (_url, options = {}) => {
+    const request = options.body ? JSON.parse(options.body) : null;
+    if (request?.method === "getAssetsByOwner") {
+      const page = Number(request.params?.page);
+      requestedAssetPages.push(page);
+      const items = page === 1
+        ? Array.from({ length: 1000 }, (_, index) => ({ id: `page-one-${index}` }))
+        : [{
+          id: "poncho-card-113-mint",
+          grouping: [{
+            group_key: "collection",
+            group_value: "JCTP3kK3xGtWs5mDHxJBuRro38HftaiCDdKsfkXuK2gH",
+          }],
+          content: {
+            json_uri: "https://cdn.lil.org/nft/poncho_drifella/json/figures/113.json",
+            metadata: { name: "card 113", attributes: [
+              { trait_type: "type", value: "card" },
+            ] },
+          },
+        }, {
+          id: "clear-card-64-mint",
+          grouping: [{
+            group_key: "collection",
+            group_value: "3fYe95cviaHzka38Q82q64JLhhddKQm37Jt4dQSxPKxz",
+          }],
+          content: {
+            json_uri: "https://cdn.lil.org/nft/clear_cards/json/f64.json",
+            metadata: { name: "card 64", attributes: [
+              { trait_type: "type", value: "card" },
+            ] },
+          },
+        }];
+      return new Response(JSON.stringify({
+        result: {
+          total: items.length,
+          items,
+        },
+      }), { headers: { "content-type": "application/json" } });
+    }
+    return new Response(JSON.stringify({ error: { message: "unavailable" } }), {
+      status: 503,
+      headers: { "content-type": "application/json" },
+    });
+  };
+
+  try {
+    const holdings = await fetchLiveWalletHoldings("large-wallet-address", {
+      HELIUS_RPC_URL: "https://helius.test",
+    });
+    assert.deepEqual(requestedAssetPages, [1, 2]);
+    assert.equal(holdings.mints.length, 1002);
+    assert.ok(holdings.mints.includes("poncho-card-113-mint"));
+    assert.ok(holdings.mints.includes("clear-card-64-mint"));
+    assert.deepEqual(holdings.cardRefs, [
+      ["clear", 64, "clear-card-64-mint"],
+      ["poncho", 113, "poncho-card-113-mint"],
+    ]);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
