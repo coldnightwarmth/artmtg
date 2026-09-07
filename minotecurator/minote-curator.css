@@ -69,7 +69,7 @@ select:focus-visible {
   z-index: 20;
   top: 0;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto;
+  grid-template-columns: minmax(0, 1fr) auto auto auto;
   align-items: end;
   gap: 18px;
   min-height: var(--toolbar-height);
@@ -177,6 +177,42 @@ select:focus-visible {
   color: var(--ink);
   font-size: 0.9rem;
   font-variant-numeric: tabular-nums;
+}
+
+.five-star-export {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--ink);
+  border-radius: 6px;
+  color: var(--paper);
+  background: var(--ink);
+  cursor: pointer;
+  transition: opacity 150ms ease, transform 150ms ease, background-color 150ms ease;
+}
+
+.five-star-export:not(:disabled):hover {
+  background: #2d2b26;
+  transform: translateY(-1px);
+}
+
+.five-star-export:disabled {
+  cursor: default;
+  opacity: 0.38;
+}
+
+.five-star-export svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 main {
@@ -523,7 +559,7 @@ body.has-pinned-image-preview {
   }
 
   .gallery-toolbar {
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr) auto auto;
   }
 
   .filter-block {
@@ -541,8 +577,17 @@ body.has-pinned-image-preview {
   }
 
   .gallery-toolbar {
+    grid-template-columns: minmax(0, 1fr) auto auto;
     gap: 11px;
     padding-top: 12px;
+  }
+
+  .sort-control {
+    min-width: 140px;
+  }
+
+  .five-star-export {
+    justify-self: end;
   }
 
   .gallery {

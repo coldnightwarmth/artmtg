@@ -1,11 +1,12 @@
-import { MINOTE_CURATOR_ITEMS } from "./minote-data.js";
+import { MINOTE_CURATOR_ITEMS } from "./minote-data.js?v=minote-curator-data-1";
 import {
   MAX_RATING,
   countRatings,
   normalizeRating,
   sanitizeRatings,
   selectRatedItems,
-} from "./rating-model.js";
+  serializeSpreadsheetRows,
+} from "./rating-model.js?v=minote-curator-3";
 
 const STORAGE_KEY = "cards.art:minote-curator:ratings:v1";
 const INITIAL_RENDER_BATCH_SIZE = 48;
@@ -22,6 +23,7 @@ const imagePreview = document.querySelector("#imagePreview");
 const imagePreviewImage = document.querySelector("#imagePreviewImage");
 const imagePreviewCaption = document.querySelector("#imagePreviewCaption");
 const imagePreviewClose = document.querySelector("#imagePreviewClose");
+const fiveStarExportButton = document.querySelector("#fiveStarExportButton");
 const filterButtons = [...document.querySelectorAll("[data-rating-filter]")];
 const countLabels = new Map(
   [...document.querySelectorAll("[data-count-for]")].map((element) => [
@@ -33,6 +35,7 @@ const countLabels = new Map(
 const itemById = new Map(MINOTE_CURATOR_ITEMS.map((item) => [item.id, item]));
 const sourceIndexById = new Map(MINOTE_CURATOR_ITEMS.map((item, index) => [item.id, index]));
 const cardById = new Map();
+const fullscreenImageById = new Map();
 let ratings = loadRatings();
 let activeFilter = "all";
 let activeSort = "source";
@@ -42,7 +45,21 @@ let previewTrigger = null;
 let previewPinned = false;
 let previewHideTimer = 0;
 let previewRevealFrame = 0;
+let previewLoadGeneration = 0;
 let suppressPreviewFocusOnce = false;
+
+const fullscreenPreloadObserver = typeof window.IntersectionObserver === "function"
+  ? new IntersectionObserver(
+    (entries, observer) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        observer.unobserve(entry.target);
+        preloadFullscreenImage(entry.target.dataset.itemId);
+      }
+    },
+    { rootMargin: "420px 0px" },
+  )
+  : null;
 
 function loadRatings() {
   try {
@@ -77,6 +94,32 @@ function getThumbnailUrl(source) {
 
 function getFullscreenImageUrl(source) {
   return getOpenSeaImageUrl(source, 1080);
+}
+
+function preloadFullscreenImage(itemId, { urgent = false } = {}) {
+  const existing = fullscreenImageById.get(itemId);
+  if (existing) {
+    if (urgent) existing.image.fetchPriority = "high";
+    return existing.promise;
+  }
+
+  const item = itemById.get(itemId);
+  if (!item) return Promise.resolve(null);
+  const image = new Image();
+  image.decoding = "async";
+  image.fetchPriority = urgent ? "high" : "low";
+  const promise = new Promise((resolve) => {
+    image.addEventListener("load", async () => {
+      try {
+        await image.decode();
+      } catch {}
+      resolve(image);
+    }, { once: true });
+    image.addEventListener("error", () => resolve(null), { once: true });
+  });
+  fullscreenImageById.set(itemId, { image, promise });
+  image.src = getFullscreenImageUrl(item.imageUrl);
+  return promise;
 }
 
 function getOpenSeaUrl(item) {
@@ -176,6 +219,7 @@ function getOrCreateCard(item) {
   if (!card) {
     card = createArtworkCard(item, sourceIndexById.get(item.id));
     cardById.set(item.id, card);
+    fullscreenPreloadObserver?.observe(card);
   }
   return card;
 }
@@ -210,6 +254,44 @@ function updateRatingCounts() {
   for (let rating = 0; rating <= MAX_RATING; rating += 1) {
     countLabels.get(String(rating)).textContent = numberFormatter.format(counts[rating]);
   }
+  fiveStarExportButton.disabled = counts[MAX_RATING] === 0;
+  const exportLabel = `Download spreadsheet of ${counts[MAX_RATING]} five-star Mi Note${counts[MAX_RATING] === 1 ? "" : "s"}`;
+  fiveStarExportButton.setAttribute("aria-label", exportLabel);
+  fiveStarExportButton.title = exportLabel;
+}
+
+function downloadFiveStarSpreadsheet() {
+  const fiveStarItems = selectRatedItems(
+    MINOTE_CURATOR_ITEMS,
+    ratings,
+    String(MAX_RATING),
+    "source",
+  );
+  if (!fiveStarItems.length) return;
+
+  const rows = [
+    ["Name", "Collection", "Rating", "OpenSea URL", "Image URL", "Item ID"],
+    ...fiveStarItems.map((item) => [
+      item.name,
+      item.collectionName,
+      MAX_RATING,
+      getOpenSeaUrl(item),
+      item.imageUrl,
+      item.id,
+    ]),
+  ];
+  const csv = serializeSpreadsheetRows(rows);
+  const blobUrl = URL.createObjectURL(new Blob(["\uFEFF", csv], {
+    type: "text/csv;charset=utf-8",
+  }));
+  const link = document.createElement("a");
+  link.href = blobUrl;
+  link.download = `mi-note-5-star-ratings-${new Date().toISOString().slice(0, 10)}.csv`;
+  document.body.append(link);
+  link.click();
+  link.remove();
+  window.setTimeout(() => URL.revokeObjectURL(blobUrl), 0);
+  ratingAnnouncement.textContent = `Downloaded ${fiveStarItems.length} five-star Mi Note${fiveStarItems.length === 1 ? "" : "s"}.`;
 }
 
 function updateFilterButtons() {
@@ -309,14 +391,25 @@ function showImagePreview(itemId, trigger, { pinned = false } = {}) {
   previewTrigger?.setAttribute("aria-expanded", "true");
 
   if (previewedItemId !== itemId) {
+    const loadGeneration = ++previewLoadGeneration;
     previewedItemId = itemId;
     imagePreviewImage.classList.remove("is-loaded");
     imagePreviewImage.alt = item.name;
-    imagePreviewImage.src = getFullscreenImageUrl(item.imageUrl);
+    const thumbnail = trigger?.closest(".artwork-card")?.querySelector(".artwork-image");
+    imagePreviewImage.src = thumbnail?.currentSrc || thumbnail?.src || getThumbnailUrl(item.imageUrl);
     imagePreviewCaption.textContent = `${item.name} · ${item.collectionName}`;
     if (imagePreviewImage.complete && imagePreviewImage.naturalWidth > 0) {
       imagePreviewImage.classList.add("is-loaded");
     }
+    preloadFullscreenImage(itemId, { urgent: true }).then((preloadedImage) => {
+      if (
+        !preloadedImage
+        || previewedItemId !== itemId
+        || previewLoadGeneration !== loadGeneration
+      ) return;
+      imagePreviewImage.src = preloadedImage.currentSrc || preloadedImage.src;
+      imagePreviewImage.classList.add("is-loaded");
+    });
   }
 
   previewPinned = pinned;
@@ -344,6 +437,7 @@ function hideImagePreview({ restoreFocus = false } = {}) {
   const triggerToRestore = previewTrigger;
   previewPinned = false;
   previewedItemId = null;
+  previewLoadGeneration += 1;
   previewTrigger?.setAttribute("aria-expanded", "false");
   previewTrigger = null;
   imagePreview.classList.remove("is-visible", "is-pinned");
@@ -371,6 +465,8 @@ imagePreviewImage.addEventListener("load", () => {
   imagePreviewImage.classList.add("is-loaded");
 });
 
+fiveStarExportButton.addEventListener("click", downloadFiveStarSpreadsheet);
+
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => setFilter(button.dataset.ratingFilter));
 });
@@ -390,6 +486,8 @@ gallery.addEventListener("click", (event) => {
 });
 
 gallery.addEventListener("pointerover", (event) => {
+  const artworkCard = event.target.closest(".artwork-card");
+  if (artworkCard) preloadFullscreenImage(artworkCard.dataset.itemId, { urgent: true });
   const previewButton = event.target.closest(".image-preview-trigger");
   if (previewButton) {
     if (!previewPinned) showImagePreview(previewButton.dataset.itemId, previewButton);

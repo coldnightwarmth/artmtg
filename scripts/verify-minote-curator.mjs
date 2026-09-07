@@ -9,6 +9,7 @@ import {
   normalizeRating,
   sanitizeRatings,
   selectRatedItems,
+  serializeSpreadsheetRows,
 } from "../minotecurator/rating-model.js";
 import {
   MINOTE_CURATOR_ITEMS,
@@ -70,6 +71,14 @@ assert.deepEqual(
   selectRatedItems(sample, sampleRatings, "all", "unrated-first").map(({ id }) => id),
   [sample[3].id, sample[0].id, sample[1].id, sample[2].id],
 );
+assert.equal(
+  serializeSpreadsheetRows([
+    ["Name", "Rating"],
+    ['A "quoted" note', 5],
+    ["=unsafe formula", 5],
+  ]),
+  '"Name","Rating"\r\n"A ""quoted"" note","5"\r\n"\'=unsafe formula","5"',
+);
 
 const [html, css, app] = await Promise.all([
   readFile(path.join(ROOT, "minotecurator", "index.html"), "utf8"),
@@ -82,6 +91,7 @@ for (const required of [
   'id="ratingSort"',
   'id="imagePreview"',
   'id="imagePreviewImage"',
+  'id="fiveStarExportButton"',
   'data-rating-filter="0"',
   'data-rating-filter="5"',
   "https://opensea.io/collection/minote",
@@ -96,12 +106,21 @@ assert.ok(css.includes("position: sticky"));
 assert.ok(css.includes("content-visibility: auto"));
 assert.ok(css.includes(".image-preview-trigger"));
 assert.ok(css.includes(".image-preview-image"));
+assert.ok(css.includes(".five-star-export"));
 assert.ok(!css.includes("aspect-ratio: 1 / 1"), "Artwork previews should use their natural ratio");
 assert.ok(app.includes('const STORAGE_KEY = "cards.art:minote-curator:ratings:v1"'));
+assert.ok(app.includes('./rating-model.js?v=minote-curator-3'));
+assert.ok(app.includes('./minote-data.js?v=minote-curator-data-1'));
 assert.ok(app.includes("window.localStorage.setItem"));
 assert.ok(app.includes("showImagePreview"));
 assert.ok(app.includes("getFullscreenImageUrl(item.imageUrl)"));
 assert.ok(app.includes("getOpenSeaImageUrl(source, 1080)"));
+assert.ok(app.includes("function preloadFullscreenImage("));
+assert.ok(app.includes("thumbnail?.currentSrc || thumbnail?.src || getThumbnailUrl(item.imageUrl)"));
+assert.ok(app.includes("function downloadFiveStarSpreadsheet()"));
+assert.ok(app.includes('type: "text/csv;charset=utf-8"'));
+assert.ok(app.includes("selectRatedItems("));
+assert.ok(app.includes("serializeSpreadsheetRows(rows)"));
 assert.ok(!app.includes("fetch("), "The deployed page should use its local static dataset");
 
 console.log(

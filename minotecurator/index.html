@@ -11,9 +11,11 @@
     <title>Mi Note Curator · cards.art</title>
     <link rel="icon" type="image/png" href="../cardnft.png">
     <link rel="apple-touch-icon" href="../cardnft.png">
-    <link rel="stylesheet" href="./minote-curator.css?v=minote-curator-2">
-    <link rel="modulepreload" href="./minote-curator.js?v=minote-curator-3">
-    <link rel="modulepreload" href="./rating-model.js?v=minote-curator-2">
+    <link rel="preconnect" href="https://i2c.seadn.io" crossorigin>
+    <link rel="dns-prefetch" href="//i2c.seadn.io">
+    <link rel="stylesheet" href="./minote-curator.css?v=minote-curator-3">
+    <link rel="modulepreload" href="./minote-curator.js?v=minote-curator-4">
+    <link rel="modulepreload" href="./rating-model.js?v=minote-curator-3">
     <link rel="modulepreload" href="./minote-data.js?v=minote-curator-data-1">
   </head>
   <body>
@@ -59,6 +61,12 @@
         <strong id="visibleCount">0</strong>
         <span id="visibleCountLabel">pieces shown</span>
       </div>
+
+      <button class="five-star-export" id="fiveStarExportButton" type="button" title="Download five-star spreadsheet" disabled>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3"></path>
+        </svg>
+      </button>
     </section>
 
     <main>
@@ -94,6 +102,6 @@
     </p>
     <div class="visually-hidden" id="ratingAnnouncement" aria-live="polite" aria-atomic="true"></div>
 
-    <script type="module" src="./minote-curator.js?v=minote-curator-3"></script>
+    <script type="module" src="./minote-curator.js?v=minote-curator-4"></script>
   </body>
 </html>

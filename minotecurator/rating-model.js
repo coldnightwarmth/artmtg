@@ -56,3 +56,12 @@ export function selectRatedItems(items, ratings, filter = "all", sort = "source"
 
   return selected;
 }
+
+export function serializeSpreadsheetRows(rows) {
+  const escapeCell = (value) => {
+    const text = String(value ?? "");
+    const safeText = /^[=+\-@]/.test(text) ? `'${text}` : text;
+    return `"${safeText.replaceAll('"', '""')}"`;
+  };
+  return rows.map((row) => row.map(escapeCell).join(",")).join("\r\n");
+}
