@@ -1,3 +1,8 @@
+import {
+  SUPPORTED_CARD_MINT_INDEX,
+  SUPPORTED_CARD_REFERENCE_INDEX,
+} from "./supported-card-index.js";
+
 const LIVE_STATUS_REFRESH_MS = 12 * 60 * 60 * 1000;
 const UPSTREAM_TIMEOUT_MS = 25_000;
 const WALLET_ASSET_PAGE_LIMIT = 1000;
@@ -15,6 +20,8 @@ const SOLANA_TOKEN_PROGRAM_IDS = Object.freeze([
   "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
   "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
 ]);
+const SUPPORTED_CARD_BY_MINT = buildFlatIndex(SUPPORTED_CARD_MINT_INDEX);
+const SUPPORTED_CARD_BY_REFERENCE = buildFlatIndex(SUPPORTED_CARD_REFERENCE_INDEX);
 
 const PONCHO_COLLECTION_QUERY = `
   query CollectionMintsV2(
@@ -133,13 +140,39 @@ export async function fetchLiveWalletHoldings(address, env) {
     if (result.status !== "fulfilled") continue;
     for (const mint of result.value) mints.add(mint);
   }
-  return {
+  const holdings = {
     walletAddress: address,
     fetchedAt: Date.now(),
     mints: [...mints].sort(),
     cardRefs: dasHoldings.cardRefs,
     swagPackAssets: dasHoldings.swagPackAssets,
   };
+  holdings.supportedCardCount = countSupportedWalletCards(holdings);
+  return holdings;
+}
+
+export function countSupportedWalletCards(holdings) {
+  const cardIndexes = new Set();
+  for (const mint of Array.isArray(holdings?.mints) ? holdings.mints : []) {
+    const cardIndex = SUPPORTED_CARD_BY_MINT.get(String(mint || "").trim());
+    if (Number.isInteger(cardIndex)) cardIndexes.add(cardIndex);
+  }
+  for (const reference of Array.isArray(holdings?.cardRefs) ? holdings.cardRefs : []) {
+    const collectionId = String(reference?.[0] || "").trim();
+    const number = Number(reference?.[1]);
+    if (!collectionId || !Number.isInteger(number)) continue;
+    const cardIndex = SUPPORTED_CARD_BY_REFERENCE.get(`${collectionId}:${number}`);
+    if (Number.isInteger(cardIndex)) cardIndexes.add(cardIndex);
+  }
+  return cardIndexes.size;
+}
+
+function buildFlatIndex(values) {
+  const index = new Map();
+  for (let offset = 0; offset + 1 < values.length; offset += 2) {
+    index.set(values[offset], values[offset + 1]);
+  }
+  return index;
 }
 
 async function readStoredCardStatuses(env) {

@@ -189,6 +189,70 @@ test("global trade statuses combine marks from every wallet binder", () => {
   });
 });
 
+test("public binder directory entries expose only front-cover preview fields", () => {
+  const { address } = makeProof();
+  const row = {
+    wallet_address: address,
+    card_order_json: JSON.stringify(["poncho:card-7", "clear:card-3"]),
+    trade_card_ids_json: JSON.stringify(["poncho:card-7", "clear:card-3"]),
+    supported_card_count: 2,
+    holdings_checked_at: 175,
+    cover_json: JSON.stringify({
+      baseColor: "#315b88",
+      artworkDataUrl: "data:image/webp;base64,AAAA",
+      artworkX: 0.42,
+      backArtworkDataUrl: "data:image/webp;base64,BBBB",
+      insideText: "not part of the public preview",
+      stickers: [
+        {
+          mint: address,
+          surface: "front",
+          x: 0.5,
+          y: 0.6,
+          scale: 0.2,
+          rotation: 12,
+          name: "Front sticker",
+          imageUrl: "https://example.com/front.png",
+        },
+        {
+          mint: `${address.slice(0, -1)}2`,
+          surface: "inside",
+          x: 0.4,
+          y: 0.5,
+          scale: 0.3,
+          imageUrl: "https://example.com/inside.png",
+        },
+      ],
+    }),
+    created_at: 100,
+    updated_at: 200,
+  };
+  const entry = testing.binderDirectoryEntry(row);
+  assert.equal(entry.walletAddress, address);
+  assert.equal(entry.path, `/${address}`);
+  assert.equal(entry.savedCardCount, 2);
+  assert.equal(entry.tradeCardCount, 2);
+  assert.equal(entry.supportedCardCount, 2);
+  assert.equal(entry.holdingsCheckedAt, 175);
+  assert.equal(entry.cover.baseColor, "#315b88");
+  assert.equal(entry.cover.artworkDataUrl, undefined);
+  assert.equal(entry.hasCustomArtwork, true);
+  assert.equal(entry.cover.backArtworkDataUrl, undefined);
+  assert.equal(entry.cover.insideText, undefined);
+  assert.equal(entry.cover.stickers.length, 1);
+  assert.equal(entry.cover.stickers[0].name, "Front sticker");
+
+  const cursor = testing.encodeBinderDirectoryCursor(row);
+  assert.deepEqual(testing.decodeBinderDirectoryCursor(cursor), {
+    updatedAt: 200,
+    walletAddress: address,
+  });
+  assert.throws(
+    () => testing.decodeBinderDirectoryCursor("not-a-cursor"),
+    (error) => error.code === "cursor_invalid",
+  );
+});
+
 test("binder updates accept positioned cover art and linked inside-cover text", () => {
   const update = testing.validateBinderUpdate({
     revision: 3,

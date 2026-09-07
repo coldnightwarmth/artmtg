@@ -4,11 +4,88 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
     <title>cards.art</title>
+    <style>
+      html.wallet-binder-arrival-bootstrap {
+        background: #121712;
+      }
+      html.wallet-binder-arrival-bootstrap::before,
+      html.wallet-binder-arrival-bootstrap::after {
+        position: fixed;
+        content: "";
+        pointer-events: none;
+      }
+      html.wallet-binder-arrival-bootstrap::before {
+        inset: 0;
+        z-index: 2147483000;
+        background:
+          radial-gradient(circle at 64% 78%, rgba(108, 84, 30, 0.32), transparent 46%),
+          linear-gradient(145deg, #121712, #201b0f);
+      }
+      html.wallet-binder-arrival-bootstrap::after {
+        left: 50%;
+        top: 50%;
+        z-index: 2147483001;
+        width: min(56vw, 430px, 54.58vh);
+        aspect-ratio: 5.234 / 7.286;
+        border: 1px solid rgba(255, 255, 255, 0.17);
+        border-radius: 7px 10px 10px 7px;
+        background-color: var(--wallet-binder-arrival-base-color, #1f2b24);
+        background-image:
+          linear-gradient(90deg, transparent 6.8%, rgba(255, 255, 255, 0.18) 7%, rgba(0, 0, 0, 0.22) 7.3%, transparent 9%),
+          var(--wallet-binder-arrival-preview, none);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        box-shadow:
+          inset 0 0 22px rgba(0, 0, 0, 0.25),
+          0 17px 32px rgba(0, 0, 0, 0.38);
+        transform: translate(-50%, -50%) rotate(-0.35deg);
+      }
+      html.wallet-binder-arrival-bootstrap.wallet-binder-arrival-bootstrap-light {
+        background: #e9e4d5;
+      }
+      html.wallet-binder-arrival-bootstrap.wallet-binder-arrival-bootstrap-light::before {
+        background:
+          radial-gradient(circle at 64% 78%, rgba(152, 119, 54, 0.16), transparent 48%),
+          linear-gradient(145deg, #e9e4d5, #f8f4e8);
+      }
+    </style>
+    <script>
+      (() => {
+        try {
+          const key = "cardnft:walletBinderDirectoryTransition:v1";
+          const arrival = JSON.parse(sessionStorage.getItem(key) || "null");
+          const address = decodeURIComponent(location.pathname.replace(/^\/+|\/+$/g, ""));
+          const age = Date.now() - Number(arrival?.createdAt || 0);
+          if (
+            !arrival
+            || arrival.address !== address
+            || age < 0
+            || age >= 15000
+          ) return;
+          const root = document.documentElement;
+          const baseColor = /^#[0-9a-f]{6}$/i.test(arrival.baseColor || "")
+            ? arrival.baseColor
+            : "#1f2b24";
+          root.style.setProperty("--wallet-binder-arrival-base-color", baseColor);
+          if (/^data:image\/(?:png|webp|jpeg);base64,/i.test(arrival.previewDataUrl || "")) {
+            root.style.setProperty(
+              "--wallet-binder-arrival-preview",
+              `url("${arrival.previewDataUrl}")`,
+            );
+          }
+          root.classList.add("wallet-binder-arrival-bootstrap");
+          root.classList.toggle("wallet-binder-arrival-bootstrap-light", Boolean(arrival.light));
+        } catch {
+          // The normal application shell remains the fallback.
+        }
+      })();
+    </script>
     <link rel="icon" type="image/png" href="./cardnft.png">
     <link rel="apple-touch-icon" href="./cardnft.png">
     <link rel="preconnect" href="https://cdn.lil.org" crossorigin>
     <link rel="dns-prefetch" href="//cdn.lil.org">
-    <link rel="stylesheet" href="./styles.css?v=cardnft-155">
+    <link rel="stylesheet" href="./styles.css?v=cardnft-163">
     <script type="importmap">
       {
         "imports": {
@@ -16,8 +93,8 @@
         }
       }
     </script>
-    <link rel="modulepreload" href="./app.js?v=cardnft-380">
-    <link rel="modulepreload" href="./wallet-auth.js?v=wallet-auth-5">
+    <link rel="modulepreload" href="./app.js?v=cardnft-391">
+    <link rel="modulepreload" href="./wallet-auth.js?v=wallet-auth-8">
     <link rel="modulepreload" href="./swag-pack-stickers.js?v=swag-pack-transparent-1">
     <link rel="modulepreload" href="./vendor/three.module.min.js?v=three-r165-min-1">
     <link rel="modulepreload" href="./browser-traits-catalog.js?v=browser-traits-9">
@@ -158,6 +235,28 @@
         <div class="binder-page-status" id="binderPageStatus" aria-live="polite"></div>
         <section class="wallet-search-panel" id="walletSearchPanel" aria-label="Wallet card search" aria-hidden="true" hidden>
           <form class="wallet-search-dialog" id="walletSearchForm">
+            <button class="wallet-binder-directory-button" id="walletBinderDirectoryButton" type="button" aria-controls="walletBinderDirectory" aria-expanded="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5.5h16v13H4z"></path>
+                <path d="M8 5.5v13"></path>
+                <path d="M8 9.5h12"></path>
+              </svg>
+              <span>Browse wallet binders</span>
+              <span class="wallet-binder-directory-button-count" id="walletBinderDirectoryButtonCount" hidden></span>
+            </button>
+            <section class="wallet-binder-directory" id="walletBinderDirectory" aria-labelledby="walletBinderDirectoryHeading" hidden>
+              <header class="wallet-binder-directory-header">
+                <button class="wallet-binder-directory-back" id="walletBinderDirectoryBackButton" type="button" aria-label="Back to wallet search">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+                </button>
+                <div>
+                  <h2 id="walletBinderDirectoryHeading">Wallet binders</h2>
+                  <p id="walletBinderDirectoryCount">Public binder covers</p>
+                </div>
+              </header>
+              <div class="wallet-binder-directory-gallery" id="walletBinderDirectoryGallery" role="list" aria-label="Public wallet binders"></div>
+              <p class="wallet-binder-directory-status" id="walletBinderDirectoryStatus" role="status" aria-live="polite"></p>
+            </section>
             <div class="wallet-connect-section">
               <button class="wallet-connect-button" id="walletConnectButton" type="button" aria-expanded="false">
                 <span id="walletConnectButtonLabel">Connect Solana wallet</span>
@@ -427,6 +526,6 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.55 5.16 5.7.83-4.12 4.02.97 5.68L12 16.6l-5.1 2.69.97-5.68-4.12-4.02 5.7-.83L12 3.6Z"></path></svg>
     </button>
 
-    <script type="module" src="./app.js?v=cardnft-380"></script>
+    <script type="module" src="./app.js?v=cardnft-391"></script>
   </body>
 </html>

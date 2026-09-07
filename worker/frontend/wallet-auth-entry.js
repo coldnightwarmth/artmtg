@@ -113,8 +113,33 @@ export async function signOutWalletAuthSession(apiBaseUrl, csrfToken = "") {
   });
 }
 
-export async function getPublicWalletBinder(apiBaseUrl, address) {
-  return apiRequest(apiBaseUrl, `/binders/${encodeURIComponent(address)}`, { method: "GET" });
+export async function getPublicWalletBinder(apiBaseUrl, address, options = {}) {
+  return apiRequest(apiBaseUrl, `/binders/${encodeURIComponent(address)}`, {
+    method: "GET",
+    credentials: options.credentials,
+  });
+}
+
+export async function getPublicWalletBinders(apiBaseUrl, options = {}) {
+  const parameters = new URLSearchParams();
+  const limit = Number(options.limit);
+  if (Number.isInteger(limit) && limit > 0) parameters.set("limit", String(limit));
+  const cursor = String(options.cursor || "").trim();
+  if (cursor) parameters.set("cursor", cursor);
+  const version = String(options.version || "").trim();
+  if (version) parameters.set("v", version);
+  const query = parameters.size ? `?${parameters}` : "";
+  return apiRequest(apiBaseUrl, `/binders${query}`, {
+    method: "GET",
+    credentials: "omit",
+  });
+}
+
+export async function getPublicWalletBinderCover(apiBaseUrl, address) {
+  return apiRequest(apiBaseUrl, `/binder-covers/${encodeURIComponent(address)}`, {
+    method: "GET",
+    credentials: "omit",
+  });
 }
 
 export async function getGlobalTradeStatuses(apiBaseUrl) {
@@ -189,7 +214,7 @@ async function apiRequest(apiBaseUrl, path, options) {
     response = await fetch(`${normalizeApiBaseUrl(apiBaseUrl)}${path}`, {
       method,
       headers,
-      credentials: "include",
+      credentials: options.credentials || "include",
       signal: controller.signal,
       ...(options.body ? { body: JSON.stringify(options.body) } : {}),
     });

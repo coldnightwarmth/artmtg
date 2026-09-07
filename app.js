@@ -12,6 +12,8 @@ import {
   getGlobalTradeStatuses,
   getOwnerWalletBinder,
   getPublicWalletBinder,
+  getPublicWalletBinderCover,
+  getPublicWalletBinders,
   getWalletAuthSession,
   isCanonicalSolanaAddress,
   signInWithSolanaWallet,
@@ -19,7 +21,7 @@ import {
   subscribeToWalletAccountChanges,
   updateOwnerWalletBinder,
   watchCompatibleSolanaWallets,
-} from "./wallet-auth.js?v=wallet-auth-5";
+} from "./wallet-auth.js?v=wallet-auth-8";
 import { CARD_NFT_2_COMMON_IDS } from "./cardnft2-common-ids.js?v=cardnft2-common-1";
 import { SWAG_PACK_TRANSPARENT_STICKER_FILES } from "./swag-pack-stickers.js?v=swag-pack-transparent-1";
 
@@ -635,6 +637,12 @@ const WALLET_SEARCH_ERROR_MESSAGE = "Search failed, try again.";
 const WALLET_CONNECT_PROMPT = "Connect a Solana wallet to create or open its binder.";
 const WALLET_CONNECT_NO_EXTENSION_MESSAGE = "No compatible Solana wallet extension found.";
 const WALLET_CONNECT_BUSY_MESSAGE = "Approve the connection and login message in your wallet...";
+const WALLET_BINDER_DIRECTORY_PAGE_SIZE = 18;
+const WALLET_BINDER_DIRECTORY_HOLDINGS_CONCURRENCY = 4;
+const WALLET_BINDER_DIRECTORY_TRANSITION_MS = 430;
+const WALLET_BINDER_DIRECTORY_COVER_MIN_LOADING_MS = 1050;
+const WALLET_BINDER_DIRECTORY_TRANSITION_STORAGE_KEY = "cardnft:walletBinderDirectoryTransition:v1";
+const WALLET_PUBLIC_API_BASE_URL = "https://api.cards.art/api";
 const WALLET_TRADE_FILTER_VALUE = "marked-for-trade";
 const LISTED_SORT_VALUE = "listed-first";
 const COLLECTION_SORT_VALUE = "collection";
@@ -645,6 +653,7 @@ const GALLERY_TRAIT_VALUE_QUERY_PARAM = "trait-value";
 const GALLERY_TRAIT_COLLECTION_QUERY_PARAM = "trait-collection";
 const WALLET_ROUTE_ADDRESS = getWalletAddressFromPathname(window.location.pathname);
 const WALLET_AUTH_API_BASE_URL = getWalletAuthApiBaseUrl();
+const WALLET_BINDER_DIRECTORY_ARRIVAL = readWalletBinderDirectoryArrival(WALLET_ROUTE_ADDRESS);
 
 function usesEvilBinderPresentation() {
   return !WALLET_ROUTE_ADDRESS && ACTIVE_COLLECTION?.introGroup === "evil";
@@ -1144,6 +1153,13 @@ const els = {
   walletSearchButton: document.querySelector("#walletSearchButton"),
   walletSearchPanel: document.querySelector("#walletSearchPanel"),
   walletSearchForm: document.querySelector("#walletSearchForm"),
+  walletBinderDirectoryButton: document.querySelector("#walletBinderDirectoryButton"),
+  walletBinderDirectoryButtonCount: document.querySelector("#walletBinderDirectoryButtonCount"),
+  walletBinderDirectory: document.querySelector("#walletBinderDirectory"),
+  walletBinderDirectoryBackButton: document.querySelector("#walletBinderDirectoryBackButton"),
+  walletBinderDirectoryCount: document.querySelector("#walletBinderDirectoryCount"),
+  walletBinderDirectoryGallery: document.querySelector("#walletBinderDirectoryGallery"),
+  walletBinderDirectoryStatus: document.querySelector("#walletBinderDirectoryStatus"),
   walletConnectButton: document.querySelector("#walletConnectButton"),
   walletConnectButtonLabel: document.querySelector("#walletConnectButtonLabel"),
   walletProviderList: document.querySelector("#walletProviderList"),
@@ -1271,6 +1287,17 @@ let lastTouchEndAt = 0;
 let walletSearchOpen = false;
 let walletSearchLoading = false;
 let walletSearchToken = 0;
+let walletBinderDirectoryOpen = false;
+let walletBinderDirectoryLoading = false;
+let walletBinderDirectoryToken = 0;
+let walletBinderDirectoryNextCursor = null;
+let walletBinderDirectoryTotal = null;
+let walletBinderDirectoryEntries = [];
+let walletBinderDirectoryUnverifiedCount = 0;
+const walletBinderDirectoryCardCountCache = new Map();
+let walletBinderDirectoryTransitioning = false;
+let walletBinderDirectoryCoverObserver = null;
+let walletBinderDirectoryArrivalBridge = null;
 let walletAuthLoading = false;
 let walletAuthSession = null;
 let walletAuthWallet = null;
@@ -1689,10 +1716,12 @@ const binderIntroFocusLocalPosition = new THREE.Vector3();
 const binderIntroFocusWorldScale = new THREE.Vector3();
 
 init().catch((error) => {
+  dismissWalletBinderDirectoryArrivalBridge();
   console.error("Binder initialization failed", error);
 });
 
 async function init() {
+  installWalletBinderDirectoryArrivalBridge();
   const initialGalleryUrlState = readGalleryUrlState();
   await Promise.all([
     prepareRestoredLazyData(restoredSessionViewState),
@@ -2165,6 +2194,14 @@ function initEvents() {
   els.galleryGrid.addEventListener("pointercancel", releaseActiveGalleryCardTilt);
   els.galleryClearFiltersButton.addEventListener("click", clearGallerySortAndFilters);
   els.walletSearchButton.addEventListener("click", toggleWalletSearchPanel);
+  els.walletBinderDirectoryButton.addEventListener("click", openWalletBinderDirectory);
+  els.walletBinderDirectoryBackButton.addEventListener("click", () => {
+    setWalletBinderDirectoryOpen(false);
+  });
+  els.walletBinderDirectoryGallery.addEventListener("click", handleWalletBinderDirectoryClick);
+  els.walletBinderDirectoryGallery.addEventListener("scroll", maybeLoadMoreWalletBinders, {
+    passive: true,
+  });
   els.walletConnectButton.addEventListener("click", handleWalletConnectButtonClick);
   els.walletProviderList.addEventListener("click", handleWalletProviderListClick);
   els.walletSignOutButton.addEventListener("click", () => {
@@ -2256,6 +2293,11 @@ function initEvents() {
   });
   els.walletAddressInput.addEventListener("keydown", (event) => {
     if (event.key === "Escape") setWalletSearchPanelOpen(false, { preserveMessage: true });
+  });
+  els.walletBinderDirectory.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    event.preventDefault();
+    setWalletBinderDirectoryOpen(false);
   });
   els.favoriteFilterButton.addEventListener("click", () => {
     toggleFavoriteFilter().catch(console.error);
@@ -7428,9 +7470,6 @@ function hasActiveGalleryMode() {
 function hasActiveBinderIntroSuppressor() {
   return Boolean(
     favoritesOnly
-    || activeCollectionFilter
-    || activeTraitFilter
-    || traitSortCategory !== "all"
     || (!WALLET_ROUTE_ADDRESS && walletFilterCardIndexSet)
   );
 }
@@ -7480,7 +7519,7 @@ function setWalletSearchPanelOpen(open, options = {}) {
     els.walletSearchPanel.setAttribute("aria-hidden", String(!nextOpen));
     els.walletSearchPanel.setAttribute(
       "aria-busy",
-      String((walletSearchLoading || walletAuthLoading) && nextOpen),
+      String((walletSearchLoading || walletAuthLoading || walletBinderDirectoryLoading) && nextOpen),
     );
   }
   if (els.walletSearchButton) {
@@ -7488,6 +7527,7 @@ function setWalletSearchPanelOpen(open, options = {}) {
   }
 
   if (!nextOpen) {
+    setWalletBinderDirectoryOpen(false, { restoreFocus: false });
     walletSearchToken += 1;
     walletProviderListOpen = false;
     setWalletSearchLoading(false);
@@ -7501,10 +7541,492 @@ function setWalletSearchPanelOpen(open, options = {}) {
   setWalletSearchLoading(false);
   refreshCompatibleSolanaWallets();
   updateWalletAuthUi();
+  prefetchWalletBinderDirectory();
   requestAnimationFrame(() => {
-    if (walletAuthSession?.authenticated) els.walletConnectButton.focus();
-    else els.walletAddressInput.focus();
+    els.walletBinderDirectoryButton.focus();
   });
+}
+
+function prefetchWalletBinderDirectory() {
+  if (walletBinderDirectoryLoading || walletBinderDirectoryTotal != null) return;
+  loadWalletBinderDirectory({ reset: true }).catch(() => {
+    // Opening the directory will expose its retry control if this warmup fails.
+  });
+}
+
+function openWalletBinderDirectory() {
+  if (!walletSearchOpen || walletBinderDirectoryTransitioning) return;
+  setWalletBinderDirectoryOpen(true);
+}
+
+function setWalletBinderDirectoryOpen(open, options = {}) {
+  const nextOpen = Boolean(open) && walletSearchOpen;
+  walletBinderDirectoryOpen = nextOpen;
+  els.walletSearchForm.classList.toggle("is-directory-open", nextOpen);
+  els.walletBinderDirectory.hidden = !nextOpen;
+  els.walletBinderDirectoryButton.setAttribute("aria-expanded", String(nextOpen));
+  if (!nextOpen) {
+    if (options.restoreFocus !== false && walletSearchOpen) {
+      requestAnimationFrame(() => els.walletBinderDirectoryButton.focus());
+    }
+    return;
+  }
+
+  walletProviderListOpen = false;
+  updateWalletAuthUi();
+  requestAnimationFrame(() => els.walletBinderDirectoryBackButton.focus());
+  if (walletBinderDirectoryTotal == null) {
+    loadWalletBinderDirectory({ reset: true }).catch(console.error);
+  } else {
+    updateWalletBinderDirectorySummary();
+    requestAnimationFrame(maybeLoadMoreWalletBinders);
+  }
+}
+
+async function loadWalletBinderDirectory({ reset = false } = {}) {
+  if (walletBinderDirectoryLoading) return;
+  if (!reset && !walletBinderDirectoryNextCursor) return;
+  const token = reset ? ++walletBinderDirectoryToken : walletBinderDirectoryToken;
+  if (reset) {
+    walletBinderDirectoryEntries = [];
+    walletBinderDirectoryNextCursor = null;
+    walletBinderDirectoryTotal = null;
+    walletBinderDirectoryUnverifiedCount = 0;
+    renderWalletBinderDirectorySkeletons();
+  }
+  walletBinderDirectoryLoading = true;
+  updateWalletBinderDirectorySummary();
+  updateWalletDialogBusyState();
+
+  try {
+    const payload = await getPublicWalletBinders(WALLET_PUBLIC_API_BASE_URL, {
+      limit: WALLET_BINDER_DIRECTORY_PAGE_SIZE,
+      cursor: reset ? "" : walletBinderDirectoryNextCursor,
+      version: "2",
+    });
+    if (token !== walletBinderDirectoryToken) return;
+    const knownAddresses = new Set(
+      walletBinderDirectoryEntries.map((entry) => entry.walletAddress),
+    );
+    const candidateEntries = (Array.isArray(payload?.binders) ? payload.binders : [])
+      .filter((entry) => (
+        isPossibleSolanaAddress(entry?.walletAddress)
+        && !knownAddresses.has(entry.walletAddress)
+      ));
+    const checkedEntries = await getNonemptyWalletBinderDirectoryEntries(
+      candidateEntries,
+      token,
+    );
+    if (token !== walletBinderDirectoryToken) return;
+    const newEntries = checkedEntries.filter((entry) => !entry.holdingsUnverified);
+    const unverifiedEntries = checkedEntries.filter((entry) => entry.holdingsUnverified);
+    if (reset) els.walletBinderDirectoryGallery.replaceChildren();
+    walletBinderDirectoryEntries.push(...newEntries, ...unverifiedEntries);
+    walletBinderDirectoryUnverifiedCount += unverifiedEntries.length;
+    walletBinderDirectoryTotal = walletBinderDirectoryEntries.length;
+    walletBinderDirectoryNextCursor = typeof payload?.nextCursor === "string"
+      && payload.nextCursor
+      ? payload.nextCursor
+      : null;
+    appendWalletBinderDirectoryEntries([...newEntries, ...unverifiedEntries]);
+  } catch (error) {
+    if (token !== walletBinderDirectoryToken) return;
+    if (reset) els.walletBinderDirectoryGallery.replaceChildren();
+    walletBinderDirectoryTotal = null;
+    walletBinderDirectoryNextCursor = null;
+    els.walletBinderDirectoryStatus.replaceChildren(
+      createWalletBinderDirectoryRetryButton(),
+    );
+    throw error;
+  } finally {
+    if (token !== walletBinderDirectoryToken) return;
+    walletBinderDirectoryLoading = false;
+    updateWalletBinderDirectorySummary();
+    updateWalletDialogBusyState();
+    requestAnimationFrame(maybeLoadMoreWalletBinders);
+  }
+}
+
+async function getNonemptyWalletBinderDirectoryEntries(entries, token) {
+  if (!entries.length) return [];
+  const checked = new Array(entries.length);
+  const unresolvedEntries = [];
+  entries.forEach((entry, index) => {
+    if (Number.isInteger(entry.supportedCardCount) && entry.supportedCardCount >= 0) {
+      checked[index] = entry.supportedCardCount > 0
+        ? { ...entry, cardCount: entry.supportedCardCount }
+        : null;
+    } else {
+      unresolvedEntries.push({ entry, index });
+    }
+  });
+  if (!unresolvedEntries.length) return checked.filter(Boolean);
+
+  // Older or newly-created profiles may not have a server summary yet. Only
+  // those profiles need the slower live ownership lookup and full card index.
+  await ensureAllCollectionCards();
+  let nextIndex = 0;
+  const workerCount = Math.min(
+    WALLET_BINDER_DIRECTORY_HOLDINGS_CONCURRENCY,
+    unresolvedEntries.length,
+  );
+  await Promise.all(Array.from({ length: workerCount }, async () => {
+    while (nextIndex < unresolvedEntries.length) {
+      const unresolved = unresolvedEntries[nextIndex];
+      nextIndex += 1;
+      if (token !== walletBinderDirectoryToken) return;
+      const { entry, index } = unresolved;
+      try {
+        const cardCount = await getWalletBinderDirectoryCardCount(entry.walletAddress);
+        checked[index] = cardCount > 0 ? { ...entry, cardCount } : null;
+      } catch (error) {
+        const savedCardCount = Math.max(0, Number(entry.savedCardCount) || 0);
+        console.warn(`Unable to verify holdings for ${entry.walletAddress}`, error);
+        checked[index] = savedCardCount > 0
+          ? { ...entry, cardCount: savedCardCount, holdingsUnverified: true }
+          : null;
+      }
+    }
+  }));
+  return checked.filter(Boolean);
+}
+
+async function getWalletBinderDirectoryCardCount(address) {
+  const cached = walletBinderDirectoryCardCountCache.get(address);
+  if (cached && Date.now() - cached.checkedAt < WALLET_HOLDINGS_FOCUS_REFRESH_MS) {
+    return cached.cardCount;
+  }
+  const payload = await fetchLiveWalletHoldingsPayload(
+    address,
+    WALLET_PUBLIC_API_BASE_URL,
+  );
+  const indexes = new Set();
+  addWalletCardMatches(indexes, new Map(), [
+    ...getCardMatchesForMints(payload.mints),
+    ...getCardMatchesForReferences(payload.cardRefs),
+  ]);
+  const cardCount = indexes.size;
+  walletBinderDirectoryCardCountCache.set(address, {
+    cardCount,
+    checkedAt: Date.now(),
+  });
+  return cardCount;
+}
+
+function renderWalletBinderDirectorySkeletons() {
+  const fragment = document.createDocumentFragment();
+  for (let index = 0; index < 8; index += 1) {
+    const skeleton = document.createElement("div");
+    skeleton.className = "wallet-binder-directory-skeleton";
+    skeleton.setAttribute("aria-hidden", "true");
+    fragment.append(skeleton);
+  }
+  els.walletBinderDirectoryGallery.replaceChildren(fragment);
+}
+
+function appendWalletBinderDirectoryEntries(entries) {
+  if (!entries.length) return;
+  const fragment = document.createDocumentFragment();
+  for (const entry of entries) fragment.append(createWalletBinderDirectoryCard(entry));
+  els.walletBinderDirectoryGallery.append(fragment);
+}
+
+function createWalletBinderDirectoryCard(entry) {
+  const address = entry.walletAddress;
+  const link = document.createElement("a");
+  link.className = "wallet-binder-directory-card";
+  link.href = new URL(`/${address}`, window.location.origin).href;
+  link.dataset.walletAddress = address;
+  link.setAttribute("role", "listitem");
+  link.setAttribute("aria-label", `Open wallet binder ${address}`);
+  link.title = address;
+
+  const cover = document.createElement("div");
+  cover.className = "wallet-binder-directory-cover is-loading";
+  cover.dataset.loadingStartedAt = String(performance.now());
+  cover.dataset.baseColor = entry.cover?.baseColor || BINDER_COVER_DEFAULT_COLOR_HEX;
+  const canvas = document.createElement("canvas");
+  canvas.width = 420;
+  canvas.height = Math.round(canvas.width * 7.286 / 5.234);
+  canvas.setAttribute("aria-hidden", "true");
+  cover.append(canvas);
+
+  const name = document.createElement("span");
+  name.className = "wallet-binder-directory-wallet-name";
+  name.textContent = shortenSolAddress(address);
+  const cardCount = document.createElement("span");
+  cardCount.className = "wallet-binder-directory-card-count";
+  cardCount.textContent = `${entry.cardCount} card${entry.cardCount === 1 ? "" : "s"}`;
+  const tradeCardCount = Math.max(0, Number(entry.tradeCardCount) || 0);
+  const tradeCount = document.createElement("span");
+  tradeCount.className = "wallet-binder-directory-trade-count";
+  tradeCount.classList.toggle("is-empty", tradeCardCount === 0);
+  tradeCount.textContent = `${tradeCardCount} card${tradeCardCount === 1 ? "" : "s"} available for trade`;
+  link.setAttribute(
+    "aria-label",
+    `Open wallet binder ${address}, ${entry.cardCount} cards, ${tradeCount.textContent}`,
+  );
+  link.append(cover, name, cardCount, tradeCount);
+
+  renderWalletBinderDirectoryCover(canvas, entry.cover)
+    .catch(() => {
+      drawDefaultWalletBinderDirectoryCover(canvas);
+    })
+    .then(() => {
+      if (entry.hasCustomArtwork) {
+        queueWalletBinderDirectoryCover(canvas, address);
+      } else {
+        settleWalletBinderDirectoryCover(canvas);
+      }
+    });
+  return link;
+}
+
+function settleWalletBinderDirectoryCover(canvas) {
+  const cover = canvas?.closest?.(".wallet-binder-directory-cover");
+  if (!cover?.classList.contains("is-loading")) return;
+  const loadingStartedAt = Number(cover.dataset.loadingStartedAt);
+  const loadingElapsed = Number.isFinite(loadingStartedAt)
+    ? performance.now() - loadingStartedAt
+    : WALLET_BINDER_DIRECTORY_COVER_MIN_LOADING_MS;
+  if (loadingElapsed < WALLET_BINDER_DIRECTORY_COVER_MIN_LOADING_MS) {
+    if (cover.dataset.loadingSettleScheduled === "true") return;
+    cover.dataset.loadingSettleScheduled = "true";
+    window.setTimeout(() => {
+      delete cover.dataset.loadingSettleScheduled;
+      settleWalletBinderDirectoryCover(canvas);
+    }, WALLET_BINDER_DIRECTORY_COVER_MIN_LOADING_MS - loadingElapsed);
+    return;
+  }
+  const currentOpacity = window.getComputedStyle(canvas).opacity;
+  cover.classList.remove("is-loading");
+  cover.classList.add("is-ready");
+  delete cover.dataset.loadingStartedAt;
+  if (
+    typeof canvas.animate === "function"
+    && !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
+    canvas.animate(
+      [{ opacity: currentOpacity }, { opacity: 1 }],
+      {
+        duration: 280,
+        easing: "cubic-bezier(0.2, 0.76, 0.2, 1)",
+      },
+    );
+  }
+}
+
+function queueWalletBinderDirectoryCover(canvas, address) {
+  if (typeof window.IntersectionObserver !== "function") {
+    loadWalletBinderDirectoryCover(canvas, address);
+    return;
+  }
+  if (!walletBinderDirectoryCoverObserver) {
+    walletBinderDirectoryCoverObserver = new IntersectionObserver((records) => {
+      for (const record of records) {
+        if (!record.isIntersecting) continue;
+        walletBinderDirectoryCoverObserver.unobserve(record.target);
+        const walletAddress = record.target.dataset.walletAddress || "";
+        if (isPossibleSolanaAddress(walletAddress)) {
+          loadWalletBinderDirectoryCover(record.target, walletAddress);
+        }
+      }
+    }, {
+      root: els.walletBinderDirectoryGallery,
+      rootMargin: "160px 0px",
+    });
+  }
+  canvas.dataset.walletAddress = address;
+  walletBinderDirectoryCoverObserver.observe(canvas);
+}
+
+async function loadWalletBinderDirectoryCover(canvas, address) {
+  try {
+    const payload = await getPublicWalletBinderCover(WALLET_PUBLIC_API_BASE_URL, address);
+    if (!canvas.isConnected || payload?.walletAddress !== address) return;
+    await renderWalletBinderDirectoryCover(canvas, payload.cover);
+  } catch {
+    // The lightweight cover already rendered, so an artwork failure is non-blocking.
+  } finally {
+    if (canvas.isConnected && canvas.dataset.walletAddress === address) {
+      settleWalletBinderDirectoryCover(canvas);
+    }
+  }
+}
+
+function createWalletBinderDirectoryRetryButton() {
+  const button = document.createElement("button");
+  button.className = "wallet-binder-directory-retry";
+  button.type = "button";
+  button.textContent = "Wallet binder gallery could not load. Try again.";
+  button.addEventListener("click", () => {
+    loadWalletBinderDirectory({ reset: true }).catch(console.error);
+  }, { once: true });
+  return button;
+}
+
+function updateWalletBinderDirectorySummary() {
+  const loaded = walletBinderDirectoryEntries.length;
+  const total = walletBinderDirectoryTotal;
+  const totalKnown = Number.isFinite(total);
+  els.walletBinderDirectoryButtonCount.hidden = !totalKnown;
+  if (totalKnown) els.walletBinderDirectoryButtonCount.textContent = String(total);
+  els.walletBinderDirectoryCount.textContent = totalKnown
+    ? `${total} public binder${total === 1 ? "" : "s"}`
+    : "Public binder covers";
+  if (!walletBinderDirectoryOpen) return;
+  if (walletBinderDirectoryLoading) {
+    els.walletBinderDirectoryStatus.textContent = loaded
+      ? `Loading more binders… ${loaded} shown`
+      : "Loading public binder covers…";
+  } else if (totalKnown && total === 0) {
+    els.walletBinderDirectoryStatus.textContent = "No public wallet binders have been created yet.";
+  } else if (walletBinderDirectoryNextCursor) {
+    els.walletBinderDirectoryStatus.textContent = `${loaded} of ${total} binders`;
+  } else if (totalKnown) {
+    els.walletBinderDirectoryStatus.textContent = walletBinderDirectoryUnverifiedCount
+      ? `${total} public wallet binder${total === 1 ? "" : "s"} · ${walletBinderDirectoryUnverifiedCount} awaiting a fresh holdings check`
+      : `${total} public wallet binder${total === 1 ? "" : "s"}`;
+  }
+}
+
+function maybeLoadMoreWalletBinders() {
+  if (
+    !walletBinderDirectoryOpen
+    || walletBinderDirectoryLoading
+    || !walletBinderDirectoryNextCursor
+  ) return;
+  const gallery = els.walletBinderDirectoryGallery;
+  if (gallery.scrollHeight - gallery.scrollTop - gallery.clientHeight > 320) return;
+  loadWalletBinderDirectory().catch(console.error);
+}
+
+function handleWalletBinderDirectoryClick(event) {
+  const link = event.target.closest("a[data-wallet-address]");
+  if (!link || !els.walletBinderDirectoryGallery.contains(link)) return;
+  if (event.button > 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  const address = link.dataset.walletAddress || "";
+  if (!isPossibleSolanaAddress(address)) return;
+  event.preventDefault();
+  transitionFromWalletBinderDirectory(link, address).catch(() => {
+    navigateToWalletBinder(address);
+  });
+}
+
+async function transitionFromWalletBinderDirectory(link, address) {
+  if (walletBinderDirectoryTransitioning) return;
+  walletBinderDirectoryTransitioning = true;
+  const cover = link.querySelector(".wallet-binder-directory-cover");
+  writeWalletBinderDirectoryArrival(address, cover);
+  if (!cover || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    navigateToWalletBinder(address);
+    return;
+  }
+
+  const sourceRect = cover.getBoundingClientRect();
+  const aspect = sourceRect.width / Math.max(1, sourceRect.height);
+  const target = getWalletBinderDirectoryTransitionTarget(aspect);
+
+  const flight = cloneWalletBinderDirectoryCover(cover);
+  flight.classList.add("wallet-binder-directory-flight");
+  Object.assign(flight.style, {
+    left: `${sourceRect.left}px`,
+    top: `${sourceRect.top}px`,
+    width: `${sourceRect.width}px`,
+    height: `${sourceRect.height}px`,
+  });
+  document.body.classList.add("is-wallet-binder-directory-transitioning");
+  document.body.append(flight);
+  const timing = {
+    duration: WALLET_BINDER_DIRECTORY_TRANSITION_MS,
+    easing: "cubic-bezier(0.2, 0.82, 0.2, 1)",
+    fill: "forwards",
+  };
+  const targetScale = target.width / Math.max(1, sourceRect.width);
+  const translateX = target.left + target.width / 2
+    - (sourceRect.left + sourceRect.width / 2);
+  const translateY = target.top + target.height / 2
+    - (sourceRect.top + sourceRect.height / 2);
+  const animation = flight.animate([
+    {
+      transform: "translate3d(0, 0, 0) scale(1) rotate(0deg)",
+    },
+    {
+      transform: `translate3d(${translateX}px, ${translateY}px, 0) scale(${targetScale}) rotate(-0.35deg)`,
+    },
+  ], timing);
+  await animation.finished.catch(() => {});
+  navigateToWalletBinder(address);
+}
+
+function cloneWalletBinderDirectoryCover(cover) {
+  const clone = cover.cloneNode(true);
+  clone.classList.remove("is-loading");
+  clone.classList.add("is-ready");
+  const sourceCanvas = cover.querySelector("canvas");
+  const cloneCanvas = clone.querySelector("canvas");
+  if (sourceCanvas && cloneCanvas) {
+    cloneCanvas.width = sourceCanvas.width;
+    cloneCanvas.height = sourceCanvas.height;
+    cloneCanvas.getContext("2d")?.drawImage(sourceCanvas, 0, 0);
+    cloneCanvas.style.animation = "none";
+    cloneCanvas.style.opacity = "1";
+  }
+  return clone;
+}
+
+function getWalletBinderDirectoryTransitionTarget(aspect) {
+  const safeAspect = Number.isFinite(aspect) && aspect > 0 ? aspect : 5.234 / 7.286;
+  const maximumWidth = Math.min(window.innerWidth * 0.56, 430);
+  const maximumHeight = window.innerHeight * 0.76;
+  const width = Math.min(maximumWidth, maximumHeight * safeAspect);
+  const height = width / safeAspect;
+  return {
+    width,
+    height,
+    left: (window.innerWidth - width) / 2,
+    top: (window.innerHeight - height) / 2,
+  };
+}
+
+function writeWalletBinderDirectoryArrival(address, cover) {
+  try {
+    const canvas = cover?.querySelector("canvas");
+    let previewDataUrl = "";
+    try {
+      previewDataUrl = canvas?.toDataURL("image/webp", 0.86) || "";
+    } catch {
+      // Cross-origin sticker art can make a canvas unreadable; the bridge is optional.
+    }
+    sessionStorage.setItem(
+      WALLET_BINDER_DIRECTORY_TRANSITION_STORAGE_KEY,
+      JSON.stringify({
+        address,
+        createdAt: Date.now(),
+        previewDataUrl,
+        baseColor: cover?.dataset.baseColor || BINDER_COVER_DEFAULT_COLOR_HEX,
+        light: els.body.classList.contains("is-light"),
+      }),
+    );
+  } catch {
+    // The destination still works when private browsing disables session storage.
+  }
+}
+
+function readWalletBinderDirectoryArrival(address) {
+  if (!address) return null;
+  try {
+    const stored = sessionStorage.getItem(WALLET_BINDER_DIRECTORY_TRANSITION_STORAGE_KEY);
+    sessionStorage.removeItem(WALLET_BINDER_DIRECTORY_TRANSITION_STORAGE_KEY);
+    const arrival = JSON.parse(stored || "null");
+    return arrival?.address === address
+      && Date.now() - Number(arrival.createdAt || 0) >= 0
+      && Date.now() - Number(arrival.createdAt || 0) < 15_000
+      ? arrival
+      : null;
+  } catch {
+    return null;
+  }
 }
 
 function updateWalletSearchState() {
@@ -7562,6 +8084,12 @@ function applyWalletCardFilter(address, { indexes, matchedMints }, options = {})
   updateFavoriteButtons();
   updateTraitSearchState();
   resetBinderGalleryPosition();
+  if (options.startAtFrontCover) {
+    binderTargetClosure = -1;
+    binderClosure = -1;
+    binderSinglePageSide = BINDER_SINGLE_PAGE_COVER_SIDE;
+    binderSinglePageSideTouched = true;
+  }
   renderGallery();
   updateBinderOrderEditorAvailability();
 }
@@ -7571,8 +8099,12 @@ function updateWalletDialogBusyState() {
   els.walletAddressInput.disabled = busy;
   els.walletSearchSubmitButton.disabled = busy;
   els.walletConnectButton.disabled = busy;
+  els.walletBinderDirectoryButton.disabled = busy;
   els.walletProviderList.toggleAttribute("inert", busy);
-  els.walletSearchPanel.setAttribute("aria-busy", String(busy && walletSearchOpen));
+  els.walletSearchPanel.setAttribute(
+    "aria-busy",
+    String((busy || walletBinderDirectoryLoading) && walletSearchOpen),
+  );
 }
 
 function refreshCompatibleSolanaWallets() {
@@ -10868,11 +11400,18 @@ async function loadWalletBinderRoute(address) {
     applyWalletCardFilter(address, result, {
       cardOrder: profile?.cardOrder,
       tradeCardIds: profile?.tradeCardIds,
+      startAtFrontCover: WALLET_BINDER_DIRECTORY_ARRIVAL,
     });
+    if (WALLET_BINDER_DIRECTORY_ARRIVAL) {
+      animateWalletBinderDirectoryArrival().catch(() => {
+        dismissWalletBinderDirectoryArrivalBridge();
+      });
+    }
     if (readGalleryUrlState().hasParameters) {
       await handleGalleryUrlNavigation();
     }
   } catch (error) {
+    dismissWalletBinderDirectoryArrivalBridge();
     walletRouteLoading = false;
     walletRouteLoadFailed = true;
     walletRouteLoadErrorMessage = error?.code === "binder_not_found"
@@ -10971,7 +11510,18 @@ function syncGlobalTradeMarks(previousIds, nextIds) {
 }
 
 async function getWalletBinderProfile(address) {
-  return getPublicWalletBinder(WALLET_AUTH_API_BASE_URL, address);
+  if (WALLET_BINDER_DIRECTORY_ARRIVAL) {
+    return getPublicWalletBinder(WALLET_PUBLIC_API_BASE_URL, address, {
+      credentials: "omit",
+    });
+  }
+  const profile = await getPublicWalletBinder(WALLET_AUTH_API_BASE_URL, address);
+  if (profile?.exists || WALLET_AUTH_API_BASE_URL === WALLET_PUBLIC_API_BASE_URL) {
+    return profile;
+  }
+  return getPublicWalletBinder(WALLET_PUBLIC_API_BASE_URL, address, {
+    credentials: "omit",
+  });
 }
 
 function orderWalletCardIndexes(indexes, cardOrder = []) {
@@ -10997,6 +11547,112 @@ function compareWalletCardIndexes(leftIndex, rightIndex) {
 function navigateToWalletBinder(address) {
   const destination = new URL(`/${address}`, window.location.origin);
   window.location.assign(destination.href);
+}
+
+function installWalletBinderDirectoryArrivalBridge() {
+  const arrival = WALLET_BINDER_DIRECTORY_ARRIVAL;
+  if (!arrival || (!arrival.previewDataUrl && !arrival.baseColor)) {
+    clearWalletBinderDirectoryArrivalBootstrap();
+    return;
+  }
+  const target = getWalletBinderDirectoryTransitionTarget(5.234 / 7.286);
+  const layer = document.createElement("div");
+  layer.className = "wallet-binder-directory-arrival-layer";
+  layer.classList.toggle("is-light", Boolean(arrival.light));
+  layer.setAttribute("aria-hidden", "true");
+  const cover = document.createElement("div");
+  cover.className = "wallet-binder-directory-arrival-cover";
+  Object.assign(cover.style, {
+    left: `${target.left}px`,
+    top: `${target.top}px`,
+    width: `${target.width}px`,
+    height: `${target.height}px`,
+    backgroundColor: /^#[0-9a-f]{6}$/i.test(arrival.baseColor || "")
+      ? arrival.baseColor
+      : BINDER_COVER_DEFAULT_COLOR_HEX,
+  });
+  if (arrival.previewDataUrl) {
+    const image = document.createElement("img");
+    image.src = arrival.previewDataUrl;
+    image.alt = "";
+    cover.append(image);
+  }
+  els.binderCanvas.style.opacity = "0";
+  document.body.append(layer, cover);
+  walletBinderDirectoryArrivalBridge = { layer, cover };
+  clearWalletBinderDirectoryArrivalBootstrap();
+}
+
+function clearWalletBinderDirectoryArrivalBootstrap() {
+  const root = document.documentElement;
+  root.classList.remove(
+    "wallet-binder-arrival-bootstrap",
+    "wallet-binder-arrival-bootstrap-light",
+  );
+  root.style.removeProperty("--wallet-binder-arrival-base-color");
+  root.style.removeProperty("--wallet-binder-arrival-preview");
+}
+
+async function animateWalletBinderDirectoryArrival() {
+  const bridge = walletBinderDirectoryArrivalBridge;
+  const coverTexturePromise = binderWalletCoverArtworkPromise;
+  if (coverTexturePromise) {
+    await Promise.race([
+      coverTexturePromise.catch(() => null),
+      delay(2200),
+    ]);
+  }
+  await nextAnimationFrame();
+  await nextAnimationFrame();
+  if (
+    typeof els.binderCanvas?.animate !== "function"
+    || window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
+    dismissWalletBinderDirectoryArrivalBridge();
+    return;
+  }
+  els.binderCanvas.style.opacity = "1";
+  const timing = {
+    duration: 380,
+    easing: "cubic-bezier(0.2, 0.82, 0.2, 1)",
+    fill: "forwards",
+  };
+  const binderAnimation = els.binderCanvas.animate(
+    [
+      { opacity: 0, transform: "scale(0.985)" },
+      { opacity: 1, transform: "scale(1)" },
+    ],
+    timing,
+  );
+  if (!bridge) {
+    await binderAnimation.finished.catch(() => {});
+    return;
+  }
+  const layerAnimation = bridge.layer.animate(
+    [{ opacity: 1 }, { opacity: 0 }],
+    timing,
+  );
+  const coverAnimation = bridge.cover.animate(
+    [
+      { opacity: 1, transform: "scale(1) rotate(-0.35deg)" },
+      { opacity: 0, transform: "scale(1.025) rotate(0deg)" },
+    ],
+    timing,
+  );
+  await Promise.all([
+    binderAnimation.finished.catch(() => {}),
+    layerAnimation.finished.catch(() => {}),
+    coverAnimation.finished.catch(() => {}),
+  ]);
+  dismissWalletBinderDirectoryArrivalBridge();
+}
+
+function dismissWalletBinderDirectoryArrivalBridge() {
+  walletBinderDirectoryArrivalBridge?.layer.remove();
+  walletBinderDirectoryArrivalBridge?.cover.remove();
+  walletBinderDirectoryArrivalBridge = null;
+  clearWalletBinderDirectoryArrivalBootstrap();
+  if (els.binderCanvas) els.binderCanvas.style.opacity = "";
 }
 
 function ensureWalletCanonicalLink(address) {
@@ -11088,8 +11744,8 @@ async function fetchLiveWalletCardMatches(address) {
   ];
 }
 
-async function fetchLiveWalletHoldingsPayload(address) {
-  const url = `${WALLET_AUTH_API_BASE_URL}/wallets/${encodeURIComponent(address)}/holdings`;
+async function fetchLiveWalletHoldingsPayload(address, apiBaseUrl = WALLET_AUTH_API_BASE_URL) {
+  const url = `${apiBaseUrl}/wallets/${encodeURIComponent(address)}/holdings`;
   const response = await fetchWithTimeout(url, {
     headers: { accept: "application/json" },
     cache: "no-store",
@@ -15343,11 +15999,63 @@ async function createBinderCoverSurfaceTexture(settings, surfaceName, coverWidth
   context.imageSmoothingEnabled = true;
   context.imageSmoothingQuality = "high";
 
+  await drawBinderCoverSurfaceContent(context, settings, surfaceName);
+  return configureDisplayTexture(new THREE.CanvasTexture(surface));
+}
+
+async function renderWalletBinderDirectoryCover(canvas, rawSettings) {
+  const settings = normalizeBinderCoverSettings(rawSettings);
+  drawDefaultWalletBinderDirectoryCover(canvas, settings.baseColor);
+  const context = canvas.getContext("2d", { alpha: false });
+  await drawBinderCoverSurfaceContent(context, settings, "front", {
+    fetchPriority: "auto",
+    ignoreImageErrors: true,
+  });
+}
+
+function drawDefaultWalletBinderDirectoryCover(
+  canvas,
+  baseColor = BINDER_COVER_DEFAULT_COLOR_HEX,
+) {
+  const context = canvas.getContext("2d", { alpha: false });
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  context.fillStyle = /^#[0-9a-f]{6}$/i.test(baseColor)
+    ? baseColor
+    : BINDER_COVER_DEFAULT_COLOR_HEX;
+  context.fillRect(0, 0, canvas.width, canvas.height);
+  const glow = context.createRadialGradient(
+    canvas.width * 0.32,
+    canvas.height * 0.22,
+    0,
+    canvas.width * 0.32,
+    canvas.height * 0.22,
+    canvas.width * 0.88,
+  );
+  glow.addColorStop(0, "rgba(255,255,255,0.085)");
+  glow.addColorStop(0.48, "rgba(255,255,255,0.018)");
+  glow.addColorStop(1, "rgba(0,0,0,0.19)");
+  context.fillStyle = glow;
+  context.fillRect(0, 0, canvas.width, canvas.height);
+}
+
+async function drawBinderCoverSurfaceContent(
+  context,
+  settings,
+  surfaceName,
+  { fetchPriority = "high", ignoreImageErrors = false } = {},
+) {
+  const surface = context.canvas;
+  context.imageSmoothingEnabled = true;
+  context.imageSmoothingQuality = "high";
+
   const artworkUrl = surfaceName === "back"
     ? settings.backArtworkDataUrl
     : settings.artworkDataUrl;
   const artworkImage = artworkUrl
-    ? await loadTextureImage(artworkUrl, { fetchPriority: "high" })
+    ? await loadTextureImage(artworkUrl, { fetchPriority }).catch((error) => {
+      if (ignoreImageErrors) return null;
+      throw error;
+    })
     : null;
   if (artworkImage) {
     const imageWidth = artworkImage.naturalWidth || artworkImage.width;
@@ -15387,7 +16095,7 @@ async function createBinderCoverSurfaceTexture(settings, surfaceName, coverWidth
       text: text.text,
       links: [],
       box,
-      fontSize: text.fontSize,
+      fontSize: text.fontSize * context.canvas.width / 1024,
       fontStack: SITE_FONT_STACK,
       textFillStyle: text.color,
       linkFillStyle: text.color,
@@ -15396,14 +16104,13 @@ async function createBinderCoverSurfaceTexture(settings, surfaceName, coverWidth
 
   const stickers = settings.stickers.filter((sticker) => sticker.surface === surfaceName);
   const stickerImages = await Promise.all(stickers.map((sticker) => (
-    loadTextureImage(sticker.imageUrl, { fetchPriority: "high" })
+    loadTextureImage(sticker.imageUrl, { fetchPriority })
       .then((image) => ({ sticker, image }))
       .catch(() => null)
   )));
   for (const entry of stickerImages) {
     if (entry) drawBinderCoverStickerImage(context, entry.sticker, entry.image);
   }
-  return configureDisplayTexture(new THREE.CanvasTexture(surface));
 }
 
 function drawBinderCoverStickerImage(context, sticker, image) {

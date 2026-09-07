@@ -6,9 +6,62 @@ import bs58 from "bs58";
 import {
   getGlobalTradeStatuses,
   getOwnerWalletBinder,
+  getPublicWalletBinderCover,
+  getPublicWalletBinders,
   signInWithSolanaWallet,
   updateOwnerWalletBinder,
 } from "../frontend/wallet-auth-entry.js";
+
+test("public binder directory client forwards pagination without credentials data", async () => {
+  const originalFetch = globalThis.fetch;
+  let call;
+  globalThis.fetch = async (url, options) => {
+    call = { url: String(url), options };
+    return new Response(JSON.stringify({ binders: [], total: 0, nextCursor: null }), {
+      status: 200,
+      headers: { "content-type": "application/json" },
+    });
+  };
+  try {
+    const result = await getPublicWalletBinders("https://api.cards.art/api/", {
+      limit: 18,
+      cursor: "next-page",
+      version: "2",
+    });
+    assert.equal(
+      call.url,
+      "https://api.cards.art/api/binders?limit=18&cursor=next-page&v=2",
+    );
+    assert.equal(call.options.method, "GET");
+    assert.equal(call.options.credentials, "omit");
+    assert.deepEqual(result.binders, []);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("public binder cover client loads artwork without credentials", async () => {
+  const originalFetch = globalThis.fetch;
+  let call;
+  globalThis.fetch = async (url, options) => {
+    call = { url: String(url), options };
+    return new Response(JSON.stringify({
+      walletAddress: "wallet-address",
+      cover: { artworkDataUrl: "data:image/webp;base64,AAAA" },
+    }), { status: 200, headers: { "content-type": "application/json" } });
+  };
+  try {
+    const result = await getPublicWalletBinderCover(
+      "https://api.cards.art/api/",
+      "wallet-address",
+    );
+    assert.equal(call.url, "https://api.cards.art/api/binder-covers/wallet-address");
+    assert.equal(call.options.credentials, "omit");
+    assert.equal(result.cover.artworkDataUrl, "data:image/webp;base64,AAAA");
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
 
 test("global trade status client reads the shared binder marks", async () => {
   const originalFetch = globalThis.fetch;

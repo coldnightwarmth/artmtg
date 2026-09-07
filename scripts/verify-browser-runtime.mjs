@@ -15,8 +15,8 @@ import { COMMUNITY_COLLECTIONS } from "./community-collections.mjs";
 import { SWAG_PACK_TRANSPARENT_STICKER_FILES } from "../swag-pack-stickers.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const APP_VERSION = "cardnft-380";
-const STYLE_VERSION = "cardnft-155";
+const APP_VERSION = "cardnft-391";
+const STYLE_VERSION = "cardnft-163";
 const THREE_VERSION = "three-r165-min-1";
 
 const TRAIT_SPECS = [
@@ -111,6 +111,25 @@ const clearLiveDataMigration = await readFile(
   path.join(ROOT, "worker", "migrations", "0004_clear_card_statuses.sql"),
   "utf8",
 );
+const binderCountMigration = await readFile(
+  path.join(ROOT, "worker", "migrations", "0005_binder_supported_card_counts.sql"),
+  "utf8",
+);
+const supportedCardIndex = await readFile(
+  path.join(ROOT, "worker", "src", "supported-card-index.js"),
+  "utf8",
+);
+const binderIntroSuppressorSource = app.slice(
+  app.indexOf("function hasActiveBinderIntroSuppressor()"),
+  app.indexOf("function updateTraitSearchButtonLabel()"),
+);
+assert(
+  binderIntroSuppressorSource.includes("favoritesOnly")
+    && !binderIntroSuppressorSource.includes("activeCollectionFilter")
+    && !binderIntroSuppressorSource.includes("activeTraitFilter")
+    && !binderIntroSuppressorSource.includes('traitSortCategory !== "all"'),
+  "sorting or filtering still suppresses the binder inside-cover content",
+);
 const screensaverHorizontalImpulseCount = (
   app.match(/entry\.velocityX \+=/g) || []
 ).length;
@@ -175,7 +194,7 @@ assert(
   "simple gallery control does not swap to the neutral binder icon",
 );
 assert(
-  app.includes('from "./wallet-auth.js?v=wallet-auth-5"')
+  app.includes('from "./wallet-auth.js?v=wallet-auth-8"')
     && app.includes("async function startWalletSignIn(")
     && app.includes("async function loadWalletBinderRoute(")
     && app.includes("walletFilterCardIndexes.slice()")
@@ -280,7 +299,7 @@ assert(
     && app.includes("button.animate(")
     && app.includes("binderOrderHasChanges()")
     && app.includes("function invalidateWalletAuthSession(")
-    && app.includes('return getPublicWalletBinder(WALLET_AUTH_API_BASE_URL, address)')
+    && app.includes('getPublicWalletBinder(WALLET_AUTH_API_BASE_URL, address)')
     && walletAuth.includes("getOwnerWalletBinder")
     && walletAuth.includes("updateOwnerWalletBinder")
     && walletAuth.includes('"/me/binder"')
@@ -305,6 +324,67 @@ assert(
     && styles.includes("will-change: transform")
     && !styles.includes("will-change: left, top;"),
   "binder order dragging does not use the stable frame-synchronized interaction path",
+);
+assert(
+  app.includes("getPublicWalletBinders,")
+    && app.includes('const WALLET_PUBLIC_API_BASE_URL = "https://api.cards.art/api"')
+    && app.includes("function openWalletBinderDirectory(")
+    && app.includes("async function loadWalletBinderDirectory(")
+    && app.includes("function prefetchWalletBinderDirectory(")
+    && app.includes("async function getNonemptyWalletBinderDirectoryEntries(")
+    && app.includes("async function getWalletBinderDirectoryCardCount(")
+    && app.includes("WALLET_BINDER_DIRECTORY_HOLDINGS_CONCURRENCY")
+    && app.includes("Number.isInteger(entry.supportedCardCount)")
+    && app.includes('version: "2"')
+    && app.includes("wallet-binder-directory-trade-count")
+    && app.includes("function createWalletBinderDirectoryCard(")
+    && app.includes("async function loadWalletBinderDirectoryCover(")
+    && app.includes("function queueWalletBinderDirectoryCover(")
+    && app.includes("function settleWalletBinderDirectoryCover(")
+    && app.includes("WALLET_BINDER_DIRECTORY_COVER_MIN_LOADING_MS = 1050")
+    && app.includes('cover.className = "wallet-binder-directory-cover is-loading"')
+    && app.includes("cover.dataset.loadingStartedAt = String(performance.now())")
+    && !app.includes('layer.className = "wallet-binder-directory-transition-layer"')
+    && app.includes("new IntersectionObserver(")
+    && app.includes("function transitionFromWalletBinderDirectory(")
+    && app.includes("function getWalletBinderDirectoryTransitionTarget(")
+    && app.includes("function installWalletBinderDirectoryArrivalBridge(")
+    && app.includes("function clearWalletBinderDirectoryArrivalBootstrap(")
+    && app.includes("function dismissWalletBinderDirectoryArrivalBridge(")
+    && app.includes("previewDataUrl")
+    && app.includes("binderWalletCoverArtworkPromise")
+    && app.includes("startAtFrontCover: WALLET_BINDER_DIRECTORY_ARRIVAL")
+    && app.includes("function renderWalletBinderDirectoryCover(")
+    && walletAuth.includes("async function getPublicWalletBinders(")
+    && walletAuth.includes("async function getPublicWalletBinderCover(")
+    && walletAuth.includes('credentials: "omit"')
+    && walletWorker.includes('`${API_PREFIX}/binders`')
+    && walletWorker.includes("async function getPublicBinderDirectory(")
+    && walletWorker.includes("async function getPublicBinderCover(")
+    && walletWorker.includes("WHERE is_public = 1")
+    && walletWorker.includes("savedCardCount:")
+    && walletWorker.includes("supportedCardCount:")
+    && walletWorker.includes("tradeCardCount:")
+    && walletWorker.includes("refreshPublicBinderSupportedCardCounts")
+    && walletWorker.includes("publicCors: true")
+    && liveDataWorker.includes("SUPPORTED_CARD_MINT_INDEX")
+    && liveDataWorker.includes("countSupportedWalletCards")
+    && binderCountMigration.includes("supported_card_count INTEGER")
+    && binderCountMigration.includes("holdings_checked_at INTEGER")
+    && supportedCardIndex.includes("export const SUPPORTED_CARD_MINT_INDEX")
+    && styles.includes(".wallet-binder-directory-gallery")
+    && styles.includes(".wallet-binder-directory-cover.is-loading canvas")
+    && styles.includes("@keyframes wallet-binder-directory-cover-loading")
+    && !styles.includes(".wallet-binder-directory-transition-layer")
+    && styles.includes(".wallet-binder-directory-flight")
+    && styles.includes(".wallet-binder-directory-arrival-cover")
+    && styles.includes("linear-gradient(145deg, #121712, #201b0f)")
+    && walletRouteShell.includes("wallet-binder-arrival-bootstrap")
+    && walletRouteShell.includes("--wallet-binder-arrival-preview")
+    && walletRouteShell.includes("cardnft:walletBinderDirectoryTransition:v1")
+    && styles.includes("max-width: none")
+    && styles.includes("will-change: transform"),
+  "public wallet binder directory or animated cover entry is incomplete",
 );
 assert(
   app.includes("function setBinderCustomizationMode(mode")
@@ -1159,13 +1239,18 @@ async function verifyPage({ pagePath, prefix, dataFile }) {
   for (const value of [
     `${prefix}styles.css?v=${STYLE_VERSION}`,
     `${prefix}app.js?v=${APP_VERSION}`,
-    `${prefix}wallet-auth.js?v=wallet-auth-5`,
+    `${prefix}wallet-auth.js?v=wallet-auth-8`,
     `${prefix}swag-pack-stickers.js?v=swag-pack-transparent-1`,
     `${prefix}vendor/three.module.min.js?v=${THREE_VERSION}`,
     `${prefix}browser-traits-catalog.js?v=browser-traits-9`,
     `${prefix}${dataFile}`,
     'id="binderTableViewButton"',
     'id="walletConnectButton"',
+    'id="walletBinderDirectoryButton"',
+    'id="walletBinderDirectory"',
+    'id="walletBinderDirectoryBackButton"',
+    'id="walletBinderDirectoryGallery"',
+    'id="walletBinderDirectoryStatus"',
     'id="walletConnectButtonLabel"',
     'id="walletProviderList"',
     'id="walletConnectStatus"',
@@ -1242,6 +1327,11 @@ async function verifyPage({ pagePath, prefix, dataFile }) {
     assert(
       page.includes('<link rel="preconnect" href="https://cdn.lil.org" crossorigin>'),
       "Card NFT 2 page does not preconnect its super-rare texture origin",
+    );
+    assert(
+      page.includes("wallet-binder-arrival-bootstrap")
+        && page.includes("--wallet-binder-arrival-preview"),
+      "The root page is missing the parser-time wallet binder arrival bridge",
     );
   }
 }

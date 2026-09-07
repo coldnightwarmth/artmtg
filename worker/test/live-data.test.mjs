@@ -142,6 +142,7 @@ test("wallet holdings include Clear references and owned Swag Pack sticker asset
       "new-clear-card-mint",
     ]);
     assert.deepEqual(holdings.cardRefs, [["clear", 192, "new-clear-card-mint"]]);
+    assert.equal(holdings.supportedCardCount, 1);
     assert.deepEqual(holdings.swagPackAssets, [{
       mint: "12FHUPi4u9sGyXwVvbJ1QcMNteSVKL4sUE8BJFjdcmta",
       name: "Golem",
@@ -212,6 +213,7 @@ test("wallet holdings continue past a misleading full-page total and include Pon
       ["clear", 64, "clear-card-64-mint"],
       ["poncho", 113, "poncho-card-113-mint"],
     ]);
+    assert.equal(holdings.supportedCardCount, 2);
   } finally {
     globalThis.fetch = originalFetch;
   }

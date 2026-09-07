@@ -19,6 +19,8 @@ const MAX_JSON_BODY_BYTES = 64 * 1024;
 const MAX_BINDER_JSON_BODY_BYTES = 4 * 1024 * 1024;
 const MAX_BINDER_CARD_ORDER_LENGTH = 25_000;
 const MAX_BINDER_COVER_STICKERS = 24;
+const DEFAULT_BINDER_DIRECTORY_PAGE_SIZE = 18;
+const MAX_BINDER_DIRECTORY_PAGE_SIZE = 36;
 const DEFAULT_SESSION_TTL_SECONDS = 7 * 24 * 60 * 60;
 const DEFAULT_AUTH_STATEMENT = "Sign in to cards.art to create and customize your card binder. This will not submit a transaction or cost SOL.";
 
@@ -67,6 +69,7 @@ export default {
     await Promise.all([
       cleanupExpiredAuthState(env),
       refreshLiveCardStatuses(env),
+      refreshPublicBinderSupportedCardCounts(env),
     ]);
   },
 };
@@ -114,7 +117,11 @@ async function routeRequest(request, env, requestId) {
     const address = assertSolanaAddress(decodeURIComponent(holdingsMatch[1]));
     await applyRateLimit(request, env, "wallet-holdings", 120, 10 * 60 * 1000, address);
     const payload = await fetchLiveWalletHoldings(address, env);
-    return jsonResponse(payload, 200, request, env, { cacheControl: "no-store" });
+    await recordBinderSupportedCardCount(address, payload.supportedCardCount, payload.fetchedAt, env);
+    return jsonResponse(payload, 200, request, env, {
+      cacheControl: "no-store",
+      publicCors: true,
+    });
   }
   if (url.pathname === `${API_PREFIX}/auth/challenge` && request.method === "POST") {
     return createChallenge(request, env, requestId);
@@ -133,6 +140,14 @@ async function routeRequest(request, env, requestId) {
   }
   if (url.pathname === `${API_PREFIX}/me/binder` && request.method === "PUT") {
     return updateOwnerBinder(request, env);
+  }
+  if (url.pathname === `${API_PREFIX}/binders` && request.method === "GET") {
+    return getPublicBinderDirectory(request, env, url);
+  }
+
+  const binderCoverMatch = url.pathname.match(/^\/api\/binder-covers\/([^/]+)$/);
+  if (binderCoverMatch && request.method === "GET") {
+    return getPublicBinderCover(request, env, decodeURIComponent(binderCoverMatch[1]));
   }
 
   const binderMatch = url.pathname.match(/^\/api\/binders\/([^/]+)$/);
@@ -319,7 +334,89 @@ async function getPublicBinder(request, env, rawAddress) {
     200,
     request,
     env,
-    { cacheControl, robots: "noindex" },
+    {
+      cacheControl,
+      robots: "noindex",
+      publicCors: !row || Boolean(row.is_public),
+    },
+  );
+}
+
+async function getPublicBinderDirectory(request, env, url) {
+  const limitValue = url.searchParams.get("limit");
+  const requestedLimit = limitValue == null ? Number.NaN : Number(limitValue);
+  const limit = Number.isInteger(requestedLimit)
+    ? Math.max(1, Math.min(MAX_BINDER_DIRECTORY_PAGE_SIZE, requestedLimit))
+    : DEFAULT_BINDER_DIRECTORY_PAGE_SIZE;
+  const cursor = decodeBinderDirectoryCursor(url.searchParams.get("cursor"));
+  let rowsStatement = env.DB.prepare(
+    `SELECT wallet_address, card_order_json, trade_card_ids_json, cover_json, supported_card_count,
+            holdings_checked_at, created_at, updated_at
+     FROM binder_profiles
+     WHERE is_public = 1
+     ORDER BY updated_at DESC, wallet_address DESC
+     LIMIT ?`,
+  ).bind(limit + 1);
+  if (cursor) {
+    rowsStatement = env.DB.prepare(
+      `SELECT wallet_address, card_order_json, trade_card_ids_json, cover_json, supported_card_count,
+              holdings_checked_at, created_at, updated_at
+       FROM binder_profiles
+       WHERE is_public = 1
+         AND (updated_at < ? OR (updated_at = ? AND wallet_address < ?))
+       ORDER BY updated_at DESC, wallet_address DESC
+       LIMIT ?`,
+    ).bind(cursor.updatedAt, cursor.updatedAt, cursor.walletAddress, limit + 1);
+  }
+  const [countResult, rowsResult] = await env.DB.batch([
+    env.DB.prepare(
+      `SELECT COUNT(*) AS total
+       FROM binder_profiles
+       WHERE is_public = 1`,
+    ),
+    rowsStatement,
+  ]);
+  const rows = Array.isArray(rowsResult?.results) ? rowsResult.results : [];
+  const pageRows = rows.slice(0, limit);
+  const lastRow = pageRows.at(-1);
+  return jsonResponse(
+    {
+      binders: pageRows.map(binderDirectoryEntry),
+      total: Number(countResult?.results?.[0]?.total || 0),
+      nextCursor: rows.length > limit && lastRow
+        ? encodeBinderDirectoryCursor(lastRow)
+        : null,
+    },
+    200,
+    request,
+    env,
+    {
+      cacheControl: "public, max-age=60, stale-while-revalidate=300",
+      publicCors: true,
+    },
+  );
+}
+
+async function getPublicBinderCover(request, env, rawAddress) {
+  const address = assertSolanaAddress(rawAddress);
+  const row = await env.DB.prepare(
+    `SELECT wallet_address, cover_json
+     FROM binder_profiles
+     WHERE wallet_address = ? AND is_public = 1`,
+  ).bind(address).first();
+  if (!row) throw new HttpError(404, "Binder not found", "binder_not_found");
+  return jsonResponse(
+    {
+      walletAddress: address,
+      cover: binderDirectoryCover(row.cover_json),
+    },
+    200,
+    request,
+    env,
+    {
+      cacheControl: "public, max-age=300, stale-while-revalidate=3600",
+      publicCors: true,
+    },
   );
 }
 
@@ -774,6 +871,138 @@ function binderDocument(address, row) {
   };
 }
 
+function binderDirectoryEntry(row) {
+  const walletAddress = String(row?.wallet_address || "");
+  const savedCardOrder = parseStoredJson(row?.card_order_json, []);
+  const tradeCardIds = parseStoredJson(row?.trade_card_ids_json, []);
+  const fullCover = binderDirectoryCover(row?.cover_json);
+  const hasCustomArtwork = Boolean(fullCover.artworkDataUrl);
+  delete fullCover.artworkDataUrl;
+  return {
+    walletAddress,
+    savedCardCount: Array.isArray(savedCardOrder) ? savedCardOrder.length : 0,
+    tradeCardCount: Array.isArray(tradeCardIds) ? new Set(tradeCardIds).size : 0,
+    supportedCardCount: Number.isInteger(row?.supported_card_count)
+      ? Math.max(0, row.supported_card_count)
+      : null,
+    holdingsCheckedAt: Number.isInteger(row?.holdings_checked_at)
+      ? row.holdings_checked_at
+      : null,
+    cover: fullCover,
+    hasCustomArtwork,
+    createdAt: row?.created_at || null,
+    updatedAt: row?.updated_at || null,
+    path: `/${walletAddress}`,
+  };
+}
+
+async function recordBinderSupportedCardCount(address, cardCount, checkedAt, env) {
+  if (!Number.isInteger(cardCount) || cardCount < 0) return;
+  const timestamp = Number.isInteger(checkedAt) && checkedAt > 0 ? checkedAt : Date.now();
+  await env.DB.prepare(
+    `UPDATE binder_profiles
+     SET supported_card_count = ?, holdings_checked_at = ?
+     WHERE wallet_address = ?
+       AND (
+         supported_card_count IS NULL
+         OR supported_card_count != ?
+         OR holdings_checked_at IS NULL
+         OR holdings_checked_at < ?
+       )`,
+  ).bind(cardCount, timestamp, address, cardCount, timestamp - 60 * 60 * 1000).run();
+}
+
+async function refreshPublicBinderSupportedCardCounts(env) {
+  const result = await env.DB.prepare(
+    `SELECT wallet_address
+     FROM binder_profiles
+     WHERE is_public = 1
+     ORDER BY updated_at DESC`,
+  ).all();
+  const addresses = (result?.results || [])
+    .map((row) => String(row?.wallet_address || ""))
+    .filter(Boolean);
+  let nextIndex = 0;
+  const workerCount = Math.min(3, addresses.length);
+  await Promise.all(Array.from({ length: workerCount }, async () => {
+    while (nextIndex < addresses.length) {
+      const address = addresses[nextIndex];
+      nextIndex += 1;
+      try {
+        const holdings = await fetchLiveWalletHoldings(address, env);
+        await recordBinderSupportedCardCount(
+          address,
+          holdings.supportedCardCount,
+          holdings.fetchedAt,
+          env,
+        );
+      } catch (error) {
+        console.error("Unable to refresh public binder holdings", { address, error });
+      }
+    }
+  }));
+}
+
+function binderDirectoryCover(value) {
+  const source = parseStoredJson(value, {});
+  if (!source || typeof source !== "object" || Array.isArray(source)) return {};
+  const cover = {};
+  for (const key of [
+    "baseColor",
+    "artworkDataUrl",
+    "artworkX",
+    "artworkY",
+    "artworkScale",
+    "artworkRotation",
+    "frontText",
+    "frontTextColor",
+    "frontTextX",
+    "frontTextY",
+    "frontTextWidth",
+    "frontTextHeight",
+    "frontFontSize",
+    "frontTextRotation",
+  ]) {
+    if (source[key] !== undefined) cover[key] = source[key];
+  }
+  const stickers = (Array.isArray(source.stickers) ? source.stickers : [])
+    .filter((sticker) => sticker?.surface === "front")
+    .slice(0, MAX_BINDER_COVER_STICKERS)
+    .map((sticker) => ({
+      mint: sticker.mint,
+      surface: "front",
+      x: sticker.x,
+      y: sticker.y,
+      scale: sticker.scale,
+      rotation: sticker.rotation,
+      name: sticker.name,
+      imageUrl: sticker.imageUrl,
+    }));
+  if (stickers.length) cover.stickers = stickers;
+  return cover;
+}
+
+function encodeBinderDirectoryCursor(row) {
+  const value = JSON.stringify([
+    Number(row?.updated_at || 0),
+    String(row?.wallet_address || ""),
+  ]);
+  return btoa(value).replaceAll("+", "-").replaceAll("/", "_").replace(/=+$/, "");
+}
+
+function decodeBinderDirectoryCursor(value) {
+  if (!value) return null;
+  try {
+    const normalized = String(value).replaceAll("-", "+").replaceAll("_", "/");
+    const padded = normalized.padEnd(Math.ceil(normalized.length / 4) * 4, "=");
+    const [updatedAt, walletAddress] = JSON.parse(atob(padded));
+    if (!Number.isInteger(updatedAt) || updatedAt < 0) throw new Error();
+    return { updatedAt, walletAddress: assertSolanaAddress(walletAddress) };
+  } catch {
+    throw new HttpError(400, "Invalid binder directory cursor", "cursor_invalid");
+  }
+}
+
 function profileSummary(address, exists) {
   return {
     walletAddress: address,
@@ -888,7 +1117,9 @@ function responseHeaders(request, env, options = {}) {
   headers.append("vary", "Origin");
   if (options.robots) headers.set("x-robots-tag", options.robots);
   const origin = request.headers.get("origin") || "";
-  if (isAllowedOrigin(env, origin)) {
+  if (options.publicCors && !isAllowedOrigin(env, origin)) {
+    headers.set("access-control-allow-origin", "*");
+  } else if (isAllowedOrigin(env, origin)) {
     headers.set("access-control-allow-origin", origin);
     headers.set("access-control-allow-credentials", "true");
   }
@@ -913,9 +1144,13 @@ function normalizeError(error) {
 
 export const testing = {
   authorizeBinderCoverStickers,
+  binderDirectoryCover,
+  binderDirectoryEntry,
   binderDocument,
   buildGlobalTradeStatusDocument,
   createSessionCookie,
+  decodeBinderDirectoryCursor,
+  encodeBinderDirectoryCursor,
   isAllowedOrigin,
   timingSafeEqual,
   validateBinderUpdate,
