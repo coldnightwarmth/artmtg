@@ -65,3 +65,65 @@ export function serializeSpreadsheetRows(rows) {
   };
   return rows.map((row) => row.map(escapeCell).join(",")).join("\r\n");
 }
+
+export function parseSpreadsheetRows(source) {
+  const text = String(source ?? "").replace(/^\uFEFF/, "");
+  const rows = [];
+  let row = [];
+  let cell = "";
+  let quoted = false;
+
+  for (let index = 0; index < text.length; index += 1) {
+    const character = text[index];
+    if (quoted) {
+      if (character !== '"') {
+        cell += character;
+      } else if (text[index + 1] === '"') {
+        cell += '"';
+        index += 1;
+      } else {
+        quoted = false;
+      }
+      continue;
+    }
+
+    if (character === '"' && cell.length === 0) {
+      quoted = true;
+    } else if (character === ",") {
+      row.push(cell);
+      cell = "";
+    } else if (character === "\n" || character === "\r") {
+      if (character === "\r" && text[index + 1] === "\n") index += 1;
+      row.push(cell);
+      if (row.some((value) => value.length > 0)) rows.push(row);
+      row = [];
+      cell = "";
+    } else {
+      cell += character;
+    }
+  }
+
+  if (quoted) throw new Error("The CSV contains an unfinished quoted value.");
+  row.push(cell);
+  if (row.some((value) => value.length > 0)) rows.push(row);
+  return rows;
+}
+
+export function parseFiveStarSpreadsheet(source, validIds) {
+  const rows = parseSpreadsheetRows(source);
+  if (!rows.length) throw new Error("The CSV is empty.");
+  const headers = rows[0].map((value) => value.trim().toLowerCase());
+  const itemIdIndex = headers.indexOf("item id");
+  const ratingIndex = headers.indexOf("rating");
+  if (itemIdIndex < 0 || ratingIndex < 0) {
+    throw new Error("Choose a five-star spreadsheet downloaded from this page.");
+  }
+
+  const importedIds = new Set();
+  for (const row of rows.slice(1)) {
+    if (normalizeRating(row[ratingIndex]?.trim()) !== MAX_RATING) continue;
+    const itemId = row[itemIdIndex]?.trim();
+    if (itemId && (!validIds || validIds.has(itemId))) importedIds.add(itemId);
+  }
+  return [...importedIds];
+}

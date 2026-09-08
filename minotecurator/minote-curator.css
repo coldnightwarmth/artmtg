@@ -179,7 +179,13 @@ select:focus-visible {
   font-variant-numeric: tabular-nums;
 }
 
-.five-star-export {
+.rating-transfer-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rating-transfer-button {
   display: inline-flex;
   width: 36px;
   height: 36px;
@@ -195,17 +201,17 @@ select:focus-visible {
   transition: opacity 150ms ease, transform 150ms ease, background-color 150ms ease;
 }
 
-.five-star-export:not(:disabled):hover {
+.rating-transfer-button:not(:disabled):hover {
   background: #2d2b26;
   transform: translateY(-1px);
 }
 
-.five-star-export:disabled {
+.rating-transfer-button:disabled {
   cursor: default;
   opacity: 0.38;
 }
 
-.five-star-export svg {
+.rating-transfer-button svg {
   width: 18px;
   height: 18px;
   fill: none;
@@ -213,6 +219,41 @@ select:focus-visible {
   stroke-width: 1.7;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+.five-star-import {
+  color: var(--ink);
+  border-color: var(--rule-strong);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.five-star-import:not(:disabled):hover {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.import-status {
+  position: fixed;
+  z-index: 30;
+  top: calc(var(--toolbar-height) + 10px);
+  right: var(--page-padding);
+  max-width: min(88vw, 390px);
+  margin: 0;
+  padding: 9px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 5px;
+  color: var(--paper);
+  background: rgba(25, 24, 21, 0.94);
+  box-shadow: 0 8px 24px rgba(25, 24, 21, 0.2);
+  font-size: 0.7rem;
+  line-height: 1.35;
+}
+
+.import-status.is-error {
+  background: rgba(111, 35, 27, 0.96);
+}
+
+.import-status[hidden] {
+  display: none;
 }
 
 main {
@@ -586,7 +627,7 @@ body.has-pinned-image-preview {
     min-width: 140px;
   }
 
-  .five-star-export {
+  .rating-transfer-actions {
     justify-self: end;
   }
 

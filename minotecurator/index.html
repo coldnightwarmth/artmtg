@@ -13,9 +13,9 @@
     <link rel="apple-touch-icon" href="../cardnft.png">
     <link rel="preconnect" href="https://i2c.seadn.io" crossorigin>
     <link rel="dns-prefetch" href="//i2c.seadn.io">
-    <link rel="stylesheet" href="./minote-curator.css?v=minote-curator-3">
-    <link rel="modulepreload" href="./minote-curator.js?v=minote-curator-4">
-    <link rel="modulepreload" href="./rating-model.js?v=minote-curator-3">
+    <link rel="stylesheet" href="./minote-curator.css?v=minote-curator-4">
+    <link rel="modulepreload" href="./minote-curator.js?v=minote-curator-5">
+    <link rel="modulepreload" href="./rating-model.js?v=minote-curator-4">
     <link rel="modulepreload" href="./minote-data.js?v=minote-curator-data-1">
   </head>
   <body>
@@ -62,12 +62,22 @@
         <span id="visibleCountLabel">pieces shown</span>
       </div>
 
-      <button class="five-star-export" id="fiveStarExportButton" type="button" title="Download five-star spreadsheet" disabled>
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3"></path>
-        </svg>
-      </button>
+      <div class="rating-transfer-actions" aria-label="Five-star spreadsheet actions">
+        <button class="rating-transfer-button five-star-export" id="fiveStarExportButton" type="button" title="Download five-star spreadsheet" disabled>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3"></path>
+          </svg>
+        </button>
+        <button class="rating-transfer-button five-star-import" id="fiveStarImportButton" type="button" title="Upload five-star spreadsheet" aria-label="Upload five-star spreadsheet">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 15V4m0 0 4 4m-4-4-4 4M5 17v3h14v-3"></path>
+          </svg>
+        </button>
+        <input id="fiveStarImportInput" type="file" accept=".csv,text/csv" hidden>
+      </div>
     </section>
+
+    <p class="import-status" id="fiveStarImportStatus" role="status" aria-live="polite" hidden></p>
 
     <main>
       <div class="gallery" id="curatorGallery" aria-label="Mi Note artwork gallery"></div>
@@ -102,6 +112,6 @@
     </p>
     <div class="visually-hidden" id="ratingAnnouncement" aria-live="polite" aria-atomic="true"></div>
 
-    <script type="module" src="./minote-curator.js?v=minote-curator-4"></script>
+    <script type="module" src="./minote-curator.js?v=minote-curator-5"></script>
   </body>
 </html>

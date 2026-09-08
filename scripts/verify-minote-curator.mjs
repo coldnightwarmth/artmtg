@@ -7,6 +7,7 @@ import { fileURLToPath } from "node:url";
 import {
   countRatings,
   normalizeRating,
+  parseFiveStarSpreadsheet,
   sanitizeRatings,
   selectRatedItems,
   serializeSpreadsheetRows,
@@ -79,6 +80,17 @@ assert.equal(
   ]),
   '"Name","Rating"\r\n"A ""quoted"" note","5"\r\n"\'=unsafe formula","5"',
 );
+const roundTripCsv = serializeSpreadsheetRows([
+  ["Name", "Collection", "Rating", "OpenSea URL", "Image URL", "Item ID"],
+  [sample[0].name, sample[0].collectionName, 5, "https://example.com", sample[0].imageUrl, sample[0].id],
+  [sample[1].name, sample[1].collectionName, 4, "https://example.com", sample[1].imageUrl, sample[1].id],
+  ["Duplicate", sample[0].collectionName, 5, "https://example.com", sample[0].imageUrl, sample[0].id],
+]);
+assert.deepEqual(parseFiveStarSpreadsheet(`\uFEFF${roundTripCsv}`, sampleIds), [sample[0].id]);
+assert.throws(
+  () => parseFiveStarSpreadsheet('"Name","Rating"\r\n"Unknown","5"', sampleIds),
+  /downloaded from this page/,
+);
 
 const [html, css, app] = await Promise.all([
   readFile(path.join(ROOT, "minotecurator", "index.html"), "utf8"),
@@ -92,6 +104,9 @@ for (const required of [
   'id="imagePreview"',
   'id="imagePreviewImage"',
   'id="fiveStarExportButton"',
+  'id="fiveStarImportButton"',
+  'id="fiveStarImportInput"',
+  'id="fiveStarImportStatus"',
   'data-rating-filter="0"',
   'data-rating-filter="5"',
   "https://opensea.io/collection/minote",
@@ -106,10 +121,11 @@ assert.ok(css.includes("position: sticky"));
 assert.ok(css.includes("content-visibility: auto"));
 assert.ok(css.includes(".image-preview-trigger"));
 assert.ok(css.includes(".image-preview-image"));
-assert.ok(css.includes(".five-star-export"));
+assert.ok(css.includes(".rating-transfer-actions"));
+assert.ok(css.includes(".rating-transfer-button"));
 assert.ok(!css.includes("aspect-ratio: 1 / 1"), "Artwork previews should use their natural ratio");
 assert.ok(app.includes('const STORAGE_KEY = "cards.art:minote-curator:ratings:v1"'));
-assert.ok(app.includes('./rating-model.js?v=minote-curator-3'));
+assert.ok(app.includes('./rating-model.js?v=minote-curator-4'));
 assert.ok(app.includes('./minote-data.js?v=minote-curator-data-1'));
 assert.ok(app.includes("window.localStorage.setItem"));
 assert.ok(app.includes("showImagePreview"));
@@ -121,6 +137,9 @@ assert.ok(app.includes("function downloadFiveStarSpreadsheet()"));
 assert.ok(app.includes('type: "text/csv;charset=utf-8"'));
 assert.ok(app.includes("selectRatedItems("));
 assert.ok(app.includes("serializeSpreadsheetRows(rows)"));
+assert.ok(app.includes("parseFiveStarSpreadsheet("));
+assert.ok(app.includes("async function importFiveStarSpreadsheet(file)"));
+assert.ok(app.includes('accept=".csv,text/csv"') || html.includes('accept=".csv,text/csv"'));
 assert.ok(!app.includes("fetch("), "The deployed page should use its local static dataset");
 
 console.log(

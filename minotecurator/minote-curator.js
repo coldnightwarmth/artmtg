@@ -3,13 +3,15 @@ import {
   MAX_RATING,
   countRatings,
   normalizeRating,
+  parseFiveStarSpreadsheet,
   sanitizeRatings,
   selectRatedItems,
   serializeSpreadsheetRows,
-} from "./rating-model.js?v=minote-curator-3";
+} from "./rating-model.js?v=minote-curator-4";
 
 const STORAGE_KEY = "cards.art:minote-curator:ratings:v1";
 const INITIAL_RENDER_BATCH_SIZE = 48;
+const MAX_IMPORT_FILE_SIZE = 5 * 1024 * 1024;
 const numberFormatter = new Intl.NumberFormat();
 
 const gallery = document.querySelector("#curatorGallery");
@@ -24,6 +26,9 @@ const imagePreviewImage = document.querySelector("#imagePreviewImage");
 const imagePreviewCaption = document.querySelector("#imagePreviewCaption");
 const imagePreviewClose = document.querySelector("#imagePreviewClose");
 const fiveStarExportButton = document.querySelector("#fiveStarExportButton");
+const fiveStarImportButton = document.querySelector("#fiveStarImportButton");
+const fiveStarImportInput = document.querySelector("#fiveStarImportInput");
+const fiveStarImportStatus = document.querySelector("#fiveStarImportStatus");
 const filterButtons = [...document.querySelectorAll("[data-rating-filter]")];
 const countLabels = new Map(
   [...document.querySelectorAll("[data-count-for]")].map((element) => [
@@ -47,6 +52,7 @@ let previewHideTimer = 0;
 let previewRevealFrame = 0;
 let previewLoadGeneration = 0;
 let suppressPreviewFocusOnce = false;
+let importStatusTimer = 0;
 
 const fullscreenPreloadObserver = typeof window.IntersectionObserver === "function"
   ? new IntersectionObserver(
@@ -294,6 +300,56 @@ function downloadFiveStarSpreadsheet() {
   ratingAnnouncement.textContent = `Downloaded ${fiveStarItems.length} five-star Mi Note${fiveStarItems.length === 1 ? "" : "s"}.`;
 }
 
+function showImportStatus(message, { error = false } = {}) {
+  window.clearTimeout(importStatusTimer);
+  fiveStarImportStatus.textContent = message;
+  fiveStarImportStatus.classList.toggle("is-error", error);
+  fiveStarImportStatus.hidden = false;
+  ratingAnnouncement.textContent = message;
+  importStatusTimer = window.setTimeout(() => {
+    fiveStarImportStatus.hidden = true;
+  }, error ? 6000 : 3600);
+}
+
+async function importFiveStarSpreadsheet(file) {
+  if (!file) return;
+  if (file.size > MAX_IMPORT_FILE_SIZE) {
+    showImportStatus("That CSV is too large to import.", { error: true });
+    return;
+  }
+
+  try {
+    const importedIds = parseFiveStarSpreadsheet(
+      await file.text(),
+      new Set(itemById.keys()),
+    );
+    if (!importedIds.length) {
+      showImportStatus("No matching five-star Mi Notes were found in that CSV.", { error: true });
+      return;
+    }
+
+    let changedCount = 0;
+    for (const itemId of importedIds) {
+      if (normalizeRating(ratings[itemId]) !== MAX_RATING) changedCount += 1;
+      ratings[itemId] = MAX_RATING;
+      const card = cardById.get(itemId);
+      if (card) updateCardRating(card, MAX_RATING);
+    }
+    persistRatings();
+    updateRatingCounts();
+    if (activeFilter !== "all" || activeSort !== "source") renderGallery();
+
+    const existingCount = importedIds.length - changedCount;
+    const messageParts = [
+      `Imported ${changedCount} five-star rating${changedCount === 1 ? "" : "s"}.`,
+    ];
+    if (existingCount) messageParts.push(`${existingCount} already present.`);
+    showImportStatus(messageParts.join(" "));
+  } catch (error) {
+    showImportStatus(error?.message || "That CSV could not be imported.", { error: true });
+  }
+}
+
 function updateFilterButtons() {
   for (const button of filterButtons) {
     const active = button.dataset.ratingFilter === activeFilter;
@@ -466,6 +522,14 @@ imagePreviewImage.addEventListener("load", () => {
 });
 
 fiveStarExportButton.addEventListener("click", downloadFiveStarSpreadsheet);
+fiveStarImportButton.addEventListener("click", () => {
+  fiveStarImportInput.value = "";
+  fiveStarImportInput.click();
+});
+fiveStarImportInput.addEventListener("change", (event) => {
+  const [file] = event.currentTarget.files || [];
+  importFiveStarSpreadsheet(file);
+});
 
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => setFilter(button.dataset.ratingFilter));
